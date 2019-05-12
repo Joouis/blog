@@ -16,7 +16,9 @@ tags:
 
 
 
-上一集：《[2019 泰国行游记(一)](https://blog.joouis.com/2019/05/03/2019-thai-trip-1/)》
+## 1.29
+
+《[2019 泰国行游记(一)](https://blog.joouis.com/2019/05/03/2019-thai-trip-1/)》
 
 
 
