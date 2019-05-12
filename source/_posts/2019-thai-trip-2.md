@@ -156,7 +156,9 @@ PTT，除了 BBS 还是加油站，哈哈。这边 91 号汽油对应国内的 9
 
 ![](https://ua4a3q.bn.files.1drv.com/y4mr09adAZF_kPzGimTbYB_tVCtN1nZ4iUYmg1WEmKYGyTJX4wEKI1WxZM6v-aBCxOEkofsg2fPLFAye8IKMP5ZFrcRpC0M6nVTJtSW-RuUJjX8M7wx7M2N2g8Q76FKd7wbMGBfgzjbs9d6uSTXmohozXXJRAgq4P77UKD_IKtt_yd6gvcq1Q64p_U-5PoVlt35tIdEe9Ixf4fpXLdF0t1yiw?width=1512&height=2016&cropmode=none)
 
-选择去龙普多寺是之前在网上看不少游记都提到了这个地方，评分、评价都不错，游客少、安静、保佑出入平安。位置在我们民宿南边 40 公里的样子，沿路返回开进华欣区域后，明显感到高速变得更像乡间道路，马路两旁更多是树林，与曼谷到华欣一段完全是两种风情。开到的时候太阳也差不多快要落山，不那么晒，正好适合走走。
+选择去龙普多寺是之前在网上看不少游记都提到了这个地方，评分、评价都不错，游客少、安静、保佑出入平安。位置在我们民宿南边 40 公里的样子，沿路返回开进华欣区域后，应该是下了高速，明显感到走在乡间道路上，马路两旁更多是树林，与曼谷到华欣一段完全是两种风情。开到的时候太阳也差不多快要落山，不那么晒，正好适合走走。
+
+![](https://vk4i3q.bn.files.1drv.com/y4mjEhOpmwUZpuqFc4r92wr39KsvDXOsqx8jEc2-qO33zCATnR30OTO0ibTSd5wMYEWOP6Yyc2tWgo4SUmNpSSgoVMxJY81EcUymLJtSJ6g-c1ASI9LNGlxRLQ0uE4wLJQA8dhO7WUFh23WMATYQFiJpkByJ4oHkc4UclM8C6EGJ0cBjBukBf7B_AbJvTwWjopid2tM-8w_GwojmBKHCX80DA?width=2016&height=1512&cropmode=none)
 
 寺庙内几乎没什么人，很好停车，下车后首先看到了华欣市的介绍牌。
 
@@ -198,9 +200,81 @@ PTT，除了 BBS 还是加油站，哈哈。这边 91 号汽油对应国内的 9
 
 ![](https://vk4j3q.bn.files.1drv.com/y4mU9-mPBq2_noSltO6fGOVMZb40b6UHOzJUKqyaunxpZ3Er81YTgeOv_6Qa5o1vMia1qHULQvCaFkHNLb5t3itxHKnwOnmZDuSueAIZ50azaoEQTCDAuUo2aiPXAix1SykNXRX93Owy8Y5Tt62u4TEaWWgVLequpDw5TcLyK4y7MViaQRAhZ4jx6zjU6DTiZG1cnJZZvu_GSNHQ6CTtvwZvA?width=2016&height=1512&cropmode=none)
 
+不到一小时逛完龙普多寺后，迎来了今天的最后一站，华欣火车站。
+
+路上终于抓拍到了皮卡载人的画面，乡间上坐着车吹着风，非常有 fu~
+
+![](https://vk4h3q.bn.files.1drv.com/y4mtNSxEoxb_KgIN4sAeg3O537Jbyi7rpe-u_Gne8NwMozNTdLuPZBva-gi5OHCgnnTDLkYGs_CwgoO886OLohRHekDqRnaRONJQTzTlV2ZayEPeqnZITDKo6UX1UbgLljPZTbjxi3pvGq1t5q2JLfttb7xyDEujPxoLUXcBgmjUAjh-wh0vnJVpPVP_imSuPHHwaLiCTIHiaF1QgBo8LiaMQ?width=2016&height=1512&cropmode=none)
+
+临近华欣县时恰逢学校放学，路上可以看到家长开车或骑摩托载小朋友们放学，路过学校门口还能看到一点学生。
+
+![](https://vk4f3q.bn.files.1drv.com/y4mfKwSj_R7_Ftu1EvdCYL_ALNFE6tMgPNhW5vYEoQyjJI1llpoQWv41I6AT15SNXlcj0t4dC6HO5B1OFlVQRCxYoxpUSajsCZw93R0CDO1VrVasxuywu3WHizOR2LjqQnMgFRDUPQtgAKxjyEBA8XfmusEjGZc1irK-oVsuXR4V9QI25uBo0gZbKkgn8n7w9XM2NG2Rs65zGaYkeG19d1daw?width=2016&height=1512&cropmode=none)
+
+放学、下班高峰，略堵，过铁轨这段路时走走停停，朝着这个放学再走一点就是华欣火车站。
+
+![](https://vk4g3q.bn.files.1drv.com/y4mtxpWYCTE0a0wAQnrsIhzrXct5g4vNe_ZfXbEUSTbgRBx84TrsX7upV_vmRh8SaBvzqxoT4tEkMgKUkJgAPVM7GIhdx8lrjUSAXMFvguuD5XTnWcEjKpvZni5LvTh6he4NtqbBtbQe0YhNtxhLDDwvhdnEvEA8FTWmkErHBPmTf9GA6RjU2fguGVIT33q_QUvBZ6Vz4DJN345D9ooN5WjhA?width=2016&height=1512&cropmode=none)
+
+等我们在车站附近找好停车位，走到火车站时，恰好有一班从曼谷开往边境城镇那拉提瓦的火车停在站内，和小时候的绿皮车有点像，不带空调。
+
+![](https://vk4e3q.bn.files.1drv.com/y4mQMHMZgvyzMACAfo8YvQNJBsQtiQ4JAQOkgVFLJeNxHk7sDvE0NpGqdhNVImnmxokpOjKk_P46xJhSCrU7NHiBsbyjC2DjsMs7bPCJWk9ox_Sb68ILh9a6zgX4ak7FNhr-wvTsqoYvkyvjJj3y_7fMEl3O2tH4EmpIqwCQWPhoxhgzcIAUvm2v9pI6ksd-hi_ihBAvb3nrJzxWD7Z4QYKPw?width=2016&height=1512&cropmode=none)
+
+初看华欣火车站，小而美，很有特色。由于很多游客会选择坐火车到华欣，因此车站的人气也很高，可以看到不少带着行李打卡拍照的人。
+
+![](https://vk4d3q.bn.files.1drv.com/y4moqez4Wb9QbcqJwJV9AkIoqfMGVrf66tVf4zBRElOAEOqIP1EQHU8UwrbYXYXXbjmwgZ0KNFzEg_zNwQ5z5HM3sqQ4DdZ8rgQumqp8jlb1Gh3MZKtrrf1q7oyjgroSO2cYNPSFmIpNDq0CCYzUqLv_uSRclB2UQF3dN8apbFXFS_gqS-k5C0TJ3xuNWjKF6SVNbZvJ51IaJPVIkpnSldMyw?width=2016&height=1512&cropmode=none)
+
+有一些欧洲火车站的影子。
+
+![](https://vk4c3q.bn.files.1drv.com/y4m_Jp8ymLequGpyLBRZ_t3NDVRBUhyF8gIrQgmIgdx5G0SEtpemMEI5PZqQzMcDcmfF_E5JUAr2vqvPTUzbcrrKRCHc7qglkreJ1IxFdwmHpfjAEzMzQqLVEacm46XmNvjbviGFKt-8eGN_5pwszX8ob3nA2Ro7V6ifPbZyYFub-5X2q03Z3xFOOd6GKXm4t9hqb2bTkvn09p7llemdO9Ybw?width=2016&height=1512&cropmode=none)
+
+轨道间的灯、对面展示的旧机头也很有特色。
+
+![](https://vk4b3q.bn.files.1drv.com/y4msd13jJ-nTfJZVojHLnfrOPAtsBuz-AYcidaTCHR3Oij5rJL_j7act2cEjoUXhKm4OBtQUtVwPWKf29mzOfpEa33MeW-u61O8paGPhS5tTinx9hgFq6hRbau4RBj_kxUVMqkPc_haLA4-D7ER94BnshlUJ8yVi0ZyMy3VHNyDD25uHVqU4sGMFHken1Kq-ooq6cHSJKy5NeV67zAiWVYZLA?width=2016&height=1512&cropmode=none)
+
+车站其实很小，一眼就能望全。
+
+![](https://vk4a3q.bn.files.1drv.com/y4mShC1VbdSM982L3mWBcTh8QxhMGXJCKu56nk7feiTlmbahFUnr-BkpoH4cxBQNGwI6y-xRGlvl1iPBO0Kswor0Fbxa76i0KroW-RSVsiT1koyKOiKGK1-8uavl5sSwnnPgqMUhJzEeG_a61nYOepyGAt5zdBGX42K_SQH2YSnJbJbJclkEj55I7jsRu1Wd7dQHP03czN8eXIuOO8cYgIBBw?width=2016&height=1512&cropmode=none)
+
+这购票处的布局像极了台南站，可能小型火车站大抵如此。
+
+![](https://va4j3q.bn.files.1drv.com/y4mOJTT4qqzCWL_yuVYLADIGM5cPQ74VldykjICa8dRUDdlP7vWjLX9JpOOZfxiIQ0yZsp-NolN4EHlE0qdYWTsGxAXtvEuDs4oEzwXDfeN6G06qgBnvMGGhxEmEb1lvkMaBg_iAN4BKpEkp40mS6jLjRTU5Hr0NkvwcSPtVRMMma5c5BtYDXWppxaJ0e5ruJObntAK6TY7Y-kbno35HBvzuA?width=2016&height=1512&cropmode=none)
+
+不好意思我们之前从停车场直接走进了火车站，现在才看到了大门，好看。
+
+![](https://va4h3q.bn.files.1drv.com/y4m88NCvkRyftG2vesL6G5897Mx9oiDaKE7eRNb6spl-dVoUeoypqDi65YY0Q3Y0_CwXTSgQCOHjtLyfqZFbIl91sFeOyEY9lISViMijD0PxPJmTaR-0tj2hSMW0Korh0LMWSr42Mjm_SUSnYqI94x_36WApCQrrncYmBLwUiRKpDPVYWoWpUvlg6_tu8qxwoE4iCJwBx3zOSwuTIiYSfOHBQ?width=1512&height=2016&cropmode=none)
+
+![](https://va4g3q.bn.files.1drv.com/y4mGCQcYEjQCwNbyXzsXBLXL3An13eM5zDS0-fRZHRQH2Pw74ZJF-2afEZqQRhDddu6JxBzwSsxpqoja0Is5cIhluKoauZDCoh474MNqhJRIDmqHagARrn56MC8pfsFHgHfzMBCQpv8Wei99-cF1Pk_XzbYgbXxSWiolw5Uyci092H7F1xSDVtv0LJMwAb11swoDG8MCevvBZg52PrSaJ08vQ?width=2016&height=1512&cropmode=none)
+
+火车站逛完，最后就是走去夜市找点吃的。泰国很多地方都会立上他们国王的画像，我只想说让国王在外面这么风吹雨淋的合适么 😅
+
+![](https://va4f3q.bn.files.1drv.com/y4mndXD215nK-lCBOzQK4ur3FSHT3lKmvZO43F-cNGrrh6RG-kiBvV5JWyE_BbSOPzI76qMO3w-bWqTA0MJBzBcm22dMX-qxPoYpKjomJUBwtwUVyC32SVSW9MqHzAyFJO8IYyX5WJmZISmuUQbYMbtenHhPr3S_dcofucjZ6t2V5oq9mBxO5TWzLvA-OrKnCleP-AWN9KF41RJNq7vjJ8iBA?width=2016&height=1512&cropmode=none)
+
+不多见的热带雨林专属房子。
+
+![](https://va4d3q.bn.files.1drv.com/y4mR9kgKDEy3IvCc1Q4sRxc-YaB7Vmu6bZ8qaadOocytt2rIKg3pKjJmcaJXlqihGmPgo9u7nnWV7TKGkpbyX2YCfurTN8g7wqTg1PCDBcydaDM62eMdptWDiRQuEXRi46rdkW7_68XB9skjOjbWQQfFyE7yVa7hNoaFF1a1o9J2K3-ThGPHgFpRjZPU77aCyG_MEq7fhkpv4KPa4mkZNraFA?width=2016&height=1512&cropmode=none)
+
+夜市旁的水果店。
+
+![](https://va4e3q.bn.files.1drv.com/y4meAiDMHHmUHg3Q5H5HyduTmVsiI2sA2swk0UT_OzAkAM-xMbkeaD1cBdlfgrHFXRMA-PgNNy44w4bcujkGcIhWjo7Vvpjla5phxTrHT6WTGMh2utUERcm9k84V40ANuGYj-Nc7EzT5ihqitxIMltqD6jshvRx9RRHpLIpCrnhnDfKIs5E2vzEqpFFy_ThEU_DjAeOyIVJQnzRIKD4nHkRqw?width=1512&height=2016&cropmode=none)
+
+晚餐选择了路边一家看起来生意不错的餐厅，点餐后才感到靠路边有些吵。
+
+![](https://va4c3q.bn.files.1drv.com/y4m4R3MNk3kwrW7K2Rk6qdVI8vSVO69JrmUfBBjyFHhy8Vi_1IaDXtekHyxDiMg94BZk1kd9FCXODKG_Og60NRxPIMZ8rQHjSoHztVSDDlV7YBFo2wonzVDh1MCiBRK4gRrCM_TeAWEWxcnFYonsH1gae72chT7kB0Uyxnqi_6ZZ0Q3h-7JFK2QBWTpLeTqt_pOVJynYwOFRzyq4hv5-aNzhg?width=2016&height=1512&cropmode=none)
+
+他们的开放式厨房，和家里的看起来没什么两样。
+
+![](https://vq4j3q.bn.files.1drv.com/y4mDPWWVnXsqhyDm4NafiIpbTaejdTTjbHY3vl0xX9UNiG8nMpSMTgUbM7rytv4lNilaEYI7anH6ke1v4q5zN2z-286L7wfg44cK1_OTSmTPptD8EqMF6UxdbQWAhSddxrephI6jHTSrMnnuZPWqKduW_U_1OfYaSongdhbaODtW_OONZf-waRKE76kZsBPBSLVVJDoLFpddoZd0MnR3InxOw?width=2016&height=1512&cropmode=none)
+
+依然点了三个菜，味道还行吧，可能也饿了，基本都吃光光。
+
+![](https://va4b3q.bn.files.1drv.com/y4mdE3KThiMzzKJlwkFHVdqeYsQE0Tb1mmYyKHtPNS7AIGv4At9_VT3AadWcmzGl1rJszJk6k38hP-5nsOIeCkG9sDKJQTOGZxOLIytKX0piuNZGw87d1BFYoDRENc9t4cORmGBuWfzwqH07l7R6nv3h6QWhVMNxcfmAziniMtulbf8MUPEvB1c5EWKlJlQT6y7taPVQAbHPIlCo58QgTPutg?width=2016&height=1512&cropmode=none)
+
+![](https://va4a3q.bn.files.1drv.com/y4mbL34h0CPKt_t3zM4Jj49NsOSNrMRleuw2YNdtcNrgHqWoI9UX01V1y31fo48IWdG3LGWwkUabqVBFmV43e-SJhjPPfa3l9zH2sDRSTGz3jbpO6SyZExLedJC592V7X1FRLA9zs-CNIOpz_OUx3O_xajPfenyw8H7i7En6E9kMiYqJfetcLT70bnO4ad2XqX0YvGPp79Q8zzYZV7TIIp1rA?width=2016&height=1512&cropmode=none)
+
+今天也算跑了不少地方，开了两三百公里。所以晚上就直接回家休息，明天拷龙穴走起。
 
 
 
+To be continued…
 
 
 
