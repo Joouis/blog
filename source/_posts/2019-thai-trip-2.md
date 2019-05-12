@@ -152,9 +152,53 @@ PTT，除了 BBS 还是加油站，哈哈。这边 91 号汽油对应国内的 9
 
 ![](https://ua4c3q.bn.files.1drv.com/y4mGCuZDp2VJBHdgjk0jeAdJAXDknbsk0NOFzw2MIlrFnhAg40pgqCrNmM4AOmk9U7hObNblFp9Rdj_Bc60pvV-IXvIWqS-4m4W-CKp5bePAZWxyUWOSEqeGHtqeDWfPAXb6rRNZHHrutgKpmFVXPaCduGhxk_QxDsxpm0kux8INOjzhss4m8MrNQGrghrjSGVFNTJbontTyChvvVWeiLwyKg?width=1512&height=2016&cropmode=none)
 
-走前看到一个别具热带气息的饮品店。
+走前看到一个别具热带气息的饮品店，布景好看。
 
 ![](https://ua4a3q.bn.files.1drv.com/y4mr09adAZF_kPzGimTbYB_tVCtN1nZ4iUYmg1WEmKYGyTJX4wEKI1WxZM6v-aBCxOEkofsg2fPLFAye8IKMP5ZFrcRpC0M6nVTJtSW-RuUJjX8M7wx7M2N2g8Q76FKd7wbMGBfgzjbs9d6uSTXmohozXXJRAgq4P77UKD_IKtt_yd6gvcq1Q64p_U-5PoVlt35tIdEe9Ixf4fpXLdF0t1yiw?width=1512&height=2016&cropmode=none)
+
+选择去龙普多寺是之前在网上看不少游记都提到了这个地方，评分、评价都不错，游客少、安静、保佑出入平安。位置在我们民宿南边 40 公里的样子，沿路返回开进华欣区域后，明显感到高速变得更像乡间道路，马路两旁更多是树林，与曼谷到华欣一段完全是两种风情。开到的时候太阳也差不多快要落山，不那么晒，正好适合走走。
+
+寺庙内几乎没什么人，很好停车，下车后首先看到了华欣市的介绍牌。
+
+![](https://u64i3q.bn.files.1drv.com/y4mQX1lgq39lFmxv0C1D2q17g-SVfbaJkqJSRT3n-gBJAajFoE9li7KQ4dSkgUOK02_sxYVeYbfvho4UTvM4xbOEncJCodlxNwQzYkYqPD-FGlYDBRRnfk6emJ56tyBFQcvt8CvgGz2blb1OvReU9T0xTLTg4l_ViA5kALAecxrFalqodmWSxVIWx02_S_gZhHHLM6460vkww1UkSx8cwE-xg?width=1512&height=2016&cropmode=none)
+
+寺庙不大，一眼就能看到龙普多高僧的佛像。
+
+![](https://uq4a3q.bn.files.1drv.com/y4mjCpnQmAsCrZQ7noF75m_O7tApV3akxoWrKWXo4QgKq5TRLUGyXg2R_ziiGwBoE5OvUjwp_8mBxIW8Vw_HWH-4dhoWhkX4d-Qvil-kInOQPFoOSdmQBkq1ArdweVcI9KBzprwdpJnr_te7bYOshJX6d8x9TzK4CfPsiIOAK9gqxF6VpIUqy6W2uwiJWW11qVnMr3t9rTBZznNDZHLTcBpUg?width=2016&height=1512&cropmode=none)
+
+两旁各有一只三头像护法，上面还坐着一个和尚。写这篇文章时才注意到是三头象，当下居然忽略了另外两个头以为就是大象… 大象身上嵌了不少硬币，可能是祈祷之意吧，我也学着放了枚硬币在上面 😆。
+
+![](https://u64g3q.bn.files.1drv.com/y4mLjt0-agxjwniKPnVKH-QFtBe3I_2GAH3hSZGF-MLHXNMX_5IhZMxXQC0-eDvDWsQq7FCSv0UEyqxCrEhT1fN7m_4ibZQvH-alIKzww4uUdz3ugvezoAgTI6qM_i1wd39u49y9wT9Xu7Whri4vluzstq5zHNIdtGjC2GWrFP21C4dJc5GBCUIj-qEpIyFqrY-o_oU3HpVDuuQZZ_6CMKbcw?width=2016&height=1512&cropmode=none)
+
+龙普多高僧的雕像做的栩栩如生，阳光下显得庄严而温暖。
+
+![](https://u64h3q.bn.files.1drv.com/y4mV9yic_b9FNDgRH-PCEwnG9iEbJOnVfgzSWOBo6XQoeXP-zRILjdsSdf6iM7Hg3ysdUUapytrVN4mlqcidWR4zTL27dV9_J_7wqHUz6-PuYmrHhPSzA03r8PP7yT24idMntf4j3lkEj8oka_DQxAbtWFDHYA6Dojh01N8BlRgE_IQGLI8f6qturPMSkj8pokjVk_kpLL17zMy6HDC4Z3u9g?width=1512&height=2016&cropmode=none)
+
+虔诚地祈祷。
+
+![](https://u64f3q.bn.files.1drv.com/y4mrUnYI9LDHZeaa1LIkpzUgwqaLb6wrMEyWE5hWlKUBTF3l1I7OkYIhiYDeF3CBCrrhPlUXaLyDUA1qHbZLvVMzGJfrlRI-zSX3T6NX-XRUl4VvOxAnxUdGrPOiNoWgMUvWrVorQeTVHGY8pFKl0xtCOiXFAonIF_YP4uT35TYAK8o_kIAqQnb6ylzR6ZO0sMYH0i9xfYMxh8Xtg5-u0BMWw?width=1512&height=2016&cropmode=none)
+
+照例寺庙里会有金碧辉煌的宫殿，在阳光照耀下很好看。
+
+![](https://u64e3q.bn.files.1drv.com/y4mOoSrlUqeEkbH18dZjt3arXCYMUuZjMXHBv11k0VEBLV5izn8utonjK0hnwQiw3xqJ7Q4QMx2o8D3Q2VhFhQx8oCyfcepo5bay6DshVk1FDXDxo_fEx9tQUNq3DwC0Lf7JTkOdZ3FTANemGajyH0-JSJIWsCa9bQL6LXbkJQJ9niLzO2wwShEf47UUm35_mDEpm3uTY2tkTANAuAooIs3Mg?width=2016&height=1512&cropmode=none)
+
+![](https://u64d3q.bn.files.1drv.com/y4mOTpQ04T1x3Nlo2NZ77hfNGqk4zBEgW45aOm4f-1L5vWbG7EukKEiW7ivqCnLEl3MkJVwcSMwQlNOeLw_VL3nL5JkYhtGC1GW0FdUeqn5VmGTXE8DsrFa_uxb9aCYiSE8xN-eB48r1xuRyLXgV1ok15U8XRc-vnwq4LOmJ2N0xuZI3a990NOpcClMq4GvqqvrKn4In_Z1tE38G7_4QuMbHw?width=2016&height=1512&cropmode=none)
+
+![](https://u64b3q.bn.files.1drv.com/y4mimlVJvmoFntD5iCUkcZZgN3_GopS4vu4qSevOLZStgm-zWInp1PdJa5KAxzc44f-mKdidT0sZZ60epwU7l9gyOll59x5m9vsSoPjKoN-GqyWIyOXnYuXWE7DcCsZNsWDMvAUhKRl5MROp5Us2vO2tmZo3byVhwNuquHCrt5RT3OgDrZ13dKV1GPLPDAsw3fibzKj6jFDaAUNz-NKNeJIuA?width=1512&height=2016&cropmode=none)
+
+在大门口回望龙普多雕像。
+
+![](https://u64c3q.bn.files.1drv.com/y4me7-H3UBgoXe-pGyYNWb9_tSOyaNoWxT5yrZMxpnd5woh5xqOH1QRpGlgdNWWQuSttxki6-1gAQD_zXWNyvECYVyte1DZSDshaVig4sV7i3l7GAIn1pYBpca9jI4NYvXJrRap4m5-pWtrpJ48jEzNWGGns_UprFW5qv_MdaEhQNWBpZElIo_PtQpHQjDdqNt4LrUUesaJp-vGLuyUWKnWWQ?width=2016&height=1512&cropmode=none)
+
+停车场旁还有个小型的纪念台，很有趣，一名骑马将军带着一群公鸡军队，泰国人民的想象力很丰富。
+
+![](https://u64a3q.bn.files.1drv.com/y4mSv-l0icZV6X4Q7UtqHQ3uB8l1VvkN4jqJD-xPoV3W7zl5y6JafFAiq1dLj327K-KJ7fog6MPcl1eX4QRkTtcSofc3KhZ86xNG7YAvG3X1ugdOApHw9sOIo1cVN1x9wLQLIQ3L-eIb29ampYyjNG32HOZmjJBXn97FQNd8Mat--RxTkVYS8qo9WmX2VYH1eUv5C8hzDRQRLXZNyHuZUyKJw?width=2016&height=1512&cropmode=none)
+
+其实也有些其他的小动物，例如大象、老虎、马，都被做的这么小 😂
+
+![](https://vk4j3q.bn.files.1drv.com/y4mU9-mPBq2_noSltO6fGOVMZb40b6UHOzJUKqyaunxpZ3Er81YTgeOv_6Qa5o1vMia1qHULQvCaFkHNLb5t3itxHKnwOnmZDuSueAIZ50azaoEQTCDAuUo2aiPXAix1SykNXRX93Owy8Y5Tt62u4TEaWWgVLequpDw5TcLyK4y7MViaQRAhZ4jx6zjU6DTiZG1cnJZZvu_GSNHQ6CTtvwZvA?width=2016&height=1512&cropmode=none)
+
+
 
 
 
