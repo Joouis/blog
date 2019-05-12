@@ -1,0 +1,163 @@
+---
+title: 2019 泰国行游记(二)
+date: 2019-05-06 22:37:40
+updated: 2019-05-06 22:37:40
+categories:
+- 人生游记
+tags:
+- trip
+- travel
+- holiday
+- thailand
+- self-driving
+- bangkok
+- hua hin
+---
+
+上集回顾：《[2019 泰国行游记(一)](https://blog.joouis.com/2019/05/03/2019-thai-trip-1/)》
+
+<!-- more -->
+
+## 1.30
+
+今天的第一任务是补上昨天的功课。原本计划在 29 号来华欣的路上顺便游玩曼谷郊区的玛哈猜海鲜市场和美功铁道市场，然而 Airbnb 的房东在入住前一天告知要在下午三点前入住，因为她的仆人 (maid) 三点后就下班了。因此昨天只好一路向南，先入住再说，把这两个行程放到了今天上午。
+
+这行程其实略蛋疼，景点挨着曼谷，往回开大概要两小时，这一来一回就四个小时（明天去拷汪宫也是往回开😂）。还好观光节奏上我们俩都是佛系心态，看多少是多少，不求打卡，不喜人多。礼拜三，高速上车很少，一路开得还是很爽。
+
+![](https://wk6baa.bn.files.1drv.com/y4mwJSIJpwoi7NkuQKEOJAp9XeTbQl8yN6XiLuPcYnUo7juenuhXeK5J_zQ_2X5cqpkUS5T3oDrhYKmU7BpOKH5tcWxrW5HE-7QHgJ15gEQKfFUDxw0lb1wx3ckYylFY_p2DBDSR9xArzXEHVhXts6GpubE4jAsOfF6IVSgFUpxQ8ysGI00MPbVdvUiPBTM0NdNXqBKncUGEA496EHhmwn0lw?width=2016&height=1512&cropmode=none)
+
+等快到附近立马感觉道路变榨，路边停着皮卡、货车，我的经验告诉我该慢慢开顺便找停车场了。果然很顺利找到一个停车场，然而大叔不懂英文，笔画半天最后还是一个年轻男生来帮忙翻译搞定。停车很便宜，好像就 ฿10。
+
+![](https://wk6aaa.bn.files.1drv.com/y4mfwthprLwea_ikklHD-FLDNRqN5OtFwLwx2KNVETewLVCzjK2aZmkyjBRy1Byh3BQyvtcXm1BVFXvlNeRyk4Nz_hEhm50OoPVJsruuujEyl1gJy8ZynbHKwkZ752J_T1A2FlsjfxlGwagPxcnA-BmNlN4sRhEbyhBPQkL96e2YRdgNQDUMtIMQhJM8OeYJL7Jcqkh21fxY2nSaxK76-doaw?width=2016&height=1512&cropmode=none)
+
+沿着大叔指示的吃饭方向，我们边找边看。这些骑楼和台湾真的是非常像，熟悉的味道。
+
+![](https://wk5qaa.bn.files.1drv.com/y4m8YT6kvw2XCtYgA82uZXoTESWRnP5GiyxCSq4cD8NQHkkFZrutzTFRgkG1OUyKXDkOPWJHDVtMvuQaD-CKcgCYYx_3MdzDDEJS9DMLiTR2REkl5QpWgb6-1Rouw9bkOSKRLiOMJFyJKW9va2QvYVhYvO2xD1vovbGw4-Lf9YCSeTjAbcf7oF_6LqVbhWiMV1ojYMN58P4FU5wjXLxF-r3ZQ?width=1512&height=2016&cropmode=none)
+
+再往前走，明显闻到了海腥味。马路两旁卖各种各样的海鲜，还有些水果、杂货店，不过感觉车来车往运货的多，实际买东西的人少。考虑到工作日加上国内还没放假，可以理解。
+
+我自己除了各种虾外其实不爱吃海鲜，所以很多品种也不认识，对价格方面也没什么感受。
+
+![](https://wa6haa.bn.files.1drv.com/y4m-OWQm7Om2dXy4cYUR0AnrakYVPh6v70Te4XskC4OTi2nFbI7_OEE1BJEbq-zjEqYEA_A3dub9-28jXTjisfpXP0ZJslZwFG0QgCrfKEFG4U1X4WdnVoc6ziVTTadFZON6syhJFHyXnFIm03A8itDq89oA8WkqbbqmTwt0H9MSfsk0rep6E6UeGs7xre2p_zjnaiVjik3HqaYG7ctZ8QVng?width=2016&height=1512&cropmode=none)
+
+虾脚和螃蟹脚都是蓝色的，有点神奇。
+
+![](https://wa6gaa.bn.files.1drv.com/y4mbXoYAgTLrIi9IjTNP7uoN26e8wJBXl993HgpNuf4KAUY5ZZAcRM05quDo-q3z_8nRjvLRYuXWCwoKDRLVQuGbQsAxe2LTQYPPMbyeuVxdBFTAbAf83GMZAPd53eFJd7QUhrESl8c0AN2itHKA5Dh1VJyxPtkgoJ0DzwMFdB4-LMmwJBbuvDCqt_2fYuNccvsrGn2zDFMB7e2lY_LgXFVyw?width=1512&height=2016&cropmode=none)
+
+![](https://wa6eaa.bn.files.1drv.com/y4mUnbJsXcjQWpzhWIJkntCC-bAUOhsQ43UUP0JXSgsd14yPXo1EojyNaQPciPDbwCg5OEO7h3pd0UarxhrgZfE-MkvP-VOw12ltvsM0AZmuCsHX9GrK4qjQ6-ivX73KA0XNfICLUOHxAdxtiHwVR6Xn78FCmU40cbXuQ-aS2ybOJIxyydWfHWC7NTEXVkQJo2x21uH6MNtthDbSyoPzquH-g?width=2016&height=1512&cropmode=none)
+
+哪里都有 🐈 哈哈
+
+![](https://wa6faa.bn.files.1drv.com/y4mGyKIGrN1HkFefUtqniaGNiObR4FubVysJKg06QekD_Hiu3izVWANaatAtXdbey3pey2PwscLBd2uPzEtBbHW0cK8qrFbwkAyoUQgsZohtXk5Nn2OUdTMTAOff_wBAS49D7fUi_sHzEAX2R0DrsMqSegDIOjypiN2m7nukJgLkbQv3Gka4-p303SRB7V75F-OS4HA2-EnA01G2Ntd3vbfJQ?width=2016&height=1512&cropmode=none)
+
+一条巷子全是卖货的，除了便利店，没有吃饭的地。大中午，很晒。
+
+![](https://wa6daa.bn.files.1drv.com/y4mYnV2NfGunMCbQTBPnzjwkqOUwEb0P42g0SLDoNqHtkZUJi_gOEardpcW2VPCpYDHAVYWReKvcXcwBIO3ktKRaLJ1wl1r_Fa7e6n-ufsdNh5BK1ZuuHMaqyv4eOE52A8OWjzGeV8d8zH5spGOMdG1u4Q6d1nrXB3Ztcm528dUmN9ve7J1zcP1gdFNT6F_9bVnOt3yZDHN4tiQC7y3exs8Vg?width=2016&height=1512&cropmode=none)
+
+好在巷子不算长，走到尽头就是河边。鲁迅先生曾说过，只要是有景的地方，就会景观参观。果然我们很顺利找到了一家河景餐厅，由一个露台加铁棚搭成，出人意料的凉爽。
+
+至于景嘛，只能说视野不错，很接地气… 没了。
+
+![](https://wa6caa.bn.files.1drv.com/y4mNw8oMPrSZj8SRwyUiAGVH0Hu5gV_ZZgWcwrD-NfLw5WIa6g7iKOzEdjQdv5xVLprE9XVzR_ziOAB7x-TcSNf4IvNaosy0aAfye6nZjLJ43oiDlC6shWpCnzAwkt4NUtXsWSQpfjlu7ghHYJp4EHnLaOZGDsHcn4lSilQPO1mZTJ3FWMHM5jhAFnqMVO-gugKFAylYENXYTAcaOay4Trnsg?width=1512&height=2016&cropmode=none)
+
+右手边是个码头，当地的居民很多骑着摩托乘坐轮渡跨越他钦河 (Tha Chin River)。可以看到他钦河其实挺脏的，后来看过的湄南河其实也差不多。发展中国家嘛…
+
+![](https://wa6aaa.bn.files.1drv.com/y4m8pevuBdZE4vIKifWZM7CL2SfOUFNa8pR5Oa5rD1MEMNT7pB90O7Y9ojLLVpYPJ8tvQD5DJXYKwm1Dd8BufNovlyNr38vxciqxE-C_12QoP-MKxePbqIUxET8ENgNduqHNZnxPBhS6ei8pyAlQk3UDL1AQeVH_6QNGkdNyohyDtJvJy3yxoch6Zi90vlHU121xVLk-Ml4oacWZl1sWRfNSw?width=2016&height=1512&cropmode=none)
+
+这次出来玩所有手机都是用 Samsung Note9 拍摄，AI 技术加持使照片直出效果已经达到不错的水准，尽管偶尔曝光控制还是差点。
+
+![](https://wa6baa.bn.files.1drv.com/y4mt8yOVFyZID5lEbE7Qm43E74hNNfnbuNlpIzqKS2uOyyG0kqBBLfjxdWUz5_vj8_4FJUpjfSJnx540KnrIrLAcQd3RM2qy_WlUa_idkm7825Xb8zhXyZeHpt4H6WVUL0t5_gSfxue6kwVhNckTt3IK_Ph51OGTIsQWKzKzhh6GoSJmLMd0Rz7HhCkQJmDX0HdxZkBGE5XlZoED6XurVytSw?width=2016&height=1512&cropmode=none)
+
+大中午工人还是在不停地卸货。
+
+![](https://uk4j3q.bn.files.1drv.com/y4moEJZnaLZr5_wNedh803w4BsLrPbM_6Klul_bQikwNYcSNV5B2NF1ho9fc0rAkxk6CDNHp0S8JnC6rOcqG76eqa0rR4i1gJ8HX0V_1cHAU11YaSAK8vDMEcMVHXKCaxh1XSGz4QRuZ5rP_sK_OTflKaCbYPLkn0LHU6lniJ5OKR-bSfBYT72_g6UghI7YcN5bTbjrai7zG_c-B9NycvIBpQ?width=2016&height=1512&cropmode=none)
+
+其实上面这些照片都是后话，饿得要死的我们第一件事当然是点餐 😂。看菜单价格不贵，考虑到是海鲜类菜品，和国内比其实还挺便宜的。
+
+![](https://wa6iaa.bn.files.1drv.com/y4mVp_gRExFB5Qey5Dtn45TXbxdymqbuPzZGWMrjYMO4PRpuJ9Te8l21N5rPgoxGjBomX9ZxY_f7BsK8qyXIrug7LRF_ZQkvGTqnRC0DTKKzhM3oV3IxxCcdxvwTwYk7UmNKiCOY_1WqIFh8rhG5bhXC-tHcOznifSZQZ5f4A0DZ05W7XjkfZgEoxnPzVYMHXyb9Z0QW9xZEdOGpfqiTfqyrQ?width=2016&height=1512&cropmode=none)
+
+我们点了一个类似冬阴功的海鲜小火锅、一份鱿鱼圈和一份青菜。好吧其实点菜时也是半看半猜，比如那个小火锅的英文就是上图里的 "Shrimp with sweet sour spicy Soup & vegetable fried"，给 M 介绍时就直译为了蔬菜酸辣虾汤 🤣。汤的卖相一般，但实际味道不错！
+
+![](https://uk4g3q.bn.files.1drv.com/y4mrTnaoJc-UD7Qq22qKFRTWQFrDrAWmEd1_TktTDOaByXX12H_gw8avciwJTAmfNu0ENZj4EkTqraQzBlaLYQo3gJkEpvs4vjYLIInp_6ENiOfIHdDOOYiC7lmtUGv6QQRfrQHFqMJ528Mdsr2VhlDc82x3QpL9-oaMQ-stY88VdFLra_GVl4kjwfaLscwrXj7m1oimrCKquwWWJdFb4dG5w?width=1512&height=2016&cropmode=none)
+
+![](https://uk4i3q.bn.files.1drv.com/y4mEZ-dc3P14WEtARlPU6RXfxYAYARPTJJ7OVsXkSGyo4GTUTGfzTL5_VqA2pGnDorwAzFZ0SDui8B1gR95iZuXSIrAYKZwNQf1NDpMZ5uTEaUB73kt2Bod0f9iJl6Sg0Kt02DWOPlKq2QdD4Ddv79YmihOs756dNVQA5QfsBtUfqnb_8z88LjmAFD1SZMwCM2mqnq4k6ZLBcDxPIzaLZFwQQ?width=2016&height=1512&cropmode=none)
+
+鱿鱼圈看起来也很普通，青菜就直接不拍了。
+
+![](https://uk4h3q.bn.files.1drv.com/y4mn-bVraAzxgWTeA-TQvsTP_LdOVC_EENujaWpGt542tmLnhWkLLxzT4XEUiwRb4Xy2VGkcGz7i6f7aCi8y8LTqAftVlUEPnK2KMBVTJU99qQN23gYAIiWifbBoY-4Pk0isn4mE1mVSdh3Akot8BShl7WwfgIR9Dox8OnUfmNfFlmp8IUdx7lI6OEUafk3fv1RB1j7zhSAH9CoBJ7TKp_61Q?width=1512&height=2016&cropmode=none)
+
+顺带一提，水也是收费的，不过很便宜。此外这个玻璃瓶设计还有点民族特色，酷。
+
+![](https://uk4f3q.bn.files.1drv.com/y4mIJD0VV6voL-vSz6FPlplJnYeiaoP8f7veEyoKyjYH5vKe8cPYP6d1dSqRifa4jyGZA72xMUn7Gp_06PjRM6UetEsGy1ABlm4Jiq_uH2tfYRF2QrZAStFeYZcbnJpb-Yx9PzVRr_IZjgOOt5AgCZXxxUivol3f_UYiBDgLzKZWpXbqrJPUo8SBexbJYbjIKjU9PQalkJ3XgPRi6YgcHczHQ?width=1512&height=2016&cropmode=none)
+
+吃得差不多吹吹风，我们准备慢慢转回停车场，前往下一站美功铁道市场。泰国最大的海鲜集散地，看过就好。
+
+在路上第一次遇到了超长时间的红灯，后面会发现很常见。奇葩的是这个计时器只能显示两位数，所以在一百秒以上时还被骗了…
+
+![](https://uk4e3q.bn.files.1drv.com/y4ms1WSw5r8eqMqPAcQ4qfqPFgm7d3JAfhHJGvD-qxMjUxcGopB5KQPc7nB6DKAX9O3EXVl3r4_O8or9CimDJtPMSeXiAU7SEUCi_pmQSrhAOvQA2XBGShmlRq-7LnMBvS-EVLqBdreaBF4CqrOdMQ83nQ-uQt61Ub5QoBwJHR9-wPZVzo9cJ892CX_cT2fDqOgxTodwD87m7TJPmhhX_m1RA?width=2016&height=1512&cropmode=none)
+
+还没到景点就感受到了小镇上（可能不是个镇，但破破烂烂的样就姑且称为镇吧）与之不符的热闹，主要是人和车多了不少。停车场基本停满了轿车和旅游大巴，边上也有不少卖吃喝的小摊。给 M 买了个椰汁，发现并不好喝。
+
+![](https://uk4d3q.bn.files.1drv.com/y4mDyDwOiu3FbOcP2PK9LKT0ncW_e1POgP6Kg1xqgPNt2BLDmEmW1GBS-Qoiz7EbQOfYSHLylSSpdNwR-tig44o4eF6tfnT8XJXWLncO44MDAoqrjMkcQX72uQ98pwSZKfmMxrKbqfh1mmuYTQaXtKO2dOBTDengLmS1VV7P_ZDm27PszARnukv1tWDqplTT3iE2aghzxnf99w-MsmLjka3aA?width=1512&height=2016&cropmode=none)
+
+步行几分钟，就到传说中的美功铁道市场，当火车徐徐开来时的打卡拍照胜地。马路一旁的招牌还是歪的。
+
+![](https://uk4c3q.bn.files.1drv.com/y4mIsFTJktYJVoXmLY80GO_hff6w-lPWA5Qp1VN6raMKqTz3yq8vpsUyVHF1DB_f_UuFwhNuhAEW9tZEHJVvxaJj67nCUdTX53jPXQo_myi1WNYRj_PMWVArXuyxYjLwFDWegLabK3sosdiGWImIsnwfMjfmNM7IG7eNeG1xKSKcH05faygq5--R0YF2fC15SQpZfj1Ww_W1r8zJKsk7RrZ4g?width=2016&height=1512&cropmode=none)
+
+作为网红景点，游客非常多。加上天热，导致我们游玩的兴致也并不高，走马观花四处看看。
+
+从马路的一侧望过去。
+
+![](https://uk4b3q.bn.files.1drv.com/y4mSXbC9Ivmi8M8pVi2ejRMagQvCBGtcz5rlsOqifKM0RJ6F5sgzE0NOMe3j9f-TjqfZnEN2k7BdYSLW6jj6Sr0jlQ8OHtjDZlGU1Mt2rOZekEcXZE2tHbcdf5W2WyN2faZerGjBGZJEgOsAYSwk2fQ6sTZP0ZiKDPuKvUNZleWULc2KwGgIgIncJVPKtB7m33aJo1pJ6tF2x1DYOrmpknIPw?width=1512&height=2016&cropmode=none)
+
+不远处是售票口，可以看到这个火车站不仅仅是个摆设。
+
+![](https://ua4j3q.bn.files.1drv.com/y4mnlmGhtVT2uMxXkBJCi2WW0Rl1PHmykv3ooeQXnAwz-JgGks3a4uS9n_KsEwuj6VcmpjCYmeWozY5lF7e_gSzQaUZtCpqkzko1lhs9F0b-7N-v_rd6k6iB41faJFqXZfcZ73g5YOfWzNa522amaxLYwcI42cYFcnjIRo_IIiEmRcNfRdgh3YfBV6Lh0r0756r9X0dOxBOOS1x8g3W3P_L9Q?width=1512&height=2016&cropmode=none)
+
+走到头回望。
+
+![](https://uk4a3q.bn.files.1drv.com/y4mB6akT9d_pu7JRRQ4UVTVT9PHrSFVpeqfGgq2lzefyrE7SrZogRZrHhNJVoDVU_rNsYSOOeQAWwGm_LzAGNSd28avSEuJKJ8vLxvkKySmmta97UYLL7jBw4Q6Ng3q3GNVEyjlHMyzgHgMKVfcZBVoCoeE9_29c7kxRfXfxJ_ehBPOfvkdinbUZwoOeffBooDxeoEGhgYKh59R4U6-2Tu-xg?width=1512&height=2016&cropmode=none)
+
+马路另一头就是打卡常见的风景，狭窄的通道两旁各种小摊。逛这一边时 M 已经嫌人多歇着了，我也是浅尝辄止，当发现再往前一点人多得水泄不通时也果断放弃。
+
+![](https://ua4i3q.bn.files.1drv.com/y4mG0jr3g6LrCXnADv2rz0I5O52cViey-fvx1KUFCA0bOZKmyReZAGOYZGBs-qCVXl8C00BwI6_oC8J6LCd1Z3SyyBMCIWpYNLI2ye5t1gESvjDWOdW-1-ZPNS4jswYt7WkgpYpsl9D7AK68HRMHatAuWkWA87acCNKqVqgqjKDlwXkKECzFW2WsWyF-rXjY1E09VY7mSY6McMkCtgKy7S0qA?width=2016&height=1512&cropmode=none)
+
+![](https://ua4h3q.bn.files.1drv.com/y4meRa9G5jtVmzvgUFzhl8OhgGahvBSDXJIYvNoM9Y6LcLMOCfqxH8nGzTeDoNWWHrvKbBVjPqZoIlQnYwcE8KLuIUpTUf8l5E0ly3XcdpsB64GAbEhC4-XcL13R_z7eXfEMFbBihuaHeJfw0nNB-KZA0w6aS56HYS7h61agrHExVUgFywsnyEK8TmOi2kfWFILpJb5McwfzzlIGetYTyaTsA?width=2016&height=1512&cropmode=none)
+
+就这么简单转了半小时，感到索然无味，也热，就直接吹着空调开回华欣，前往原定的景点龙普多寺。
+
+下午很困，和昨天一样开到一半找个服务区休息一下，买杯咖啡，哦对了顺便加个油。不得不夸奖一下日本车，真的省油。之前租过一次神车飞度，第一次开日本车，跑了千把公里，就对其低油耗印象深刻。这次的致炫从满油开到不足 1/4 的样子，跑到了四百公里出头，尽管高速居多，还是觉得省油，秒杀我的老欧宝 😭。
+
+喜欢这空荡荡的感觉。
+
+![](https://ua4b3q.bn.files.1drv.com/y4mhJ1Wpgmf5m1b0oqukkAKA4bTflOvlZ5sFjdme7ksBayURBK6JlrwldAnqnvu1-ERzN5t3WyLDtaFAiVSHIf_Oey42as8mXv_5-kvbOeB43PKVY35rlXzAsZYQ8o2vm5DtJcRVHdMrEmbOea10A8UgxiG854gnPsMJTTmslhcgD_WMz54OH2BS6TLUhAZENzmj_gwICO67zX_vLD2Kd7YCw?width=2016&height=1512&cropmode=none)
+
+PTT，除了 BBS 还是加油站，哈哈。这边 91 号汽油对应国内的 92 号。
+
+![](https://ua4g3q.bn.files.1drv.com/y4m1fA_Gj7KHZFCftBO0rlVH6TPlJVvPXDtG5QOkvU03qHJnjNwhC6axA9oxWYq1t1QYiuv-dJJ1OqR2RVx74A2jEsCOer4N3jl8mvllcL4fAEyJYYdrZ0rvgTPsW4A73bTmVA3OXrT5k26utd5b22gNfhpT_uPtcXiAOOaHIce-p_dMKNzk2q65Oo_8XmSGM4EaP7d2tuHwBQ41yL1Ls_DOg?width=1512&height=2016&cropmode=none)
+
+一升六块多，比国内便宜一点。不过我一直秉承一个观点：油耗应该是一个不那么重要的买车参考点，十几万、几十万的车都买了，还在乎那点油钱吗？
+
+![](https://ua4f3q.bn.files.1drv.com/y4m4l55O1SXMe2aY6dPESsdI1U2wJZlzLt_-08wkYRKyFtdNIK8uHilBo0osDAFIpKKkeUTyR290RRghDC6Bxjwcxd5elXTHr04OUiHYDHMJfxIcW7nnw6GHNgm4paxPsn2cug22yOyd-BJcuAf7uxMA4mYN8BvJOw-0jPRj9ATBn-zy8lJOYtmF_GZ1uzCqzGInMCVH76Vc2sBmbgDp-Yn6A?width=1512&height=2016&cropmode=none)
+
+肥仔的日常伴侣，各种泡面。M 每天早上基本就吃这些东西… 
+
+![](https://ua4e3q.bn.files.1drv.com/y4mK0JFg-tmKOkLbHmFgRc7q2W8Ki7-oWawaWFTQ2zUM8LeH7WtlNlhQMMwX9wKeFnUXoljE1gjYdwSgqQj8EqN3lim__ydeAHncPubdDb02-CmuhZPs9ESQbJ7QyjtfZadMSynfMyyYAe2kvT0nfalZDENXbpYANmCzIYdKs0fQIeQf_dwTRef2x3rkOR1Pn_wf_O0sXE-f9ZTuvcc4ivSNg?width=1512&height=2016&cropmode=none)
+
+随手翻了翻书刊杂志，发现这个漫画还挺有意思的~
+
+![](https://ua4d3q.bn.files.1drv.com/y4mBejr6Ilqq700K4Coo9OUmwh4t9S_pYmKrYF1LIqAnA0o-N7KDtd6DWqUk1XANj0ZLHqYzIztE78qzmlL_0oYSY9z35SPJe9owwaPgUtI4JuLCGFmat8FADByLUVZepZ_aVBtQ-c-5u9k1hHT3rQeevZY-rw8rtP7QzLGda8x17JLWLtTD3H8fpcTyLBX6KEfLIOmhqCFDRa0_IVEJj_Lkg?width=2016&height=1512&cropmode=none)
+
+这饮料巨甜，肥仔我都受不了，喝了几口就扔了。
+
+![](https://ua4c3q.bn.files.1drv.com/y4mGCuZDp2VJBHdgjk0jeAdJAXDknbsk0NOFzw2MIlrFnhAg40pgqCrNmM4AOmk9U7hObNblFp9Rdj_Bc60pvV-IXvIWqS-4m4W-CKp5bePAZWxyUWOSEqeGHtqeDWfPAXb6rRNZHHrutgKpmFVXPaCduGhxk_QxDsxpm0kux8INOjzhss4m8MrNQGrghrjSGVFNTJbontTyChvvVWeiLwyKg?width=1512&height=2016&cropmode=none)
+
+走前看到一个别具热带气息的饮品店。
+
+![](https://ua4a3q.bn.files.1drv.com/y4mr09adAZF_kPzGimTbYB_tVCtN1nZ4iUYmg1WEmKYGyTJX4wEKI1WxZM6v-aBCxOEkofsg2fPLFAye8IKMP5ZFrcRpC0M6nVTJtSW-RuUJjX8M7wx7M2N2g8Q76FKd7wbMGBfgzjbs9d6uSTXmohozXXJRAgq4P77UKD_IKtt_yd6gvcq1Q64p_U-5PoVlt35tIdEe9Ixf4fpXLdF0t1yiw?width=1512&height=2016&cropmode=none)
+
+
+
+
+
+{% meting "1318733599" "netease" "song" "mini" "autoplay" %}
