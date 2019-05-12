@@ -15,7 +15,7 @@ date: 2019-04-20 01:01:00
 
 ## 在微软工作是一种什么样的体验？
 
-先看看我软小姐姐（微博 [@好奇的S妞](https://www.weibo.com/ohmyboy)）录的视频吧， VLOG 『程序猿的一天』。
+先看看我软小姐姐（转自微博 [@好奇的S妞](https://www.weibo.com/ohmyboy)）录的视频吧， VLOG 『程序猿的一天』。
 
 {% video "https://cdnhk.blob.core.windows.net/blog/recruit/one_day_in_the_life_of_a_software_engineer.mp4" %}
 
@@ -23,6 +23,16 @@ date: 2019-04-20 01:01:00
 
 - 作为开发，微软的硬件环境还是相当不错的。入职时工位就准备好了 Dell 双屏幕和 Humanscale 的支架，一台大概 Dell Precision 5820 Tower Workstation 等级的主机，一台 Surfacebook2。此外无需审批即可申请几台 VM 开发用，系统从 Windows Server 到主流 Linux distributions 都有，尝试新技术、玩 side project 的宽容度比互联网公司高很多。此外员工都有 Visual Studio Subscriptions，那些软件序列号啥的就不提了，Azure 每个月有 150 美刀的额度，可以干很多事情了哈哈。
 - 作为员工，公司的福利也不错。苏州这边每层楼都有一台 Jura 全自动咖啡机、一台雀巢胶囊咖啡机，热的茶饮料好几种换着喝，冰柜里汽水、豆奶、茶饮料、牛奶等等也是无限喝。楼下的篮球、足球、网球场是公司修的，只对员工开放，不用抢场地真的是美滋滋。工会每个月提供健身费，以及一年三千多的培训费用。其他互联网公司有的福利巨硬基本都有，在这就不提了。
+
+微软上海的福利，请看（转自）知乎大佬[@韩骏](https://www.zhihu.com/people/formulahendry/activities)的分享：
+
+- 15 天全薪年假，15 天全薪病假，6 周的全薪陪产假 （根据工作年限，年假最高可提升到 20 天）
+- 两台 4K 高清显示器 + 高性能台式机 + Filco 机械键盘必须是标配。根据工作内容，还可以选择配 MacBook 或者 Surface Book
+- 每天都有新鲜的水果，如果是柚子之类的水果，茶水间阿姨会帮你一个个剥好。:P
+- 无限的零食供应 （肥宅快乐水，健康椰子水，果汁，咖啡——用的是星爸爸豆子哟，养生枸杞茶应有尽有）
+- 多方位的休闲环境 （园区内 GYM，八块腹肌不是梦，瑜伽舞蹈 A4 腰；广阔的大草地可以踢球⚽️，足球 /篮球场 /网球场上赛一把，战斗友谊更紧密； Game room 街机厅，让你放松我们是认真的； K 歌房、跳舞机谁还不是个宝宝；台球、乒乓球、foosball、影音厅，带娃上班 so easy ）
+- 丰富的节日活动 （ Family Day，Ice Cream Day...）（前两年的 Family Day 是让员工带着家属去迪士尼嗨哦~）
+- 多达几十班的遍布全上海的班车，上下班通勤也绝不是什么问题
 
 ## 找 Joou 内推又是一种什么样的体验？
 
@@ -45,6 +55,10 @@ date: 2019-04-20 01:01:00
 如果你在这里没有看到心怡的职位，千万不要灰心，请通过[**微软招聘官网**](https://careers.microsoft.com/us/en/search-results?rt=professional)查看更多海量岗位。微软是一家全球市值名列前茅的公司，对各类人才的渴望超出你的想象。
 
 下面会**定期更新**目前开放的职位，不过还是请在看到钟意的职位后尽早与我联系哈，有的职位可能上周开放这周就招到人了 ; )
+
+### 2019.05.12
+
+- [MMX Designer](https://careers.microsoft.com/i/us/en/job/623224/Designer-2)，久违的**设计**岗位，北京苏州都可
 
 ### 2019.05.08
 
