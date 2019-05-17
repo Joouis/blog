@@ -56,6 +56,10 @@ date: 2019-04-20 01:01:00
 
 下面会**定期更新**目前开放的职位，不过还是请在看到钟意的职位后尽早与我联系哈，有的职位可能上周开放这周就招到人了 ; )
 
+### 2019.05.17
+
+![](https://vq4h3q.bn.files.1drv.com/y4mYkcV6LQdQKoXEyBFcg23htMM6w62jSaVH5HaKTY4oQzegAMhFKf4L9nxB56brgx-V7iS7ZICfB67gCFOmtFPijoXcvgNEzOaPz13x1xwWM775VdGTdoyFacscPPRkgDc2iNH7sKUgEhCfUrV1eaRwsOvoz0xT89HaNnxH4QqmzhM_ZOf4HCijuAqS-07ljFyQbDx5cWIQhuHaDLJCFLYpQ?width=2693&height=1434&cropmode=none)
+
 ### 2019.05.12
 
 - [MMX Designer](https://careers.microsoft.com/i/us/en/job/623224/Designer-2)，久违的**设计**岗位，北京苏州都可
