@@ -56,7 +56,12 @@ date: 2019-04-20 01:01:00
 
 下面会**定期更新**目前开放的职位，不过还是请在看到钟意的职位后尽早与我联系哈，有的职位可能上周开放这周就招到人了 ; )
 
-### 2019.05.17
+### 2019.05.23
+
+Java on Azure 和 Azure Management Experience 两个组，上海，L60-65都有，HC 据说暴多哟。参考链接：
+
+- [Java on Azure](https://careers.microsoft.com/us/en/job/627883/Software-Engineer-II-Java-on-Azure)
+- [Azure Management Experience](https://careers.microsoft.com/us/en/job/626812/Software-Engineer-II-Azure-Management-Experience)
 
 ![](https://vq4h3q.bn.files.1drv.com/y4mYkcV6LQdQKoXEyBFcg23htMM6w62jSaVH5HaKTY4oQzegAMhFKf4L9nxB56brgx-V7iS7ZICfB67gCFOmtFPijoXcvgNEzOaPz13x1xwWM775VdGTdoyFacscPPRkgDc2iNH7sKUgEhCfUrV1eaRwsOvoz0xT89HaNnxH4QqmzhM_ZOf4HCijuAqS-07ljFyQbDx5cWIQhuHaDLJCFLYpQ?width=2693&height=1434&cropmode=none)
 
