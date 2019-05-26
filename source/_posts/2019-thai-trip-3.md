@@ -88,6 +88,8 @@ tags:
 
 我们从最近的国家博物馆逛起，就两个字，好看！虽然不到百年的历史，但这些石柱上都刻满了岁月的痕迹。
 
+![](https://vk4nja.bn.files.1drv.com/y4mzBLGnQ7HBRpko_fLjIoyHZoB9JdQNt6uAuIQdP0Fn8aPK9QgPFEYKRGkwbO_1T8CjvbU59EYRYQxS741ZhLrlFoMffZlCUZkAIwstee_MoFSiPPc_-UQVKA-2TKHzFB2uCvYne2kk5Zo4rgHPkzvgqkJ2xInqZfCuEcIzVeWNTmZ5_5rG2NJ6Ivx7mi-kBO5XEnFXfU1fumtcFoLHgXFVQ?width=2016&height=1512&cropmode=none)
+
 ![](https://v64a3q.bn.files.1drv.com/y4mujaU78sLsqpIpSh6--5iWXgsV0u6ZRLUVTCRj4zSq7BYiZqOuS5_T5GptBiiPr1JbdJmooXpK2_zAFwvCRkLLtqJhyusLWh_wtIlMwOgr446rkrky_7vD9LAW1Z5ht9I6zQmBx-d9J3TiP1BSlZ97K31Kz3YDHs6u3SSrm9Qy9WEkJsKFub0xYSa5EHpem1f-TS7JFOZf6CPkOF_x-N9kg?width=2016&height=1512&cropmode=none)
 
 ![](https://wk4j3q.bn.files.1drv.com/y4mmbu5coNEFywQFYpG08bCacDhJQBa0P1jj5kP34FKkP-DTmGzsPlayyoU4UMeSwAmGtgDXNPtn1GqUppJlgf9IjcXDabfMnKmcb0JbO_ax1JnM76HklJYNQDj9QsKB68g5bZogKJW-p9H-0FwjjP0UK08agJGvRt621gk95bHv7xiMOrt_a66k2jglyxMjakPQD-qiZulMkMnGq-UTJ_NeQ?width=1512&height=2016&cropmode=none)
@@ -96,9 +98,81 @@ tags:
 
 ![](https://wk4g3q.bn.files.1drv.com/y4miHO02rqJ49spfFmlUbAxCY86oAr-91cfpSdjgeLHoVPuSnr7zOtmTlXd_I2x3qeOCtNjDrY5Or84kBIIthzpP9cRzRU5LYsgXAMf5ynBO4b-DC_xfrNr726Asb0qsi-mUH_dduIydcdpDSW_ljMayNcpqPkuyqSfEZlZIE4LROhUjcQvG2b_qc_NX8-rPBUbjeELlCE_YGl8pLkJ2x05Sg?width=1512&height=2016&cropmode=none)
 
+博物馆的招牌来一张。
 
+![](https://wk4h3q.bn.files.1drv.com/y4m9JkUIOjHr-f6HYQA7OAh_afJbkagcE_QXl_VsccaEmisgNvQyYlVJ2PkY5jl0iDYdb__IrablEMJJUpDuyj3Ad3-Ae8uyCRfPpWwWewBHRyK82obbge5hScVZLzTykhuM8fsUrUHsTwINJO8dmAKG3t0MZn2w8kALp1qZPIm6Rue6mZ5yn4pTJ7WQ07OXzvXHmLUEiLNx5joQOcRFYmuTw?width=2016&height=1512&cropmode=none)
 
+很喜欢这个台阶扶手缠绕的设计。
 
+![](https://wk4f3q.bn.files.1drv.com/y4mITRHWfmLn2RPoOv4HeSC3Z1BL8ltIXsmlzajrrP5QjGD56ihRn6OethfNwn2yQf1BV_2gxitMXDBdcxqdzD2CG7P23_nwDmOQgQVMbagSN6YsUNV4ba6uhWwKXQ78CpuZ4_SqXhuMeiU4iGbjEers0_JhioLEdr-yh69tn5PpAzUCKj-6UuGmPg7qmW8aLuLfY1Plzf2xkmxZM0kgm4LWg?width=2016&height=1512&cropmode=none)
+
+很不巧宫殿门是关闭的，在网上可以看到里面应该是个摆放着大长桌和国王画像的餐厅。
+
+![](https://wk4e3q.bn.files.1drv.com/y4m1u0iv7X4wuxwlOaljXKYQuVlCVezZbCX9prGa6uZuQZncNTe1sQw8cPuyletdOGkNxvXgjiKD6fj1Q3HqO7w55oAQBRi5RHPUn1VVrY_6I3f7Oa2njysiMBrb8To1WAXEQOUi0pDD4LzbKkNuaNIAeEtmSS0hqZKXCYvdL1vPc-LDNL8IZUXX4mlLdQwcIcxiS9LsxYDAUgEL9Oagzpk1g?width=2016&height=1512&cropmode=none)
+
+接着往上走到 Western Peak 的最高处。
+
+![](https://wk4d3q.bn.files.1drv.com/y4m3hP5Sbfi5J1jCGRJIFo_b9y0XsW4JNOGzuRbKkexlgevGPfcgIGENFk2JWHBXAEekijBc6e8HkUyHi0DvTq78FJL71C_iceuqOUbP6GjbKn3VvhGmL4jxDXCwqryCLOhPu7qrftqfOAN4dwhWicDNPcJkf4NlheU3KfDgTtKpOkBaFbiEzRaCdZno_wE4usgbNXpUqo2WFwU-Iy6z-dv8g?width=2016&height=1512&cropmode=none)
+
+![](https://wk4b3q.bn.files.1drv.com/y4my8V7WVbQ63q9nmNwfgsQyoc94rZ1TxmZ07fdHJxTYRM93shNicdCCWeXraCl2AV3-VgwxlOKHuWcl3xVxGBD4yCN6jLYWIGiLzOo13m4M4Pkm7CFFuy1_VariEpad_zlzozp_RWreWQpLhCTwC9TknkvH5QQxxtTgGE57rEsrchetkyWGlIAdcDKSnqFNocqlHhtO68xY1PX6Df9lBL0Qw?width=2016&height=1512&cropmode=none)
+
+![](https://wk4a3q.bn.files.1drv.com/y4mz9dTNWiVl-VKvZWlJNyuyUMe1HFOxcDycK3WLoKD27g3BOTSfmkLXXiGoJpLdBhdECnE3jBa5r0kFuupo5y81zav1wJfryg8VhVusTjCHNwCmmB8kiWuLHOKqJa50C4aJYJ7fiBIkbIC9p59UsiDqmVZaSs5Ci6gRKQatxgKvN_GedVzp2cjCPt1jX6fvehTurnhN41RTTYP9vKCN8_6Ww?width=1512&height=2016&cropmode=none)
+
+![](https://wa4j3q.bn.files.1drv.com/y4m6e6n2i9Qyf6poxRjaSoQnF_Jd7ERlSo1xwmUivwHJOQdD-REtUQJg7OWy2Lb72SQySKkOw83SqKKTfdHVutNfuT18TNpPlzPoLWLBIWJxY-H7RNP_KOnLciQUoVGxGOyuQfcgUTrTtGz5K63lxeJo1ZOipDPHJ8is4fCmIBooKDWM_u7lPwYkpZqp1Srs-e7DAc77wQEF_-ulzpEETO5dw?width=1512&height=2016&cropmode=none)
+
+想象国王俯瞰自己的土地和臣民。
+
+![](https://wk4c3q.bn.files.1drv.com/y4mcfjSIpwSz_jENbuSF5lCW3q53MnSR8tS2GuhWxRSlXYUx_ks930MVH4OgzXrBz02rLpwkzxmFja3JlZtRewczB6Wd_vZKkRNWaEHO9UAlqN6F6UAk_2Q3kVcoWMiv-ZNexs5mkFjtcK-geQULlVb7N6sIQ2FALSIiGKZ21cSJJOGL0Zu0riLoUYwhcaz52FUcAkhZqFvQ57NVNQazqwfSw?width=2016&height=1512&cropmode=none)
+
+远处可以看到 Middle Peak 的佛塔和 Eastern Peak 的另一座皇宫和佛塔，不过大中午又晒又热，加上还没补充能量，就远远眺望一下当去过了 😝。
+
+![](https://wa4i3q.bn.files.1drv.com/y4m39uHt3eXRzr4txr4VhAbdLgFgDo8C9nptNLQN9yadGY5-qd2rE9nn1AQmB5yrzK72BPe_nWxLFhE1ewtSS3Ncm-3RspwvJYAgQACAUv4-9GHBhD2bnBr8MFjHGIkLEdK2j8PS3NJ2a0jcyT3PopYUyKPK-09jA4xIOA0TeIx0icoaHCY-vFc5ZRAOfthlmi1y0L7ART6ntYC4tq0s1KkCw?width=2016&height=1512&cropmode=none)
+
+这个宫殿有不少西式建筑的味道。
+
+![](https://wa4h3q.bn.files.1drv.com/y4mbgQVNR6EaOUcNdXyoc2kTaHPMsmNez7E65qGBkbWqubHi4vsEYK0AqBDdL6x1hCzbBttequxJHLwYGbqj7MgHBqOLKtEzTL_qFR5KrN8L0llMUE35FI9pL3czN73Ce7TS7GMuopg5yV7bD-j0vjRMBBv2xIQqJDZE-ButSrZsAg_2QSJtZrh69vquHg6S8PsmdIuMwWN_A6f1UgYENDKHQ?width=2016&height=1512&cropmode=none)
+
+![](https://wa4g3q.bn.files.1drv.com/y4mw-vg-pv3LW33jFs55ANXdaeFApjdMmgsGwrrJ3TjGTi5vlrX9eSK-OYX-ININEBHAeCwlfGaFMyy_04-ucDDGSRy8N98SbXmeccid7xR7dK2NqsD5vS3n9EPhrtVEy-rvVAy1QCn8ZzeqSO3dCkbpKVnPCvHNzobOTn0zmrPLUwIWihHLEPhB9kLEuag1p4azj2_bAHWz3gvt9JjWdCwlQ?width=2016&height=1512&cropmode=none)
+
+![](https://wa4f3q.bn.files.1drv.com/y4mFvmQ0Z1gn3z_b3rUUjgtUNgFlbSRLcd3_c3KicqAHdtsPg38B_g_ih_yfqokEkccyhUJcQV4oDmSWdzP-f4jISbHXx-GIh1prQ-YoxLVQysj9xdRaG_uvJt7ku5o6JkSx8uwShoBEiel6aiwUQUSV28OUKvVMxngUwQCcUbb5EhQN7etVjAmPHieJ8s4vXYUFJ1sF_UiBvmGZ8Sal51X4A?width=1512&height=2016&cropmode=none)
+
+敢问路在何方？太远的咱不去 🙏。
+
+![](https://wa4e3q.bn.files.1drv.com/y4mH-j0yYadCgnHwtd8TuEMD2CLZYiJa1qqHSME83O3rYZ0GKQbs3bwYl7wBspeIXIWzxrHvM1V1XB854bEWpfFHUDvaIpTOgG-gBwR136Pder1LS2xZ82V_GZkC5VAJBRaeGGi_MICTX4Ml-VdAPXxTVW-n1mID7flsaXWF6a6dFaSdDykARQgzn4TNkppK56GfX3G1TgqxPJYL2tdxJtVtg?width=1512&height=2016&cropmode=none)
+
+另一块距离入口很近的建筑是用来接待国宾的住处和剧场。
+
+![](https://wa4c3q.bn.files.1drv.com/y4mY7bLIhlFGLDe0q-0gBOY9EbemeKeubpmpXOBMZoaUtaGQRao9N_GOcc5ImmMG92s9Ns36-zH6U-Z1aZ9RBmSZc4NrcVukREvXyBJCGDLkxLG969PfA9i4gDsr6YtUC4586EP1-Z14Y9P2QG89Y4Ru4mlihg2gCfrpAIlMkMMuPxh3PP47iju7WS2hNOI37Xt3_RX7figQc9NJykGvafJAQ?width=2016&height=1512&cropmode=none)
+
+西式的建筑很对我的胃口，刚好咱也是外国来的嘛。
+
+![](https://wa4d3q.bn.files.1drv.com/y4mzbzdjoTw7CoyoKVtAIuusb0YQkizfkKd6F3VtSaYt0gADghIXK45ftblgRqb-3j4gesKVCBJvHPyExCNGNTZDO7cf21iUGKHsKxPaUzp22O12hRpxLOAIvnx0aM1UKnQyX7RTadTjNNsJC-SfNQ6Rh5kFTLLqxybhurEL7AB4vwKKfdL1nV-qCQuA82e5cBrcb4DI1v7MT-Uony9OfVCAg?width=2016&height=1512&cropmode=none)
+
+![](https://wa4b3q.bn.files.1drv.com/y4mTnT0vSWEF2pmqTdB9oyb7IfUhdDJ2zYeRU2VJ8krsDxZJfLNigtEFFJK1Swz09RLfEnbzOk1_qIPaoulCL3BbBR45jerYLPooA_yScPrPXO_MGYSsY6CGExGsNIcTpQ-rhPHMzV_doVUa1P5Thv8RpJ95grUvwZ3OXE2dM07Z6ND-knmA7E5RB42pQgDjgiRQBKdWHEM3N_V-oo4xeEcuQ?width=2016&height=1512&cropmode=none)
+
+剧场长 27 米宽 8 米，早期其实是有房顶的。这个应该是二维码介绍，不过太热了我没兴致扫。
+
+![](https://wa4a3q.bn.files.1drv.com/y4mw3U1Zqp3OXnvhE5K4A8rx91e6KjDgIMvm95tnlbJUUtUfXqwblMkuSPYrpfJg8g1EmWSPPwGRBugg50-0DVeKksbtuILfqHnduFtXVmrc55TnMEDMbLttHylTuD2cPnnCUzlbmyqS1UAGecxupFI5pK85ubAmZXae65XvkapJVZQ0UytSTKZ25dSZb5CKLqhWgW3F0INGngpv3I1XvFhmA?width=2016&height=1512&cropmode=none)
+
+这个白色的椅子很吸引眼球。
+
+![](https://uk4pja.bn.files.1drv.com/y4me_KJ_uKCCzWWnlv5G-FwoqxaSI0qQmhMWiE46N813xVpWjcVROZ912i7DZFm4aItBfN6oCy57xqClbyp68CDvQrVdcvTs_UBYtIesfFN3I7YelvWC2b-PbeWUkFcIp4DmM3MNdqiIr1gdI9ZOvSM9dbNOAX3MIALmKIsKx1YFr7dl85mwQVaXIY7sOq_TDOHyaq-Hp7-wSNExDeG_d-hQQ?width=2016&height=1512&cropmode=none)
+
+随便看看就往回走咯。
+
+![](https://uk4qja.bn.files.1drv.com/y4mAxBw6qR_I29esyubTDUg0xV1802d09tN1cp5BcxMi3vRJuq0V6CGZcYvV7fE5yKAjbfmW-OU9sPWbNqwzBQFLlNm1XFv1_QVVIUTTyGT6qwZC09S5ER1IEkGJje4KR36bPr9WSN1PAdFcpkYu7pM77cz4tJoeHDGnP7qulxAA-1dF9TqrYqk7FZ92RNzY2Qy0w7UQTOnJ5Chm5khmNwTKw?width=2016&height=1512&cropmode=none)
+
+![](https://uk4oja.bn.files.1drv.com/y4m1NUf7OMoLV38Oer0yhkqG929-fAwo4poESZfM3OGsJ_F0M5gopUZ-ej_RSzca8-podQrolnZazuiI4CTMig9CaR4dGRtZfmMVOgiPUSmEhUebDlDRXb5uptmdxh395DmYncqh2Kh51d1zFEITsfPbcHdzCgp4gUx2B5wx1x3P0OnT-YqgxIcJFMXqr5tDxqO_tRH5e1xy0JfCZWxPwCo8A?width=2016&height=1512&cropmode=none)
+
+![](https://uk4mja.bn.files.1drv.com/y4mRxJh4dMewebp8UigH7YO1DCZcopO2o5v0fFlf0ze_1D1T1brrZ5XiUlnEsG3ZOl6DBGZZvqtgIQBbdQGd7A7RxlPDN5Jzhn6TosLNU3zvqGzFcOf6AXIo_AN88hKrasiOvHArZanX1cQKIWJg0BeUAnC2fjFJmBnR_RAZPxFslDIYOF25H7jdMbAUcYQtPA-Tt3Z9rCCLi1gHPGxy7WA2g?width=1512&height=2016&cropmode=none)
+
+最后看一眼拷汪宫的地图，同样充满了历史厚重感。可以看到我们只游玩了白字 "PlAN OF PHRA NAKHON KHIRI" 下方的一块区域，另外还能看到右下角就是我们一开始走错的后山入口，那个牌匾细节都和我拍的一模一样 👍。
+
+![](https://uk4nja.bn.files.1drv.com/y4mwsS_igL9KxI_dhp5WI0VUYHtbbbUzWiJmiPbh-biCcX8zBjFjz_lzNIkX3RR1oUzbVG-lf98V3Aq6hLkNl-aJ-wRsHl-epT4XSg5W2OVfbBOjMS8iItmjZLWVsmed6VpoEBfj9GxUd-wpR3IcrxFRMaxB2RkX-k03n3VLXg3kRZlCyaMVvuSZd87_D0kxYhW1Ig-bBikataH8sYbQIy3HA?width=1512&height=2016&cropmode=none)
+
+还是搭乘缆车下山，没想到出发口的墙壁上也雕刻了不少图案。
+
+![](https://uk4kja.bn.files.1drv.com/y4mD2XQxxQG8pfsa9nTlqSpnhEsTFWRem6mDKV8lOKglPV1q2aSXVnWDBTDupT6iYrUdgs--sXwNC8ZnFvmWYLRQ66F7guvK2L0z_C5NTyqLutibCpXJWHgnobbyZA0dTMAtFrQPqLPqGmRtlwCbMamlyH40zm0JBPmvYElcvXzsRt9hxLpJdLntcr6IUAqn4cH9lfieXvEfwu3CuA5zNW2lw?width=1512&height=2016&cropmode=none)
 
 
 
