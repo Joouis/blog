@@ -14,6 +14,14 @@ tags:
 - hua hin
 ---
 
+{% meting "76840" "netease" "song" "mini" "autoplay" %}
+
+
+
+## 上一集
+
+《[2019 泰国行游记 (二)](https://blog.joouis.com/2019/05/12/2019-thai-trip-2/)》
+
 
 
 ## 1.31
@@ -174,6 +182,122 @@ tags:
 
 ![](https://uk4kja.bn.files.1drv.com/y4mD2XQxxQG8pfsa9nTlqSpnhEsTFWRem6mDKV8lOKglPV1q2aSXVnWDBTDupT6iYrUdgs--sXwNC8ZnFvmWYLRQ66F7guvK2L0z_C5NTyqLutibCpXJWHgnobbyZA0dTMAtFrQPqLPqGmRtlwCbMamlyH40zm0JBPmvYElcvXzsRt9hxLpJdLntcr6IUAqn4cH9lfieXvEfwu3CuA5zNW2lw?width=1512&height=2016&cropmode=none)
 
+炎炎夏日，毫无食欲。从拷汪宫出来，我们决定晚点再吃，先去拷龙穴。途径 7-11 补充点水和咖啡，对面居然是一所有百年历史的中学。
+
+![](https://uk4jja.bn.files.1drv.com/y4msh5AfaUW5AKg2y4xbew53AOlajwHRzm7bljCzkYfIFSULg2tL8pI8f5QGoqG1b8N6nHnaijfkbnBzwFFzxnWmALk1eHwwEDmpwG-hxhNRSL0qtMi4NpULflDS5_WkS9Y61UWHFBGOANF4BUo_VRqUTWwMwgSbQZMpw--FVLPwcefkOZipcPizIsPtlAWC84CTJJ2WQWzBx3LlrK0ChiJoQ?width=2016&height=1512&cropmode=none)
+
+还没到景点，就可以看到警惕 🐒 的安全提醒，感觉这群生物已经在各大景区臭名昭著。
+
+![](https://uk4ija.bn.files.1drv.com/y4mwv7ah9FyrVUiyl5fiqH3BpNNiNaNtpFIykigb36hURbLl3v9DJY5ZbR2BkyiX-1RzM7yHib4PYrvprNfrwp-vAfE_3UAZzH1gnAT-afmaAXJA-bIPLZTKAH6FvhsvXFIH-n1Q1OxG6HtZlol2C4TCy-13x5Jq-OVjL37MhqQwmnNeQRvjlY9PFCQlZ0DR-7ZkikTRP_2VlwvBocUrLBxuw?width=1512&height=2016&cropmode=none)
+
+拷龙穴不要门票，停车也免费，真是太佛心。几个工作人员在树下乘凉，除了告诉我们这些外，又再次提醒把包括水在内的东西锁在车里。感觉周围的环境还在建设中，一开始还以为这是洞口，然而好像是个介绍场馆。
+
+![](https://uk4hja.bn.files.1drv.com/y4mjOznlXh8KRK5BurhOFinnIlcFVVoxldnunWuGmRCvscrgd_l48TnOLYZCrmylRnU655CqbtpqXqku3vrwkicxfAbtpoBKcFlhp3RYIbabSTuAI5sMNNJ-I5X2OSVwOpBmdcMTjC3Tj4zDJduLSrQp1xQn3VRRnUzk0rv2I8zLd5uesAUludniKMU016yZGBQvnj0qlNaTRcbEYpo54VyhQ?width=2016&height=1512&cropmode=none)
+
+在它的左手边，才是洞穴入口。
+
+![](https://ua4qja.bn.files.1drv.com/y4m2GT6nUvK59PrCMPGvDVrXrlAKEVsqVzErKTuDnzCN1zpi8ScbVDVYiwHoqoOyYbJ1lv8fTxnE_ZP4xqNBsVKR2lx4UCTou4u1SvMDN6iaO_ea6lkK-TqF2t-cyUb3ZquhPSpBEpWUiZApzAbjW-PI1tbzz8s0c1gdfcVLqlSk0j8U3pL23dfr3uwyoaAHFKUMWUtOxQqgpxDGy2JUyfEqw?width=2016&height=1512&cropmode=none)
+
+走过这扇门，发现洞穴还挺深的。
+
+![](https://ua4nja.bn.files.1drv.com/y4mqK-9xEHAJv0vFk32dC-xLpj16rsy5ntJRz25BFYw3k23gPwBQirHmn2roQYsNjQ48Qk7uM5uQ3xn76wraB-2T62njXjIVWznrPMsz9YDL0WLAAYuNcpD2vrLrmONCUYX_576OfFuFs-mwy33zFD5g_F_DgVc1epS-LqElLc73YdqPH7isHJoEVEdiumhUhha07lYkNSe8ldNU-ak9aU0Ag?width=1512&height=2016&cropmode=none)
+
+![](https://ua4oja.bn.files.1drv.com/y4mddhZWg_FbaeCF9dlHuSfkeCpx1YyLOt_vSZ0V4cz18FLizQeZTHlm95g5qtWMskLamQ48XfdvLsGFFZpLsyFHkE5RsUfTYF3bH2Cb4cmOTSgCKb272BGOImfxQHAIMIpBWNo7nv01SLLj97CkKNF5ic8r2r0tNDPg1MNrLqjcmHJGgICbUeBMWf6DaEKVbRhGSHS0VEbm8JP-VodAhNQdQ?width=2016&height=1512&cropmode=none)
+
+![](https://ua4mja.bn.files.1drv.com/y4mfAIPWJ6ssRhM_ssh4Jq1DLRL9kWQgEBrPBifGCPS-uHOcI0cP4NvH5-yw4XA_iv0NVMSDQfvMEhhZm5bAdSQXxugPnxjlgDIDvn5gyS8_yY4sy2mP9w-6AdAo_gzxrT5rqj_tNh9d9YubzaYIccGSczck0KvoPwJCGmdjXqda8xBeC2nblNoRzq8HwtpWl3dye_44tiFQk1Ivkhhlv3ODw?width=1512&height=2016&cropmode=none)
+
+一走下来就能看到佛像 🙏。
+
+![](https://ua4lja.bn.files.1drv.com/y4meGTK0lQqLD160gPS-XolaRbMbpN7qZjRDGTxHWhsB_KuKwz-WK_QhiYkTFrcN-RWzqeQm8ZYD9fjOIKUVa7XsEgJZXpSH1Npml1FHCOFW6x6k0NJOs3a8Cq-ZhjyyWqJrDoNPHyDCC3Q36-w2-Beu0c7ltlyZsFmtNRl5SdfMJvH4hfEuEmFA7I5_cZtfr4wwBhtsvDjJ1A-jFXGp1nrbw?width=2016&height=1512&cropmode=none)
+
+![](https://ua4pja.bn.files.1drv.com/y4mDsREirTZCRnq-PHLa6ShWrC3ML6tHlCLlbUOFBAyBee17GfTKcJXPz9E8_SdNGH6sqIaDBYZUguGqC8V14_yICSRE1p2Mf6FHAsmpzfrulKdlmCCgmpxOH8jg49RI-WS0aUh7d80mJ4QCrRSgaSIbzPZWXUZoW_UCc7tO7e1VW7mBsErBIqWtEBqSrXdVh6AJ3LcEfNkbm9UaSQ_B1KPVg?width=1512&height=2016&cropmode=none)
+
+洞穴内的光线其实比较昏暗，阳光透过顶部的洞口照射进来，配合庄严的佛像，令人肃穆。
+
+![](https://ua4kja.bn.files.1drv.com/y4msmp3E-14wbuHC0MzfdcDyVJTLP87JJXi4NRR0ukZGrvDa2TnTit_mXTc-lVhlVvi7g9HYFEusq8-1c0HvSTC4_wbpmkPoerTML7r-kFOz0XCz--u2U6boi4vEn0kBxaDJMrlI9lHE_qv7lWUdfU5Wi6AcGzn7tbK3uEB0YkG3auNbfhiKc1JWYjanYqEjRPcLKBqzeElIU8VcXrtYCupqg?width=2016&height=1512&cropmode=none)
+
+![](https://ua4jja.bn.files.1drv.com/y4mwXpYn7p0UHIxbrOxnqfdpMPPnezdtIfchUOklz1qmYh8WIbSxAl4i6oXeO3ryEz-9RHNzWfeIZkGtO7uLUIm0RTdVaNoifQNqUVVm4Bp0ZXYn0aSHle6OPhwFMYiHJIwmeHsBcdz2ogQWsJy065S9qPT319Rqqo1SaN61JMCi6Lr6gqcLwL8SvBjEjy8Ss61ivm03AuXIKQ2rPNOxiHOvg?width=1512&height=2016&cropmode=none)
+
+拷龙穴至少也有百年的历史。
+
+![](https://ua4hja.bn.files.1drv.com/y4mPyz6gGqflnNiIAf1_Fv3T8wtSRRjUsgEV2dnDkUrsfeHPq-nqMrx03u8JMmFAf6bWGRf8CDqnS90CbwzR9e_Oy5c263Aunrmz-KAMkkBSCNcXj6_ONaS8wzP532srBXQNWaLc2f6_cek1R6PRg3pqLysLtPopIwrQQiGh4BpjKpNmDVokAEjBp7a4NHaxhyBRfqzA-JBhD5y9iGCNruNKg?width=2016&height=1512&cropmode=none)
+
+![](https://ua4ija.bn.files.1drv.com/y4mth8IAkgvt4rVq_fRUEmOLrPmHfXfl1u6eypBssDSejCuLSMwhHYFQHCwAbFtfsKq5Mf8PLptmTW5U7bJyBHQOpeu37vP6Gq0v3ApNrPyOqDqI6-GR3khE8YlWuDhOwiy017337MdsQwsfjz-b7o5JHxEN5XXt5xoMOgnmXiwR5cpXPQD1AW0d8OyU9Ide6FUiYVkvfR8ptSt1Tlct_JynA?width=2016&height=1512&cropmode=none)
+
+![](https://uq4qja.bn.files.1drv.com/y4msEkgTJ8epejGEqkOeo5pHKgdxjFv4CFMolU1U_U0PQfnVAsPkeiN9FHZhcYwIP-Gqy3CKt7_p3JWKy1IyWNIP85p5bLR2vVTlAd3mcg0KrpwZ_KCnopQRdHAR4IWt1kThjtV3E-AXXs1eRA5YPr1ID0GYKcuk0I1P4sJNpbhuELCv4k-sQKKPIgT0JXquBL3dcfilZK0YXIsMig96JVDYA?width=1512&height=2016&cropmode=none)
+
+很喜欢这个洞口阳光打进来的画面，有种新生的感觉？
+
+![](https://uq4pja.bn.files.1drv.com/y4mS25lPrcnGoim2x4KQThVtnsBvBmG1om2YyVq9v_Shru2wXdQt-VbrkuKh6J3Dnf9sK25eVP4hJRy2NipWoDV2EOdflgtYsrClrBOr7EI6Z4xdBBrLvuPvZV5CEtpBrIEGyT-A6OV00yZOvPALp4dXq2FLVC-heZqQ0sbCzlVS5fXEcGTDxNqADj5x_-EfP2XbiAa-ZQV4XG0xvvjF0niAg?width=1512&height=2016&cropmode=none)
+
+就这么走马观花看一下，今天的两个景点就这么游完啦。回家之前先去沿路的一个商城吃点东西，难得招牌里只有 OPPO。
+
+![](https://uq4nja.bn.files.1drv.com/y4mCo7smaB2QPHyPFzqN84bUqqv3Zp0nXnYOl2wGsbEB7ZCwvQNz0D6GSDCnmAqHothJsXXwlEMvZOqRxz87JFX_X9lrhrXKXdXOZpJY_2atSIU8TI6K7lQHTIQ0c0oeDOygnGnd_Evhi9BOLSAQlCbONJr1ivYCp7Rv0-WjWjYp_C3f4i_3A2pr-43F00Pp8HFkqVq9jgvSmAr0mXUgn71aQ?width=2016&height=1512&cropmode=none)
+
+依然选择了肥仔快乐餐，好吧是一开始导航的目的地就是这。
+
+![](https://uq4oja.bn.files.1drv.com/y4mW-qAxDJIE2pUfnthd3XjnjKYWuNs05tXsmlU-CDHmtx3GUaNZU46oQrxvKPwEdGm-3xv20JMdYOFoQi3vwUBzcXo8PUSW9m7GP8JJdBwk98M2HtAYZy-m_jF67Dr74f0x_Q912gc3Dr0IMR8sjVF_aU6voIWqMpg1gR33mZ6diIum14NWnVBQpcBa62hUfN7aOlON3_gbFzU6UF_VunrZw?width=2016&height=1512&cropmode=none)
+
+这个点餐和取餐台相当简洁，另外右侧桌子上提供了标准插座和 USB 插座方便客人充电。
+
+![](https://uq4kja.bn.files.1drv.com/y4m8dyAIGHp0Ae_FPWZ7VHK5E785vg20e0JgPeJGtEGrzfFxgSCwo5xV9qSw5y1YkUxOw1qEh6e7oZcFKJvqKdYI6s8n4teRiH96R6Gq85VTtCQ09XCH6OI3T17BIHPhsZeVC18PYO29f8CNPTplb--2JrW37d9wbTK9cdZjGaQvPpgq_8J8j1xeVJ7dESu44p2UeI5mdry3PxHmqzJPLuwjQ?width=2016&height=1512&cropmode=none)
+
+差点都忘了衣服上还贴着拷汪宫的徽章。
+
+![](https://uq4jja.bn.files.1drv.com/y4mfVceoa42xzhPySRsNU43svffl7UuWarTzMQVv6QFX8JItxIU_6TCuMf-Y-9pVTiLxnQF3eXXG0sf4nGgDS249yrrsErAXjIO2KEals7qtiJsXx8nSnuSmCBeK8WGnebn1pjmHwPDCV5_5fJXnrNdS-QrUs-FE-eOFkRqkpLIC5JFOTtJpgcDSL313zwuRx_w3Hg79_wFH6JLUW5tg0k4wA?width=1512&height=2016&cropmode=none)
+
+吃完去商城逛了下，和国内类似，这边也会展览卖车，只不过从 SUV 换成了皮卡。
+
+![](https://uq4hja.bn.files.1drv.com/y4mPnykJcZf0QZB2tySzdO0m0OtZzMNSXNXPvdnttPoNXAK0_A_fG80-eoZJlxOzlkkZj3WQ_OKNKARj7aEQJBwJO6azsss-jkuLsYC4zYk7SFmzkGHOR8Qn35aGZOGtLJhIBzRfs_TfYDlugXW00sPWMIUwDUQsvRhHdmyyh_7mt4k_APnbECkK1tIPfD1uOFfsIaKvNTKbgY2qR_j6t42cw?width=1512&height=2016&cropmode=none)
+
+路上比较常见的皮卡大多是两座，这个四座的卖近二十万人民币， 也不知道是贵还是便宜。
+
+![](https://uq4ija.bn.files.1drv.com/y4mVyT5mTEkx9fd_sqhpkVfvytSDuFVhZUpkOV8JT70MsNc__6s7SunIe0VvUc39ldrINnNa3hHDVxx0yQlmCRAMagREXRj5HKrhLeGoZYZmxUYiHcHl6fsKk7rvOBKWBatUzZg1scqpgqybgo64vHNYP-vHe4bv7bAnAKbQxzeIcDjSBkHsYB6JWDL1T2DuoI3bJTwrOubPbXVSSq7nQyi4g?width=1512&height=2016&cropmode=none)
+
+商场的厕所指示牌有点个性。
+
+![](https://u64qja.bn.files.1drv.com/y4mS8m3tnMCzFgsInmfHBv0o9FP42xaYHTIcvy8EaUD-lZUHGmVzRzztbRJKo8pmvA_jv3BuVeYhvXCbdMxc6Jldc_yfUQUAgSav6HKwiRfWq2bLlGn-CU7DJxPFkjzFP7wInlRqD1op8JIbG5Xe8Hzjil8r2pAM1lbQSxVDBjA5JopofuiPAFuDbDzDTR2ULJjBojiRjrq1Ps5pbUxk9X63A?width=1512&height=2016&cropmode=none)
+
+回去休息了一会，到晚上我又独自出来走走，顺便买点吃的。公寓旁边这个酒店民宿看起来很棒的样子。
+
+![](https://u64oja.bn.files.1drv.com/y4mRrRiHYcofXmyqHfXLYAyBY1XIW2tKY1GfHwh08hRx0d_T9UPr9Jj2yiADK-n5NTcU2OR1nlvHNOAm-6ixCAMZ72nw1Ow-_AxAQOle_jlpzJWJtQdGRTBwqwIWc-MSqX94MfqrhrLq5mw8OQrbmz7nl8_dmFO_pqaFyRgFK2GSQFn_Gq0LUJcr5mSLKWKQvVSRhCvFIMHz4itOQV7Rkj2Og?width=2016&height=1512&cropmode=none)
+
+![](https://u64pja.bn.files.1drv.com/y4mAEtuhXWmOiAREdx6grWnyWwVvfsbyrw9eKJ3-PNVgUaDr6Tj0YvieAElvrzPVG--WIyigKqeAqeoYwp54QvZU5soW4AntYodhPTp_wr9EghzyD0Ad98lswXILTMt9_6txfcnkYQZBjGYBb_fWpOY7YuEoW0MHOJbUByX5a72i6PfSxuJRrbioIgm5ZjcefXx76EgC4k-IllLzlfrRvmuBg?width=2016&height=1512&cropmode=none)
+
+公寓里住了不少上了年纪的老外，也不知道是来华欣度假呢还是养老。走到海边，路上偶尔也能看到骑车或者跑步的老外。
+
+![](https://u64nja.bn.files.1drv.com/y4mVvvy_9Ee1K6yp1JdzfIEEIAX0gqjk65atJR0BKuqxA1r-kcbF6wrrsKyfetflTgVNm8ooNpvtiRzw0Ykrvw6D4xPCLTDr7GMhDp3cP_I7tJukXGlX6JMGnSEUcPwymucbqk16NuLPmQz-R_gWoAnSTN5lizAfBbrMhTLbfLVVB5GhfXYYP_5yFaf0kZiEXj9wjtviTbtIcIsQWMxkPR_Mw?width=2016&height=1512&cropmode=none)
+
+又看到一个高大上的民宿/酒店。
+
+![](https://u64mja.bn.files.1drv.com/y4mUUFbNo9EaMqGQzC2S8OinnHl2A9snX2dd48fPzi5DCKFbMEXKH9ckMz-bRB8UGQK2B8pg416th_RV3WYp1Yu-f4zk2M_j0XRIZbApGEcRjOp2rbXkF6wuDqBALmzeyJgq30nacm1gzCtss3sWGfuXbR-ZyKC5l3lcedyBdnXpfALVU7-bEwZef0SUraOlXmqmVE84kKdBrWLcgL621MZOw?width=2016&height=1512&cropmode=none)
+
+路边除了住宿外，也有些吃饭的小店、小摊、排挡。
+
+![](https://u64lja.bn.files.1drv.com/y4mJxNwkyvO2rBc0HZLohdL-itAkVQoEOAdfgzNS_w12bPLSV9n3k40Fq8M6RqqtCQIOsLgoo3u05U8VX5XveH40HnSH32J85P0jeAVQpjMQCB5YW6KStlzK3uJMvc0gMDiMsh8Pw5CMq930pC2w_kU2vMXeVhu7iIOxZWxRExRyxuk3ZHDGSbaMzrPxzOy9DAsrem3acGadN2Kbf92X5oVtg?width=2016&height=1512&cropmode=none)
+
+![](https://u64kja.bn.files.1drv.com/y4m_0yY6iZIoLVGoq8uSyN4aNk1B9b0krVxP46OjobOSzT9U3WR5BMtfDOXJ2D4EYSEpvDUlkMChPogI9aMOOF8jqjqaYlJEbape0rPu_YiZcBidojN2o_f43LL1Lwtukj4iX22eW8jb2ozNnkT-fb4FeZpzrK4eTgG6M9kmPn8WBOPuaxFmzv3JV3BzWvzBhxEcA1SPJQLXtzNgq7iVTiLJw?width=2016&height=1512&cropmode=none)
+
+远远就能听到这边的歌声，唱得很嗨。
+
+![](https://u64hja.bn.files.1drv.com/y4mRN83T0jlf6XKN9t4yzsOSdGLAKEk2DoNc1U-xVFCD7Zsx1t0zTjVbKPMba8fRX8RTG74RCOzCMBjqQ-ZDEETk5BNocT6qamk58ErVKp3DIFJEfZYC3zg4Ab-uTUqy4oXnQvGl0w_qXbRxQo0hPcpoBr2c6OKb099jp3eEV7PzF8ACPeL8oFZdFxVCkKqWBobVtqFa5oka2YE0_iSDGQPog?width=2016&height=1512&cropmode=none)
+
+我买了个类似煎饼之类的东西，甜的，不好吃 😭。
+
+![](https://u64jja.bn.files.1drv.com/y4mj7W6vklHKPTyuVZI8WsDFigg58mflWuFgpLnBItKsOYSO4Qj8Gh0yeF6p_kAwFmzjmMP-3bqE5QL8IdSNJZqZJG24aM51MaWXD_I8BNq0FVo6Xm69kNQayamdJ5Ss1xO7mji6pIrrJZGV2NYqBaev8dP1T-YVMUQX2j6tW3cyR4zKMUSVvcK9BOQaAJgQQSkNVqJKbbTNKNbOFVkmbFlMw?width=2016&height=1512&cropmode=none)
+
+![](https://u64ija.bn.files.1drv.com/y4mLbBTEc8fc0UiYrEpp45Ee87bph-l5B-VTaNN3XFviyiheOm-M3d9P17fLNtGYobtKtX_PC4qupizRhQTuD9TqOEgUHYysXTCZFifKSZ0Ge79eYgf50Z0sUH9UWKZJZ5FoPcLkYZR0nuqIQpHa0SSaDD_1Bl3rFhoMAanerUXdjmPwyubSas7dyRmwntXy9OmbpLlKx7cAxFDl6m4yukwYg?width=2016&height=1512&cropmode=none)
+
+各种杆子上也能看到卖房的广告。
+
+![](https://vk4pja.bn.files.1drv.com/y4mBEji91OBSSR_kET34ddcqu58TH24hhfvqvyX4lNvcbYIYueR_0QIo1yRwAuPV-0e-FOa2q9JHvjpPx5I3XOyV0GbXmZFsdQSUqzypYw6R9V3uAF_4uopoJqfJsZ8G-A5_oYvBr55rZGokJB_76d3nS-it3GWhG3DbdKI8rElr0K9ibbWv-8IgT7l2uRgF4uzeuEr7KGEl3IU3a2rFmU5oQ?width=1512&height=2016&cropmode=none)
+
+最后回到家，又喝了一瓶大爱的豆奶，好好休息一晚，明天就要告别华欣咯。
+
+![](https://vk4qja.bn.files.1drv.com/y4mcDpcmIZD6a0Mb54HGW-QW6YSP5Q7VqvTcCw4hNdtB3cahu_X5WkWT959B1ub1gVSI7LQ-HKsCYxSPH3Plckk7Bn9KeqpxJkwcXJrXn39injnsb5WgE1-hSkmDZyl7O5zfgjujRibov6J22UpC4oj2XOCeXqwuCHmZQEr6yjs-at7bDwipZ6-QdLlBe3GvG1GOCMckpddjnFhUxTXxPrYnQ?width=1512&height=2016&cropmode=none)
 
 
-{% meting "76840" "netease" "song" "mini" "autoplay" %}
+
+## 下一集
+
+To be continued...
