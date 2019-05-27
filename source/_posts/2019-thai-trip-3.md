@@ -26,13 +26,13 @@ tags:
 
 ## 1.31
 
-今天是在华欣游玩的最后一天，明天一大早就要开车赶回素万那普机场还车。今天的第一站并不是拷汪宫，而是 Big C 超市，我们需要再买一个行李箱。来的时候我们还穿着冬天的衣服，因此一个大点的行李箱就足够装夏天的衣物。然而在前天洗完冬装后，发现一个箱子要装下所有东西比较吃力，因此决定再买一个。买前当然也在网上做了功课，还真有人在泰国买过行李箱，推荐的 Big C，价格也不贵。不过那个帖子有点老，我又在 Big C 的线上商城确认了下，确实很便宜 😝。Big C（和其便利店 Mini Big C）基本随处可见，刚好最近的一家距离我们就几公里，可以说是顺路来采购。
+今天是在华欣游玩的最后一天，明天一大早就要开车赶回素万那普机场还车。今天的第一站并不是拷汪宫，而是 Big C 超市，我们需要再买一个行李箱。来的时候还穿着冬天的衣服，一个大点的行李箱装夏装足矣。然而在前天洗完冬装后，发现一个箱子要装下所有东西比较吃力，因此决定再买一个。买前当然也在网上做了功课，还真有人在泰国买过行李箱，推荐的 Big C，号称物美价廉。不过那个帖子有点老，我又在 Big C 的线上商城确认过，有行李箱卖，价格确实不贵 😝。Big C（和其便利店 Mini Big C）基本随处可见，刚好最近的一家距离我们就几公里，可以说是顺路来采购。
 
-在路上随处可见 Big C 的招聘。
+在路上随处可见 Big C 的招牌。
 
 ![](https://vq4e3q.bn.files.1drv.com/y4mtTortiduXFRwFMC1Xx86C6brkLsP_MCa_0u0EecnoTY9wjbhisez7x2ueYyW5fXhIBohLBVmql6KH9cDb7TkJMrIy0OgKIxMleTVKRT8JCHOfDTn728m5Czvh0y5iblCvv2Bu-ad8Mfm3US3oIKHvNTrgkOgs9R2DZ3YWPGONhRnD91nZEHNk2m5bZpbKlwnVn8_XCkrU4HMVPZprKJjKQ?width=1512&height=2016&cropmode=none)
 
-一大早也没什么人来买东西，停车场比较空荡。
+一大早也没什么人来买东西，空空荡荡的停车场。
 
 ![](https://vq4f3q.bn.files.1drv.com/y4m7Vx9ZPWNkP2Xz8p-rs656R_6paBcNKj-SCnu7_Lh0fhJBvkOrJY1zKKc9vJ9zX4HqtpfKisv8VjVBsEWzHKio_uEsbcY0vFN_3JtclZUgU4z8x337wlyEdF5nxnkzsQ7EYZ0Z6P-rwJUr7cnorxI4evXEhV0eONKi82s4DtvubsBEcxPy8Q-OCrOVYNLDqYXSfc_lubDfjGSYrEU0UPlfg?width=2016&height=1512&cropmode=none)
 
@@ -40,13 +40,13 @@ tags:
 
 ![](https://vq4d3q.bn.files.1drv.com/y4m6ZO8tyKjd-x0mYo35lQrcVfPuLL89vlFEv6Tx6cnVzDgiF0Ue1GyaaIygCE7nqf55vRsLyXLF-fxkQvuAksyWTD38AuV0D72yBiWI6G9yBCQKj62HSqDmqhibRiis6ielXhWZ_bpPA4FflanPHy0e4yEetXsHN24KRIQjovAUIzuPS8Suu4YLEDtaxeeWy3NR5uXc7wr8I8tJm0aRuTa7Q?width=1512&height=2016&cropmode=none)
 
-然而转了一圈都没有看到我们想要的行李箱，只好直接去收银台问店员，有没有 luggage 或者 suitcase，结果收银小哥一脸懵逼地看着我们，后面又来了俩同事也是如此。多亏现在移动互联网发达，沟通不清楚我就找了张行李箱的图片给他们看，人家立刻恍然大悟 😂，指引我们走到目标前——原来行李箱摆在收银台的外面区域。
+然而转了一圈都没有看到我们想要的行李箱，只好去收银台问店员，有没有 luggage 或者 suitcase，结果收银小哥一脸懵逼地看着我们，后面又来了俩同事也是如此。多亏发达的移动互联网，沟通不清楚我就找了张行李箱的图片给他们看，人家立刻恍然大悟 😂，指引我们走到目标前——原来行李箱摆在收银台外面的区域。
 
-价格和网上查的一样，并且 20 寸的箱子居然和 24 寸一样，那当然是买大的会感觉赚到哈哈。橙色显得有点廉价，就选个低调的蓝色吧，反正后面也要被飞机托运给摧残。
+价格和网上一样，并且 20 寸的箱子居然和 24 寸相同，那当然是买大的会感觉赚到哈哈。橙色显得有点廉价，于是选了低调的蓝色，反正后面也要被飞机托运给摧残。
 
 ![](https://vq4c3q.bn.files.1drv.com/y4mM4u8Q5qeC96hjppJuPirsQfnlRdA5bC-H8mltJiLqrh5YJGM1qMxs-B-uMJ1pfaqsLWiy6zGYePGpbnx7iEvvfgaMZyp3zWMNJeYtAvzx8Jt5_m8jYwVWxfybMLPHI1J7Znc1JirelrP0kHDPlJvHP_jJwUDmw38M3a32pvyDLGZ2dYP0ugkoNRXa6bPPr5Uv0i__5mqLSO7nIucQ0UhgA?width=1512&height=2016&cropmode=none)
 
-除了便利店外难得使用支付宝的机会，汇率还不错。
+汇率还不错，感谢支付宝 😊。
 
 ![](https://vq4b3q.bn.files.1drv.com/y4mqjZMXFNwHG84T3UKuatVWkyy3zro9udWJMU1N-UVg4gP8WelCtkvCK0cFJKxOoTQhukHwiz8hLf7UbSOEEB4fYsVKNIHl2zcBFZZm1hT9L49cnKdXQBuL3BkraCJE4ZiLwm9LbL1DrmWsQC_hIE2umXobsEW5V2es4sPpAiUpQn8LbhGOlt0SbIPpIZD-tjqCF7vKRkpMBYHxOZyVC1_gw?width=1512&height=2016&cropmode=none)
 
@@ -54,15 +54,15 @@ tags:
 
 ![](https://vq4a3q.bn.files.1drv.com/y4m6zmRllG42D0uAmdgJ3FbITqKtQXCQtgHW59WO9LCG0oz5p3FHKpJJ8iPX3aII-0_mI51fx7j54GL1mkXsuZWS_YDXvj98p12NfVCNIjeSxgKQf9lpBjbz7KhNeWDjl1sEI8bIvHuBmBXN1JdzfPr7mtQQFb61lZ-ofCgvOV-Ucid1kgWdpoGq-drnvtWrjhq3DHU6pXF6dBJ2No2FTWQyw?width=2016&height=1512&cropmode=none)
 
-买到了需要的东西，我们继续出发，前往拷汪宫。谷歌地图一开始把我们带到了应该是拷汪宫的后山入口，也就是景点的入口其实在山的另一边。
+买到了需要的东西，我们继续出发，前往拷汪宫。谷歌地图把我们带到了应该是拷汪宫的后山入口，而景点的入口其实在山的另一边。
 
 ![](https://v64i3q.bn.files.1drv.com/y4mzIM91DfRP2kxSVOtEENwpoewmUyi5Tx94JcYACI_14kr_fx330szF3fRPVMe_zuebkM_OwXfkRwh_Ee_JG6PXM4oKdW9II2gbD62D7WrwwrQMSkIuinKY2IVmTPM2wms9mra_ScJErNbP4Z5j7aV1f_0StRTLQLX2L9W9ifaS05uwCuskK3sPeRjaCLi83ZPHYSF4BSoTPqYktlJCOlG6Q?width=2016&height=1512&cropmode=none)
 
-路边居然还看到了 🐒，生态很好哈哈。
+路边居然还看到了 🐒，生态很好嘛哈哈。
 
 ![](https://v64j3q.bn.files.1drv.com/y4m5EUeUj-bI3hfIHaSCJoKCXEEoDvfWb1B4fe-dgOe1zkl66gxXbdiYyRGbZ--a6NHcjmZ7Xf-enMKVK_PLc58X6ldh7Fb5ypBfIghJ0QIuYZXIVUzbsuFZxWdRoTEGDPWzpiO677DyudhTQRL2anf-njv7_uCJsK-tuX594_u-CwmqQqXEMTzgay37zCKqrPJX6DSupSkm0rKNXZU-mTckw?width=2016&height=1512&cropmode=none)
 
-在刚才那个后面入口问过一个骑摩托的大叔后，重新导航，很快来到了真正的入口。景点就是景点，一眼能看出来。
+问过一个骑摩托的大叔后，重新导航，很快来到了真正的入口。景点就是景点，一眼能看出来。
 
 ![](https://v64f3q.bn.files.1drv.com/y4mnnMNlVsm-x48VQ3QCpdW2MgB-NQgGfx8C2zhfeCDwAQElE1BulAOeANDb4vEw_SjM8KEFvnsrIiTtJu6uxPhphZP78mheONONd_ZlSQeavhSGl-BiWW0Eehry9Bi1KEYyH6eZIn3huWas017Q_Ka8S8h8RNWgA13Ok6lvbBsIwSCHVjaXEF8gt-kB5TD8iPn4MOQiSbs6Dvf5zg0J2qsug?width=2016&height=1512&cropmode=none)
 
@@ -70,27 +70,27 @@ tags:
 
 ![](https://v64h3q.bn.files.1drv.com/y4mLGOSMp1eSK-5B33FZWweUVsM4NMxe7aw1sVGbbtawEnTt2M5c1zZQfn4dkty54lt7ZCy_AOWbETuGdyJC9toeJBqTtaFmIPL_1itUUpNgIEdsKGmoogfA1o-2LnGDiAvqd8Gnla_QiOIYXXD0yzU_D8sszv8XswekLU0Qvq0IVoa_qgbLQqOPT1AddkhYwemXgWK1h0RUmtNB5O1pBQSkw?width=2016&height=1512&cropmode=none)
 
-外国人的票据是来回缆车 50 和门票 150 共 200 泰铢，对比国内的门票价格不得不说真的非常便宜。在检票口就要搭乘缆车，这缆车票还没捂热就还回去了，也拍一张留个纪念吧。
+外国人的票价是来回缆车 50 和门票 150 共 200 泰铢，对比国内的门票价格不得不说真的非常便宜。在检票口就要搭乘缆车，这缆车票还没捂热就还回去了，也拍张留个纪念吧。
 
 ![](https://v64g3q.bn.files.1drv.com/y4m1VMR2uF69qKLAJCzdXBG73AIMUjdS_xHxE6E-pnQ4IJbgMe2ZNutrKJmGexmNSQmUQ0hXkpt6PF5dSd4FoJCpRKMpK7GbGXMTGI7lEeLKsD7a_fNfZE2lV6BLvTrJ4MoHaguK8s_6XddEl8-ZTLd1C92VTiWxJPq4G3Mc_G4pC4aVLzFkyDcAVALEisRlJYEMSyRXVcMkUSh7ouCezoNTQ?width=2016&height=1512&cropmode=none)
 
-还有门票，背面有拷汪宫简单的介绍。
+这是门票，背面有拷汪宫的简介。
 
 ![](https://v64c3q.bn.files.1drv.com/y4mLxnxQIzgF5csya8Z-KwjmIwaN2N4w632d3Nt35zMGywuUQxEUAbeXACX7TulhHUrvHz6ITtz1GjVKvHHa49RKTYViaSkrMirBWUYkZedUOyvOdXOEeLftGwaq7x9hUGsrWMGtj1UFhXJ_G__BygqqUfb0_-wOPiaB7NDluGjp32hsoElZA5YbCtvKv4DebES6J_SoIOEqh7YdsTwdJx9vA?width=2016&height=1512&cropmode=none)
 
 ![](https://v64b3q.bn.files.1drv.com/y4m2cCR4UnTbggRhj_enaUp2cWg56MysiAXAPPLydNq4BvBL7rizcWHXwQgLAbItfkLjbiARWeevs9sjvLh-hKoYsRC_K-e8sEMC5r58Npqxdv1sxFlDoUmgGurKVenhsxTfT7FcF80Otej8UVpOpDQem6QLNv7M09VuA8JVjw2UQodUgOTZ6jQTzbzbh8nFOu4o6AE5ycBFOALIAkuAjAYxw?width=2016&height=1512&cropmode=none)
 
-门票上其实已经交待了现在的拷汪宫是一个包含国家博物馆的历史公园，不过这个公园在山上，因此绝大多数游客们需要搭乘这个缆车上山下山。山的高度并不高，缆车行程也就几分钟而已。
+门票上其实已经交待了现在的拷汪宫是一个包含国家博物馆的历史公园，不过这个公园在山上，因此绝大多数游客需要搭乘这个缆车上山下山。山并不高，缆车行程也就几分钟而已。
 
 ![](https://v64d3q.bn.files.1drv.com/y4m3U6Y3mXZDpjhnSAfc-4DW54AjO4Bin05pqtjSQT_UUhkrBqGXmYIC-XKwxwvColMvcy9LptwwnqOdQsROP20vEgVIcJUerIhThgqI-xHLOTFpdN4gTWBqq9QSAsKzUFZH6D2W2AzykooowNcTkyFv7qFRv2zJri6aqW9T6L_tUjB41ticwvEXN9reEoGIKuAp9V6gPocQcWCG9HkyiGwCA?width=2016&height=1512&cropmode=none)
 
 ![](https://v64e3q.bn.files.1drv.com/y4m_hQyIBC-VEOj14lUguOmfPmLFojGGPeA9a_rnl_ouuwXsvmgy2tw1YSe46ZuKRSy_Qr646HXjDuX3IqUeIaCeorsQYT9U0nVtljeOB1BTbe-Ri7g8kDjAfXTbzhc2X8-SCbIJ8g-V8GooDcXSA61s24SbY1aoAkuyTMkcrLGlbyzVcDOyv5aQFhwn-G7_TzIdOZt_BlVi1yuCQRiwpFWaw?width=2016&height=1512&cropmode=none)
 
-拷汪宫是泰国国王拉玛四世建立的皇宫，通常介绍它时都会提到发哥闯荡好莱坞时的作品《安娜与国王》。不过拷汪宫只是电影的原型，至于为什么不直接来这里取景呢，看看维基百科的介绍就知道了。
+拷汪宫是泰国国王拉玛四世建立的皇宫，通常介绍它都会提到发哥闯荡好莱坞时的作品《安娜与国王》。不过拷汪宫只是电影的原型，至于为什么不直接来这里取景呢，看看维基百科的介绍就知道了。
 
 > 电影涉嫌对泰国皇室不敬，泰国当局至今仍然禁止上画和播映。连取景拍摄和盗版影碟都一律禁止。
 
-皇宫给人的最大感受就是幽静典雅，不愧是皇室的居住地，从一进来就是如此。
+皇宫给人的最大感受就是幽静典雅，不愧是皇室的居住地！
 
 ![](https://wk4i3q.bn.files.1drv.com/y4m8FeU1ypDkTdiPBm-6Mh8nGsXDLMwcEYGV8VHq2A8W3jJiWM48hTFulyTYcQrJc04f8dA_lIGKUxVPXfUWrcb0mQwRuW8TaltRMIaAcxWvzotYW9Vpgx1E-4EOoXY6AmAsWf-anIpPiLHq1-b4JPTU0Ba6wTfUewi_Bo02sVgJ9Is4nNF14vpTGgq9zmaI84O5UBwlSchQLttOd2-M-G8-g?width=2016&height=1512&cropmode=none)
 
@@ -114,7 +114,7 @@ tags:
 
 ![](https://wk4f3q.bn.files.1drv.com/y4mITRHWfmLn2RPoOv4HeSC3Z1BL8ltIXsmlzajrrP5QjGD56ihRn6OethfNwn2yQf1BV_2gxitMXDBdcxqdzD2CG7P23_nwDmOQgQVMbagSN6YsUNV4ba6uhWwKXQ78CpuZ4_SqXhuMeiU4iGbjEers0_JhioLEdr-yh69tn5PpAzUCKj-6UuGmPg7qmW8aLuLfY1Plzf2xkmxZM0kgm4LWg?width=2016&height=1512&cropmode=none)
 
-很不巧宫殿门是关闭的，在网上可以看到里面应该是个摆放着大长桌和国王画像的餐厅。
+很不巧这个宫殿暂未开放，在网上可以看到里面应该是个摆放着大长桌和国王画像的餐厅。
 
 ![](https://wk4e3q.bn.files.1drv.com/y4m1u0iv7X4wuxwlOaljXKYQuVlCVezZbCX9prGa6uZuQZncNTe1sQw8cPuyletdOGkNxvXgjiKD6fj1Q3HqO7w55oAQBRi5RHPUn1VVrY_6I3f7Oa2njysiMBrb8To1WAXEQOUi0pDD4LzbKkNuaNIAeEtmSS0hqZKXCYvdL1vPc-LDNL8IZUXX4mlLdQwcIcxiS9LsxYDAUgEL9Oagzpk1g?width=2016&height=1512&cropmode=none)
 
@@ -128,7 +128,7 @@ tags:
 
 ![](https://wa4j3q.bn.files.1drv.com/y4m6e6n2i9Qyf6poxRjaSoQnF_Jd7ERlSo1xwmUivwHJOQdD-REtUQJg7OWy2Lb72SQySKkOw83SqKKTfdHVutNfuT18TNpPlzPoLWLBIWJxY-H7RNP_KOnLciQUoVGxGOyuQfcgUTrTtGz5K63lxeJo1ZOipDPHJ8is4fCmIBooKDWM_u7lPwYkpZqp1Srs-e7DAc77wQEF_-ulzpEETO5dw?width=1512&height=2016&cropmode=none)
 
-想象国王俯瞰自己的土地和臣民。
+想象国王俯瞰自己的土地。还有，最近几天曼谷居然有雾霾… 😯
 
 ![](https://wk4c3q.bn.files.1drv.com/y4mcfjSIpwSz_jENbuSF5lCW3q53MnSR8tS2GuhWxRSlXYUx_ks930MVH4OgzXrBz02rLpwkzxmFja3JlZtRewczB6Wd_vZKkRNWaEHO9UAlqN6F6UAk_2Q3kVcoWMiv-ZNexs5mkFjtcK-geQULlVb7N6sIQ2FALSIiGKZ21cSJJOGL0Zu0riLoUYwhcaz52FUcAkhZqFvQ57NVNQazqwfSw?width=2016&height=1512&cropmode=none)
 
@@ -152,17 +152,17 @@ tags:
 
 ![](https://wa4c3q.bn.files.1drv.com/y4mY7bLIhlFGLDe0q-0gBOY9EbemeKeubpmpXOBMZoaUtaGQRao9N_GOcc5ImmMG92s9Ns36-zH6U-Z1aZ9RBmSZc4NrcVukREvXyBJCGDLkxLG969PfA9i4gDsr6YtUC4586EP1-Z14Y9P2QG89Y4Ru4mlihg2gCfrpAIlMkMMuPxh3PP47iju7WS2hNOI37Xt3_RX7figQc9NJykGvafJAQ?width=2016&height=1512&cropmode=none)
 
-西式的建筑很对我的胃口，刚好咱也是外国来的嘛。
+如果可以，还挺想在这住一宿，刚好咱也是外国来的客人嘛哈哈。
 
 ![](https://wa4d3q.bn.files.1drv.com/y4mzbzdjoTw7CoyoKVtAIuusb0YQkizfkKd6F3VtSaYt0gADghIXK45ftblgRqb-3j4gesKVCBJvHPyExCNGNTZDO7cf21iUGKHsKxPaUzp22O12hRpxLOAIvnx0aM1UKnQyX7RTadTjNNsJC-SfNQ6Rh5kFTLLqxybhurEL7AB4vwKKfdL1nV-qCQuA82e5cBrcb4DI1v7MT-Uony9OfVCAg?width=2016&height=1512&cropmode=none)
 
 ![](https://wa4b3q.bn.files.1drv.com/y4mTnT0vSWEF2pmqTdB9oyb7IfUhdDJ2zYeRU2VJ8krsDxZJfLNigtEFFJK1Swz09RLfEnbzOk1_qIPaoulCL3BbBR45jerYLPooA_yScPrPXO_MGYSsY6CGExGsNIcTpQ-rhPHMzV_doVUa1P5Thv8RpJ95grUvwZ3OXE2dM07Z6ND-knmA7E5RB42pQgDjgiRQBKdWHEM3N_V-oo4xeEcuQ?width=2016&height=1512&cropmode=none)
 
-剧场长 27 米宽 8 米，早期其实是有房顶的。这个应该是二维码介绍，不过太热了我没兴致扫。
+剧场长 27 米宽 8 米，早期其实是有顶的。这个应该是二维码介绍，不过太热了没兴致扫。
 
 ![](https://wa4a3q.bn.files.1drv.com/y4mw3U1Zqp3OXnvhE5K4A8rx91e6KjDgIMvm95tnlbJUUtUfXqwblMkuSPYrpfJg8g1EmWSPPwGRBugg50-0DVeKksbtuILfqHnduFtXVmrc55TnMEDMbLttHylTuD2cPnnCUzlbmyqS1UAGecxupFI5pK85ubAmZXae65XvkapJVZQ0UytSTKZ25dSZb5CKLqhWgW3F0INGngpv3I1XvFhmA?width=2016&height=1512&cropmode=none)
 
-这个白色的椅子很吸引眼球。
+这个白色的椅子很抓人眼球。
 
 ![](https://uk4pja.bn.files.1drv.com/y4me_KJ_uKCCzWWnlv5G-FwoqxaSI0qQmhMWiE46N813xVpWjcVROZ912i7DZFm4aItBfN6oCy57xqClbyp68CDvQrVdcvTs_UBYtIesfFN3I7YelvWC2b-PbeWUkFcIp4DmM3MNdqiIr1gdI9ZOvSM9dbNOAX3MIALmKIsKx1YFr7dl85mwQVaXIY7sOq_TDOHyaq-Hp7-wSNExDeG_d-hQQ?width=2016&height=1512&cropmode=none)
 
@@ -174,7 +174,7 @@ tags:
 
 ![](https://uk4mja.bn.files.1drv.com/y4mRxJh4dMewebp8UigH7YO1DCZcopO2o5v0fFlf0ze_1D1T1brrZ5XiUlnEsG3ZOl6DBGZZvqtgIQBbdQGd7A7RxlPDN5Jzhn6TosLNU3zvqGzFcOf6AXIo_AN88hKrasiOvHArZanX1cQKIWJg0BeUAnC2fjFJmBnR_RAZPxFslDIYOF25H7jdMbAUcYQtPA-Tt3Z9rCCLi1gHPGxy7WA2g?width=1512&height=2016&cropmode=none)
 
-最后看一眼拷汪宫的地图，同样充满了历史厚重感。可以看到我们只游玩了白字 "PlAN OF PHRA NAKHON KHIRI" 下方的一块区域，另外还能看到右下角就是我们一开始走错的后山入口，那个牌匾细节都和我拍的一模一样 👍。
+最后看一眼拷汪宫的地图，同样充满了历史厚重感。可以看到我们只游玩了白字 "PlAN OF PHRA NAKHON KHIRI" 下方的一带区域，另外还能看到右下角就是我们一开始走错的后山入口，那个牌匾细节都和我拍的一模一样 👍。
 
 ![](https://uk4nja.bn.files.1drv.com/y4mwsS_igL9KxI_dhp5WI0VUYHtbbbUzWiJmiPbh-biCcX8zBjFjz_lzNIkX3RR1oUzbVG-lf98V3Aq6hLkNl-aJ-wRsHl-epT4XSg5W2OVfbBOjMS8iItmjZLWVsmed6VpoEBfj9GxUd-wpR3IcrxFRMaxB2RkX-k03n3VLXg3kRZlCyaMVvuSZd87_D0kxYhW1Ig-bBikataH8sYbQIy3HA?width=1512&height=2016&cropmode=none)
 
@@ -182,15 +182,15 @@ tags:
 
 ![](https://uk4kja.bn.files.1drv.com/y4mD2XQxxQG8pfsa9nTlqSpnhEsTFWRem6mDKV8lOKglPV1q2aSXVnWDBTDupT6iYrUdgs--sXwNC8ZnFvmWYLRQ66F7guvK2L0z_C5NTyqLutibCpXJWHgnobbyZA0dTMAtFrQPqLPqGmRtlwCbMamlyH40zm0JBPmvYElcvXzsRt9hxLpJdLntcr6IUAqn4cH9lfieXvEfwu3CuA5zNW2lw?width=1512&height=2016&cropmode=none)
 
-炎炎夏日，毫无食欲。从拷汪宫出来，我们决定晚点再吃，先去拷龙穴。途径 7-11 补充点水和咖啡，对面居然是一所有百年历史的中学。
+炎炎夏日，毫无食欲。从拷汪宫出来，我们决定晚点再吃午饭，先去拷龙穴。途径 7-11 补充点水和咖啡，对面居然是一所有着百年历史的中学。
 
 ![](https://uk4jja.bn.files.1drv.com/y4msh5AfaUW5AKg2y4xbew53AOlajwHRzm7bljCzkYfIFSULg2tL8pI8f5QGoqG1b8N6nHnaijfkbnBzwFFzxnWmALk1eHwwEDmpwG-hxhNRSL0qtMi4NpULflDS5_WkS9Y61UWHFBGOANF4BUo_VRqUTWwMwgSbQZMpw--FVLPwcefkOZipcPizIsPtlAWC84CTJJ2WQWzBx3LlrK0ChiJoQ?width=2016&height=1512&cropmode=none)
 
-还没到景点，就可以看到警惕 🐒 的安全提醒，感觉这群生物已经在各大景区臭名昭著。
+还没到景点，就可以看到警惕 🐒 的安全提醒，感觉这群家伙已经在各大景区臭名昭著了。
 
 ![](https://uk4ija.bn.files.1drv.com/y4mwv7ah9FyrVUiyl5fiqH3BpNNiNaNtpFIykigb36hURbLl3v9DJY5ZbR2BkyiX-1RzM7yHib4PYrvprNfrwp-vAfE_3UAZzH1gnAT-afmaAXJA-bIPLZTKAH6FvhsvXFIH-n1Q1OxG6HtZlol2C4TCy-13x5Jq-OVjL37MhqQwmnNeQRvjlY9PFCQlZ0DR-7ZkikTRP_2VlwvBocUrLBxuw?width=1512&height=2016&cropmode=none)
 
-拷龙穴不要门票，停车也免费，真是太佛心。几个工作人员在树下乘凉，除了告诉我们这些外，又再次提醒把包括水在内的东西锁在车里。感觉周围的环境还在建设中，一开始还以为这是洞口，然而好像是个介绍场馆。
+拷龙穴不要门票，停车也免费，真是太佛心。几个工作人员在树下乘凉，除了告诉我们 all free 外，又再次提醒把包括水在内的东西锁在车里。感觉周围的环境还在建设中，一开始还以为这是洞口，然而好像是个介绍场馆。
 
 ![](https://uk4hja.bn.files.1drv.com/y4mjOznlXh8KRK5BurhOFinnIlcFVVoxldnunWuGmRCvscrgd_l48TnOLYZCrmylRnU655CqbtpqXqku3vrwkicxfAbtpoBKcFlhp3RYIbabSTuAI5sMNNJ-I5X2OSVwOpBmdcMTjC3Tj4zDJduLSrQp1xQn3VRRnUzk0rv2I8zLd5uesAUludniKMU016yZGBQvnj0qlNaTRcbEYpo54VyhQ?width=2016&height=1512&cropmode=none)
 
@@ -206,7 +206,7 @@ tags:
 
 ![](https://ua4mja.bn.files.1drv.com/y4mfAIPWJ6ssRhM_ssh4Jq1DLRL9kWQgEBrPBifGCPS-uHOcI0cP4NvH5-yw4XA_iv0NVMSDQfvMEhhZm5bAdSQXxugPnxjlgDIDvn5gyS8_yY4sy2mP9w-6AdAo_gzxrT5rqj_tNh9d9YubzaYIccGSczck0KvoPwJCGmdjXqda8xBeC2nblNoRzq8HwtpWl3dye_44tiFQk1Ivkhhlv3ODw?width=1512&height=2016&cropmode=none)
 
-一走下来就能看到佛像 🙏。
+一走下来就能看到佛像。
 
 ![](https://ua4lja.bn.files.1drv.com/y4meGTK0lQqLD160gPS-XolaRbMbpN7qZjRDGTxHWhsB_KuKwz-WK_QhiYkTFrcN-RWzqeQm8ZYD9fjOIKUVa7XsEgJZXpSH1Npml1FHCOFW6x6k0NJOs3a8Cq-ZhjyyWqJrDoNPHyDCC3Q36-w2-Beu0c7ltlyZsFmtNRl5SdfMJvH4hfEuEmFA7I5_cZtfr4wwBhtsvDjJ1A-jFXGp1nrbw?width=2016&height=1512&cropmode=none)
 
@@ -230,15 +230,15 @@ tags:
 
 ![](https://uq4pja.bn.files.1drv.com/y4mS25lPrcnGoim2x4KQThVtnsBvBmG1om2YyVq9v_Shru2wXdQt-VbrkuKh6J3Dnf9sK25eVP4hJRy2NipWoDV2EOdflgtYsrClrBOr7EI6Z4xdBBrLvuPvZV5CEtpBrIEGyT-A6OV00yZOvPALp4dXq2FLVC-heZqQ0sbCzlVS5fXEcGTDxNqADj5x_-EfP2XbiAa-ZQV4XG0xvvjF0niAg?width=1512&height=2016&cropmode=none)
 
-就这么走马观花看一下，今天的两个景点就这么游完啦。回家之前先去沿路的一个商城吃点东西，难得招牌里只有 OPPO。
+就这么走马观花看一下，今天的两个景点就这么游完啦。回家之前先去沿路的一个商城吃点东西，难得招牌里只有绿营大厂 OPPO。
 
 ![](https://uq4nja.bn.files.1drv.com/y4mCo7smaB2QPHyPFzqN84bUqqv3Zp0nXnYOl2wGsbEB7ZCwvQNz0D6GSDCnmAqHothJsXXwlEMvZOqRxz87JFX_X9lrhrXKXdXOZpJY_2atSIU8TI6K7lQHTIQ0c0oeDOygnGnd_Evhi9BOLSAQlCbONJr1ivYCp7Rv0-WjWjYp_C3f4i_3A2pr-43F00Pp8HFkqVq9jgvSmAr0mXUgn71aQ?width=2016&height=1512&cropmode=none)
 
-依然选择了肥仔快乐餐，好吧是一开始导航的目的地就是这。
+依然选择了肥仔快乐餐，好吧一开始导航的目的地就是这里。
 
 ![](https://uq4oja.bn.files.1drv.com/y4mW-qAxDJIE2pUfnthd3XjnjKYWuNs05tXsmlU-CDHmtx3GUaNZU46oQrxvKPwEdGm-3xv20JMdYOFoQi3vwUBzcXo8PUSW9m7GP8JJdBwk98M2HtAYZy-m_jF67Dr74f0x_Q912gc3Dr0IMR8sjVF_aU6voIWqMpg1gR33mZ6diIum14NWnVBQpcBa62hUfN7aOlON3_gbFzU6UF_VunrZw?width=2016&height=1512&cropmode=none)
 
-这个点餐和取餐台相当简洁，另外右侧桌子上提供了标准插座和 USB 插座方便客人充电。
+这个点餐和取餐台相当简洁，另外右侧桌子上提供了标准插座和 USB 插座，很贴心。
 
 ![](https://uq4kja.bn.files.1drv.com/y4m8dyAIGHp0Ae_FPWZ7VHK5E785vg20e0JgPeJGtEGrzfFxgSCwo5xV9qSw5y1YkUxOw1qEh6e7oZcFKJvqKdYI6s8n4teRiH96R6Gq85VTtCQ09XCH6OI3T17BIHPhsZeVC18PYO29f8CNPTplb--2JrW37d9wbTK9cdZjGaQvPpgq_8J8j1xeVJ7dESu44p2UeI5mdry3PxHmqzJPLuwjQ?width=2016&height=1512&cropmode=none)
 
@@ -258,7 +258,7 @@ tags:
 
 ![](https://u64qja.bn.files.1drv.com/y4mS8m3tnMCzFgsInmfHBv0o9FP42xaYHTIcvy8EaUD-lZUHGmVzRzztbRJKo8pmvA_jv3BuVeYhvXCbdMxc6Jldc_yfUQUAgSav6HKwiRfWq2bLlGn-CU7DJxPFkjzFP7wInlRqD1op8JIbG5Xe8Hzjil8r2pAM1lbQSxVDBjA5JopofuiPAFuDbDzDTR2ULJjBojiRjrq1Ps5pbUxk9X63A?width=1512&height=2016&cropmode=none)
 
-回去休息了一会，到晚上我又独自出来走走，顺便买点吃的。公寓旁边这个酒店民宿看起来很棒的样子。
+回去休息了一会，等到晚上我又出来走走，顺便买点吃的。公寓旁边这个酒店民宿看起来很棒的样子。
 
 ![](https://u64oja.bn.files.1drv.com/y4mRrRiHYcofXmyqHfXLYAyBY1XIW2tKY1GfHwh08hRx0d_T9UPr9Jj2yiADK-n5NTcU2OR1nlvHNOAm-6ixCAMZ72nw1Ow-_AxAQOle_jlpzJWJtQdGRTBwqwIWc-MSqX94MfqrhrLq5mw8OQrbmz7nl8_dmFO_pqaFyRgFK2GSQFn_Gq0LUJcr5mSLKWKQvVSRhCvFIMHz4itOQV7Rkj2Og?width=2016&height=1512&cropmode=none)
 
@@ -268,11 +268,11 @@ tags:
 
 ![](https://u64nja.bn.files.1drv.com/y4mVvvy_9Ee1K6yp1JdzfIEEIAX0gqjk65atJR0BKuqxA1r-kcbF6wrrsKyfetflTgVNm8ooNpvtiRzw0Ykrvw6D4xPCLTDr7GMhDp3cP_I7tJukXGlX6JMGnSEUcPwymucbqk16NuLPmQz-R_gWoAnSTN5lizAfBbrMhTLbfLVVB5GhfXYYP_5yFaf0kZiEXj9wjtviTbtIcIsQWMxkPR_Mw?width=2016&height=1512&cropmode=none)
 
-又看到一个高大上的民宿/酒店。
+又看到一个高大上的酒店。
 
 ![](https://u64mja.bn.files.1drv.com/y4mUUFbNo9EaMqGQzC2S8OinnHl2A9snX2dd48fPzi5DCKFbMEXKH9ckMz-bRB8UGQK2B8pg416th_RV3WYp1Yu-f4zk2M_j0XRIZbApGEcRjOp2rbXkF6wuDqBALmzeyJgq30nacm1gzCtss3sWGfuXbR-ZyKC5l3lcedyBdnXpfALVU7-bEwZef0SUraOlXmqmVE84kKdBrWLcgL621MZOw?width=2016&height=1512&cropmode=none)
 
-路边除了住宿外，也有些吃饭的小店、小摊、排挡。
+路边除了住宿外，也有些吃饭的小店和排挡。
 
 ![](https://u64lja.bn.files.1drv.com/y4mJxNwkyvO2rBc0HZLohdL-itAkVQoEOAdfgzNS_w12bPLSV9n3k40Fq8M6RqqtCQIOsLgoo3u05U8VX5XveH40HnSH32J85P0jeAVQpjMQCB5YW6KStlzK3uJMvc0gMDiMsh8Pw5CMq930pC2w_kU2vMXeVhu7iIOxZWxRExRyxuk3ZHDGSbaMzrPxzOy9DAsrem3acGadN2Kbf92X5oVtg?width=2016&height=1512&cropmode=none)
 
@@ -288,13 +288,15 @@ tags:
 
 ![](https://u64ija.bn.files.1drv.com/y4mLbBTEc8fc0UiYrEpp45Ee87bph-l5B-VTaNN3XFviyiheOm-M3d9P17fLNtGYobtKtX_PC4qupizRhQTuD9TqOEgUHYysXTCZFifKSZ0Ge79eYgf50Z0sUH9UWKZJZ5FoPcLkYZR0nuqIQpHa0SSaDD_1Bl3rFhoMAanerUXdjmPwyubSas7dyRmwntXy9OmbpLlKx7cAxFDl6m4yukwYg?width=2016&height=1512&cropmode=none)
 
-各种杆子上也能看到卖房的广告。
+各种杆子上也能看到卖房卖公寓的广告。
 
 ![](https://vk4pja.bn.files.1drv.com/y4mBEji91OBSSR_kET34ddcqu58TH24hhfvqvyX4lNvcbYIYueR_0QIo1yRwAuPV-0e-FOa2q9JHvjpPx5I3XOyV0GbXmZFsdQSUqzypYw6R9V3uAF_4uopoJqfJsZ8G-A5_oYvBr55rZGokJB_76d3nS-it3GWhG3DbdKI8rElr0K9ibbWv-8IgT7l2uRgF4uzeuEr7KGEl3IU3a2rFmU5oQ?width=1512&height=2016&cropmode=none)
 
-最后回到家，又喝了一瓶大爱的豆奶，好好休息一晚，明天就要告别华欣咯。
+最后回到家，又喝了一瓶大爱的豆奶。
 
 ![](https://vk4qja.bn.files.1drv.com/y4mcDpcmIZD6a0Mb54HGW-QW6YSP5Q7VqvTcCw4hNdtB3cahu_X5WkWT959B1ub1gVSI7LQ-HKsCYxSPH3Plckk7Bn9KeqpxJkwcXJrXn39injnsb5WgE1-hSkmDZyl7O5zfgjujRibov6J22UpC4oj2XOCeXqwuCHmZQEr6yjs-at7bDwipZ6-QdLlBe3GvG1GOCMckpddjnFhUxTXxPrYnQ?width=1512&height=2016&cropmode=none)
+
+明天就要返回曼谷，在华欣的两天半过得非常充实，给这个安静的地方一个大大的好评。确实如网上所评价的那样，这个海边小城是一个适合带老人来放松的好去处。
 
 
 
