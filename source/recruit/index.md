@@ -60,13 +60,9 @@ date: 2019-04-20 01:01:00
 
 各位儿童节快乐，昨晚得知又有候选人接 offer 了，开心 🤣
 
-- Azure Data Catalog / Azure Data Factory，**前端**，上海，[633899](https://careers.microsoft.com/us/en/job/633899)，3 年及以上经验佳
+- Azure 若干职位
 
-- Azure Data Factory，**后端**，上海，[584239](https://careers.microsoft.com/us/en/job/584239) / [619445](https://careers.microsoft.com/us/en/job/619445)，5 年及以上经验佳
-
-- MySQL on Azure，**后端**，上海，[612558](https://careers.microsoft.com/us/en/job/612558)，5 年以及上经验佳，精通数据库开发、熟悉数据里内核开发优先
-
-- Azure Data Catalog，**后端**，上海，[612048](https://careers.microsoft.com/us/en/job/612048)，5 年以及上经验佳，有数据管理类产品及搜索开发经验优先
+  ![](https://v64hja.bn.files.1drv.com/y4mHT7hwdChluxfYjCR0KM3ePImmJcqjgzCYPp1TjHhEyu8ise1-ybe7lVRpoBBIZoe1sGZzSugwUVBFWzgoHfFFjZ-0bwU9PjDPBm6IE6mKDtyw7fZzSvUhvugpu7jVzZ_KRXOSX29k4ItHPs0jWr2HZbRfnZaa6SZ1UDpdMu_I0BDOmXSEXLkY4tne9OIseoEgVxktKFcW52GZfF-QtvcEQ?width=750&height=5953&cropmode=none)
 
 - 大客户技术总监
   - 介绍：大客户技术总监是微软大客户的技术军师，深入了解大客户的战略发展和数字化转型，并带领微软团队及合作伙伴帮助大客户实现其数字化转型。
