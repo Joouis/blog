@@ -15,7 +15,7 @@ date: 2019-04-20 01:01:00
 
 ## 在微软工作是一种什么样的体验？
 
-先看看我软小姐姐（转自微博 [@好奇的S妞](https://www.weibo.com/ohmyboy)）录的视频吧， VLOG 『程序猿的一天』。
+先看看我软小姐姐（转自微博 [@好奇的S妞](https://www.weibo.com/ohmyboy)）录的视频吧， VLOG 『程序媛的一天』。
 
 {% video "https://cdnhk.blob.core.windows.net/blog/recruit/one_day_in_the_life_of_a_software_engineer.mp4" %}
 
