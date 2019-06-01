@@ -24,7 +24,7 @@ date: 2019-04-20 01:01:00
 - 作为开发，微软的硬件环境还是相当不错的。入职时工位就准备好了 Dell 双屏幕和 Humanscale 的支架，一台大概 Dell Precision 5820 Tower Workstation 等级的主机，一台 Surfacebook2。此外无需审批即可申请几台 VM 开发用，系统从 Windows Server 到主流 Linux distributions 都有，尝试新技术、玩 side project 的宽容度比互联网公司高很多。此外员工都有 Visual Studio Subscriptions，那些软件序列号啥的就不提了，Azure 每个月有 150 美刀的额度，可以干很多事情了哈哈。
 - 作为员工，公司的福利也不错。苏州这边每层楼都有一台 Jura 全自动咖啡机、一台雀巢胶囊咖啡机，热的茶饮料好几种换着喝，冰柜里汽水、豆奶、茶饮料、牛奶等等也是无限喝。楼下的篮球、足球、网球场是公司修的，只对员工开放，不用抢场地真的是美滋滋。工会每个月提供健身费，以及一年三千多的培训费用。其他互联网公司有的福利巨硬基本都有，在这就不提了。
 
-微软上海的福利，请看（转自）知乎大佬[@韩骏](https://www.zhihu.com/people/formulahendry/activities)的分享：
+微软上海的福利，请看（转自知乎 [@韩骏](https://www.zhihu.com/people/formulahendry/activities)）分享：
 
 - 15 天全薪年假，15 天全薪病假，6 周的全薪陪产假 （根据工作年限，年假最高可提升到 20 天）
 - 两台 4K 高清显示器 + 高性能台式机 + Filco 机械键盘必须是标配。根据工作内容，还可以选择配 MacBook 或者 Surface Book
@@ -55,6 +55,29 @@ date: 2019-04-20 01:01:00
 如果你在这里没有看到心怡的职位，千万不要灰心，请通过[**微软招聘官网**](https://careers.microsoft.com/us/en/search-results?rt=professional)查看更多海量岗位。微软是一家全球市值名列前茅的公司，对各类人才的渴望超出你的想象。
 
 下面会**定期更新**目前开放的职位，不过还是请在看到钟意的职位后尽早与我联系哈，有的职位可能上周开放这周就招到人了 ; )
+
+### 2019.06.01
+
+各位儿童节快乐，昨晚得知又有候选人接 offer 了，开心 🤣
+
+- Azure Data Catalog / Azure Data Factory，**前端**，上海，[633899](https://careers.microsoft.com/us/en/job/633899)，3 年及以上经验佳
+
+- Azure Data Factory，**后端**，上海，[584239](https://careers.microsoft.com/us/en/job/584239) / [619445](https://careers.microsoft.com/us/en/job/619445)，5 年及以上经验佳
+
+- MySQL on Azure，**后端**，上海，[612558](https://careers.microsoft.com/us/en/job/612558)，5 年以及上经验佳，精通数据库开发、熟悉数据里内核开发优先
+
+- Azure Data Catalog，**后端**，上海，[612048](https://careers.microsoft.com/us/en/job/612048)，5 年以及上经验佳，有数据管理类产品及搜索开发经验优先
+
+- 大客户技术总监
+  - 介绍：大客户技术总监是微软大客户的技术军师，深入了解大客户的战略发展和数字化转型，并带领微软团队及合作伙伴帮助大客户实现其数字化转型。
+  - 编号：[623569](https://careers.microsoft.com/us/en/job/623569)
+  - 要求：
+    - 具有战略性思维，可以把客户的业务目标转化成微软的技术解决方案并成功实施。
+    - 对 IT 主流技术（云计算、人工智能等）有一定积累，对技术发展趋势有好奇心和敏感性，了解行业客户的真正需求，并基于需求提供整体架构设计。
+    - 勇于接受挑战，成为客户信任的大使并协调资源帮助客户实现其数字化转型。
+  - 工作地点：北京/上海/深圳
+
+
 
 ### 2019.05.23
 
