@@ -219,8 +219,6 @@ OMG 不知不觉泰国行游记已经写到第五篇，内容有点碎，不过�
 
 出了码头后朝摩天轮方向走过去，感觉街道比较老旧。值得玩味的一个细节是路边的几个 7-11 全都在入口处安装了报警系统，这无疑在暗示附近的治安并不太好。走到夜市发现其实是个带游乐场的购物广场，广告、招牌里都带着中文，而旁边的停车场里停满了旅游大巴，大概能猜到是专门带外国（国人）游客来购物消费的 "景点"。一来这种购物中心毫无特色，二来购物广场的门口也张贴了大大的防盗提示，因此还是叫 Grab 闪人吧。
 
-![](https://wk7bma.bn.files.1drv.com/y4mpqWaTj2AnDAfK8BpN2RuiHTwlXqn1pZyRrOgkMJP4cpQ6c7s2sf0IzqBSXA-Y_ummzSVKqAqp03mh7KW80eTcwKtPx9NihfIjDWnar81H0E5bKCfbKKaclP4nfhF_DJn8U9Zl1o5WzBnkdJ6Ut7p0yOiyDknkApSm7p_Gmwrhi0pMFuXH8geCFrswPOP2Xt8OzctTqLCWa7IiN96IyyGiA?width=2016&height=1512&cropmode=none)
-
 ![](https://wk7dma.bn.files.1drv.com/y4mp8CU77-Dfm1T4JKOPD_m-ZN9O6SCqtekaFxhqtl5gDDsB2PpBewlbLsaAuKftrQgxerpRXeFNVYFpV0FB2BAH1YRXmabAuHHe5hTksWf5M3NkXxAc1qkf7Ns-BDFI8u5o7MRJ9xUXKqVrrNkRdU3enWH_ku6BThvNzrYEuppCBMPM7ZigUV6MgFGjaAgmRmHnOE_9iXn39myKeBqpkcD1w?width=1512&height=2016&cropmode=none)
 
 回到 Park 24，又看到这辆 MPV 痛车。经过明天的行程后我才知道，这辆车应该是专门带人来看楼盘的。
