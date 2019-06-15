@@ -110,13 +110,63 @@ OMG 不知不觉泰国行游记已经写到第五篇，可能内容有点碎，�
 
 ![](https://uq7dma.bn.files.1drv.com/y4mtb8Y1h0szwIGLHSc1AqAHVtMNSl17x_H4F0kES-A1cLaI1g6DIW8aasnvRU-bNEdNQ0NCdDMgBXOZqJ6nxOSj0py08Z9BDqVJaQPgBvBeR37IMQW4AwdQvZImUj8uKaGoWoxRKnJeEJatOGiNsV7WZfA5vxKH9hMXzs56sHitf3UQ6bXPqFZbIWWfyfrI5EOGejUQJ8TsQVYZeguQcU0ow?width=1512&height=2016&cropmode=none)
 
+![](https://uq7bma.bn.files.1drv.com/y4mJQFomShvmlN4tN6iU10xT9cqidvop7fPlasTW49J5qm7sVK57hjN1Br188CgmDFDzu2Bquwumke0NwxNcHa0SQQM4YyQ7sDRnc2s8dNEr6kodCxsmXIP21JFw2udpXuMUSIVXW_TSQIgaP1f2wUooUyc-veYQfcBrqxnypH93XePGEJCOtGEWffJAvOCgwXE6JtB4p2SAUjs1mDN0bO6Xg?width=1512&height=2016&cropmode=none)
 
+这是一个微缩版的石雕宫殿喔。
 
+![](https://uq7ama.bn.files.1drv.com/y4mpAfqMtIeE3WHy-BIOWmm5M2jWLXxL3rRMS22Ga_O5dpQ-TiKl81Tsro5qnOXvW9O6FSnPH25eOtBC0kgYugv92bkhvWP2JsbxjnnDuEYIXKIMMIqAWJFI6QRA_ZZmagDgOwOf04zMA8kYs2kFEgGNsWGxB0XeJvuAkZd2QEUhNax8j7nAmPXOQHfgDGNnWJW16v37hzQHs8r9LSLTVTXrw?width=2016&height=1512&cropmode=none)
 
+![](https://uq6pma.bn.files.1drv.com/y4mZSGD-oO6e5h5Ah0Q2_0R7NBLDZPb9ULlk_diX6KqC7ABQYVBGlrRujve5EeRYgS92wBu5Cr789txNzv-o6i8-VHMYSCXPv1ZBGcqRcgzDnerAYWx1d5TQuzNarwNyP7HEESOgkqDaKdaYD9-ZrXMCYzwvqBaKhDQWuOBigWQ2ELlKneCuan76b6fwiva-5UOoLEPHMCTRL8bGS7LL4-JVg?width=2016&height=1512&cropmode=none)
 
+![](https://uq69ma.bn.files.1drv.com/y4mbr0VJf4iHTyv2tseCTUGkYK2hScr-h2wyT32EzrnjRvfAqCezY4D0yWkH-fOhVcd-etMGxvFwdj4Gx4yQCT4z7UuAeAW639vGsa0e4O-jjLoJ6lcE6ZWsvNatpqa8NT8vy7ycjTyVTBEZJw6T-5gBzjKmvFlMsCjd3J10o7q7bhZSwo_JO344fb0u2YmAoMuNjMRHpfU8olrWsqiJJwzYA?width=1512&height=2016&cropmode=none)
 
+![](https://u67ema.bn.files.1drv.com/y4m9riH3gH-lIrt6T_TJGtQ5qj8VCrH8y7WBIomUb83PqgT-E7dg1-VSQmyUWYp7LZOnUOoVY1-B6dOCrb6lV_d88y4SiEA4oey9VjPzAZKRgeJxZfIDI1Uq06abVc3qAJh5r6HivQVetyC9ZiFq3ouOV8hmmfzm5f0_NsdSLpmIodzhFyo81FxPATFYQGNdhr7g4HIjhKBr4WyVcL5_DjAWw?width=1512&height=2016&cropmode=none)
 
+『佛像并非装饰。尊重是常识。』
 
+![](https://u66pma.bn.files.1drv.com/y4mIAsW61_6a-HRrpY67-WdWkSE4Z2RcN9xek1auq3_7UucIGOTJJeTn9v80u9q4_oXYzaIamojnpX5Y-t8OQc8OAGwJVioh8CyHcMRpIctE534HHOG1eCzL-g3dfB2Rs7nsHdeIIWokWBlfQHGkH617NCQdOq5Qtugom71EdVdRyaIJUvhuT4s4tQGuh3eryW5c36fG_81eeYmxDXR5KHXYA?width=2016&height=1512&cropmode=none)
+
+![](https://u668ma.bn.files.1drv.com/y4mZswlC11MoOqaNKQBZ01TzHSz_UBac2USd3bdsdXUfh6og-LjpYymLYfOnNcgx-vBhqm8xQPZ6Fl2-X61sR-kcpjqh5CURb-odp3xc4_4cEKwvd51w1nACPEQ2N4b6s6-7aVakzRkReWrR4VRO2JmVr_blF2BrtzXLzRsltTCIuDTdrtnD0c7z1BBuwjxdCDYSejI1aqDCD2BlYqU_2bVmA?width=1512&height=2016&cropmode=none)
+
+厕所附近居然有荷花盛开，美。
+
+![](https://vk7fma.bn.files.1drv.com/y4mC2eri-ACfk1UqvI2DkjNhCQf1l3D50V1NvrMULt0HF5gRsNaEeS-krx8wVaks54CQKNBtJPhVeZcLiQL-h84GTj15YAQ6V6zkEvLg3L7ulxrMl1HcQHT7BKEnaCTBbgzbZxIPvv0CGlz0zfyTMHNuvrs8h-V2Udpxxd6nc2U2ly_FmlepS4F12yo1UWL7Iw-bbYgTVMcabrlx63oKf1BjA?width=1512&height=2016&cropmode=none)
+
+扶手上的小石狮，非常中国元素啊。
+
+![](https://vk7cma.bn.files.1drv.com/y4m7aI2WPMzB0Tb1IlNCypPUz1mFOt6BW0Zf23tfoslvNYOcfhK4mwqPT7wkkoXAJholTAb5-i4eXLfmriq97aHG4R9ZV5l_T9J0Wl8ZuhinKdaKnqOvfhv9i4m_6pbhDnoOxIIFeSK53ro_tL-omgLjc4knRmEhdzbj1kRfO1kx3ItpLQNaZ4RJReorlQFIphZJ2AmShVAUDtfbNRwaxNUUA?width=1512&height=2016&cropmode=none)
+
+离开前最后再瞅一眼。
+
+![](https://vk6qma.bn.files.1drv.com/y4mcpzPY1cI3OrXtnAs-EPkF8LTw3MIeKYo57rjO_5y2NpltKDoDVTNBzmVIUBS83ZbCqnR24Lz-rKcYiy6zf95wDSj-DpstFmftFw4I5qvhvdoyfxuwc7C2vszXkc2zGA1NRh2qfsGNVgijrLDJlj5EvjnpcCycLIfMMwBkCtbgb71Zqwznir6wbL4q9AOymiQmEjsw2el3Ae3BsGVBbZsmw?width=2016&height=1512&cropmode=none)
+
+![](https://vk69ma.bn.files.1drv.com/y4mPENbm6iyW68NDeHuRlW1JoBLbxLkluRxO1TXUe6r-qazWxnbC_Ztk8qQxooNy5jD4HzpHlylfisZzQomvnnpC6g1-W-wLkm5QC5q-2kq3ruDGtnc1GbhlB1vuONjOeLQGanEt9pRvmlnO6DAYEKWVoz_JPAjkazMMLc9rPYpyqoRiMdCaSvB79yWnJqxVjLiHsd-UOt5A44u1Kg4Wq7_wQ?width=2016&height=1512&cropmode=none)
+
+没想到走出来后还能看到各式各样的宫殿建筑。
+
+![](https://va7fma.bn.files.1drv.com/y4mLJqc1uBAiAKXiz2VFfgZapGBJOj_69iN-dioOtwK92z5YWChD6p51BApCKzN6x03C9ycrS_Fo-q4oOfGoDRtFNWd4vT4z9gx-uzMM4nNZmy_bRCfc2DkoO_5LWo0l_bSgVMVfvQGDLY0om8axjDVEtmlytRi61ItyIDR66I8524YXVDHds7KECUFvLEmauuUQ_MWQIr2ZPbLA7aVuf38vA?width=2016&height=1512&cropmode=none)
+
+![](https://va7ema.bn.files.1drv.com/y4mlCaSBu6baWtwyZF799To08aHCVl2YtYovp6JtvA6Ir6cZBecUfv9QQbG7oEVHJVhX67j3ck5el2hWD0p6n2_fOA7k1eGpA9NqfrpVxFLmhw6GgQxFoKxCM8U8_S6ueMRaMGkOR660HzPiPczhCG2TI933phCBXeoh7w-O4VclakddeXLjH-Yaht44HIEnm1s0wW0rr5lvprJNGbkLYj6Hw?width=2016&height=1512&cropmode=none)
+
+![](https://va7bma.bn.files.1drv.com/y4mKlZCvEpZbPzUJ8zebqcxl3C8Fi1tv0MhGPNUAR89aJVFM6Q7xpIhuLJ1WAxm74doeiCQUTXAlC5JUDT0UjkBdu_jGDA7gxOVMVL6n4ecs6K_2cOHK0VsjF916_p1WyToVZYddgfPxT7rcrCt3MW2zQRlE1yd7Z7uJsZbbFwbUaRcKXdhkpeKUIHwfwHKYt-JzQ-2dNW6F3i5uK46TGzT5w?width=1512&height=2016&cropmode=none)
+
+![](https://va7cma.bn.files.1drv.com/y4m7CjKedxekw62WDQRels7dI21nEwGifwYosoSuYco4fegQeLUT5gPxCvRXQXsrEzN1tSR2PlVwkxSFJTdoTvLPBqMZt1LotH61uB-abd_MmX62yJZbu-_-QGUYcTm10M3S0VzQw3VIVjpIH9P3-SQtoGBveEwvnw09f-YiA6J6mzU413BZjNq2A7SrrG2PNtbIN-E1xIynpQuR5uJDg1uew?width=1512&height=2016&cropmode=none)
+
+这个正在修得宫殿看起来也非常厉害，闪闪发光。
+
+![](https://va7ama.bn.files.1drv.com/y4mSiF7mZTXw3J5bohT2h5wrobaIOi7ra-F6L1Qe9UvfEjH16BL_HmcHTCelQ5dAuEU2cbAbCEdVf6lSSRy0h6modE0ad5uWM73tHWSNdC5jDt07GfRnNRt33BmpQbN2j6kjrrEagXXhEi1PXp1nzGoyLYtozKN-_zYJ5_teRJxsdY6EgDIJdMMMskU5Z6c5QOZPNkTQePTUsf6M29xH1MFNA?width=2016&height=1512&cropmode=none)
+
+从大皇宫出来已经两点出头，急需补充能量，我们就近选择了马路对面的一家海军餐厅解决午饭。不得不夸赞泰国的旅游业很规范，无论是大皇宫内卖的矿泉水、饮料，还是地理位置这么好的餐厅，价格都是正常价，不会因为是热门旅游景点就坐地起价。
+
+![](https://va6pma.bn.files.1drv.com/y4m5-vDS72f1SXC2PvFQpFw76H7YNQHP5yM78lrYOsLXn8MjksD4wkZPdKUdkh8bMPkrOptoxvP6qA9SjL6kZQrOt5gGI24rLrToVn6suvhGDfAKzwy9EETMY47jiG8S4LbTVzUqVD4FoFeHYuAGO4qZIcMBhWA6PwyrwYa7MGzYHDkHLxKG0StLdfGAarRciJ67genKjFPRREDKsk888zy9A?width=2016&height=1512&cropmode=none)
+
+吃完歇到三点，我们来隔壁的码头坐船，欣赏一下湄南河的风景。对着地图确认我们要乘坐的线路和对应的船只，买票后排队等待船来。船票价格和武汉的轮渡差不多，但码头岸边的柴油味有点重。
+
+![](https://va69ma.bn.files.1drv.com/y4mgnrtZE90AiCdN3fHCuTTzA72Vfgkr4fdtwF6Yy7XQWh0A6NkP7lv8aIFxUTwKeMdt_GruTElxnGs7BJQfyPY3SDvLa7SBwJ5yFpVetMgWImG-OTOpYsjrmjU5ynlMkn3tiz-Vpfrv09BhiuqjfoCYaz9F0NypIBCZpujvzQoGBAg51zhmkxxqUaJ5Dhtu9lU90EqqAo9JB46-Nsgrxsbrg?width=1512&height=2016&cropmode=none)
+
+![](https://va6qma.bn.files.1drv.com/y4mUD2RhlTUHqQB5zUjOH0vzfhWsvGn8pFTRiSv8erudgSXqwsNuaZjq-iNLy-wAJQiuHoa8hD_OVc1bfYrgSfFOr6XIlPy-55MIZ756SGXiONaIahGSXt4TLj8mGMouj4X-WhkQ6IUgp1mSu7fCXmwVIIRJ8M9IMym4Bp8jBFyU8aEl-YKpcZscEHEQ6YYTXiDNfyiIBwBKjwyCbFejDIs1g?width=1512&height=2016&cropmode=none)
+
+![](https://vq7fma.bn.files.1drv.com/y4m574jA0_Fd1sOlT-wEIB9hzcRJ4LCWIgHbWL5FLgSVy8rbzI5H6wkZf6OyoJ5Mc4rJafl2OoIFY7LBQwjmhGmyhxWzf5UBFD-QdRgQP0CalrMUfe085UOVutwQuVz2dA8qiO7rxwS28b3g7XkJd60_stM7rmnmoAJU70ZSCjB3_FzGTt_o0APZhoH4J22v3L1_DUa4kiZx4EWHedR0FE5Zg?width=2016&height=1512&cropmode=none)
 
 
 
