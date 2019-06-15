@@ -56,11 +56,11 @@ OMG 不知不觉泰国行游记已经写到第五篇，可能内容有点碎，�
 
 ![](https://wa4nja.bn.files.1drv.com/y4mlT55YhQtO4gg9_0B_YOmc7U1SX1SBU5iL5tpG19MfzJ67cp6-EN-mwVOrhCIyY76Dqyt0994eDcYpUUN9jyKS5DwmEc28-0QY85G49MhLfqbrTL80gulkw1da0-guZ5pg0FuLaZxcg7Wo2UGOm_60sybBlRZebnsY_f2rK6csOBkFvoTk9fAUhW_BkyCZYSh7zCjLkmNQckwquOrvlcjrw?width=2016&height=1512&cropmode=none)
 
-抓拍到了非常 old school 的巴士！很长，放大陆的话应该是小时候的那种两节车厢的连体公交车。
+抓拍到了非常 old school 的巴士！很长，在国内的话应该是过去那种两节车厢的连体公交车。
 
 ![](https://wa4kja.bn.files.1drv.com/y4mQk78zE3G9dpAApht7N2l4PcoSm_ZowqntYItYiwjS9d6HLxnE57fo7eaK36p29hudkNCOcRpP58wj2nEB-gAIToNwng2f6NnbSqAx7U-g6lUCpwRLlLUTtbwAR9NpRqD4TcyephEpvQarOPvrORBrCLOEVo7BLRzzerXwrzGvXFSaDqMqQULndh9ooW0XZZQxKoi41qtx8oIGTwU3fbqNQ?width=2016&height=1512&cropmode=none)
 
-经常安保人员的指示，走完为导流设置的加长路线，进入了大皇宫的第一道围墙。一进大门就可以听到警察和工作人员大妈在大声叫喊，指引着装露出膝盖的游客去右侧的商店买条裤子穿上，很不幸我的短裤也不及膝盖… 裤子倒不贵，200 泰铢，纱制穿着不热，只是排队又多花了一些时间。下图中间的高个男老外手里拿的应该就是刚买的裤子，有兴趣自己网上找图看吧~
+经常安保人员的指示，走完为导流设置的一个大圈，进入了大皇宫的第一道围墙。一进大门就可以听到警察和工作人员大妈在大声叫喊，拦住着装露出膝盖的游客去旁边的商店买条裤子穿上，很不幸我的短裤也不及膝盖… 裤子很薄、印着类似青花瓷图案，200 泰铢不贵，只是排队又多花了一些时间。下图中间的高个男老外手里拿的应该就是刚买的裤子，有兴趣自己网上找图看吧~
 
 ![](https://wa4jja.bn.files.1drv.com/y4mQkJT7WMAOdyXfG7et5YiyV5_NwRTIHs-KJlnYE9ee9z9hzFZC0xuHOaoJi2B-YAw660gRMEyJwxV1fmqTIqX9k4295jX8WwI9srUmWfMi_GI-XlW9rJ2klXo5uMvG_gVznCkjwc3SBBRUFGUkFW5w7X32HWlFxAQGilpZMFlQnT2xr4Fzwu3z48V4GFkzK5sCluSWrvZNO_qc-vkGXt_9A?width=1512&height=2016&cropmode=none)
 
@@ -78,7 +78,7 @@ OMG 不知不觉泰国行游记已经写到第五篇，可能内容有点碎，�
 
 ![](https://uk7fma.bn.files.1drv.com/y4mMRdX9Rh2yRfJskHVmlhjHxjJnjX8kW7rGyQF6gTokvLOaOOlKVzVxa0YNZaFS-XNhXOPYP-sJrxjpxOPtZf2_5GUSE0D-VHmQfM5KHgLh-Ddsp1TDcPNHlaLdYqtKwQ-s_2wzho69d9Q5qR03nS-CblJU5lLZS9G9s6J0ACRVPBDkmdXCbgMqdnMx1H60a8FarR0UESc_uTLiyvkN4WTXQ?width=1512&height=2016&cropmode=none)
 
-中间的宫殿就没啥好说的了，四个字，金碧辉煌！看图吧。
+中间的宫殿就没啥好说的了，四个字，金碧辉煌！很佩服泰国人擅长利用金色、玻璃和阳光，呈现出非同寻常的视觉感官。
 
 ![](https://ua7dma.bn.files.1drv.com/y4moEWU_q8MZeuhgrML-xeqY2V0cN_nnxyWoc6zRIslxo4nBr90KYNWa04c1b8nAOBio04V1qb9FHKx8DTr7i-JfURvctzX0fopbV6Qh6SvaFSEtG-cXQQrhla1Re1vTBdiwEZB8uou94dBdoCVT9lNMjXn3U0PIZ02pETFS46A8anDUTXc8e-uY5PuikObjM66BCGToNa_6-_HGNMRKuDvcg?width=2016&height=1512&cropmode=none)
 
@@ -156,7 +156,7 @@ OMG 不知不觉泰国行游记已经写到第五篇，可能内容有点碎，�
 
 ![](https://va7ama.bn.files.1drv.com/y4mSiF7mZTXw3J5bohT2h5wrobaIOi7ra-F6L1Qe9UvfEjH16BL_HmcHTCelQ5dAuEU2cbAbCEdVf6lSSRy0h6modE0ad5uWM73tHWSNdC5jDt07GfRnNRt33BmpQbN2j6kjrrEagXXhEi1PXp1nzGoyLYtozKN-_zYJ5_teRJxsdY6EgDIJdMMMskU5Z6c5QOZPNkTQePTUsf6M29xH1MFNA?width=2016&height=1512&cropmode=none)
 
-从大皇宫出来已经两点出头，急需补充能量，我们就近选择了马路对面的一家海军餐厅解决午饭。不得不夸赞泰国的旅游业很规范，无论是大皇宫内卖的矿泉水、饮料，还是地理位置这么好的餐厅，价格都是正常价，不会因为是热门旅游景点就坐地起价。
+从大皇宫出来已经两点出头，急需补充能量，我们就近选择了马路对面的一家海军餐厅解决午饭。不得不夸赞泰国的旅游业很规范，无论是大皇宫内卖的矿泉水（10 ฿，大约两块钱人民币）、饮料，还是地理位置这么好的餐厅，价格都是正常价，不会因为是热门旅游景点就坐地起价。
 
 ![](https://va6pma.bn.files.1drv.com/y4m5-vDS72f1SXC2PvFQpFw76H7YNQHP5yM78lrYOsLXn8MjksD4wkZPdKUdkh8bMPkrOptoxvP6qA9SjL6kZQrOt5gGI24rLrToVn6suvhGDfAKzwy9EETMY47jiG8S4LbTVzUqVD4FoFeHYuAGO4qZIcMBhWA6PwyrwYa7MGzYHDkHLxKG0StLdfGAarRciJ67genKjFPRREDKsk888zy9A?width=2016&height=1512&cropmode=none)
 
@@ -168,9 +168,77 @@ OMG 不知不觉泰国行游记已经写到第五篇，可能内容有点碎，�
 
 ![](https://vq7fma.bn.files.1drv.com/y4m574jA0_Fd1sOlT-wEIB9hzcRJ4LCWIgHbWL5FLgSVy8rbzI5H6wkZf6OyoJ5Mc4rJafl2OoIFY7LBQwjmhGmyhxWzf5UBFD-QdRgQP0CalrMUfe085UOVutwQuVz2dA8qiO7rxwS28b3g7XkJd60_stM7rmnmoAJU70ZSCjB3_FzGTt_o0APZhoH4J22v3L1_DUa4kiZx4EWHedR0FE5Zg?width=2016&height=1512&cropmode=none)
 
+湄南河其实没啥好看的，河水比较浑浊，两岸倒是有些建筑不错。轮渡乘客非常多，包括我们这样的游客和本地人。河岸两旁既有一些高大上的餐厅、景观，也有破破烂烂、饱含生活气息的小破屋，反映了这个城市巨大的贫富悬殊。
+
+![](https://vq7ema.bn.files.1drv.com/y4m2d2pUd0cY1MFPvncsGimL5EEktCAJ_xpNjLmXkZKrvd_xjDbO5VJo8ma5QdL1jv591vmUrQbpnaNb2zunbXXNd0aB3l0aHeMZA813tYA6NUOMWgFV-w9atGpt8HGPxfzgwW5svaUsToOguVTeaPWbaqUhbjlJ8IxvqLEkihO0nDeNw89fdIWka9RkjBXfMwQW4u_nEMPWYxJj95fbQwk8g?width=2016&height=1512&cropmode=none)
+
+又想骗我生女儿系列 😍！
+
+![](https://vq7cma.bn.files.1drv.com/y4mPPrpl60uJtsTclU6QykgJ7yPBG-JZiQaCLgO0CV0A-t920yt0iuRtuJK4nxKyVjlLI4D_VmuDWPKLAjS0zFX0xh62XaeuCURHyIFyyhCCXKbmWFRuxgBgLMrOHgyBT0WnEFhfKQkef0YxWyBfjKja59jmSwARBk6T_Rcji6OunFS6LxlaR9FWSsTVo43h7RnsS8FlZORN8tF6xvelZqb-A?width=1512&height=2016&cropmode=none)
+
+富有或贫穷？
+
+![](https://vq7bma.bn.files.1drv.com/y4mPwoaXb6jbuk_Oj3Cf94DpWiE29HKg9pD-owvlHZbgw01zpT51gYMo-_NNSm5I83I1ddOlckC_nspyIKapi0qEaYpFbShewdrQuHVqcpBHg0iQpgor8irOAzX2EERs8FJXafGvDI_74jd6VIdVqerY-VjQSUek2luIF4I374LfPyksdEbvOinZTpu5XCroheDomSVyIf6tjSJx_mm8cKtqw?width=2016&height=1512&cropmode=none)
+
+![](https://vq6pma.bn.files.1drv.com/y4m0b-hTxZDAwIeHBuJTEFw2YhyUrQqF0EmmByOLRK8byNhjKjuhNiudE4-OCvkFQKG6j5siui_AT6TyDHLeSdrBhqRVxHLmLzKI4Va3VU_PFt4SCaw-5SIXV5Eryd2pMUwnWmzqLocbDaO-FUAUWYKg217MjFI_D2jOxBFJXRpiYQ3ctbOIjejJdHFRUxstgwNAgSmJAKl-XVmeePu9A06BA?width=2016&height=1512&cropmode=none)
+
+船上看码头。
+
+![](https://vq69ma.bn.files.1drv.com/y4m46G31tjJswW3xsXf84g5EI2loc0_AeTI7RDXhLtxYK_-B5CuYl_pBcUF07pv6P4qJ1B0A4YnrxO2ewtfPvmXF2zDf5Gcywo80lqNF9a-eULThQS8OJjTbK4JeJo5TERmLog6VL0h3pVyvt4z7G0U3Cjnb_rKdsAT5Kh8i7-nup5Udz-C4YNRH0WV5HT0LMO5zGkoG6cCn_CbAxXntGyGxw?width=2016&height=1512&cropmode=none)
+
+有的地段还是很现代化。
+
+![](https://vq68ma.bn.files.1drv.com/y4mJy8LSM8pExVhx1HsUryf0FQwpUHJaSqmH4o4kcOH4Zfku01wzlss_J6sNzBErHxFn2aKpvQaXB-v7YVg6l4ir0BbPEwv7AI6I5PpmVxNq0tYZKtChLfxafdy3fg0vpipmMsFyujSHFsDDK6Qm9pobB9HeVPqhmJBBPPAoTbIPxjOWvEXQdnol2BLqK98dV3HKMNMpWTlDInm-_3hoeiFXw?width=2016&height=1512&cropmode=none)
+
+![](https://v67fma.bn.files.1drv.com/y4mz0ZniHQV0XtO2Bun49kU_7_e7ZDRfAJd7APdclWEkqoku-GTvHEt3bc3CfJaOFPMf316vjAb065oX7IaUyHFXiw-1yjxr6JAaCsgVJJSetryarzOjPoV_iGWGvDpEHwwAcjfO1iJjDMukrgMiakixki6Rh72HoDP8Ctq-R0mk4BBxaMGMA4hYyWkqi6cDGTR28TtgXEIeGYTOEHi1mB1og?width=2016&height=1512&cropmode=none)
+
+这是在保养发动机吗？
+
+![](https://v67ema.bn.files.1drv.com/y4m09g5H6IPlJL5AaZ9yQZDYqNCdI7Bzlgd8bMo8liERTWzZn2z_rNpBy1o_YHBtMpbSzkykficTxbVr8s6n940svCx9vcN-46va7jFUwX0Lh3ZveAgMtMJh8A7i9m_P43g5xqO6JrlYx9YtaQbPnCO9heAa2iiscMgXiGXKT6rdYxYAKh33eogYVVjSMI2P2OaaypGFRd6TYJZSfNyoxJWbA?width=2016&height=1512&cropmode=none)
+
+![](https://v67cma.bn.files.1drv.com/y4m9y5mT7IOBFqS8_3mwDnrHyl2MqPrv6BpePDq3CphYpBmoJp4giddWwyfJLz0_WWMJlsDK1AEwJPc4nVqnMFIGx_uK-RqG-PDtViSag3kxa5hQt9FSkLy2nrEzXraGgKEtj4xJjSnTR5iyq5n0Q2DPkfDdhDRi2xKERHOdXgI8V6bPsk_nYlZw31g8y5CUE4dBOoflky4WVWgCXCQ7pWQSQ?width=2016&height=1512&cropmode=none)
+
+![](https://v67bma.bn.files.1drv.com/y4mWE2LDUzlntJ8thOCIr_4BzipzMs299FRdmPC-tExaTjCbe-0Z6BWT3I2325bqR5qa3eyy7nUZv9FEfz63vM1Q0VtTBDJwiJsWWa9h7tB804a3mdC0Z2_icWsbY2s4wVzOWK5imnflNcQIC9Gh8mTqoXU4cTtXIA5vpez9HJGeruz0Gq9LCm0QAtaJJqltJ-MU_-HxNiIYxvf85zIvAZx7g?width=2016&height=1512&cropmode=none)
+
+![](https://v67ama.bn.files.1drv.com/y4mzmMMWzSfAWswaOhxX1ggyuP6CsJvkDpI6lAl3jyDy4y9g0mBVah7kDDAAPMi7csWoESmE1ATlmk7q_zB2QYcjofBYc9b7BtshhSrVRcT53TQkGa_isEz-KVe-iTQ_g7wyhCNo98p7Xj5fYUuVbhH_A5IuYvS00K10ZqgqC5jUPhUxyr2FDqe6ef899_0UdkjjsqwmB4VYEQezjn5QE3QAA?width=2016&height=1512&cropmode=none)
+
+![](https://v66qma.bn.files.1drv.com/y4mMTKmi6WYFfG5gIICdr2Uy3bVbNkjJQOKu0-TX9wnpVrBsOPXOR0kx40j1Tj9d4g-ykk61GqfB48wVzq1NmF_vBElX632hN3AISle6slbQf1ustnhOPk8ZLP1FRCIpjx-gzWuF7ZWyIGb07KmfDKoI1Rauz1mghup8RTYIQJSeB2rCqUx5RVlUUppTnpwf-Yp5oQbMlFy1jzsCVpu-h75Vg?width=2016&height=1512&cropmode=none)
+
+![](https://v669ma.bn.files.1drv.com/y4msx4YpdiByo_u05T1Hc89kiH3nabB7H7zIT1abqcYY-sqfTDEtgkFTxA8ZrsGuGCeL49PA6vMVIDwaqSR6E2iFR8jxfd_RKtHOmoJrQ6c85ao51hwTxNaxK17WmCX1XzJNEAMoCe2i2k2BRlLKP1TuP6zEQzvZ4HaQc0jzt6GOTQanrkC9NA5NnNlSt3WY3YT6FPeM3oZcGrZWSLlrWRL6g?width=2016&height=1512&cropmode=none)
+
+![](https://wk7fma.bn.files.1drv.com/y4m2EYa4WihxZHR5uaR8ZlLToisC8iiGSfnfBZinkFGABaNazvVA_XSqR3yjeh1SsQmdAqmi13SYdnfgQBMo-16Hrk06Bmsk1K1EfAW2Sd3m8F4datlWeS72p-kbimNmEzpLjfAP-lbVvaF3HEUxQFcnJy6dHM8fAQ_BySzUzO4SdyvQmZqJCUVkT9j9u2MK0IcRzs_QDoAYa4DBx8uYNZnAA?width=2016&height=1512&cropmode=none)
+
+![](https://v668ma.bn.files.1drv.com/y4mfWpLVj0fMx-_NTsLRKimOAwdJVz-B3-UbM742cHsQH-kjxrW8MfVCQK0wzNL4pOdV03FPwN-2du0tTWbpBhZ1E2uAjkWTkDp50NwfSxUgdBSOFZuVxE-ZaGInM-98gaDI-qJglHrpVuZhXYlaxN3i1pExt62kLGA3O41yDZmPIAYARsAKsB7NPbom_5GccB6d-J2hXUIrGbyOO9AgwGjYA?width=2016&height=1512&cropmode=none)
+
+很多人选择在临近地铁的码头下船，而我买票看地图时发现这边有个摩天轮夜市，打算逛一逛、买点吃的再打车回去。下船时发现船舱已经空空荡荡。
+
+![](https://wk7ema.bn.files.1drv.com/y4meoraPZyN6EsYJWRNqsErCc0GYw8nvdJv-GSMOaZxlP0e91YuftKDwAngkjSx64zwqZSThXV_O3a3UZZigXu1BnYX3WgiwDA3s6xHDdEBgtm3NAlq3DIwlkPWpwhDAly69lwYSkBeQ3e774He6Fy0k8LeJ8woKX4TpVw-0G7fLgeVBw9HEABEdabuirrBOTUWA44mZrUWse7UYJQi1liZUA?width=2016&height=1512&cropmode=none)
+
+出了码头后朝摩天轮方向走过去，感觉街道相对老旧。值得玩味的一个细节是路边的几个 7-11 全部在入口安装了报警系统，这无疑在暗示附近的治安并不太好。走到夜市发现其实是个带游乐场的购物广场，里面的广告还能看到中文，而旁边的停车场则停满了旅游大巴，大概能猜到是专门带外国（国人）游客来购物消费的 "景点"。一来这种购物中心毫无特色，二来购物广场的门口也张贴了大大的防盗提示，因此还是叫 Grab 闪人吧。
+
+![](https://wk7bma.bn.files.1drv.com/y4mpqWaTj2AnDAfK8BpN2RuiHTwlXqn1pZyRrOgkMJP4cpQ6c7s2sf0IzqBSXA-Y_ummzSVKqAqp03mh7KW80eTcwKtPx9NihfIjDWnar81H0E5bKCfbKKaclP4nfhF_DJn8U9Zl1o5WzBnkdJ6Ut7p0yOiyDknkApSm7p_Gmwrhi0pMFuXH8geCFrswPOP2Xt8OzctTqLCWa7IiN96IyyGiA?width=2016&height=1512&cropmode=none)
+
+![](https://wk7dma.bn.files.1drv.com/y4mp8CU77-Dfm1T4JKOPD_m-ZN9O6SCqtekaFxhqtl5gDDsB2PpBewlbLsaAuKftrQgxerpRXeFNVYFpV0FB2BAH1YRXmabAuHHe5hTksWf5M3NkXxAc1qkf7Ns-BDFI8u5o7MRJ9xUXKqVrrNkRdU3enWH_ku6BThvNzrYEuppCBMPM7ZigUV6MgFGjaAgmRmHnOE_9iXn39myKeBqpkcD1w?width=1512&height=2016&cropmode=none)
+
+回到 Park 24，又看到这辆 MPV 痛车。经过明天的行程后我才知道，这辆车应该是专门带人来看楼盘的。
+
+![](https://wk7ama.bn.files.1drv.com/y4mmR-p1m9VI3d6LGBygVDKxYIzNd8ovYPCkTF4T7KLNLl0WdYfrHTFYzWGQRfufqg_FalPEFIpv-iU2aM6JSkpNcrctaX53FG36TnX1UoSwoncxMBtGFoNruPDFxj-ER0DZF7bE7K24M2AjuzHmB2rSTklnOQDSag8qAYYiK-pWsKE8H5uKoZKBfZobhBiQKXO5Pw9VkvQ9DeG7pjkJYAxMA?width=2016&height=1512&cropmode=none)
+
+晚餐找了小巷内的一家泰式餐厅，味道嘛只能说一般 😅。
+
+![](https://wk6pma.bn.files.1drv.com/y4mA_ioSFEzP4DBZozLoxrh0LUajAR8D6E54G1Mdxv46lMP0L9OL-Bbpxepa1jsodAl3oTCMvhQGxz8TPyAU-zb-uPhLKaqV4bgxXAeLjuy74KBdsUbkQdN-yWbPHHpdXa_3HmVMrQ46Q2-1YpZm_w3q37WK4R5YHuXMEUCH08h3PGScvaQqCbp-XJcJS7lTQzuXnMLH3bDufOl1iNdB_GKug?width=2016&height=1512&cropmode=none)
+
+![](https://wk6qma.bn.files.1drv.com/y4m3pHtxUdaaxXeU8Cg-ZKmU1XQyZFzfIqLVekGFO7FCmNRU0jrw2hJ6YE1Bd8NwX1XoMlB8OjZLF6915IM3kjCYhPbpjkdmojqnh2LxF15b0K5xKR9frtcMYDZaU0IBUHBFkhU1kQI7HbwU1cvVZbKCh9vhyPq-ytvFBokNjJMAsbLS5_XtoX8BZh7SrQactOQj5AMaioQK23sjv6PZP9olw?width=2016&height=1512&cropmode=none)
+
+![](https://wk69ma.bn.files.1drv.com/y4mgGw23aAsrgf4M0-5tOz8G2LFX7HOz0lcvPE1tiHXEHZ5yJoYJNbkrRi0V3uo1kLIgE7SGrvrZ_TDkmoHGeav2jMcqaICo5TRjfSpJvC0j7HzZ0QoBqbosrb1Uf0vpzAPZjJc_3GV2RAz1madQ2ec0fcFOyE8gVk32XpRNuY_5bWL7l0EAphf7mhiP7vrJBTt7L5BrFoLlvYTlL8ue8tlhA?width=1512&height=2016&cropmode=none)
+
+今天还是跑了不少地方，见识了既现代又富有历史感的曼谷，也见识了既繁华又贫穷的曼谷。累并充实，回去洗洗睡咯。
 
 
 
+## 下一集
+
+To be continued…
 
 
 
