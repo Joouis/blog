@@ -1,5 +1,5 @@
 ---
-title: 2019 泰国行游记(二)
+title: 2019 泰国行游记（二）
 date: 2019-05-12 22:37:40
 updated: 2019-05-12 22:37:40
 categories:
@@ -21,7 +21,7 @@ tags:
 
 ## 上一集
 
-《[2019 泰国行游记(一)](https://blog.joouis.com/2019/05/03/2019-thai-trip-1/)》
+《[2019 泰国行游记（一）](https://blog.joouis.com/2019/05/03/2019-thai-trip-1/)》
 
 
 
@@ -287,5 +287,5 @@ PTT，除了 BBS 还是加油站，哈哈。这边 91 号汽油对应国内的 9
 
 ## 下一集
 
-《[2019 泰国行游记 (三)](https://blog.joouis.com/2019/05/24/2019-thai-trip-3/)》
+《[2019 泰国行游记（三）](https://blog.joouis.com/2019/05/24/2019-thai-trip-3/)》
 

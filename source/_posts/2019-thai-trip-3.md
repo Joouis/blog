@@ -1,5 +1,5 @@
 ---
-title: 2019 泰国行游记(三)
+title: 2019 泰国行游记（三）
 date: 2019-05-24 18:15:22
 updated: 2019-05-24 18:15:22
 categories:
@@ -21,7 +21,7 @@ tags:
 
 ## 上一集
 
-《[2019 泰国行游记 (二)](https://blog.joouis.com/2019/05/12/2019-thai-trip-2/)》
+《[2019 泰国行游记（二）](https://blog.joouis.com/2019/05/12/2019-thai-trip-2/)》
 
 
 
@@ -303,4 +303,4 @@ tags:
 
 ## 下一集
 
-To be continued...
+《[2019 泰国行游记（四）](https://blog.joouis.com/2019/06/02/2019-thai-trip-4/)》
