@@ -97,19 +97,79 @@ tags:
 
 ## 2.4
 
-今天难得睡了个大懒觉，中午随便吃点东西，准备下午四点打车去
+今天难得睡了个大懒觉，中午随便吃点东西，下午四点多打车去 Talad Rod Fai Train Night Market 铁路夜市。这个夜市在当地很有名，但由于交通不是那么便利，中国游客去玩的不多。结果辛苦打车过去才发现，今天是礼拜一，夜市不开 💔…
+
+![](https://hjqj3a.bn.files.1drv.com/y4mV6fTyLazO5q38M1ehRl174ZskJ_GCXbwRDXPjeie-tIl9tCKImPQsh1nxGZhLTzndV_t1qhWVkBUTODcCSDHNmpzb5qju_-lv3MnLWg2zKeF_YTI2yr7BwQNOEMU8SMAPoHYyesEbCTa-PXCY7zkifs89fPtGXyqVaTo5AwlK7xkpA-j0NjBtcxeb2-BDYE1sbHhlbTbyF8EqpWG98bYHA?width=1512&height=2016&cropmode=none)
+
+![](https://hjqi3a.bn.files.1drv.com/y4mtKFO1sY-B6A-Z0vfm9pZ8oMr-Xci2NRazS0Hvt2cJ-q3pA9RkQNYtcJol1xp-OvXqZhIcT5dZPDWPoDPr991mGn6He0IPilSGEBK8NPFfWsyAaNxMV66g9Zk3endAHzBtn3W-Ln5abytXYtIamLEoVpAKsr4O7mGPIsfRL7gAmmU0qX-oXccomuBJbDU8zb-GBkomM0uWXrENGTD9ldCjw?width=2016&height=1512&cropmode=none)
+
+好在旁边就是个大商场，不愁没吃的。吃了顿中餐后沿着大道往南散步消食，还有几个大的商场，又随便选了一个进去逛逛，和中国的大超市很像。
+
+![](https://hzqr3a.bn.files.1drv.com/y4m7tGegr0pbPYMUN7NvzZyG_jC1p2HUxzWgRMddbm1xilgwxU_goeZhHyDLE8OwE0ijxqPaCURpDdB3XlKEicmtJH0KNJRZQS0MMzk0Pb16vnkOkve3spEGbDNPpkJxTvDRYGqTE4XzHDN2gq6isiWAfFqOQDqbkW5qj-2cdlcW8piFjm8omki84m4cQ47_qYXsTEvGUs6HgA9Mbdhelh9sQ?width=2016&height=1512&cropmode=none)
+
+今天是除夕夜，自从外公去世后，已经很久没有一大家子人聚在一起吃年夜饭看春晚了。这次人在异国他乡，难免也会有些低潮和失落。回到公寓打开电视想找一点家的气息，发现机顶盒是支持 YouTube 视频源的，感谢万能的 YouTube，居然让我在海外看到了春晚！！！
+
+其实我也一直没觉得春晚好看，通常都是电视放着，我玩手机干别的事情。但这就是一种仪式感。
+
+![](https://hzqp3a.bn.files.1drv.com/y4miSHNlG7KZqTj2l15eIPrIPp1Vq3Cr91WIbZXTAWHF8i5GhGsA8FlN-POMKUEa97FhyCdlDZa5zx3z3iwK4U-OAGvtlSoEp6itjmDdl6_hotvQHri-D72Eef8UmZYEvsH9qGewgfp8HD0hzLN-EDe18ZwOyTxWrpzN2Hwr-FWkxKK_q3YoY2SZuX9eKSd56x2Gmjtr5Th7EGa2cIIg9cC8g?width=2016&height=1512&cropmode=none)
+
+结果 M 更想看别的节目，也罢… 反正就她看无聊了再切回春晚。
+
+![](https://hzqq3a.bn.files.1drv.com/y4mQvqKFCuK7VaBTzhnOVH_gDyHY2_7PcQkpw8oDoSoZ5ecXhcB1X2vFIubgO5ROcokfTZOk0A5cYG4HqqcGb8AvN7HKa4tdlbNnabathnui-IXwIpvYDIuZ-wKc3uZm5koveco1obPO9_zCFAZXrYWwwVLp22pMeLqx69Cqh6fh8LN_vJHqZKTVB0deLrMmk4o3p-VEdtBL168klqo_bS9dw?width=2016&height=1512&cropmode=none)
+
+反正家的感觉已经失去很久，只能期待在未来的小家中重拾。这些年这种话也是一直埋藏在心里，跟 M 讲只会让她爆炸和受伤，引来更多的麻烦。
+
+人生不如意十之八九，可与语人无二三。
 
 
 
+## 2.5
+
+今天是在泰国的最后一天，明天凌晨的航班回到深圳继续避寒。行程也很简单，中午退房后打车去 The Nine Centre Rama 9 吃午饭喝咖啡打发掉下午的时光，吃完晚饭后去机场等候登机。选择去 The Nine Centre 是因为它挨着机场快线 Hua Mak 站，三公里的距离步行或打车都很方便。
+
+整个商场就几层楼，并不大，不过也能看到浓浓中国新年的元素。
+
+![](https://hzqm3a.bn.files.1drv.com/y4mMFdaVVDVV-Sa8hQ_JuF85CiMBe0JVuxvCwnk9MdIpqoEtlp6GDCKqHbevIgdbtB-2T9fBAxXOFe8W8cbZjGldKkWX4KZpkJPa2OjSeM9m3ssp7L2X3vhv0rN-JWdDeS59_GSGA6lBPnvHXBZBc1LBcF8DHIbHV2me76WYiQhxR9A6PdYmd40FlJ-UbucgiXUd2McW_Buiumq-dOX-XapVQ?width=2016&height=1512&cropmode=none)
+
+想着走前再吃顿好的，选了家自助火锅店，相对于人均百元的价位来说，味道令人失望，肉的质感也很一般。
+
+![](https://hzqn3a.bn.files.1drv.com/y4mtXs0W8YOUGWj3HRUuAK7HQIWqIEJL_oTG28AWfwf7PtCejAYHOVywuenPR3SzOlee9dRqTmsOGythgNlxG5g6IvNLa3uQ0Zn0q14-ylySI8FHAJGiFcNry4rT5cMHfXLpaoWBmL_lgl77L_SOVHlUIanTwMYsT7kRmCmS6GZ8zTwxfH3Tz2ZPCPuXeeLNwVg4EHp55H-K9TxijuKv7Wl1Q?width=2016&height=1512&cropmode=none)
+
+吃完老规矩去星巴克，打算点杯咖啡坐一下午。不过我打算去附近评分不错的泰式按摩店再放松一下，M 也坐不住想出去走走，我们坐了个把小时就带着行李去找 Massage 店。Massage 的经历在前文中已经分享过，这次很有趣的是碰到了按摩店的老板，一位华裔泰国人，从事外贸工作，英语还不错，我们一聊就是一个小时。他知道我们的航班时间后，很热情地给了一些时间安排上的建议，在我们表示懒得四处闲逛之后，又热心开车把我们送到了地铁站。让我印象比较深刻一是他介绍了分辨泰国华裔的方法，除了看外貌，也可以通过人名分辨，如果名字特别特别长，那就是华裔或华裔后代；二是他刚好要去接他的女儿放学，我们就聊起了两个国家的教育话题，基本上升学、找工作的竞争都很激烈，此外越是高品质的教育也越是需要砸钱。
+
+回到机场，最后吃了一顿冬阴功口味的晚餐，上楼到机场出发厅，准备归国。
+
+![](https://hzqk3a.bn.files.1drv.com/y4m2kgSZPinRBMyHejom2-JcmRXDmB_MyhxFc9x2ztLPnk4Iut__POKKoDnq_qgzyDU1cuZVR-6U0k0XyodwcrMO6yoVDboevSdgiiGdMwG-3mA382BAfkujGg3B3_MD5xrB2kiWFT0dFm6CPNBLUWQbiFuO_PiVHz2V4ozKbMG4EC1Max3l9mPzIjXpDoLnrKd9JNyRP0-yjsRdBuKwr3A4Q?width=1512&height=2016&cropmode=none)
+
+不知道为什么出境的效率非常慢，此外安检十分严格，头一次遇到脱鞋检查的要求。
+
+![](https://hzqj3a.bn.files.1drv.com/y4m58HKnJhJkBO5dmzDLbRrSbC7KIng9NHQNugQ3alVnumHvSc10k1LpGnODenMq9NPf_E3Vcys2W-63GXakYRjlVuaBcbJ0JlIU0InXWz6FUN6PAoR6Oo3X_OiPybyF2Lv6369syhoBsA3Pma7amcz9pISQRj0kYYUal7rzfZEvI6F8Xb8KMBHzytqdyO3XuBr-Mqt4Xr-pWJyIztss8rnpw?width=2016&height=1512&cropmode=none)
+
+就这样，八天的泰国之行就到此告一段落了，总得来说玩得还是非常舒服，尤其是带着一位老人家，自由行的优势和魅力就在于此。之前的各种经历记录得非常详细，结尾也不必再做更多的总结。如果有人问我泰国好不好玩，我会肯定地回答好玩。如果问我还会不会再来，我也会肯定地回答，我会再来。
+
+全文终。
 
 
 
+## 2.6-2.8
 
+考虑飞回武汉还要再抢高铁票回苏州绝非易事，这几天武汉也正是数一数二冷的时候，因此我们干脆飞到温暖的深圳再歇几天，到 8 号我就直接回苏州。上一次来深圳还是 2013 年的夏天，参加北大信息工程学院的优秀大学生夏令营活动，并不是什么美好的回忆。此番来到深圳，由于是来度假的，感觉挺不错，悠闲。事实证明还是自身的心境与心态影响自己的感受。
 
+在深圳最大的收获就是见了几位老朋友。首先是在 Lazada 认识的齿虎，与虎哥一起回忆了同是应届生加入阿里后的各种酸甜苦辣，共鸣不断。接着感谢中学时代的好友毛哥带着老婆从广州过来碰面，还有他们的好友 Gavin，一起在万象天地吃喝畅谈一天。Gavin 是华为的设计大佬，开标致 DS5 非常有品位，散伙时给力地把我们依次送回火车站和公寓。
 
+![](https://idqn3a.bn.files.1drv.com/y4mKz1L4DWG9X0KR7NZgBAETmd1lZaX5FXxD9OtRnbNQTI7RfawB1Ew8J-KEHOqhwbTLrMFID7Bs6cgRXu1T1FpZv-rnCX7HJq5nVU9-GM5VHafckhArEnqZWCzPDqLvMd9zfORlFlLbC6tnbFE6hUmrC6-fjgonu1sHJXCihTTWAl5Y0zpEsX3mhg8G4SQsA3rM6XU-UZPYxdaHmU5bVvBRA?width=1512&height=2016&cropmode=none)
 
+临走前一天约上了百阿同学策远老哥，记得非常清楚上次一别还是 2017 年底在西溪园区 1 号楼，那会他就表示情况不妙，后来没过多久果然就得知了他离职的消息，而我也转岗去了 Lazada，离开了云 OS 这个黑洞。这次再见我俩也是感慨万分，彼此分享了这一年多的工作和家庭生活情况，聊了很多很多。最后老哥请我吃了著名的网红茶餐厅点都德，品种丰富，味道也不错，享受！
 
+![](https://idqm3a.bn.files.1drv.com/y4mTNZ6_vXjO3PHpDcQff1vWn4KT8VuM1HFT7YGMt-kwcXUnWY50OLE_ogk2eJvB0K9yNZ4_RwnUBFrplQXpbpPU3fQ3nQSF5MB0SrPxHdIp1X-ji-EiN82QQM-SjuIYCNHg23B2dgwnygJmWhIIjOMDd7KXbt0iP6eju8MOdmi0l7eGk0qWhIPg_wD7C0jsmH0V57zdMMIWyYgqE1K9mQeig?width=1512&height=2016&cropmode=none)
 
+![](https://idql3a.bn.files.1drv.com/y4mcU25jAmrDXWsJsyZ0rEplrEWsj_vYhtWiTMxnguV_G2_zeAjKwkel5VBo7nv61NglnOtAo-iQuKPizcjjEeuV3G24Lc4GVCn2FRw4NGJVrX0nISnkA3cehvc88iXT5TV7MaLTyjE_tWjBYt78phFpu4tFPH9Ov0iTUxUE7X3xm9jecLwmIv8zD5A5uvhSY4yNhcF0rUHQM4W42timJZAaQ?width=2016&height=1512&cropmode=none)
 
+![](https://idqk3a.bn.files.1drv.com/y4mA_qKc-y0GuhCXDRtzzz29mcT68MWWc1V6aLjZyEQpLWY_OrP_m8jxejrjUZD35zio24nih5EcdgNFM8I0l_SOMh9qpGC2MtqWopNKHv73gOhGM3vJImecVvuBVJEmqDI2gdLyc--VowcRDQuXqqaXKmN5HK_7YcTj13vCRmFzlLqzvAW4vYOiqlbO15G6vb6x1Tc_qRra6Bm_bQIeZKg1A?width=2016&height=1512&cropmode=none)
 
+![](https://idqj3a.bn.files.1drv.com/y4mlWRRsFKKV1B2OWqxbR4NBo1BYV_XOIME0nPcsCdhsrsyV6DqQ9r7Yf8XPPqb7x7wwOmUU74DvtZ85O6vQtUeVM13fFbhSMpITuLSM9PCjW0vcccdc6wppdgyX6fzU3JflBEgeok7eKQpzXB-MZ97TV6OBenNATViazfAmgqMOeZxSPj1qZUa4PCEUg-SY_apDNxxGCkdp8lGUf8LeYLPqA?width=2016&height=1512&cropmode=none)
+
+![](https://idqi3a.bn.files.1drv.com/y4mGRLnCyUBIBbyAiJWAbjzqkfKy9uhma-XvFLoO2Kipg3rXUJux15MVxXF38S5DTxdwyqQtbdpmAQGyhRL8UADsSyT3c0bZZPWofNcuFRUB2ScOkJ4B6EJCVGqj6pCdVIONAi5Cn2tPnWANP4ukFo82uFEm4WK2O3d45aCJUvCBJjZT3iqfHso9J1BZOqOesj4Xu9VCrEkw3OCliAh8IxoQg?width=2016&height=1512&cropmode=none)
+
+**天南地北，相聚不易，感谢大家，期待下次再会！**
 
