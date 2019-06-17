@@ -15,7 +15,7 @@ tags:
 - hua hin
 ---
 
-{% meting "540596309" "netease" "song" "mini" "autoplay" %}
+{% meting "18663218" "netease" "song" "mini" "autoplay" %}
 
 
 
@@ -149,6 +149,8 @@ tags:
 
 就这样，八天的泰国之行就此告一段落了。总得来说玩得还是非常舒服，尤其是带着一位老人家，路上基本没发生什么大的争执。之前的各种经历记录得非常详细，结尾也不必再做更多的总结。如果有人问我泰国好不好玩，我会肯定地回答好玩。如果问我还会不会再来，我也会肯定地回答，我会再回来。
 
+最后也希望你能喜欢这六篇博文的 BGM，尤其是作为结尾的『Bold as love』，来自 John Mayer 『Where The Light is: John Mayer Live in Los Angeles』 专辑。听了十年，每次听还是无限感动。歌中有一段独白，若你有心去了解，则与你共勉之。
+
 全文终。
 
 
@@ -174,3 +176,4 @@ tags:
 ![](https://idqi3a.bn.files.1drv.com/y4mGRLnCyUBIBbyAiJWAbjzqkfKy9uhma-XvFLoO2Kipg3rXUJux15MVxXF38S5DTxdwyqQtbdpmAQGyhRL8UADsSyT3c0bZZPWofNcuFRUB2ScOkJ4B6EJCVGqj6pCdVIONAi5Cn2tPnWANP4ukFo82uFEm4WK2O3d45aCJUvCBJjZT3iqfHso9J1BZOqOesj4Xu9VCrEkw3OCliAh8IxoQg?width=2016&height=1512&cropmode=none)
 
 **天南地北，相聚不易，感谢大家，期待下次再会！**
+
