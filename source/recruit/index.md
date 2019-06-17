@@ -56,6 +56,12 @@ date: 2019-04-20 01:01:00
 
 下面会**定期更新**目前开放的职位，不过还是请在看到钟意的职位后尽早与我联系哈，有的职位可能上周开放这周就招到人了 ; )
 
+### 2019.06.17
+
+- 苏州 Office 365 团队热招啦，据说有几十个 HC 喔！
+
+![](https://izomaa.bn.files.1drv.com/y4mg6S1xFdI-mfiu1XduwtwOvBgI2Ex27S-RqxT84yl2atFgniRmJoV8qmEGqjSXYWu9y0E7ArinUrPIzKfUe24yptdQAb6R91JWjoNgY4rDPbPrWAg5ydN-LlKbF7sm4U045aQLEbyVF58p6h2ElGvn3ru1WtlkuqT_ZabF4q9_XWq-bgUmq-wqyq-T4Ivv6eykFsjgO4zpES0emj6A-3hZw?width=750&height=1994&cropmode=none)
+
 ### 2019.06.14
 
 - Intune 前后端开发，一到三年经验，无英文要求，JD 参考[这里](https://careers.microsoft.com/us/en/job/634833)
@@ -327,38 +333,4 @@ Java on Azure 和 Azure Management Experience 两个组，上海，L60-65都有�
 <!-- endtab -->
 
 {% endtabs %}
-
-
-
-### 2019.04.19
-
-{% tabs Categories unique name %}
-
-<!-- tab Mobile -->
-
-MMX 移动团队，听过他们的分享，很不错，近年也取得了很棒的成绩。Edge 浏览器团队正在招人，他们的文案做的也很用心喔。
-
-![](https://u660cg.bn.files.1drv.com/y4m7gM25moAbCmf1dg9Lb6EXAZxZ4h3N-EKyKqPKrZ5Y1gLzcqNzZsSeavdZQotkA5yeW04GOUC8wYm_g5cIIUAhtnsWDzhJURxcS_EC5BQYp7lY0XEEcWHdssAWx-Le555YSzflDomvD5V22jpc3QrZ9UO_RQES3jNQEv4K_as0E-YBueMNGt5ByxgQPi8dCztCf3n-XQCSnr3kBcW0mk7Lg)
-
-<!-- endtab -->
-
-<!-- tab Dynamics 365 -->
-
-Dynamics 365 团队招聘的方向包括 Global Experience (DGX)、Retail + Commerce、Supply Chain Management。这里放一张 Global Experience 团队的介绍。
-
-![](https://u66wcg.bn.files.1drv.com/y4m29GjwbxqhSmei5H6lRJ3tnIiSs7ShNi5MMezbXnK1-wtsxG9PK8BbyJs_aX8ipeXqKKZfKOr_0PxmeqIbJx6HOHlN1MM8_L0cedyietfTOGgHZjVV8TXfY2oOf51ASh8eNvOW9E9r3FNrTOEJ5v5h8NLaEb7wCqGnsg5jsF1XEZEDzPoVXIwcUhPB2gg_uGeU7Epdem9Fh67YQirpBy88Q)
-
-<!-- endtab -->
-
- <!-- tab Azure Big Data -->
-
-![](https://u66zcg.bn.files.1drv.com/y4msbW1h8QI6_rXxW2weAynH1HVi4GR1ypWaZZFeuY8d2cj-XjDPzJBqj3SpcQC8xQWFFTEFrBOYG6zim5BteybJKZH4JQNloUiQ2nV_Jz-VS6w7H4mx7eDGzq8wd_tgnjSGzNoiBVCfUnVfFZbNSjEo2uAaw8Vpk9QwmNqZ0krU52yfeI9FKH0hQqBI3Q4JMHkxCGLzw6F2enBtmg-cpPAdw)
-
- <!-- endtab -->
-
-{% endtabs %}
-
-
-
-
 
