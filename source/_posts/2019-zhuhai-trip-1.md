@@ -1,5 +1,5 @@
 ---
-title: 2019 说走就走的南方之旅（上）
+title: 2019 说走就走的南方之旅（上）(WIP)
 date: 2019-06-18 19:24:34
 updated: 2019-06-18 19:24:34
 categories:
@@ -150,5 +150,82 @@ tags:
 
 吃饱稍作休息，阿健开车把我们送到高铁站回珠海，又要分别啦。五年之后的重逢，不到一天的时光，非常宝贵。临别前总少不了对未来再聚的约定，虽然很难，但就像这次一样，有缘自会相见！
 
-这么早回珠海除了中山没啥可玩的外，也因为我和十二年未见的初中语文老师还有一场小聚，无意中这两天全在重逢和怀旧。
+这么早回珠海除了中山没啥可玩的外，也因为我和十二年未见的初中语文老师还有一场小聚——这两天似乎一直在重逢和怀旧。我从初中、高中到大学全是班长，要说这三个阶段里最有凝聚力的就是初中时期，大家都很单纯，老师们也都认真负责，从学习到生活，整个班级非常有凝聚力。大家都很喜爱班主任和这位教语文的胡老师，不仅是因为她们课教得好，更重要的是她们不止关注学生的学习成绩，也关心学生平时的生活和想法。人都是将心比心，老师投入了饱满的感情，自然会收获学生的尊敬和爱戴。
 
+如今胡老师已经六十六岁，退休后一开始还留在武汉，但随着她女儿在珠海稳定下来、成了家立了业，慢慢的胡老师和她老公也过来与女儿家一起生活，一大家子其乐融融。读初中那会只有 QQ，之前不知通过什么途径巧合加上了胡老师的微信，之后经常能在朋友圈看到她的动态，这次来珠海也立马想起了她，很快就约好了今天下午见面。
+
+半小时的高铁很快就到了珠海站，出站后那叫一个热，但天气环境是真的好，看一眼爽一眼。
+
+![](https://izp08w.bn.files.1drv.com/y4muGPu2CRwhROJHy57BA0G2jlO3xpmKC6IeNaZ472w5zm78QJqgMccOeuQkdaYXvkhoA549fbTtdrCqbunuigPP028wqT2nAJp20QJqa8SzWkl0e6dTDeXk2iCKxQSmSHM_F9lmkPRjELa09MHLHR5q4BvphASga7ZwFk2NdQetwKVXvj4T7Rn7nwNBBxbSdf72rmc-X_omswIPzfaizYY4Q?width=2016&height=1512&cropmode=none)
+
+十二年未见，我已经比初中毕业时胖了十五公斤，老师还是一眼就认出了我。尽管已经六十六岁，但老师和当年变化也不大，让人惊喜的是气色非常好，精气神十足，看不出太多衰老的痕迹，真心替她感到开心。我们坐公交车到她常去的华发商圈，从喝冷饮到吃晚餐，也是不停地分享这十几年是怎么过的，中间经历了好多好多事情，还提到了其他同学、老师，回顾不同人的发展轨迹，感触颇多。和老师聊天很愉快，她天生自带正能量，话语里透露着乐观与自信，很有感染力。等吃完晚饭已经八点半多，非常满足，又是要到说再见的时候了。走出华发商圈发现周围依然很热闹，不少人散步、带娃或坐在草坪上聊天，吹着风，看着繁华安逸的景象，油然而生的幸福感，大概就是小确幸吧。
+
+![](https://htomaa.bn.files.1drv.com/y4mJA8yt0dkpsUZboRoK66foB6Ql8FY4allyRYGZ5fF5Hp_P3Xqj1IEubBpEzxr03vL9hq_XFXwURwqeuuQU4bSOBsQFSdmAidRD5LEYq2jkFGjaT8abHu_JcN1E7AC-zRMHVXch4BcRHT7ZcsRnskrfzD2Du3sEFkJtXdWMpofkBCF_fTJN4eGQ2m4cLfISkpOaIKDIp1sJcjiMS4u1EhD_Q?width=2016&height=1512&cropmode=none)
+
+送老师到公交车站后，我也就坐公交回住处。大晚上九点的样子，没想到还能遇到堵车。到家后赶紧洗洗睡了，明天要起个大早，过关见识一下传说中的澳门。
+
+
+
+## 6.8
+
+早上起来大姐就说胃不舒服，她房间的床太硬这两天都没休息好，加上昨天她和三妹逛街又吃了些冰的东西，到夜里就开始疼。她夜里自己跑出去想找 24 小时的药店买药，可惜没有找到。到早上稍微好一点，早餐喝了点粥，还是跟我和三妹一起出发去澳门，没想到悲剧的事情发生在后面 😷。
+
+打车到拱北口岸已经九点，过关的人非常非常多，不过三妹说目前这样还算好，再晚点人会更多。
+
+![](https://hzonaa.bn.files.1drv.com/y4mwgpArLzJgZe4mKv9olH66Tqf3wcOvJdBP61DeULoSsS12TNc6dXmfPwpzX805Lbjr6iGTVmWndY0dlcb6U6lM0XzSwXHP_IlQHpAy7nnRG3VpHFCSSxpijhdNNiXH3geqGTR1dZrTBXp5nKvI8VX_sOBLstPEIeSLs2Eo1TGYRb1zhsWmQ5-QOvLHE6jHKQExfFmVDBQ-ikNJU0xr4yQ5w?width=2016&height=1512&cropmode=none)
+
+过关一共要刷两次港澳通行证，第一次是出大陆的海关，第二次是入澳门的海关。过关后绝大多数人都是排队乘坐赌场的接驳车直接到市区的赌场，这太有意思，说明了澳门这座城市的命脉是什么。类似客运站的上车点，只不过站名换成了赌场，运营的 shuttle bus 也是赌场提供。
+
+身为老司机的三妹带我们来坐人相对较少的新濠影汇的接驳车，计划白天最热的时间先在路氹这边的赌场和商场逛一逛，等到晚上凉快了再回澳门半岛的圣安多尼堂区看大三巴等景点。
+
+![](https://ijooaa.bn.files.1drv.com/y4mOqZoAueiIMpYKc-1cZJ7Q4qkmpWE4845LYHhMKFRcRA5j4IBa-azf1n9d-9l4_i8Y9kXaCuXahsDQFUCXsGVslhrssdbxlsElJYM_AW15hdlLHRT4SPHz1NE2PtPMgkj0Ve1sC4c_RRgbTTpdfuvEqZisrw2QwyXWPWZoBTF3qhqfZYbifKh323amZvUYmDsefVkw_Pa97qTt3BYX6_d0Q?width=2016&height=1512&cropmode=none)
+
+三妹很贴心地把靠窗位置让给我拍照，这一路风景不错，先是过友谊大桥到海岛市。和在珠海看到的一样，这边的海都是 "阴阳海"，不好看。
+
+![](https://idolaa.bn.files.1drv.com/y4mndI96QmyEPugHEY_6yGJJp9LVjV5QNCOxDuID--Eegw3fJoRDt6sFGfky1FcpZ0ZU1Btrfk_pmdZ5WQEeURDUIN8ilvJHSYSwwPGE62j6T6BJ-FQUucmdNNZ-7LI70hmO9EWXnNCltzMZDSYNTVKuGJbTzRkwshko_FPZEgAEc86AXmIzlSc3hCWTVIx3KGsdnEUGRG7QZyI40wXCHbHeA?width=2016&height=1512&cropmode=none)
+
+经过一个大转盘后，即将看到一排辉煌壮阔的赌场。首先出场的是国人耳熟能详的威尼斯人，里面模仿了水都威尼斯经典的街道与河流景象，后面还会提到。不过从外面来看，威尼斯人倒显得中规中矩。
+
+![](https://idoiaa.bn.files.1drv.com/y4mr_gucRpVL-s5xZYtg0DB5TfR1LrHrjd4Byp0aKf7ywoU-ZJzww7J8G6xhhngan2t0jQrFmDptF7UCnW01XX7K76fX_DVQmQU2bXjecvS4AhkGw_gIqNXdgFwX0Wt_D6zhnRk03qL_dgaL4bXdSa4PWwlGRxZAgU1BmNkZO7w-2RGkjwf0N2L0soM2J8G9ijesBVrADKpQwT16gN28lmY9w?width=2016&height=1512&cropmode=none)
+
+接下来是巴黎人，门口直接修建了一个 "高仿" 埃菲尔铁塔，牛逼！建筑外观也好看，尤其金色、黄色、灰褐色的搭配，太有欧洲的味道了。
+
+![](https://htoiaa.bn.files.1drv.com/y4mkJRuLhPnOIY6rr5Ph2SVpeBdiPTYY9bCgO3xWcKpVHnFeFzPazCXXEpTJQA_VOvlFJFBlJ5Cq5uUNBAfUeggotD8uvlpaBao2MtChDyq129pBiKfeqMPbMuvvtFUfyVlGNe-angGbsTR6EoOecTA2zaEpglpMEREppWYAigGpRzNDj7sTZoGPqMElT15mUG9ZFMr8tn38oakX_rCHdL97w?width=2016&height=1512&cropmode=none)
+
+最后是新濠影汇，我对主体建筑没什么感觉，但是左右两侧的人物雕像牢牢抓住了我的眼球，十足的高级感，还带着一点科技感。不知道该怎么用言语形容，当下只好发了条朋友圈：『你说有钱多好，有钱我也这么玩』。
+
+![](https://jdpv8w.bn.files.1drv.com/y4mvDFh1nGw9nWfFDmV0whFJb6sdwLMeeFyG-bVjnyBXTaseuOHrJ6_GpKJ4_ujJSA00sQLFe9G4FbbKd97DgWODpHpACNs_mR1VwsTjlLl_QlDRPTxRnY6XetRItFNOR8rTMYAx1-7UAEB-1KOSuMrw4TqpjQGTkBpXSj9BVKDCmHh1JKsq4HZYMOYTNZzukqAZlkdGUeqLTYo9dGz4PWzSQ?width=2016&height=1512&cropmode=none)
+
+![](https://jtps8w.bn.files.1drv.com/y4mic361Ffyv7Qw74wh-9WPFoIbQEYor3Ci9oRcUrqsfOH1UehPCkO1ky7YIDrLFIJnmUQuAYFrndcH71S5fQkgkRiffSa3ShOCkn8hHfTnJ_VGdUvPu7rzuEx2OXOTGTSU-HFPRW-Vj82hr1JBwtjkS671nMTSsKXxvHTvJinw46Ga8pbGaNBwecl2gkbF2yANfBK8FdUvSOP9qhKuqdaUkA?width=2016&height=1512&cropmode=none)
+
+一下大巴就看到这屋顶，虽然配色极其俗气，但依旧能感觉到金钱的气势。
+
+![](https://ijpy8w.bn.files.1drv.com/y4mnwlmVHHVozHjGI9LspaRRRwqoiftMCO27jGT7VuWXXhu1-xKCgFvi0vsYjS8u7J1ZY4UzSBWUPYdconWlH5mbW7HHaP7QpwDdVjFEQOjx4USCw6_TZJNINC9U6MPP6ivh4RLyq3UKLex99D8kL8rZQICs3LI9QyW__8ip7d9cZwmXWpW29Q681e32pSp8OzZcrxWpjHxPLbJsI8DhfbChA?width=2016&height=1512&cropmode=none)
+
+第一件事当然是进赌场看看，和电影里看过的差不多，赌桌、荷官以及各种赌博机都有。唯一与印象不符的是荷官并非年轻漂亮的小姑娘，一群阿姨颜值普遍负分，说好的性感荷官在线发牌呢… 一定是我们咖位不够，"穷人厅" 不配要求更多哈哈 😆。赌场在大楼的中间区域，把它包围起来的外环则是琳琅满目的奢侈品店，不过一大早无论是赌场还是奢侈品店都看不到什么人。
+
+我们没逛多久大姐的胃就越来越疼，即使休息了刻把钟也不见好转。但她勉强还能走走，这周围也没饮品店可以弄点热水喝，三妹决定带着我们去隔壁威尼斯人的麦当劳。事实证明让一个迷糊的朋友带路，过程注定是曲折的，尤其是大姐痛成那个样子，大家的心理负担都有点重。不过秉承着中国人 "来都来了" 的精神，我还是在探路时拍了几张照片，没想到后面再无机会。不过威尼斯的布景也就那么回事，可能年久失修，屋顶天空的白色都有点泛黄，整体环境并没使我有代入感。
+
+![](https://htonaa.bn.files.1drv.com/y4mn9JdVd0ibb4iHH2m1JfV-uFz_nlkH3aERYz7DiZdoqSLMepXwPpeySeoeTznir1-wDW9wfXAPHP7aAULLU3Dcuv0As4k7vT0sdsyu5q4GKxGT5-laSszoP3iZx7AygCqTa2pS9DsUxIm8Hu8x_F8Qxaf6tbj6OurcX2uWvccu-fzFs4yi3LKUR8TrGJ5Z_KqFZ98myPoa4uUPM1yzqS39Q?width=2016&height=1512&cropmode=none)
+
+好不容易来到麦当劳，三妹赶紧替大姐要了杯热水，然而喝完并没有什么作用… 随着大姐的情况越来越糟糕，我们也不得不接受最坏的打算——送澳门的医院。三妹是唯一懂粤语的人，对这边也比我们熟的多，自然让她去找商场的紧急医疗点，留我陪在大姐身边。
+
+大姐已经疼得直不起腰，久痛还引起头晕想吐，但跑了几次厕所也吐不出来。同时我能感受到她很懊恼自责在这个时候身体出现这样的极端情况，整个人的精神状态也非常糟糕。我只能一边安慰她，一边祈祷三妹一定不要迷路、能迅速找到医生并顺利回来。
+
+等待的过程是煎熬的，尤其是想做点什么但束手无措的时候。大概过了十几分钟，再次看到三妹的那一刻，心里一下子踏实太多。随她一起出现的是酒店的服务员，肤色看起来很像菲律宾人，不过讲得是粤语。服务员推来一个轮椅，把大姐搀扶上去，一边往酒店门口走一边打电话叫急救车。期间还问了我们是要去公立医院还是私立医院，虽然很想直接说去公立的就好，不过还是先问了下哪个更近，得知都差不多就果断去公立。
+
+从酒店出来等待救护车到来又是一阵煎熬。冰火两重天的交替对大姐这样的北方人来说也是一种强伤害，室外湿度大、格外闷热，室内空调又开得非常低，其实我也在感冒的边缘徘徊。
+
+终于，救护车来了，还有一个好消息是救护车是免费的！一边着急看着医护人员把大姐抬上救护车，一边感慨澳门的高福利名不虚传，直到坐上车准备去医院才想起来没有向帮助我们的酒店服务员表示感谢，问三妹她也忘了。只好把这份感谢存在心里，对澳门的好感也由此大大增加。
+
+一路上司机开得很猛，很快我们就来到了仁伯爵综合医院，据说它是澳门现在唯一的公立综合医院，也是澳门人口中的 "害命"医院，当然我们也是后来才知道。
+
+在看到曙光的那一刻，终于有心情拍张照纪念今天这个特别的经历，人生第一次坐救护车成就达成 ✔️。后来聊到这个事情时，三妹和大姐居然还记得这几个医护小哥很帅… 呵，女人 🙄。
+
+![](https://itpv8w.bn.files.1drv.com/y4mKhOkulmfL05ZkIggJ7yQr64OErzGU18atOmXu3MEMzJ1IrIdnSN7F2XsVioW-DVVPEfY2Nn97TR0xxw5O7TPmwBsWJY-0nJU7RWsA3oORdrMKGhjPoPpbry8baEegOLRe3O_bbDUA0xksEGia_7xEDuVDbhQ1NazS6gxo3DMegD8yZlfqjovTbvM_XTuZUmMd2zOcYdiNT2dRiUVEFhMqQ?width=1512&height=2016&cropmode=none)
+
+
+
+## 下一集
+
+To be continued…
