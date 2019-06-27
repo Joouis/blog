@@ -56,6 +56,61 @@ date: 2019-04-20 01:01:00
 
 下面会**定期更新**目前开放的职位，不过还是请在看到钟意的职位后尽早与我联系哈，有的职位可能上周开放这周就招到人了 ; )
 
+### 2019.06.27
+
+{% tabs Locations unique name %}
+
+<!-- tab 北京 -->
+
+**Bing**
+
+- [Bing Multimedia team](https://careers.microsoft.com/i/us/en/job/635440)，前端，一年及以上经验
+- [Research Project](https://careers.microsoft.com/i/us/en/job/635841)，ML、后端都可以，跟一位教授合作的创新型项目，一年及以上经验
+
+- [Speech](https://careers.microsoft.com/i/us/en/job/641988/Senior-Software-Engineering-Manager)，算法，语音识别或语音合成领域，一年及以上经验
+
+**小冰**
+
+- [Speech](https://careers.microsoft.com/i/us/en/job/637141)，算法，语音识别或语音合成领域，一年及以上经验
+
+ <!-- endtab -->
+
+<!-- tab 苏州 -->
+
+**O365**
+
+详见下文 **6.17** 的岗位介绍。
+
+**Bing**
+
+- [Speech](https://careers.microsoft.com/i/us/en/job/641988/Senior-Software-Engineering-Manager)，算法，语音识别或语音合成领域，一年及以上经验
+
+**小冰**
+
+- [Speech](https://careers.microsoft.com/i/us/en/job/637141)，算法，语音识别或语音合成领域，一年及以上经验
+
+**Intune**
+
+详见下文 **6.14** 的岗位介绍。
+
+<!-- endtab -->
+
+<!-- tab 上海 -->
+
+**Azure**
+
+- [Azure Date Catalog](https://careers.microsoft.com/i/us/en/job/612048)，5年以上工作经验，CORE DEV 即可
+- Java on Azure，5年以上工作经验，CORE DEV 即可
+- Visual Studio，更多请参考下文 **6.1** 的岗位介绍
+
+**Dynamics 365**
+
+- Google 后有意者直接邮件我吧 :)
+
+<!-- endtab -->
+
+{% endtabs %}
+
 ### 2019.06.17
 
 - 苏州 Office 365 团队热招啦，据说有几十个 HC 喔！
@@ -131,9 +186,9 @@ Java on Azure 和 Azure Management Experience 两个组，上海，L60-65都有�
 
 **微软小冰：**
 
-- 后端开发工程师，1年以上相关工作经验；
+- ~~后端开发工程师，1年以上相关工作经验；~~
 
-- Data scientist，算法开发，需要有NLP, 计算机视觉方面经验；
+- ~~Data scientist，算法开发，需要有NLP, 计算机视觉方面经验；~~
 
 **硬件团队职位：**
 
