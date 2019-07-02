@@ -56,7 +56,7 @@ date: 2019-04-20 01:01:00
 
 下面会**定期更新**目前开放的职位，不过还是请在看到钟意的职位后尽早与我联系哈，有的职位可能上周开放这周就招到人了 ; )
 
-### 2019.06.27
+### 2019.07.02
 
 {% tabs Locations unique name %}
 
@@ -65,15 +65,16 @@ date: 2019-04-20 01:01:00
 **Bing**
 
 - [Bing Multimedia team](https://careers.microsoft.com/i/us/en/job/635440)，前端，一年及以上经验
-- [Research Project](https://careers.microsoft.com/i/us/en/job/635841)，ML、后端都可以，跟一位教授合作的创新型项目，一年及以上经验
 
 - [Speech](https://careers.microsoft.com/i/us/en/job/641988/Senior-Software-Engineering-Manager)，算法，语音识别或语音合成领域，一年及以上经验
+
+- [Bing Relevance](https://careers.microsoft.com/us/en/job/646616/Software-Engineer-II-Bing-Algo), 算法或后端都可以，一年到5年工作经验
 
 **小冰**
 
 - [Speech](https://careers.microsoft.com/i/us/en/job/637141)，算法，语音识别或语音合成领域，一年及以上经验
 
- <!-- endtab -->
+<!-- endtab -->
 
 <!-- tab 苏州 -->
 
@@ -84,6 +85,8 @@ date: 2019-04-20 01:01:00
 **Bing**
 
 - [Speech](https://careers.microsoft.com/i/us/en/job/641988/Senior-Software-Engineering-Manager)，算法，语音识别或语音合成领域，一年及以上经验
+
+- [Bing Spatan](https://careers.microsoft.com/i/us/en/job/635841)，ML、后端都可以，创新型项目，四年及以上经验
 
 **小冰**
 
@@ -138,7 +141,7 @@ date: 2019-04-20 01:01:00
     - 勇于接受挑战，成为客户信任的大使并协调资源帮助客户实现其数字化转型。
   - 工作地点：北京/上海/深圳
 
-
+ 
 
 ### 2019.05.23
 
@@ -148,6 +151,7 @@ Java on Azure 和 Azure Management Experience 两个组，上海，L60-65都有�
 - [Azure Management Experience](https://careers.microsoft.com/us/en/job/626812/Software-Engineer-II-Azure-Management-Experience)
 
 ![](https://vq4h3q.bn.files.1drv.com/y4mYkcV6LQdQKoXEyBFcg23htMM6w62jSaVH5HaKTY4oQzegAMhFKf4L9nxB56brgx-V7iS7ZICfB67gCFOmtFPijoXcvgNEzOaPz13x1xwWM775VdGTdoyFacscPPRkgDc2iNH7sKUgEhCfUrV1eaRwsOvoz0xT89HaNnxH4QqmzhM_ZOf4HCijuAqS-07ljFyQbDx5cWIQhuHaDLJCFLYpQ?width=2693&height=1434&cropmode=none)
+
 
 ### 2019.05.12
 
@@ -166,7 +170,7 @@ Java on Azure 和 Azure Management Experience 两个组，上海，L60-65都有�
 - Office 365-Performance team-后端开发工程师, C++/C#/Java，1年以上工作经验；
 - Office 365- Engineering system team-后端开发工程师, 1年以上工作经验；
 - Office 365-Flighting team-后端/全栈开发工程师, 1年以上工作经验；
-- Office 365-mornitoring team-后端/全栈开发工程师- 3 年以上工作经验；
+- Office 365-monitoring team-后端/全栈开发工程师- 3 年以上工作经验；
 - Office 365-Connectivity tea- 软件开发工程师 (networking experience is plus)，1年以上工作经验；
 - Office 365-Store-软件开发工程师，3年以上工作经验；
 - Office 365 Mail protocols/Server-软件开发工程师，3年以上工作经验；
@@ -178,7 +182,7 @@ Java on Azure 和 Azure Management Experience 两个组，上海，L60-65都有�
 
 - Windows edge team-安卓开发工程师-苏州，1年以上工作经验，多岗位；
 
-**Sharepoint team:** **全部要求英文口语沟通**
+**SharePoint team:** **全部要求英文口语沟通**
 
 - Web开发/ 后端开发， 目前开出来的职位需要至少4年以上工作经验， 后期陆续会有opening。
 - Senior / Principal Engineering manager， 要求8年以上工作经验；
