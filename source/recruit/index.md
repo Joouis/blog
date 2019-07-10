@@ -56,7 +56,7 @@ date: 2019-04-20 01:01:00
 
 下面会**定期更新**目前开放的职位，不过还是请在看到钟意的职位后尽早与我联系哈，有的职位可能上周开放这周就招到人了 ; )
 
-### 2019.07.02
+### 2019.07.10
 
 {% tabs Locations unique name %}
 
@@ -85,8 +85,8 @@ date: 2019-04-20 01:01:00
 **Bing**
 
 - [Speech](https://careers.microsoft.com/i/us/en/job/641988/Senior-Software-Engineering-Manager)，算法，语音识别或语音合成领域，一年及以上经验
-
-- [Bing Spatan](https://careers.microsoft.com/i/us/en/job/635841)，ML、后端都可以，创新型项目，四年及以上经验
+- [Bing Spatan](https://careers.microsoft.com/i/us/en/job/635841)，ML、后端都可以，创新型项目，一年及以上经验
+- [Bing KG](https://careers.microsoft.com/us/en/job/643519)，Manager，8 年及以上后端经验，需要 hands on coding，英文好 
 
 **小冰**
 
