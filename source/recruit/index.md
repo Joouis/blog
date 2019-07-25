@@ -34,6 +34,10 @@ date: 2019-04-20 01:01:00
 - 丰富的节日活动 （ Family Day，Ice Cream Day...）（前两年的 Family Day 是让员工带着家属去迪士尼嗨哦~）
 - 多达几十班的遍布全上海的班车，上下班通勤也绝不是什么问题
 
+2019 年暑期实习生除了有导师指导做项目外，也有多姿多彩的业余活动可以参加，例如最近公司举办的全球 Hackathon 大赛，苏州办公室就有九十多个项目。这是今年的欢迎套装~
+
+![](https://jtomaa.bn.files.1drv.com/y4moVkSDink7IP48_b_KYNFwVJ07AHY4i4mwlOoAvTlxWa7Fkkdltk8UEwERrdjp6e1oH-e-dgxaSaqy9byRp08baTWXqMlTAMxn1AYJgSN1AJf7HOytmIH7egx4adgleR--i4rIVpHn1laDEc1QJiGWMwVmXnRm3199LzB0BFVqafjEXk7_WSYv9rwj_nNjhG3jh_LseIOWQ-BsvwT4d8xQg?width=2016&height=1512&cropmode=none)
+
 ## 找 Joou 内推又是一种什么样的体验？
 
 我是一名 Web 前端开发工程师，非猎头或 HR。所以我没有 KPI 之类的压力，也不会忽悠你来面试。我更关心你是否喜欢职位、是否符合职位要求，因为只有你成功入职后我才有 reward。
