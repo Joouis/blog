@@ -38,6 +38,9 @@ date: 2019-04-20 01:01:00
 
 ![](https://jtomaa.bn.files.1drv.com/y4moVkSDink7IP48_b_KYNFwVJ07AHY4i4mwlOoAvTlxWa7Fkkdltk8UEwERrdjp6e1oH-e-dgxaSaqy9byRp08baTWXqMlTAMxn1AYJgSN1AJf7HOytmIH7egx4adgleR--i4rIVpHn1laDEc1QJiGWMwVmXnRm3199LzB0BFVqafjEXk7_WSYv9rwj_nNjhG3jh_LseIOWQ-BsvwT4d8xQg?width=2016&height=1512&cropmode=none)
 
+
+
+
 ## 找 Joou 内推又是一种什么样的体验？
 
 我是一名 Web 前端开发工程师，非猎头或 HR。所以我没有 KPI 之类的压力，也不会忽悠你来面试。我更关心你是否喜欢职位、是否符合职位要求，因为只有你成功入职后我才有 reward。
@@ -60,7 +63,7 @@ date: 2019-04-20 01:01:00
 
 下面会**定期更新**目前开放的职位，不过还是请在看到钟意的职位后尽早与我联系哈，有的职位可能上周开放这周就招到人了 ; )
 
-### 2019.07.22
+### 2019.07.27
 
 原谅我偷个懒，直接从 Excel 粘，Time~
 
@@ -69,24 +72,20 @@ date: 2019-04-20 01:01:00
 | Azure      | Dynamics   365-SCM            | Modernizing the supply chain with unified, advanced warehouse and inventory management to   improve fulfillment, material sourcing, and logistics. Manage the entire feature process from the very beginning to the end. Moving to DevOps, you will also be required to participate into daily support, directly work with customers and partners to resolve their instant   and urgent issues. | Dev                              | Shanghai       | Strong  | 0Y+                   |
 | Azure      | Azure Data Factory            | ETL or data related product experience                       | Dev                              | Shanghai       | Strong  | 3Y+                   |
 | Azure      | Dynamics   365 Retail         | 4+ years of software design and programming experience with languages like   C/C++/C#/Java/Python required. Willing to work on .Net      Experience with web technologies, such as JavaScript/TypeScript/HTML/React   preferred. | Dev                              | Shanghai       | Strong  | 0Y+                   |
-| Azure      | Azure Data Catalog            | Better have Java experience and elastic search experience. Search product within   Database. 5+ years working experience is preferred | Dev                              | Shanghai       | Middle  | 4Y+                   |
 | Azure      | Azure   Management Experience | In the languages of choice including .NET, Java, Node.js, Python, Go, Ruby and others. | Dev                              | Shanghai       | Middle  | 5Y+                   |
 | Azure      | Java on Azure                 | Visual Studio Code, Java language server, Debugger for Java, Java JDK | Dev                              | Shanghai       | Middle  | 5Y+                   |
-| Azure      | Linux   Systems Group         | Linux and open source technologies and solutions into Microsoft’s Azure cloud (Linux kernel & virtualization); Customer facing; | Dev                              | Shanghai       | Low     | 5Y+                   |
 | Azure      | Azure Stack                   | Storage Services (Object Storage, Key-Value store, Message Queue, and more) and   develops the monitoring solutions for IaaS/PaaS/SaaS running on Azure Stack | Dev                              | Shanghai       | Middle  | 3Y+                   |
-| Azure      | Azure                         | Own docs.microsoft.com, which has   millions of developer users      Company-wide engineer system for content publishing and hosting | Dev                              | Shanghai       | Strong  | 4Y+                   |
-| Azure      | Azure                         | Shanghai   engineering team particularly focuses on protocol engineering, privacy   engineering, tools and platform development. Manage a team of 3 to 4 | Dev Lead                         | Shanghai       | Strong  | 7Y+                   |
-| Office 365 | Office 365                    | Performance team                                             | Dev                              | Suzhou         | Strong  | 3Y+                   |
+| Azure      | Azure                         | Shanghai engineering team particularly focuses on protocol engineering, privacy   engineering, tools and platform development. Manage a team of 3 to 4 | Dev Lead                         | Shanghai       | Strong  | 7Y+                   |
 | Office 365 | Office 365                    | IP-Monitoring Connectivity                                   | Dev/Data   Scientist             | Suzhou         | Strong  | 3Y+                   |
 | Office 365 | Office 365                    | App Fabric-Fleet                                             | Dev                              | Suzhou         | Strong  | 3Y+                   |
 | Office 365 | Office 365                    | High availability                                            | Data Scientist                   | Suzhou         | Strong  | 3Y+                   |
 | Office 365 | Office 365                    | SRE                                                          | SRE DEV                          | Suzhou         | Strong  | 1Y+                   |
 | Office 365 | Office 365                    | HA/Store                                                     | Dev                              | Suzhou         | Strong  | 3Y+                   |
 | Office 365 | Office 365                    | AD TEAM: DIRECTORY, Distributed system services or NoSQL storage is nice to have   background | Dev                              | Suzhou         | Strong  | 3Y+                   |
-| Office 365 | Office 365                    | Transport                                                    | EM                               | Suzhou         | Strong  | 8Y+                   |
 | Office 365 | Office 365                    | HA & Substrate Management Platform and Azure convergence     | EM                               | Suzhou         | Strong  | 8Y+                   |
 | Office 365 | Office 365                    | Information Protection, Anti-spam and security features for the enterprise-level service   known as Exchange Online Protection (EOP) | Dev                              | Suzhou         | Strong  | 1Y+                   |
 | Office 365 | Office 365                    | IP/Transport team                                            | Dev                              | Suzhou         | Strong  | 1Y+                   |
+| Office 365 | SharePoint | SharePoint                                            | EM                              | Suzhou         | Strong  | 8Y+                   |
 | MMX        | Edge                          | Windows Launcher in Android, IOS or Android background is prefer | Dev/Android/IOS                  | Suzhou         | Low     | 0Y+                   |
 |            | Intune                        | 0+ years dev experience                                      | front-end/   full stack/ backend | Suzhou         | Low     | 0Y+                   |
 |            | SCCM                          | 0+ years dev experience                                      | front-end/   full stack/ backend | Suzhou         | middle  | 0Y+                   |
