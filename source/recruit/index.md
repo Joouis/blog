@@ -63,6 +63,11 @@ date: 2019-04-20 01:01:00
 
 下面会**定期更新**目前开放的职位，不过还是请在看到钟意的职位后尽早与我联系哈，有的职位可能上周开放这周就招到人了 ; )
 
+### 2019.08.08
+
+- 为自己团队招人啦，可以一周内安排电面，Azure 机器学习产品，[JD 里有更详细的描述](https://careers.microsoft.com/us/en/job/683603/Software-Engineer-All-levels-Machine-learning-studio)~
+- 大团队也在招人中，包括大数据和在线 A/B 实验平台、AML training/inference service 以及 Kafka 集群，都是比地球还要大的 scale！[JD 在这里](https://careers.microsoft.com/us/en/job/669290/Software-Engineer-all-levels-shared-data)。
+
 ### 2019.08.05
 
 原谅我偷个懒，直接从 Excel 粘，Time~
