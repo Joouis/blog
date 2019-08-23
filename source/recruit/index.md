@@ -63,6 +63,12 @@ date: 2019-04-20 01:01:00
 
 下面会**定期更新**目前开放的职位，不过还是请在看到钟意的职位后尽早与我联系哈，有的职位可能上周开放这周就招到人了 ; )
 
+### 2019.08.22
+
+2020 届校招正式开始咯，同学们可以自己投，也可以找我内推。
+
+![](https://jtoiaa.bn.files.1drv.com/y4mI847Dd9g9RFF5GZ45Wx3DJ9kZVuyiAselMtJbQmwKcPtugIY3DY8hZP710bFuDruPHmCI2dzpzVuPKqunFabCU1rvPhzZpHx7Bm-tvWJKtMj_AiUcO-O3I7LlZvc9nM-h-rejSMMr4SJiUPBiNdZ7VentvAkcMTp8H1H-DvAlWDY2yWU5ifOsqngsmiSVg2hGvyaarGpJsX8n77Qdy2s6A?width=700&height=7576&cropmode=none)
+
 ### 2019.08.19
 
 原谅我偷个懒，直接从 Excel 粘，Time~
