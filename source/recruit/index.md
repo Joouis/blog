@@ -63,58 +63,50 @@ date: 2019-04-20 01:01:00
 
 下面会**定期更新**目前开放的职位，不过还是请在看到钟意的职位后尽早与我联系哈，有的职位可能上周开放这周就招到人了 ; )
 
+
+
+### 2019.09.02
+
+手动整理 Excel，我太难了... Orz
+
+有少量经理（大概对等阿里 P9）和硬件职缺，要求会资深一些，欢迎邮件我私聊。
+
+| Team                    | Sub Team Focus                                               | Role                           | Nice to Have   Domain                                        | City             | 年限   | English |
+| ----------------------- | ------------------------------------------------------------ | ------------------------------ | ------------------------------------------------------------ | ---------------- | ------ | ------- |
+| Azure Stack             |                                                              | Dev                            | Cloud                                                        | Shanghai         | 1-15年 | Strong  |
+| Azure Container         | built solutions   such as:       * AKS - https://azure.microsoft.com/en-us/services/container-service/      * ACI -   https://azure.microsoft.com/en-us/services/container-instances/      * Draft - https://github.com/Azure/draft      * Brigade - https://github.com/Azure/brigade | Dev                            | Container,   At least 5 years of experience in commercial software development;      Building, shipping and operating reliable, distributed solutions. | Shanghai         | 3-6年  | Middle  |
+| Dynamics   365 Retail   | 4+   years of software design and programming experience with languages like   C/C++/C#/Java/Python required. Willing to work on .Net      Experience with web technologies, such as JavaScript/TypeScript/HTML/React   preferred.      Prefer Senior | Dev                            | C#/.Net                                                      | Shanghai         | 1-15年 | Strong  |
+| CDA                     | engaging with   developer communities such as:      Speaking at meetups, Contributing to open source projects with code,   Contributing to sharing learnings through blogs, YouTube, Twitch, Engaging   with developer communities or creating their own. | developer   community advocate | Cloud                                                        | Beijing/Shanghai | 8-15年 | Strong  |
+| O365                    | O365   Spartans/ current project: GDPR, 6 month              | Dev                            |                                                              | Suzhou           | 1-15年 | Middle  |
+| M365                    | EverGreen                                                    | Dev                            | OS   experience will be a big plus                           | Suzhou           | 1-8年  | Strong  |
+| O365 Cafe               | IP-Mornitoring   Connectivity,3+ years experience            | Data   Scientist/Dev           |                                                              | Suzhou           | 1-12年 | Strong  |
+| O365   OS&SKU           | OS&SKU,   3+ years experience                                | Dev                            |                                                              | Suzhou           | 3-15年 | Strong  |
+| O365 HA   Team          | Migration   team: O365 data migration, 1+ years expereince， backend dev | Data   Scientist/Dev           | database                                                     | Suzhou           | 1-15年 | Strong  |
+| O365 AD   Team          | AD   TEAM: DIRECTORY, Distributed system services or NoSQL storage is nice to have   background,3+ years experience | Dev                            | Distributed   system services or NoSQL storage               | Suzhou           | 3-12年 | Strong  |
+| Outlook   Mobile        | Mobile   app development， 3 years+                          | Dev                            | Android/iOS                                                  | Suzhou           | 3-15年 | Strong  |
+| Anti Spam               | Information   Protection,Anti-spam and security features for the enterprise-level service   known as Exchange Online Protection (EOP) ,2 years+ working experience | Dev                            |                                                              | Suzhou           | 3-15年 | Strong  |
+| O365   Transport team   | IP/Transport   team ,3+ years experience                     | Dev                            | UX                                                           | Suzhou           | 3-15年 | Strong  |
+| MMX                     |                                                              | Dev                            | Android/iOS                                                  | Suzhou           | 0-8年  | Low     |
+| MSRA                    | Turning ideas into reality, transfer   technologies into products, and create new user scenarios, demos, or release   prototypes directly to the market. Incubation new around 10 hc. | RSDE                           |                                                              | Beijing/Shanghai | 3-15年 | Low     |
+| MSRA                    | System/Networking/Blockchain/AI   Infra                      | Researcher/RSDE                |                                                              | Beijing/Shanghai | 3-20年 | Middle  |
+| MSRA                    | Machine learning, NLP, NLG                                   | NLP   scientist/Manager        | NLP                                                          | Beijing          | 3-25年 | Low     |
+| AI Infrastructure       | Bing   Ads Delivery Engine is a large   scale distributed backend system that powers up the Bing monetization, it   handles millions of ads delivery requests and matches between hundreds   billion query ads pair per day.  DE   team is working on Stream Computing Platform, which is a distributed near   real time computing platform that enables near real-time capability in   Delivery Engine. DE team is also working on Selection and Ranking, which is   the core area that help improving ads serving quality and impact revenue   directly by hosting and powering various machine learning models and   generating signals for those models. | Dev                            | ML                                                           | Beijing          | 5-15年 | Middle  |
+| shared engineer service | The   Special Project Team [Spartans] in STCA is looking for high caliber   developers to work on strategic projects with impact across all of the AI and   Research Division (AIR). | Dev                            | ML/NLP,   only consider strong core dev if not ML/NLP background. | Suzhou           | 1-15年 | Low     |
+| UX design team          | Bing   video/News                                            | UX   designer                  |                                                              | Beijing          | 5-15年 | Strong  |
+| Retail search           | Retail   search/recommendation                               | Dev                            | ML/recommendation   algorithms/NLP                           | Beijing          | 3-15年 | Middle  |
+| Ads                     | Ads Algo: - User response (click   & conversion) prediction      - User/query intent understanding, Image understanding      - IR-based ad retrieval      - Large scale machine learning algorithms | Dev                            | AI-Algo                                                      | Beijing          | 5-15年 | Middle  |
+| Bing Video Answer Team  | AI,   ML, or NLP                                             | Dev                            | ML/NLP                                                       | Beijing          | 3-15年 | Middle  |
+| Bing                    | Distributed   real-time system for News      Machine learning and data mining for news clustering, recommendation and   notification group. UX Dev, AI background, otherwise, core dev | Dev                            | AI   Algo/Cloud                                              | Beijing/Suzhou   | 5-15年 | Middle  |
+| Intune                  | 0~1~2~3 years   dev experience, prefer 985 university, working experience is not that   important, CV must be English version | Dev                            | front-end/   full stack/ backend                             | Suzhou           | 0-5年  | Low     |
+| SCCM                    | 0~6   years dev experience, CV must be English version, prefer good university | Dev                            | front-end/   full stack/ backend                             | Suzhou           | 0-5年  | Middle  |
+
+
+
 ### 2019.08.22
 
 2020 届校招正式开始咯，同学们可以自己投，也可以找我内推。
 
 ![](https://jtoiaa.bn.files.1drv.com/y4mI847Dd9g9RFF5GZ45Wx3DJ9kZVuyiAselMtJbQmwKcPtugIY3DY8hZP710bFuDruPHmCI2dzpzVuPKqunFabCU1rvPhzZpHx7Bm-tvWJKtMj_AiUcO-O3I7LlZvc9nM-h-rejSMMr4SJiUPBiNdZ7VentvAkcMTp8H1H-DvAlWDY2yWU5ifOsqngsmiSVg2hGvyaarGpJsX8n77Qdy2s6A?width=700&height=7576&cropmode=none)
-
-### 2019.08.19
-
-原谅我偷个懒，直接从 Excel 粘，Time~
-
-| Group      | Product                       | Sub Team Focus                                               | Role                             | City           | English | Years of   Experience |
-| ---------- | ----------------------------- | ------------------------------------------------------------ | -------------------------------- | -------------- | ------- | --------------------- |
-| Azure      | Dynamics   365-SCM            | Modernizing   the supply chain with unified, advanced warehouse and inventory management to   improve fulfillment, material sourcing, and logistics.      Manage the entire feature process from the very beginning to the end.    Moving to DevOps, you will also be required to participate into daily   support, directly work with customers and partners to resolve their instant   and urgent issues. | Dev                              | Shanghai       | Strong  | 0Y+                   |
-| Azure      | Azure   Container Service     | commercial   software development;      Building, shipping and operating reliable, distributed solutions | Dev                              | Shanghai       | Middle  | 5Y+                   |
-| Azure      | Azure   Management Experience | in   the languages of choice including .NET, Java, Node.js, Python, Golang, Ruby   and others. | Dev                              | Shanghai       | Middle  | 3Y+                   |
-| Azure      | Azure   Data Catalog          | Better   have Java experience and elasticsearch exerience. Search product within   Database.      5+ years working experience is preferred | Dev                              | Shanghai       | Middle  | 4Y+                   |
-| Azure      | Java   on Azure               | Visual   Studio Code, Java language server, Debugger for Java, Java JDK | Dev                              | Shanghai       | Middle  | 3Y+                   |
-| Azure      | Visual   Studio               | Data   Scientist                                             | NLP/ML                           | Shanghai       | Strong  | 3Y+                   |
-| Azure      | Azure   Stack                 | Storage   Services (Object Storage, Key-Value store, Message Queue, and more) and   develops the monitoring solutions for IaaS/PaaS/SaaS running on Azure Stack | Dev                              | Shanghai       | Middle  | 3Y+                   |
-| Azure      | Azure   Storage               | Improve   Azure Storage service modeling to bring new feature and existing offering   enhancement; Strong in C# or Java with rich experience in System   Integration | Dev                              | Shanghai       | Strong  | 1Y+                   |
-| Office 365 | Office   365                  | IP-Mornitoring   Connectivity                                | Dev/Data   Scientist             | Suzhou         | Strong  | 3Y+                   |
-| Office 365 | Office365                     | App   Fabric--Fleet                                          | Dev                              | Suzhou         | Strong  | 3Y+                   |
-| Office 365 | Office365                     | HA:   High availblity                                        | Data   Scientist                 | Suzhou         | Strong  | 3Y+                   |
-| Office 365 | Office   365                  | SRE                                                          | SRE   DEV                        | Suzhou         | Strong  | 3Y+                   |
-| Office 365 | Office   365                  | HA/Store                                                     | Dev                              | Suzhou         | Strong  | 3Y+                   |
-| Office 365 | Office   365                  | outlook   Mobile                                             | IOS/Android                      | Suzhou         | Strong  | 3Y+                   |
-| Office 365 | Office   365                  | AD   TEAM: DIRECTORY, Distributed system services or NoSQL storage is nice to have   background | Dev                              | Suzhou         | Strong  | 3Y+                   |
-| Office 365 | Office   365                  | HA   & Substrate Management Platform and Azure convergence   | EM                               | Suzhou         | Strong  | 8Y+                   |
-| Office 365 | Office   365                  | Migration   team: O365 data migration                        | Dev/Data   Scientist             | Suzhou         | Strong  | 3Y+                   |
-| Office 365 | Office   365                  | Information   Protection,Anti-spam and security features for the enterprise-level service   known as Exchange Online Protection (EOP) | Dev                              | Suzhou         | Strong  | 2Y+                   |
-| Office 365 | Office   365                  | OS&SKU                                                       | Dev                              | Suzhou         | Strong  | 3Y+                   |
-| Office 365 | Office   365                  | support   experience, enterprise facing                      | support   engineer               | Suzhou         | Strong  | 2Y+                   |
-| Office 365 | Office   365                  | IP/Transport   team                                          | Dev                              | Suzhou         | Strong  | 3Y+                   |
-| SharePoint | SharePoint                    | SharePoint                                                   | EM                               | Suzhou         | Strong  | 8Y+                   |
-| MMX        | Edge                          | Windows   Lancher in Android, IOS or Android background is prefer, also could for dev   lead | Dev/Android/IOS                  | Suzhou         | Low     | 0Y+                   |
-|            | Intune                        | 0+   years dev experience                                    | front-end/   full stack/ backend | suzhou         | Low     | 0Y+                   |
-|            | SCCM                          | 0+   years dev experience                                    | front-end/   full stack/ backend | suzhou         | middle  | 0Y+                   |
-| Bing       |                               | NLP                                                          | NLP/PHD                          | Beijing        | Low     | 1Y+                   |
-| Bing       | Ads                           | Retail   search/recommendation                               | ML                               | Beijing        | Low     | 3Y+                   |
-| Bing       | Ads                           | Ads Algo: - User response (click   & conversion) prediction      - User/query intent understanding, Image understanding      - IR-based ad retrieval      - Large scale machine learning algorithms | ML                               | Beijing        | Middle  | 3Y+                   |
-| Bing       | Ads                           | Bing   Ads Delivery Engine is a large scale distributed backend system that powers   up the Bing monetization, it handles millions of ads delivery requests and   matches between hundreds billion query ads pair per day.  DE team is working on Stream Computing   Platform, which is a distributed near real time computing platform that   enables near real-time capability in Delivery Engine. DE team is also working   on Selection and Ranking, which is the core area that help improving ads   serving quality and impact revenue directly by hosting and powering various   machine learning models and generating signals for those models. | ML                               | Beijing        | Middle  | 5Y+                   |
-| Bing       | Knowledge   Graph             | Knowledge   Graph covering platform and system   architecture, data extraction and curation from Web and beyond,   building and enriching knowledge graph. Only consdier Engineering   background needed. | EM                               | Suzhou         | Strong  | 8Y+                   |
-| News       | News                          | MP/News                                                      | AI   EM                          | Beijing        | Strong  | 8Y+                   |
-| News       | News                          | Distributed   real-time system for News      Machine learning and data mining for news clustering, recommendation and   notification group. UX Dev, AI background, otherwise, core dev | ML                               | Beijing        | Low     | 5Y+                   |
-| News       | MM                            | ML/AI/NLP                                                    | ML                               | Beijing        | Middle  | 3Y+                   |
-| Azure      | Vision                        | data   related engineering experience. Hands-on experience on modern data   storage/management/analysis service, like Azure SQL, Cosmos DB, Spark,   MangoDB, etc. | Data   modeling /Data platform   | Beijing        | Middle  | 1Y+                   |
-| Azure      |                               | Cosmos,   big data platform                                  | front-end/   full stack/ backend | Beijing        | Middle  | 1Y+                   |
-| STCA       | SES                           | The   Special Project Team [Spartans] in STCA is looking for high caliber   developers to work on strategic projects with impact across all of the AI and   Research Division (AIR). | ML                               | Suzhou         | Low     | 1Y+                   |
-| Bing       | Bing                          | Big   Data/Platform/Core Dev                                 | Dev                              | Beijing/Suzhou | Low     | 6Y+                   |
-| STCA       |                               | Azure   ML studio. Building the Machine Learning development platform | Dev                              | Beijing/Suzhou | Low     | 1Y+                   |
-| STCA       |                               | Big   Data Platform                                          | Dev                              | Beijing/Suzhou | Low     | 3Y+                   |
-| Bing       | Bing                          | speech                                                       | speech                           | Beijing/Suzhou | Low     | 4Y+                   |
 
 
 
