@@ -65,6 +65,82 @@ date: 2019-04-20 01:01:00
 
 
 
+### 2019.10.18
+
+迟来的一波更新，以下都是名额较为充足的岗位，如果没有中意的可以邮件我沟通更多岗位。
+
+- **Dynamics 365**
+
+| Sub Team Focus                                               | Role | City     | Working year | English |
+| ------------------------------------------------------------ | ---- | -------- | ------------ | ------- |
+| 4+ years of software design and programming experience with languages like C/C++/C#/Java/Python required. Willing to work on .Net experience with web technologies, such as JavaScript/TypeScript/HTML/React preferred. Prefer Senior. | Dev  | Shanghai | 1~15         | Strong  |
+
+- **Dev Div**
+
+| Sub Team Focus              | Role | City     | Working year | English |
+| --------------------------- | ---- | -------- | ------------ | ------- |
+| Azure Management Experience | dev  | Shanghai | 1~8          | Middle  |
+
+- **Office 365**
+
+| Sub Team Focus                                               | Role | City   | Working year | English |
+| ------------------------------------------------------------ | ---- | ------ | ------------ | ------- |
+| Engineering system                                           | Dev  | Suzhou | 1~10         | Strong  |
+| EverGreen                                                    | Dev  | Suzhou | 1~10         | low     |
+| HA/Store, 1+ years experience.                               | Dev  | Suzhou | 1~10         | Strong  |
+| Migration team: O365 data migration, 1+ years expereince, backend dev. | Dev  | Suzhou | 1~10         | Strong  |
+| AD team: DIRECTORY, Distributed system services or NoSQL storage is nice to have background, 3+ years experience. | Dev  | Suzhou | 1~10         | Strong  |
+| Information protection, anti-spam and security features for the enterprise-level service known as Exchange Online Protection (EOP), 2 years+ working experience. | Dev  | Suzhou | 1~10         | Strong  |
+| IP/Transport team, 3+ years experience.                      | Dev  | Suzhou | 3~15         | Strong  |
+
+- **SharePoint**
+
+| Sub Team Focus                  | Role | City   | Working year | English |
+| ------------------------------- | ---- | ------ | ------------ | ------- |
+| Core dev, or mobile background. | Dev  | Suzhou | 1~8          | Strong  |
+
+- **SCCM**
+
+| Sub Team Focus                                               | Role | City   | working year | English |
+| ------------------------------------------------------------ | ---- | ------ | ------------ | ------- |
+| 0~6 years dev experience, CV must be English version, prefer good university, without front-end experience but willing to change is also accepted. | Dev  | Suzhou | 0~6          | low     |
+
+- **Intune**
+
+| Sub Team Focus                                               | Role | City   | working year | English |
+| ------------------------------------------------------------ | ---- | ------ | ------------ | ------- |
+| 6 years+ dev experience, CV must be English version, prefer good university, without front-end experience but willing to change is also accepted. | Dev  | Suzhou | 6+           | low     |
+
+- **MMX**
+
+| Sub Team Focus              | Role | City           | working year | English |
+| --------------------------- | ---- | -------------- | ------------ | ------- |
+| Edge brower: iOS & Android. | Dev  | Suzhou/Beijing | 1+           | low     |
+
+- MSRA
+
+| Sub Team Focus                                               | Role | City             | working year | English |
+| ------------------------------------------------------------ | ---- | ---------------- | ------------ | ------- |
+| Turning ideas into reality, transfer technologies into products, and create new user scenarios, demos, or release prototypes directly to the market. | RSDE | Beijing/Shanghai | 3~15         | Low     |
+
+- **AI Infrastructure**
+
+| Sub Team Focus                                               | Role | City           | working year | English |
+| ------------------------------------------------------------ | ---- | -------------- | ------------ | ------- |
+| Shared Data, internal AI/Data platform, Cosmos, Spark, Tensorflow, prefer SDEII+ or strong L60. | Dev  | Beijing/Suzhou | 1~15         | Low     |
+
+- Bing
+
+| Sub Team Focus                                               | Role                  | City           | working year | English |
+| ------------------------------------------------------------ | --------------------- | -------------- | ------------ | ------- |
+| Machile learning, NLP, NLG.                                  | NLP scientist/Manager | Beijing        | 1~20         | Low     |
+| Ads Algo: - User response (click & conversion) prediction. - User/query intent understanding, Image understanding. - IR-based ad retrieval. - Large scale machine learning algorithms. | Dev                   | Beijing/Suzhou | 1~15         | Middle  |
+| Distributed real-time system for News. Machine learning and data mining for news clustering, recommendation and notification group. AI background, otherwise, core dev, nice to have machine learning,data mining, large-scale distributed computing. | Dev                   | Beijing/Suzhou | 1~15         | Low     |
+| Distributed real-time system for NewsMachine learning and data mining for news clustering, recommendation and notification group. UX Dev, AI background, otherwise, core dev. | Dev                   | Beijing/Suzhou | 5~20         | MIddle  |
+| SR (coding needed)                                           | Speech Scientist      | Beijing/Suzhou | 1~15         | Low     |
+
+
+
 ### 2019.09.02
 
 手动整理 Excel，我太难了... Orz
@@ -99,14 +175,6 @@ date: 2019-04-20 01:01:00
 | Bing                    | Distributed   real-time system for News      Machine learning and data mining for news clustering, recommendation and   notification group. UX Dev, AI background, otherwise, core dev | Dev                            | AI   Algo/Cloud                                              | Beijing/Suzhou   | 5-15年 | Middle  |
 | Intune                  | 0~1~2~3 years   dev experience, prefer 985 university, working experience is not that   important, CV must be English version | Dev                            | front-end/   full stack/ backend                             | Suzhou           | 0-5年  | Low     |
 | SCCM                    | 0~6   years dev experience, CV must be English version, prefer good university | Dev                            | front-end/   full stack/ backend                             | Suzhou           | 0-5年  | Middle  |
-
-
-
-### 2019.08.22
-
-2020 届校招正式开始咯，同学们可以自己投，也可以找我内推。
-
-![](https://jtoiaa.bn.files.1drv.com/y4mI847Dd9g9RFF5GZ45Wx3DJ9kZVuyiAselMtJbQmwKcPtugIY3DY8hZP710bFuDruPHmCI2dzpzVuPKqunFabCU1rvPhzZpHx7Bm-tvWJKtMj_AiUcO-O3I7LlZvc9nM-h-rejSMMr4SJiUPBiNdZ7VentvAkcMTp8H1H-DvAlWDY2yWU5ifOsqngsmiSVg2hGvyaarGpJsX8n77Qdy2s6A?width=700&height=7576&cropmode=none)
 
 
 
