@@ -100,6 +100,7 @@ date: 2019-04-20 01:01:00
 <!-- endtab -->
 
 <!-- tab AI -->
+
 | Sub Team Focus                                               | Role | City           | working year | English |
 | ------------------------------------------------------------ | ---- | -------------- | ------------ | ------- |
 | Shared Data, internal AI/Data platform, Cosmos, Spark, Tensorflow, prefer SDEII+ or strong L60. | Dev  | Beijing/Suzhou | 1~15         | Low     |
@@ -142,6 +143,10 @@ date: 2019-04-20 01:01:00
 <!-- endtab -->
 
 {% endtabs %}
+
+
+
+### (保留过往半年内的职位，有部分删减，仅供参考)
 
 
 ### 2019.09.02
