@@ -50,7 +50,7 @@ The following parts will cover the answers for questions above, several workarou
 
 ## Legacy solution
 
-![v1-solution](https://izqxiw.bn.files.1drv.com/y4mVIEZDs-Pp1DhfEUUOk8Enojm1rCeKLwoiO39tEFHVND_OkQ_HsiOi3aJsMXEvoIwAJaHphIn9g2J3Ht0G95NzAWMLUOIfDeurNKwBPDZtSLHuon-P4ZyyaVgMLKJvmg4HNgVQbjeoPPRcW5xWBsWxjT85pap2x-xizPAk0GagJ4LtvS6WUQbjaoNLYBEoNbP78OPm4EMdFFeDvi7VzbEOQ?width=3563&height=1506&cropmode=none)
+![](https://izqxiw.bn.files.1drv.com/y4mVIEZDs-Pp1DhfEUUOk8Enojm1rCeKLwoiO39tEFHVND_OkQ_HsiOi3aJsMXEvoIwAJaHphIn9g2J3Ht0G95NzAWMLUOIfDeurNKwBPDZtSLHuon-P4ZyyaVgMLKJvmg4HNgVQbjeoPPRcW5xWBsWxjT85pap2x-xizPAk0GagJ4LtvS6WUQbjaoNLYBEoNbP78OPm4EMdFFeDvi7VzbEOQ?width=3563&height=1506&cropmode=none)
 
 Solution for V1 is developed in about 5 years ago. Selenium is chosen as test framework, it's usually for automating web applications for testing purpose. Test service is based on .Net framework as well as test cases coded in C# which is a very typical Microsoft style. They will manipulate Selenium client to do testing on different browsers for various scenarios by browser drivers. And the service is hosted by Geneva Runner Service, the part of Geneva Monitoring system. This system is a really useful and important internal system, Metrics and Alerting services can help for logging runner data, filing tickets in Incident Management system (IcM) and finally reporting to service owner through phone call , text message and E-mail when high priority ticket issued.
 
@@ -92,7 +92,7 @@ We already picked Jest as unit test framework for our React components, but anot
 
 Unfortunately, after YC and I wrote some complicated test cases, we both found that tests would fail inexplicable at some steps, elements couldn't be captured by our scripts. We didn't have too much time to solve this problem, thus YC had to switch to Jest with Puppeteer plan quickly. Fortunately this plan was not bad, most of steps worked fine and then I wrote more test cases based on it, including common functions like login and full scenarios like run an experiment.
 
-![test-framework](https://izqwiw.bn.files.1drv.com/y4m2Nc_cet04-QcpRzOp96cELYLtivmdXJafashQoIjgEf-NqD2Rh0zj8QvKJKKnlPrB7z-0-xkzuy2i43jwve-lRbrA4elIXUuBlVD-52oIP00K8bCqQmCJDFEtM4o4evMpc0VUZ5G66-upk1mTOvr079loRvaEjF5tBVcA2S1ZVgjTQTUBtG2h1eWDB_QnGMkvXwKO8wy41Ka0EsA8F8zlg?width=2289&height=1528&cropmode=none)
+![](https://izqwiw.bn.files.1drv.com/y4m2Nc_cet04-QcpRzOp96cELYLtivmdXJafashQoIjgEf-NqD2Rh0zj8QvKJKKnlPrB7z-0-xkzuy2i43jwve-lRbrA4elIXUuBlVD-52oIP00K8bCqQmCJDFEtM4o4evMpc0VUZ5G66-upk1mTOvr079loRvaEjF5tBVcA2S1ZVgjTQTUBtG2h1eWDB_QnGMkvXwKO8wy41Ka0EsA8F8zlg?width=2289&height=1528&cropmode=none)
 
 The biggest challenge of this part is robustness of test case scripts, which means test case can't fail when our web application is healthy, false positive rate should be as low as possible. The unexpected failures may caused by network traffic or browser lag, we need to reorder our actions with reasonable sequence, set enough timeout and try many times to make sure test cases are stable.
 
@@ -124,13 +124,13 @@ How to receive data from runner was not a hard thing too, Flow provides a set of
 
 This flow looks like the one in following picture.
 
-![flow-example](https://ijqriw.bn.files.1drv.com/y4mdq9rJEIcZscmSbBmGaXVQFCWqbn6B_Jtpez7xoXqO9ahNGPtn2FTgqUCaP5u6AbDqj3MguU_TKAdv6tKkrGn5EILeTX-i7371AOvXup0ALgv9BM87OMN2ZMxZhJ52dtGfljMvoPuGN58Ierv4-HRY34k9nZq1SrttqvdbJVRgsSUdLUM2-oEvAtuI_zfHT8KdfhrFuDzMSffRKABtG_ieA?width=1029&height=1544&cropmode=none)
+![](https://ijqriw.bn.files.1drv.com/y4mdq9rJEIcZscmSbBmGaXVQFCWqbn6B_Jtpez7xoXqO9ahNGPtn2FTgqUCaP5u6AbDqj3MguU_TKAdv6tKkrGn5EILeTX-i7371AOvXup0ALgv9BM87OMN2ZMxZhJ52dtGfljMvoPuGN58Ierv4-HRY34k9nZq1SrttqvdbJVRgsSUdLUM2-oEvAtuI_zfHT8KdfhrFuDzMSffRKABtG_ieA?width=1029&height=1544&cropmode=none)
 
 One more important thing in this section that you may think about for a while: **our runners are running on a VM instead of cloud service, also Task Scheduler is not stable, how to ensure our test service is always running? Or how to keep stability of our service?** If once the service stopped, how to recognize this disaster as soon as possible? A simple but useful solution is detecting heartbeat. Since we already stored metrics in database, we could query latest row and check its timestamp regularly to see if runners were still working. If time interval between latest record and current time exceeds an hour (one hour is the timeout of run experiment test), our flow will trigger IcM connector to file a ticket named like `[E2E][AUE] Runners are missing heartbeat more than 60 minutes!`.
 
 We also built several dashboards for service stability which will be introduced later, at present we have simple metrics and alert, let's take a look at following diagram to see the whole process.
 
-![task-scheduler-solution](https://izqviw.bn.files.1drv.com/y4mT0O6QIR606q0fqHpLm__3PE8AqIiR2YDgNuGNeSkJDTjL1e3hexU_3FeC89QcZPS7bVfQ3xOmPCT7LxoXWv5qZjz7Hed0E-gD6tbolOrpNSAoP55rzq1EuQQU0xF-oC_oNE_KtowDQCzEN9p-Yee7V789d7JTSlfAKNduujL5zC5lX6f5b6SHEgkzrqxNd8LdihMo9iVdi77WOvWj5Ca0g?width=3514&height=1469&cropmode=none)
+![](https://izqviw.bn.files.1drv.com/y4mT0O6QIR606q0fqHpLm__3PE8AqIiR2YDgNuGNeSkJDTjL1e3hexU_3FeC89QcZPS7bVfQ3xOmPCT7LxoXWv5qZjz7Hed0E-gD6tbolOrpNSAoP55rzq1EuQQU0xF-oC_oNE_KtowDQCzEN9p-Yee7V789d7JTSlfAKNduujL5zC5lX6f5b6SHEgkzrqxNd8LdihMo9iVdi77WOvWj5Ca0g?width=3514&height=1469&cropmode=none)
 
 
 
@@ -142,11 +142,11 @@ You can't imagine how fast JS is developing. From Express.js, KOA.js to Egg.js, 
 
 - Not only I'm familiar with this framework, but it's also an out of box framework with well documentation. Comparing with Express.js, KOA.js offers a middleware onion model to handle asynchronous operations easily,     and Egg.js is based on KOA.js with more key features for building enterprise application, such as clusters and production mode.
 
-  ![koa-onion-model](https://izqyiw.bn.files.1drv.com/y4mD34YcwXwufGCN7tTO-TyujEuRZjnrv-_98U7WHiLaeoDs6iwI_zXBt_JTPCte6HzX8QetLutH3h4NNAoucWTSNCLmVXTy2pNKSdHex1V34HPverU_Ze6tp7inz7v7ucKDQglgzrwq7IY4fbJTmpJNF9DufS8_AZcTTvSBV4eCY0GD1_ULYkvwVoAcw4jvsHkSEtrRFgPYxzf4X__-IP6GQ?width=478&height=435&cropmode=none)
+  ![](https://izqyiw.bn.files.1drv.com/y4mD34YcwXwufGCN7tTO-TyujEuRZjnrv-_98U7WHiLaeoDs6iwI_zXBt_JTPCte6HzX8QetLutH3h4NNAoucWTSNCLmVXTy2pNKSdHex1V34HPverU_Ze6tp7inz7v7ucKDQglgzrwq7IY4fbJTmpJNF9DufS8_AZcTTvSBV4eCY0GD1_ULYkvwVoAcw4jvsHkSEtrRFgPYxzf4X__-IP6GQ?width=478&height=435&cropmode=none)
 
 - High performance with robustness, we already built several productions based on it in Alibaba for 11.11 shopping festival in last few years. Node.js service is good at I/O operations, and Egg.js offers a multi-process model to take advantage of modern CPU. We'll talk about how it applies to our scenario soon.
 
-  ![eggjs-cluster](https://ijqsiw.bn.files.1drv.com/y4mbX_cLLffjERi_Ux4rpLqFnq7sy5JilYOgB2QG7mtef3KC1IQ3Je0QX2RHeaAoUNGAOU9rYP0Z4lH8FC62lnKBRWNNjL1Ltp1sa5v7EWPV1Wx-MYN9_GrWB5ljJU-K9OqSBL9kpvE-aLVipsraSj7ort1pAe6CA0ScNNlGDElYFjMP01Lb-X1GwxC4kfKq1iAa_0a-91A2v7cuwbqCfMczg?width=1131&height=782&cropmode=none)
+  ![](https://ijqsiw.bn.files.1drv.com/y4mbX_cLLffjERi_Ux4rpLqFnq7sy5JilYOgB2QG7mtef3KC1IQ3Je0QX2RHeaAoUNGAOU9rYP0Z4lH8FC62lnKBRWNNjL1Ltp1sa5v7EWPV1Wx-MYN9_GrWB5ljJU-K9OqSBL9kpvE-aLVipsraSj7ort1pAe6CA0ScNNlGDElYFjMP01Lb-X1GwxC4kfKq1iAa_0a-91A2v7cuwbqCfMczg?width=1131&height=782&cropmode=none)
 
 - Featured plugins like logger, scheduler, static server, i18n, session, security, template engine and so on.
 
@@ -170,7 +170,7 @@ There's no doubt that it's the first time to use Node.js with Kusto SDK in my te
 
 So here is our new system work flow.
 
-![eggjs-solution](https://ijqqiw.bn.files.1drv.com/y4mlEoQnSUS7uj0M79I1RAUaT-PNrYMLKZA2vcDLn2d4FZz_9LA2ivxaXEVQPOzLefIvTlizATcKXT_luuuf_5aUosX23XWM5mCQvBx37p0dDE1qGCwryp3CHJYyMyUmJM1hibz_bMuBxIIjNKWLdROIWYPCI5I8qInisKeU5Xp8vefx2QDNfNYuFzpXHlUohB65zt7br_mOaZV0_oQVZCw3g?width=3594&height=1945&cropmode=none)
+![](https://ijqqiw.bn.files.1drv.com/y4mlEoQnSUS7uj0M79I1RAUaT-PNrYMLKZA2vcDLn2d4FZz_9LA2ivxaXEVQPOzLefIvTlizATcKXT_luuuf_5aUosX23XWM5mCQvBx37p0dDE1qGCwryp3CHJYyMyUmJM1hibz_bMuBxIIjNKWLdROIWYPCI5I8qInisKeU5Xp8vefx2QDNfNYuFzpXHlUohB65zt7br_mOaZV0_oQVZCw3g?width=3594&height=1945&cropmode=none)
 
 Node.js can run across all popular platforms, I put service on Ubuntu server because we need to take full advantage of VM, graphical interface of Windows server is meaningless but also costs some resources. Each runner will cost about 500MB memory space (mostly taken by headless Chromium), when 30 runners work simultaneously I can't even move the pointer on Windows server but nothing is difference on Ubuntu server through SSH connection.
 
