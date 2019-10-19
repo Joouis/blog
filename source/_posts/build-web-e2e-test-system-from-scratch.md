@@ -20,7 +20,7 @@ tags:
 
 The topic of end-to-end (E2E) test is a platitude in web front-end (FE) domain, especially most of blogs are talking about testing frameworks out of the real web production. The real world needs solution, for E2E test which means a service can do E2E testing and alerting with stability and even good performance. This article will introduce how we design and build our E2E test service for the newer version of our [web application](https://docs.microsoft.com/en-us/azure/machine-learning/studio/what-is-ml-studio) based on popular web FE frameworks and integration with abundant Microsoft services, including several workarounds to tell the problems we met and how we overcame them.
 
-In addition, it's for internal review at first, then it becomes my first blog article in English. Probably I will translate it into Chinese sooner or later.
+In addition, I shared this system internally at first, then it becomes my first blog article in English. Probably I will translate it into Chinese sooner or later.
 
 <!-- more -->
 
