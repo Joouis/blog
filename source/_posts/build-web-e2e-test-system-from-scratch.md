@@ -188,7 +188,7 @@ While we ramp up E2E test work, a senior teammate led a benchmark test targeting
 
 
 
-## Look forward
+## Looking forward
 
 You can take first chapter "TL;DR" as conclusion, in the last chapter is about improvements from several aspects. We've said that this is just an "acceptable" version in the introduction, obviously lots of progress can be made, there are some thoughts in my mind:
 
