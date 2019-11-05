@@ -65,25 +65,17 @@ date: 2019-04-20 01:01:00
 
 
 
-### 2019.10.18
+### 2019.11.05
 
-迟来的一波更新，以下都是名额较为充足的岗位，如果没有中意的可以邮件我沟通更多岗位。
+欢迎关注 O365 和移动端（Outlook & MMX）的机会！如果没有中意的岗位欢迎邮件我沟通了解更多详情。
 
 {% tabs BU unique name %}
 
-<!-- tab Bing -->
-| Sub Team Focus                                               | Role                  | City           | working year | English |
-| ------------------------------------------------------------ | --------------------- | -------------- | ------------ | ------- |
-| Machile learning, NLP, NLG.                                  | NLP scientist/Manager | Beijing        | 1~20         | Low     |
-| Ads Algo: - User response (click & conversion) prediction. - User/query intent understanding, Image understanding. - IR-based ad retrieval. - Large scale machine learning algorithms. | Dev                   | Beijing/Suzhou | 1~15         | Middle  |
-| Distributed real-time system for News. Machine learning and data mining for news clustering, recommendation and notification group. AI background, otherwise, core dev, nice to have machine learning,data mining, large-scale distributed computing. | Dev                   | Beijing/Suzhou | 1~15         | Low     |
-| Distributed real-time system for NewsMachine learning and data mining for news clustering, recommendation and notification group. UX Dev, AI background, otherwise, core dev. | Dev                   | Beijing/Suzhou | 5~20         | MIddle  |
-| SR (coding needed)                                           | Speech Scientist      | Beijing/Suzhou | 1~15         | Low     |
-<!-- endtab -->
-
 <!-- tab O365 -->
+
 | Sub Team Focus                                               | Role | City   | Working year | English |
 | ------------------------------------------------------------ | ---- | ------ | ------------ | ------- |
+| **Mobile app development, Android/iOS**                                           | Dev  | Suzhou | 1~10         | Strong  |
 | Engineering system                                           | Dev  | Suzhou | 1~10         | Strong  |
 | EverGreen                                                    | Dev  | Suzhou | 1~10         | low     |
 | HA/Store, 1+ years experience.                               | Dev  | Suzhou | 1~10         | Strong  |
@@ -93,41 +85,34 @@ date: 2019-04-20 01:01:00
 | IP/Transport team, 3+ years experience.                      | Dev  | Suzhou | 3~15         | Strong  |
 <!-- endtab -->
 
+<!-- tab MMX -->
+| Sub Team Focus              | Role | City           | working year | English |
+| --------------------------- | ---- | -------------- | ------------ | ------- |
+| **Edge brower, iOS/Android.** | Dev  | Suzhou | 1+           | low     |
+<!-- endtab -->
+
+<!-- tab AI -->
+| Sub Team Focus                                               | Role | City           | working year | English |
+| ------------------------------------------------------------ | ---- | -------------- | ------------ | ------- |
+| Shared Data, internal AI/Data platform, Cosmos, Spark, Tensorflow, prefer SDEII+ or strong L60. | Dev  | Beijing/Suzhou | 1~15         | Low     |
+<!-- endtab -->
+
+<!-- tab Bing -->
+| Sub Team Focus                                               | Role                  | City           | working year | English |
+| ------------------------------------------------------------ | --------------------- | -------------- | ------------ | ------- |
+| Machine learning, NLP, NLG.                                  | NLP scientist/Manager | Beijing        | 1~20         | Low     |
+<!-- endtab -->
+
 <!-- tab D365 -->
 | Sub Team Focus                                               | Role | City     | Working year | English |
 | ------------------------------------------------------------ | ---- | -------- | ------------ | ------- |
 | 4+ years of software design and programming experience with languages like C/C++/C#/Java/Python required. Willing to work on .Net experience with web technologies, such as JavaScript/TypeScript/HTML/React preferred. Prefer Senior. | Dev  | Shanghai | 1~15         | Strong  |
 <!-- endtab -->
 
-<!-- tab AI -->
-
-| Sub Team Focus                                               | Role | City           | working year | English |
-| ------------------------------------------------------------ | ---- | -------------- | ------------ | ------- |
-| Shared Data, internal AI/Data platform, Cosmos, Spark, Tensorflow, prefer SDEII+ or strong L60. | Dev  | Beijing/Suzhou | 1~15         | Low     |
-<!-- endtab -->
-
 <!-- tab SharePoint -->
 | Sub Team Focus                  | Role | City   | Working year | English |
 | ------------------------------- | ---- | ------ | ------------ | ------- |
 | Core dev, or mobile background. | Dev  | Suzhou | 1~8          | Strong  |
-<!-- endtab -->
-
-<!-- tab SCCM -->
-| Sub Team Focus                                               | Role | City   | working year | English |
-| ------------------------------------------------------------ | ---- | ------ | ------------ | ------- |
-| 0~6 years dev experience, CV must be English version, prefer good university, accept candidate without front-end experience but willing to change. | Dev  | Suzhou | 0~6          | low     |
-<!-- endtab -->
-
-<!-- tab Intune -->
-| Sub Team Focus                                               | Role | City   | working year | English |
-| ------------------------------------------------------------ | ---- | ------ | ------------ | ------- |
-| 6 years+ dev experience, CV must be English version, prefer good university, accept candidatewithout front-end experience but willing to change. | Dev  | Suzhou | 6+           | low     |
-<!-- endtab -->
-
-<!-- tab MMX -->
-| Sub Team Focus              | Role | City           | working year | English |
-| --------------------------- | ---- | -------------- | ------------ | ------- |
-| Edge brower: iOS & Android. | Dev  | Suzhou/Beijing | 1+           | low     |
 <!-- endtab -->
 
 <!-- tab MSRA -->
