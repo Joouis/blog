@@ -88,7 +88,7 @@ date: 2019-04-20 01:01:00
 <!-- tab MMX -->
 | Sub Team Focus              | Role | City           | working year | English |
 | --------------------------- | ---- | -------------- | ------------ | ------- |
-| **Edge brower, iOS/Android.** | Dev  | Suzhou | 1+           | low     |
+| **Edge browser, iOS/Android.** | Dev  | Suzhou | 1+           | low     |
 <!-- endtab -->
 
 <!-- tab AI -->
@@ -100,7 +100,7 @@ date: 2019-04-20 01:01:00
 <!-- tab Bing -->
 | Sub Team Focus                                               | Role                  | City           | working year | English |
 | ------------------------------------------------------------ | --------------------- | -------------- | ------------ | ------- |
-| Machine learning, NLP, NLG.                                  | NLP scientist/Manager | Beijing        | 1~20         | Low     |
+| Machine learning, NLP, NLG.                                  | NLP scientist/Manager | Suzhou        | 1~20         | Low     |
 <!-- endtab -->
 
 <!-- tab D365 -->
