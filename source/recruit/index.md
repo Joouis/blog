@@ -63,7 +63,10 @@ date: 2019-04-20 01:01:00
 
 下面会**定期更新**目前开放的职位，不过还是请在看到钟意的职位后尽早与我联系哈，有的职位可能上周开放这周就招到人了 ; )
 
+### 2019.11.28
 
+- [苏州 O365 热招中](https://link.zhihu.com/?target=https%3A//microsoft.tupu360.com/position/list%3Ftype%3DSOCIALRECRUITMENT%26city%3DSuzhou%26function%3DEngineering%26offset%3D0%26lang%3Dzh_CN)！
+- [C+AI，上海](https://link.zhihu.com/?target=https%3A//mp.weixin.qq.com/s/FGPEK4jedLiEZgb8-d1iig)
 
 ### 2019.11.05
 
