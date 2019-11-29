@@ -30,9 +30,7 @@ Sometimes you did a lot, got surprise rather than what you expected.
 
 只能说，享受当下吧，并在下一刻忘掉这些，继续追逐自己原本的计划。
 
-Enjoy the moment, then forget about it, keep going your plan for the future.
+Enjoy the moment, then forget about it, keep on your plan for the future.
 
 <br />
-
-
 
