@@ -197,6 +197,7 @@ You can take first chapter "TL;DR" as conclusion, in the last chapter is about i
 - Enhancement of service and runner management. Providing a UI tool to empower other teammates (especially on-call guys) to manipulate E2E test, like restart specific runner, or create new runner based on configurable template.
 - Better experience to debug failed E2E test. For example, our test framework can generate screenshot of failed moment, but how to management and display these screenshots need well design, and of course these can help us debug more efficient.
 - Share the service to help other teams which are obsessed with E2E test. For instance they need only write custom test cases then upload to our system, no worry about runner execution, runner management and dashboard service, sounds like another Geneva but designed for E2E test.
+- Leverage AI technologies to explore new test experience. Write and update test scripts are really heavy loadings, instead of repeating these boring works, can we use reinforcement learning to answer this classification problem with snapshot pictures and test result as inputs? Label snapshots is very easy, all we have to do is train a robust model.
 
 
 
