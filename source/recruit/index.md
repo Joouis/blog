@@ -63,6 +63,134 @@ date: 2019-04-20 01:01:00
 
 下面会**定期更新**目前开放的职位，不过还是请在看到钟意的职位后尽早与我联系哈，有的职位可能上周开放这周就招到人了 ; )
 
+
+
+### 2019.12.04
+
+**12月热招职位大全，让你一次看个够！**
+
+（JD可以通过职位编号得到，相信难不倒聪明的你）
+
+| 职位名称                                                     | 职位编号    | 城市             |
+| ------------------------------------------------------------ | ----------- | ---------------- |
+| Research  SDE 2                                              | 2019-685746 | Beijing/Shanghai |
+| Service  Engineer II (MSRA)                                  | 2019-685747 | Beijing          |
+| Research  SDE or Researcher                                  | 2019-737529 | Beijing/Shanghai |
+| Principal  Research Manager                                  | 2019-633318 | Beijing          |
+| Researcher  or RSDE(System area)                             | 2019-740609 | Beijing          |
+| Research  SDE 2-AI infrastructure and tools                  | 2019-670168 | Beijing          |
+| Researcher  or Researcher Software Development Engineer      | 2019-595047 | Beijing          |
+| Sr.  Researcher                                              | 2019-702489 | Beijing/Shanghai |
+| Applied  Speech Scientist                                    | 2019-699297 | Beijing/Suzhou   |
+| Software  Engineering Manager-Search Engineer                | 2019-643519 | Suzhou           |
+| Principal  Software Engineering Manager-Bing team            | 2019-662036 | Beijing          |
+| UX  Designer                                                 | 2019-663708 | Beijing          |
+| Sr.  Software Engineer                                       | 2019-728513 | Beijing          |
+| Mobile  Engineer-Android/iOS- O365                           | 2019-730644 | Suzhou           |
+| Software  Engineer/ SEII - O365                              | 2019-740048 | Suzhou           |
+| Software  Engineer (all levels)                              | 2019-692521 | Suzhou           |
+| Sr.  Data Scientist/Data Scientist II-- O365 Connectivity    | 2019-668339 | Suzhou           |
+| SE/SEII/Sr.  Software Engineer--O365 WpA                     | 2019-719433 | Suzhou           |
+| Software  Engineer II/Sr. SE --O365 Monitoring               | 2019-721620 | Suzhou           |
+| Sr./Principal  SW Engineering Manager--O365 Anti Spam        | 2019-724260 | Suzhou           |
+| Software  Engineer II/Sr. SE O365  Substrate Management Platform | 2019-724277 | Suzhou           |
+| Senior  Program Manager--MSAI                                | 2019-724281 | Suzhou           |
+| Senior/Principal  Program Manager--SharePoint                | 2019-733642 | Suzhou           |
+| Sr/Principal  Software Engineering Manager--HA               | 2019-738265 | Suzhou           |
+| Sr.  Software Engineer --O365 AD team                        | 2019-738267 | Suzhou           |
+| Sr. SW  Engineering Manager--O365 OM team                    | 2019-738284 | Suzhou           |
+| Software  Engineer II/Sr. SE--Anti Spam                      | 2019-740051 | Suzhou           |
+| Software  Engineer II/Sr. SDE – Protocols                    | 2019-742501 | Suzhou           |
+| Software  Engineer II/Sr. SE--O365 Transport team            | 2019-744927 | Suzhou           |
+| Sr.  SE/Software Engineer II--O365 HA & Store                | 2019-749922 | Suzhou           |
+| Sr.  Data & Applied Scientist/Data Scientist--O365 HA & Store | 2019-749923 | Suzhou           |
+| Software  Engineer/SEII/Sr.SE--Performance                   | 2019-749924 | Suzhou           |
+| Sr.  Data Scientist/Data Scientist II-- O365 Connectivity    | 2019-749925 | Suzhou           |
+| Software  Engineer II/Sr. SE--O365 Engineering System        | 2019-749926 | Suzhou           |
+| Software  Engineer/SEII/Sr.SE--O365 Fleet                    | 2019-749933 | Suzhou           |
+| Senior  Software Engineer--SharePoint                        | 2019-751153 | Suzhou           |
+| Software  Engineer-Sharepoint-Junior to Senior               | 2019-713234 | Suzhou           |
+| Software  Engineer/ SEII -O365- Data Insights                | 2019-730629 | Suzhou           |
+| Mobile  Engineer ( all levels) - Cortana                     | 2019-733643 | Suzhou           |
+| Software  Engineer/ SEII-O365- IDEAs                         | 2019-721567 | Suzhou           |
+| Software  Engineer/ SEII-O365-Security                       | 2019-712499 | Suzhou           |
+| Software  Engineer/SEII - O365                               | 2019-724253 | Suzhou           |
+| Software  Engineer/SEII--O365 OS&SKU                         | 2019-686832 | Suzhou           |
+| Software  Engineer/SEII- O365- Antispam                      | 2019-724261 | Suzhou           |
+| Software  Engineer/SEII- O365-AD                             | 2019-725112 | Suzhou           |
+| Software  Engineer/SEII- O365-Store                          | 2019-696901 | Suzhou           |
+| Software  Engineer/ SEII- O365-Migration                     | 2019-742499 | Suzhou           |
+| Software  Engineer/ SEII- O365-Protocols                     | 2019-737537 | Suzhou           |
+| Software  Engineer/SEII- O365-Transport                      | 2019-678372 | Suzhou           |
+| Software  Engineer/SEII- O365-Evergreen                      | 2019-689115 | Suzhou           |
+| Software  Engineer/SEII- O365-Engineering System             | 2019-721625 | Suzhou           |
+| Software  Engineer/ SEII- Cortana                            | 2019-725113 | Suzhou           |
+| Software  Engineer/ SEII- Cortana                            | 2019-725114 | Beijing          |
+| Program  Manager/ PMII- OXO                                  | 2019-745375 | Beijing          |
+| Sr.  Technical Operation Engineer- Factory Management        | 2019-700303 | Shenzhen         |
+| Software  Engineer II- Azure Dynamics 365 Commerce Team * 3  | 2019-742696 | Shanghai         |
+| Software  Engineer (all levels)_Big Data frontend * 4        | 2019-738288 | Beijing          |
+| Software  Engineer (all levels)_Big Data Full Stack * 4      | 2019-738289 | Beijing          |
+| Software  Engineer II_Azure Frontdoor/CDN                    | 2019-699246 | Shanghai         |
+| Software  Engineer II_Java on Azure * 2                      | 2019-737526 | Shanghai         |
+| Program  Manager II_Azure Management Experience              | 2019-708849 | Shanghai         |
+| Software  Engineer II_ Azure DevTest Labs                    | 2019-694086 | Shanghai         |
+| Software  Engineer II_Azure App Configuration                | 2019-714283 | Shanghai         |
+| Software  Engineer II_Azure Container Registry               | 2019-730608 | Shanghai         |
+| Software  Engineer II_Azure SignalR Service                  | 2019-738319 | Shanghai         |
+| Program  Manager II_Azure Bigdata                            | 2019-732794 | Beijing          |
+| Software  Engineer II_Azure Data UX                          | 2019-695620 | Shanghai         |
+| Software  Engineer II_Azure Managed Edge * 2                 | 2019-714230 | Shanghai         |
+| Software  Engineer II-Azure Global Asia Engineering team     | 2019-612057 | Beijing          |
+| Software  Engineer 2_Azure Global Asia Engineering Team      | 2019-732625 | Beijing          |
+| Service  Engineer_Media Service                              | 2019-721922 | Shanghai         |
+| Software  Engineer II_Azure Stack                            | 2019-660287 | Shanghai         |
+| Software  Engineer II _ Azure Storage * 3                    | 2019-697046 | Shanghai         |
+| Software  Engineer II_ Azure Management Experience * 6       | 2019-745373 | Shanghai         |
+| Regional  Cloud Developer Advocate                           | 2019-732021 | Shanghai/Beijing |
+| Sr.  Software Engineer_ Java on Azure *2                     | 2019-737524 | Shanghai         |
+| Azure  Operations China Vendor Manager                       | 2019-727789 | Beijing          |
+| Data  & Applied Scientist II                                 | 2019-653705 | Shanghai         |
+| Sr.  Program Manager_ Big Data                               | 2019-732795 | Beijing          |
+| Senior  Software Engineer_ Azure Stack                       | 2019-738487 | Shanghai         |
+| Country  Manager – Network Acquisitions                      | 2019-726474 | Beijing          |
+| Sr.  Service Engineer_ Azure Media Services                  | 2019-711300 | Shanghai         |
+| Sr.  Software Engineer_ Java on Azure                        | 2019-662540 | Shanghai         |
+| Sr.  Software Engineer_ Azure IoT                            | 2019-689063 | Shanghai         |
+| Principal  Software Engineer_ IoT                            | 2019-730607 | Shanghai         |
+| Sr.  Software Engineer                                       | 2019-726872 | Shanghai         |
+| SDE 2-  RF                                                   | 2019-723072 | Suzhou           |
+| Sr. NPI  PM                                                  | 2019-726042 | Suzhou           |
+| Packaging  Designer 2                                        | 2019-680329 | Shenzhen         |
+| Sr.  Operations Program Manager                              | 2019-737552 | Suzhou           |
+| Sr.  Software Development Engineer                           | 2019-737228 | Suzhou           |
+| Sr.  Factory Management Engineer-Touch & Display             | 2019-690977 | Suzhou           |
+| Sr.  Manufacturing Test Program Manager                      | 2019-699975 | Suzhou           |
+| Sr.  Factory Management Engineer-Mechanical                  | 2019-610424 | Suzhou           |
+| Sr.  Factory Management Engineer-Mechanical                  | 2019-691711 | Suzhou           |
+| Sr.  Operations Program Manager                              | 2019-737552 | Suzhou           |
+| Manager,  Factory Management Engineering                     | 2019-739684 | Suzhou           |
+| Sr.  Program Manager                                         | 2019-742464 | Suzhou           |
+| Sr.  Software Development Engineer                           | 2019-733317 | Suzhou           |
+| BU  Operation Manager                                        | 2019-738481 | Suzhou           |
+| Sr.  Factory Management Engineer_ Optical Engineering        | 2019-681921 | Suzhou           |
+| Reverse  Logistics Manager                                   | 2019-740643 | Suzhou           |
+| Sr.  Enclosure development Engineer                          | 2019-677518 | Suzhou           |
+| Sr.  Software Engineer Design Verification *2                | 2019-712687 | Suzhou           |
+| Mechanical  Engineer II                                      | 2019-706667 | Shenzhen         |
+| Sr.  Software Development Engineer_ Display                  | 2019-733365 | Suzhou           |
+| Mechanical  Engineering Manager_ CAD Works                   | 2019-690321 | Suzhou           |
+| Mechanical  Engineer II                                      | 2019-690326 | Suzhou           |
+| Director  of Engineering                                     | 2019-727396 | Suzhou           |
+| Senior  Program Manager--MMX                                 | 2019-731468 | Beijing          |
+| Software  Engineer II/Sr. SE--MMX Edge Android               | 2019-738274 | Suzhou           |
+| SEII-Sr.  Software Engineer/Manager--Intune                  | 2019-749928 | Suzhou           |
+| Software  Engineer/ SEII- iOS- MMX                           | 2019-728540 | Suzhou           |
+
+
+
+### (保留过往半年内的职位，有部分删减，仅供参考)
+
 ### 2019.11.28
 
 - [苏州 O365 热招中](https://link.zhihu.com/?target=https%3A//microsoft.tupu360.com/position/list%3Ftype%3DSOCIALRECRUITMENT%26city%3DSuzhou%26function%3DEngineering%26offset%3D0%26lang%3Dzh_CN)！
@@ -134,8 +262,6 @@ date: 2019-04-20 01:01:00
 
 
 
-### (保留过往半年内的职位，有部分删减，仅供参考)
-
 
 ### 2019.09.02
 
@@ -172,291 +298,4 @@ date: 2019-04-20 01:01:00
 | Intune                  | 0~1~2~3 years   dev experience, prefer 985 university, working experience is not that   important, CV must be English version | Dev                            | front-end/   full stack/ backend                             | Suzhou           | 0-5年  | Low     |
 | SCCM                    | 0~6   years dev experience, CV must be English version, prefer good university | Dev                            | front-end/   full stack/ backend                             | Suzhou           | 0-5年  | Middle  |
 
-
-
-### 2019.08.08
-
-- 为自己团队招人啦，可以一周内安排电面，Azure 机器学习产品，[JD 里有更详细的描述](https://careers.microsoft.com/us/en/job/683603/Software-Engineer-All-levels-Machine-learning-studio)~
-- 大团队也在招人中，包括大数据和在线 A/B 实验平台、AML training/inference service 以及 Kafka 集群，都是比地球还要大的 scale！[JD 在这里](https://careers.microsoft.com/us/en/job/669290/Software-Engineer-all-levels-shared-data)。
-
-
-
-### 2019.06.17
-
-- 苏州 Office 365 团队热招啦，据说有几十个 HC 喔！
-
-![](https://izomaa.bn.files.1drv.com/y4mg6S1xFdI-mfiu1XduwtwOvBgI2Ex27S-RqxT84yl2atFgniRmJoV8qmEGqjSXYWu9y0E7ArinUrPIzKfUe24yptdQAb6R91JWjoNgY4rDPbPrWAg5ydN-LlKbF7sm4U045aQLEbyVF58p6h2ElGvn3ru1WtlkuqT_ZabF4q9_XWq-bgUmq-wqyq-T4Ivv6eykFsjgO4zpES0emj6A-3hZw?width=750&height=1994&cropmode=none)
-
-### 2019.06.14
-
-- Intune 前后端开发，一到三年经验，无英文要求，JD 参考[这里](https://careers.microsoft.com/us/en/job/634833)
-
-### 2019.06.01
-
-各位儿童节快乐，昨晚得知又有候选人接 offer 了，开心 🤣
-
-- Azure 若干职位
-
-  ![](https://v64hja.bn.files.1drv.com/y4mHT7hwdChluxfYjCR0KM3ePImmJcqjgzCYPp1TjHhEyu8ise1-ybe7lVRpoBBIZoe1sGZzSugwUVBFWzgoHfFFjZ-0bwU9PjDPBm6IE6mKDtyw7fZzSvUhvugpu7jVzZ_KRXOSX29k4ItHPs0jWr2HZbRfnZaa6SZ1UDpdMu_I0BDOmXSEXLkY4tne9OIseoEgVxktKFcW52GZfF-QtvcEQ?width=750&height=5953&cropmode=none)
-
-- 大客户技术总监
-  - 介绍：大客户技术总监是微软大客户的技术军师，深入了解大客户的战略发展和数字化转型，并带领微软团队及合作伙伴帮助大客户实现其数字化转型。
-  - 编号：[623569](https://careers.microsoft.com/us/en/job/623569)
-  - 要求：
-    - 具有战略性思维，可以把客户的业务目标转化成微软的技术解决方案并成功实施。
-    - 对 IT 主流技术（云计算、人工智能等）有一定积累，对技术发展趋势有好奇心和敏感性，了解行业客户的真正需求，并基于需求提供整体架构设计。
-    - 勇于接受挑战，成为客户信任的大使并协调资源帮助客户实现其数字化转型。
-  - 工作地点：北京/上海/深圳
-
- 
-
-### 2019.05.23
-
-Java on Azure 和 Azure Management Experience 两个组，上海，L60-65都有，HC 据说暴多哟。参考链接：
-
-- [Java on Azure](https://careers.microsoft.com/us/en/job/627883/Software-Engineer-II-Java-on-Azure)
-- [Azure Management Experience](https://careers.microsoft.com/us/en/job/626812/Software-Engineer-II-Azure-Management-Experience)
-
-![](https://vq4h3q.bn.files.1drv.com/y4mYkcV6LQdQKoXEyBFcg23htMM6w62jSaVH5HaKTY4oQzegAMhFKf4L9nxB56brgx-V7iS7ZICfB67gCFOmtFPijoXcvgNEzOaPz13x1xwWM775VdGTdoyFacscPPRkgDc2iNH7sKUgEhCfUrV1eaRwsOvoz0xT89HaNnxH4QqmzhM_ZOf4HCijuAqS-07ljFyQbDx5cWIQhuHaDLJCFLYpQ?width=2693&height=1434&cropmode=none)
-
-
-### 2019.05.12
-
-- [MMX Designer](https://careers.microsoft.com/i/us/en/job/623224/Designer-2)，久违的**设计**岗位，北京苏州都可
-
-### 2019.05.08
-
-#### 研发职位
-
-{% tabs Locations unique name %}
-
-<!-- tab 苏州 -->
-
-**Office365:** **全部要求英文口语可沟通**
-
-- Office 365-Performance team-后端开发工程师, C++/C#/Java，1年以上工作经验；
-- Office 365- Engineering system team-后端开发工程师, 1年以上工作经验；
-- Office 365-Flighting team-后端/全栈开发工程师, 1年以上工作经验；
-- Office 365-monitoring team-后端/全栈开发工程师- 3 年以上工作经验；
-- Office 365-Connectivity tea- 软件开发工程师 (networking experience is plus)，1年以上工作经验；
-- Office 365-Store-软件开发工程师，3年以上工作经验；
-- Office 365 Mail protocols/Server-软件开发工程师，3年以上工作经验；
-- Office 365 AD team- user access authorization软件开发工程师(Security Protocols is big plus)，1年以上工作经验；
-- Office 365- outlook-Anti Spam team- 全栈/后端软件开发工程师，1年以上工作经验；
-- Office 365- outlook-Transport team- 全栈/后端软件开发工程师，1年以上工作经验；
-
-**MMX team:**
-
-- Windows edge team-安卓开发工程师-苏州，1年以上工作经验，多岗位；
-
-**SharePoint team:** **全部要求英文口语沟通**
-
-- Web开发/ 后端开发， 目前开出来的职位需要至少4年以上工作经验， 后期陆续会有opening。
-- Senior / Principal Engineering manager， 要求8年以上工作经验；
-- Senior PM， 要求6年以上工作经验，有技术背景，开发经验背景是加分项; 
-
-**微软小冰：**
-
-- ~~后端开发工程师，1年以上相关工作经验；~~
-
-- ~~Data scientist，算法开发，需要有NLP, 计算机视觉方面经验；~~
-
-**硬件团队职位：**
-
-- 测试平台-软件开发工程师，2-10年开发经验，云平台开发优先，要么有硬件test 相关背景，要么擅长C# 开发，两者满足一条即可，可英文沟通；
-
- <!-- endtab -->
-
-<!-- tab 北京 -->
-
-**微软亚洲研究院**
-
-- Researcher（PhD-System/Data Analysis/AI Infra/Machine learning/Blockchain）
-
-- RSDE（Research Software Engineer）-Master（ML/Networking/Cloud）北京或上海
-
-**云计算与人工智能事业部**
-
-- Azure 大数据平台-前端开发工程师/全栈开发工程师 (多岗位)，1-8年工作经验，大数据平台开发经验优先；
-
-**互联网工程院**
-
-- 微软小冰 - 后端开发工程师，1年以上相关工作经验；
-
-- 微软小冰 - Data scientist，算法开发，需要有NLP, 计算机视觉方面经验；
-
-- 微软小冰 - PM/ PMII，1年-6年相关工作经验；不需要技术背景，需要有大量商业交付项目经验
-
-- AI Solutions engineer，3-5年/5年及以上相关研究工作经验；
-
-- MMX team -安卓 / IOS 开发工程师，1年以上工作经验，多岗位。
-
-<!-- endtab -->
-
-<!-- tab 上海 -->
-
-**云计算与人工智能事业部**
-
-- Azure HPC-高性能计算-资深开发工程师（8年及以上大规模分布式系统及高性能计算经验）
-- Azure Date Catalog- JAVA后端开发，5年以上工作经验，big data 相关经验是加分项；
-
-<!-- endtab -->
-
-{% endtabs %}
-
-
-
-#### 售前、部署、优化、实施、交复、PM 类职位，也有不少是工程师岗位喔~
-
-{% tabs Services unique name %}
-
-<!-- tab Part 1 -->
-
-**Architect**
-
-- ID: 579270/565991
-
-- Requirements: solution architect experience, Azure, application development, 10+ years’ experience
-
-- Language: Professional English level
-
-- Travel: 50-75%
-
-- Location: Beijing/Shanghai/Shenzhen/Guangzhou
-
-**Premier Field Engineer**
-
-- ID: 567399
-
-- Requirements: .net/Java, 5+ years’ experience, DevOps, Kubernetes
-
-- Language: Professional English level
-
-- Travel: 50%
-
-- Location: Shenzhen/Guangzhou
-
-**Consultant**
-
-- ID: 555256
-
-- Requirements: Java and .net, 10+ years, cloud experience, DevOps
-
-- Language: Professional English level
-
-- Travel: 50-75%
-
-- Location: Shenzhen/Guangzhou
-
-**Project Manager**
-
-- ID: 563971
-
-- Requirements: Good Communication, SCRUM, millions Dollars of project experience. 10+ years’ experience.
-
-- Language: Professional English level
-
-- Travel: 50-75%
-
-- Location: Shenzhen/Guangzhou
-
-<!-- endtab -->
-
-<!-- tab Part 2 -->
-
-[**Project Manager SI**](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fcareers.microsoft.com%2Fus%2Fen%2Fjob%2F581137%2FProject-Manager&data=01|01|a-wenl%40microsoft.com|e11e250738c44bfd70b808d6d1ff2d9b|72f988bf86f141af91ab2d7cd011db47|1&sdata=ikif3c6hfPHVN%2BxzUQmn6XCUTTVPlw6BO3pIFEypYYI%3D&reserved=0)
-
-- ID: 581137
-
-- Requirement: 5+ experience in project management; PMP certified; familiar with Agile/ Scrum; project experience in Cybersecurity or Infrastructure is a Plus; Proficient in English
-
-- Location: Shenzhen/ Guangzhou
-
-[**Technical consultant/ PFE- Secure Infrastructure**](https://careers.microsoft.com/i/us/en/job/567397/Technical-Consultant-PFE-Secure-Infrastructure)
-
-- ID: 567397
-
-**[Consultant- SI](https://careers.microsoft.com/i/us/en/job/539901/Consultant-Secure-Infrastructure-Domain)**
-
-- ID: 539901
-
-- Requirement: 3+ years of working experience in Cybersecurity or Infrastructure; MS Techonologies background is preferred; Communication skills need to be good, as will need to onsite in customer side.
-
-- Skill sets: any of these would be fine, like Azure Infrastructure, Windows Server, Windows Client, System Center, Hyper-V, VMM, Active Directory, Azure AD, Azure RMS, Devices & Application Management, CyberSecurity, Security & Identity, and etc.
-
-- Location: Primary Shanghai, can consider Beijing, Shenzhen
-
-- English: no particular requirement
-
-<!-- endtab -->
-
-<!-- tab Part 3 -->
-
-**ALL CSS roles have no limitations on year of work experience, and no travel needed.**
-
-
-
-**CSS-Support Escalation Engineer_Mooncake DB**
-
-- ID: 613990
-
-- Requirement: SQL Server/MySQL/Mango DB/ Big Data (Hadoop/Storm/HBase/Spark/Kafka)/BI
-
-- English: middle level
-
-- Location: Wuxi or Shanghai
-
-**CSS-Support Engineer_Azure VM**
-
-- ID: 597434
-
-- Requirements: VM/Linux/Storage/Windows troubleshooting
-
-- English: professional working
-
-- Location: Wuxi
-
-**CSS-Support Escalation Engineer_Azure AD**
-
-- ID: 602980
-
-- Requirements: better to have AD (on-premier/azure) or networking or Windows, but we focus more on candidates’ potential and motivation
-
-- English: professional working
-
-- Location: Wuxi
-
-**CSS-Support Escalation Engineer_Azure Kubernetes**
-
-- ID: 607808
-
-- Requirements: microservices; openshift, containers; container service; Kubernetes---at least know one
-
-- English: professional working
-
-- Location: Shanghai or Wuxi
-
-**CSS-Support Engineer_Azure Linux**
-
-- ID: 607810
-
-- Requirements: Linux OS
-
-- English: professional working
-
-- Location: Shanghai or Wuxi
-
-**CSS-Support Escalation Engineer_Azure Rapid Response**
-
-- ID: 614431
-
-- Requirements: Cloud and DEV/Linux/Networking
-
-- English: professional working
-
-- Location: Shanghai or Wuxi
-
-<!-- endtab -->
-
-{% endtabs %}
 
