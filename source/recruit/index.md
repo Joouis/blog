@@ -73,119 +73,119 @@ date: 2019-04-20 01:01:00
 
 | 职位名称                                                     | 职位编号    | 城市             |
 | ------------------------------------------------------------ | ----------- | ---------------- |
-| Research  SDE 2                                              | 2019-685746 | Beijing/Shanghai |
-| Service  Engineer II (MSRA)                                  | 2019-685747 | Beijing          |
-| Research  SDE or Researcher                                  | 2019-737529 | Beijing/Shanghai |
-| Principal  Research Manager                                  | 2019-633318 | Beijing          |
-| Researcher  or RSDE(System area)                             | 2019-740609 | Beijing          |
-| Research  SDE 2-AI infrastructure and tools                  | 2019-670168 | Beijing          |
-| Researcher  or Researcher Software Development Engineer      | 2019-595047 | Beijing          |
-| Sr.  Researcher                                              | 2019-702489 | Beijing/Shanghai |
-| Applied  Speech Scientist                                    | 2019-699297 | Beijing/Suzhou   |
-| Software  Engineering Manager-Search Engineer                | 2019-643519 | Suzhou           |
-| Principal  Software Engineering Manager-Bing team            | 2019-662036 | Beijing          |
-| UX  Designer                                                 | 2019-663708 | Beijing          |
-| Sr.  Software Engineer                                       | 2019-728513 | Beijing          |
-| Mobile  Engineer-Android/iOS- O365                           | 2019-730644 | Suzhou           |
-| Software  Engineer/ SEII - O365                              | 2019-740048 | Suzhou           |
-| Software  Engineer (all levels)                              | 2019-692521 | Suzhou           |
-| Sr.  Data Scientist/Data Scientist II-- O365 Connectivity    | 2019-668339 | Suzhou           |
-| SE/SEII/Sr.  Software Engineer--O365 WpA                     | 2019-719433 | Suzhou           |
-| Software  Engineer II/Sr. SE --O365 Monitoring               | 2019-721620 | Suzhou           |
-| Sr./Principal  SW Engineering Manager--O365 Anti Spam        | 2019-724260 | Suzhou           |
-| Software  Engineer II/Sr. SE O365  Substrate Management Platform | 2019-724277 | Suzhou           |
-| Senior  Program Manager--MSAI                                | 2019-724281 | Suzhou           |
-| Senior/Principal  Program Manager--SharePoint                | 2019-733642 | Suzhou           |
-| Sr/Principal  Software Engineering Manager--HA               | 2019-738265 | Suzhou           |
-| Sr.  Software Engineer --O365 AD team                        | 2019-738267 | Suzhou           |
-| Sr. SW  Engineering Manager--O365 OM team                    | 2019-738284 | Suzhou           |
-| Software  Engineer II/Sr. SE--Anti Spam                      | 2019-740051 | Suzhou           |
-| Software  Engineer II/Sr. SDE – Protocols                    | 2019-742501 | Suzhou           |
-| Software  Engineer II/Sr. SE--O365 Transport team            | 2019-744927 | Suzhou           |
-| Sr.  SE/Software Engineer II--O365 HA & Store                | 2019-749922 | Suzhou           |
-| Sr.  Data & Applied Scientist/Data Scientist--O365 HA & Store | 2019-749923 | Suzhou           |
-| Software  Engineer/SEII/Sr.SE--Performance                   | 2019-749924 | Suzhou           |
-| Sr.  Data Scientist/Data Scientist II-- O365 Connectivity    | 2019-749925 | Suzhou           |
-| Software  Engineer II/Sr. SE--O365 Engineering System        | 2019-749926 | Suzhou           |
-| Software  Engineer/SEII/Sr.SE--O365 Fleet                    | 2019-749933 | Suzhou           |
-| Senior  Software Engineer--SharePoint                        | 2019-751153 | Suzhou           |
-| Software  Engineer-Sharepoint-Junior to Senior               | 2019-713234 | Suzhou           |
-| Software  Engineer/ SEII -O365- Data Insights                | 2019-730629 | Suzhou           |
-| Mobile  Engineer ( all levels) - Cortana                     | 2019-733643 | Suzhou           |
-| Software  Engineer/ SEII-O365- IDEAs                         | 2019-721567 | Suzhou           |
-| Software  Engineer/ SEII-O365-Security                       | 2019-712499 | Suzhou           |
-| Software  Engineer/SEII - O365                               | 2019-724253 | Suzhou           |
-| Software  Engineer/SEII--O365 OS&SKU                         | 2019-686832 | Suzhou           |
-| Software  Engineer/SEII- O365- Antispam                      | 2019-724261 | Suzhou           |
-| Software  Engineer/SEII- O365-AD                             | 2019-725112 | Suzhou           |
-| Software  Engineer/SEII- O365-Store                          | 2019-696901 | Suzhou           |
-| Software  Engineer/ SEII- O365-Migration                     | 2019-742499 | Suzhou           |
-| Software  Engineer/ SEII- O365-Protocols                     | 2019-737537 | Suzhou           |
-| Software  Engineer/SEII- O365-Transport                      | 2019-678372 | Suzhou           |
-| Software  Engineer/SEII- O365-Evergreen                      | 2019-689115 | Suzhou           |
-| Software  Engineer/SEII- O365-Engineering System             | 2019-721625 | Suzhou           |
-| Software  Engineer/ SEII- Cortana                            | 2019-725113 | Suzhou           |
-| Software  Engineer/ SEII- Cortana                            | 2019-725114 | Beijing          |
-| Program  Manager/ PMII- OXO                                  | 2019-745375 | Beijing          |
-| Sr.  Technical Operation Engineer- Factory Management        | 2019-700303 | Shenzhen         |
-| Software  Engineer II- Azure Dynamics 365 Commerce Team * 3  | 2019-742696 | Shanghai         |
-| Software  Engineer (all levels)_Big Data frontend * 4        | 2019-738288 | Beijing          |
-| Software  Engineer (all levels)_Big Data Full Stack * 4      | 2019-738289 | Beijing          |
-| Software  Engineer II_Azure Frontdoor/CDN                    | 2019-699246 | Shanghai         |
-| Software  Engineer II_Java on Azure * 2                      | 2019-737526 | Shanghai         |
-| Program  Manager II_Azure Management Experience              | 2019-708849 | Shanghai         |
-| Software  Engineer II_ Azure DevTest Labs                    | 2019-694086 | Shanghai         |
-| Software  Engineer II_Azure App Configuration                | 2019-714283 | Shanghai         |
-| Software  Engineer II_Azure Container Registry               | 2019-730608 | Shanghai         |
-| Software  Engineer II_Azure SignalR Service                  | 2019-738319 | Shanghai         |
-| Program  Manager II_Azure Bigdata                            | 2019-732794 | Beijing          |
-| Software  Engineer II_Azure Data UX                          | 2019-695620 | Shanghai         |
-| Software  Engineer II_Azure Managed Edge * 2                 | 2019-714230 | Shanghai         |
-| Software  Engineer II-Azure Global Asia Engineering team     | 2019-612057 | Beijing          |
-| Software  Engineer 2_Azure Global Asia Engineering Team      | 2019-732625 | Beijing          |
-| Service  Engineer_Media Service                              | 2019-721922 | Shanghai         |
-| Software  Engineer II_Azure Stack                            | 2019-660287 | Shanghai         |
-| Software  Engineer II _ Azure Storage * 3                    | 2019-697046 | Shanghai         |
-| Software  Engineer II_ Azure Management Experience * 6       | 2019-745373 | Shanghai         |
-| Regional  Cloud Developer Advocate                           | 2019-732021 | Shanghai/Beijing |
-| Sr.  Software Engineer_ Java on Azure *2                     | 2019-737524 | Shanghai         |
-| Azure  Operations China Vendor Manager                       | 2019-727789 | Beijing          |
-| Data  & Applied Scientist II                                 | 2019-653705 | Shanghai         |
-| Sr.  Program Manager_ Big Data                               | 2019-732795 | Beijing          |
-| Senior  Software Engineer_ Azure Stack                       | 2019-738487 | Shanghai         |
-| Country  Manager – Network Acquisitions                      | 2019-726474 | Beijing          |
-| Sr.  Service Engineer_ Azure Media Services                  | 2019-711300 | Shanghai         |
-| Sr.  Software Engineer_ Java on Azure                        | 2019-662540 | Shanghai         |
-| Sr.  Software Engineer_ Azure IoT                            | 2019-689063 | Shanghai         |
-| Principal  Software Engineer_ IoT                            | 2019-730607 | Shanghai         |
-| Sr.  Software Engineer                                       | 2019-726872 | Shanghai         |
-| SDE 2-  RF                                                   | 2019-723072 | Suzhou           |
-| Sr. NPI  PM                                                  | 2019-726042 | Suzhou           |
-| Packaging  Designer 2                                        | 2019-680329 | Shenzhen         |
-| Sr.  Operations Program Manager                              | 2019-737552 | Suzhou           |
-| Sr.  Software Development Engineer                           | 2019-737228 | Suzhou           |
-| Sr.  Factory Management Engineer-Touch & Display             | 2019-690977 | Suzhou           |
-| Sr.  Manufacturing Test Program Manager                      | 2019-699975 | Suzhou           |
-| Sr.  Factory Management Engineer-Mechanical                  | 2019-610424 | Suzhou           |
-| Sr.  Factory Management Engineer-Mechanical                  | 2019-691711 | Suzhou           |
-| Sr.  Operations Program Manager                              | 2019-737552 | Suzhou           |
-| Manager,  Factory Management Engineering                     | 2019-739684 | Suzhou           |
-| Sr.  Program Manager                                         | 2019-742464 | Suzhou           |
-| Sr.  Software Development Engineer                           | 2019-733317 | Suzhou           |
-| BU  Operation Manager                                        | 2019-738481 | Suzhou           |
-| Sr.  Factory Management Engineer_ Optical Engineering        | 2019-681921 | Suzhou           |
-| Reverse  Logistics Manager                                   | 2019-740643 | Suzhou           |
-| Sr.  Enclosure development Engineer                          | 2019-677518 | Suzhou           |
-| Sr.  Software Engineer Design Verification *2                | 2019-712687 | Suzhou           |
-| Mechanical  Engineer II                                      | 2019-706667 | Shenzhen         |
-| Sr.  Software Development Engineer_ Display                  | 2019-733365 | Suzhou           |
-| Mechanical  Engineering Manager_ CAD Works                   | 2019-690321 | Suzhou           |
-| Mechanical  Engineer II                                      | 2019-690326 | Suzhou           |
-| Director  of Engineering                                     | 2019-727396 | Suzhou           |
-| Senior  Program Manager--MMX                                 | 2019-731468 | Beijing          |
-| Software  Engineer II/Sr. SE--MMX Edge Android               | 2019-738274 | Suzhou           |
-| SEII-Sr.  Software Engineer/Manager--Intune                  | 2019-749928 | Suzhou           |
-| Software  Engineer/ SEII- iOS- MMX                           | 2019-728540 | Suzhou           |
+| Research  SDE 2                                              | [2019-685746](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/685746.png) | Beijing/Shanghai |
+| Service  Engineer II (MSRA)                                  | [2019-685747](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/685747.png) | Beijing          |
+| Research  SDE or Researcher                                  | [2019-737529](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/737529.png) | Beijing/Shanghai |
+| Principal  Research Manager                                  | [2019-633318](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/633318.png) | Beijing          |
+| Researcher  or RSDE(System area)                             | [2019-740609](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/740609.png) | Beijing          |
+| Research  SDE 2-AI infrastructure and tools                  | [2019-670168](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/670168.png) | Beijing          |
+| Researcher  or Researcher Software Development Engineer      | [2019-595047](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/595047.png) | Beijing          |
+| Sr.  Researcher                                              | [2019-702489](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/702489.png) | Beijing/Shanghai |
+| Applied  Speech Scientist                                    | [2019-699297](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/699297.png) | Beijing/Suzhou   |
+| Software  Engineering Manager-Search Engineer                | [2019-643519](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/643519.png) | Suzhou           |
+| Principal  Software Engineering Manager-Bing team            | [2019-662036](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/662036.png) | Beijing          |
+| UX  Designer                                                 | [2019-663708](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/663708.png) | Beijing          |
+| Sr.  Software Engineer                                       | [2019-728513](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/728513.png) | Beijing          |
+| Mobile  Engineer-Android/iOS- O365                           | [2019-730644](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/730644.png) | Suzhou           |
+| Software  Engineer/ SEII - O365                              | [2019-740048](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/740048.png) | Suzhou           |
+| Software  Engineer (all levels)                              | [2019-692521](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/692521.png) | Suzhou           |
+| Sr.  Data Scientist/Data Scientist II-- O365 Connectivity    | [2019-668339](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/668339.png) | Suzhou           |
+| SE/SEII/Sr.  Software Engineer--O365 WpA                     | [2019-719433](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/719433.png) | Suzhou           |
+| Software  Engineer II/Sr. SE --O365 Monitoring               | [2019-721620](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/721620.png) | Suzhou           |
+| Sr./Principal  SW Engineering Manager--O365 Anti Spam        | [2019-724260](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/724260.png) | Suzhou           |
+| Software  Engineer II/Sr. SE O365  Substrate Management Platform | [2019-724277](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/724277.png) | Suzhou           |
+| Senior  Program Manager--MSAI                                | [2019-724281](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/724281.png) | Suzhou           |
+| Senior/Principal  Program Manager--SharePoint                | [2019-733642](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/733642.png) | Suzhou           |
+| Sr/Principal  Software Engineering Manager--HA               | [2019-738265](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/738265.png) | Suzhou           |
+| Sr.  Software Engineer --O365 AD team                        | [2019-738267](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/738267.png) | Suzhou           |
+| Sr. SW  Engineering Manager--O365 OM team                    | [2019-738284](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/738284.png) | Suzhou           |
+| Software  Engineer II/Sr. SE--Anti Spam                      | [2019-740051](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/740051.png) | Suzhou           |
+| Software  Engineer II/Sr. SDE – Protocols                    | [2019-742501](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/742501.png) | Suzhou           |
+| Software  Engineer II/Sr. SE--O365 Transport team            | [2019-744927](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/744927.png) | Suzhou           |
+| Sr.  SE/Software Engineer II--O365 HA & Store                | [2019-749922](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/749922.png) | Suzhou           |
+| Sr.  Data & Applied Scientist/Data Scientist--O365 HA & Store | [2019-749923](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/749923.png) | Suzhou           |
+| Software  Engineer/SEII/Sr.SE--Performance                   | [2019-749924](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/749924.png) | Suzhou           |
+| Sr.  Data Scientist/Data Scientist II-- O365 Connectivity    | [2019-749925](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/749925.png) | Suzhou           |
+| Software  Engineer II/Sr. SE--O365 Engineering System        | [2019-749926](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/749926.png) | Suzhou           |
+| Software  Engineer/SEII/Sr.SE--O365 Fleet                    | [2019-749933](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/749933.png) | Suzhou           |
+| Senior  Software Engineer--SharePoint                        | [2019-751153](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/751153.png) | Suzhou           |
+| Software  Engineer-Sharepoint-Junior to Senior               | [2019-713234](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/713234.png) | Suzhou           |
+| Software  Engineer/ SEII -O365- Data Insights                | [2019-730629](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/730629.png) | Suzhou           |
+| Mobile  Engineer ( all levels) - Cortana                     | [2019-733643](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/733643.png) | Suzhou           |
+| Software  Engineer/ SEII-O365- IDEAs                         | [2019-721567](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/721567.png) | Suzhou           |
+| Software  Engineer/ SEII-O365-Security                       | [2019-712499](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/712499.png) | Suzhou           |
+| Software  Engineer/SEII - O365                               | [2019-724253](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/724253.png) | Suzhou           |
+| Software  Engineer/SEII--O365 OS&SKU                         | [2019-686832](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/686832.png) | Suzhou           |
+| Software  Engineer/SEII- O365- Antispam                      | [2019-724261](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/724261.png) | Suzhou           |
+| Software  Engineer/SEII- O365-AD                             | [2019-725112](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/725112.png) | Suzhou           |
+| Software  Engineer/SEII- O365-Store                          | [2019-696901](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/696901.png) | Suzhou           |
+| Software  Engineer/ SEII- O365-Migration                     | [2019-742499](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/742499.png) | Suzhou           |
+| Software  Engineer/ SEII- O365-Protocols                     | [2019-737537](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/737537.png) | Suzhou           |
+| Software  Engineer/SEII- O365-Transport                      | [2019-678372](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/678372.png) | Suzhou           |
+| Software  Engineer/SEII- O365-Evergreen                      | [2019-689115](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/689115.png) | Suzhou           |
+| Software  Engineer/SEII- O365-Engineering System             | [2019-721625](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/721625.png) | Suzhou           |
+| Software  Engineer/ SEII- Cortana                            | [2019-725113](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/725113.png) | Suzhou           |
+| Software  Engineer/ SEII- Cortana                            | [2019-725114](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/725114.png) | Beijing          |
+| Program  Manager/ PMII- OXO                                  | [2019-745375](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/745375.png) | Beijing          |
+| Sr.  Technical Operation Engineer- Factory Management        | [2019-700303](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/700303.png) | Shenzhen         |
+| Software  Engineer II- Azure Dynamics 365 Commerce Team * 3  | [2019-742696](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/742696.png) | Shanghai         |
+| Software  Engineer (all levels)_Big Data frontend * 4        | [2019-738288](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/738288.png) | Beijing          |
+| Software  Engineer (all levels)_Big Data Full Stack * 4      | [2019-738289](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/738289.png) | Beijing          |
+| Software  Engineer II_Azure Frontdoor/CDN                    | [2019-699246](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/699246.png) | Shanghai         |
+| Software  Engineer II_Java on Azure * 2                      | [2019-737526](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/737526.png) | Shanghai         |
+| Program  Manager II_Azure Management Experience              | [2019-708849](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/708849.png) | Shanghai         |
+| Software  Engineer II_ Azure DevTest Labs                    | [2019-694086](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/694086.png) | Shanghai         |
+| Software  Engineer II_Azure App Configuration                | [2019-714283](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/714283.png) | Shanghai         |
+| Software  Engineer II_Azure Container Registry               | [2019-730608](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/730608.png) | Shanghai         |
+| Software  Engineer II_Azure SignalR Service                  | [2019-738319](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/738319.png) | Shanghai         |
+| Program  Manager II_Azure Bigdata                            | [2019-732794](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/732794.png) | Beijing          |
+| Software  Engineer II_Azure Data UX                          | [2019-695620](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/695620.png) | Shanghai         |
+| Software  Engineer II_Azure Managed Edge * 2                 | [2019-714230](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/714230.png) | Shanghai         |
+| Software  Engineer II-Azure Global Asia Engineering team     | [2019-612057](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/612057.png) | Beijing          |
+| Software  Engineer 2_Azure Global Asia Engineering Team      | [2019-732625](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/732625.png) | Beijing          |
+| Service  Engineer_Media Service                              | [2019-721922](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/721922.png) | Shanghai         |
+| Software  Engineer II_Azure Stack                            | [2019-660287](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/660287.png) | Shanghai         |
+| Software  Engineer II _ Azure Storage * 3                    | [2019-697046](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/697046.png) | Shanghai         |
+| Software  Engineer II_ Azure Management Experience * 6       | [2019-745373](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/745373.png) | Shanghai         |
+| Regional  Cloud Developer Advocate                           | [2019-732021](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/732021.png) | Shanghai/Beijing |
+| Sr.  Software Engineer_ Java on Azure *2                     | [2019-737524](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/737524.png) | Shanghai         |
+| Azure  Operations China Vendor Manager                       | [2019-727789](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/727789.png) | Beijing          |
+| Data  & Applied Scientist II                                 | [2019-653705](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/653705.png) | Shanghai         |
+| Sr.  Program Manager_ Big Data                               | [2019-732795](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/732795.png) | Beijing          |
+| Senior  Software Engineer_ Azure Stack                       | [2019-738487](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/738487.png) | Shanghai         |
+| Country  Manager – Network Acquisitions                      | [2019-726474](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/726474.png) | Beijing          |
+| Sr.  Service Engineer_ Azure Media Services                  | [2019-711300](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/711300.png) | Shanghai         |
+| Sr.  Software Engineer_ Java on Azure                        | [2019-662540](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/662540.png) | Shanghai         |
+| Sr.  Software Engineer_ Azure IoT                            | [2019-689063](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/689063.png) | Shanghai         |
+| Principal  Software Engineer_ IoT                            | [2019-730607](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/730607.png) | Shanghai         |
+| Sr.  Software Engineer                                       | [2019-726872](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/726872.png) | Shanghai         |
+| SDE 2-  RF                                                   | [2019-723072](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/723072.png) | Suzhou           |
+| Sr. NPI  PM                                                  | [2019-726042](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/726042.png) | Suzhou           |
+| Packaging  Designer 2                                        | [2019-680329](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/680329.png) | Shenzhen         |
+| Sr.  Operations Program Manager                              | [2019-737552](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/737552.png) | Suzhou           |
+| Sr.  Software Development Engineer                           | [2019-737228](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/737228.png) | Suzhou           |
+| Sr.  Factory Management Engineer-Touch & Display             | [2019-690977](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/690977.png) | Suzhou           |
+| Sr.  Manufacturing Test Program Manager                      | [2019-699975](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/699975.png) | Suzhou           |
+| Sr.  Factory Management Engineer-Mechanical                  | [2019-610424](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/610424.png) | Suzhou           |
+| Sr.  Factory Management Engineer-Mechanical                  | [2019-691711](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/691711.png) | Suzhou           |
+| Sr.  Operations Program Manager                              | [2019-737552](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/737552.png) | Suzhou           |
+| Manager,  Factory Management Engineering                     | [2019-739684](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/739684.png) | Suzhou           |
+| Sr.  Program Manager                                         | [2019-742464](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/742464.png) | Suzhou           |
+| Sr.  Software Development Engineer                           | [2019-733317](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/733317.png) | Suzhou           |
+| BU  Operation Manager                                        | [2019-738481](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/738481.png) | Suzhou           |
+| Sr.  Factory Management Engineer_ Optical Engineering        | [2019-681921](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/681921.png) | Suzhou           |
+| Reverse  Logistics Manager                                   | [2019-740643](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/740643.png) | Suzhou           |
+| Sr.  Enclosure development Engineer                          | [2019-677518](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/677518.png) | Suzhou           |
+| Sr.  Software Engineer Design Verification *2                | [2019-712687](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/712687.png) | Suzhou           |
+| Mechanical  Engineer II                                      | [2019-706667](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/706667.png) | Shenzhen         |
+| Sr.  Software Development Engineer_ Display                  | [2019-733365](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/733365.png) | Suzhou           |
+| Mechanical  Engineering Manager_ CAD Works                   | [2019-690321](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/690321.png) | Suzhou           |
+| Mechanical  Engineer II                                      | [2019-690326](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/690326.png) | Suzhou           |
+| Director  of Engineering                                     | [2019-727396](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/727396.png) | Suzhou           |
+| Senior  Program Manager--MMX                                 | [2019-731468](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/731468.png) | Beijing          |
+| Software  Engineer II/Sr. SE--MMX Edge Android               | [2019-738274](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/738274.png) | Suzhou           |
+| SEII-Sr.  Software Engineer/Manager--Intune                  | [2019-749928](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/749928.png) | Suzhou           |
+| Software  Engineer/ SEII- iOS- MMX                           | [2019-728540](https://cdnhk.blob.core.windows.net/blog/recruit/joouis-blog-jd/728540.png) | Suzhou           |
 
 
 
