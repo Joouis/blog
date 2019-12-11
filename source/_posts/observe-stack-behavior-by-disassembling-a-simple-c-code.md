@@ -64,7 +64,6 @@ tags:
 - 第11行將`rbp`出棧，然後第12行ret就是把之前保存的`rip`出棧
 - 回到第20行指令，將`eax`的值給`-4(%rbp)`，也就是給變量 i
 - 爲了`return 0`把0給`eax`
-
 - 因爲是main函數，所以最後是leave（leave: Releases the local stack storage created by the previous ENTER instruction.）
 
 
