@@ -5,6 +5,7 @@ updated: 2019-12-09 23:54:55
 categories:
 - 系统与底层
 tags:
+- embedded system course
 - os
 - free software
 - open source

@@ -5,6 +5,7 @@ updated: 2019-12-11 16:34:21
 categories:
 - 系统与底层
 tags:
+- embedded system course
 - stack
 - assembly
 - disassemble
