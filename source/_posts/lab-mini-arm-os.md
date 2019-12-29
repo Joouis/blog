@@ -30,6 +30,7 @@ tags:
 - [STM32 程式開發：以 GNU Toolchain 為例](https://docs.google.com/document/d/1Ygl6cEGPXUffhTJE0K6B8zEtGmIuIdCjlZBkFlijUaE/edit)
 - ld: [Using ld, The GNU linker](http://www.math.utah.edu/docs/info/ld_toc.html#SEC1), [GNU LD 手冊略讀 (3): Chapter 3.7 ~ Chapter 3.11](http://wen00072-blog.logdown.com/posts/246071-study-on-the-linker-script-3)
 - STM32: Reference Manual, Datasheet, Schematics（自行查阅官网最新版本）
+- Course: [Lab42: Mini ARM OS](http://wiki.csie.ncku.edu.tw/embedded/Lab42)
 
 
 
