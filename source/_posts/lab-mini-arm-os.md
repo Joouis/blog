@@ -253,7 +253,7 @@ usertasks[0]=create_task(user_stack[0],&task_func);
 
 - void \__attribute__((interrupt)) systick_handler(void)
 
-- -  The compiler generates function entry and exit sequences suitable for use in an interrupt handler when this attribute is present. With Epiphany targets it may also generate a special section with code to initialize the interrupt vector table.(https://gcc.gnu.org/onlinedocs/gcc/Function-Attributes.html)
+  - The compiler generates function entry and exit sequences suitable for use in an interrupt handler when this attribute is present. With Epiphany targets it may also generate a special section with code to initialize the interrupt vector table.(https://gcc.gnu.org/onlinedocs/gcc/Function-Attributes.html)
 
 
 
