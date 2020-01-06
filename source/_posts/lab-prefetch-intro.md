@@ -257,8 +257,7 @@ for ( int x = 0; x < w; x += 8 ) {
 - 以下對比了sse、avx共4個版本
 
 ```shell
-
- Performance counter stats for './sse_transpose' (100 runs):
+Performance counter stats for './sse_transpose' (100 runs):
            4329716      cache-misses      #   79.312 % of all cache refs ( +-  0.03% )
            5459067      cache-references    ( +-  0.02% )
            8514863      L1-dcache-load-misses    ( +-  0.01% )
