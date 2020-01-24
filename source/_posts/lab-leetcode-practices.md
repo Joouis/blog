@@ -15,9 +15,9 @@ tags:
 
 这是我的[嵌入式笔记](https://blog.joouis.com/2019/12/09/watching-notes-revolution-os/)第六篇，原文写于2015年。
 
-几乎所有候选人都问过我，进微软是不是要刷题，而我总是不厌其烦地告诉他们，我就没刷题进来了（在阿里时疯狂996，享不尽福报，哪里还有时间刷题😅）。
+几乎所有候选人都问过我，进微软是不是要刷题，而我总是不厌其烦地告诉他们，我没刷题就进来了（在阿里疯狂996，享不尽福报，哪里还有时间刷题😅）。
 
-嵌入式课程的LeetCode作业应该是我到目前为止仅有的“刷题”经验。Jserv的本意也不是让学生刷题型，而是通过几道算法题对比递归和迭代结构对于程序的性能差异，此外每题要求写出递归和迭代版本对思维能力的提升也是显而易见的。在此与大家分享:)
+嵌入式课程的LeetCode作业应该是我到目前为止仅有的“刷题”经验。Jserv的本意也不是让学生刷题型，而是通过几道算法题对比递归和迭代结构关于程序的性能差异，此外每题要求写出递归和迭代版本对思维能力的提升也是显而易见的。在此与大家分享:)
 
 <!-- more -->
 
@@ -25,13 +25,13 @@ tags:
 
 ## [2015q3 Homework #3](http://wiki.csie.ncku.edu.tw/embedded/2015q3h3)
 
--  實做 [Week #2 程式題目](http://people.debian.org.tw/~jserv/ncku/2015q3.pdf)，解釋其運作原理 (至少 3 題，限定 [C99](https://en.wikipedia.org/wiki/C99) 或以上的規格)
+-  實做 [Week #2 程式題目](http://people.debian.org.tw/~jserv/ncku/2015q3.pdf)，解釋其運作原理（至少 3 題，限定 [C99](https://en.wikipedia.org/wiki/C99) 或以上的規格）
   - Question #2, #3, #4, #5, #6, #27
 - 在 GitHub 上 fork [quiz](https://github.com/embedded2015/quiz)，然後逐一修改每個目錄裡面的檔案
   - 對於 Question #2, #3, … #6 都需要實做**遞迴**和**非遞迴**的版本
   - 要一併準備測試資料
 - 除了修改程式，也要編輯 Hackpad 下方「[+作業區](https://paper.dropbox.com/doc/RrcZhOoThosgCSGRKwFTM)」，增添開發紀錄和 GitHub 連結
-  - 額外要求觀賞電影《[進擊的鼓手](https://zh.wikipedia.org/zh-tw/爆裂鼓手)》，思考這 4 週以來，課程給你的衝擊 (若你沒衝擊的話，可以退選了)，在自己的 Hackpad 紀錄心得，特別是對於追求卓越這件事
+  - 額外要求觀賞電影《[進擊的鼓手](https://zh.wikipedia.org/zh-tw/爆裂鼓手)》，思考這 4 週以來，課程給你的衝擊（若你沒衝擊的話，可以退選了），在自己的 Hackpad 紀錄心得，特別是對於追求卓越這件事
 - 應該要有完整的測試程式，並測試各項邊界狀況
   - 執行時間分析
   - 記憶體需求分析
@@ -39,7 +39,7 @@ tags:
   - 時間複雜度分析
 - 善用 assert
 - 提供遞迴與非遞迴的版本
-- 截止日期：Oct 17, 2015 (含) 之前
+- 截止日期：Oct 17, 2015（含）之前
 - remember to use:
 ```bash
 astyle --style=kr --indent=spaces=4 --indent-switches --suffix=none *.[ch] 
@@ -50,7 +50,7 @@ astyle --style=kr --indent=spaces=4 --indent-switches --suffix=none *.[ch]
 ## 關於Drop Cache
 
 - 之前一直都是用`echo "echo 1 > /proc/sys/vm/drop_caches" | sudo sh`來清理cache
-- 剛才做quiz#4時突然想到好像echo的數字可以有1、2、3，於是乎都試了一下。驚奇地發現用3所耗費的時間比用1耗費的時間要多出1/4：
+- 剛才做quiz#4時突然想到好像echo的數字可以有`1`、`2`、`3`，於是乎都試了一下。驚奇地發現用`3`所耗費的時間比用`1`耗費的時間要多出25%：
 
 ```bash
 echo "echo 3 > /proc/sys/vm/drop_caches" | sudo sh
@@ -61,8 +61,8 @@ Performance counter stats for './recursive' (100 runs):
     
 echo "echo 1 > /proc/sys/vm/drop_caches" | sudo sh
 perf stat -r 100 -e cache-misses,cache-references,L1-dcache-load-misses,L1-dcache-store-misses,L1-dcache-prefetch-misses,L1-icache-load-misses ./recursive
- Performance counter stats for './recursive' (100 runs):
-   39    cache-misses        #   0.447 % of all cache refs    ( +-  9.38% )
+Performance counter stats for './recursive' (100 runs):
+    39    cache-misses        #   0.447 % of all cache refs    ( +-  9.38% )
     0.000327662 seconds time elapsed                      ( +-  3.46% )
 ```
 
@@ -77,7 +77,7 @@ perf stat -r 100 -e cache-misses,cache-references,L1-dcache-load-misses,L1-dcach
 
 
 
-# #2
+## #2
 
 **Question：**
 
@@ -145,7 +145,6 @@ uchar smallest_char(uchar str[], uchar c, uchar size)
 ### Performance
 
 - 想使用perf kmem觀察slab行為時發生錯誤：`invalid or unsupported event: 'kmem:kmalloc'`
-
 - 使用perf測量cache misses和time elapsed: 
   `echo "echo 1 > /proc/sys/vm/drop_caches" | sudo sh` 
   `perf stat -r 100 -e cache-misses,cache-references,L1-dcache-load-misses,L1-dcache-store-misses,L1-dcache-prefetch-misses,L1-icache-load-misses ./iterative`：
@@ -408,14 +407,12 @@ int maxSubArray(int a[], int size)
 
  
 
-# **Reference**
+## Reference
 
 - 官網[Leetcode Algorithms of Problemset](https://leetcode.com/problemset/algorithms/)，簡短的[介紹](http://coolshell.cn/articles/12052.html)
 - 經典《[Introduction to algorithms](https://github.com/esbanarango/Competitive-Programming/blob/master/·Documentation/Books/Introduction.to.Algorithms.3rd.Edition.Sep.2010.pdf)》
--  一個簡中的題解《[LeetCode题解](https://www.gitbook.com/book/siddontang/leetcode-solution/details)》
+- 一個簡中的題解《[LeetCode题解](https://www.gitbook.com/book/siddontang/leetcode-solution/details)》
 - 《[Recursive solutions to array problems: Three examples](http://www.cs.uofs.edu/~mccloske/courses/cmps144/recursion_feb13_01.html)》
 - 《[Stack Implementation in C](http://groups.csail.mit.edu/graphics/classes/6.837/F04/cpp_notes/stack1.html)》
 
- 
 
- 
