@@ -90,6 +90,8 @@ date: 2019-04-20 01:01:00
 | Azure               | Better have Java experience and elastic search experience.  Search product within Database.5+ years working experience is preferred | Dev                | Shanghai       | 2Y+                  | Middle         |
 | Azure               | Data_ETL SSIS                                                | DEV                | Shanghai       | 2Y+                  | Middle         |
 | Azure               | ETL or data related product experience                       | Dev                | Shanghai       | 2Y+                  | Strong         |
+| Azure               | MySQL  (Database Service) on Azure，build the localized service in Azure for China  market | Dev                | Shanghai       | 0Y+                  | Middle         |
+| Azure               | Web UX  developers for Azure Data Catalog, Azure Data Factory, All of those are big  data / modern data warehousing cloud services, and all the UX job openings  require web UX DEV knowledge and skills. | Front-end Dev      | Shanghai       | 3Y+                  | Middle         |
 | Azure               | built solutions                                              | Dev                | Shanghai       | 2Y+                  | Middle         |
 | Azure               | software  development experience, preferably in a distributed online/cloud services in  OOP such as C#/C++/Java.     Good knowledge of network technologies such as TCP, HTTPS/HTTP2 and DNS. | Dev                | Shanghai       | 1Y+                  | Middle         |
 | Azure               | Strong expertise in web application,  JavaScript, Typescript, HTML, CSS and at least one popular web frontend  framework like Angular/React/Vue or equivalent,better have experience in Big  Data Platform-Frontend | Dev                | Beijing        | 1Y+                  | Middle/Limited |
@@ -143,7 +145,6 @@ date: 2019-04-20 01:01:00
 | MSRA                | Core dev                                                     | Business Analyst   | Beijing        | 1Y+                  | Strong         |
 | MSRA                | AI or deep learning technologies;web and cloud technologies  like Azure, Kubernetes, docker | Service Engineer   | Beijing        | 1Y+                  | Middle         |
 | Cortana             | MSAI-Microsoft Search assistant  Intelligence, Provide some AI experience in M365 product | PM                 | Suzhou         | 5Y+                  | Strong         |
-| Cortana             | Search platform                                              | Dev                | Suzhou         | 1Y+                  | Low            |
 | STCA                | AI Platform - Front-end                                      | Dev                | Beijing/Suzhou | 1Y+                  | Low            |
 | STCA                | AI Platform                                                  | Dev                | Beijing/Suzhou | 1Y+                  | Low            |
 | STCA                | Technical PM, and To B, or AI or Open  source                | PM                 | Beijing        | 5Y+                  | Strong         |
@@ -152,7 +153,6 @@ date: 2019-04-20 01:01:00
 | Bing                | Carina                                                       | Dev                | Beijing/Suzhou | 3Y+                  | Low            |
 | Bing                | Bing platform, large scale distributed  system,core dev      | Dev                | Beijing/Suzhou | 5Y+                  | Low            |
 | Bing                | MP/News                                                      | EM                 | Beijing        | 10Y+                 | Strong         |
-| Bing                | SR (coding needed), can accept AI dev                        | Speech Scientist   | Beijing/Suzhou | 1Y+                  | Low            |
 
 
 
