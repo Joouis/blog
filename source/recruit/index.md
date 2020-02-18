@@ -120,38 +120,26 @@ date: 2019-04-20 01:01:00
 | M365                | Service Auth/Active Directory (AD)                           | Dev                | Suzhou         | 1Y+                  | Strong         |
 | M365                | AD TEAM: DIRECTORY, Distributed system  services or NoSQL storage is nice to have background | Dev                | Suzhou         | 1Y+                  | Strong         |
 | M365                | Mobile app development                                       | Dev                | Suzhou         | 2Y+                  | Middle         |
-| M365                | Outlook mobile support engineer,  Support Engineer (standard levelling) | Support Engineer   | Suzhou         | 1Y+                  | Strong         |
-| M365                | Core dev                                                     | Dev                | Suzhou         | 1Y+                  | Middle         |
 | M365                | IDEAs/CFR:M365 Insights, Data Engineering & Analytics  team  | Dev                | Suzhou         | 1Y+                  | Strong         |
 | M365                | Information Protection,Anti-spam and  security features for the enterprise-level service known as Exchange Online  Protection (EOP) ,2 years+ working experience | Dev                | Suzhou         | 1Y+                  | Strong         |
-| M365                | Information Protection,Anti-spam and  security features for the enterprise-level service known as Exchange Online  Protection (EOP) ,2 years+ working experience | EM                 | Suzhou         | 7Y+                  | Strong         |
-| M365                | WPI, Work Place Intelligence, AI/ML  insights product to improve productivity for both organizations and  individuals | Dev                | Suzhou         | 2Y+                  | Middle         |
-| M365                | WPI, Work Place Intelligence, AI/ML  insights product to improve productivity for both organizations and  individuals | Data Scientist     | Suzhou         | 1Y+                  | Middle         |
 | Sharepoint          | Enterprise Search, 2年以上                                   | Dev                | Suzhou         | 1Y+                  | Strong         |
 | Sharepoint          | PM                                                           | PM                 | Suzhou         | 7Y+                  | Strong         |
-| Sharepoint          | migration/search/PDF                                         | Dev                | Suzhou         | 1Y+                  | Strong         |
-| Sharepoint          | Search                                                       | Dev                | Suzhou         | 7Y+                  | Strong         |
-| Sharepoint          | Search                                                       | Dev                | Suzhou         | 10Y+                 | Strong         |
+| Sharepoint          | SharePoint  SRE                                              | Dev                | Suzhou         | 5Y+                  | Strong         |
+| Sharepoint          | Onedrive Mobile (Android/iOS)                                | Dev                | Suzhou         | 2Y+                  | Strong         |
 | Sharepoint          | Search                                                       | EM                 | Suzhou         | 10Y+                 | Strong         |
 | Sharepoint          | Migration                                                    | Dev                | Suzhou         | 5Y+                  | Strong         |
 | EMM                 | 0~6 years dev experience, CV must be  English version        | Dev                | Suzhou         | 0Y+                  | low            |
 | EMM                 | 7+ years working experience,                                 | EM                 | Suzhou         | 7Y+                  | Strong         |
 | EMM                 | Dev experience                                               | Dev                | Suzhou         | 1Y+                  | Low            |
 | EMM                 | C#, Java, TypeScript, C++, or any  other object-oriented programming languages | DEV                | Suzhou         | 5Y+                  | middle         |
-| MMX                 | Mobile app for Edge                                          | Dev                | Suzhou         | 5Y+                  | Low            |
-| MMX                 | Dev                                                          | Suzhou             | 0Y+            | Low                  |                |
-| MMX                 | MS Launcher, Edge Mobile: Backend and Android                | Dev                | Beijing        | 1Y+                  | Low            |
-| MSRA                | data mining, machine learning,  statistical analysis, big data/data intelligence based on Azure for  operational excellence | Researcher         | Beijing        | 2Y+                  | Middle         |
-| MSRA                | Core dev                                                     | Business Analyst   | Beijing        | 1Y+                  | Strong         |
-| MSRA                | AI or deep learning technologies;web and cloud technologies  like Azure, Kubernetes, docker | Service Engineer   | Beijing        | 1Y+                  | Middle         |
+| MMX                 | Mobile App for Edge (Android/iOS)                            | Dev                | Suzhou         | 5Y+                  | Low            |
 | Cortana             | MSAI-Microsoft Search assistant  Intelligence, Provide some AI experience in M365 product | PM                 | Suzhou         | 5Y+                  | Strong         |
-| STCA                | AI Platform - Front-end                                      | Dev                | Beijing/Suzhou | 1Y+                  | Low            |
-| STCA                | AI Platform                                                  | Dev                | Beijing/Suzhou | 1Y+                  | Low            |
-| STCA                | Technical PM, and To B, or AI or Open  source                | PM                 | Beijing        | 5Y+                  | Strong         |
+| STCA                | AI Platform (Front-end)                                      | Dev                | Beijing/Suzhou | 1Y+                  | Low            |
+| STCA                | Technical PM, and To B, or AI or open  source                | PM                 | Beijing        | 5Y+                  | Strong         |
 | Bing                | Area IT Manager                                              | IT Manager         | Beijing        | 10Y+                 | Strong         |
-| Bing                | Core dev                                                     | Designer           | Beijing/Suzhou | 5Y+                  | Strong         |
+| Bing                |                                                              | Designer           | Beijing/Suzhou | 5Y+                  | Strong         |
 | Bing                | Carina                                                       | Dev                | Beijing/Suzhou | 3Y+                  | Low            |
-| Bing                | Bing platform, large scale distributed  system,core dev      | Dev                | Beijing/Suzhou | 5Y+                  | Low            |
+| Bing                | Bing platform, large scale distributed system, core dev      | Dev                | Beijing/Suzhou | 5Y+                  | Low            |
 | Bing                | MP/News                                                      | EM                 | Beijing        | 10Y+                 | Strong         |
 
 
