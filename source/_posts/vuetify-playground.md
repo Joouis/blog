@@ -1,10 +1,11 @@
 ---
-title: Vuetify Playground: A playground to try all UI components of Vuetify.js at once
+title: Vuetify Playground - A playground to try all UI components of Vuetify.js at once
 date: 2020-03-01 23:16:54
 updated: 2020-03-01 23:16:54
 categories:
 - Web 前端
 tags:
+- vuetify-playground
 - vue
 - vuejs
 - vuetify
