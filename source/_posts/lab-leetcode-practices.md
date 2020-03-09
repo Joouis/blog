@@ -13,7 +13,7 @@ tags:
 - performance
 ---
 
-这是我的[嵌入式笔记](https://blog.joouis.com/2019/12/09/watching-notes-revolution-os/)第六篇，原文写于2015年。
+这是我的[嵌入式笔记](https://blog.joouis.com/2019/watching-notes-revolution-os/)第六篇，原文写于2015年。
 
 几乎所有候选人都问过我，进微软是不是要刷题，而我总是不厌其烦地告诉他们，我没刷题就进来了（在阿里疯狂996，享不尽福报，哪里还有时间刷题😅）。
 

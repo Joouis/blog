@@ -21,7 +21,7 @@ tags:
 
 ## 上一集
 
-《[2019 泰国行游记（三）](https://blog.joouis.com/2019/05/24/2019-thai-trip-3/)》
+《[2019 泰国行游记（三）](https://blog.joouis.com/2019/2019-thai-trip-3/)》
 
 
 
@@ -155,5 +155,5 @@ M 到公寓后的主旋律依然是洗衣服洗澡，然后就不出门了，要
 
 ## 下一集
 
-《[2019 泰国行游记（五）](https://blog.joouis.com/2019/06/12/2019-thai-trip-5/)》
+《[2019 泰国行游记（五）](https://blog.joouis.com/2019/2019-thai-trip-5/)》
 

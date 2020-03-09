@@ -21,7 +21,7 @@ tags:
 
 ## 上一集
 
-《[2019 泰国行游记（五）](https://blog.joouis.com/2019/06/12/2019-thai-trip-5/)》
+《[2019 泰国行游记（五）](https://blog.joouis.com/2019/2019-thai-trip-5/)》
 
 
 

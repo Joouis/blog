@@ -64,4 +64,4 @@ hexo d -g
 
 ### 2019.04.08
 
-博客三周年，升级了 Hexo 和主题，请看[这里](https://blog.joouis.com/2019/04/08/3rd-blog-anniversary/)。
+博客三周年，升级了 Hexo 和主题，请看[这里](https://blog.joouis.com/2019/3rd-blog-anniversary/)。

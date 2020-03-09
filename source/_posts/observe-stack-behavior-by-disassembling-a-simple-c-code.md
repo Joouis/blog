@@ -13,7 +13,7 @@ tags:
 - gcc
 ---
 
-这是我的[嵌入式笔记](https://blog.joouis.com/2019/12/09/watching-notes-revolution-os/)第二篇，原文写于2015年。
+这是我的[嵌入式笔记](https://blog.joouis.com/2019/watching-notes-revolution-os/)第二篇，原文写于2015年。
 
 深入了解计算机的底层行为是软件工程师的内功之一，有助于理解程序代码是如何被执行的。本文的练习小而完整，不需要太多背景知识，因此摘选出来与大家分享。
 

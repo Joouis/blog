@@ -11,7 +11,7 @@ tags:
 - open source
 ---
 
-这是我的[嵌入式笔记](https://blog.joouis.com/2019/12/09/watching-notes-revolution-os/)第一篇，原文写于2015年。
+这是我的[嵌入式笔记](https://blog.joouis.com/2019/watching-notes-revolution-os/)第一篇，原文写于2015年。
 
 这篇笔记是当年参加Embedded System 2015课程的作业之一。Jserv的课程使我受益良多，也帮助我迈入了计算机科学的殿堂。他的课程在成大是出了名的“硬”，信息量巨大，上课基本就是划重点加答疑，课下需要大量时间去自学和实践。同时他也一直鼓励学生参与开源活动，甚至把作业发布到例如Hackpad（现今Dropbox Paper）、HackMD等协同文档平台上，既可以作为自己的网络备份（这也是为什么我还能找到这些“黑历史”😂），也可以供其他人参考、交流。
 

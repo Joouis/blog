@@ -20,7 +20,7 @@ tags:
 
 ## 上一集
 
-《[2019 说走就走的珠海之旅（上）](https://blog.joouis.com/2019/06/18/2019-zhuhai-trip-1/)》
+《[2019 说走就走的珠海之旅（上）](https://blog.joouis.com/2019/2019-zhuhai-trip-1/)》
 
 
 
