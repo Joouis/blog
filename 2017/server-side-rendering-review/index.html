@@ -1,0 +1,317 @@
+<!DOCTYPE html><html class="theme-next mist use-motion" lang="zh-CN"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=2"><meta name="theme-color" content="#222"><script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script><link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.css"><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css"><link rel="stylesheet" href="/css/main.css?v=7.1.0"><link rel="apple-touch-icon" sizes="180x180" href="/images/hacker.ico?v=7.1.0"><link rel="icon" type="image/png" sizes="32x32" href="/images/hacker.ico?v=7.1.0"><link rel="icon" type="image/png" sizes="16x16" href="/images/hacker.ico?v=7.1.0"><link rel="mask-icon" href="/images/hacker.ico?v=7.1.0" color="#222"><script id="hexo.configurations">var NexT=window.NexT||{},CONFIG={root:"/",scheme:"Mist",version:"7.1.0",sidebar:{position:"left",display:"hide",offset:12,onmobile:!0,dimmer:!0},back2top:!0,back2top_sidebar:!1,fancybox:!0,fastclick:!1,lazyload:!1,tabs:!0,motion:{enable:!0,async:!1,transition:{post_block:"fadeIn",post_header:"slideDownIn",post_body:"slideDownIn",coll_header:"slideLeftIn",sidebar:"slideUpIn"}},algolia:{applicationID:"",apiKey:"",indexName:"",hits:{per_page:10},labels:{input_placeholder:"Search for Posts",hits_empty:"We didn't find any results for the search: ${query}",hits_stats:"${hits} results found in ${time} ms"}}}</script><meta name="baidu-site-verification" content="ChOTP1bKoM"><meta name="description" content="服务器端渲染（Server-Side Rendering，以下简称 SSR）并非是一门新技术，早期就有 Java, PHP 等后端语言进行页面渲染，后来 JavaScript 兴起、 Jquery, Backbone, React, Vue 等视图框架流行，前端逐渐夺回了渲染的地盘。随着如 Express, Koa 等 Node Web 应用程序框架的出现，SSR 以同构渲染（isomorphic"><meta name="keywords" content="SSR,server-side,render,isomorphic"><meta property="og:type" content="article"><meta property="og:title" content="服务器端渲染姿势探索"><meta property="og:url" content="https://blog.joouis.com/2017/server-side-rendering-review/index.html"><meta property="og:site_name" content="江边的旱鸭子"><meta property="og:description" content="服务器端渲染（Server-Side Rendering，以下简称 SSR）并非是一门新技术，早期就有 Java, PHP 等后端语言进行页面渲染，后来 JavaScript 兴起、 Jquery, Backbone, React, Vue 等视图框架流行，前端逐渐夺回了渲染的地盘。随着如 Express, Koa 等 Node Web 应用程序框架的出现，SSR 以同构渲染（isomorphic"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://cloud.githubusercontent.com/assets/948896/25062958/ca1b6618-2209-11e7-99ae-c2a75ad3dabb.png"><meta property="og:image" content="https://user-images.githubusercontent.com/8896124/32724607-92c0cddc-c837-11e7-88fe-7ae2a123cc9f.jpg"><meta property="og:image" content="https://raw.githubusercontent.com/walmartlabs/react-ssr-optimization/master/images/react-renderToString-cpu-profile.png"><meta property="og:updated_time" content="2017-11-13T11:43:15.000Z"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="服务器端渲染姿势探索"><meta name="twitter:description" content="服务器端渲染（Server-Side Rendering，以下简称 SSR）并非是一门新技术，早期就有 Java, PHP 等后端语言进行页面渲染，后来 JavaScript 兴起、 Jquery, Backbone, React, Vue 等视图框架流行，前端逐渐夺回了渲染的地盘。随着如 Express, Koa 等 Node Web 应用程序框架的出现，SSR 以同构渲染（isomorphic"><meta name="twitter:image" content="https://cloud.githubusercontent.com/assets/948896/25062958/ca1b6618-2209-11e7-99ae-c2a75ad3dabb.png"><link rel="alternate" href="/atom.xml" title="江边的旱鸭子" type="application/atom+xml"><link rel="canonical" href="https://blog.joouis.com/2017/server-side-rendering-review/"><script id="page.configurations">CONFIG.page={sidebar:""}</script><title>服务器端渲染姿势探索 | 江边的旱鸭子</title><script async src="//www.googletagmanager.com/gtag/js?id=UA-76188004-1"></script><script>var host=window.location.hostname;if("localhost"!==host){function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-76188004-1")}</script><script>var _hmt=_hmt||[];!function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?199f195e233fd5ecca0d9346d3259670";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}()</script><noscript><style>.sidebar-inner,.use-motion .brand,.use-motion .collection-title,.use-motion .comments,.use-motion .menu-item,.use-motion .motion-element,.use-motion .pagination,.use-motion .post-block,.use-motion .post-body,.use-motion .post-header{opacity:initial}.use-motion .logo,.use-motion .site-subtitle,.use-motion .site-title{opacity:initial;top:initial}.use-motion .logo-line-before i{left:initial}.use-motion .logo-line-after i{right:initial}</style></noscript></head><body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN"><div class="container sidebar-position-left page-post-detail"><div class="headband"></div><header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="header-inner"><div class="site-brand-wrapper"><div class="site-meta"><div class="custom-logo-site-title"><a href="/" class="brand" rel="start"><span class="logo-line-before"><i></i></span> <span class="site-title">江边的旱鸭子</span> <span class="logo-line-after"><i></i></span></a></div><h1 class="site-subtitle" itemprop="description">Blog of Joou</h1></div><div class="site-nav-toggle"><button aria-label="切换导航栏"><span class="btn-bar"></span> <span class="btn-bar"></span> <span class="btn-bar"></span></button></div></div><nav class="site-nav"><ul id="menu" class="menu"><li class="menu-item menu-item-home"><a href="/" rel="section">首页</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section">归档</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section">分类</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section">关于</a></li><li class="menu-item menu-item-recruit"><a href="/recruit/" rel="section">招聘</a></li><li class="menu-item menu-item-search"><a href="javascript:;" class="popup-trigger">搜索</a></li></ul><div class="site-search"><div class="popup search-popup local-search-popup"><div class="local-search-header clearfix"><span class="search-icon"><i class="fa fa-search"></i> </span><span class="popup-btn-close"><i class="fa fa-times-circle"></i></span><div class="local-search-input-wrapper"><input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input"></div></div><div id="local-search-result"></div></div></div></nav></div></header><main id="main" class="main"><div class="main-inner"><div class="content-wrap"><div id="content" class="content"><div id="posts" class="posts-expand"><article class="post post-type-normal" itemscope itemtype="http://schema.org/Article"><div class="post-block"><link itemprop="mainEntityOfPage" href="https://blog.joouis.com/2017/server-side-rendering-review/"><span hidden itemprop="author" itemscope itemtype="http://schema.org/Person"><meta itemprop="name" content="John Chou"><meta itemprop="description" content="Stand high, think different."><meta itemprop="image" content="/images/avatar.jpg"></span><span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="江边的旱鸭子"></span><header class="post-header"><h2 class="post-title" itemprop="name headline">服务器端渲染姿势探索</h2><div class="post-meta"><span class="post-time"><span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i> </span><span class="post-meta-item-text">发表于</span> <time title="创建时间：2017-09-14 20:46:51" itemprop="dateCreated datePublished" datetime="2017-09-14T20:46:51+08:00">2017-09-14</time> <span class="post-meta-divider">|</span> <span class="post-meta-item-icon"><i class="fa fa-calendar-check-o"></i> </span><span class="post-meta-item-text">更新于</span> <time title="修改时间：2017-11-13 19:43:15" itemprop="dateModified" datetime="2017-11-13T19:43:15+08:00">2017-11-13</time> </span><span class="post-category"><span class="post-meta-divider">|</span> <span class="post-meta-item-icon"><i class="fa fa-folder-o"></i> </span><span class="post-meta-item-text">分类于</span> <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Web-前端/" itemprop="url" rel="index"><span itemprop="name">Web 前端</span></a></span></span><div class="post-symbolscount"><span class="post-meta-divider">|</span> <span class="post-meta-item-icon"><i class="fa fa-clock-o"></i> </span><span class="post-meta-item-text">阅读时长 &asymp;</span> <span title="阅读时长">8 分钟</span></div></div></header><div class="post-body" itemprop="articleBody"><p>服务器端渲染（Server-Side Rendering，以下简称 SSR）并非是一门新技术，早期就有 Java, PHP 等后端语言进行页面渲染，后来 JavaScript 兴起、 Jquery, Backbone, React, Vue 等视图框架流行，前端逐渐夺回了渲染的地盘。随着如 Express, Koa 等 Node Web 应用程序框架的出现，SSR 以同构渲染（isomorphic rendering）的方式再次强势归来。<br><a id="more"></a></p><p><img src="https://cloud.githubusercontent.com/assets/948896/25062958/ca1b6618-2209-11e7-99ae-c2a75ad3dabb.png" alt></p><p>由于 SSR 在初次请求页面时已经包含了页面所需的数据内容（甚至是 CSS 和 JS 脚本），因此带来了两点好处：</p><ul><li>首屏性能：省去异步请求数据的时间</li><li>SEO 优势：防止 SEO 爬虫因缺少异步请求而错失的关键内容</li></ul><p>当然在同构渲染模式下，前后端都由前端工程师进行开发，这无形中也是一个很大的优势。</p><p>下面笔者将结合自己参与过的几个应用，分享在 SSR 方面的一点探索心得。</p><h2 id="从0到1：不求甚解，先摆个姿势再说"><a href="#从0到1：不求甚解，先摆个姿势再说" class="headerlink" title="从0到1：不求甚解，先摆个姿势再说"></a>从0到1：不求甚解，先摆个姿势再说</h2><p>笔者之所以会用到 SSR，现在回想起来也有点偶然：那个时候笔者的前主管经过一番调研，发现淘系的前后端分离框架 Midway 不错，于是基于它开发了一个轻量级的 Web 应用。</p><p>Midway 内置了一款名为 XTemplate 的模板引擎（类似 Nunjucks 的轮子），那时候身为前端小白的笔者看了这玩意，心想不就是一个 HTML 的超集么，虽然是方便那么一丢丢，但是为什么会有这类模板引擎，没想明白。</p><p>在没有吃透这项技术的情况下，笔者和师兄写出了 Xtpl 和 Vue “水乳交融” 的代码，而整个页面渲染逻辑如下：</p><p><img src="https://user-images.githubusercontent.com/8896124/32724607-92c0cddc-c837-11e7-88fe-7ae2a123cc9f.jpg" alt="uml-old"></p><p>由于业务长期对页面性能方面缺乏需求，大家都觉得这套方案没啥问题，即使偶尔在登入、刷新时会出现<strong>一些排列整齐的「{{}}」符号一闪而过</strong>，也只被解释成这就是稍微有点慢。</p><p>意识到这个姿势有问题时笔者已经换了一个团队，完全没有前端工程基础，打造一套服务于当前业务的高效前端开发体系是首要目标。在回顾之前使用的技术栈时，针对 SSR 笔者一下子就想到了两个问题（OS：“你个傻X当初想什么去了…”）：</p><ol><li>既然客户端要异步请求表格数据，为何一开始不直接存在 DOM 中发过去？</li><li>需要 Vue 渲染的内容，能不能用模板引擎（如 XTemplate）渲染？如果能为什么要留到客户端渲染？</li></ol><p>第一个问题讨论的就是 SSR 的主要价值之一，在文章开头已经介绍过；而第二个问题后面还会有详细讨论。总而言之，之前的那种设计思路，完全废掉了这项技术，相比单纯的客户端渲染还浪费了服务器上模板引擎解析的时间，尽管理论上这个性能损耗极小。</p><h3 id="姿势小结"><a href="#姿势小结" class="headerlink" title="姿势小结"></a>姿势小结</h3><p>使用 SSR 的原则应当是尽量把页面所需的数据都渲染或存在页面中，能节省一次或多次 HTTP 请求时间；需要大量数据的图表是个例外，但这种情况更合适的做法应该是首次粗粒度显示、后续再通过异步请求灵活调整。另外能在服务器端渲染的内容尽量使用模板引擎渲染，后续客户端的工作再交由 Vue 等框架来做。</p><p>至于收益嘛，就看异步请求的数量和当下的网速了。</p><h2 id="同构还是不同构，这是个问题！"><a href="#同构还是不同构，这是个问题！" class="headerlink" title="同构还是不同构，这是个问题！"></a>同构还是不同构，这是个问题！</h2><p>书接上文，有一个问题是 Xtpl 能否替代 Vue 渲染一些内容，其实这个问题反过来问才更合适：<strong>React, Vue 官方都已支持 SSR，甚至出现了 Next.js 和 Nuxt.js 这样的定制 Web 框架，是否还需要使用 Xtpl 之类的模板工具？</strong></p><p>既然做技术选型，优缺点的对比必不可少。</p><p>先说 React, Vue 这样的同构渲染，最大的好处就是一套 JS 代码在服务端和客户端是共用的。以 React 为例，使用 <code>renderToString</code> 或 <code>renderToStaticMarkup</code> 将客户端的组件转化为字符串供服务端使用，具体的实现可以参考 <code>引用2</code>。同构的好处反过来也就是使用模板渲染的坏处，在 UI 框架必备的前提下，多学习、使用、调试一门语言，成本肯定会增加。</p><p>但是使用模板的好处也是存在的，首先是性能上的优势。</p><p>笔者使用 Rax 提供的跑分方法对主流渲染框架/引擎进行了性能测试，具体结果如下。测试结果以每秒钟执行测试代码的次数（<em>Ops</em>/<em>sec</em>）显示，这个数值越大渲染性能越好。可以看到 Xtpl 的性能远超 React, Vue 等框架，这是因为 React 等框架在渲染时需要构造 vDOM 然后才能输出 HTML，而 Xtpl 这样的模板引擎只需要在模板上做简单的“翻译”命令即可。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">React#</span><span class="bash">renderToString x 540 ops/sec ±2.43% (78 runs sampled)</span></span><br><span class="line"><span class="meta">Rax#</span><span class="bash">renderToString x 878 ops/sec ±5.38% (74 runs sampled)</span></span><br><span class="line"><span class="meta">Inferno#</span><span class="bash">renderToString x 1,111 ops/sec ±6.35% (70 runs sampled)</span></span><br><span class="line"><span class="meta">Preact#</span><span class="bash">renderToString x 557 ops/sec ±6.72% (67 runs sampled)</span></span><br><span class="line"><span class="meta">Vue#</span><span class="bash">renderToString x 233 ops/sec ±36.37% (68 runs sampled)</span></span><br><span class="line"><span class="meta">Marko#</span><span class="bash">renderToString x 4,580 ops/sec ±5.25% (73 runs sampled)</span></span><br><span class="line"><span class="meta">Xtpl#</span><span class="bash">renderFile x 4,606 ops/sec ±7.13% (53 runs sampled)</span></span><br><span class="line">Fastest is Marko#renderToString,Xtpl#renderFile</span><br></pre></td></tr></table></figure><p>除此之外，Xtpl 的优势就是在开发 Memory Analysor 等应用时积累的业务代码和经验了，没有学习成本，当业务压力大时，先顶一阵子也没什么问题；）</p><p><em>注：现在无论是 React 还是 Vue 都对 SSR 进行了优化，通过缓存策略极大地改善响应时间并减少服务器的负载，延伸阅读可参考 <code>引用4</code> <code>引用5</code>。下图为 React 针对 SSR 优化的前后性能对比图。</em></p><p><img src="https://raw.githubusercontent.com/walmartlabs/react-ssr-optimization/master/images/react-renderToString-cpu-profile.png" alt="React SSR Opt"></p><h3 id="姿势小结-1"><a href="#姿势小结-1" class="headerlink" title="姿势小结"></a>姿势小结</h3><p>这是在最近开发一款新应用时遇到的问题，考虑到项目中第一次使用 React 和 Webpack 进行开发构建，为了进度的平稳，还是先采用 Xtpl + React 这样的混合方案，等未来迭代时再逐步替换为同构方式。得益于模块化的开发风格，Xtpl 和 React 各司其职，完全解耦。</p><h2 id="请求不要放在一个篮子里"><a href="#请求不要放在一个篮子里" class="headerlink" title="请求不要放在一个篮子里"></a>请求不要放在一个篮子里</h2><p>某一次笔者特意给自己挖了个坑，想看看什么时候会掉下去，没想到很快就如愿以偿了=。=</p><p>前文总结时已经提到过，既然是请求首屏数据，就只需要先获取第一屏的内容，并且如果遇到大量数据的图表时还应调整粒度进行“压缩”。但是为了体会到那种慢的感觉，笔者特意把页面所有的数据都请求完了才进行渲染，而页面内容包含三图一表…</p><p>起初完全感觉不到这样做的危害，直到数据库库表里的数据达到百万条，一条 SQL 请求语句需要 6-7s 时，页面载入的速度就令人很不爽了。</p><h3 id="姿势小结-2"><a href="#姿势小结-2" class="headerlink" title="姿势小结"></a>姿势小结</h3><p>和 SSR 相关的解决办法其实就是初次渲染时只请求首屏数据，其他数据待客户端加载完毕后再异步请求。</p><p>不过既然都提到了这个例子，也顺带说一下还做了其他哪些事：</p><ul><li>添加 SQL 请求中的条件字段为索引</li><li>根据业务背景增加有意义的条件限制</li><li>服务端 cache 住可以复用的共享数据</li></ul><h2 id="报告！HTML字符串有小动作"><a href="#报告！HTML字符串有小动作" class="headerlink" title="报告！HTML字符串有小动作"></a>报告！HTML字符串有小动作</h2><p>又在某一个项目开发中，笔者将首屏数据存在了 DOM 里，准确地说是将数据存放在了一个节点的属性中，当客户端加载代码后再读取数据进行后续工作。代码示例如下：</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- index.xtpl --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"module1"</span> <span class="attr">data</span>=<span class="string">"&#123;&#123;data&#125;&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"/public/index.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// index.js</span></span><br><span class="line"><span class="keyword">import</span> Module1 <span class="keyword">from</span> <span class="string">'./module1.jsx'</span>;</span><br><span class="line"><span class="keyword">let</span> src = $(<span class="string">'#module1'</span>).attr(<span class="string">'data'</span>);</span><br><span class="line">Module1.render(<span class="built_in">JSON</span>.parse(src));</span><br></pre></td></tr></table></figure><p>后来在 review 代码时，发现一个显而易见的性能优化点：DOM 的操作很昂贵， 将数据存放在 DOM 中再通过 API 获取属于多此一举。Xtpl 文件作为模板，实质上就是字符串，数据插入到字符串的任意位置都是允许的，只是最终的意义不同。如果将数据写到模板的 <code>&lt;script&gt;</code> 中，客户端加载时数据就直接到内存里了。</p><p>改进后的代码如下：</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- index.xtpl --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"module1"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="built_in">window</span>.INITIAL_DATA = &#123;&#123;&#123;data&#125;&#125;&#125;;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// index.js</span></span><br><span class="line"><span class="keyword">import</span> Module1 <span class="keyword">from</span> <span class="string">'./module1.jsx'</span>;</span><br><span class="line">Module.render(<span class="built_in">window</span>.INITIAL_DATA);</span><br><span class="line"><span class="keyword">delete</span> <span class="built_in">window</span>.INITIAL_DATA;</span><br></pre></td></tr></table></figure><p>不过笔者对于性能方面的担忧是多余的（<strong>DOM 操作昂贵没错，但不是贵在这里！可从浏览器的工作原理角度出发思考这一问题</strong>），这两段代码的执行效率几乎没有差别：在数据（字符串形式）量达到 36.7 KB 时，第一份代码对 DOM 的读取操作和 <code>JSON.parse()</code> 方法都是在 5ms 以内完成的。</p><p>反倒是页面体积有了明显的变化：</p><table><thead><tr><th></th><th>数据存在DOM中</th><th>数据存在内存中</th></tr></thead><tbody><tr><td>Page1</td><td>42.1KB</td><td>23.9KB</td></tr><tr><td>Page2</td><td>67KB</td><td>38.6KB</td></tr></tbody></table><p>原因很有趣，当把数据存在 DOM 中时，需要先将 JS Object 转换为 JSON 格式的字符串。随后在 JSON 字符串写入 HTML 的过程中，所有的双引号都被转义字符 <code>$quot;</code> 所替换。而将数据直接写在 <code>&lt;script&gt;</code> 中就不存在这种情况，简单的字符串拼接后，就是一条赋值语句。经模板生成的网页源代码如下所示：</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Previous --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"module1"</span> <span class="attr">data</span>=<span class="string">"&#123;&amp;quot;key&amp;quot;:value&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- Now --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"module1"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="built_in">window</span>.INITIAL_DATA = &#123;<span class="string">"key"</span>:value&#125;;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure><h3 id="姿势小结-3"><a href="#姿势小结-3" class="headerlink" title="姿势小结"></a>姿势小结</h3><p>在 UTF-8 编码下，每当 JSON 字符串中出现一个双引号，前者就要比后者多耗费 5 个字节，当数据量很大时，页面体积就会出现很明显的差异。这在无线端等网络状况不稳定的业务场景中值得关注。</p><h2 id="引用-amp-延伸阅读"><a href="#引用-amp-延伸阅读" class="headerlink" title="引用&amp;延伸阅读"></a>引用&amp;延伸阅读</h2><ol><li><a href="https://github.com/camsong/blog/issues/8" target="_blank" rel="noopener">精读前后端渲染之争</a></li><li><a href="http://blog.techbridge.cc/2016/08/27/react-redux-immutablejs-node-server-isomorphic-tutorial/" target="_blank" rel="noopener">一看就懂的 React Server Rendering（Isomorphic JavaScript）入門教學</a></li><li><a href="http://www.alloyteam.com/2017/01/react-from-scratch-server-render/" target="_blank" rel="noopener">从零开始React服务器渲染</a></li><li><a href="https://github.com/raxjs/server-side-rendering-comparison" target="_blank" rel="noopener">server-side-rendering-comparison</a></li><li><a href="https://github.com/walmartlabs/react-ssr-optimization" target="_blank" rel="noopener">React Server-Side Rendering Optimization Library</a></li><li><a href="https://ssr.vuejs.org/zh/caching.html" target="_blank" rel="noopener">Vue.js 服务器端渲染指南 - 缓存</a></li></ol></div><div><div id="reward-container"><div>Buy me a cup of coffee :)</div><button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">打赏</button><div id="qr" style="display:none"><div style="display:inline-block"><img src="/images/reward-wechat.jpg" alt="John Chou 微信支付"><p>微信支付</p></div><div style="display:inline-block"><img src="/images/reward-alipay.jpg" alt="John Chou 支付宝"><p>支付宝</p></div></div></div></div><div><ul class="post-copyright"><li class="post-copyright-author"><strong>本文作者： </strong>John Chou</li><li class="post-copyright-link"><strong>本文链接：</strong> <a href="https://blog.joouis.com/2017/server-side-rendering-review/" title="服务器端渲染姿势探索">https://blog.joouis.com/2017/server-side-rendering-review/</a></li><li class="post-copyright-license"><strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nd/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-ND</a> 许可协议。转载请注明出处！</li></ul></div><footer class="post-footer"><div class="post-tags"><a href="/tags/SSR/" rel="tag"># SSR</a> <a href="/tags/server-side/" rel="tag"># server-side</a> <a href="/tags/render/" rel="tag"># render</a> <a href="/tags/isomorphic/" rel="tag"># isomorphic</a></div><div class="post-nav"><div class="post-nav-next post-nav-item"><a href="/2017/weex-android-quick-tutorial/" rel="next" title="Weex Android 发车指南（已弃车）"><i class="fa fa-chevron-left"></i> Weex Android 发车指南（已弃车）</a></div><span class="post-nav-divider"></span><div class="post-nav-prev post-nav-item"><a href="/2017/rwd-fundamentals-note/" rel="prev" title="响应式网站设计基础">响应式网站设计基础 <i class="fa fa-chevron-right"></i></a></div></div></footer></div></article></div></div><div class="comments" id="comments"><div id="disqus_thread"><noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript></div></div></div><div class="sidebar-toggle"><div class="sidebar-toggle-line-wrap"><span class="sidebar-toggle-line sidebar-toggle-line-first"></span> <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span> <span class="sidebar-toggle-line sidebar-toggle-line-last"></span></div></div><aside id="sidebar" class="sidebar"><div class="sidebar-inner"><ul class="sidebar-nav motion-element"><li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">文章目录</li><li class="sidebar-nav-overview" data-target="site-overview-wrap">站点概览</li></ul><div class="site-overview-wrap sidebar-panel"><div class="site-overview"><div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person"><img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="John Chou"><p class="site-author-name" itemprop="name">John Chou</p><div class="site-description motion-element" itemprop="description">Stand high, think different.</div></div><nav class="site-state motion-element"><div class="site-state-item site-state-posts"><a href="/archives/"><span class="site-state-item-count">42</span> <span class="site-state-item-name">日志</span></a></div><div class="site-state-item site-state-categories"><a href="/categories/"><span class="site-state-item-count">6</span> <span class="site-state-item-name">分类</span></a></div><div class="site-state-item site-state-tags"><a href="/tags/"><span class="site-state-item-count">147</span> <span class="site-state-item-name">标签</span></a></div></nav><div class="feed-link motion-element"><a href="/atom.xml" rel="alternate"><i class="fa fa-rss"></i> RSS</a></div><div class="links-of-author motion-element"><span class="links-of-author-item"><a href="https://github.com/Joouis" title="GitHub &rarr; https://github.com/Joouis" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a> </span><span class="links-of-author-item"><a href="mailto:luckyjoou@gmail.com" title="E-Mail &rarr; mailto:luckyjoou@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i></a> </span><span class="links-of-author-item"><a href="https://www.instagram.com/Joouis" title="Instagram &rarr; https://www.instagram.com/Joouis" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i></a> </span><span class="links-of-author-item"><a href="http://www.slideshare.net/choujohn351" title="SlideShare &rarr; http://www.slideshare.net/choujohn351" rel="noopener" target="_blank"><i class="fa fa-fw fa-slideshare"></i></a></span></div><div class="cc-license motion-element" itemprop="license"><a href="https://creativecommons.org/licenses/by-nd/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nd.svg" alt="Creative Commons"></a></div></div></div><div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active"><div class="post-toc"><div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#从0到1：不求甚解，先摆个姿势再说"><span class="nav-number">1.</span> <span class="nav-text">从0到1：不求甚解，先摆个姿势再说</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#姿势小结"><span class="nav-number">1.1.</span> <span class="nav-text">姿势小结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#同构还是不同构，这是个问题！"><span class="nav-number">2.</span> <span class="nav-text">同构还是不同构，这是个问题！</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#姿势小结-1"><span class="nav-number">2.1.</span> <span class="nav-text">姿势小结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#请求不要放在一个篮子里"><span class="nav-number">3.</span> <span class="nav-text">请求不要放在一个篮子里</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#姿势小结-2"><span class="nav-number">3.1.</span> <span class="nav-text">姿势小结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#报告！HTML字符串有小动作"><span class="nav-number">4.</span> <span class="nav-text">报告！HTML字符串有小动作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#姿势小结-3"><span class="nav-number">4.1.</span> <span class="nav-text">姿势小结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引用-amp-延伸阅读"><span class="nav-number">5.</span> <span class="nav-text">引用&amp;延伸阅读</span></a></li></ol></div></div></div></div></aside><div id="sidebar-dimmer"></div></div></main><footer id="footer" class="footer"><div class="footer-inner"><div class="copyright">&copy; 2016 – <span itemprop="copyrightYear">2020</span> <span class="with-love" id="animate"><i class="fa fa-heart"></i> </span><span class="author" itemprop="copyrightHolder">John Chou</span></div></div></footer><div class="back-to-top"><i class="fa fa-arrow-up"></i></div></div><script>"[object Function]"!==Object.prototype.toString.call(window.Promise)&&(window.Promise=null)</script><script src="//cdn.jsdelivr.net/npm/jquery@2/dist/jquery.min.js"></script><script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.min.js"></script><script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.ui.min.js"></script><script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script><script src="/js/utils.js?v=7.1.0"></script><script src="/js/motion.js?v=7.1.0"></script><script src="/js/schemes/muse.js?v=7.1.0"></script><script src="/js/scrollspy.js?v=7.1.0"></script><script src="/js/post-details.js?v=7.1.0"></script><script src="/js/next-boot.js?v=7.1.0"></script><script src="/js/js.cookie.js?v=7.1.0"></script><script src="/js/scroll-cookie.js?v=7.1.0"></script><script>var disqus_config=function(){this.page.url="https://blog.joouis.com/2017/server-side-rendering-review/",this.page.identifier="2017/server-side-rendering-review/",this.page.title="服务器端渲染姿势探索"};function loadComments(){var e=document,t=e.createElement("script");t.src="https://joou.disqus.com/embed.js",t.setAttribute("data-timestamp",""+ +new Date),(e.head||e.body).appendChild(t)}loadComments()</script><script>// Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });</script><script>!function(){var t=document.createElement("script"),e=window.location.protocol.split(":")[0];t.src="https"===e?"https://zz.bdstatic.com/linksubmit/push.js":"http://push.zhanzhang.baidu.com/push.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(t,s)}()</script><script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script><script>pangu.spacingPage()</script><script>$(".highlight").each(function(t,e){var n=$("<div>").addClass("highlight-wrap");$(e).after(n),n.append($("<button>").addClass("copy-btn").append("复制").on("click",function(t){var e=$(this).parent().find(".code").find(".line").map(function(t,e){return $(e).text()}).toArray().join("\n"),n=document.createElement("textarea"),o=window.pageYOffset||document.documentElement.scrollTop;n.style.top=o+"px",n.style.position="absolute",n.style.opacity="0",n.readOnly=!0,n.value=e,document.body.appendChild(n),n.select(),n.setSelectionRange(0,e.length),n.readOnly=!1,document.execCommand("copy")?$(this).text("复制成功"):$(this).text("复制失败"),n.blur(),$(this).blur()})).on("mouseleave",function(t){var e=$(this).find(".copy-btn");setTimeout(function(){e.text("复制")},300)}).append(e)})</script></body></html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html><html class="theme-next mist use-motion" lang="zh-CN"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=2"><meta name="theme-color" content="#222"><script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script><link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.css"><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css"><link rel="stylesheet" href="/css/main.css?v=7.1.0"><link rel="apple-touch-icon" sizes="180x180" href="/images/hacker.ico?v=7.1.0"><link rel="icon" type="image/png" sizes="32x32" href="/images/hacker.ico?v=7.1.0"><link rel="icon" type="image/png" sizes="16x16" href="/images/hacker.ico?v=7.1.0"><link rel="mask-icon" href="/images/hacker.ico?v=7.1.0" color="#222"><script id="hexo.configurations">var NexT=window.NexT||{},CONFIG={root:"/",scheme:"Mist",version:"7.1.0",sidebar:{position:"left",display:"hide",offset:12,onmobile:!0,dimmer:!0},back2top:!0,back2top_sidebar:!1,fancybox:!0,fastclick:!1,lazyload:!1,tabs:!0,motion:{enable:!0,async:!1,transition:{post_block:"fadeIn",post_header:"slideDownIn",post_body:"slideDownIn",coll_header:"slideLeftIn",sidebar:"slideUpIn"}},algolia:{applicationID:"",apiKey:"",indexName:"",hits:{per_page:10},labels:{input_placeholder:"Search for Posts",hits_empty:"We didn't find any results for the search: ${query}",hits_stats:"${hits} results found in ${time} ms"}}}</script><meta name="baidu-site-verification" content="ChOTP1bKoM"><meta name="description" content="这是我的嵌入式笔记第五篇，原文写于2015年。"><meta name="keywords" content="embedded system course,embedded system,gnu,compiler,jit"><meta property="og:type" content="article"><meta property="og:title" content="编译器入门小笔记"><meta property="og:url" content="https://blog.joouis.com/2020/lab-compiler-intro/index.html"><meta property="og:site_name" content="江边的旱鸭子"><meta property="og:description" content="这是我的嵌入式笔记第五篇，原文写于2015年。"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://hzoe9g.bn.files.1drv.com/y4m9w--0C21r7BamU_dtV96xC7DR5D_011pshYM7_mvvxydtIW1gSdk6mIwKGBVRU90n6rXEmxK136njHYpC3JotX3i3z1OEUJXf9Deimf-SCg5pLRanOImkriiFigfJSJw5PWhrJpknX3DdUkEBYk5rG0lfCMVvRMg-WZg2WpeOYdbyFgqMyBEOxiv6mUhQWX2KFwMeganzREe9ZE9IPVa6A?width=1161&height=203&cropmode=none"><meta property="og:image" content="https://hzod9g.bn.files.1drv.com/y4mcrayOGke8OR_LhPHdSuc2gpBSOYUYRmRxs4bmXMcarA6n3snPGX7L1aytHBOvKgjPfE4S7K5mXUZiLIqdKNj5MhlDMvqJUy8EXP3wM5P0CVL9Mn3xNsragTDMgU4KJyBMepumX42EVPOU9aV5UNCNKsxwBevliFCgezVRyATPruRJ3f-jXo2bDsOqUSmes9kXU611ONE48BcATHpbGMk9A?width=1065&height=749&cropmode=none"><meta property="og:image" content="https://hzoa9g.bn.files.1drv.com/y4m8DdmNN2dLqOOOtkmEJYhy3Hd4IedX44C-x46ZwdMYH4SYQVv4otM6PDWfxrUqNynl-Q_PzAgE5-cR-S20pGryphoBCIvNfE7YAlj-XS1qz6DY34Pd6Y4lemP1d-4fIA2umx3YQZILsB8YT8INeyo8GxsnGrnr1nbflK6XIosKfpJyWcdjdw7kLK8VP2-ZoDeTJySTdqn0Ag2M57dYHT47Q?width=709&height=940&cropmode=none"><meta property="og:image" content="https://hzoz9g.bn.files.1drv.com/y4mluI1HXU2J4HH1xAyJt9U4HJtzwDfjcuk_HbYQbn3EHmggHAt40q_lHZQBirNYpBKVJwz0TwxmYYDc2cD56w1WEZp4oawBwkUhzfVcevITPfl5V2IcHkZrRBHiPRSiiOHVF_cpNEYKHcDfZ6R_AVxUY-EPqv_4O41mpPGu8CB2TenzmhVX-jlubV3KkD-w9OEu4FH1CcuVoF17f6XQ3jXqw?width=542&height=362&cropmode=none"><meta property="og:image" content="https://hzoy9g.bn.files.1drv.com/y4mJBRWtSKkkVclaBVPjeo12mbuZ38ASqqQ2e-tTwOxR3bHTR_OSgD80I3Ou1nPI7mwbwvD9MhFeHsLOleHyg8ogxc8Xa4K4uKYwVC8IQW8LwLstRrB7NCGKXSsKwhtxj0H4CfqW16M8mq6X6nBk6dCsQ9B-B0NRZhrRuzUzE96Dquoth4P8EBK_oYZ-I634lWfezuSgS-Z9MtYOOmdelJUGw?width=552&height=423&cropmode=none"><meta property="og:image" content="https://hzox9g.bn.files.1drv.com/y4mgL1CuzWuctIeBpU2_i7UObrQ1lWJHQEXqrjLxEXdvA6ZkrYqNqdvmw-LCGkbtEMs2JdjDAD6HR_em9kwWYYqIb0geIEa-pg8v_g0-J8LF34QsdapAbpBL_jQX__Kcee1cGo7tm_kGrRSZ_BuMLGc-hlC9xwMLejCJVgSJxtAfJp9SYfMpTL31TIS2KG2gutcsds7PEoY4cfmU8ikKiZSQQ?width=547&height=451&cropmode=none"><meta property="og:image" content="https://hzow9g.bn.files.1drv.com/y4mhPxgVVq8a4LFWupzsrgxTtAEwjfnMw4MiPh7Bhx4Oe8_eXHTG3GfQ_ZUF2PhKPlvVsZA-03O_O5rUXi7oGFiGsTh8WbgkLYosQecMCpFAQDE5caJI4jpxS-6ZOZegREeq7DbLSKmICPIZ1xBIOw09qHC9L8_hpniJAjiSMzQiVcVEoRIAz81U6oSlMSb9OJa8IccUafNagpKLOTXTM6ayA?width=548&height=447&cropmode=none"><meta property="og:image" content="https://hzov9g.bn.files.1drv.com/y4mWAkUb7LW648AKSnfKgI1uO9KKza9ytYv0uHe0tEbPemOAXYqg1yuA04b874ubZTbmgR0FpcljQBZydrFx7BpFE0wPsBWz2R3zBU3iiCLhXlR4Ry-4HWeNPyAFFjq28vlpa25namyUDidr0d6a5C7bSVr61bONaECrxAT2nq1GMxjtDBRhjEas1winiutKSfso2Povn8bS3DejM60l9JabQ?width=544&height=465&cropmode=none"><meta property="og:image" content="https://hzoc9g.bn.files.1drv.com/y4m2Jh3C2yYNSXvUTHobz1XgSYJAMRSK_97hoepI7ayow50Adi80cxQr8hBpgbHFobAiJS4yj0NoLe99w2rd2cWR7McgbBveiXL29ordnavc0Rp-MlfNaQldHfRAahBiidmMvlrLq_AQJw8dG1eHpMUA9soz3DJ5usgDckzRlYVZLIDFPBUhylq7P9BKsG0E6MIUIZ3ZgNWyxlbDMxIS1w1ZQ?width=545&height=624&cropmode=none"><meta property="og:updated_time" content="2020-01-01T08:08:38.000Z"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="编译器入门小笔记"><meta name="twitter:description" content="这是我的嵌入式笔记第五篇，原文写于2015年。"><meta name="twitter:image" content="https://hzoe9g.bn.files.1drv.com/y4m9w--0C21r7BamU_dtV96xC7DR5D_011pshYM7_mvvxydtIW1gSdk6mIwKGBVRU90n6rXEmxK136njHYpC3JotX3i3z1OEUJXf9Deimf-SCg5pLRanOImkriiFigfJSJw5PWhrJpknX3DdUkEBYk5rG0lfCMVvRMg-WZg2WpeOYdbyFgqMyBEOxiv6mUhQWX2KFwMeganzREe9ZE9IPVa6A?width=1161&height=203&cropmode=none"><link rel="alternate" href="/atom.xml" title="江边的旱鸭子" type="application/atom+xml"><link rel="canonical" href="https://blog.joouis.com/2020/lab-compiler-intro/"><script id="page.configurations">CONFIG.page={sidebar:""}</script><title>编译器入门小笔记 | 江边的旱鸭子</title><script async src="//www.googletagmanager.com/gtag/js?id=UA-76188004-1"></script><script>var host=window.location.hostname;if("localhost"!==host){function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-76188004-1")}</script><script>var _hmt=_hmt||[];!function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?199f195e233fd5ecca0d9346d3259670";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}()</script><noscript><style>.sidebar-inner,.use-motion .brand,.use-motion .collection-title,.use-motion .comments,.use-motion .menu-item,.use-motion .motion-element,.use-motion .pagination,.use-motion .post-block,.use-motion .post-body,.use-motion .post-header{opacity:initial}.use-motion .logo,.use-motion .site-subtitle,.use-motion .site-title{opacity:initial;top:initial}.use-motion .logo-line-before i{left:initial}.use-motion .logo-line-after i{right:initial}</style></noscript></head><body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN"><div class="container sidebar-position-left page-post-detail"><div class="headband"></div><header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="header-inner"><div class="site-brand-wrapper"><div class="site-meta"><div class="custom-logo-site-title"><a href="/" class="brand" rel="start"><span class="logo-line-before"><i></i></span> <span class="site-title">江边的旱鸭子</span> <span class="logo-line-after"><i></i></span></a></div><h1 class="site-subtitle" itemprop="description">Blog of Joou</h1></div><div class="site-nav-toggle"><button aria-label="切换导航栏"><span class="btn-bar"></span> <span class="btn-bar"></span> <span class="btn-bar"></span></button></div></div><nav class="site-nav"><ul id="menu" class="menu"><li class="menu-item menu-item-home"><a href="/" rel="section">首页</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section">归档</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section">分类</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section">关于</a></li><li class="menu-item menu-item-recruit"><a href="/recruit/" rel="section">招聘</a></li><li class="menu-item menu-item-search"><a href="javascript:;" class="popup-trigger">搜索</a></li></ul><div class="site-search"><div class="popup search-popup local-search-popup"><div class="local-search-header clearfix"><span class="search-icon"><i class="fa fa-search"></i> </span><span class="popup-btn-close"><i class="fa fa-times-circle"></i></span><div class="local-search-input-wrapper"><input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input"></div></div><div id="local-search-result"></div></div></div></nav></div></header><main id="main" class="main"><div class="main-inner"><div class="content-wrap"><div id="content" class="content"><div id="posts" class="posts-expand"><article class="post post-type-normal" itemscope itemtype="http://schema.org/Article"><div class="post-block"><link itemprop="mainEntityOfPage" href="https://blog.joouis.com/2020/lab-compiler-intro/"><span hidden itemprop="author" itemscope itemtype="http://schema.org/Person"><meta itemprop="name" content="John Chou"><meta itemprop="description" content="Stand high, think different."><meta itemprop="image" content="/images/avatar.jpg"></span><span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="江边的旱鸭子"></span><header class="post-header"><h2 class="post-title" itemprop="name headline">编译器入门小笔记</h2><div class="post-meta"><span class="post-time"><span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i> </span><span class="post-meta-item-text">发表于</span> <time title="创建时间：2020-01-01 16:08:38" itemprop="dateCreated datePublished" datetime="2020-01-01T16:08:38+08:00">2020-01-01</time> </span><span class="post-category"><span class="post-meta-divider">|</span> <span class="post-meta-item-icon"><i class="fa fa-folder-o"></i> </span><span class="post-meta-item-text">分类于</span> <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/系统与底层/" itemprop="url" rel="index"><span itemprop="name">系统与底层</span></a></span></span><div class="post-symbolscount"><span class="post-meta-divider">|</span> <span class="post-meta-item-icon"><i class="fa fa-clock-o"></i> </span><span class="post-meta-item-text">阅读时长 &asymp;</span> <span title="阅读时长">10 分钟</span></div></div></header><div class="post-body" itemprop="articleBody"><p>这是我的<a href="https://blog.joouis.com/2019/12/09/watching-notes-revolution-os/">嵌入式笔记</a>第五篇，原文写于2015年。</p><a id="more"></a><h2 id="Week-5-课程"><a href="#Week-5-课程" class="headerlink" title="Week#5 课程"></a>Week#5 课程</h2><ul><li>课程共笔<a href="https://paper.dropbox.com/doc/xsUE7O7d02YlsKydh7Xdp" target="_blank" rel="noopener">链接</a></li></ul><h3 id="Steve-Jobs-─-Lost-interview-1995"><a href="#Steve-Jobs-─-Lost-interview-1995" class="headerlink" title="Steve Jobs ─ Lost interview (1995)"></a><a href="https://www.youtube.com/watch?v=6CJMQHLfqUQ" target="_blank" rel="noopener"><strong>Steve Jobs ─ Lost interview</strong></a><a href="https://www.youtube.com/watch?v=6CJMQHLfqUQ" target="_blank" rel="noopener"> </a><a href="https://www.youtube.com/watch?v=6CJMQHLfqUQ" target="_blank" rel="noopener"><strong>(1995)</strong></a></h3><ul><li>“You know, throughout the years in business, <strong>I found something, which I was always ask why you do things, and the answers you inevitably get are</strong> <strong>‘oh</strong> <strong>that’s just the way it’s done’, nobody knows why they do, nobody thinks about things very deeply</strong> in business, that’s what I found.”</li><li>Feeling: Impressive, attractive, passionate</li></ul><h3 id="GNU-Toolchain"><a href="#GNU-Toolchain" class="headerlink" title="GNU Toolchain"></a>GNU Toolchain</h3><p><img src="https://hzoe9g.bn.files.1drv.com/y4m9w--0C21r7BamU_dtV96xC7DR5D_011pshYM7_mvvxydtIW1gSdk6mIwKGBVRU90n6rXEmxK136njHYpC3JotX3i3z1OEUJXf9Deimf-SCg5pLRanOImkriiFigfJSJw5PWhrJpknX3DdUkEBYk5rG0lfCMVvRMg-WZg2WpeOYdbyFgqMyBEOxiv6mUhQWX2KFwMeganzREe9ZE9IPVa6A?width=1161&amp;height=203&amp;cropmode=none" alt></p><ul><li><p>Procedure: arguments是呼叫函式傳遞的，parameters是被呼叫函式接收到的</p></li><li><p>組語在procedure call如何傳遞參數？<a href="http://infocenter.arm.com/help/topic/com.arm.doc.ihi0042e/IHI0042E_aapcs.pdf" target="_blank" rel="noopener">AAPCS</a></p><ul><li>eabi: embedded <a href="https://zh.wikipedia.org/wiki/应用二进制接口" target="_blank" rel="noopener">abi</a></li><li>the sizes, layout, and alignment of data types</li><li>the calling convention, which controls how functions’ arguments are passed and return values retrieved; for example, whether all parameters are passed on the stack or some are passed in registers, which registers are used for which function parameters, and whether the first function parameter passed on the stack is pushed first or last onto the stack</li><li>how an application should make system calls to the operating system and, if the ABI specifies direct system calls rather than procedure calls to system call stubs, the system call numbers and in the case of a complete operating system ABI, the binary format of object files, program libraries and so on.</li></ul></li></ul><p><img src="https://hzod9g.bn.files.1drv.com/y4mcrayOGke8OR_LhPHdSuc2gpBSOYUYRmRxs4bmXMcarA6n3snPGX7L1aytHBOvKgjPfE4S7K5mXUZiLIqdKNj5MhlDMvqJUy8EXP3wM5P0CVL9Mn3xNsragTDMgU4KJyBMepumX42EVPOU9aV5UNCNKsxwBevliFCgezVRyATPruRJ3f-jXo2bDsOqUSmes9kXU611ONE48BcATHpbGMk9A?width=1065&amp;height=749&amp;cropmode=none" alt></p><ul><li><p><strong>Accessing operands</strong></p><p>通常 procedure 存取 operands 透過以下幾種方式:</p><ul><li>An argument passed on a register : 直接使用暫存器</li><li>An argument passed on the stack : 使用 stack pointer (R13) 的相對定址 (immediate offset)</li><li>A constant : PC-relative addressing</li><li>A local variable : 分配在 stack 上，透過 stack pointer 相對定址方式存取</li><li>A global variable : 分配在 static area (就是樓上圖片的 static data)，透過 static base (R9) 相對定址存取</li></ul></li><li><p>Target triple</p><ul><li>hf: hard float，預設有FPU</li><li>armeb-linux-gnueabihf-*: <a href="http://launchpad.net/gcc-linaro" target="_blank" rel="noopener"><strong>Linaro</strong></a> ARMv7 <strong>big-endian Linux GNU EABI HF</strong></li></ul></li></ul><h3 id="Compiler-concepts"><a href="#Compiler-concepts" class="headerlink" title="Compiler concepts"></a>Compiler concepts</h3><ul><li><a href="https://paper.dropbox.com/doc/V5PJzVrvEfJ275Wfj1Ilq" target="_blank" rel="noopener">Compiler的多元應用</a></li><li><a href="http://www.slideshare.net/jserv/jit-compiler" target="_blank" rel="noopener">Interpreter, Compiler, JIT from scratch</a><ul><li>Turing completeness: a system of data-manipulation rules can be used to simulate any single-taped <a href="https://en.wikipedia.org/wiki/Turing_machine" target="_blank" rel="noopener">Turing machine</a>.</li><li>Interpreter：本身是一個可執行檔案，工作就是翻譯并執行輸入的程式碼</li><li>compiler: compile source code to native machine code(ISA, ABI)<ul><li>實作方式是將原始碼翻譯成backend對應的assembly然後打印出來通過stdout存到一個文件(compiler-XX.c)，再用compiler編譯後執行(Makefile實現)</li><li>GAS(GNU Assembler) program format(AT&amp;T)</li></ul></li></ul></li></ul><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">char</span> *<span class="keyword">const</span> prologue = </span><br><span class="line"><span class="string">".text\n"</span> </span><br><span class="line"><span class="string">".global _main\n"</span> </span><br><span class="line"><span class="string">"main:\n"</span> </span><br><span class="line"><span class="string">"    pushq %rbp\n"</span> </span><br><span class="line"><span class="string">"    movq %rsp, %rbp\n"</span> </span><br><span class="line"><span class="string">"    pushq %r12\n"</span> <span class="comment">// store callee saved register </span></span><br><span class="line"><span class="string">"    subq $30008, %rsp\n"</span> <span class="comment">// allocate 30,008 B on stack, and realign </span></span><br><span class="line"><span class="string">"    leaq (%rsp), %rdi\n"</span> <span class="comment">// address of beginning of tape </span></span><br><span class="line"><span class="string">"    movl $0, %esi\n"</span> <span class="comment">// fill with 0's </span></span><br><span class="line"><span class="string">"    movq $30000, %rdx\n"</span> <span class="comment">// length 30,000 B </span></span><br><span class="line"><span class="string">"    call memset\n"</span> <span class="comment">// memset </span></span><br><span class="line"><span class="string">"    movq %rsp, %r12"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span> *<span class="keyword">const</span> epilogue =</span><br><span class="line"><span class="string">"    addq $30008, %rsp\n"</span> <span class="comment">// clean up tape from stack.</span></span><br><span class="line"><span class="string">"    popq %r12\n"</span> <span class="comment">// restore callee saved register</span></span><br><span class="line"><span class="string">"    popq %rbp\n"</span></span><br><span class="line"><span class="string">"    ret\n"</span>;</span><br></pre></td></tr></table></figure><ul><li><p>X64 Calling convention</p><ul><li><a href="http://pubs.opengroup.org/onlinepubs/007904875/basedefs/sys/mman.h.html" target="_blank" rel="noopener">sys/mman.h</a>: memory management declarations</li></ul></li></ul><p><img src="https://hzoa9g.bn.files.1drv.com/y4m8DdmNN2dLqOOOtkmEJYhy3Hd4IedX44C-x46ZwdMYH4SYQVv4otM6PDWfxrUqNynl-Q_PzAgE5-cR-S20pGryphoBCIvNfE7YAlj-XS1qz6DY34Pd6Y4lemP1d-4fIA2umx3YQZILsB8YT8INeyo8GxsnGrnr1nbflK6XIosKfpJyWcdjdw7kLK8VP2-ZoDeTJySTdqn0Ag2M57dYHT47Q?width=709&amp;height=940&amp;cropmode=none" alt></p><ul><li><p><a href="http://blog.linux.org.tw/~jserv/archives/2011/09/_mandelbrot_set.html" target="_blank" rel="noopener">Fractals in C</a></p><ul><li><p><a href="https://zh.wikipedia.org/wiki/Complex.h" target="_blank" rel="noopener">complex.h</a>: 提供了複數運算所需的巨集定義和函式申明</p></li><li><p>cimag: get imaginary part of a complex number</p></li><li><p>creal: get real part of a complex number</p></li><li><p><a href="http://www.wikihow.com/Plot-the-Mandelbrot-Set-By-Hand" target="_blank" rel="noopener">How to Plot the Mandelbrot Set By Hand</a></p></li></ul></li><li><a href="http://www.slideshare.net/jserv/vm-construct" target="_blank" rel="noopener">Virtual Machine Constructions for Dummies</a></li><li><a href="http://www.slideshare.net/jserv/how-a-compiler-works-gnu-toolchain" target="_blank" rel="noopener">How A Compiler Works: GNU Toolchain</a></li></ul><h3 id="Homework"><a href="#Homework" class="headerlink" title="Homework"></a>Homework</h3><h4 id="作業要求-B"><a href="#作業要求-B" class="headerlink" title="作業要求 (B)"></a>作業要求 (B)</h4><ul><li><p>難度：中</p></li><li><p>詳讀 <a href="http://www.slideshare.net/jserv/vm-construct" target="_blank" rel="noopener">Virtual Machine Constructions for Dummies</a>，改善 Brainf*ck 執行效能</p><ul><li>改善 JIT compiler，加入若干 optimization techniques</li></ul></li><li><p>在 GitHub 上 fork <a href="https://github.com/embedded2015/jit-construct" target="_blank" rel="noopener">jit-construct</a></p><ul><li>紀錄若干效能最佳化技巧帶來的提昇</li></ul></li><li><p>建立新的 Hackpad，列在「<a href="https://paper.dropbox.com/doc/cSnReWUgyLPcwiJ3uUIyo" target="_blank" rel="noopener">+作業區</a>」</p><ul><li>標注「開發紀錄(B)」</li></ul></li></ul><h4 id="Homework-note"><a href="#Homework-note" class="headerlink" title="Homework note"></a>Homework note</h4><ul><li><p>根據<a href="http://www.slideshare.net/jserv/vm-construct" target="_blank" rel="noopener">Virtual Machine Constructions for Dummies</a>P43-46中<strong>預先判斷未來指令-減少instructions</strong>的思路，在switch-case時對未來的指令做判斷，如果符合情況就做優化</p><ul><li>挑最簡單的Interpreter入手先@@</li><li>以Tower of Hanoi程式為例已先貼原始數據</li></ul></li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">origin version：</span><br><span class="line">real    0m30.031s         Towers of Hanoi in Brainf*ck</span><br><span class="line">user    0m30.024stten by Clifford Wolf &lt;http://www.clifford.at/bfcpu/&gt;</span><br><span class="line">sys     0m0.000s</span><br><span class="line"> </span><br><span class="line">optimal version：</span><br><span class="line">real    0m11.575s         Towers of Hanoi in Brainf*ck</span><br><span class="line">user    0m11.572stten by Clifford Wolf &lt;http://www.clifford.at/bfcpu/&gt;</span><br><span class="line">sys     0m0.000s</span><br></pre></td></tr></table></figure><ul><li>P47開始介紹了一些最佳化的技巧，并提供了參考的<a href="https://github.com/matslina/bfoptimization" target="_blank" rel="noopener">source code</a>。首先實作最佳化時，使用了IR(Intermediate language)，先將brainfuck程式轉換成IR程式，再將IR程式轉換成C程式</li></ul><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bf_to_ir</span><span class="params">(brainfuck)</span>:</span></span><br><span class="line">    <span class="string">"""Translates brainfuck to IR."""</span></span><br><span class="line"> </span><br><span class="line">    simplemap = &#123;<span class="string">'+'</span>: Add(<span class="number">1</span>, <span class="number">0</span>),</span><br><span class="line">                 <span class="string">'-'</span>: Sub(<span class="number">1</span>, <span class="number">0</span>),</span><br><span class="line">                 <span class="string">'&gt;'</span>: Right(<span class="number">1</span>),</span><br><span class="line">                 <span class="string">'&lt;'</span>: Left(<span class="number">1</span>),</span><br><span class="line">                 <span class="string">','</span>: In(<span class="number">0</span>),</span><br><span class="line">                 <span class="string">'.'</span>: Out(<span class="number">0</span>),</span><br><span class="line">                 <span class="string">'['</span>: Open(),</span><br><span class="line">                 <span class="string">']'</span>: Close()&#125;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">return</span> [simplemap[c] <span class="keyword">for</span> c <span class="keyword">in</span> brainfuck <span class="keyword">if</span> c <span class="keyword">in</span> simplemap]</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">ir_to_c</span><span class="params">(ir)</span>:</span></span><br><span class="line">    <span class="string">"""Translates IR into a C program."""</span></span><br><span class="line"> </span><br><span class="line">    plain = &#123;Add: <span class="string">'mem[p] += %(x)d;'</span>,</span><br><span class="line">             Sub: <span class="string">'mem[p] -= %(x)d;'</span>,</span><br><span class="line">             Right: <span class="string">'p += %(x)d;'</span>,</span><br><span class="line">             Left: <span class="string">'p -= %(x)d;'</span>,</span><br><span class="line">             Open: <span class="string">'while (mem[p]) &#123;'</span>,</span><br><span class="line">             Close: <span class="string">'&#125;'</span>,</span><br><span class="line">             In: <span class="string">'mem[p] = getchar();'</span>,</span><br><span class="line">             Out: <span class="string">'putchar(mem[p]);'</span>,</span><br><span class="line">             Clear: <span class="string">'mem[p] = 0;'</span>,</span><br><span class="line">             Copy: <span class="string">'mem[p+%(off)d] += mem[p];'</span>,</span><br><span class="line">             Mul: <span class="string">'mem[p+%(off)d] += mem[p] * %(factor)d;'</span>,</span><br><span class="line">             ScanLeft: <span class="string">'p -= (long)((void *)(mem + p) - memrchr(mem, 0, p+1));'</span>,</span><br><span class="line">             ScanRight: <span class="string">'p += (long)(memchr(mem+p, 0, sizeof(mem)) - (void *)(mem+p));'</span>&#125;</span><br><span class="line"> </span><br><span class="line">    woff = &#123;Add: <span class="string">'mem[p+%(offset)d] += %(x)d;'</span>,</span><br><span class="line">            Sub: <span class="string">'mem[p+%(offset)d] -= %(x)d;'</span>,</span><br><span class="line">            In: <span class="string">'mem[p+%(offset)d] = getchar();'</span>,</span><br><span class="line">            Out: <span class="string">'putchar(mem[p+%(offset)d]);'</span>,</span><br><span class="line">            Clear: <span class="string">'mem[p+%(offset)d] = 0;'</span>&#125;</span><br><span class="line"> </span><br><span class="line">    code = [(woff <span class="keyword">if</span> getattr(op, <span class="string">'offset'</span>, <span class="number">0</span>) <span class="keyword">else</span> plain)[op.__class__] % op._asdict()</span><br><span class="line">            <span class="keyword">for</span> op <span class="keyword">in</span> ir]</span><br><span class="line">    code.insert(<span class="number">0</span>, <span class="string">'\n'</span>.join([<span class="string">'#include &lt;stdio.h&gt;'</span>,</span><br><span class="line">                              <span class="string">'#include &lt;string.h&gt;'</span>,</span><br><span class="line">                              <span class="string">'unsigned char mem[65536];'</span>,</span><br><span class="line">                              <span class="string">'int main() &#123;'</span>,</span><br><span class="line">                              <span class="string">'int p=0;'</span>]))</span><br><span class="line">    code.append(<span class="string">'return 0;'</span>)</span><br><span class="line">    code.append(<span class="string">'&#125;'</span>)</span><br></pre></td></tr></table></figure><ul><li><p>實作IR的缺點是要轉換兩次，但好處更多：</p><ol><li>提供更為抽象的表示方式</li><li>將前端程式語言和後端的機器語言分離</li><li>(額外的)過濾原代碼：可以從bf_to_ir看到它只讀bf的6個指令，如果程式碼包含其他的無效代碼，這裡也會先被過濾掉</li></ol></li><li><p>最佳化的方法提到以下幾種：</p><ul><li>Contraction</li></ul><p><img src="https://hzoz9g.bn.files.1drv.com/y4mluI1HXU2J4HH1xAyJt9U4HJtzwDfjcuk_HbYQbn3EHmggHAt40q_lHZQBirNYpBKVJwz0TwxmYYDc2cD56w1WEZp4oawBwkUhzfVcevITPfl5V2IcHkZrRBHiPRSiiOHVF_cpNEYKHcDfZ6R_AVxUY-EPqv_4O41mpPGu8CB2TenzmhVX-jlubV3KkD-w9OEu4FH1CcuVoF17f6XQ3jXqw?width=542&amp;height=362&amp;cropmode=none" alt></p><ul><li>Clear loops</li></ul><p><img src="https://hzoy9g.bn.files.1drv.com/y4mJBRWtSKkkVclaBVPjeo12mbuZ38ASqqQ2e-tTwOxR3bHTR_OSgD80I3Ou1nPI7mwbwvD9MhFeHsLOleHyg8ogxc8Xa4K4uKYwVC8IQW8LwLstRrB7NCGKXSsKwhtxj0H4CfqW16M8mq6X6nBk6dCsQ9B-B0NRZhrRuzUzE96Dquoth4P8EBK_oYZ-I634lWfezuSgS-Z9MtYOOmdelJUGw?width=552&amp;height=423&amp;cropmode=none" alt></p><ul><li>Copy loops</li></ul><p><img src="https://hzox9g.bn.files.1drv.com/y4mgL1CuzWuctIeBpU2_i7UObrQ1lWJHQEXqrjLxEXdvA6ZkrYqNqdvmw-LCGkbtEMs2JdjDAD6HR_em9kwWYYqIb0geIEa-pg8v_g0-J8LF34QsdapAbpBL_jQX__Kcee1cGo7tm_kGrRSZ_BuMLGc-hlC9xwMLejCJVgSJxtAfJp9SYfMpTL31TIS2KG2gutcsds7PEoY4cfmU8ikKiZSQQ?width=547&amp;height=451&amp;cropmode=none" alt></p><ul><li>Multiplication loop</li></ul><p><img src="https://hzow9g.bn.files.1drv.com/y4mhPxgVVq8a4LFWupzsrgxTtAEwjfnMw4MiPh7Bhx4Oe8_eXHTG3GfQ_ZUF2PhKPlvVsZA-03O_O5rUXi7oGFiGsTh8WbgkLYosQecMCpFAQDE5caJI4jpxS-6ZOZegREeq7DbLSKmICPIZ1xBIOw09qHC9L8_hpniJAjiSMzQiVcVEoRIAz81U6oSlMSb9OJa8IccUafNagpKLOTXTM6ayA?width=548&amp;height=447&amp;cropmode=none" alt></p><ul><li>Operation offsets</li></ul><p><img src="https://hzov9g.bn.files.1drv.com/y4mWAkUb7LW648AKSnfKgI1uO9KKza9ytYv0uHe0tEbPemOAXYqg1yuA04b874ubZTbmgR0FpcljQBZydrFx7BpFE0wPsBWz2R3zBU3iiCLhXlR4Ry-4HWeNPyAFFjq28vlpa25namyUDidr0d6a5C7bSVr61bONaECrxAT2nq1GMxjtDBRhjEas1winiutKSfso2Povn8bS3DejM60l9JabQ?width=544&amp;height=465&amp;cropmode=none" alt></p><ul><li>Scan loops</li></ul><p><img src="https://hzoc9g.bn.files.1drv.com/y4m2Jh3C2yYNSXvUTHobz1XgSYJAMRSK_97hoepI7ayow50Adi80cxQr8hBpgbHFobAiJS4yj0NoLe99w2rd2cWR7McgbBveiXL29ordnavc0Rp-MlfNaQldHfRAahBiidmMvlrLq_AQJw8dG1eHpMUA9soz3DJ5usgDckzRlYVZLIDFPBUhylq7P9BKsG0E6MIUIZ3ZgNWyxlbDMxIS1w1ZQ?width=545&amp;height=624&amp;cropmode=none" alt></p></li></ul></div><div class="popular-posts-header">相关文章</div><ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><a href="/2019/lab-mini-arm-os/" rel="bookmark">上手一个具体而微的ARM操作系统</a></div></li><li class="popular-posts-item"><div class="popular-posts-title"><a href="/2019/am335x-arm-cortex-a8-boot-sequence/" rel="bookmark">解析AM335x Arm Cortex-A8处理器的启动流程</a></div></li><li class="popular-posts-item"><div class="popular-posts-title"><a href="/2020/lab-leetcode-practices/" rel="bookmark">LeetCode小练习</a></div></li><li class="popular-posts-item"><div class="popular-posts-title"><a href="/2020/lab-prefetch-intro/" rel="bookmark">Prefetcher小练习</a></div></li><li class="popular-posts-item"><div class="popular-posts-title"><a href="/2019/observe-stack-behavior-by-disassembling-a-simple-c-code/" rel="bookmark">小练习：通过反汇编一段C代码观察栈行为</a></div></li></ul><div><div id="reward-container"><div>Buy me a cup of coffee :)</div><button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">打赏</button><div id="qr" style="display:none"><div style="display:inline-block"><img src="/images/reward-wechat.jpg" alt="John Chou 微信支付"><p>微信支付</p></div><div style="display:inline-block"><img src="/images/reward-alipay.jpg" alt="John Chou 支付宝"><p>支付宝</p></div></div></div></div><div><ul class="post-copyright"><li class="post-copyright-author"><strong>本文作者： </strong>John Chou</li><li class="post-copyright-link"><strong>本文链接：</strong> <a href="https://blog.joouis.com/2020/lab-compiler-intro/" title="编译器入门小笔记">https://blog.joouis.com/2020/lab-compiler-intro/</a></li><li class="post-copyright-license"><strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nd/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-ND</a> 许可协议。转载请注明出处！</li></ul></div><footer class="post-footer"><div class="post-tags"><a href="/tags/embedded-system-course/" rel="tag"># embedded system course</a> <a href="/tags/embedded-system/" rel="tag"># embedded system</a> <a href="/tags/gnu/" rel="tag"># gnu</a> <a href="/tags/compiler/" rel="tag"># compiler</a> <a href="/tags/jit/" rel="tag"># jit</a></div><div class="post-nav"><div class="post-nav-next post-nav-item"><a href="/2019/lab-mini-arm-os/" rel="next" title="上手一个具体而微的ARM操作系统"><i class="fa fa-chevron-left"></i> 上手一个具体而微的ARM操作系统</a></div><span class="post-nav-divider"></span><div class="post-nav-prev post-nav-item"><a href="/2020/lab-prefetch-intro/" rel="prev" title="Prefetcher小练习">Prefetcher小练习 <i class="fa fa-chevron-right"></i></a></div></div></footer></div></article></div></div><div class="comments" id="comments"><div id="disqus_thread"><noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript></div></div></div><div class="sidebar-toggle"><div class="sidebar-toggle-line-wrap"><span class="sidebar-toggle-line sidebar-toggle-line-first"></span> <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span> <span class="sidebar-toggle-line sidebar-toggle-line-last"></span></div></div><aside id="sidebar" class="sidebar"><div class="sidebar-inner"><ul class="sidebar-nav motion-element"><li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">文章目录</li><li class="sidebar-nav-overview" data-target="site-overview-wrap">站点概览</li></ul><div class="site-overview-wrap sidebar-panel"><div class="site-overview"><div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person"><img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="John Chou"><p class="site-author-name" itemprop="name">John Chou</p><div class="site-description motion-element" itemprop="description">Stand high, think different.</div></div><nav class="site-state motion-element"><div class="site-state-item site-state-posts"><a href="/archives/"><span class="site-state-item-count">42</span> <span class="site-state-item-name">日志</span></a></div><div class="site-state-item site-state-categories"><a href="/categories/"><span class="site-state-item-count">6</span> <span class="site-state-item-name">分类</span></a></div><div class="site-state-item site-state-tags"><a href="/tags/"><span class="site-state-item-count">147</span> <span class="site-state-item-name">标签</span></a></div></nav><div class="feed-link motion-element"><a href="/atom.xml" rel="alternate"><i class="fa fa-rss"></i> RSS</a></div><div class="links-of-author motion-element"><span class="links-of-author-item"><a href="https://github.com/Joouis" title="GitHub &rarr; https://github.com/Joouis" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a> </span><span class="links-of-author-item"><a href="mailto:luckyjoou@gmail.com" title="E-Mail &rarr; mailto:luckyjoou@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i></a> </span><span class="links-of-author-item"><a href="https://www.instagram.com/Joouis" title="Instagram &rarr; https://www.instagram.com/Joouis" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i></a> </span><span class="links-of-author-item"><a href="http://www.slideshare.net/choujohn351" title="SlideShare &rarr; http://www.slideshare.net/choujohn351" rel="noopener" target="_blank"><i class="fa fa-fw fa-slideshare"></i></a></span></div><div class="cc-license motion-element" itemprop="license"><a href="https://creativecommons.org/licenses/by-nd/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nd.svg" alt="Creative Commons"></a></div></div></div><div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active"><div class="post-toc"><div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Week-5-课程"><span class="nav-number">1.</span> <span class="nav-text">Week#5 课程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Steve-Jobs-─-Lost-interview-1995"><span class="nav-number">1.1.</span> <span class="nav-text">Steve Jobs ─ Lost interview (1995)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GNU-Toolchain"><span class="nav-number">1.2.</span> <span class="nav-text">GNU Toolchain</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Compiler-concepts"><span class="nav-number">1.3.</span> <span class="nav-text">Compiler concepts</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Homework"><span class="nav-number">1.4.</span> <span class="nav-text">Homework</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#作業要求-B"><span class="nav-number">1.4.1.</span> <span class="nav-text">作業要求 (B)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Homework-note"><span class="nav-number">1.4.2.</span> <span class="nav-text">Homework note</span></a></li></ol></li></ol></li></ol></div></div></div></div></aside><div id="sidebar-dimmer"></div></div></main><footer id="footer" class="footer"><div class="footer-inner"><div class="copyright">&copy; 2016 – <span itemprop="copyrightYear">2020</span> <span class="with-love" id="animate"><i class="fa fa-heart"></i> </span><span class="author" itemprop="copyrightHolder">John Chou</span></div></div></footer><div class="back-to-top"><i class="fa fa-arrow-up"></i></div></div><script>"[object Function]"!==Object.prototype.toString.call(window.Promise)&&(window.Promise=null)</script><script src="//cdn.jsdelivr.net/npm/jquery@2/dist/jquery.min.js"></script><script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.min.js"></script><script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.ui.min.js"></script><script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script><script src="/js/utils.js?v=7.1.0"></script><script src="/js/motion.js?v=7.1.0"></script><script src="/js/schemes/muse.js?v=7.1.0"></script><script src="/js/scrollspy.js?v=7.1.0"></script><script src="/js/post-details.js?v=7.1.0"></script><script src="/js/next-boot.js?v=7.1.0"></script><script src="/js/js.cookie.js?v=7.1.0"></script><script src="/js/scroll-cookie.js?v=7.1.0"></script><script>var disqus_config=function(){this.page.url="https://blog.joouis.com/2020/lab-compiler-intro/",this.page.identifier="2020/lab-compiler-intro/",this.page.title="编译器入门小笔记"};function loadComments(){var t=document,e=t.createElement("script");e.src="https://joou.disqus.com/embed.js",e.setAttribute("data-timestamp",""+ +new Date),(t.head||t.body).appendChild(e)}loadComments()</script><script>// Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });</script><script>!function(){var t=document.createElement("script"),e=window.location.protocol.split(":")[0];t.src="https"===e?"https://zz.bdstatic.com/linksubmit/push.js":"http://push.zhanzhang.baidu.com/push.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(t,s)}()</script><script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script><script>pangu.spacingPage()</script><script>$(".highlight").each(function(t,e){var n=$("<div>").addClass("highlight-wrap");$(e).after(n),n.append($("<button>").addClass("copy-btn").append("复制").on("click",function(t){var e=$(this).parent().find(".code").find(".line").map(function(t,e){return $(e).text()}).toArray().join("\n"),n=document.createElement("textarea"),o=window.pageYOffset||document.documentElement.scrollTop;n.style.top=o+"px",n.style.position="absolute",n.style.opacity="0",n.readOnly=!0,n.value=e,document.body.appendChild(n),n.select(),n.setSelectionRange(0,e.length),n.readOnly=!1,document.execCommand("copy")?$(this).text("复制成功"):$(this).text("复制失败"),n.blur(),$(this).blur()})).on("mouseleave",function(t){var e=$(this).find(".copy-btn");setTimeout(function(){e.text("复制")},300)}).append(e)})</script></body></html>
