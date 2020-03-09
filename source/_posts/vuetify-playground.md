@@ -1,5 +1,5 @@
 ---
-title: Vuetify Playground - A playground to try all UI components of Vuetify.js at once
+title: Vuetify Playground - A responsive playground to try all UI components at once
 date: 2020-03-01 23:16:54
 updated: 2020-03-01 23:16:54
 categories:
@@ -11,6 +11,7 @@ tags:
 - vuetify
 - vuetifyjs
 - mobile
+- responsive
 - demo
 ---
 
