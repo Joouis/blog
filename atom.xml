@@ -17,7 +17,7 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Vuetify Playground - A playground to try all UI components of Vuetify.js at once</title>
+    <title>Vuetify Playground - A responsive playground to try all UI components at once</title>
     <link href="https://blog.joouis.com/2020/03/01/vuetify-playground/"/>
     <id>https://blog.joouis.com/2020/03/01/vuetify-playground/</id>
     <published>2020-03-01T15:16:54.000Z</published>
@@ -38,6 +38,8 @@
     
     
       <category term="mobile" scheme="https://blog.joouis.com/tags/mobile/"/>
+    
+      <category term="responsive" scheme="https://blog.joouis.com/tags/responsive/"/>
     
       <category term="vuetify playground" scheme="https://blog.joouis.com/tags/vuetify-playground/"/>
     
