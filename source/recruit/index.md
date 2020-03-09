@@ -81,7 +81,7 @@ date: 2019-04-20 01:01:00
 
 
 
-### 2019.3.6
+### 2019.3.9
 
 | Product             | Sub Team Focus                                               | Role               | City           | Years of  Experience | English        |
 | ------------------- | ------------------------------------------------------------ | ------------------ | -------------- | -------------------- | -------------- |
@@ -140,8 +140,6 @@ date: 2019-04-20 01:01:00
 | EMM                 | C#, Java, TypeScript, C++, or any  other object-oriented programming languages | DEV                | Suzhou         | 5Y+                  | middle         |
 | MMX                 | Mobile App for Edge (Android/iOS)                            | Dev                | Suzhou         | 5Y+                  | Low            |
 | Cortana             | MSAI-Microsoft Search assistant  Intelligence, Provide some AI experience in M365 product | PM                 | Suzhou         | 5Y+                  | Strong         |
-| STCA                | AI Platform (Front-end)                                      | Dev                | Beijing/Suzhou | 1Y+                  | Low            |
-| STCA                | Technical PM, and To B, or AI or open  source                | PM                 | Beijing        | 5Y+                  | Strong         |
 | Bing                | Area IT Manager                                              | IT Manager         | Beijing        | 10Y+                 | Strong         |
 | Bing                |                                                              | Designer           | Beijing/Suzhou | 5Y+                  | Strong         |
 | Bing                | Carina                                                       | Dev                | Beijing/Suzhou | 3Y+                  | Low            |
