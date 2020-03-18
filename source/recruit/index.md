@@ -131,7 +131,7 @@ date: 2019-04-20 01:01:00
 | AIR          |                                                              | Designer             | Suzhou   | 3Y+                  | Strong         |
 | AIR          | Bing  platform, large scale distributed system               | Dev                  | Beijing  | 5Y+                  | Low            |
 | AIR          | AI framework                                                 | Dev                  | Beijing  | 5Y+                  | Low            |
-|              | MSRA-system/networking/data  mining                          | Researcher/RSDE      | Beijing  | 10Y+                 | Low            |
+| AIR          | MSRA-system/networking/data  mining                          | Researcher/RSDE      | Beijing  | 10Y+                 | Low            |
 
 
 
