@@ -120,7 +120,7 @@ It includes:
 
 2. 每次都輸入一堆必備的指令很麻煩，可以寫入一個 `gdb.script` 檔案裏，例如：
 
-```
+```shell
 target remote:4242
 file stm32f429-example.elf
 layout src
