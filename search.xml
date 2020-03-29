@@ -14,7 +14,6 @@
         <tag>disassembly</tag>
         <tag>binary</tag>
         <tag>defusing binary bomb</tag>
-        <tag>assembly</tag>
       </tags>
   </entry>
   <entry>
@@ -142,8 +141,8 @@
       </categories>
       <tags>
         <tag>embedded system course</tag>
-        <tag>stack</tag>
         <tag>assembly</tag>
+        <tag>stack</tag>
         <tag>disassemble</tag>
         <tag>c</tag>
         <tag>gcc</tag>
@@ -511,8 +510,8 @@
       </categories>
       <tags>
         <tag>javascript</tag>
-        <tag>optimization</tag>
         <tag>react</tag>
+        <tag>optimization</tag>
         <tag>counter</tag>
       </tags>
   </entry>
