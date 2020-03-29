@@ -633,7 +633,7 @@
 <li><p>每次都輸入一堆必備的指令很麻煩，可以寫入一個 <code>gdb.script</code> 檔案裏，例如：</p>
 </li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">target remote:4242</span><br><span class="line">file stm32f429-example.elf</span><br><span class="line">layout src</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">target remote:4242</span><br><span class="line">file stm32f429-example.elf</span><br><span class="line">layout src</span><br></pre></td></tr></table></figure>
 <p>然後使用 <code>arm-none-eabi-gdb -x gdb.script</code> 進入後，單步執行即可。</p>
 <ul>
 <li>記得先打開 <code>st-util</code>；</li>
