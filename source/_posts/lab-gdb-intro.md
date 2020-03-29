@@ -21,39 +21,38 @@ tags:
 
 ## 使用GDB
 
-#### GDB
+### GDB
 
-- b <function name> *<address>：設置斷點
-- d <breakpoint num>：刪除斷點
-- c：繼續執行，到下一個斷點處（或運行結束）
-- n：單步跟蹤程序，當遇到函數調用時，也不會進入函數內（針對src）
-- s：單步調試，如果有函數調用，則進入函數（針對src）
-- si：同s（針對asm）
-- ni：同n（針對asm）
-- p /x $r0：以16進制格式打印寄存器r0的值
-- x/s <address>：以字串方式打印出地址所指向的內容
-- layout asm/src：會顯示出當前正在執行的asm/src代碼段（這樣就不用看objdump -D啦）
-- layout split：同時顯示當前執行的原始碼和組語
-- layout regs：會以10進制和16進制方式顯示寄存器的值，包含r0-r12、sp、lr、pc、cpsr（這樣就可以不用p了）
-- winheight name +/- count：調整 TUI 窗口大小，例如 winheight src -5 代表 TUI 窗口減少 5 行代碼
-- info stack/variables/...
-- info files: 超好用的一招
+- `b [function name] *[address]`：設置斷點
+- `d [breakpoint num]`：刪除斷點
+- `c`：繼續執行，到下一個斷點處（或運行結束）
+- `n`：單步跟蹤程序，當遇到函數調用時，也不會進入函數內（針對src）
+- `s`：單步調試，如果有函數調用，則進入函數（針對src）
+- `si`：同s（針對asm）
+- `ni`：同n（針對asm）
+- `p /x $r0`：以16進制格式打印寄存器r0的值
+- `x/s [address]`：以字串方式打印出地址所指向的內容
+- `layout asm/src`：會顯示出當前正在執行的asm/src代碼段（這樣就不用看objdump -D啦）
+- `layout split`：同時顯示當前執行的原始碼和組語
+- `layout regs`：會以10進制和16進制方式顯示寄存器的值，包含r0-r12、sp、lr、pc、cpsr（這樣就可以不用p了）
+- `winheight name +/- count`：調整 TUI 窗口大小，例如 winheight src -5 代表 TUI 窗口減少 5 行代碼
+- `info stack/variables/files/...`
 - REF:
   - http://linuxtools-rst.readthedocs.org/zh_CN/latest/tool/gdb.html
   - TUI-specific Commands](https://sourceware.org/gdb/onlinedocs/gdb/TUI-Commands.html)
 
 ### CGDB
 
-- **安裝**：`sudo apt-get install cgdb`
-- 官方手冊：[CGDB Manual 0.6.6](http://cgdb.sourceforge.net/docs/cgdb-no-split.html) （请查看最新的手册：[CGDB Manual 0.7.1](https://cgdb.github.io/docs/cgdb.html)）
-- 相比 GDB 無需用 layout 調出 TUI，CGDB 會自動顯示出來，source window 和 GDB command window 切換方式和 VI 相同，**使用 i 和 Esc**。
+- 安裝：`sudo apt-get install cgdb`
+- 官方手冊：[CGDB Manual 0.6.6](http://cgdb.sourceforge.net/docs/cgdb-no-split.html) （**请查看手册最新版本**：[CGDB Manual 0.7.1](https://cgdb.github.io/docs/cgdb.html)）
+- 相比 GDB 無需用 layout 調出 TUI，CGDB 會自動顯示出來，source window 和 GDB command window 切換方式和 VI 相同，使用 i 和 Esc。
 - 新增及移除 break point 方法，直接在 source window 裏移動到想要新增/移除的位置，使用 space 鍵就可以了。
 - **使用 cross compiler 方法**：`cgdb -d arm-none-eabi-gdb -x "gdb.script"`
-- Source window 類似 VI 界面，常見的冒號設定、/ 查詢等都可以使用，具體參考 [CGDB configuration commands](http://cgdb.sourceforge.net/docs/cgdb.html/Configuring-CGDB.html#Configuring-CGDB)
-- 使用 o 可以選擇要顯示的檔案源碼，超潮der
+- Source window 類似 VI 界面，常見的 `:` 設定、`/` 查詢等都可以使用，具體參考 [CGDB configuration commands](http://cgdb.sourceforge.net/docs/cgdb.html/Configuring-CGDB.html#Configuring-CGDB)
+- 使用 `o` 可以選擇要顯示的檔案源碼，超潮der
 - **注意**：
   - 當前代碼行的行數會是粗體，不過不太明顯，用 space 敲敲看就知道在哪一行了
-  - 相比 GDB，記得在 CGDB 裏不要 layout 指令！會產生一堆亂碼死掉@@
+  - 相比 GDB，記得在 CGDB 裏不要 `layout` 指令！會產生一堆亂碼死掉@@
 
 ### 可視化除錯工具
 
@@ -74,9 +73,9 @@ tags:
 ### Installing STLINK
 
 - Dependencies
-  - libusb-1.0
-  - pkg-config
-  - autotools
+  - `libusb-1.0`
+  - `pkg-config`
+  - `autotools`
 - Install stlink
 
 ```shell
@@ -88,7 +87,7 @@ make
 make install
 ```
 
-In includes:
+It includes:
 
 - A communication library (stlink.git/libstlink.a).
 - A GDB server (stlink.git/st-util).
@@ -102,7 +101,7 @@ In includes:
 - Then, GDB can be used to interact with the kit:
   - `arm-none-eabi-gdb XXX.elf`
 - From GDB, connect to the server using:
-  - `(gdb) target extended localhost : 4242`
+  - `(gdb) target extended localhost: 4242`
   - `(gdb) load`
   - `(gdb) continue`
 
@@ -127,13 +126,13 @@ file stm32f429-example.elf
 layout src
 ```
 
-然後使用 arm-none-eabi-gdb -x gdb.script 進入後，單步執行即可。
-- 記得先打開 st-util；
-- 個人習慣把arm-none-eabi-gdb -x gdb.script寫進 `Makefile` 裏。
+然後使用 `arm-none-eabi-gdb -x gdb.script` 進入後，單步執行即可。
+- 記得先打開 `st-util`；
+- 個人習慣把 `arm-none-eabi-gdb -x gdb.script` 寫進 `Makefile` 裏。
 
 
 
-## Lab43: Runtime Behavior through defusing a binary bomb
+## Defusing a binary bomb
 
 ### [Lab43: Runtime Behavior](http://wiki.csie.ncku.edu.tw/embedded/Lab43)
 
@@ -149,7 +148,7 @@ layout src
 
 - 可以看到程式是用 `r0` 和 `r1` 作比較，`r0` 是我們輸入的值，`r1` 就是我們要猜的值，這裏已經告訴我們是 `help` 了
 
-- 用 `si` 執行到 `0x87ee` ，可以看到 `r0` 和 ` r1` 的值：
+- 用 `si` 執行到 0x87ee ，可以看到 `r0` 和 ` r1` 的值：
 
   ![](https://g8xgua.bn.files.1drv.com/y4mPoBctTovg6J0yvhXhtffMfAPecqUB0wg5NJ-TYuE67eCPc5pFngsB3YWObYbw43_WCi__xFFjIXMMUfVCTjDQ3LB6WldJeVVdl2GgzHvk4e1NfiWyWz8eGqvKqxMx1Q3DrNTZSsd33h6aalvSdyIOxcohH8GQd7F3Ibi-5khQgNfOWTshN_lITEZAtALGyuedC96KqrLIVX3UkXz3I2kHQ)
 
@@ -185,13 +184,13 @@ layout src
     ```shell
     a=2;i=0;
     do {
-    	a+=1;
-    	i++;
+      a+=1;
+      i++;
     } while (i<=9);
     ```
   
-  - 意外但肯定不是巧合地發現，之前輸入的四個數分別存在 `r7+12` `r7+16 `r7+20` `r7+24` 裏（其實使用 `x/s $r7+n` 試出來的）
-  - 所以輸入的第二個數（上述代碼中的a）在迴圈後會增加10
+  - 意外但肯定不是巧合地發現，之前輸入的四個數分別存在 `r7+12` `r7+16` `r7+20` `r7+24` 裏（其實是用 `x/s $r7+n` 試出來的）
+  - 所以輸入的第二個數（上述代碼中的 `a`）在迴圈後會增加10
   - 而函數最後對比的是 `r7+16` 和 `r7+20`，需要他們相等，故輸入時第三個數減第二個數要等於10
   - 測試果然過關~
   
@@ -208,19 +207,25 @@ layout src
   ![](https://gsxkua.bn.files.1drv.com/y4mORvlx72p5_6PDiPtzxSy6__pPrJOV9I_XeiIvDjBtYjCurQUXhRT9cL9aDS5mbRp5QvYZr97fs0nj-iZi2qPHZQjcM-fqoTYnzySfukulgpJjwKwoWkVtf7ccjYof9yes3l7wlgijIsvN9Y0A1Q7Ly9o6-Q1ObfIc99nb1XVTohiBIOZm608wg6p7n8iSsTWyq4SAsPxYh6vjWAHjcdkOw)
 
 - `r3` 會先取出輸入的第一個數，和 40 做對比，這裏我輸入的 1，因此會繼續往下走
+
 - 接着把給輸入的第二個數、第三個數的值賦給 `r2`  `r3`，然後 `r3=r3+r2` ，再把 `r3` 的值存回 `[r7,#16]`
+
 - 然後把 `r2` 的值設爲 `[r7,#16]`，再把 `r3` 的值還原回初始的第三個數的值，對比他們相不相等
+
   - 即要使得 `r3=r2+r3`，所以在第一個數不爲 40 的情況下，第二個數和第三個數都只能是 0
-  - 那如果第一個數等於 40，則 `r2 `r3` 相等即可
+  - 那如果第一個數等於 40，則 `r2` `r3` 相等即可
+
 - 試驗一下
+
   - 當第一個數不爲40時，正確
 
     ![](https://g8xkua.bn.files.1drv.com/y4mNjNKy3ObTQ3OziMqXlvoF7pyUzotNvDaaFyvIY3z_wIogyPhn1NLmB5T4xbph1UQ6Bd9PCPwRQF1onforUpnrNKLiBkYmZvIoXkFYeCPg1hDR2sCv_3P370mUy4ma7qfXu5uuqXixeoKQmiYfQ3cXnndVZ4oeBE9efulUvF2wM-UwjVPSNRgKCQFsVQPctP4SYfxWgwXmW7iUS4D0K091A)
-  
+
   - 當第一個數爲40時，正確
-  
+
     ![](https://g8xmua.bn.files.1drv.com/y4m3Pqfq-DHHyNIvsjgTb7k2BlfrkbLEiwsu3UM3A3iTmqsb0GNqbiOQP_1fgZvrv8KfjwPhNHgXta8PCLrw_19zBsArIwvR_dh_PlcwEoIeo7P1cHSa5TfeBcTz0M9AUBHhEnFbShVas3u4yd6XpNfxTcaMbZdc5p5waVlkUk_gTK_Vyk-qGXfdu5Xzn26_qzgMuTXnJN4ink2FKuq4ZGn9g)
-  
+
+
 ### Phase 4: Iteration
 
 - 與階段2、3同理，得知輸入爲一個整數
@@ -242,26 +247,4 @@ layout src
 - 所以相當於輸入的數字 n，可以滿足 2 的 n 次方爲 1024，即是正確答案，真相如下：
 
   ![](https://gsxhua.bn.files.1drv.com/y4mruackLegsDWFfF6teCuu9RUKNLp1pLHIecfDS5MdIW53DktomQZTUc63fegiDpsIwu46Gj-2u15MvQfPpEJeu9Xy3x2Kbqx3JetweFkeAwW_2AjGgIOTq8FamG56Cw_aQnubjySwTBN6MZxSb_vB66kWfnvaRCbn-E2hyYsTciL8MW1aGxif2yUQSMN6325r40UUBrelZk34NdwAYere7w)
-
-### Phase 5
-
-- 同理，`x/s $r1` 得到 `"%s %d"` 輸入需要是一個字符和一個數字
-
-- 接下來的代碼：
-
-  ![](https://gsxfua.bn.files.1drv.com/y4mcn7nypfliXVNjc8iYFtrA3HxM269gycyXygKaBVRDlVRJZCQPtPV6cpex4OjLIrNIC2uRbHf5xet8SyU3te11VzEbFHdr5SXK0MzGtAHlG0leb-y_2PUjthuhzIFsxzLI5jHKdG4qWABOebzbllMwNInR-txskR8yb-7anjYbL2ijEW40JcGGtgSzmkn6JdkhbPdyr8dqCSYSNDnNCBWCQ)
-
-  - `si` 往下走但是寄存器都沒有改變，證明 0x106e6-0x106ea 都沒有執行
-  - ` r3` 爲輸入的字符，要讓 `r3` 的 ASCII 碼等於 120，然後循環 3次使 `r1` 的值加到 3，所以輸入的第一個字符是 x
-  - 然後會把 `r2` 的第二位做判斷，所以還需要有字符，不然 `r1` 就只加了一次。跳回 `r3` 與 120 做判斷，是爲了讓 `r1` 再加。因此第一個字符串的答案是“xxx”。
-
-- 再接下來的代碼：
-
-  ![](https://gsxgua.bn.files.1drv.com/y4m-ckOvbP8DY62HbEywdl3moHXPM-hzfokte26XpzqAhngmhlHnBWFW7p6_fNyEj_AFn425x0smmj_4kbsafQ3DnKI9h_G4BzqemuTiZ3qPlpydxvnWRFo2WKSFuutv7yL4XGHRIEwhUmHPQSoV30rURWTzLwDxTe87lax4IdUk3oJE8B6T-6XVNrfiun_16kJ95xbqT4RoGzVXFmepMH-pw)
-
-  - SMULL：*SMULL* *RdLo*, *RdHi*, *Rm*, *Rs*
-  - The SMULL instruction interprets the values from *Rm* and *Rs* as two’s complement signed integers. It multiplies these integers and places the least significant 32 bits of the result in *RdLo*, and the most significant 32 bits of the result in *RdHi*.
-  - **movw** followed by a **movt** is a common way to load a 32-bit value into a register. It's the equivalent of OR-ing those two immediate values together, with the movt being the upper 16-bit.
-  - **ASR**(Arithmetic shift right) by *n* bits moves the left-hand 32-*n* bits of the register *Rm*, to the right by *n* places, into the right-hand 32-*n* bits of the result, and it copies the original bit[31] of the register into the left-hand *n* bits of the result. See [Figure 3.1](http://infocenter.arm.com/help/topic/com.arm.doc.dui0497a/CIHDDCIF.html#CIHFBGJH).
-  - cmpls: ls--->lower or same
 
