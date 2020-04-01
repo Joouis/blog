@@ -58,6 +58,6 @@ tags:
 
 {% video "https://cdnhk.blob.core.windows.net/blog/EVGUI Demo.mp4" %}
 
-最后值得说明是这篇论文的思路来自我的指导教授 Jserv，之前的博文中也提到过这位大牛。他是“大脑”，而我只是执行者。现在偶尔仍能回忆起晚上去找他调试代码到一两点的日子，嵌入式开发的代码量不大，解决一个问题可能只需要编写或修改几行到数十行代码，但这背后的 know how 往往需要花费数日乃至数周的时间。此外也要感谢自己一直以来都很开明的直系教授同意我做一个和他研究方向毫不相干的题目，以及帮我设计用于演示的清爽 UI 界面的设计系学妹小蔚同学。
+最后值得说明是这篇论文的思路来自我的指导教授 Jserv，之前的博文中也提到过这位大牛。他是“大脑”，而我只是执行者。现在偶尔仍能回忆起晚上去找他调试代码到一两点的日子，嵌入式开发的代码量不大，解决一个问题可能只需要编写或修改几行到数十行代码，但这背后的 know how 往往需要花费数日乃至数周的时间。此外也要感谢自己一直以来都很开明的直系教授同意我做一个和他研究方向毫不相干的题目，以及帮我设计用于演示的清爽 UI 界面的设计系学妹 Vivian 同学 😊。
 
 ![](https://hmxeua.bn.files.1drv.com/y4mb_qFTtVYHbBZlRvN35TJRDKavuir8vDheXQXGiFgXGLA318wiXhyGUOl8QKJx2S5BTEkIagzaduF82j8mpH_Oy5jrs6z8BfE6KBcMVlR_ggdmqBNFYiUAzw21WZobxb3Jxg_1U1_b1wSlQCPKMJgJzffwRRgCBZv6PzlME_Aexp6tB-SkBx0FQgTmQAkqMmWoAkJXQLUyeoh7B3KVL9KHQ?width=2780&height=1542&cropmode=none)
