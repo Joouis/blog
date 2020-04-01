@@ -81,6 +81,25 @@ date: 2019-04-20 01:01:00
 
 
 
+### 2020.4.1
+
+这不是愚人节的恶作剧哈，无锡、上海（无锡为主）新增一批CSS技术支持职位，欢迎英文好、有云端支持背景的朋友们来聊~
+
+| Title                       | Product                       | Location             |
+| --------------------------- | ----------------------------- | -------------------- |
+| Support Engineer            | Azure Networking              | Wuxi/Shanghai        |
+| Support Escalation Engineer | Kubernetes                    | Wuxi/Shanghai        |
+| Support Engineer            | Azure VM                      | Wuxi/Shanghai        |
+| Support Engineer            | Azure Stack                   | Shanghai             |
+| Support Escalation Engineer | Azure Dev                     | Wuxi/Shanghai        |
+| Support Escalation Engineer | Azure Rapid Response          | Wuxi/Shanghai        |
+| Support Escalation Engineer | Azure WebApp                  | Wuxi/Shanghai        |
+| Support Engineer            | Azure Subscription Management | Wuxi/Shanghai/Taipei |
+| Support Escalation Engineer | Azure Event Management        | Wuxi/Shanghai        |
+| Support Escalation Engineer | High Performance Computing    | Wuxi/Shanghai/Taipei |
+
+
+
 ### 2020.3.27
 
 不好意思我将**暂停校招内推一段时间**。从去年秋招到昨天为止陆续内推了超过百位学弟妹，有不少已经拿到了正式或实习的 offer，为你们感到开心！
