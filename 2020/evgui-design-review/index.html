@@ -549,6 +549,7 @@
 <p>论文主题非常工程化，不过一点一滴都是自己从头搭建起来的，同时完全拥抱开源，甚至像开发环境也是在 Linux 上写 MAKEFILE、LD Script 等去实现过去 Keil IDE 已经帮开发者做好的事情。因此回顾这个项目时，点滴细节不断在脑海里涌现，品味之下令我获得极大的满足感。</p>
 <p>希望也能与你分享这份因技术而生的快乐！</p>
 <a id="more"></a>
+<p><br></p>
 <p>我的论文旨在为低端嵌入式设备设计一个高性能的向量图形系统，名为 EVGUI（Embedded Vector GUI），其最大价值或者说主要应用场景是在 IoT 设备的产品原型阶段帮助研发团队进行概念验证（Proof of Concept, POC），和工业领域的快速成型（Rapid prototyping）是类似的概念。下面我会用通俗易懂的话来解释这个图形库（希望）解决了什么问题。</p>
 <p>在嵌入式电子产品的 GUI 开发流程中，通常设计师先基于产品显示设备的尺寸设计 GUI 界面，接着由嵌入式工程师对照设计稿将一个个像素点码出来，然后大家再评估、修正。由于使用底层语言开发的效率不高（相比客户端 APP、网页应用），因此在项目前期如 POC 阶段怎么提升研发效率便成了关键问题，毕竟一寸光阴一寸金呐。</p>
 <p>我的论文思路是找到一个共同的表达层，既可以描述设计师的设计，也可以描述嵌入式设备显示的画面。这个表达层需要使用领域特定语言（Domain-specific Language, DSL）实现描述功能，其实没你想的那么复杂，HTML 就是一种 DSL。我也没搞什么发明创造，选择了 SVG 这种向量语言，它除了是一种图形格式外，更重要的一点特性是矢量图，这意味着它天然适配不同分辨率的屏幕设备，所见即所得在快速成型阶段的价值就体现出来了。因此基于这样一个向量图形库，设计师可以直接将设计稿转成SVG格式给嵌入式工程师，后者可以很方便地在基于 ARM Cortex-M4 微控制器等级的硬件上将设计稿渲染出来。</p>
@@ -571,7 +572,7 @@
 
 <p><br></p>
 <p>最后需要说明是这篇论文的思路来自我的指导教授 Jserv，在之前的博文中也曾反复提到过这位大牛。他是“大脑”，而我是执行者。现在偶尔仍能回忆起很多找他调试代码到深夜的日子，嵌入式开发的代码量不大，解决一个问题可能只需要编写或修改几行到数十行代码，但这背后的 know how 往往需要花费数日乃至数周的时间。</p>
-<p>此外也要感谢我的一直以来都很开明的直系教授同意我做这样一个与他研究方向毫不相干的题目，以及友情帮助设计这个清爽演示 GUI 的设计系学妹 <a href="https://www.zhihu.com/people/vivianvivi" target="_blank" rel="noopener">@Vivian</a> 同学 😊。</p>
+<p>同时也要感谢我的一直以来都很开明的直系教授同意我做这样一个与他研究方向毫不相干的题目，以及友情帮助设计这个清爽演示 GUI 的设计系学妹 <a href="https://www.zhihu.com/people/vivianvivi" target="_blank" rel="noopener">@Vivian</a> 同学 😊。</p>
 <p><img src="https://hmxeua.bn.files.1drv.com/y4mb_qFTtVYHbBZlRvN35TJRDKavuir8vDheXQXGiFgXGLA318wiXhyGUOl8QKJx2S5BTEkIagzaduF82j8mpH_Oy5jrs6z8BfE6KBcMVlR_ggdmqBNFYiUAzw21WZobxb3Jxg_1U1_b1wSlQCPKMJgJzffwRRgCBZv6PzlME_Aexp6tB-SkBx0FQgTmQAkqMmWoAkJXQLUyeoh7B3KVL9KHQ?width=2780&amp;height=1542&amp;cropmode=none" alt></p>
 
       
