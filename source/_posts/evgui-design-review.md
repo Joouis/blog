@@ -28,6 +28,8 @@ tags:
 
 
 
+<br />
+
 我的论文旨在为低端嵌入式设备设计一个高性能的向量图形系统，名为 EVGUI（Embedded Vector GUI），其最大价值或者说主要应用场景是在 IoT 设备的产品原型阶段帮助研发团队进行概念验证（Proof of Concept, POC），和工业领域的快速成型（Rapid prototyping）是类似的概念。下面我会用通俗易懂的话来解释这个图形库（希望）解决了什么问题。
 
 在嵌入式电子产品的 GUI 开发流程中，通常设计师先基于产品显示设备的尺寸设计 GUI 界面，接着由嵌入式工程师对照设计稿将一个个像素点码出来，然后大家再评估、修正。由于使用底层语言开发的效率不高（相比客户端 APP、网页应用），因此在项目前期如 POC 阶段怎么提升研发效率便成了关键问题，毕竟一寸光阴一寸金呐。
@@ -72,6 +74,6 @@ tags:
 
 最后需要说明是这篇论文的思路来自我的指导教授 Jserv，在之前的博文中也曾反复提到过这位大牛。他是“大脑”，而我是执行者。现在偶尔仍能回忆起很多找他调试代码到深夜的日子，嵌入式开发的代码量不大，解决一个问题可能只需要编写或修改几行到数十行代码，但这背后的 know how 往往需要花费数日乃至数周的时间。
 
-此外也要感谢我的一直以来都很开明的直系教授同意我做这样一个与他研究方向毫不相干的题目，以及友情帮助设计这个清爽演示 GUI 的设计系学妹 [@Vivian](https://www.zhihu.com/people/vivianvivi) 同学 😊。
+同时也要感谢我的一直以来都很开明的直系教授同意我做这样一个与他研究方向毫不相干的题目，以及友情帮助设计这个清爽演示 GUI 的设计系学妹 [@Vivian](https://www.zhihu.com/people/vivianvivi) 同学 😊。
 
 ![](https://hmxeua.bn.files.1drv.com/y4mb_qFTtVYHbBZlRvN35TJRDKavuir8vDheXQXGiFgXGLA318wiXhyGUOl8QKJx2S5BTEkIagzaduF82j8mpH_Oy5jrs6z8BfE6KBcMVlR_ggdmqBNFYiUAzw21WZobxb3Jxg_1U1_b1wSlQCPKMJgJzffwRRgCBZv6PzlME_Aexp6tB-SkBx0FQgTmQAkqMmWoAkJXQLUyeoh7B3KVL9KHQ?width=2780&height=1542&cropmode=none)
