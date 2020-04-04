@@ -10,10 +10,11 @@ tags:
 - gui
 - twin
 - window system
-- linked list
 - rapid prototyping
 - svg
 - wearable devices
+- µGUI
+- STM32
 ---
 
 研究生时期的嵌入式课程笔记整理告一段落，还剩一点硕士论文相关的笔记有待整理。这几篇笔记记录了论文以外的东西，主要是实验过程中的部分源码分析与问题思考，还能保留至今已是幸事（如前文所叙，同样有不少笔记、文章随着 Dropbox 的自动迁移丢失了😭）！
