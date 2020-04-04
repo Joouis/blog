@@ -1,0 +1,1982 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+  
+  
+    
+      
+    
+    
+      
+    
+  <script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.css">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+
+
+
+
+
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/hacker.ico?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/hacker.ico?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/hacker.ico?v=7.1.0">
+
+
+  <link rel="mask-icon" href="/images/hacker.ico?v=7.1.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.1.0',
+    sidebar: {"position":"left","display":"hide","offset":12,"onmobile":true,"dimmer":true},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: true,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+<meta name="baidu-site-verification" content="ChOTP1bKoM">
+
+
+  <meta name="description" content="这是我的硕士论文笔记系列第二篇，原文写于 2016 年五月。">
+<meta name="keywords" content="embedded system,svg,svg tiny,libsvgtiny,vector,gui,twin,window system,cairo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SVG Tiny 与 Libsvgtiny">
+<meta property="og:url" content="https://blog.joouis.com/2020/evgui-svgtiny/index.html">
+<meta property="og:site_name" content="江边的旱鸭子">
+<meta property="og:description" content="这是我的硕士论文笔记系列第二篇，原文写于 2016 年五月。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://hsxmua.bn.files.1drv.com/y4mVRHjbTq_FPN7KNhj_jr2kI0RAnFIITSM-Vej1v_8G7k-UM9X2lplZzlzjzQNZhkDvYFvwU_AVbsyaXs9CHOt8bppajump_Kx-0kN09oDRfxIYFqysnIGHYlxwQEswug05hUwk4gBh7zRvcyRaWJR042NWlwLAWsEAmfYORmM3As5J5yjaJFh79LzhYMJDxNvvfaOgp3CjAgIN__H-fwmog?width=1912&height=451&cropmode=none">
+<meta property="og:image" content="https://hcxeua.bn.files.1drv.com/y4ml_N8t3aeOuTjDC1r8xBq_ywDJORW3FQy3j_6sqxWW-SvMfaZ589WXZsvsIxQbv7cxclTzqnNqGI9t3cY3Yu8bRBwjtGzKCrPV2VZQd1nuiNR7mPvsR9kFz0hhXKbg9Dj_gSb7oBAvenPAggRJqanawaZqXU3H0P_9r2S1Y0tV8asD_XAx4DrAegGEF8083p72hGWs6sEaMifn0j9Yywbcg?width=854&height=284&cropmode=none">
+<meta property="og:image" content="https://hsxnua.bn.files.1drv.com/y4m_nOg9IadeovxjnjzDnUwsFGL8LSZLWQa2tG_yg26a2nkyQrGeZN2y2e83EElONJsrvFWQQGg0B5xydmEfMSG15cT149yu44wxsNp8XF-1Z9zFPWsGKolLv4CBHKNAdCtUZA69A1n3VsG47VTY5PxUGP9jeBALlY1CjvyEDRKjc5hcH846g-3KNjIdIDylnP5DAT8ZEj_QLTyhgZcLRfDUg?width=1199&height=547&cropmode=none">
+<meta property="og:image" content="https://hcxiua.bn.files.1drv.com/y4mqJEAnS1bmpULVGsbJ6y2R-Pnia66bHGIlev0EF3WWVxVeoBTEgjV_G7x5jZ-nl6y9uH7DVHZ5MPBu4txZNw3hUfgVbLq8uh91DVhE8Cd_RNEm7nNu3k4a_0us0dvqp9m98PImTMf84FMkmBbvsQElXA1f8JGvpmo1o1JmrvCkM1Pn-BhfNf4WbkXO-8sxmCkwQSTr7cqpqroxSy8UqZ3_Q?width=1890&height=1028&cropmode=none">
+<meta property="og:image" content="https://hcxhua.bn.files.1drv.com/y4mMu0upkRKHdD4MJrHjGzXaScyp2AmKT1HDz_gME-UggXO2r2J9mzrTGEQYHr9E4fpy-OcFdE0PNzq0i1bYYDH-QlYP5EF9nu_U8e5LUErWspvAp-tfTVh9gFPhL1Hyi7M7jHUQ15WklJ2Cjbou2k5P2fPpIsbaowHPOHc4vh7toBvWVY85ZQ-wMo8ltWzW3eJTNfATEAU_ikt0Itoshwo3w?width=1637&height=1024&cropmode=none">
+<meta property="og:image" content="https://hcxfua.bn.files.1drv.com/y4mC2VoVCOon8Qu4X4YWVASaNWVdhm60A_IOSHMhPnp4xyybH6qgM6l-CmsyPpV6UOsiaCpzv3S8MKJIXL4HtkL0zK5E7yZAiBpQeUFbZpB3PSd7Hr6D1BCO2z4ZlZNYXTqXDfu8cgCJiRlAHqLJkJ2UXbMDk-kSe0gWAdF3NgWXGPgk-MvHNPeIsRWatLJxmDYxa6_vb0FJyIDta-16RWFUQ?width=1641&height=1031&cropmode=none">
+<meta property="og:image" content="https://hcxgua.bn.files.1drv.com/y4mDaXibkKkZ2DLw13I-H9R_eFWZvjP5M9Wy9jShTnZTLLC1u2TYdXXg_tydEf9dGEhqdmln1m09ye6YlSLJXk-7vWw03JjvBtSHx2RQfwSA6BEIozngeq3myirgFaEdWP6kbF-lfgF-SfUo1BJXK8jo4x0JID6PhT8nx2aoTztA-vrdUBN3u2bH48H1_RZ02BvBR9WmxYXoqnmo7VV0_zUNQ?width=1272&height=1080&cropmode=none">
+<meta property="og:image" content="https://hcxmua.bn.files.1drv.com/y4mhLEBOyK8sGD0_VrOOuxH6fEX9gqHmvH4IimCPlaMICaYNvEXcuu-fJ_FEsFS1o9F6wTo4AGgt9eY1Yxiyrdfr87NDvMgYhXV-Ji63oR0CJPuIQwenFqmz9fyZupLOOJUR58_t-TL_Ce9DoJUQUMSmul5kdzUYfgVqHJEoUHg4iFsTY4x-DfRnBJXjfN7G3JLcvpu2Ii7APNssspgUn-oKw?width=1917&height=1080&cropmode=none">
+<meta property="og:image" content="https://hcxjua.bn.files.1drv.com/y4m-0PTeYG_SCSKGrAJ_UX_W9gvAcMhyGnbX6_tfB-qxeecqbcwS1K_tgrCstPor3U_KHdKuvpa2sNLTcOko5PSEdpGeccRThEk3Wi5XZdmhx1EA_AdBuUQwJ2h7neioFCYsbbYe8FgLWe_NbXWfWgN-f-PsXbdltn8By-_T-Row0TACiVCBzCT-DoaXKanCRUGvaGUhd_A0Oou7CZcB4GIBg?width=1000&height=1037&cropmode=none">
+<meta property="og:image" content="https://hsxlua.bn.files.1drv.com/y4mBIRRiVRqn_SnqOF1CRSGbMzSD_fppWopMwsrAafydPutl2ZOLjFRfmDvURmHjMj02i5u8sIL9lWJiM3yviTrC1JQe8pfKyPnGx-Oh2__re_0FIozZn4Lxq8gmtkmHDa2EhvgBmjgfTOLwu9_-7a0UqRY7hrKmuz4OcmXT0jH0WM4wDuOyOeYT8nYAHBHo8GR60toXQ2XCFOoATxHW7W3iA?width=14440&height=1920&cropmode=none">
+<meta property="og:image" content="https://hcxlua.bn.files.1drv.com/y4mxzBp__N-J4lAX9LtXPkZXqkZC4qKoLvBLoFebz8ipnVAFwkIZhHbLFx5xkh5BUimnO3y6jp6uZKv7S5EwS7PN6K3QZyIO88CLoo2UKhIZstZ97IA-nFQeZ8oBk2umKL7_6XDIlpH2nRGTRR-ZlQtfWhqq9qvCjZexTFsWK1bRrZm6xMrKVxPqCLnQlilFZ6UFe3p0B8ho7Lis_v-mDQcmw?width=1440&height=1920&cropmode=none">
+<meta property="og:updated_time" content="2020-04-05T16:45:00.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SVG Tiny 与 Libsvgtiny">
+<meta name="twitter:description" content="这是我的硕士论文笔记系列第二篇，原文写于 2016 年五月。">
+<meta name="twitter:image" content="https://hsxmua.bn.files.1drv.com/y4mVRHjbTq_FPN7KNhj_jr2kI0RAnFIITSM-Vej1v_8G7k-UM9X2lplZzlzjzQNZhkDvYFvwU_AVbsyaXs9CHOt8bppajump_Kx-0kN09oDRfxIYFqysnIGHYlxwQEswug05hUwk4gBh7zRvcyRaWJR042NWlwLAWsEAmfYORmM3As5J5yjaJFh79LzhYMJDxNvvfaOgp3CjAgIN__H-fwmog?width=1912&height=451&cropmode=none">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="江边的旱鸭子" type="application/atom+xml">
+
+
+
+  
+  
+  <link rel="canonical" href="https://blog.joouis.com/2020/evgui-svgtiny/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>SVG Tiny 与 Libsvgtiny | 江边的旱鸭子</title>
+  
+
+
+
+
+  <script async src="//www.googletagmanager.com/gtag/js?id=UA-76188004-1"></script>
+  <script>
+    var host = window.location.hostname;
+    if (host !== "localhost" || !true) {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-76188004-1');
+    }
+  </script>
+
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?199f195e233fd5ecca0d9346d3259670";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">江边的旱鸭子</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <h1 class="site-subtitle" itemprop="description">Blog of Joou</h1>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+
+    
+
+    <a href="/" rel="section">首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+
+    
+
+    <a href="/archives/" rel="section">归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+
+    
+
+    <a href="/categories/" rel="section">分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+
+    
+
+    <a href="/about/" rel="section">关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-recruit">
+
+    
+    
+    
+
+    
+
+    <a href="/recruit/" rel="section">招聘</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.joouis.com/2020/evgui-svgtiny/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Chou">
+      <meta itemprop="description" content="Stand high, think different.">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江边的旱鸭子">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">SVG Tiny 与 Libsvgtiny
+
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-04-04 22:51:16" itemprop="dateCreated datePublished" datetime="2020-04-04T22:51:16+08:00">2020-04-04</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-04-06 00:45:00" itemprop="dateModified" datetime="2020-04-06T00:45:00+08:00">2020-04-06</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/系统与底层/" itemprop="url" rel="index"><span itemprop="name">系统与底层</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">16 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>这是我的<a href="https://blog.joouis.com/2020/evgui-design-review/">硕士论文笔记系列</a>第二篇，原文写于 2016 年五月。</p>
+<a id="more"></a>
+<h2 id="SVG-Tiny-1-2-Spec"><a href="#SVG-Tiny-1-2-Spec" class="headerlink" title="SVG Tiny 1.2 Spec"></a>SVG Tiny 1.2 Spec</h2><ul>
+<li>The SVG Working Group <strong>does not</strong> provide a normative DTD for SVG Tiny 1.2 but instead provides a normative <strong>RelaxNG</strong> schema.</li>
+<li>How to reference this specification:<br>When referencing this specification as a whole or when referencing a chapter or major section, use the undated URI, <a href="http://www.w3.org/TR/SVGTiny12/" target="_blank" rel="noopener">http://www.w3.org/TR/SVGTiny12/</a> , where possible. This allows the reference to always refer to the latest version of this specification.</li>
+</ul>
+<h3 id="Scriptable"><a href="#Scriptable" class="headerlink" title="Scriptable"></a>Scriptable</h3><p>The combination of scripting and the HTML DOM is often termed “Dynamic HTML” and is widely used for animation, interactivity and presentational effects. Similarly SVG allows the script-based manipulation of the document tree us-ing a subset of the XML DOM and the SVG uDOM.</p>
+<h3 id="Rendering-Model"><a href="#Rendering-Model" class="headerlink" title="Rendering Model"></a>Rendering Model</h3><ul>
+<li>The painters model</li>
+<li>Types of graphics elements<ul>
+<li>Shapes: lines, curves</li>
+<li>Text</li>
+<li>Repalced content<ul>
+<li>Raster images</li>
+<li>Video</li>
+<li>Animation</li>
+<li>Foreign Objects</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Rendering shapes and text<ul>
+<li>fill, stroke: independent, has opacity</li>
+<li>paint:<ul>
+<li>Solid color</li>
+<li>Gradients (linear, radial)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Document-Structure"><a href="#Document-Structure" class="headerlink" title="Document Structure"></a>Document Structure</h3><ul>
+<li><code>svg</code> element: <ul>
+<li>version, baseProfile, width, height, viewBox, …</li>
+<li>This specification corresponds to <strong>baseProfile=”tiny”</strong> and <strong>version=”1.2”</strong> .</li>
+</ul>
+</li>
+<li><code>g</code> element:<ul>
+<li><code>id</code>, <code>xml: id</code></li>
+<li>在 group 中的元素擁有 group 的屬性</li>
+</ul>
+</li>
+<li><code>defs</code> element</li>
+<li><code>discard</code> element</li>
+<li><code>title</code> and <code>desc</code> element</li>
+<li><code>use</code> element</li>
+<li><code>image</code> element: must reference content that is a raster image format</li>
+<li><code>switch</code> element: five conditional processing attributes<ul>
+<li>requiredExtensions</li>
+<li>requiredFeatures</li>
+<li>requiredFonts</li>
+<li>requiredFormats</li>
+<li>systemLanguage</li>
+</ul>
+</li>
+<li><code>prefetch</code> element</li>
+<li>Attributes common to all elements: id, class, role, …</li>
+</ul>
+<h3 id="Animation"><a href="#Animation" class="headerlink" title="Animation"></a>Animation</h3><ul>
+<li>mpath</li>
+</ul>
+<h2 id="Libsvgtiny"><a href="#Libsvgtiny" class="headerlink" title="Libsvgtiny"></a>Libsvgtiny</h2><h3 id="介紹"><a href="#介紹" class="headerlink" title="介紹"></a>介紹</h3><ul>
+<li>Libsvgtiny is an implementation of <a href="http://www.w3.org/TR/SVGMobile/" target="_blank" rel="noopener">SVG Tiny</a>, written in C. It is currently in development for use with <a href="http://www.netsurf-browser.org/" target="_blank" rel="noopener">NetSurf</a> and is intended to be suitable for use in other projects too.</li>
+<li>The overall idea of the library is to take some SVG as input, and return a list of paths and texts which can be rendered easily. The library does not do the actual rendering. For further details, see the <a href="http://source.netsurf-browser.org/libsvgtiny.git/plain/README" target="_blank" rel="noopener">readme</a>.</li>
+</ul>
+<h3 id="支援情況"><a href="#支援情況" class="headerlink" title="支援情況"></a>支援情況</h3><ul>
+<li>SVG Tiny elements <strong>supported</strong>: defs, g, svg, circle, line, path, polygon, polyline, rect, text</li>
+<li>SVG Tiny elements <strong>not yet supported</strong>: desc, metadata, title, use, a, switch, ellipse, image, font, font-face, font-face-name, font-face-src, glyph, hkern, missing-glyph, animate, animateColor, animateMotion, animateTransform, mpath, set, foreignObject</li>
+<li>Additional elements <strong>supported</strong>: linearGradient, stop</li>
+<li>Text support is <strong>incomplete.</strong></li>
+<li>The style attribute is <strong>supported</strong>.</li>
+</ul>
+<h3 id="安裝"><a href="#安裝" class="headerlink" title="安裝"></a>安裝</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone git://git.netsurf-browser.org/libsvgtiny.git</span><br></pre></td></tr></table></figure>
+<ul>
+<li>參考 <a href="https://listmaster.pepperfish.net/pipermail/netsurf-dev-netsurf-browser.org/2013-November/003228.html" target="_blank" rel="noopener">疑問通訊</a></li>
+<li>直接編譯 Netsurf 更快，參考 <a href="http://source.netsurf-browser.org/netsurf.git/plain/Docs/QUICK-START" target="_blank" rel="noopener">building instruction</a></li>
+</ul>
+<h3 id="資料結構"><a href="#資料結構" class="headerlink" title="資料結構"></a>資料結構</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">svgtiny_shape</span> &#123;</span></span><br><span class="line">    <span class="keyword">float</span> *path;</span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">int</span> path_length;                                                                                                                     </span><br><span class="line">    <span class="keyword">char</span> *text;</span><br><span class="line">    <span class="keyword">float</span> text_x, text_y;</span><br><span class="line">    svgtiny_colour fill;</span><br><span class="line">    svgtiny_colour stroke;</span><br><span class="line">    <span class="keyword">float</span> stroke_width;</span><br><span class="line">    <span class="keyword">void</span> *_internal_extensions;  <span class="comment">// <span class="doctag">TODO:</span> if non-NULL, points to an allocated on the heap extension block. (gradients, fonts)</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">svgtiny_diagram</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> width, height;</span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">svgtiny_shape</span> *<span class="title">shape</span>;</span></span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">int</span> shape_count;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">short</span> error_line;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">char</span> *error_message;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="使用-Cairo"><a href="#使用-Cairo" class="headerlink" title="使用 Cairo"></a>使用 Cairo</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Handle an X11 Expose event of the diagram window.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">event_diagram_expose</span><span class="params">(<span class="keyword">const</span> XExposeEvent *expose_event)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">cairo_surface_t</span> *surface;</span><br><span class="line">    <span class="keyword">cairo_t</span> *cr;</span><br><span class="line">    <span class="keyword">cairo_status_t</span> status;</span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">int</span> i;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (expose_event-&gt;count != <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">    surface = cairo_xlib_surface_create(display, diagram_window,</span><br><span class="line">            DefaultVisual(display, DefaultScreen(display)),</span><br><span class="line">            diagram-&gt;width * scale, diagram-&gt;height * scale);</span><br><span class="line">    <span class="keyword">if</span> (!surface) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"cairo_xlib_surface_create failed\n"</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    cr = cairo_create(surface);</span><br><span class="line">    status = cairo_status(cr);</span><br><span class="line">    <span class="keyword">if</span> (status != CAIRO_STATUS_SUCCESS) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"cairo_create failed: %s\n"</span>,</span><br><span class="line">                cairo_status_to_string(status));</span><br><span class="line">        cairo_destroy(cr);</span><br><span class="line">        cairo_surface_destroy(surface);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    cairo_set_source_rgb(cr, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>);</span><br><span class="line">    cairo_paint(cr);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i != diagram-&gt;shape_count; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (diagram-&gt;shape[i].path) &#123;</span><br><span class="line">            render_path(cr, scale, &amp;diagram-&gt;shape[i]);</span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (diagram-&gt;shape[i].text) &#123;</span><br><span class="line">            cairo_set_source_rgb(cr,</span><br><span class="line">                svgtiny_RED(diagram-&gt;shape[i].stroke) / <span class="number">255.0</span>,</span><br><span class="line">                svgtiny_GREEN(diagram-&gt;shape[i].stroke) / <span class="number">255.0</span>,</span><br><span class="line">                svgtiny_BLUE(diagram-&gt;shape[i].stroke) / <span class="number">255.0</span>);</span><br><span class="line">            cairo_move_to(cr,                                                                                                                     </span><br><span class="line">                    scale * diagram-&gt;shape[i].text_x,</span><br><span class="line">                    scale * diagram-&gt;shape[i].text_y);</span><br><span class="line">            cairo_show_text(cr, diagram-&gt;shape[i].text);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    status = cairo_status(cr);</span><br><span class="line">    <span class="keyword">if</span> (status != CAIRO_STATUS_SUCCESS) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"cairo error: %s\n"</span>,</span><br><span class="line">                cairo_status_to_string(status));</span><br><span class="line">        cairo_destroy(cr);</span><br><span class="line">        cairo_surface_destroy(surface);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    cairo_destroy(cr);</span><br><span class="line">    cairo_surface_destroy(surface);source</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Render an svgtiny path using cairo.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">render_path</span><span class="params">(<span class="keyword">cairo_t</span> *cr, <span class="keyword">float</span> scale, struct svgtiny_shape *path)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">int</span> j;</span><br><span class="line"></span><br><span class="line">    cairo_new_path(cr);</span><br><span class="line">    <span class="keyword">for</span> (j = <span class="number">0</span>; j != path-&gt;path_length; ) &#123; </span><br><span class="line">        <span class="keyword">switch</span> ((<span class="keyword">int</span>) path-&gt;path[j]) &#123;</span><br><span class="line">        <span class="keyword">case</span> svgtiny_PATH_MOVE:</span><br><span class="line">            cairo_move_to(cr,</span><br><span class="line">                    scale * path-&gt;path[j + <span class="number">1</span>], </span><br><span class="line">                    scale * path-&gt;path[j + <span class="number">2</span>]);</span><br><span class="line">            j += <span class="number">3</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> svgtiny_PATH_CLOSE:</span><br><span class="line">            cairo_close_path(cr);</span><br><span class="line">            j += <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> svgtiny_PATH_LINE:</span><br><span class="line">            cairo_line_to(cr,</span><br><span class="line">                    scale * path-&gt;path[j + <span class="number">1</span>], </span><br><span class="line">                    scale * path-&gt;path[j + <span class="number">2</span>]);</span><br><span class="line">            j += <span class="number">3</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> svgtiny_PATH_BEZIER:</span><br><span class="line">            cairo_curve_to(cr,</span><br><span class="line">                    scale * path-&gt;path[j + <span class="number">1</span>],</span><br><span class="line">                    scale * path-&gt;path[j + <span class="number">2</span>],</span><br><span class="line">                    scale * path-&gt;path[j + <span class="number">3</span>],</span><br><span class="line">                    scale * path-&gt;path[j + <span class="number">4</span>],</span><br><span class="line">                    scale * path-&gt;path[j + <span class="number">5</span>],</span><br><span class="line">                    scale * path-&gt;path[j + <span class="number">6</span>]);</span><br><span class="line">            j += <span class="number">7</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">default</span>:</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"error "</span>);</span><br><span class="line">            j += <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (path-&gt;fill != svgtiny_TRANSPARENT) &#123;</span><br><span class="line">        cairo_set_source_rgb(cr,</span><br><span class="line">                svgtiny_RED(path-&gt;fill) / <span class="number">255.0</span>,</span><br><span class="line">                svgtiny_GREEN(path-&gt;fill) / <span class="number">255.0</span>,</span><br><span class="line">                svgtiny_BLUE(path-&gt;fill) / <span class="number">255.0</span>);</span><br><span class="line">        cairo_fill_preserve(cr);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (path-&gt;stroke != svgtiny_TRANSPARENT) &#123;</span><br><span class="line">        cairo_set_source_rgb(cr,</span><br><span class="line">                svgtiny_RED(path-&gt;stroke) / <span class="number">255.0</span>,</span><br><span class="line">                svgtiny_GREEN(path-&gt;stroke) / <span class="number">255.0</span>,</span><br><span class="line">                svgtiny_BLUE(path-&gt;stroke) / <span class="number">255.0</span>);</span><br><span class="line">        cairo_set_line_width(cr, scale * path-&gt;stroke_width);</span><br><span class="line">        cairo_stroke_preserve(cr);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="討論"><a href="#討論" class="headerlink" title="討論"></a>討論</h2><h3 id="Libsvgtiny-無法編譯，無論是-official-還是-github-版本"><a href="#Libsvgtiny-無法編譯，無論是-official-還是-github-版本" class="headerlink" title="Libsvgtiny 無法編譯，無論是 official 還是 github 版本"></a>Libsvgtiny 無法編譯，無論是 official 還是 github 版本</h3><ul>
+<li>改用 <a href="https://github.com/DavidPhillipOster/libsvgtiny" target="_blank" rel="noopener">https://github.com/DavidPhillipOster/libsvgtiny</a></li>
+<li><code>sed -i &#39;s/-lxml2/-lxml2 -lm/g&#39; Makefile &amp;&amp; make</code></li>
+</ul>
+<h3 id="Libsvgtiny-有的可以成功顯示，有的部分顯示，有的則顯示失敗"><a href="#Libsvgtiny-有的可以成功顯示，有的部分顯示，有的則顯示失敗" class="headerlink" title="Libsvgtiny 有的可以成功顯示，有的部分顯示，有的則顯示失敗"></a>Libsvgtiny 有的可以成功顯示，有的部分顯示，有的則顯示失敗</h3><p>（左、中、右圖分別對應 Image Viewer、Libsvgtiny with Cairo、Libsvgtiny with TWIN）</p>
+<h4 id="成功顯示"><a href="#成功顯示" class="headerlink" title="成功顯示"></a>成功顯示</h4><p>注意最右邊的圖顯示是正確的，因爲圓形和矩形沒有例如 <code>fill: #000000</code> 這樣的屬性，至於左邊兩個爲什麼會自動填黑很有趣。</p>
+<p><img src="https://hsxmua.bn.files.1drv.com/y4mVRHjbTq_FPN7KNhj_jr2kI0RAnFIITSM-Vej1v_8G7k-UM9X2lplZzlzjzQNZhkDvYFvwU_AVbsyaXs9CHOt8bppajump_Kx-0kN09oDRfxIYFqysnIGHYlxwQEswug05hUwk4gBh7zRvcyRaWJR042NWlwLAWsEAmfYORmM3As5J5yjaJFh79LzhYMJDxNvvfaOgp3CjAgIN__H-fwmog?width=1912&amp;height=451&amp;cropmode=none" alt></p>
+<h4 id="部分成功顯示"><a href="#部分成功顯示" class="headerlink" title="部分成功顯示"></a>部分成功顯示</h4><ul>
+<li>都可顯示，但由於 Libsvgtiny 和 TWIN 的限制致使顯示有缺陷。中間的圖基本和原圖一樣，不過有條不明顯的黑線，可以修改 <code>libsvgtiny.c</code> 或刪除這條 path 多餘的 <code>stroke-width</code> 屬性即可修正。最右除了 Libsvgtiny 自身的問題外，和 TWIN 也有關聯。</li>
+</ul>
+<p><img src="https://hcxeua.bn.files.1drv.com/y4ml_N8t3aeOuTjDC1r8xBq_ywDJORW3FQy3j_6sqxWW-SvMfaZ589WXZsvsIxQbv7cxclTzqnNqGI9t3cY3Yu8bRBwjtGzKCrPV2VZQd1nuiNR7mPvsR9kFz0hhXKbg9Dj_gSb7oBAvenPAggRJqanawaZqXU3H0P_9r2S1Y0tV8asD_XAx4DrAegGEF8083p72hGWs6sEaMifn0j9Yywbcg?width=854&amp;height=284&amp;cropmode=none" alt></p>
+<ul>
+<li>Cairo 可成功顯示但 TWIN 不行（後已修復）</li>
+</ul>
+<p><img src="https://hsxnua.bn.files.1drv.com/y4m_nOg9IadeovxjnjzDnUwsFGL8LSZLWQa2tG_yg26a2nkyQrGeZN2y2e83EElONJsrvFWQQGg0B5xydmEfMSG15cT149yu44wxsNp8XF-1Z9zFPWsGKolLv4CBHKNAdCtUZA69A1n3VsG47VTY5PxUGP9jeBALlY1CjvyEDRKjc5hcH846g-3KNjIdIDylnP5DAT8ZEj_QLTyhgZcLRfDUg?width=1199&amp;height=547&amp;cropmode=none" alt></p>
+<h4 id="顯示失敗"><a href="#顯示失敗" class="headerlink" title="顯示失敗"></a>顯示失敗</h4><p><img src="https://hcxiua.bn.files.1drv.com/y4mqJEAnS1bmpULVGsbJ6y2R-Pnia66bHGIlev0EF3WWVxVeoBTEgjV_G7x5jZ-nl6y9uH7DVHZ5MPBu4txZNw3hUfgVbLq8uh91DVhE8Cd_RNEm7nNu3k4a_0us0dvqp9m98PImTMf84FMkmBbvsQElXA1f8JGvpmo1o1JmrvCkM1Pn-BhfNf4WbkXO-8sxmCkwQSTr7cqpqroxSy8UqZ3_Q?width=1890&amp;height=1028&amp;cropmode=none" alt></p>
+<ul>
+<li>其實修改 Libsvgtiny 後使用 Cairo 是可以大致顯示的，簡單說就是 Libsvgtiny 的 fill 邏輯出了問題，要麼都塗黑了如上圖所示，要麼如下圖沒把該塗黑的地方塗黑ORZ</li>
+</ul>
+<p><img src="https://hcxhua.bn.files.1drv.com/y4mMu0upkRKHdD4MJrHjGzXaScyp2AmKT1HDz_gME-UggXO2r2J9mzrTGEQYHr9E4fpy-OcFdE0PNzq0i1bYYDH-QlYP5EF9nu_U8e5LUErWspvAp-tfTVh9gFPhL1Hyi7M7jHUQ15WklJ2Cjbou2k5P2fPpIsbaowHPOHc4vh7toBvWVY85ZQ-wMo8ltWzW3eJTNfATEAU_ikt0Itoshwo3w?width=1637&amp;height=1024&amp;cropmode=none" alt></p>
+<p><img src="https://hcxfua.bn.files.1drv.com/y4mC2VoVCOon8Qu4X4YWVASaNWVdhm60A_IOSHMhPnp4xyybH6qgM6l-CmsyPpV6UOsiaCpzv3S8MKJIXL4HtkL0zK5E7yZAiBpQeUFbZpB3PSd7Hr6D1BCO2z4ZlZNYXTqXDfu8cgCJiRlAHqLJkJ2UXbMDk-kSe0gWAdF3NgWXGPgk-MvHNPeIsRWatLJxmDYxa6_vb0FJyIDta-16RWFUQ?width=1641&amp;height=1031&amp;cropmode=none" alt></p>
+<ul>
+<li>使用 Netsurf 開啓老虎圖，直接笑出來了…</li>
+</ul>
+<p><img src="https://hcxgua.bn.files.1drv.com/y4mDaXibkKkZ2DLw13I-H9R_eFWZvjP5M9Wy9jShTnZTLLC1u2TYdXXg_tydEf9dGEhqdmln1m09ye6YlSLJXk-7vWw03JjvBtSHx2RQfwSA6BEIozngeq3myirgFaEdWP6kbF-lfgF-SfUo1BJXK8jo4x0JID6PhT8nx2aoTztA-vrdUBN3u2bH48H1_RZ02BvBR9WmxYXoqnmo7VV0_zUNQ?width=1272&amp;height=1080&amp;cropmode=none" alt></p>
+<h3 id="移植到-STM32F429-上的過程中，編譯鏈接又出問題了"><a href="#移植到-STM32F429-上的過程中，編譯鏈接又出問題了" class="headerlink" title="移植到 STM32F429 上的過程中，編譯鏈接又出問題了"></a>移植到 STM32F429 上的過程中，編譯鏈接又出問題了</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">In file included from /usr/include/libxml2/libxml/parser.h:810:0,</span><br><span class="line">                 from /usr/include/libxml2/libxml/globals.h:18,</span><br><span class="line">                 from /usr/include/libxml2/libxml/threads.h:35,</span><br><span class="line">                 from /usr/include/libxml2/libxml/xmlmemory.h:218,</span><br><span class="line">                 from /usr/include/libxml2/libxml/tree.h:1307,</span><br><span class="line">                 from libsvgtiny/src/xml2dom.c:14:</span><br><span class="line">/usr/include/libxml2/libxml/encoding.h:31:26: fatal error: unicode/ucnv.h: No such file or directory</span><br><span class="line"><span class="meta"> #</span>include &lt;unicode/ucnv.h&gt;</span><br><span class="line">                          ^</span><br><span class="line">compilation terminated.</span><br><span class="line">Makefile:85: recipe for target 'libsvgtiny/src/xml2dom.o' failed</span><br><span class="line">make: *** [libsvgtiny/src/xml2dom.o] Error 1</span><br></pre></td></tr></table></figure>
+<p>Jserv replied:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git clone git://git.gnome.org/libxml2</span><br><span class="line"><span class="meta">$</span> cd libxml2</span><br><span class="line"><span class="meta">$</span> ./autogen.sh</span><br><span class="line"><span class="meta">$</span> sh configure \</span><br><span class="line">  --prefix=/tmp \</span><br><span class="line">  --enable-static \</span><br><span class="line">  --disable-shared \</span><br><span class="line">  --enable-ipv6=no \</span><br><span class="line">  --without-c14n \</span><br><span class="line">  --without-catalog \</span><br><span class="line">  --without-debug \</span><br><span class="line">  --without-docbook \</span><br><span class="line">  --without-fexceptions \</span><br><span class="line">  --without-ftp \</span><br><span class="line">  --without-history \</span><br><span class="line">  --without-html \</span><br><span class="line">  --without-http \</span><br><span class="line">  --without-iconv \</span><br><span class="line">  --without-icu \</span><br><span class="line">  --with-iso8859x \</span><br><span class="line">  --without-legacy \</span><br><span class="line">  --with-minimum \</span><br><span class="line">  --without-output \</span><br><span class="line">  --without-pattern \</span><br><span class="line">  --without-push \</span><br><span class="line">  --without-python \</span><br><span class="line">  --without-reader \</span><br><span class="line">  --without-regexps \</span><br><span class="line">  --without-sax1 \</span><br><span class="line">  --with-schemas \</span><br><span class="line">  --with-schematron \</span><br><span class="line">  --without-threads \</span><br><span class="line">  --with-tree \</span><br><span class="line">  --with-valid  \</span><br><span class="line">  --with-writer \</span><br><span class="line">  --with-xinclude \</span><br><span class="line">  --with-xpath \</span><br><span class="line">  --with-xptr \</span><br><span class="line">  --without-modules \</span><br><span class="line">  --without-zlib</span><br></pre></td></tr></table></figure>
+<h3 id="libxml2-太龐大，無法放入-ARM-環境"><a href="#libxml2-太龐大，無法放入-ARM-環境" class="headerlink" title="libxml2 太龐大，無法放入 ARM 環境"></a>libxml2 太龐大，無法放入 ARM 環境</h3><ul>
+<li>替代品<ul>
+<li><a href="https://dev.yorhel.nl/yxml" target="_blank" rel="noopener">YXML</a></li>
+<li><a href="https://github.com/lxfontes/ezxml" target="_blank" rel="noopener">EZXML</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="Updates"><a href="#Updates" class="headerlink" title="Updates"></a>Updates</h3><h4 id="2016-06-08"><a href="#2016-06-08" class="headerlink" title="2016/06/08"></a>2016/06/08</h4><ul>
+<li>修復 Libsvgtiny 問題，顯示 tiger 黑圖（修改 Libsvgtiny 的 fill、stroke 可顯示不完全正確的 tiger 圖）</li>
+</ul>
+<p><img src="https://hcxmua.bn.files.1drv.com/y4mhLEBOyK8sGD0_VrOOuxH6fEX9gqHmvH4IimCPlaMICaYNvEXcuu-fJ_FEsFS1o9F6wTo4AGgt9eY1Yxiyrdfr87NDvMgYhXV-Ji63oR0CJPuIQwenFqmz9fyZupLOOJUR58_t-TL_Ce9DoJUQUMSmul5kdzUYfgVqHJEoUHg4iFsTY4x-DfRnBJXjfN7G3JLcvpu2Ii7APNssspgUn-oKw?width=1917&amp;height=1080&amp;cropmode=none" alt></p>
+<h4 id="2016-06-11"><a href="#2016-06-11" class="headerlink" title="2016/06/11"></a>2016/06/11</h4><ul>
+<li>twin 接口問題，顯示 sonic 黑圖（使用 cairo 可正常顯示）</li>
+</ul>
+<p><img src="https://hcxjua.bn.files.1drv.com/y4m-0PTeYG_SCSKGrAJ_UX_W9gvAcMhyGnbX6_tfB-qxeecqbcwS1K_tgrCstPor3U_KHdKuvpa2sNLTcOko5PSEdpGeccRThEk3Wi5XZdmhx1EA_AdBuUQwJ2h7neioFCYsbbYe8FgLWe_NbXWfWgN-f-PsXbdltn8By-_T-Row0TACiVCBzCT-DoaXKanCRUGvaGUhd_A0Oou7CZcB4GIBg?width=1000&amp;height=1037&amp;cropmode=none" alt></p>
+<h4 id="2016-06-12"><a href="#2016-06-12" class="headerlink" title="2016/06/12"></a>2016/06/12</h4><ul>
+<li>修復 Libsvgtiny 縮放問題，在 STM32F429Discovery 上顯示成功</li>
+</ul>
+<p><img src="https://hsxlua.bn.files.1drv.com/y4mBIRRiVRqn_SnqOF1CRSGbMzSD_fppWopMwsrAafydPutl2ZOLjFRfmDvURmHjMj02i5u8sIL9lWJiM3yviTrC1JQe8pfKyPnGx-Oh2__re_0FIozZn4Lxq8gmtkmHDa2EhvgBmjgfTOLwu9_-7a0UqRY7hrKmuz4OcmXT0jH0WM4wDuOyOeYT8nYAHBHo8GR60toXQ2XCFOoATxHW7W3iA?width=14440&amp;height=1920&amp;cropmode=none" alt></p>
+<p><img src="https://hcxlua.bn.files.1drv.com/y4mxzBp__N-J4lAX9LtXPkZXqkZC4qKoLvBLoFebz8ipnVAFwkIZhHbLFx5xkh5BUimnO3y6jp6uZKv7S5EwS7PN6K3QZyIO88CLoo2UKhIZstZ97IA-nFQeZ8oBk2umKL7_6XDIlpH2nRGTRR-ZlQtfWhqq9qvCjZexTFsWK1bRrZm6xMrKVxPqCLnQlilFZ6UFe3p0B8ho7Lis_v-mDQcmw?width=1440&amp;height=1920&amp;cropmode=none" alt></p>
+
+      
+    </div>
+
+    
+      
+
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="/2020/evgui-design-review/" rel="bookmark">五分钟回顾我的硕士论文：嵌入式向量图形系统设计</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="/2019/am335x-arm-cortex-a8-boot-sequence/" rel="bookmark">解析AM335x Arm Cortex-A8处理器的启动流程</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="/2020/lab-compiler-intro/" rel="bookmark">编译器入门小笔记</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="/2019/lab-mini-arm-os/" rel="bookmark">上手一个具体而微的ARM操作系统</a></div>
+      
+    </li>
+  
+  </ul>
+
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+      <div>
+        <div id="reward-container">
+  <div>Buy me a cup of coffee :)</div>
+  <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+
+    
+      
+      
+        
+      
+      <div style="display: inline-block">
+        <img src="/images/reward-wechat.jpg" alt="John Chou 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+      
+      
+        
+      
+      <div style="display: inline-block">
+        <img src="/images/reward-alipay.jpg" alt="John Chou 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        
+
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>John Chou</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="https://blog.joouis.com/2020/evgui-svgtiny/" title="SVG Tiny 与 Libsvgtiny">https://blog.joouis.com/2020/evgui-svgtiny/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nd/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-ND</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/embedded-system/" rel="tag"># embedded system</a>
+          
+            <a href="/tags/svg/" rel="tag"># svg</a>
+          
+            <a href="/tags/svg-tiny/" rel="tag"># svg tiny</a>
+          
+            <a href="/tags/libsvgtiny/" rel="tag"># libsvgtiny</a>
+          
+            <a href="/tags/vector/" rel="tag"># vector</a>
+          
+            <a href="/tags/gui/" rel="tag"># gui</a>
+          
+            <a href="/tags/twin/" rel="tag"># twin</a>
+          
+            <a href="/tags/window-system/" rel="tag"># window system</a>
+          
+            <a href="/tags/cairo/" rel="tag"># cairo</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/evgui-design-review/" rel="next" title="五分钟回顾我的硕士论文：嵌入式向量图形系统设计">
+                <i class="fa fa-chevron-left"></i> 五分钟回顾我的硕士论文：嵌入式向量图形系统设计
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="John Chou">
+            
+              <p class="site-author-name" itemprop="name">John Chou</p>
+              <div class="site-description motion-element" itemprop="description">Stand high, think different.</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">45</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">165</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/Joouis" title="GitHub &rarr; https://github.com/Joouis" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="mailto:luckyjoou@gmail.com" title="E-Mail &rarr; mailto:luckyjoou@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://www.instagram.com/Joouis" title="Instagram &rarr; https://www.instagram.com/Joouis" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="http://www.slideshare.net/choujohn351" title="SlideShare &rarr; http://www.slideshare.net/choujohn351" rel="noopener" target="_blank"><i class="fa fa-fw fa-slideshare"></i></a>
+                </span>
+              
+            </div>
+          
+
+          
+             <div class="cc-license motion-element" itemprop="license">
+              
+              
+                
+              
+              
+              
+              <a href="https://creativecommons.org/licenses/by-nd/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nd.svg" alt="Creative Commons"></a>
+             </div>
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#SVG-Tiny-1-2-Spec"><span class="nav-number">1.</span> <span class="nav-text">SVG Tiny 1.2 Spec</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Scriptable"><span class="nav-number">1.1.</span> <span class="nav-text">Scriptable</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rendering-Model"><span class="nav-number">1.2.</span> <span class="nav-text">Rendering Model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Document-Structure"><span class="nav-number">1.3.</span> <span class="nav-text">Document Structure</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Animation"><span class="nav-number">1.4.</span> <span class="nav-text">Animation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Libsvgtiny"><span class="nav-number">2.</span> <span class="nav-text">Libsvgtiny</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#介紹"><span class="nav-number">2.1.</span> <span class="nav-text">介紹</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#支援情況"><span class="nav-number">2.2.</span> <span class="nav-text">支援情況</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安裝"><span class="nav-number">2.3.</span> <span class="nav-text">安裝</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#資料結構"><span class="nav-number">2.4.</span> <span class="nav-text">資料結構</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-Cairo"><span class="nav-number">2.5.</span> <span class="nav-text">使用 Cairo</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#討論"><span class="nav-number">3.</span> <span class="nav-text">討論</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Libsvgtiny-無法編譯，無論是-official-還是-github-版本"><span class="nav-number">3.1.</span> <span class="nav-text">Libsvgtiny 無法編譯，無論是 official 還是 github 版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Libsvgtiny-有的可以成功顯示，有的部分顯示，有的則顯示失敗"><span class="nav-number">3.2.</span> <span class="nav-text">Libsvgtiny 有的可以成功顯示，有的部分顯示，有的則顯示失敗</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#成功顯示"><span class="nav-number">3.2.1.</span> <span class="nav-text">成功顯示</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#部分成功顯示"><span class="nav-number">3.2.2.</span> <span class="nav-text">部分成功顯示</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#顯示失敗"><span class="nav-number">3.2.3.</span> <span class="nav-text">顯示失敗</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#移植到-STM32F429-上的過程中，編譯鏈接又出問題了"><span class="nav-number">3.3.</span> <span class="nav-text">移植到 STM32F429 上的過程中，編譯鏈接又出問題了</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#libxml2-太龐大，無法放入-ARM-環境"><span class="nav-number">3.4.</span> <span class="nav-text">libxml2 太龐大，無法放入 ARM 環境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Updates"><span class="nav-number">3.5.</span> <span class="nav-text">Updates</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2016-06-08"><span class="nav-number">3.5.1.</span> <span class="nav-text">2016/06/08</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2016-06-11"><span class="nav-number">3.5.2.</span> <span class="nav-text">2016/06/11</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2016-06-12"><span class="nav-number">3.5.3.</span> <span class="nav-text">2016/06/12</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+    <div id="sidebar-dimmer"></div>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2016 – <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Chou</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="//cdn.jsdelivr.net/npm/jquery@2/dist/jquery.min.js"></script>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.min.js"></script>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.ui.min.js"></script>
+
+  
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.0"></script>
+
+  <script src="/js/motion.js?v=7.1.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.0"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.0"></script>
+<script src="/js/post-details.js?v=7.1.0"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.0"></script>
+
+
+  
+  <script src="/js/js.cookie.js?v=7.1.0"></script>
+  <script src="/js/scroll-cookie.js?v=7.1.0"></script>
+
+
+  
+
+  
+  
+  
+    
+  
+
+  
+
+  
+  
+  
+
+
+  
+  
+
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://blog.joouis.com/2020/evgui-svgtiny/";
+    this.page.identifier = "2020/evgui-svgtiny/";
+    this.page.title = 'SVG Tiny 与 Libsvgtiny';
+    };
+  function loadComments() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://joou.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', '' + +new Date());
+    (d.head || d.body).appendChild(s);
+  }
+  
+    loadComments();
+  
+</script>
+
+
+
+
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+  
+  
+    
+  
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script>pangu.spacingPage();</script>
+
+
+  
+
+  
+<script>
+  $('.highlight').each(function(i, e) {
+    var $wrap = $('<div>').addClass('highlight-wrap');
+    $(e).after($wrap);
+    $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
+      var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+        return $(e).text();
+      }).toArray().join('\n');
+      var ta = document.createElement('textarea');
+      var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+      ta.style.top = yPosition + 'px'; // Prevent page scroll
+      ta.style.position = 'absolute';
+      ta.style.opacity = '0';
+      ta.readOnly = true;
+      ta.value = code;
+      document.body.appendChild(ta);
+      ta.select();
+      ta.setSelectionRange(0, code.length);
+      ta.readOnly = false;
+      var result = document.execCommand('copy');
+      
+        if (result) $(this).text('复制成功');
+        else $(this).text('复制失败');
+      
+      ta.blur(); // For iOS
+      $(this).blur();
+    })).on('mouseleave', function(e) {
+      var $b = $(this).find('.copy-btn');
+      setTimeout(function() {
+        $b.text('复制');
+      }, 300);
+    }).append(e);
+  })
+</script>
+
+
+  
+
+  
+
+</body>
+</html>

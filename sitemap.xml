@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.joouis.com/2020/evgui-svgtiny/</loc>
+    
+    <lastmod>2020-04-05T16:45:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.joouis.com/recruit/index.html</loc>
     
     <lastmod>2020-04-02T14:31:51.592Z</lastmod>
@@ -30,14 +37,14 @@
   </url>
   
   <url>
-    <loc>https://blog.joouis.com/about/index.html</loc>
+    <loc>https://blog.joouis.com/categories/index.html</loc>
     
     <lastmod>2020-03-09T12:15:03.989Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.joouis.com/categories/index.html</loc>
+    <loc>https://blog.joouis.com/about/index.html</loc>
     
     <lastmod>2020-03-09T12:15:03.989Z</lastmod>
     
