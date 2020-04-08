@@ -12,7 +12,6 @@ tags:
 - twin
 - window system
 - stm32
-- stmpe811
 - µGUI
 ---
 
