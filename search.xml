@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[EVGUI 触控简单处理笔记]]></title>
+    <url>%2F2020%2Fevgui-touch-interaction%2F</url>
+    <content type="text"><![CDATA[这是我的硕士论文笔记系列第四篇，原文写于 2016 年六月。 Touchscreen driver STM32F429 Discovery 板載 STMPE811 觸屏控制器 ST 官方提供了驅動程式 stm32f429i_discovery_ioe123456typedef struct &#123; uint16_t TouchDetected; uint16_t X; uint16_t Y; uint16_t Z;&#125; TP_STATE; 在 uGUI 的範例中，使用方法如下： 定義一個結構體：static TP_STATE* TP_State； 初始化觸控晶片：IOE_Config()； 在 SysTick 的 ISR 程式中： 123456789101112TP_State = IOE_TP_GetState();if (TP_State-&gt;TouchDetected) &#123; if ((TP_State-&gt;X &gt; 0) &amp;&amp; (TP_State-&gt;X &lt; 239 )) &#123; if ((TP_State-&gt;Y &gt; 0) &amp;&amp; (TP_State-&gt;Y &lt; 319 )) &#123; UG_TouchUpdate(TP_State-&gt;X,TP_State-&gt;Y,TOUCH_STATE_PRESSED); &#125; &#125;&#125; else &#123; UG_TouchUpdate(-1,-1,TOUCH_STATE_RELEASED);&#125; TWIN 在 EVGUI 中去掉了 TWIN 中的 cursor.c 和 file.c 兩個文件，第一個是因爲觸控屏不再需要指標，第二個則是我們需要實作的部分，把 X11 的滑鼠換成觸控屏的輸入 TWIN 中事件類型的定義： 12345678910111213141516171819202122232425262728typedef enum _twin_event_kind &#123; /* Mouse */ TwinEventButtonDown = 0x0001, TwinEventButtonUp = 0x0002, TwinEventMotion = 0x0003, TwinEventEnter = 0x0004, TwinEventLeave = 0x0005, /* keyboard */ TwinEventKeyDown = 0x0101, TwinEventKeyUp = 0x0102, TwinEventUcs4 = 0x0103, /* Focus */ TwinEventActivate = 0x0201, TwinEventDeactivate = 0x0202, /* Joystick */ TwinEventJoyButton = 0x0401, TwinEventJoyAxis = 0x0402, /* Widgets */ TwinEventPaint = 0x1001, TwinEventQueryGeometry = 0x1002, TwinEventConfigure = 0x1003, TwinEventDestroy = 0x1004,&#125; twin_event_kind_t; TWIN 中事件的定義： 123456789101112131415161718192021222324typedef struct _twin_event &#123; twin_event_kind_t kind; union &#123; struct &#123; twin_coord_t x, y; twin_coord_t screen_x, screen_y; twin_count_t button; &#125; pointer; struct &#123; twin_keysym_t key; &#125; key; struct &#123; twin_js_number_t control; twin_js_value_t value; &#125; js; struct &#123; twin_ucs4_t ucs4; &#125; ucs4; struct &#123; twin_rect_t extents; &#125; configure; &#125; u;&#125; twin_event_t; 添加觸控功能開啓事件處理的函式注冊 要在 fbdev 的 twin_fbdev_create_ext() 加入 handle_events 這個標志（值爲 1） 123if (handle_events) &#123; twin_set_file(twin_fbdev_read_events, tf-&gt;vt_fd, TWIN_READ, tf);&#125; 實作事件讀取函式 File: backend/system.c 關於輸入來源： X11 通過 Xlib 的 XNextEvent() 獲取 Framebuffer 實作了一個 linux_mouse 模塊，讀取 “/dev/input/mice” 的資料 關於 mice 設備的讀取可以參考這裡 下一節有說明，我們實作一個單向鏈表作爲輸入 處理 Raw Data File: backend/system.c 回顧，在 SysTick_Handler 中： TP_State = IOE_TP_GetState(); TP_State 中有 TouchDetected X Y Z 四個成員 判斷 TouchDetected 是否爲真且 X Y 在合法範圍內 構建 twin_event_t 參照 X11，因爲原生 TWIN 的 framebuffer 模式下 input 本身就有問題，且實作了一個 fb 的事件讀取和一個滑鼠的事件讀取，這兩個放在一起更合理 由於存在 screen-&gt;clicklock（在 twin_screen.c 中，會判斷 screen-&gt;clicklock 和 event→kind != TwinEventButtonUp 同時爲真才進行追蹤），暫時先不實作 TwinEventMotion 這個類別 因爲手指移動時一定是 ButtonDown 的類別也滿足上述判斷式 這樣可能導致的後果是：採用相對坐標，手指下次從其他地方滑動時，坐標還是之前的位置，出現很大的便宜 實作 TwinEventMotion 類別 設定一個是否按住的標志（初始值爲 1）爲 FirstTouch 每次 TouchDetected 爲真時判斷 FirstTouch 的值 若 FirstTouch 爲真則把這次動作的類別記爲 TwinEventMotion，然後再補一個 TwinEventButtonDown 的節點，最後將 FirstTouch 置爲 0 若 FirstTouch 爲假則只單純添加 TwinEventButtonDown 的節點 若 TouchDetected 爲假時則把 FirstTouch 置爲 1 輸入節點爲一個單向鏈表，有兩個 global 節點爲 TP_Head 和 TP_Latest： 1234typedef struct _FB_event &#123; struct _FBEvent *Next; twin_event_t event;&#125; FB_event; 問題 藍屏 → 無法正常載入圖形 GDB 調試發現在 SysTick Hadnler 重復呼叫幾次，就直接會跳到通用異常處理的 ISR 裏 這樣很容易猜測是 SySTick 中斷頻率太高，一次裏面的事情還沒做完，下一次就發生了，所以掛掉 通過 SysTick_Config() 把中斷頻率由原來的 1000Hz 改爲 100Hz，果然就好了 時鍾不走，觸屏沒反應 timeout_delay() 函式有問題 自己寫一個簡單的時間調度處理]]></content>
+      <categories>
+        <category>系统与底层</category>
+      </categories>
+      <tags>
+        <tag>embedded system</tag>
+        <tag>vector</tag>
+        <tag>gui</tag>
+        <tag>twin</tag>
+        <tag>window system</tag>
+        <tag>svg</tag>
+        <tag>µGUI</tag>
+        <tag>stm32</tag>
+        <tag>stmpe811</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[XML Parser for Libsvgtiny]]></title>
     <url>%2F2020%2Fevgui-xml-parser%2F</url>
     <content type="text"><![CDATA[这是我的硕士论文笔记系列第三篇，原文写于 2016 年五月。 Libxml2Libxml2 資料結構123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102/** * xmlNode: * * A node in an XML tree. */typedef struct _xmlNode xmlNode;typedef xmlNode *xmlNodePtr; struct _xmlNode &#123; void *_private; /* application data */ xmlElementType type; /* type number, must be second ! */ const xmlChar *name; /* the name of the node, or the entity */ struct _xmlNode *children; /* parent-&gt;childs link */ struct _xmlNode *last; /* last child link */ struct _xmlNode *parent; /* child-&gt;parent link */ struct _xmlNode *next; /* next sibling link */ struct _xmlNode *prev; /* previous sibling link */ struct _xmlDoc *doc; /* the containing document */ /* End of common part */ xmlNs *ns; /* pointer to the associated namespace */ xmlChar *content; /* the content */ struct _xmlAttr *properties;/* properties list */ xmlNs *nsDef; /* namespace definitions on this node */ void *psvi; /* for type/PSVI informations */ unsigned short line; /* line number */ unsigned short extra; /* extra data for XPath/XSLT */&#125;;/** * xmlDoc: * * An XML document. */typedef struct _xmlDoc xmlDoc;typedef xmlDoc *xmlDocPtr;struct _xmlDoc &#123; void *_private; /* application data */ xmlElementType type; /* XML_DOCUMENT_NODE, must be second ! */ char *name; /* name/filename/URI of the document */ struct _xmlNode *children; /* the document tree */ struct _xmlNode *last; /* last child link */ struct _xmlNode *parent; /* child-&gt;parent link */ struct _xmlNode *next; /* next sibling link */ struct _xmlNode *prev; /* previous sibling link */ struct _xmlDoc *doc; /* autoreference to itself */ /* End of common part */ int compression; /* level of zlib compression */ int standalone; /* standalone document (no external refs) ¦ 1 if standalone="yes" ¦ 0 if standalone="no" ¦ -1 if there is no XML declaration ¦ -2 if there is an XML declaration, but no standalone attribute was specified */ struct _xmlDtd *intSubset; /* the document internal subset */ struct _xmlDtd *extSubset; /* the document external subset */ struct _xmlNs *oldNs; /* Global namespace, the old way */ const xmlChar *version; /* the XML version string */ const xmlChar *encoding; /* external initial encoding, if any */ void *ids; /* Hash table for ID attributes if any */ void *refs; /* Hash table for IDREFs attributes if any */ const xmlChar *URL; /* The URI for that document */ int charset; /* encoding of the in-memory contentactually an ¦ xmlCharEncoding */ struct _xmlDict *dict; /* dict used to allocate names or NULL */ void *psvi; /* for type/PSVI informations */ int parseFlags; /* set of xmlParserOption used to parse the ¦ document */ int properties; /* set of xmlDocProperties for this document set ¦ at the end of parsing */&#125;;/** * xmlAttribute: * * An Attribute declaration in a DTD. */typedef struct _xmlAttribute xmlAttribute;typedef xmlAttribute *xmlAttributePtr;struct _xmlAttribute &#123; void *_private; /* application data */ xmlElementType type; /* XML_ATTRIBUTE_DECL, must be second ! */ const xmlChar *name; /* Attribute name */ struct _xmlNode *children; /* NULL */ struct _xmlNode *last; /* NULL */ struct _xmlDtd *parent; /* -&gt; DTD */ struct _xmlNode *next; /* next sibling link */ struct _xmlNode *prev; /* previous sibling link */ struct _xmlDoc *doc; /* the containing document */ struct _xmlAttribute *nexth; /* next in hash table */ xmlAttributeType atype; /* The attribute type */ xmlAttributeDefault def; /* the default */ const xmlChar *defaultValue; /* or the default value */ xmlEnumerationPtr tree; /* or the enumeration tree if any */ const xmlChar *prefix; /* the namespace prefix if any */ const xmlChar *elem; /* Element holding the attribute */&#125;; Libxml2 構建 API1dom_xml_parser *dom_xml_parser_create(void *dontCare1, void *dontCare2, MesgFuncPtr mesgFunc, void *dontCare3, dom_document **outDocument); 呼叫 xmlInitParser() 初始化 parser，然後使用 calloc 定義了 dom_document 和 dom_xml_parser 的指針各一個 1dom_xml_error dom_xml_parser_parse_chunk(dom_xml_parser *parser, const uint8_t *data, size_t len); 呼叫 xmlReadMemory() 函式解析 1dom_exception dom_document_get_document_element(dom_document *document, dom_element **outNode); 用來尋找根 &lt;svg&gt; ，實作直接呼叫 xmlDocGetRootElement() 函式得到 document→node，相當於默認是 SVG 檔案 1dom_exception dom_node_get_node_name(dom_node *node, dom_string **outString); 自幹一個 dom_string_create_interned() 函式 如果 svg→node→ns 和 svg→node→ns→prefix 存在，呼叫 asprintf(&amp;qname, &quot;%s:%s&quot;, n-&gt;ns-&gt;prefix, n-&gt;name) 先把字串寫進 qname，然後再通過自幹的函式把 qname 給 outString 若不存在就直接呼叫自幹函式把 svg→node→name 的值給 outString 1dom_exception dom_document_get_element_by_id(dom_node *node, dom_string *string, dom_element **outNode); 被 svgtiny_gradient.c 使用。先呼叫 xmlHasProp() 函式檢查 document→node 是否存在 id 這個屬性 若 id 屬性存在就再檢查裏面是否存在需要的 ID 字串，就把 gradient 的指標指向這個 document 內部還實作了一個 getElementById() 函式，供這個 API 調用，也是類似呼叫 xmlHasProp() 和做 strcasecmp() 1dom_exception dom_element_get_attribute(dom_node *node, dom_string *string, dom_string **outAttribute); 呼叫 xmlHasProp() 得到指定的屬性，例如讀 svg 的 d 屬性，也就是 path 1dom_exception dom_element_get_elements_by_tag_name(dom_element *element, dom_string *string, dom_nodelist **outNodeList); 被 svgtiny_gradient.c 使用。遍歷 element→node→children 鏈表，只要節點的名字和 tag 名相同，就把其加入 nodeList 裏 1dom_exception dom_node_get_node_type(dom_node *node, dom_node_type *outType); 需要注意 node type 的種類要滿足 12345678910111213141516171819dom_xml_error dom_xml_parser_completed(dom_xml_parser *parser);dom_xml_error dom_xml_parser_destroy(dom_xml_parser *parser);dom_exception dom_nodelist_get_length(dom_nodelist *nodeList, uint32_t *outLen);dom_exception dom_nodelist_item(dom_nodelist *nodeList, uint32_t index, dom_node **outItemp);void dom_node_unref(dom_node *node);void dom_nodelist_unref(dom_nodelist *nodeList);dom_exception dom_node_get_first_child(dom_element *element, dom_element **outChild);int dom_string_caseless_isequal(dom_string *a, dom_string *b);dom_exception dom_node_get_next_sibling(dom_element *element, dom_element **outChild);dom_exception dom_text_get_whole_text(dom_element *element, dom_string **outString);lwc_error lwc_intern_string(const char *data, size_t len, lwc_string **outString);int dom_string_caseless_lwc_isequal(dom_string *str, lwc_string *lwcString);void lwc_string_unref(lwc_string *lwcString);uint32_t dom_string_byte_length(dom_string *str); dom_exception dom_string_create_interned(const uint8_t *data, size_t len, dom_string **outString);char *dom_string_data(dom_string *str);int dom_string_isequal(dom_string *a, dom_string *b); dom_string *dom_string_ref(dom_string *str);void dom_string_unref(dom_string *str); 實作簡單或未實作 DOM Parser ChoicesYXML No 提供的接口函式太少 使用 stack 替代 malloc EZXML Try it! 資料結構比較合理，包含基本常用之 node 提供的 API 還算全面 成功解析 SVG 檔 使用 strcasecmp 修復 attr 的大小寫問題，例如 “viewbox” “viewBox” node 的 type 類型未初始化，除一開始 parse 到的 node 是 DOM 類型外，其餘 node 一律初始化爲 ELEMENT 類型 使用 libxml2 (左) 和 ezxml (右) 的對比圖]]></content>
@@ -60,7 +79,7 @@
         <tag>svg</tag>
         <tag>wearable devices</tag>
         <tag>µGUI</tag>
-        <tag>STM32</tag>
+        <tag>stm32</tag>
       </tags>
   </entry>
   <entry>
@@ -71,9 +90,9 @@
         <category>系统与底层</category>
       </categories>
       <tags>
+        <tag>stm32</tag>
         <tag>gdb</tag>
         <tag>cgdb</tag>
-        <tag>stm32</tag>
         <tag>disassembly</tag>
         <tag>binary</tag>
         <tag>defusing binary bomb</tag>
@@ -88,9 +107,9 @@
       </categories>
       <tags>
         <tag>mobile</tag>
-        <tag>vue</tag>
         <tag>responsive</tag>
         <tag>vuetify playground</tag>
+        <tag>vue</tag>
         <tag>vuejs</tag>
         <tag>vuetify</tag>
         <tag>vuetifyjs</tag>
@@ -428,8 +447,8 @@
       </categories>
       <tags>
         <tag>blog</tag>
-        <tag>hexo</tag>
         <tag>anniversary</tag>
+        <tag>hexo</tag>
         <tag>refactor</tag>
       </tags>
   </entry>
@@ -619,11 +638,11 @@
       </categories>
       <tags>
         <tag>note</tag>
-        <tag>web</tag>
-        <tag>tutorial</tag>
         <tag>rwd</tag>
+        <tag>web</tag>
         <tag>flex</tag>
         <tag>css</tag>
+        <tag>tutorial</tag>
         <tag>responsive</tag>
       </tags>
   </entry>
@@ -652,11 +671,11 @@
         <tag>javascript</tag>
         <tag>app</tag>
         <tag>mobile</tag>
+        <tag>web</tag>
+        <tag>tutorial</tag>
+        <tag>vue</tag>
         <tag>weex</tag>
         <tag>android</tag>
-        <tag>web</tag>
-        <tag>vue</tag>
-        <tag>tutorial</tag>
       </tags>
   </entry>
   <entry>
@@ -735,8 +754,8 @@
       </categories>
       <tags>
         <tag>blog</tag>
-        <tag>github</tag>
         <tag>hexo</tag>
+        <tag>github</tag>
       </tags>
   </entry>
 </search>
