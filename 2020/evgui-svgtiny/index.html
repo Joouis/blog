@@ -116,7 +116,7 @@
 
 
   <meta name="description" content="这是我的硕士论文笔记系列第二篇，原文写于 2016 年五月。">
-<meta name="keywords" content="embedded system,svg,svg tiny,libsvgtiny,vector,gui,twin,window system,cairo">
+<meta name="keywords" content="embedded system,vector,gui,twin,window system,svg,svg tiny,libsvgtiny,cairo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SVG Tiny 与 Libsvgtiny">
 <meta property="og:url" content="https://blog.joouis.com/2020/evgui-svgtiny/index.html">
@@ -653,9 +653,9 @@
 <li>使用 Netsurf 開啓老虎圖，直接笑出來了…</li>
 </ul>
 <p><img src="https://hcxgua.bn.files.1drv.com/y4mDaXibkKkZ2DLw13I-H9R_eFWZvjP5M9Wy9jShTnZTLLC1u2TYdXXg_tydEf9dGEhqdmln1m09ye6YlSLJXk-7vWw03JjvBtSHx2RQfwSA6BEIozngeq3myirgFaEdWP6kbF-lfgF-SfUo1BJXK8jo4x0JID6PhT8nx2aoTztA-vrdUBN3u2bH48H1_RZ02BvBR9WmxYXoqnmo7VV0_zUNQ?width=1272&amp;height=1080&amp;cropmode=none" alt></p>
-<h3 id="移植到-STM32F429-上的過程中，編譯鏈接又出問題了"><a href="#移植到-STM32F429-上的過程中，編譯鏈接又出問題了" class="headerlink" title="移植到 STM32F429 上的過程中，編譯鏈接又出問題了"></a>移植到 STM32F429 上的過程中，編譯鏈接又出問題了</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">In file included from /usr/include/libxml2/libxml/parser.h:810:0,</span><br><span class="line">                 from /usr/include/libxml2/libxml/globals.h:18,</span><br><span class="line">                 from /usr/include/libxml2/libxml/threads.h:35,</span><br><span class="line">                 from /usr/include/libxml2/libxml/xmlmemory.h:218,</span><br><span class="line">                 from /usr/include/libxml2/libxml/tree.h:1307,</span><br><span class="line">                 from libsvgtiny/src/xml2dom.c:14:</span><br><span class="line">/usr/include/libxml2/libxml/encoding.h:31:26: fatal error: unicode/ucnv.h: No such file or directory</span><br><span class="line"><span class="meta"> #</span>include &lt;unicode/ucnv.h&gt;</span><br><span class="line">                          ^</span><br><span class="line">compilation terminated.</span><br><span class="line">Makefile:85: recipe for target 'libsvgtiny/src/xml2dom.o' failed</span><br><span class="line">make: *** [libsvgtiny/src/xml2dom.o] Error 1</span><br></pre></td></tr></table></figure>
+<h3 id="移植到-STM32F429-上的過程中，編譯鏈接又出問題了"><a href="#移植到-STM32F429-上的過程中，編譯鏈接又出問題了" class="headerlink" title="移植到 STM32F429 上的過程中，編譯鏈接又出問題了"></a>移植到 STM32F429 上的過程中，編譯鏈接又出問題了</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">In file included from /usr/include/libxml2/libxml/parser.h:810:0,</span><br><span class="line">                 from /usr/include/libxml2/libxml/globals.h:18,</span><br><span class="line">                 from /usr/include/libxml2/libxml/threads.h:35,</span><br><span class="line">                 from /usr/include/libxml2/libxml/xmlmemory.h:218,</span><br><span class="line">                 from /usr/include/libxml2/libxml/tree.h:1307,</span><br><span class="line">                 from libsvgtiny/src/xml2dom.c:14:</span><br><span class="line">/usr/include/libxml2/libxml/encoding.h:31:26: fatal error: unicode/ucnv.h: No such file or directory</span><br><span class="line"><span class="meta"> #</span><span class="bash">include &lt;unicode/ucnv.h&gt;</span></span><br><span class="line">                          ^</span><br><span class="line">compilation terminated.</span><br><span class="line">Makefile:85: recipe for target 'libsvgtiny/src/xml2dom.o' failed</span><br><span class="line">make: *** [libsvgtiny/src/xml2dom.o] Error 1</span><br></pre></td></tr></table></figure>
 <p>Jserv replied:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git clone git://git.gnome.org/libxml2</span><br><span class="line"><span class="meta">$</span> cd libxml2</span><br><span class="line"><span class="meta">$</span> ./autogen.sh</span><br><span class="line"><span class="meta">$</span> sh configure \</span><br><span class="line">  --prefix=/tmp \</span><br><span class="line">  --enable-static \</span><br><span class="line">  --disable-shared \</span><br><span class="line">  --enable-ipv6=no \</span><br><span class="line">  --without-c14n \</span><br><span class="line">  --without-catalog \</span><br><span class="line">  --without-debug \</span><br><span class="line">  --without-docbook \</span><br><span class="line">  --without-fexceptions \</span><br><span class="line">  --without-ftp \</span><br><span class="line">  --without-history \</span><br><span class="line">  --without-html \</span><br><span class="line">  --without-http \</span><br><span class="line">  --without-iconv \</span><br><span class="line">  --without-icu \</span><br><span class="line">  --with-iso8859x \</span><br><span class="line">  --without-legacy \</span><br><span class="line">  --with-minimum \</span><br><span class="line">  --without-output \</span><br><span class="line">  --without-pattern \</span><br><span class="line">  --without-push \</span><br><span class="line">  --without-python \</span><br><span class="line">  --without-reader \</span><br><span class="line">  --without-regexps \</span><br><span class="line">  --without-sax1 \</span><br><span class="line">  --with-schemas \</span><br><span class="line">  --with-schematron \</span><br><span class="line">  --without-threads \</span><br><span class="line">  --with-tree \</span><br><span class="line">  --with-valid  \</span><br><span class="line">  --with-writer \</span><br><span class="line">  --with-xinclude \</span><br><span class="line">  --with-xpath \</span><br><span class="line">  --with-xptr \</span><br><span class="line">  --without-modules \</span><br><span class="line">  --without-zlib</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">clone</span> git://git.gnome.org/libxml2</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> libxml2</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ./autogen.sh</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sh configure \</span></span><br><span class="line">  --prefix=/tmp \</span><br><span class="line">  --enable-static \</span><br><span class="line">  --disable-shared \</span><br><span class="line">  --enable-ipv6=no \</span><br><span class="line">  --without-c14n \</span><br><span class="line">  --without-catalog \</span><br><span class="line">  --without-debug \</span><br><span class="line">  --without-docbook \</span><br><span class="line">  --without-fexceptions \</span><br><span class="line">  --without-ftp \</span><br><span class="line">  --without-history \</span><br><span class="line">  --without-html \</span><br><span class="line">  --without-http \</span><br><span class="line">  --without-iconv \</span><br><span class="line">  --without-icu \</span><br><span class="line">  --with-iso8859x \</span><br><span class="line">  --without-legacy \</span><br><span class="line">  --with-minimum \</span><br><span class="line">  --without-output \</span><br><span class="line">  --without-pattern \</span><br><span class="line">  --without-push \</span><br><span class="line">  --without-python \</span><br><span class="line">  --without-reader \</span><br><span class="line">  --without-regexps \</span><br><span class="line">  --without-sax1 \</span><br><span class="line">  --with-schemas \</span><br><span class="line">  --with-schematron \</span><br><span class="line">  --without-threads \</span><br><span class="line">  --with-tree \</span><br><span class="line">  --with-valid  \</span><br><span class="line">  --with-writer \</span><br><span class="line">  --with-xinclude \</span><br><span class="line">  --with-xpath \</span><br><span class="line">  --with-xptr \</span><br><span class="line">  --without-modules \</span><br><span class="line">  --without-zlib</span><br></pre></td></tr></table></figure>
 <h3 id="libxml2-太龐大，無法放入-ARM-環境"><a href="#libxml2-太龐大，無法放入-ARM-環境" class="headerlink" title="libxml2 太龐大，無法放入 ARM 環境"></a>libxml2 太龐大，無法放入 ARM 環境</h3><ul>
 <li>替代品<ul>
 <li><a href="https://dev.yorhel.nl/yxml" target="_blank" rel="noopener">YXML</a></li>
@@ -685,6 +685,13 @@
 
   <div class="popular-posts-header">相关文章</div>
   <ul class="popular-posts">
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="/2020/evgui-xml-parser/" rel="bookmark">XML Parser for Libsvgtiny</a></div>
+      
+    </li>
   
     <li class="popular-posts-item">
       
@@ -795,12 +802,6 @@
           
             <a href="/tags/embedded-system/" rel="tag"># embedded system</a>
           
-            <a href="/tags/svg/" rel="tag"># svg</a>
-          
-            <a href="/tags/svg-tiny/" rel="tag"># svg tiny</a>
-          
-            <a href="/tags/libsvgtiny/" rel="tag"># libsvgtiny</a>
-          
             <a href="/tags/vector/" rel="tag"># vector</a>
           
             <a href="/tags/gui/" rel="tag"># gui</a>
@@ -808,6 +809,12 @@
             <a href="/tags/twin/" rel="tag"># twin</a>
           
             <a href="/tags/window-system/" rel="tag"># window system</a>
+          
+            <a href="/tags/svg/" rel="tag"># svg</a>
+          
+            <a href="/tags/svg-tiny/" rel="tag"># svg tiny</a>
+          
+            <a href="/tags/libsvgtiny/" rel="tag"># libsvgtiny</a>
           
             <a href="/tags/cairo/" rel="tag"># cairo</a>
           
@@ -831,6 +838,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/evgui-xml-parser/" rel="prev" title="XML Parser for Libsvgtiny">
+                XML Parser for Libsvgtiny <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -908,7 +919,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">45</span>
+                    <span class="site-state-item-count">46</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1284,7 +1295,17 @@
                     
                       
                     
-                    <span class="site-state-item-count">165</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">170</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
