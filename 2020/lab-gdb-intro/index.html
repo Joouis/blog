@@ -115,13 +115,13 @@
 <meta name="baidu-site-verification" content="ChOTP1bKoM">
 
 
-  <meta name="description" content="这是我的嵌入式笔记第七篇，原文写于2015年。本文除了介绍GDB/CGBD的基础使用方法以及嵌入式开发应用外，还会分享一个解密类经典游戏 Defusing a binary bomb with GDB ，非常有趣！">
+  <meta name="description" content="这是我的嵌入式笔记第七篇同时也是完结篇，原文写于2015年。本文除了介绍GDB/CGBD的基础使用方法以及嵌入式开发应用外，还会分享一个解密类经典游戏 Defusing a binary bomb with GDB ，非常有趣！">
 <meta name="keywords" content="stm32,gdb,cgdb,disassembly,binary,defusing binary bomb">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GDB&#x2F;CGDB入门与拆弹游戏">
 <meta property="og:url" content="https://blog.joouis.com/2020/lab-gdb-intro/index.html">
 <meta property="og:site_name" content="江边的旱鸭子">
-<meta property="og:description" content="这是我的嵌入式笔记第七篇，原文写于2015年。本文除了介绍GDB/CGBD的基础使用方法以及嵌入式开发应用外，还会分享一个解密类经典游戏 Defusing a binary bomb with GDB ，非常有趣！">
+<meta property="og:description" content="这是我的嵌入式笔记第七篇同时也是完结篇，原文写于2015年。本文除了介绍GDB/CGBD的基础使用方法以及嵌入式开发应用外，还会分享一个解密类经典游戏 Defusing a binary bomb with GDB ，非常有趣！">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://g8xeua.bn.files.1drv.com/y4m2NfjgmRex3zQrLCz2ec6NFVRh9RVlYb6UxUVIW5Cp_ERI9Aewx17RtVAc74PA33vZdXPAFsMqMHaKmV2-v_SDvAxa4SEyYr4-WXEyT5QEvDfMBkrjNr70ggOdi7F8irjC_en48kPMwf2HBEiPWzfTYVrCg7LWUmb17hT1ciWMNiR9a9Woxr9HTBiQEVtRbLmfF59Kt7I6Gm9L5d-gahNOg">
 <meta property="og:image" content="https://g8xgua.bn.files.1drv.com/y4mPoBctTovg6J0yvhXhtffMfAPecqUB0wg5NJ-TYuE67eCPc5pFngsB3YWObYbw43_WCi__xFFjIXMMUfVCTjDQ3LB6WldJeVVdl2GgzHvk4e1NfiWyWz8eGqvKqxMx1Q3DrNTZSsd33h6aalvSdyIOxcohH8GQd7F3Ibi-5khQgNfOWTshN_lITEZAtALGyuedC96KqrLIVX3UkXz3I2kHQ">
@@ -141,7 +141,7 @@
 <meta property="og:updated_time" content="2020-03-29T08:22:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GDB&#x2F;CGDB入门与拆弹游戏">
-<meta name="twitter:description" content="这是我的嵌入式笔记第七篇，原文写于2015年。本文除了介绍GDB/CGBD的基础使用方法以及嵌入式开发应用外，还会分享一个解密类经典游戏 Defusing a binary bomb with GDB ，非常有趣！">
+<meta name="twitter:description" content="这是我的嵌入式笔记第七篇同时也是完结篇，原文写于2015年。本文除了介绍GDB/CGBD的基础使用方法以及嵌入式开发应用外，还会分享一个解密类经典游戏 Defusing a binary bomb with GDB ，非常有趣！">
 <meta name="twitter:image" content="https://g8xeua.bn.files.1drv.com/y4m2NfjgmRex3zQrLCz2ec6NFVRh9RVlYb6UxUVIW5Cp_ERI9Aewx17RtVAc74PA33vZdXPAFsMqMHaKmV2-v_SDvAxa4SEyYr4-WXEyT5QEvDfMBkrjNr70ggOdi7F8irjC_en48kPMwf2HBEiPWzfTYVrCg7LWUmb17hT1ciWMNiR9a9Woxr9HTBiQEVtRbLmfF59Kt7I6Gm9L5d-gahNOg">
 
 
@@ -537,7 +537,7 @@
       
 
       
-        <p>这是我的<a href="https://blog.joouis.com/2019/watching-notes-revolution-os/">嵌入式笔记</a>第七篇，原文写于2015年。本文除了介绍GDB/CGBD的基础使用方法以及嵌入式开发应用外，还会分享一个解密类经典游戏 <code>Defusing a binary bomb with GDB</code> ，非常有趣！</p>
+        <p>这是我的<a href="https://blog.joouis.com/2019/watching-notes-revolution-os/">嵌入式笔记</a>第七篇同时也是完结篇，原文写于2015年。本文除了介绍GDB/CGBD的基础使用方法以及嵌入式开发应用外，还会分享一个解密类经典游戏 <code>Defusing a binary bomb with GDB</code> ，非常有趣！</p>
 <a id="more"></a>
 <h2 id="使用GDB"><a href="#使用GDB" class="headerlink" title="使用GDB"></a>使用GDB</h2><h3 id="GDB"><a href="#GDB" class="headerlink" title="GDB"></a>GDB</h3><ul>
 <li><code>b [function name] *[address]</code>：設置斷點</li>
@@ -1337,7 +1337,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">170</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">173</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>

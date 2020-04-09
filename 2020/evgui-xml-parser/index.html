@@ -552,8 +552,7 @@
 </ul>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">dom_exception <span class="title">dom_document_get_element_by_id</span><span class="params">(dom_node *node, dom_string *<span class="built_in">string</span>, dom_element **outNode)</span></span>;</span><br></pre></td></tr></table></figure>
 <ul>
-<li><p>被 <code>svgtiny_gradient.c</code> 使用。先呼叫 <code>xmlHasProp()</code> 函式檢查 <code>document→node</code> 是否存在 <code>id</code> 這個屬性</p>
-<ul>
+<li>被 <code>svgtiny_gradient.c</code> 使用。先呼叫 <code>xmlHasProp()</code> 函式檢查 <code>document→node</code> 是否存在 <code>id</code> 這個屬性<ul>
 <li>若 <code>id</code> 屬性存在就再檢查裏面是否存在需要的 ID 字串，就把 <code>gradient</code> 的指標指向這個 document</li>
 <li>內部還實作了一個 <code>getElementById()</code> 函式，供這個 API 調用，也是類似呼叫 <code>xmlHasProp()</code> 和做 <code>strcasecmp()</code></li>
 </ul>
@@ -644,7 +643,7 @@
     <li class="popular-posts-item">
       
       
-      <div class="popular-posts-title"><a href="/2019/am335x-arm-cortex-a8-boot-sequence/" rel="bookmark">解析AM335x Arm Cortex-A8处理器的启动流程</a></div>
+      <div class="popular-posts-title"><a href="/2020/evgui-twin-workflow-review/" rel="bookmark">以 Clock 应用为例追踪 TWIN 的运作流程</a></div>
       
     </li>
   
@@ -1242,7 +1241,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">170</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">173</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
