@@ -170,7 +170,7 @@ dom_exception dom_document_get_element_by_id(dom_node *node, dom_string *string,
 
 - 被 `svgtiny_gradient.c` 使用。先呼叫 `xmlHasProp()` 函式檢查 `document→node` 是否存在 `id` 這個屬性
 
-- - 若 `id` 屬性存在就再檢查裏面是否存在需要的 ID 字串，就把 `gradient` 的指標指向這個 document
+  - 若 `id` 屬性存在就再檢查裏面是否存在需要的 ID 字串，就把 `gradient` 的指標指向這個 document
   - 內部還實作了一個 `getElementById()` 函式，供這個 API 調用，也是類似呼叫 `xmlHasProp()` 和做 `strcasecmp()`
 
 ```c
