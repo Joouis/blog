@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://blog.joouis.com/2020/evgui-twin-apis/</loc>
+    <lastmod>2020-04-09</lastmod>
+  </url>  <url>
+    <loc>https://blog.joouis.com/2020/evgui-twin-workflow-review/</loc>
+    <lastmod>2020-04-08</lastmod>
+  </url>  <url>
     <loc>https://blog.joouis.com/2020/evgui-touch-interaction/</loc>
     <lastmod>2020-04-08</lastmod>
   </url>  <url>
