@@ -81,54 +81,34 @@ date: 2019-04-20 01:01:00
 
 
 
-### 2020.4.14
+### 2020.5.27
 
-| Product    | Sub Team Focus                                               | Role           | City    | Years of  Experience | English |
-| ---------- | ------------------------------------------------------------ | -------------- | ------- | -------------------- | ------- |
-| M365       | M365 cloud security, intrusion  detection, intrusion network security, etc. Backend Engineer, Nice to have  security experience or willing to learn this domain for a long time. Big data cloud service and security experience is a plus | Dev            | Suzhou  | 1Y+                  | Strong  |
-| M365       | HA/Store                                                     | Dev            | Suzhou  | 1Y+                  | Strong  |
-| M365       | Migration team: O365 data migration, 1+ years experience, backend dev | Dev            | Suzhou  | 1Y+                  | Strong  |
-| M365       | Engineering system                                           | EM             | Suzhou  | 10Y+                 | Strong  |
-| M365       | Engineering system                                           | Dev            | Suzhou  | 0Y+                  | Strong  |
-| M365       | EverGreen                                                    | Dev            | Suzhou  | 1Y+                  | middle  |
-| M365       | App Fabric - Fleet                                           | Dev            | Suzhou  | 2Y+                  | Strong  |
-| M365       | OS&SKU                                                       | Dev            | Suzhou  | 1Y+                  | Strong  |
-| M365       | Capsense                                                     | Data Scientist | Suzhou  | 2Y+                  | Strong  |
-| M365       | O365 Substrate Management Platform                           | Dev            | Suzhou  | 2Y+                  | Strong  |
-| M365       | HA & Substrate Management Platform and Azure convergence     | EM             | Suzhou  | 10Y+                 | Strong  |
-| M365       | O365 Protocols                                               | Dev            | Suzhou  | 1Y+                  | Strong  |
-| M365       | Service Auth/Active Directory (AD)                           | Dev            | Suzhou  | 1Y+                  | Strong  |
-| M365       | AD TEAM: DIRECTORY, Distributed system  services or NoSQL storage is nice to have background | Dev            | Suzhou  | 1Y+                  | Strong  |
-| M365       | Mobile app development                                       | Android/iOS    | Suzhou  | 2Y+                  | Middle  |
-| M365       | IDEAs/CFR:M365 Insights, Data Engineering & Analytics team. Data experience is a plus | Dev            | Suzhou  | 1Y+                  | Strong  |
-| M365       | Information Protection, Anti-spam and  security features for the enterprise-level service known as Exchange Online  Protection (EOP), 2 years+ working experience | Dev            | Suzhou  | 1Y+                  | Strong  |
-| Sharepoint | Enterprise Search                                            | Dev            | Suzhou  | 2Y+                  | Strong  |
-| Sharepoint | Onedrive Mobile                                              | Android/iOS    | Suzhou  | 2Y+                  | Strong  |
-| Sharepoint | Search                                                       | EM             | Suzhou  | 10Y+                 | Strong  |
-| Sharepoint | Teams                                                        | Dev/Front-end  | Suzhou  | 2Y+                  | Strong  |
-| Sharepoint | Migration                                                    | Dev/Front-end  | Suzhou  | 2Y+                  | Strong  |
-| MMD        | Microsoft Managed Desktop                                    | Dev            | Suzhou  | 4Y+                  | Low     |
-| MMD        | Microsoft Managed Desktop                                    | Dev            | Suzhou  | 7Y+                  | Strong  |
-| MSRA       | MSRA-system/networking/data  mining                          | Researcher     | Beijing | 10Y+                 | Low     |
+| Product    | Sub Team Focus                      | Role           | City    | Years of  Experience | English |
+| ---------- | ----------------------------------- | -------------- | ------- | -------------------- | ------- |
+| M365       | HA/Store                            | Dev            | Suzhou  | 4Y+                  | Strong  |
+| M365       | Migration team: O365 data migration | Dev            | Suzhou  | 7Y+                  | Strong  |
+| M365       | Engineering system                  | EM             | Suzhou  | 10Y+                 | Strong  |
+| M365       | Engineering system                  | Dev            | Suzhou  | 0Y+                  | Strong  |
+| M365       | Performance                         | Dev            | Suzhou  | 1Y+                  | Strong  |
+| M365       | App Fabric - Fleet                  | Dev            | Suzhou  | 1Y+                  | Strong  |
+| M365       | OS&SKU                              | Dev            | Suzhou  | 1Y+                  | Strong  |
+| M365       | Capsense                            | Data Scientist | Suzhou  | 2Y+                  | Strong  |
+| M365       | O365 Protocols                      | Dev            | Suzhou  | 1Y+                  | Strong  |
+| M365       | Monitoring                          | Dev            | Suzhou  | 1Y+                  | Strong  |
+| M365       | Search                              | Dev            | Suzhou  | 1Y+                  | Strong  |
+| M365       | IP Connectivity                     | Dev            | Suzhou  | 1Y+                  | Strong  |
+| M365       | DevX                                | Dev            | Suzhou  | 1Y+                  | Strong  |
+| Sharepoint | Enterprise Search                   | Dev            | Suzhou  | 6Y+                  | Strong  |
+| Sharepoint | Search                              | EM             | Suzhou  | 10Y+                 | Strong  |
+| Sharepoint | Teams, Android Video/Audio          | Dev            | Suzhou  | 1Y+                  | Strong  |
+| Sharepoint | Teams                               | PM             | Suzhou  | 5Y+                  | Strong  |
+| MMD        | Microsoft Managed Desktop           | Dev            | Suzhou  | 4Y+                  | Low     |
+| MMD        | Microsoft Managed Desktop           | EM             | Suzhou  | 7Y+                  | Strong  |
+| Relevance  | Bing Search Result Page             | Dev            | Suzhou  | 1Y+                  | Low     |
+| Relevance  | NLP projects                        | Dev            | Suzhou  | 3Y+                  | Low     |
+| MSAI       | Android/iOS                         | Android/iOS    | Suzhou  | 2Y+                  | Low     |
+| MSRA       | MSRA-system/networking/data  mining | Researcher     | Beijing | 10Y+                 | Low     |
 
-
-
-### 2020.4.1
-
-这不是愚人节的恶作剧哈，无锡、上海（无锡为主）新增一批CSS技术支持职位，欢迎英文好、有云端支持背景的朋友们来聊~
-
-| Title                       | Product                       | Location             |
-| --------------------------- | ----------------------------- | -------------------- |
-| Support Engineer            | Azure Networking              | Wuxi/Shanghai        |
-| Support Escalation Engineer | Kubernetes                    | Wuxi/Shanghai        |
-| Support Engineer            | Azure VM                      | Wuxi/Shanghai        |
-| Support Engineer            | Azure Stack                   | Shanghai             |
-| Support Escalation Engineer | Azure Dev                     | Wuxi/Shanghai        |
-| Support Escalation Engineer | Azure Rapid Response          | Wuxi/Shanghai        |
-| Support Escalation Engineer | Azure WebApp                  | Wuxi/Shanghai        |
-| Support Engineer            | Azure Subscription Management | Wuxi/Shanghai/Taipei |
-| Support Escalation Engineer | Azure Event Management        | Wuxi/Shanghai        |
-| Support Escalation Engineer | High Performance Computing    | Wuxi/Shanghai/Taipei |
 
 
 
