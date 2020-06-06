@@ -81,7 +81,7 @@ date: 2019-04-20 01:01:00
 
 
 
-### 2020.6.3
+### 2020.6.5
 
 | Product    | Sub Team Focus                      | Role           | City    | Years of  Experience | English |
 | ---------- | ----------------------------------- | -------------- | ------- | -------------------- | ------- |
@@ -100,13 +100,10 @@ date: 2019-04-20 01:01:00
 | M365       | DevX                                | Dev            | Suzhou  | 1Y+                  | Strong  |
 | Sharepoint | Enterprise Search                   | Dev            | Suzhou  | 6Y+                  | Strong  |
 | Sharepoint | Search                              | EM             | Suzhou  | 10Y+                 | Strong  |
-| Sharepoint | Teams, Android Video/Audio          | Dev            | Suzhou  | 1Y+                  | Strong  |
+| Sharepoint | Teams, Android/iOS/backend/frontend | Dev            | Suzhou  | 5Y+                  | Strong  |
 | Sharepoint | Teams                               | PM             | Suzhou  | 5Y+                  | Strong  |
 | MMD        | Microsoft Managed Desktop           | Dev            | Suzhou  | 4Y+                  | Low     |
 | MMD        | Microsoft Managed Desktop           | EM             | Suzhou  | 7Y+                  | Strong  |
-| Relevance  | Bing Search Result Page             | Dev            | Suzhou  | 1Y+                  | Low     |
-| Relevance  | NLP projects                        | Dev            | Suzhou  | 3Y+                  | Low     |
-| MSAI       | Android/iOS                         | Android/iOS    | Suzhou  | 2Y+                  | Low     |
 | MSRA       | MSRA-system/networking/data  mining | Researcher     | Beijing | 10Y+                 | Low     |
 
 
