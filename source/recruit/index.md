@@ -7,14 +7,6 @@ date: 2019-04-20 01:01:00
 
 
 
-**身为武汉人，这段时间一直在关注并为家乡加油，很感动看到公司也陆续做出一些人文关怀举措，践行了我们的企业文化。**
-
-![](https://imxpoq.bn.files.1drv.com/y4mw3SoLTzT46YfFbh8Ea-tHqxuOOmo0c4FAwOTZFTF0JcXE1k3RlF84dQZ-HjvnASJGgPcPNXI1FBA3vl28sdULiXiAsB1cOY0LDOj01qzUZFC6oifBbBxSDnkJB32wZcQ4IFbh6Ramtt7-fYa6o7vpxuxxFjpqfyVpL6wnz_et60sWJCOdPBsxfb04AeyTkokmnCd9sAhl31APdSX6ek8Bg?width=1242&height=1621&cropmode=none)
-
-![](https://imxqoq.bn.files.1drv.com/y4mnwhcr6VU8q8xq_i5pjYC_UO5VUd7M_xj-8ysAy0mGRqMrREpSABCQ3RSFpmIT3P4n4v9FBLVrM941j6ao-KLyavH8-NxRv45u9QAnF3h-7EdHDpvZQLW6z0VN0eHZIpfCyd0GeAEWc9YibrvwAB6gNYP150-TighwhrCSy09WnAHWT8qvY_fOzhtQgl6rJEDlHgYiOJkLQnlVFTqMtmGqQ?width=828&height=1792&cropmode=none)
-
-
-
 ## TL;DR
 
 微软中国海量招人啦，Web 前后端、算法、设计等等职位都缺人！通过[官网](https://careers.microsoft.com/us/en/search-results?rt=professional)筛选出你喜欢且自认为适合的工作，邮件我，我来给你靠谱的建议、内推你并持续帮你跟进后续进展直到你拿到 offer。
@@ -81,7 +73,7 @@ date: 2019-04-20 01:01:00
 
 
 
-### 2020.6.5
+### 2020.7.2
 
 | Product    | Sub Team Focus                      | Role           | City    | Years of  Experience | English |
 | ---------- | ----------------------------------- | -------------- | ------- | -------------------- | ------- |
