@@ -73,40 +73,24 @@ date: 2019-04-20 01:01:00
 
 
 
-### 2020.8.10
+### 2020.9.1
 
-| Job  Title                                                   | Chinese  Title                             | City     |
-| ------------------------------------------------------------ | ------------------------------------------ | -------- |
-| Software Engineer-Office big data team                       | 大数据开发工程师-Microsoft  365            | Suzhou   |
-| Program Manager II                                           | 产品经理-Microsoft  Launcher               | Beijing  |
-| Senior Data & Applied Scientist                              | 资深数据科学家-Microsoft  365              | Suzhou   |
-| Android/iOS Software Engineer 2-Microsoft Teams              | 客户端开发工程师-Microsoft  Teams          | Suzhou   |
-| Principal Engineering Manager-Microsoft Teams                | 资深研发经理-Microsoft  Teams              | Suzhou   |
-| Software Engineer/ SE II- O365 Search Team                   | 软件开发工程师-M365  Search                | Suzhou   |
-| Senior Software Engineer - SharePoint Search                 | 资深软件开发工程师-SharePoint              | Suzhou   |
-| Senior Program Manager -SharePoint Search                    | 资深产品  经理-SharePoint                  | Suzhou   |
-| Software Engineer-SharePoint                                 | 前端开发工程师-SharePoint                  | Suzhou   |
-| Sr./Principal Engineering Manager--Microsoft 365 Anti Spam   | 资深研发经理-M365  Anti Spam               | Suzhou   |
-| Software Engineer/SEII- O365 AD                              | 软件开发工程师-M365  AD                    | Suzhou   |
-| Senior Designer                                              | 资深用户体验设计师                         | Suzhou   |
-| Software Development Engineer                                | Android工程师-MSAI                         | Suzhou   |
-| Software Engineer II/ Senior SE--MMD                         | 开发工程师-  桌面托管组                    | Suzhou   |
-| Software Engineer II/ Senior SE- O365 ES                     | 软件开发工程师-  M365 Engineering System   | Suzhou   |
-| Frontend Software Development Engineer- O365 Performance     | 前端开发工程师-  M365 Performance          | Suzhou   |
-| Sr. Software Engineer Manager --O365 Performance             | 资深研发经理-  M365 Performance            | Suzhou   |
-| Software Engineering II/ Senior SE--M365 Store AGC           | 软件开发工程师-  M365 Store                | Suzhou   |
-| SEII/Sr. Software Engineer--O365 Monitoring                  | 软件开发工程师-  M365 Monitoring           | Suzhou   |
-| Sr. Software Engineer- O365 Migration                        | 软件开发工程师-  M365 Migration            | Suzhou   |
-| Principal SW Engineering Manager--O365 Engineering System    | 资深研发经理-  M365 Engineering System     | Suzhou   |
-| Sr./Principal SW Engineering Manager--M365 HA/Store          | 资深研发经理-  M365 HA/Store               | Suzhou   |
-| Sr./Principal Engineering Manager--O365 Deployment &  Flighting | 资深研发经理-  M365 Deployment & Flighting | Suzhou   |
-| Sr./Principal SW engineering Manager --M365 Data Analysis    | 资深研发经理-  M365 Data Analysis          | Suzhou   |
-| Software Engineer(all levels)-Bing Whole Page                | 软件开发工程师-  Bing Whole Page           | Suzhou   |
-| Android/iOS Software Engineer 2-MSAI                         | 客户端开发工程师-MSAI                      | Suzhou   |
-| Senior Program Manager-Teams App Developer Service           | 资深产品经理-  Teams App Developer Service | Shanghai |
-| Principal Architect_ Java                                    | Java首席架构师                             | Shanghai |
-| Senior Engineer - Teams DevX (across levels)                 | 资深开发工程师-  Teams开发平台             | Shanghai |
-| Data & Applied Scientist II                                  | 数据和应用科学家                           | Shanghai |
+| Job  Title                                                   | Years of Experience | City   |
+| ------------------------------------------------------------ | ------------------- | ------ |
+| **Designers - Studio 8**                                     | **All level**       | Suzhou |
+| Software/Front-end engineer - O365 Performance               | 3Y+                 | Suzhou |
+| Software engineer - O365 Data Migration                      | 7Y+                 | Suzhou |
+| Engieering manager - Engineering system/Performance/HA/Singals/Deployment | 10Y+                | Suzhou |
+| Software engineer - O365 Big Data and Compliance             | 5Y+                 | Suzhou |
+| Engineer/Scientist - O365 Monitoring                         | 5Y+                 | Suzhou |
+| Software engineer - O365 Griffin                             | 3Y+                 | Suzhou |
+| Software engineer - O365 Search                              | 3Y+                 | Suzhou |
+| Software engineer - SharePoint Enterprise Search             | 6Y+                 | Suzhou |
+| Engineering manager - SharePoint Enterprise Search           | 10Y+                | Suzhou |
+| Android media engineer - SharePoint Teams                    | 4Y+                 | Suzhou |
+| Software engineer - SharePoint Data Platform                 | 6Y+                 | Suzhou |
+| Software/Front-end engineer - SharePoint other teams         | 3Y+                 | Suzhou |
+| Software engineer - Intune/MMD                               | 3Y+                 | Suzhou |
 
 
 
