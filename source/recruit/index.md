@@ -73,24 +73,39 @@ date: 2019-04-20 01:01:00
 
 
 
-### 2020.9.22
+### 2020.10.3
 
-| Job  Title                                                   | Years of Experience | City   |
-| ------------------------------------------------------------ | ------------------- | ------ |
-| **Designers - Studio 8**                                     | **All level**       | Suzhou |
-| Software/Front-end engineer - O365 Performance               | 3Y+                 | Suzhou |
-| Software engineer - O365 Data Migration                      | 7Y+                 | Suzhou |
-| Engieering manager - Engineering system/Performance/HA/Singals/Deployment | 10Y+                | Suzhou |
-| Software engineer - O365 Big Data and Compliance             | 5Y+                 | Suzhou |
-| Engineer/Scientist - O365 Monitoring                         | 5Y+                 | Suzhou |
-| Software engineer - O365 Griffin                             | 3Y+                 | Suzhou |
-| Software engineer - O365 Search                              | 3Y+                 | Suzhou |
-| Software engineer - SharePoint Enterprise Search             | 6Y+                 | Suzhou |
-| Engineering manager - SharePoint Enterprise Search           | 10Y+                | Suzhou |
-| Android media engineer - SharePoint Teams                    | 4Y+                 | Suzhou |
-| Software engineer - SharePoint Data Platform                 | 6Y+                 | Suzhou |
-| Software/Front-end engineer - SharePoint other teams         | 3Y+                 | Suzhou |
-| Software engineer - Intune/MMD                               | 3Y+                 | Suzhou |
+| Job  Title                                                   | Years of Experience | City           |
+| ------------------------------------------------------------ | ------------------- | -------------- |
+| **Designers - Studio 8**                                     | **All level**       | Suzhou         |
+| Dev (Web Front-end) - O365 Performance                       | 3Y+                 | Suzhou         |
+| Dev - O365 Data Migration                                    | 7Y+                 | Suzhou         |
+| Engieering manager - Engineering system/Performance/HA/Singals/Deployment | 10Y+                | Suzhou         |
+| Dev - O365 Big Data and Compliance                           | 5Y+                 | Suzhou         |
+| Dev/Scientist - O365 Monitoring                              | 1Y+                 | Suzhou         |
+| Dev - O365 Griffin                                           | 1Y+                 | Suzhou         |
+| Dev - O365 Search                                            | 1Y+                 | Suzhou         |
+| Dev - SharePoint Enterprise Search                           | 6Y+                 | Suzhou         |
+| Dev - SharePoint Teams/Android Media                         | 4Y+                 | Suzhou         |
+| Engineering manager - SharePoint Enterprise Search           | 10Y+                | Suzhou         |
+| Dev (Android media engineer) - SharePoint Teams              | 4Y+                 | Suzhou         |
+| Dev - SharePoint Data Platform                               | 6Y+                 | Suzhou         |
+| Dev (Web Front-end) - SharePoint other teams                 | 3Y+                 | Suzhou         |
+| SRE - SharePoint                                             | 3Y+                 | Suzhou         |
+| Dev - Windows Store App                                      | 1Y+                 | Suzhou         |
+| Software engineer - Intune/MMD                               | 1Y+                 | Suzhou         |
+| SRE - Intune/MMD                                             | 3Y+                 | Suzhou         |
+| Engieering manager - Intune/MMD                              | 7Y+                 | Suzhou         |
+| Dev - MSAI Content Search                                    | 1Y+                 | Suzhou/Beijing |
+| Dev (Android/iOS) - MSAI Smart Reply                         | 1Y+                 | Suzhou         |
+| Dev (NLP) - Bing Map                                         | 3Y+                 | Beijing        |
+| Dev - Bing Index Serve Platform                              | 3Y+                 | Beijing        |
+| Dev - Bing CTR                                               | 5Y+                 | Beijing        |
+| Dev (Web Front-end) - Bing News                              | 7Y+                 | Beijing        |
+| Dev - Bing Spartan                                           | 1Y+                 | Suzhou         |
+| Dev - Bing Account & Billing                                 | 1Y+                 | Suzhou/Beijing |
+| Dev (NLP/ML/Web Front-end) - Bing Whole Page                 | 1Y+                 | Suzhou/Beijing |
+| Researcher - MSRA System/Networking/Data mining              | 1Y+                 | Beijing        |
 
 
 
