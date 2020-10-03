@@ -95,7 +95,7 @@ date: 2019-04-20 01:01:00
 | Dev - Windows Store App                                      | 1Y+                 | Suzhou         |
 | Software engineer - Intune/MMD                               | 1Y+                 | Suzhou         |
 | SRE - Intune/MMD                                             | 3Y+                 | Suzhou         |
-| Engieering manager - Intune/MMD                              | 7Y+                 | Suzhou         |
+| Engieering manager - Intune/MMD                              | 10Y+                | Suzhou         |
 | Dev - MSAI Content Search                                    | 1Y+                 | Suzhou/Beijing |
 | Dev (Android/iOS) - MSAI Smart Reply                         | 1Y+                 | Suzhou         |
 | Dev (NLP) - Bing Map                                         | 3Y+                 | Beijing        |
