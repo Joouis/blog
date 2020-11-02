@@ -73,12 +73,10 @@ date: 2019-04-20 01:01:00
 
 
 
-### 2020.10.3
+### 2020.11.2
 
 | Job  Title                                                   | Years of Experience | City           |
 | ------------------------------------------------------------ | ------------------- | -------------- |
-| **Designers - Studio 8**                                     | **All level**       | Suzhou         |
-| Dev (Web Front-end) - O365 Performance                       | 3Y+                 | Suzhou         |
 | Dev - O365 Data Migration                                    | 7Y+                 | Suzhou         |
 | Engieering manager - Engineering system/Performance/HA/Singals/Deployment | 10Y+                | Suzhou         |
 | Dev - O365 Big Data and Compliance                           | 5Y+                 | Suzhou         |
