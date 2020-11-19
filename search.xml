@@ -26,11 +26,11 @@
       </categories>
       <tags>
         <tag>embedded system</tag>
+        <tag>svg</tag>
         <tag>vector</tag>
         <tag>gui</tag>
         <tag>twin</tag>
         <tag>window system</tag>
-        <tag>svg</tag>
         <tag>workflow</tag>
         <tag>uml</tag>
         <tag>scheduler</tag>
@@ -45,11 +45,11 @@
       </categories>
       <tags>
         <tag>embedded system</tag>
+        <tag>svg</tag>
         <tag>vector</tag>
         <tag>gui</tag>
         <tag>twin</tag>
         <tag>window system</tag>
-        <tag>svg</tag>
         <tag>api</tag>
       </tags>
   </entry>
@@ -62,11 +62,11 @@
       </categories>
       <tags>
         <tag>embedded system</tag>
+        <tag>svg</tag>
         <tag>vector</tag>
         <tag>gui</tag>
         <tag>twin</tag>
         <tag>window system</tag>
-        <tag>svg</tag>
         <tag>µGUI</tag>
         <tag>stm32</tag>
       </tags>
@@ -80,13 +80,13 @@
       </categories>
       <tags>
         <tag>embedded system</tag>
+        <tag>svg</tag>
+        <tag>svg tiny</tag>
+        <tag>libsvgtiny</tag>
         <tag>vector</tag>
         <tag>gui</tag>
         <tag>twin</tag>
         <tag>window system</tag>
-        <tag>svg</tag>
-        <tag>svg tiny</tag>
-        <tag>libsvgtiny</tag>
         <tag>cairo</tag>
         <tag>xml</tag>
         <tag>parser</tag>
@@ -104,13 +104,13 @@
       </categories>
       <tags>
         <tag>embedded system</tag>
+        <tag>svg</tag>
+        <tag>svg tiny</tag>
+        <tag>libsvgtiny</tag>
         <tag>vector</tag>
         <tag>gui</tag>
         <tag>twin</tag>
         <tag>window system</tag>
-        <tag>svg</tag>
-        <tag>svg tiny</tag>
-        <tag>libsvgtiny</tag>
         <tag>cairo</tag>
       </tags>
   </entry>
@@ -123,12 +123,12 @@
       </categories>
       <tags>
         <tag>embedded system</tag>
+        <tag>svg</tag>
         <tag>vector</tag>
         <tag>gui</tag>
         <tag>twin</tag>
         <tag>window system</tag>
         <tag>rapid prototyping</tag>
-        <tag>svg</tag>
         <tag>wearable devices</tag>
         <tag>µGUI</tag>
         <tag>stm32</tag>
@@ -160,8 +160,8 @@
       <tags>
         <tag>mobile</tag>
         <tag>responsive</tag>
-        <tag>vue</tag>
         <tag>vuetify playground</tag>
+        <tag>vue</tag>
         <tag>vuejs</tag>
         <tag>vuetify</tag>
         <tag>vuetifyjs</tag>
@@ -725,9 +725,9 @@
         <tag>mobile</tag>
         <tag>web</tag>
         <tag>tutorial</tag>
+        <tag>vue</tag>
         <tag>weex</tag>
         <tag>android</tag>
-        <tag>vue</tag>
       </tags>
   </entry>
   <entry>
