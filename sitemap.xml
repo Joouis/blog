@@ -9,6 +9,13 @@
   </url>
   
   <url>
+    <loc>https://blog.joouis.com/2019/3rd-blog-anniversary/</loc>
+    
+    <lastmod>2020-11-23</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.joouis.com/tags/index.html</loc>
     
     <lastmod>2020-06-03</lastmod>
@@ -226,13 +233,6 @@
   </url>
   
   <url>
-    <loc>https://blog.joouis.com/2019/3rd-blog-anniversary/</loc>
-    
-    <lastmod>2019-04-20</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://blog.joouis.com/2019/a-thought-of-referral/</loc>
     
     <lastmod>2019-04-10</lastmod>
@@ -438,6 +438,34 @@
   </url>
   
   <url>
+    <loc>https://blog.joouis.com/tags/blog/</loc>
+    <lastmod>2020-11-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.joouis.com/tags/anniversary/</loc>
+    <lastmod>2020-11-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.joouis.com/tags/hexo/</loc>
+    <lastmod>2020-11-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.joouis.com/tags/refactor/</loc>
+    <lastmod>2020-11-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.joouis.com/tags/work/</loc>
     <lastmod>2020-11-23</lastmod>
     <changefreq>daily</changefreq>
@@ -474,34 +502,6 @@
   
   <url>
     <loc>https://blog.joouis.com/tags/review/</loc>
-    <lastmod>2020-11-23</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.joouis.com/tags/blog/</loc>
-    <lastmod>2020-11-23</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.joouis.com/tags/anniversary/</loc>
-    <lastmod>2020-11-23</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.joouis.com/tags/hexo/</loc>
-    <lastmod>2020-11-23</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.joouis.com/tags/refactor/</loc>
     <lastmod>2020-11-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1194,6 +1194,27 @@
   </url>
   
   <url>
+    <loc>https://blog.joouis.com/tags/x86/</loc>
+    <lastmod>2020-11-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.joouis.com/tags/performance/</loc>
+    <lastmod>2020-11-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.joouis.com/tags/cache/</loc>
+    <lastmod>2020-11-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.joouis.com/tags/weex/</loc>
     <lastmod>2020-11-23</lastmod>
     <changefreq>daily</changefreq>
@@ -1216,27 +1237,6 @@
   
   <url>
     <loc>https://blog.joouis.com/tags/tutorial/</loc>
-    <lastmod>2020-11-23</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.joouis.com/tags/x86/</loc>
-    <lastmod>2020-11-23</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.joouis.com/tags/performance/</loc>
-    <lastmod>2020-11-23</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.joouis.com/tags/cache/</loc>
     <lastmod>2020-11-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

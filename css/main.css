@@ -1302,16 +1302,16 @@ pre code {
 }
 .header-inner {
   margin: 0 auto;
-  width: 700px;
+  width: 60vw;
 }
 @media (min-width: 1200px) {
   .header-inner {
-    width: 800px;
+    width: 54vw;
   }
 }
 @media (min-width: 1600px) {
   .header-inner {
-    width: 900px;
+    width: 54vw;
   }
 }
 .site-brand-container {
@@ -1734,16 +1734,16 @@ pre code {
   flex-direction: column;
   justify-content: center;
   margin: 0 auto;
-  width: 700px;
+  width: 60vw;
 }
 @media (min-width: 1200px) {
   .footer-inner {
-    width: 800px;
+    width: 54vw;
   }
 }
 @media (min-width: 1600px) {
   .footer-inner {
-    width: 900px;
+    width: 54vw;
   }
 }
 .use-motion .footer {
@@ -2964,16 +2964,16 @@ hr {
 }
 .main-inner {
   margin: 0 auto;
-  width: 700px;
+  width: 60vw;
 }
 @media (min-width: 1200px) {
   .main-inner {
-    width: 800px;
+    width: 54vw;
   }
 }
 @media (min-width: 1600px) {
   .main-inner {
-    width: 900px;
+    width: 54vw;
   }
 }
 @media (max-width: 767px) {
@@ -3044,7 +3044,7 @@ hr {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #03f725;
+  background: #1d6b0f;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);

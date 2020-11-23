@@ -33,7 +33,7 @@
 <meta property="og:description" content="有的时候事情就是这么巧。比如这篇博文，并非专程为三周年而写，而是恰好在这个时间节点博客有了一些质的进步，值得记录一下。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-04-08T14:15:38.000Z">
-<meta property="article:modified_time" content="2019-04-20T13:43:00.000Z">
+<meta property="article:modified_time" content="2020-11-23T16:11:00.000Z">
 <meta property="article:author" content="John Chou">
 <meta property="article:tag" content="blog">
 <meta property="article:tag" content="anniversary">
@@ -116,11 +116,7 @@
   </style>
 </noscript>
 
-<!-- hexo injector head_end start -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="江边的旱鸭子" type="application/atom+xml">
+<link rel="alternate" href="/atom.xml" title="江边的旱鸭子" type="application/atom+xml">
 <link rel="stylesheet" href="/assets/css/APlayer.min.css" class="aplayer-style-marker">
 <script src="/assets/js/APlayer.min.js" class="aplayer-script-marker"></script>
 <script src="/assets/js/Meting.min.js" class="meting-script-marker"></script>
@@ -243,7 +239,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <section class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%95"><span class="nav-number">1.</span> <span class="nav-text">引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%87%E7%BA%A7%E6%80%9D%E8%B7%AF"><span class="nav-number">2.</span> <span class="nav-text">升级思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%94%B9%E5%96%84%E7%82%B9"><span class="nav-number">3.</span> <span class="nav-text">改善点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%BE%E5%B7%B4"><span class="nav-number">4.</span> <span class="nav-text">尾巴</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%95"><span class="nav-number">1.</span> <span class="nav-text">引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%87%E7%BA%A7%E6%80%9D%E8%B7%AF"><span class="nav-number">2.</span> <span class="nav-text">升级思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%94%B9%E5%96%84%E7%82%B9"><span class="nav-number">3.</span> <span class="nav-text">改善点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-11-24-%E6%9B%B4%E6%96%B0"><span class="nav-number">3.1.</span> <span class="nav-text">2020.11.24 更新</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%BE%E5%B7%B4"><span class="nav-number">4.</span> <span class="nav-text">尾巴</span></a></li></ol></div>
         </section>
         <!--/noindex-->
 
@@ -360,7 +356,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2019-04-20 21:43:00" itemprop="dateModified" datetime="2019-04-20T21:43:00+08:00">2019-04-20</time>
+        <time title="修改时间：2020-11-24 00:11:00" itemprop="dateModified" datetime="2020-11-24T00:11:00+08:00">2020-11-24</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -448,10 +444,12 @@
 <li>隐藏标签菜单入口。考虑到目前已有大几十种标签，太多太杂，不如换成分类菜单。同时保留文章内的标签展示，作为二级入口可以查看某一标签的所有博文；</li>
 <li>支持 Aplayer 音乐播放器。</li>
 </ul>
+<h3 id="2020-11-24-更新"><a href="#2020-11-24-更新" class="headerlink" title="2020.11.24 更新"></a>2020.11.24 更新</h3><p>没想到今天又更新了一版主题，将 NexT 主题升级到了 <code>8.0.2</code> 版。这次也非常偶然，原本准备写一篇关于机器学习入门的文章，里面需要使用到数学公式插件。其实原本 NexT <code>7.1.0</code> 就有插件支持该功能，但我完全忘了这茬，一番 Google 后装了 <code>hexo-math</code> 插件，命令行报错发现它“Requires Hexo 5+”，再一看原本的 Hexo 还是 <code>3.8.0</code> 版，好家伙一下子差了两代，升！</p>
+<p>主题升级带来的最大收益非黑暗模式莫属。其实去年做博客翻新工程期间，就恰好发现下一个小版本支持了黑暗模式，但当时尝试升级发现体验并不理想，小毛病不少，因此作罢。时隔一年半再次尝试，效果已经基本达到我的预期。其他方面，常规的升级依赖包括字体、修复 bugs、优化性能，还有一些小的 features 增删（不过未必在博客中启用），都可以在 NexT 的 <a target="_blank" rel="noopener" href="https://github.com/next-theme/hexo-theme-next/releases">Release Notes</a> 中查看。</p>
 <h2 id="尾巴"><a href="#尾巴" class="headerlink" title="尾巴"></a>尾巴</h2><p>博客的升级花费大概两天的时间，一点点扣细节，既当产品又做技术，搞一个自嗨的项目，还是玩得非常开心。未来当然还是以输出文章为主，除了内容本身外，也试着丰富展现形式，达到一个比较舒服的阅读体验。最后关于博客的推广，其实在建站之初只想创造一个属于自己的空间，不过现在慢慢感受到，如果自己的文字能够帮助到更多人，是一件正能量满满的事情。</p>
 <p>等到五周年时再看看又发生了哪些变化吧~</p>
 
-    <div id="aplayer-fZLXQWMP" class="aplayer aplayer-tag-marker meting-tag-marker"
+    <div id="aplayer-QngGLXeA" class="aplayer aplayer-tag-marker meting-tag-marker"
          data-id="28737747" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="true" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86" data-mini="true"
     ></div>
     </div>
