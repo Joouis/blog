@@ -1,170 +1,72 @@
 <!DOCTYPE html>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next mist use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<html lang="zh-CN">
+<head>
   <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/hacker.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/hacker.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/hacker.ico">
+  <link rel="mask-icon" href="/images/hacker.ico" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
 
-  
-  
-    
-      
-    
-    
-      
-    
-  <script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.css">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    
-  
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
-
-
-
-
-
-
-
-  
-
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css">
-
-<link rel="stylesheet" href="/css/main.css?v=7.1.0">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/hacker.ico?v=7.1.0">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/hacker.ico?v=7.1.0">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/hacker.ico?v=7.1.0">
-
-
-  <link rel="mask-icon" href="/images/hacker.ico?v=7.1.0" color="#222">
-
-
-
-
-
-
-
-<script id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Mist',
-    version: '7.1.0',
-    sidebar: {"position":"left","display":"hide","offset":12,"onmobile":true,"dimmer":true},
-    back2top: true,
-    back2top_sidebar: false,
-    fancybox: true,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-  
-
-<meta name="baidu-site-verification" content="ChOTP1bKoM">
-
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"blog.joouis.com","root":"/","scheme":"Mist","version":"8.0.2","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
 
   <meta name="description" content="这篇博文来自 Facebook 「2016年系統軟體課程」小组里的一个问答。背景是正在修 Jserv 课程的一位同学 Louie Lu 在对作业 Phonebook 进行性能测试时，疑惑自己的电脑系统同时也跑着一堆别的应用如浏览器、音乐播放器等，那么怎样才能确认硬件资源是被他的测试程序最大化使用了呢？ 这个问题非常有趣，和经典面试题 “What happens when you type goog">
-<meta name="keywords" content="performance,cache,x86">
 <meta property="og:type" content="article">
 <meta property="og:title" content="如何在 X86-64 下比较精准地测量系统性能">
 <meta property="og:url" content="https://blog.joouis.com/2019/x86-performance-qna/index.html">
 <meta property="og:site_name" content="江边的旱鸭子">
 <meta property="og:description" content="这篇博文来自 Facebook 「2016年系統軟體課程」小组里的一个问答。背景是正在修 Jserv 课程的一位同学 Louie Lu 在对作业 Phonebook 进行性能测试时，疑惑自己的电脑系统同时也跑着一堆别的应用如浏览器、音乐播放器等，那么怎样才能确认硬件资源是被他的测试程序最大化使用了呢？ 这个问题非常有趣，和经典面试题 “What happens when you type goog">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://vk6wcg.bn.files.1drv.com/y4mDcDK8DZthxyf33kEOf7drCSSlkY4W7dGvxbZLEhlnEkSbRa7qPJZRXOcYp0dIxhZUkQr88PYY0x0cikEvH09ExoPll7U1OXOmgSbozLiT9AhJt09qdUecXlbh_4JPpZWSUQTOyYS4Jt1E5wjMUGGxi-vQiMBI47Zd3PHkAar_QUMT1V-fGQPeMm8LbrTFcEvGqU1WEC1Oaa2PJsJ8LBNXA">
-<meta property="og:updated_time" content="2019-04-27T07:45:00.000Z">
+<meta property="article:published_time" content="2019-04-27T06:07:46.000Z">
+<meta property="article:modified_time" content="2019-04-27T07:45:00.000Z">
+<meta property="article:author" content="John Chou">
+<meta property="article:tag" content="x86">
+<meta property="article:tag" content="performance">
+<meta property="article:tag" content="cache">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="如何在 X86-64 下比较精准地测量系统性能">
-<meta name="twitter:description" content="这篇博文来自 Facebook 「2016年系統軟體課程」小组里的一个问答。背景是正在修 Jserv 课程的一位同学 Louie Lu 在对作业 Phonebook 进行性能测试时，疑惑自己的电脑系统同时也跑着一堆别的应用如浏览器、音乐播放器等，那么怎样才能确认硬件资源是被他的测试程序最大化使用了呢？ 这个问题非常有趣，和经典面试题 “What happens when you type goog">
 <meta name="twitter:image" content="https://vk6wcg.bn.files.1drv.com/y4mDcDK8DZthxyf33kEOf7drCSSlkY4W7dGvxbZLEhlnEkSbRa7qPJZRXOcYp0dIxhZUkQr88PYY0x0cikEvH09ExoPll7U1OXOmgSbozLiT9AhJt09qdUecXlbh_4JPpZWSUQTOyYS4Jt1E5wjMUGGxi-vQiMBI47Zd3PHkAar_QUMT1V-fGQPeMm8LbrTFcEvGqU1WEC1Oaa2PJsJ8LBNXA">
 
 
-
-  <link rel="alternate" href="/atom.xml" title="江边的旱鸭子" type="application/atom+xml">
-
+<link rel="canonical" href="https://blog.joouis.com/2019/x86-performance-qna/">
 
 
-  
-  
-  <link rel="canonical" href="https://blog.joouis.com/2019/x86-performance-qna/">
-
-
-
-<script id="page.configurations">
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
   };
 </script>
 
   <title>如何在 X86-64 下比较精准地测量系统性能 | 江边的旱鸭子</title>
   
-
-
-
-
-  <script async src="//www.googletagmanager.com/gtag/js?id=UA-76188004-1"></script>
-  <script>
-    var host = window.location.hostname;
-    if (host !== "localhost" || !true) {
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-76188004-1');
-    }
-  </script>
-
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-76188004-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-76188004-1');
+      }
+    </script>
 
 
   <script>
@@ -180,357 +82,327 @@
 
 
 
-
-
-
   <noscript>
   <style>
-  .use-motion .motion-element,
-  .use-motion .brand,
+  body { margin-top: 2rem; }
+
   .use-motion .menu-item,
-  .sidebar-inner,
+  .use-motion .sidebar,
   .use-motion .post-block,
   .use-motion .pagination,
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-title { opacity: initial; }
+  .use-motion .collection-header {
+    visibility: visible;
+  }
 
-  .use-motion .logo,
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
   .use-motion .site-title,
-  .use-motion .site-subtitle {
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
     opacity: initial;
     top: initial;
   }
 
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
   </style>
 </noscript>
 
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="江边的旱鸭子" type="application/atom+xml">
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
 
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">江边的旱鸭子</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
-    
-      
-        <h1 class="site-subtitle" itemprop="description">Blog of Joou</h1>
-      
-    
-    
   </div>
 
-  <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">江边的旱鸭子</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Blog of Joou</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
   </div>
 </div>
 
 
 
 <nav class="site-nav">
-  
-    <ul id="menu" class="menu">
-      
-        
-        
-        
-          
-          <li class="menu-item menu-item-home">
-
-    
-    
-    
-
-    
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home">
 
     <a href="/" rel="section">首页</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-archives">
-
-    
-    
-    
-
-    
+        <li class="menu-item menu-item-archives">
 
     <a href="/archives/" rel="section">归档</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-categories">
-
-    
-    
-    
-
-    
+        <li class="menu-item menu-item-categories">
 
     <a href="/categories/" rel="section">分类</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-about">
-
-    
-    
-    
-
-    
+        <li class="menu-item menu-item-about">
 
     <a href="/about/" rel="section">关于</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-recruit">
-
-    
-    
-    
-
-    
+        <li class="menu-item menu-item-recruit">
 
     <a href="/recruit/" rel="section">招聘</a>
 
   </li>
-
-      
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            搜索</a>
-        </li>
-      
-    </ul>
-  
-
-  
-    
-
-  
-
-  
-    <div class="site-search">
-      
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
-    </div>
-  </div>
-  <div id="local-search-result"></div>
-</div>
-
-
-
-    </div>
-  
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger">搜索
+        </a>
+      </li>
+  </ul>
 </nav>
 
 
 
-  
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
 
-
+    </div>
+  </div>
 
 </div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <section class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE"><span class="nav-number">1.</span> <span class="nav-text">问</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Louie-Lu-September-25-2016"><span class="nav-number">1.1.</span> <span class="nav-text">Louie Lu - September 25, 2016</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AD%94"><span class="nav-number">2.</span> <span class="nav-text">答</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Champ-Yen"><span class="nav-number">2.1.</span> <span class="nav-text">Champ Yen</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Scott-Tsai"><span class="nav-number">2.2.</span> <span class="nav-text">Scott Tsai</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%8D%E9%A6%88"><span class="nav-number">3.</span> <span class="nav-text">反馈</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Louie-Lu"><span class="nav-number">3.1.</span> <span class="nav-text">Louie Lu</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E5%B8%96"><span class="nav-number">4.</span> <span class="nav-text">原帖</span></a></li></ol></div>
+        </section>
+        <!--/noindex-->
+
+        <section class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="John Chou"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">John Chou</p>
+  <div class="site-description" itemprop="description">Stand high, think different.</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">50</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">179</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Joouis" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Joouis" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:luckyjoou@gmail.com" title="E-Mail → mailto:luckyjoou@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/Joouis" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;Joouis" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://www.slideshare.net/choujohn351" title="SlideShare → http:&#x2F;&#x2F;www.slideshare.net&#x2F;choujohn351" rel="noopener" target="_blank"><i class="fab fa-slideshare fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nd/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nd.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </section>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
     </header>
 
     
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
 
 
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-          <div id="content" class="content">
-            
+    <div class="main-inner post posts-expand">
+      
 
-  <div id="posts" class="posts-expand">
-    
-
-  
-
-  
-  
-  
+      
 
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+
+<div class="post-block">
   
   
-  
-  <div class="post-block">
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://blog.joouis.com/2019/x86-performance-qna/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
       <meta itemprop="name" content="John Chou">
       <meta itemprop="description" content="Stand high, think different.">
-      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="江边的旱鸭子">
     </span>
-
-    
       <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          如何在 X86-64 下比较精准地测量系统性能
+        </h1>
 
-        
-        
-          <h2 class="post-title" itemprop="name headline">如何在 X86-64 下比较精准地测量系统性能
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
 
-              
-            
-          </h2>
-        
+      <time title="创建时间：2019-04-27 14:07:46 / 修改时间：15:45:00" itemprop="dateCreated datePublished" datetime="2019-04-27T14:07:46+08:00">2019-04-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%BA%95%E5%B1%82/" itemprop="url" rel="index"><span itemprop="name">系统与底层</span></a>
+        </span>
+    </span>
 
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-04-27 14:07:46 / 修改时间：15:45:00" itemprop="dateCreated datePublished" datetime="2019-04-27T14:07:46+08:00">2019-04-27</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/系统与底层/" itemprop="url" rel="index"><span itemprop="name">系统与底层</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">7 分钟</span>
-              
-            </div>
-          
-
-          
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2019/x86-performance-qna/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/x86-performance-qna/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>3 分钟</span>
+    </span>
+</div>
 
         </div>
       </header>
-    
 
     
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <p>这篇博文来自 Facebook 「2016年系統軟體課程」小组里的一个<a href="https://www.facebook.com/groups/system.software2016/permalink/1124571464289024/" target="_blank" rel="noopener">问答</a>。背景是正在修 Jserv 课程的一位同学 Louie Lu 在对作业 Phonebook 进行性能测试时，疑惑自己的电脑系统同时也跑着一堆别的应用如浏览器、音乐播放器等，那么怎样才能确认硬件资源是被他的测试程序最大化使用了呢？</p>
+        <p>这篇博文来自 Facebook 「2016年系統軟體課程」小组里的一个<a target="_blank" rel="noopener" href="https://www.facebook.com/groups/system.software2016/permalink/1124571464289024/">问答</a>。背景是正在修 Jserv 课程的一位同学 Louie Lu 在对作业 Phonebook 进行性能测试时，疑惑自己的电脑系统同时也跑着一堆别的应用如浏览器、音乐播放器等，那么怎样才能确认硬件资源是被他的测试程序最大化使用了呢？</p>
 <p>这个问题非常有趣，和经典面试题 “What happens when you type google.com into your browser and press enter?” 有异曲同工之妙。更重要的是，Jserv 邀请了两位业界前辈做了精彩回答。</p>
 <p>无论在 Facebook 还是微信公众号，零碎的知识总会随着时间慢慢被遗忘。但是有的话题所包含的知识已经由点及面，因此沉淀为一篇博文也许是更好的归宿。</p>
 <a id="more"></a>
+
+
+
+
 <h2 id="问"><a href="#问" class="headerlink" title="问"></a>问</h2><h3 id="Louie-Lu-September-25-2016"><a href="#Louie-Lu-September-25-2016" class="headerlink" title="Louie Lu - September 25, 2016"></a>Louie Lu - September 25, 2016</h3><p>請問一下，我們要怎麼在 x86-64 底下測出比較精確的 performance 呢？<br>　<br>當我在測 phonebook 的時候，我還跑著 chromium、spotify、lxde 這些程式，那我怎麼證明 32k 的 L1 cache 都是由 phonebook 在使用呢？<br>　<br>還有，現在的 CPU 都會自動調節 clock speed，又怎麼能保證我測的時候都是在 max speed 測試，如果是用在論文的數據上面的話，要怎麼樣才能提出一個有可信度的實驗資料…</p>
 <h2 id="答"><a href="#答" class="headerlink" title="答"></a>答</h2><h3 id="Champ-Yen"><a href="#Champ-Yen" class="headerlink" title="Champ Yen"></a>Champ Yen</h3><ol>
 <li>先回答簡單的 CPU 部份，這部份透過調整 cpu governor 為 performance 就可以將 CPU 固定為最高頻率，這點 Windows 也有對應的設定。</li>
@@ -539,7 +411,8 @@
 <h3 id="Scott-Tsai"><a href="#Scott-Tsai" class="headerlink" title="Scott Tsai"></a>Scott Tsai</h3><p>Champ Yen 大上面的討論很完整，我來扮演助教，補充一些 Linux 下工具的使用方式。</p>
 <ol>
 <li><p>CPU frequency scaling 用 “cpupower frequency-{info,set}” ：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cpupower frequency-info <span class="comment"># typically set to 'powersave' by default</span></span><br><span class="line">cpupower frequency-set -g performance</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cpupower frequency-info <span class="comment"># typically set to &#x27;powersave&#x27; by default</span></span><br><span class="line">cpupower frequency-set -g performance</span><br></pre></td></tr></table></figure>
+
 <p>cpupower 由 linux-tools-common (Ubuntu) 或 kernel-tools (Fedora) 套件提供。</p>
 <blockquote>
 <p><strong>Louie Lu</strong>：intel 的 governor 好像都沒有給 userspace 了，變成用 performance 但指定為 -d 3.5G 卻不會用全速跑的狀況..</p>
@@ -548,1270 +421,173 @@
 </blockquote>
 </li>
 <li><p>Linux 下，用 “lstopo” 指令可以列出機器的 cache 架構。lstopo 由 “hwloc” 套件提供。</p>
-<p><img src="https://vk6wcg.bn.files.1drv.com/y4mDcDK8DZthxyf33kEOf7drCSSlkY4W7dGvxbZLEhlnEkSbRa7qPJZRXOcYp0dIxhZUkQr88PYY0x0cikEvH09ExoPll7U1OXOmgSbozLiT9AhJt09qdUecXlbh_4JPpZWSUQTOyYS4Jt1E5wjMUGGxi-vQiMBI47Zd3PHkAar_QUMT1V-fGQPeMm8LbrTFcEvGqU1WEC1Oaa2PJsJ8LBNXA" alt></p>
+<p><img src="https://vk6wcg.bn.files.1drv.com/y4mDcDK8DZthxyf33kEOf7drCSSlkY4W7dGvxbZLEhlnEkSbRa7qPJZRXOcYp0dIxhZUkQr88PYY0x0cikEvH09ExoPll7U1OXOmgSbozLiT9AhJt09qdUecXlbh_4JPpZWSUQTOyYS4Jt1E5wjMUGGxi-vQiMBI47Zd3PHkAar_QUMT1V-fGQPeMm8LbrTFcEvGqU1WEC1Oaa2PJsJ8LBNXA"></p>
 </li>
 <li><p>在實體機器上測，真的要不被其他執行中的程式影響，還是要把系統變成（幾乎）只跑你的程式。操作上：</p>
 <ul>
 <li><p>開機進入 single user mode（請自行 google）；</p>
 </li>
 <li><p><code>perf stat --detail /bin/true</code> ，把 /bin/true 替換成你的程式。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Performance counter stats <span class="keyword">for</span> <span class="string">'/bin/true'</span>:</span><br><span class="line"></span><br><span class="line">0.264133 task-clock (msec) <span class="comment"># 0.549 CPUs utilized </span></span><br><span class="line">0 context-switches <span class="comment"># 0.000 K/sec </span></span><br><span class="line">0 cpu-migrations <span class="comment"># 0.000 K/sec </span></span><br><span class="line">46 page-faults <span class="comment"># 0.174 M/sec </span></span><br><span class="line">943,098 cycles <span class="comment"># 3.571 GHz </span></span><br><span class="line">735,484 instructions <span class="comment"># 0.78 insn per cycle </span></span><br><span class="line">134,926 branches <span class="comment"># 510.826 M/sec </span></span><br><span class="line">4,595 branch-misses <span class="comment"># 3.41% of all branches </span></span><br><span class="line">197,277 L1-dcache-loads <span class="comment"># 746.885 M/sec </span></span><br><span class="line">11,454 L1-dcache-load-misses <span class="comment"># 5.81% of all L1-dcache hits </span></span><br><span class="line">5,176 LLC-loads <span class="comment"># 19.596 M/sec </span></span><br><span class="line">2,696 LLC-load-misses <span class="comment"># 52.09% of all LL-cache hits</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Performance counter stats <span class="keyword">for</span> <span class="string">&#x27;/bin/true&#x27;</span>:</span><br><span class="line"></span><br><span class="line">0.264133 task-clock (msec) <span class="comment"># 0.549 CPUs utilized </span></span><br><span class="line">0 context-switches <span class="comment"># 0.000 K/sec </span></span><br><span class="line">0 cpu-migrations <span class="comment"># 0.000 K/sec </span></span><br><span class="line">46 page-faults <span class="comment"># 0.174 M/sec </span></span><br><span class="line">943,098 cycles <span class="comment"># 3.571 GHz </span></span><br><span class="line">735,484 instructions <span class="comment"># 0.78 insn per cycle </span></span><br><span class="line">134,926 branches <span class="comment"># 510.826 M/sec </span></span><br><span class="line">4,595 branch-misses <span class="comment"># 3.41% of all branches </span></span><br><span class="line">197,277 L1-dcache-loads <span class="comment"># 746.885 M/sec </span></span><br><span class="line">11,454 L1-dcache-load-misses <span class="comment"># 5.81% of all L1-dcache hits </span></span><br><span class="line">5,176 LLC-loads <span class="comment"># 19.596 M/sec </span></span><br><span class="line">2,696 LLC-load-misses <span class="comment"># 52.09% of all LL-cache hits</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 <li><p>也可以用專門分析 CPU microarhitecture 效能的模擬器。<br>再次強調，模擬器很多套，要用「專門模擬 CPU microchitecture 效能」的。</p>
 <p>這種模擬器中，最容易上手的大概是 callgrind。它模擬獨立的 L1 D$ 與 I$ 與 shared last-level cache。（$ 讀作 cache，因為英文中”現金”, cash, 音近 cache）</p>
-<p>另外，看看 cachegrind 的 <a href="http://valgrind.org/docs/manual/cg-manual.html?fbclid=IwAR2MpxcrUi93xTTh5C3jo_nRnI4Bwa1jb3T6rOhruDjiSl9sURt8ybfuKa8#cg-manual.annopts.accuracy" target="_blank" rel="noopener">“Accuracy” 一節所列出的模擬器限制</a>。</p>
+<p>另外，看看 cachegrind 的 <a target="_blank" rel="noopener" href="http://valgrind.org/docs/manual/cg-manual.html?fbclid=IwAR2MpxcrUi93xTTh5C3jo_nRnI4Bwa1jb3T6rOhruDjiSl9sURt8ybfuKa8#cg-manual.annopts.accuracy">“Accuracy” 一節所列出的模擬器限制</a>。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">valgrind --tool=callgrind --simulate-cache=yes YOUR-PROGRMS PROGRAM-ARGS</span><br><span class="line">callgrind_annotate --auto=yes callgrind.out.YOUR-PID</span><br></pre></td></tr></table></figure>
 </li>
-</ol>
-<ol start="5">
-<li>善意提示：不要只看 cache miss rate。<br>比較不同程式用 “perf stat” 量出的 “insn per cycle” 值，然後想想為什麼。Instruction per cycle, cache miss 都討論完後還有時間，也可以討論一下 TLB miss。</li>
+<li><p>善意提示：不要只看 cache miss rate。<br>比較不同程式用 “perf stat” 量出的 “insn per cycle” 值，然後想想為什麼。Instruction per cycle, cache miss 都討論完後還有時間，也可以討論一下 TLB miss。</p>
+</li>
 </ol>
 <h2 id="反馈"><a href="#反馈" class="headerlink" title="反馈"></a>反馈</h2><h3 id="Louie-Lu"><a href="#Louie-Lu" class="headerlink" title="Louie Lu"></a>Louie Lu</h3><p>感謝 Champ Yen 跟 Scott Tsai 兩位前輩的解釋！</p>
-<p>再補充由 brendand gregg 提出的 <a href="http://www.brendangregg.com/methodology.html" target="_blank" rel="noopener">Performance Analysis Methodology</a>。<br>然後我有在自己的 <a href="https://hackmd.io/s/BJjL6cQ6#perf-raw-counter" target="_blank" rel="noopener">notes</a> 上補充 perf list 出來的 event 怎麼看以及代表的意義，這部份要去翻 intel 的 manual 跟實際操作。<br>也有遇到說 <a href="https://software.intel.com/en-us/forums/software-tuning-performance-optimization-platform-monitoring/topic/557604?fbclid=IwAR1ll2fi9fXqj9Y6wpEe0usP9raFBPXLGM53DaWzpJwZUN-a_I1dPkCQHqI" target="_blank" rel="noopener">L1-dcache-load-misses raw code 跟 manual 寫的不一樣</a>的狀況，可是剛剛實際測試兩者是相通的。</p>
+<p>再補充由 brendand gregg 提出的 <a target="_blank" rel="noopener" href="http://www.brendangregg.com/methodology.html">Performance Analysis Methodology</a>。<br>然後我有在自己的 <a target="_blank" rel="noopener" href="https://hackmd.io/s/BJjL6cQ6#perf-raw-counter">notes</a> 上補充 perf list 出來的 event 怎麼看以及代表的意義，這部份要去翻 intel 的 manual 跟實際操作。<br>也有遇到說 <a target="_blank" rel="noopener" href="https://software.intel.com/en-us/forums/software-tuning-performance-optimization-platform-monitoring/topic/557604?fbclid=IwAR1ll2fi9fXqj9Y6wpEe0usP9raFBPXLGM53DaWzpJwZUN-a_I1dPkCQHqI">L1-dcache-load-misses raw code 跟 manual 寫的不一樣</a>的狀況，可是剛剛實際測試兩者是相通的。</p>
 <h2 id="原帖"><a href="#原帖" class="headerlink" title="原帖"></a>原帖</h2><ul>
-<li><a href="https://www.facebook.com/groups/system.software2016/permalink/1124571464289024/" target="_blank" rel="noopener">我們要怎麼在 x86-64 底下測出比較精確的 performance</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.facebook.com/groups/system.software2016/permalink/1124571464289024/">我們要怎麼在 x86-64 底下測出比較精確的 performance</a></li>
 </ul>
 
-      
     </div>
 
     
+    
+    
       
-
   <div class="popular-posts-header">相关文章</div>
   <ul class="popular-posts">
-  
     <li class="popular-posts-item">
-      
-      
       <div class="popular-posts-title"><a href="/2020/lab-leetcode-practices/" rel="bookmark">LeetCode小练习</a></div>
-      
     </li>
-  
     <li class="popular-posts-item">
-      
-      
       <div class="popular-posts-title"><a href="/2018/javascript-performance-optimization-tips-an-overview/" rel="bookmark">JavaScript 性能优化概观</a></div>
-      
     </li>
-  
   </ul>
 
 
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-      <div>
-        <div id="reward-container">
+    <footer class="post-footer">
+          <div class="reward-container">
   <div>Buy me a cup of coffee :)</div>
-  <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
-    打赏
+  <button onclick="document.querySelector('.post-reward').classList.toggle('active');">
+    赞赏
   </button>
-  <div id="qr" style="display: none;">
-
-    
-      
-      
-        
-      
-      <div style="display: inline-block">
-        <img src="/images/reward-wechat.jpg" alt="John Chou 微信支付">
-        <p>微信支付</p>
+  <div class="post-reward">
+      <div>
+        <img src="/images/reward-wechat.jpg" alt="John Chou 微信">
+        <span>微信</span>
       </div>
-    
-      
-      
-        
-      
-      <div style="display: inline-block">
+      <div>
         <img src="/images/reward-alipay.jpg" alt="John Chou 支付宝">
-        <p>支付宝</p>
+        <span>支付宝</span>
       </div>
-    
 
   </div>
 </div>
 
-      </div>
-    
+          
 
-    
-      <div>
-        
-
-
-
-
-  
-
-
-
-<ul class="post-copyright">
+<div class="post-copyright">
+<ul>
   <li class="post-copyright-author">
-    <strong>本文作者： </strong>John Chou</li>
+      <strong>本文作者： </strong>John Chou
+  </li>
   <li class="post-copyright-link">
-    <strong>本文链接：</strong>
-    
-    <a href="https://blog.joouis.com/2019/x86-performance-qna/" title="如何在 X86-64 下比较精准地测量系统性能">https://blog.joouis.com/2019/x86-performance-qna/</a>
+      <strong>本文链接：</strong>
+      <a href="https://blog.joouis.com/2019/x86-performance-qna/" title="如何在 X86-64 下比较精准地测量系统性能">https://blog.joouis.com/2019/x86-performance-qna/</a>
   </li>
   <li class="post-copyright-license">
-    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nd/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-ND</a> 许可协议。转载请注明出处！</li>
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nd/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-ND</a> 许可协议。转载请注明出处！
+  </li>
 </ul>
+</div>
 
-      </div>
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/performance/" rel="tag"># performance</a>
-          
-            <a href="/tags/cache/" rel="tag"># cache</a>
-          
-            <a href="/tags/x86/" rel="tag"># x86</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2019/a-thought-of-referral/" rel="next" title="分享一下我的内推心得，顺便招人">
-                <i class="fa fa-chevron-left"></i> 分享一下我的内推心得，顺便招人
-              </a>
-            
+          <div class="post-tags">
+              <a href="/tags/x86/" rel="tag"># x86</a>
+              <a href="/tags/performance/" rel="tag"># performance</a>
+              <a href="/tags/cache/" rel="tag"># cache</a>
           </div>
 
-          <span class="post-nav-divider"></span>
+        
 
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/2019-thai-trip-1/" rel="prev" title="2019 泰国行游记（一）">
-                2019 泰国行游记（一） <i class="fa fa-chevron-right"></i>
-              </a>
-            
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2019/a-thought-of-referral/" rel="prev" title="分享一下我的内推心得，顺便招人">
+                  <i class="fa fa-chevron-left"></i> 分享一下我的内推心得，顺便招人
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2019/2019-thai-trip-1/" rel="next" title="2019 泰国行游记（一）">
+                  2019 泰国行游记（一） <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
           </div>
-        </div>
-      
-
-      
-      
     </footer>
-  </div>
-  
-  
-  
   </article>
-
-
-  </div>
-
-
-          </div>
-          
-
-  
-    <div class="comments" id="comments">
-      <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
-      </div>
-    </div>
-
-  
+</div>
 
 
 
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+
+
+
+      
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
     </div>
   </div>
+  
 
-  <aside id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="John Chou">
-            
-              <p class="site-author-name" itemprop="name">John Chou</p>
-              <div class="site-description motion-element" itemprop="description">Stand high, think different.</div>
-          </div>
-
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">50</span>
-                    <span class="site-state-item-name">日志</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-categories">
-                  
-                    
-                      <a href="/categories/">
-                    
-                  
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">7</span>
-                    <span class="site-state-item-name">分类</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  
-                    
-                      <a href="/tags/">
-                    
-                  
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">179</span>
-                    <span class="site-state-item-name">标签</span>
-                  </a>
-                </div>
-              
-            </nav>
-          
-
-          
-            <div class="feed-link motion-element">
-              <a href="/atom.xml" rel="alternate">
-                <i class="fa fa-rss"></i>
-                RSS
-              </a>
-            </div>
-          
-
-          
-
-          
-            <div class="links-of-author motion-element">
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="https://github.com/Joouis" title="GitHub &rarr; https://github.com/Joouis" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="mailto:luckyjoou@gmail.com" title="E-Mail &rarr; mailto:luckyjoou@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i></a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="https://www.instagram.com/Joouis" title="Instagram &rarr; https://www.instagram.com/Joouis" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i></a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="http://www.slideshare.net/choujohn351" title="SlideShare &rarr; http://www.slideshare.net/choujohn351" rel="noopener" target="_blank"><i class="fa fa-fw fa-slideshare"></i></a>
-                </span>
-              
-            </div>
-          
-
-          
-             <div class="cc-license motion-element" itemprop="license">
-              
-              
-                
-              
-              
-              
-              <a href="https://creativecommons.org/licenses/by-nd/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nd.svg" alt="Creative Commons"></a>
-             </div>
-          
-
-          
-          
-
-          
-            
-          
-          
-
-        </div>
-      </div>
-
-      
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问"><span class="nav-number">1.</span> <span class="nav-text">问</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Louie-Lu-September-25-2016"><span class="nav-number">1.1.</span> <span class="nav-text">Louie Lu - September 25, 2016</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#答"><span class="nav-number">2.</span> <span class="nav-text">答</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Champ-Yen"><span class="nav-number">2.1.</span> <span class="nav-text">Champ Yen</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Scott-Tsai"><span class="nav-number">2.2.</span> <span class="nav-text">Scott Tsai</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#反馈"><span class="nav-number">3.</span> <span class="nav-text">反馈</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Louie-Lu"><span class="nav-number">3.1.</span> <span class="nav-text">Louie Lu</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原帖"><span class="nav-number">4.</span> <span class="nav-text">原帖</span></a></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
-      
-
-      
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
 
     </div>
-  </aside>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      
+
+      
+
+<div class="copyright">
   
-    <div id="sidebar-dimmer"></div>
-  
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; 2016 – <span itemprop="copyrightYear">2020</span>
-  <span class="with-love" id="animate">
+  &copy; 2016 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">John Chou</span>
-
-  
-
-  
 </div>
 
-
-
-
-
-
-
-
-
-        
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-
-    
-
-    
-  </div>
+    </div>
+  </footer>
 
   
-
-<script>
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  <script src="//cdn.jsdelivr.net/npm/jquery@2/dist/jquery.min.js"></script>
-
-  
-  <script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.min.js"></script>
-
-  
-  <script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.ui.min.js"></script>
-
-  
-  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
-
-
-  
-
-
-  <script src="/js/utils.js?v=7.1.0"></script>
-
-  <script src="/js/motion.js?v=7.1.0"></script>
-
-
-
-  
-  
-
-
-  <script src="/js/schemes/muse.js?v=7.1.0"></script>
-
-
-
-
-  
-  <script src="/js/scrollspy.js?v=7.1.0"></script>
-<script src="/js/post-details.js?v=7.1.0"></script>
-
-
-
-  
-
-
-  <script src="/js/next-boot.js?v=7.1.0"></script>
-
-
-  
-  <script src="/js/js.cookie.js?v=7.1.0"></script>
-  <script src="/js/scroll-cookie.js?v=7.1.0"></script>
-
-
-  
-
-  
-  
-  
-    
-  
-
-  
-
-  
-  
-  
-
-
-  
-  
-
-<script>
-  var disqus_config = function() {
-    this.page.url = "https://blog.joouis.com/2019/x86-performance-qna/";
-    this.page.identifier = "2019/x86-performance-qna/";
-    this.page.title = '如何在 X86-64 下比较精准地测量系统性能';
-    };
-  function loadComments() {
-    var d = document, s = d.createElement('script');
-    s.src = 'https://joou.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', '' + +new Date());
-    (d.head || d.body).appendChild(s);
-  }
-  
-    loadComments();
-  
-</script>
-
-
-
-
-
-  
-
-
-  
-  <script>
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
 
   
   <script>
@@ -1825,63 +601,77 @@
   </script>
 
 
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
+
+
+
+
+
+
+
 
   
 
   
+  <script src="//cdn.jsdelivr.net/npm/quicklink@2.0.0/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink.listen({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://blog.joouis.com/2019/x86-performance-qna/',]
+      });
+      });
+  </script>
 
-  
-  
-  
-    
-  
-  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
-  <script>pangu.spacingPage();</script>
-
-
-  
-
-  
 <script>
-  $('.highlight').each(function(i, e) {
-    var $wrap = $('<div>').addClass('highlight-wrap');
-    $(e).after($wrap);
-    $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
-      var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
-        return $(e).text();
-      }).toArray().join('\n');
-      var ta = document.createElement('textarea');
-      var yPosition = window.pageYOffset || document.documentElement.scrollTop;
-      ta.style.top = yPosition + 'px'; // Prevent page scroll
-      ta.style.position = 'absolute';
-      ta.style.opacity = '0';
-      ta.readOnly = true;
-      ta.value = code;
-      document.body.appendChild(ta);
-      ta.select();
-      ta.setSelectionRange(0, code.length);
-      ta.readOnly = false;
-      var result = document.execCommand('copy');
-      
-        if (result) $(this).text('复制成功');
-        else $(this).text('复制失败');
-      
-      ta.blur(); // For iOS
-      $(this).blur();
-    })).on('mouseleave', function(e) {
-      var $b = $(this).find('.copy-btn');
-      setTimeout(function() {
-        $b.text('复制');
-      }, 300);
-    }).append(e);
-  })
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://joou.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
 </script>
-
-
-  
-
-  
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://blog.joouis.com/2019/x86-performance-qna/";
+    this.page.identifier = "2019/x86-performance-qna/";
+    this.page.title = "如何在 X86-64 下比较精准地测量系统性能";
+    };
+  NexT.utils.loadComments('#disqus_thread', () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://joou.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
 
 </body>
 </html>

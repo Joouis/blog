@@ -1,168 +1,71 @@
 <!DOCTYPE html>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next mist use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<html lang="zh-CN">
+<head>
   <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/hacker.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/hacker.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/hacker.ico">
+  <link rel="mask-icon" href="/images/hacker.ico" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
 
-  
-  
-    
-      
-    
-    
-      
-    
-  <script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.css">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    
-  
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
-
-
-
-
-
-
-
-  
-
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css">
-
-<link rel="stylesheet" href="/css/main.css?v=7.1.0">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/hacker.ico?v=7.1.0">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/hacker.ico?v=7.1.0">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/hacker.ico?v=7.1.0">
-
-
-  <link rel="mask-icon" href="/images/hacker.ico?v=7.1.0" color="#222">
-
-
-
-
-
-
-
-<script id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Mist',
-    version: '7.1.0',
-    sidebar: {"position":"left","display":"hide","offset":12,"onmobile":true,"dimmer":true},
-    back2top: true,
-    back2top_sidebar: false,
-    fancybox: true,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-  
-
-<meta name="baidu-site-verification" content="ChOTP1bKoM">
-
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"blog.joouis.com","root":"/","scheme":"Mist","version":"8.0.2","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
 
   <meta name="description" content="这是我的嵌入式笔记第一篇，原文写于2015年。 这篇笔记是当年参加Embedded System 2015课程的作业之一。Jserv的课程使我受益良多，也帮助我迈入了计算机科学的殿堂。他的课程在成大是出了名的“硬”，信息量巨大，上课基本就是划重点加答疑，课下需要大量时间去自学和实践。同时他也一直鼓励学生参与开源活动，甚至把作业发布到例如Hackpad（现今Dropbox Paper）、HackMD">
-<meta name="keywords" content="embedded system course,os,open source,free software">
 <meta property="og:type" content="article">
 <meta property="og:title" content="观影简记：《Revolution OS（操作系统革命）》">
 <meta property="og:url" content="https://blog.joouis.com/2019/watching-notes-revolution-os/index.html">
 <meta property="og:site_name" content="江边的旱鸭子">
 <meta property="og:description" content="这是我的嵌入式笔记第一篇，原文写于2015年。 这篇笔记是当年参加Embedded System 2015课程的作业之一。Jserv的课程使我受益良多，也帮助我迈入了计算机科学的殿堂。他的课程在成大是出了名的“硬”，信息量巨大，上课基本就是划重点加答疑，课下需要大量时间去自学和实践。同时他也一直鼓励学生参与开源活动，甚至把作业发布到例如Hackpad（现今Dropbox Paper）、HackMD">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-09T15:54:55.000Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-12-09T15:54:55.000Z">
+<meta property="article:modified_time" content="2019-12-09T15:54:55.000Z">
+<meta property="article:author" content="John Chou">
+<meta property="article:tag" content="embedded system course">
+<meta property="article:tag" content="os">
+<meta property="article:tag" content="open source">
+<meta property="article:tag" content="free software">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="观影简记：《Revolution OS（操作系统革命）》">
-<meta name="twitter:description" content="这是我的嵌入式笔记第一篇，原文写于2015年。 这篇笔记是当年参加Embedded System 2015课程的作业之一。Jserv的课程使我受益良多，也帮助我迈入了计算机科学的殿堂。他的课程在成大是出了名的“硬”，信息量巨大，上课基本就是划重点加答疑，课下需要大量时间去自学和实践。同时他也一直鼓励学生参与开源活动，甚至把作业发布到例如Hackpad（现今Dropbox Paper）、HackMD">
 
 
-
-  <link rel="alternate" href="/atom.xml" title="江边的旱鸭子" type="application/atom+xml">
-
+<link rel="canonical" href="https://blog.joouis.com/2019/watching-notes-revolution-os/">
 
 
-  
-  
-  <link rel="canonical" href="https://blog.joouis.com/2019/watching-notes-revolution-os/">
-
-
-
-<script id="page.configurations">
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
   };
 </script>
 
   <title>观影简记：《Revolution OS（操作系统革命）》 | 江边的旱鸭子</title>
   
-
-
-
-
-  <script async src="//www.googletagmanager.com/gtag/js?id=UA-76188004-1"></script>
-  <script>
-    var host = window.location.hostname;
-    if (host !== "localhost" || !true) {
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-76188004-1');
-    }
-  </script>
-
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-76188004-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-76188004-1');
+      }
+    </script>
 
 
   <script>
@@ -178,355 +81,330 @@
 
 
 
-
-
-
   <noscript>
   <style>
-  .use-motion .motion-element,
-  .use-motion .brand,
+  body { margin-top: 2rem; }
+
   .use-motion .menu-item,
-  .sidebar-inner,
+  .use-motion .sidebar,
   .use-motion .post-block,
   .use-motion .pagination,
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-title { opacity: initial; }
+  .use-motion .collection-header {
+    visibility: visible;
+  }
 
-  .use-motion .logo,
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
   .use-motion .site-title,
-  .use-motion .site-subtitle {
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
     opacity: initial;
     top: initial;
   }
 
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
   </style>
 </noscript>
 
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="江边的旱鸭子" type="application/atom+xml">
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
 
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">江边的旱鸭子</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
-    
-      
-        <h1 class="site-subtitle" itemprop="description">Blog of Joou</h1>
-      
-    
-    
   </div>
 
-  <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">江边的旱鸭子</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Blog of Joou</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
   </div>
 </div>
 
 
 
 <nav class="site-nav">
-  
-    <ul id="menu" class="menu">
-      
-        
-        
-        
-          
-          <li class="menu-item menu-item-home">
-
-    
-    
-    
-
-    
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home">
 
     <a href="/" rel="section">首页</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-archives">
-
-    
-    
-    
-
-    
+        <li class="menu-item menu-item-archives">
 
     <a href="/archives/" rel="section">归档</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-categories">
-
-    
-    
-    
-
-    
+        <li class="menu-item menu-item-categories">
 
     <a href="/categories/" rel="section">分类</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-about">
-
-    
-    
-    
-
-    
+        <li class="menu-item menu-item-about">
 
     <a href="/about/" rel="section">关于</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-recruit">
-
-    
-    
-    
-
-    
+        <li class="menu-item menu-item-recruit">
 
     <a href="/recruit/" rel="section">招聘</a>
 
   </li>
-
-      
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            搜索</a>
-        </li>
-      
-    </ul>
-  
-
-  
-    
-
-  
-
-  
-    <div class="site-search">
-      
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
-    </div>
-  </div>
-  <div id="local-search-result"></div>
-</div>
-
-
-
-    </div>
-  
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger">搜索
+        </a>
+      </li>
+  </ul>
 </nav>
 
 
 
-  
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
 
-
+    </div>
+  </div>
 
 </div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <section class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Revolution-OS"><span class="nav-number">1.</span> <span class="nav-text">Revolution OS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%9C%E9%8D%B5%E4%BA%BA%E7%89%A9%E3%80%81%E4%BA%8B%E4%BB%B6"><span class="nav-number">2.</span> <span class="nav-text">關鍵人物、事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%9D%E8%80%83%E8%88%87%E7%96%91%E5%95%8F"><span class="nav-number">3.</span> <span class="nav-text">思考與疑問</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E5%B9%95%E5%8B%98%E8%AA%A4"><span class="nav-number">4.</span> <span class="nav-text">字幕勘誤</span></a></li></ol></div>
+        </section>
+        <!--/noindex-->
+
+        <section class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="John Chou"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">John Chou</p>
+  <div class="site-description" itemprop="description">Stand high, think different.</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">50</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">179</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Joouis" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Joouis" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:luckyjoou@gmail.com" title="E-Mail → mailto:luckyjoou@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/Joouis" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;Joouis" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://www.slideshare.net/choujohn351" title="SlideShare → http:&#x2F;&#x2F;www.slideshare.net&#x2F;choujohn351" rel="noopener" target="_blank"><i class="fab fa-slideshare fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nd/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nd.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </section>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
     </header>
 
     
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
 
 
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-          <div id="content" class="content">
-            
+    <div class="main-inner post posts-expand">
+      
 
-  <div id="posts" class="posts-expand">
-    
-
-  
-
-  
-  
-  
+      
 
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+
+<div class="post-block">
   
   
-  
-  <div class="post-block">
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://blog.joouis.com/2019/watching-notes-revolution-os/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
       <meta itemprop="name" content="John Chou">
       <meta itemprop="description" content="Stand high, think different.">
-      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="江边的旱鸭子">
     </span>
-
-    
       <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          观影简记：《Revolution OS（操作系统革命）》
+        </h1>
 
-        
-        
-          <h2 class="post-title" itemprop="name headline">观影简记：《Revolution OS（操作系统革命）》
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
 
-              
-            
-          </h2>
-        
+      <time title="创建时间：2019-12-09 23:54:55" itemprop="dateCreated datePublished" datetime="2019-12-09T23:54:55+08:00">2019-12-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%BA%95%E5%B1%82/" itemprop="url" rel="index"><span itemprop="name">系统与底层</span></a>
+        </span>
+    </span>
 
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-12-09 23:54:55" itemprop="dateCreated datePublished" datetime="2019-12-09T23:54:55+08:00">2019-12-09</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/系统与底层/" itemprop="url" rel="index"><span itemprop="name">系统与底层</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">6 分钟</span>
-              
-            </div>
-          
-
-          
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2019/watching-notes-revolution-os/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/watching-notes-revolution-os/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>3 分钟</span>
+    </span>
+</div>
 
         </div>
       </header>
-    
 
     
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
         <p>这是我的<a href="https://blog.joouis.com/2019/watching-notes-revolution-os/">嵌入式笔记</a>第一篇，原文写于2015年。</p>
 <p>这篇笔记是当年参加Embedded System 2015课程的作业之一。Jserv的课程使我受益良多，也帮助我迈入了计算机科学的殿堂。他的课程在成大是出了名的“硬”，信息量巨大，上课基本就是划重点加答疑，课下需要大量时间去自学和实践。同时他也一直鼓励学生参与开源活动，甚至把作业发布到例如Hackpad（现今Dropbox Paper）、HackMD等协同文档平台上，既可以作为自己的网络备份（这也是为什么我还能找到这些“黑历史”😂），也可以供其他人参考、交流。</p>
 <p>2016年随着Hackpad被Dropbox收购并推出新的产品Paper，Hackpad上的数据也被自动移植到了Paper上。在这次数据自动迁移中，当年的不少作业笔记被遗失。在2019年的尾声，我会陆续将仅存的少量有意思、有干货的笔记从Dropbox Paper中翻出来放到博客中，也算是对当年热血岁月的一次纪念。</p>
 <a id="more"></a>
-<h2 id="Revolution-OS"><a href="#Revolution-OS" class="headerlink" title="Revolution OS"></a><a href="https://youtu.be/vWwvh3036Fw" target="_blank" rel="noopener">Revolution OS</a></h2><p>链接和下方的影片来自YouTube，外网可看~</p>
-<div class="video-container"><iframe src="//www.youtube.com/embed/vWwvh3036Fw" frameborder="0" allowfullscreen></iframe></div>
+
+
+
+<h2 id="Revolution-OS"><a href="#Revolution-OS" class="headerlink" title="Revolution OS"></a><a target="_blank" rel="noopener" href="https://youtu.be/vWwvh3036Fw">Revolution OS</a></h2><p>链接和下方的影片来自YouTube，外网可看~</p>
+<div class="video-container"><iframe src="https://www.youtube.com/embed/vWwvh3036Fw" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
+
+
+
 <h2 id="關鍵人物、事件"><a href="#關鍵人物、事件" class="headerlink" title="關鍵人物、事件"></a>關鍵人物、事件</h2><ul>
 <li><p>Eric Raymond: Author, “The cathedral and the bazaar”</p>
 </li>
@@ -547,7 +425,8 @@
 </li>
 </ul>
 </li>
-<li>BSD(12:36終於第一次提到)<ul>
+<li><p>BSD(12:36終於第一次提到)</p>
+<ul>
 <li>關於BSD電影裏提到的太少，詳細補充借用Jserv的《<strong>從 Revolution OS 看作業系統生態變化</strong>》：<ul>
 <li>作為技術創新者，BSD 在本紀錄片只零星出現四次 (談及 Apache 的成功歸於開發者社群, GNU 計畫源始, 開放原始碼授權, 對 Microsoft 提出反托拉斯訴訟)，幾乎一面倒向 Linux，實在可惜</li>
 <li>增添 Berkeley Unix / BSD 發展歷程、和 AT&amp;T 的官司爭議</li>
@@ -555,44 +434,70 @@
 </li>
 </ul>
 </li>
-<li>Michael Tiemann: Co-Founder, Cygnus Solutions</li>
-<li>Larry Augustin: Co-Founder, VA Linux Systems</li>
-<li>ERL: 啓發GNU與Linux商業應用的誕生地</li>
-<li>Linux: Monolithic</li>
-<li>GNU Hurd: <a href="http://zh.wikipedia.org/wiki/GNU_Hurd" target="_blank" rel="noopener">http://zh.wikipedia.org/wiki/GNU_Hurd</a></li>
-<li>Brian Belhendorf: Apache Web Server，使得Linux第一次在商業市場上大獲成功</li>
-<li>RedHat Software: 首間上市的Linux公司</li>
-<li>Netscape<ul>
+<li><p>Michael Tiemann: Co-Founder, Cygnus Solutions</p>
+</li>
+<li><p>Larry Augustin: Co-Founder, VA Linux Systems</p>
+</li>
+<li><p>ERL: 啓發GNU與Linux商業應用的誕生地</p>
+</li>
+<li><p>Linux: Monolithic</p>
+</li>
+<li><p>GNU Hurd: <a target="_blank" rel="noopener" href="http://zh.wikipedia.org/wiki/GNU_Hurd">http://zh.wikipedia.org/wiki/GNU_Hurd</a></p>
+</li>
+<li><p>Brian Belhendorf: Apache Web Server，使得Linux第一次在商業市場上大獲成功</p>
+</li>
+<li><p>RedHat Software: 首間上市的Linux公司</p>
+</li>
+<li><p>Netscape</p>
+<ul>
 <li>第一個參與開放原始碼的大公司，爲了對抗IE</li>
 <li>後來的Mozilla</li>
 </ul>
 </li>
-<li>Open Source vs Free Software</li>
-<li>資料庫軟體供應商的倒戈</li>
-<li>Linux Users Groups</li>
-<li>Linux World Conference</li>
+<li><p>Open Source vs Free Software</p>
+</li>
+<li><p>資料庫軟體供應商的倒戈</p>
+</li>
+<li><p>Linux Users Groups</p>
+</li>
+<li><p>Linux World Conference</p>
+</li>
 </ul>
 <h2 id="思考與疑問"><a href="#思考與疑問" class="headerlink" title="思考與疑問"></a>思考與疑問</h2><ul>
-<li>昨天看了一遍，感覺很爽，今天再看一遍，把想法都寫出來</li>
-<li>6:27 Stallman在信息裏說安全機制不過是個玩笑，讓我想到，自由軟體/開源軟體如何確保我們使用的安全性，如果有人利用它的易修改來惡意傳播帶有問題的軟體，會不會是個災難？</li>
+<li><p>昨天看了一遍，感覺很爽，今天再看一遍，把想法都寫出來</p>
+</li>
+<li><p>6:27 Stallman在信息裏說安全機制不過是個玩笑，讓我想到，自由軟體/開源軟體如何確保我們使用的安全性，如果有人利用它的易修改來惡意傳播帶有問題的軟體，會不會是個災難？</p>
+</li>
 <li><p>7:30 Bill Gates提到的軟體知識產權問題，我覺得並沒有錯(當然本片站在開源者的角度肯定是否定態度)。開源和閉源是兩種不同的價值觀，無論是哪種價值觀，從它的出發點去考慮都是合理的，最後也都被證明是可以賺錢、成功的。所以我覺得如今這個多元化的社會，開源和閉源同時存在、相互競爭是非常正常的現象。</p>
 </li>
 <li><p>另外不得不說，微軟這麼多年屹立不倒，也得益與Bill Gates大學念得法律系，面對各種官司都能從容不迫(雖然不是他去打官司)。多元化的社會，如果追求更高的目標，對自己的定位不能僅僅只是懂技術的工程師，有時候還需要更多東西。</p>
 </li>
 <li><p>11:05 Stallman想到自己就是一個OS開發者，決定自己開始幹時，我想到多少次似曾相識，很多成功人士都是這麼說的”XXX不好用，我乾脆自己來做一個”。我們很多時候都在抱怨，卻沒有動力去用自己的專業知識解決問題。往往行動起來的人，就成功了。</p>
 </li>
-<li>從1984年開始GNU計劃，到1990年Stallman等人才寫完了UNIX上各種免費的套件包，還沒有寫kernel，工程量的浩大和困難可見一斑</li>
-<li>14:29 Stallman一開始對釋出源代碼也是存有戒心的，人類的天性吧</li>
-<li>16:45 Augustin談到自己去找工作時身邊的人用的都是自己寫的程式，這就像Jserv老師說的找工作時給HR或主管秀出自己的Google搜索結果一樣，簡單有效</li>
-<li>20:33 Stallman分析自由軟體如何能賺錢，邏輯太精彩了，壟斷往往百害而無一利</li>
-<li>24:11 Linus提出自己開始寫一個OS，完全沒有提到Minix</li>
-<li>30:47 Linus在被問到”有人建議該寫成GNU/Linux”時認爲只有GNU自己發佈的Linux Distribution才能叫GNU/Linux(或隨他們怎麼稱呼)。但是所有版本的Linux毫無疑問都用到GNU的各種系統軟體，Stallman在意的可能是大家(特別是非IT業的人，但這部分人才是未來更廣闊的目標羣體)只記住了Linux，而忽視了GNU的貢獻吧</li>
-<li>36:42 Augustin談到自由軟體找風投，那個時候幾乎所有風投都不太信任自由軟體，可見此時自由軟體並未獲得主流的認可</li>
-<li>48:35 Stallman在談到爲什麼他支持Free Software而不是Open Source時顯得更像一位哲學家，其實也更像一個保持童真的小孩或者說是理想主義者。我還是更支持Perens所說的，自由軟體和非自由軟體可以共存。</li>
-<li>58:25 電影又開始“攻擊”微軟了，我個人一直認爲微軟是家偉大的公司，推動了平民化電腦市場，使得普通百姓也可以輕鬆使用電腦。不過壟斷確實不是一件好事，Linux等OS的飛速發展可以迫使微軟努力向前走(1:01:17畫面中的“Microsoft Welcome the Linux Community”無論是公關還是誠心的歡迎都是一個很好的舉措，有大企業該有的氣度，至於爭論的話題，個人覺得推給OEM沒問題)</li>
-<li>1:02:47 “共產主義”這個問題更多是意識形態上的東西，電影裏就可以看出，當這些開源人士與社會主流意見不同時，又因爲行爲上有共產的思想，就被說成是“共產主義”。實際上意識形態這種東西，被統治階級拿來使用，畢然是要求人人信服的(至少在表面上)，不然如何維繫穩定。至於把“共產主義”和Open Source扯在一起，真的是有夠搞笑的(特別是Eric迴應的那副表情)</li>
-<li>VA Linux首次IPO真的讓人吃驚，開盤價30塊，期間達到了320、340塊，最後收盤價299塊，打破了最高開盤交易記錄，what the fxxk!!! 科技創造奇蹟!!!</li>
-<li>最後關於RedHat和VA Linux的兩個鏡頭是想說黃金時代後的泡沫崩潰嗎？Linux未來發展該何去何從還有待進一步的觀望？</li>
+<li><p>從1984年開始GNU計劃，到1990年Stallman等人才寫完了UNIX上各種免費的套件包，還沒有寫kernel，工程量的浩大和困難可見一斑</p>
+</li>
+<li><p>14:29 Stallman一開始對釋出源代碼也是存有戒心的，人類的天性吧</p>
+</li>
+<li><p>16:45 Augustin談到自己去找工作時身邊的人用的都是自己寫的程式，這就像Jserv老師說的找工作時給HR或主管秀出自己的Google搜索結果一樣，簡單有效</p>
+</li>
+<li><p>20:33 Stallman分析自由軟體如何能賺錢，邏輯太精彩了，壟斷往往百害而無一利</p>
+</li>
+<li><p>24:11 Linus提出自己開始寫一個OS，完全沒有提到Minix</p>
+</li>
+<li><p>30:47 Linus在被問到”有人建議該寫成GNU/Linux”時認爲只有GNU自己發佈的Linux Distribution才能叫GNU/Linux(或隨他們怎麼稱呼)。但是所有版本的Linux毫無疑問都用到GNU的各種系統軟體，Stallman在意的可能是大家(特別是非IT業的人，但這部分人才是未來更廣闊的目標羣體)只記住了Linux，而忽視了GNU的貢獻吧</p>
+</li>
+<li><p>36:42 Augustin談到自由軟體找風投，那個時候幾乎所有風投都不太信任自由軟體，可見此時自由軟體並未獲得主流的認可</p>
+</li>
+<li><p>48:35 Stallman在談到爲什麼他支持Free Software而不是Open Source時顯得更像一位哲學家，其實也更像一個保持童真的小孩或者說是理想主義者。我還是更支持Perens所說的，自由軟體和非自由軟體可以共存。</p>
+</li>
+<li><p>58:25 電影又開始“攻擊”微軟了，我個人一直認爲微軟是家偉大的公司，推動了平民化電腦市場，使得普通百姓也可以輕鬆使用電腦。不過壟斷確實不是一件好事，Linux等OS的飛速發展可以迫使微軟努力向前走(1:01:17畫面中的“Microsoft Welcome the Linux Community”無論是公關還是誠心的歡迎都是一個很好的舉措，有大企業該有的氣度，至於爭論的話題，個人覺得推給OEM沒問題)</p>
+</li>
+<li><p>1:02:47 “共產主義”這個問題更多是意識形態上的東西，電影裏就可以看出，當這些開源人士與社會主流意見不同時，又因爲行爲上有共產的思想，就被說成是“共產主義”。實際上意識形態這種東西，被統治階級拿來使用，畢然是要求人人信服的(至少在表面上)，不然如何維繫穩定。至於把“共產主義”和Open Source扯在一起，真的是有夠搞笑的(特別是Eric迴應的那副表情)</p>
+</li>
+<li><p>VA Linux首次IPO真的讓人吃驚，開盤價30塊，期間達到了320、340塊，最後收盤價299塊，打破了最高開盤交易記錄，what the fxxk!!! 科技創造奇蹟!!!</p>
+</li>
+<li><p>最後關於RedHat和VA Linux的兩個鏡頭是想說黃金時代後的泡沫崩潰嗎？Linux未來發展該何去何從還有待進一步的觀望？</p>
+</li>
 </ul>
 <h2 id="字幕勘誤"><a href="#字幕勘誤" class="headerlink" title="字幕勘誤"></a>字幕勘誤</h2><ul>
 <li>2:11  “它有12萬使用者”—-&gt;“它有1200萬使用者”</li>
@@ -600,1267 +505,158 @@
 <li>36:33 “2萬5千行程式碼”—&gt;”25萬行程式碼”</li>
 </ul>
 
-      
     </div>
 
     
+    
+    
       
-
   <div class="popular-posts-header">相关文章</div>
   <ul class="popular-posts">
-  
     <li class="popular-posts-item">
-      
-      
       <div class="popular-posts-title"><a href="/2019/am335x-arm-cortex-a8-boot-sequence/" rel="bookmark">解析AM335x Arm Cortex-A8处理器的启动流程</a></div>
-      
     </li>
-  
     <li class="popular-posts-item">
-      
-      
       <div class="popular-posts-title"><a href="/2019/lab-mini-arm-os/" rel="bookmark">上手一个具体而微的ARM操作系统</a></div>
-      
     </li>
-  
     <li class="popular-posts-item">
-      
-      
       <div class="popular-posts-title"><a href="/2020/lab-compiler-intro/" rel="bookmark">编译器入门小笔记</a></div>
-      
     </li>
-  
     <li class="popular-posts-item">
-      
-      
+      <div class="popular-posts-title"><a href="/2019/observe-stack-behavior-by-disassembling-a-simple-c-code/" rel="bookmark">小练习：通过反汇编一段C代码观察栈行为</a></div>
+    </li>
+    <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="/2020/lab-leetcode-practices/" rel="bookmark">LeetCode小练习</a></div>
-      
     </li>
-  
-    <li class="popular-posts-item">
-      
-      
-      <div class="popular-posts-title"><a href="/2020/lab-prefetch-intro/" rel="bookmark">Prefetcher小练习</a></div>
-      
-    </li>
-  
   </ul>
 
 
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-      <div>
-        <div id="reward-container">
+    <footer class="post-footer">
+          <div class="reward-container">
   <div>Buy me a cup of coffee :)</div>
-  <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
-    打赏
+  <button onclick="document.querySelector('.post-reward').classList.toggle('active');">
+    赞赏
   </button>
-  <div id="qr" style="display: none;">
-
-    
-      
-      
-        
-      
-      <div style="display: inline-block">
-        <img src="/images/reward-wechat.jpg" alt="John Chou 微信支付">
-        <p>微信支付</p>
+  <div class="post-reward">
+      <div>
+        <img src="/images/reward-wechat.jpg" alt="John Chou 微信">
+        <span>微信</span>
       </div>
-    
-      
-      
-        
-      
-      <div style="display: inline-block">
+      <div>
         <img src="/images/reward-alipay.jpg" alt="John Chou 支付宝">
-        <p>支付宝</p>
+        <span>支付宝</span>
       </div>
-    
 
   </div>
 </div>
 
-      </div>
-    
+          
 
-    
-      <div>
-        
-
-
-
-
-  
-
-
-
-<ul class="post-copyright">
+<div class="post-copyright">
+<ul>
   <li class="post-copyright-author">
-    <strong>本文作者： </strong>John Chou</li>
+      <strong>本文作者： </strong>John Chou
+  </li>
   <li class="post-copyright-link">
-    <strong>本文链接：</strong>
-    
-    <a href="https://blog.joouis.com/2019/watching-notes-revolution-os/" title="观影简记：《Revolution OS（操作系统革命）》">https://blog.joouis.com/2019/watching-notes-revolution-os/</a>
+      <strong>本文链接：</strong>
+      <a href="https://blog.joouis.com/2019/watching-notes-revolution-os/" title="观影简记：《Revolution OS（操作系统革命）》">https://blog.joouis.com/2019/watching-notes-revolution-os/</a>
   </li>
   <li class="post-copyright-license">
-    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nd/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-ND</a> 许可协议。转载请注明出处！</li>
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nd/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-ND</a> 许可协议。转载请注明出处！
+  </li>
 </ul>
+</div>
 
-      </div>
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/embedded-system-course/" rel="tag"># embedded system course</a>
-          
-            <a href="/tags/os/" rel="tag"># os</a>
-          
-            <a href="/tags/open-source/" rel="tag"># open source</a>
-          
-            <a href="/tags/free-software/" rel="tag"># free software</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2019/microsoft-hackathon-2019-winner/" rel="next" title="Microsoft Hackathon 2019 Winner">
-                <i class="fa fa-chevron-left"></i> Microsoft Hackathon 2019 Winner
-              </a>
-            
+          <div class="post-tags">
+              <a href="/tags/embedded-system-course/" rel="tag"># embedded system course</a>
+              <a href="/tags/os/" rel="tag"># os</a>
+              <a href="/tags/open-source/" rel="tag"># open source</a>
+              <a href="/tags/free-software/" rel="tag"># free software</a>
           </div>
 
-          <span class="post-nav-divider"></span>
+        
 
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/observe-stack-behavior-by-disassembling-a-simple-c-code/" rel="prev" title="小练习：通过反汇编一段C代码观察栈行为">
-                小练习：通过反汇编一段C代码观察栈行为 <i class="fa fa-chevron-right"></i>
-              </a>
-            
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2019/microsoft-hackathon-2019-winner/" rel="prev" title="Microsoft Hackathon 2019 Winner">
+                  <i class="fa fa-chevron-left"></i> Microsoft Hackathon 2019 Winner
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2019/observe-stack-behavior-by-disassembling-a-simple-c-code/" rel="next" title="小练习：通过反汇编一段C代码观察栈行为">
+                  小练习：通过反汇编一段C代码观察栈行为 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
           </div>
-        </div>
-      
-
-      
-      
     </footer>
-  </div>
-  
-  
-  
   </article>
-
-
-  </div>
-
-
-          </div>
-          
-
-  
-    <div class="comments" id="comments">
-      <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
-      </div>
-    </div>
-
-  
+</div>
 
 
 
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+
+
+
+      
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
     </div>
   </div>
+  
 
-  <aside id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="John Chou">
-            
-              <p class="site-author-name" itemprop="name">John Chou</p>
-              <div class="site-description motion-element" itemprop="description">Stand high, think different.</div>
-          </div>
-
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">50</span>
-                    <span class="site-state-item-name">日志</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-categories">
-                  
-                    
-                      <a href="/categories/">
-                    
-                  
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">7</span>
-                    <span class="site-state-item-name">分类</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  
-                    
-                      <a href="/tags/">
-                    
-                  
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">179</span>
-                    <span class="site-state-item-name">标签</span>
-                  </a>
-                </div>
-              
-            </nav>
-          
-
-          
-            <div class="feed-link motion-element">
-              <a href="/atom.xml" rel="alternate">
-                <i class="fa fa-rss"></i>
-                RSS
-              </a>
-            </div>
-          
-
-          
-
-          
-            <div class="links-of-author motion-element">
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="https://github.com/Joouis" title="GitHub &rarr; https://github.com/Joouis" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="mailto:luckyjoou@gmail.com" title="E-Mail &rarr; mailto:luckyjoou@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i></a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="https://www.instagram.com/Joouis" title="Instagram &rarr; https://www.instagram.com/Joouis" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i></a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="http://www.slideshare.net/choujohn351" title="SlideShare &rarr; http://www.slideshare.net/choujohn351" rel="noopener" target="_blank"><i class="fa fa-fw fa-slideshare"></i></a>
-                </span>
-              
-            </div>
-          
-
-          
-             <div class="cc-license motion-element" itemprop="license">
-              
-              
-                
-              
-              
-              
-              <a href="https://creativecommons.org/licenses/by-nd/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nd.svg" alt="Creative Commons"></a>
-             </div>
-          
-
-          
-          
-
-          
-            
-          
-          
-
-        </div>
-      </div>
-
-      
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Revolution-OS"><span class="nav-number">1.</span> <span class="nav-text">Revolution OS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#關鍵人物、事件"><span class="nav-number">2.</span> <span class="nav-text">關鍵人物、事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思考與疑問"><span class="nav-number">3.</span> <span class="nav-text">思考與疑問</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字幕勘誤"><span class="nav-number">4.</span> <span class="nav-text">字幕勘誤</span></a></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
-      
-
-      
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
 
     </div>
-  </aside>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      
+
+      
+
+<div class="copyright">
   
-    <div id="sidebar-dimmer"></div>
-  
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; 2016 – <span itemprop="copyrightYear">2020</span>
-  <span class="with-love" id="animate">
+  &copy; 2016 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">John Chou</span>
-
-  
-
-  
 </div>
 
-
-
-
-
-
-
-
-
-        
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-
-    
-
-    
-  </div>
+    </div>
+  </footer>
 
   
-
-<script>
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  <script src="//cdn.jsdelivr.net/npm/jquery@2/dist/jquery.min.js"></script>
-
-  
-  <script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.min.js"></script>
-
-  
-  <script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.ui.min.js"></script>
-
-  
-  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
-
-
-  
-
-
-  <script src="/js/utils.js?v=7.1.0"></script>
-
-  <script src="/js/motion.js?v=7.1.0"></script>
-
-
-
-  
-  
-
-
-  <script src="/js/schemes/muse.js?v=7.1.0"></script>
-
-
-
-
-  
-  <script src="/js/scrollspy.js?v=7.1.0"></script>
-<script src="/js/post-details.js?v=7.1.0"></script>
-
-
-
-  
-
-
-  <script src="/js/next-boot.js?v=7.1.0"></script>
-
-
-  
-  <script src="/js/js.cookie.js?v=7.1.0"></script>
-  <script src="/js/scroll-cookie.js?v=7.1.0"></script>
-
-
-  
-
-  
-  
-  
-    
-  
-
-  
-
-  
-  
-  
-
-
-  
-  
-
-<script>
-  var disqus_config = function() {
-    this.page.url = "https://blog.joouis.com/2019/watching-notes-revolution-os/";
-    this.page.identifier = "2019/watching-notes-revolution-os/";
-    this.page.title = '观影简记：《Revolution OS（操作系统革命）》';
-    };
-  function loadComments() {
-    var d = document, s = d.createElement('script');
-    s.src = 'https://joou.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', '' + +new Date());
-    (d.head || d.body).appendChild(s);
-  }
-  
-    loadComments();
-  
-</script>
-
-
-
-
-
-  
-
-
-  
-  <script>
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
 
   
   <script>
@@ -1874,63 +670,77 @@
   </script>
 
 
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
+
+
+
+
+
+
+
 
   
 
   
+  <script src="//cdn.jsdelivr.net/npm/quicklink@2.0.0/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink.listen({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://blog.joouis.com/2019/watching-notes-revolution-os/',]
+      });
+      });
+  </script>
 
-  
-  
-  
-    
-  
-  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
-  <script>pangu.spacingPage();</script>
-
-
-  
-
-  
 <script>
-  $('.highlight').each(function(i, e) {
-    var $wrap = $('<div>').addClass('highlight-wrap');
-    $(e).after($wrap);
-    $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
-      var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
-        return $(e).text();
-      }).toArray().join('\n');
-      var ta = document.createElement('textarea');
-      var yPosition = window.pageYOffset || document.documentElement.scrollTop;
-      ta.style.top = yPosition + 'px'; // Prevent page scroll
-      ta.style.position = 'absolute';
-      ta.style.opacity = '0';
-      ta.readOnly = true;
-      ta.value = code;
-      document.body.appendChild(ta);
-      ta.select();
-      ta.setSelectionRange(0, code.length);
-      ta.readOnly = false;
-      var result = document.execCommand('copy');
-      
-        if (result) $(this).text('复制成功');
-        else $(this).text('复制失败');
-      
-      ta.blur(); // For iOS
-      $(this).blur();
-    })).on('mouseleave', function(e) {
-      var $b = $(this).find('.copy-btn');
-      setTimeout(function() {
-        $b.text('复制');
-      }, 300);
-    }).append(e);
-  })
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://joou.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
 </script>
-
-
-  
-
-  
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://blog.joouis.com/2019/watching-notes-revolution-os/";
+    this.page.identifier = "2019/watching-notes-revolution-os/";
+    this.page.title = "观影简记：《Revolution OS（操作系统革命）》";
+    };
+  NexT.utils.loadComments('#disqus_thread', () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://joou.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
 
 </body>
 </html>

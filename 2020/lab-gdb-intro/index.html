@@ -1,128 +1,37 @@
 <!DOCTYPE html>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next mist use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<html lang="zh-CN">
+<head>
   <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/hacker.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/hacker.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/hacker.ico">
+  <link rel="mask-icon" href="/images/hacker.ico" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
 
-  
-  
-    
-      
-    
-    
-      
-    
-  <script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.css">
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"blog.joouis.com","root":"/","scheme":"Mist","version":"8.0.2","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    
-  
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
-
-
-
-
-
-
-
-  
-
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css">
-
-<link rel="stylesheet" href="/css/main.css?v=7.1.0">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/hacker.ico?v=7.1.0">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/hacker.ico?v=7.1.0">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/hacker.ico?v=7.1.0">
-
-
-  <link rel="mask-icon" href="/images/hacker.ico?v=7.1.0" color="#222">
-
-
-
-
-
-
-
-<script id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Mist',
-    version: '7.1.0',
-    sidebar: {"position":"left","display":"hide","offset":12,"onmobile":true,"dimmer":true},
-    back2top: true,
-    back2top_sidebar: false,
-    fancybox: true,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-  
-
-<meta name="baidu-site-verification" content="ChOTP1bKoM">
-
-
-  <meta name="description" content="这是我的嵌入式笔记第七篇同时也是完结篇，原文写于2015年。本文除了介绍GDB/CGBD的基础使用方法以及嵌入式开发应用外，还会分享一个解密类经典游戏 Defusing a binary bomb with GDB ，非常有趣！">
-<meta name="keywords" content="stm32,gdb,cgdb,disassembly,binary,defusing binary bomb">
+  <meta name="description" content="这是我的嵌入式笔记第七篇同时也是完结篇，原文写于2015年。本文除了介绍GDB&#x2F;CGBD的基础使用方法以及嵌入式开发应用外，还会分享一个解密类经典游戏 Defusing a binary bomb with GDB ，非常有趣！">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GDB&#x2F;CGDB入门与拆弹游戏">
 <meta property="og:url" content="https://blog.joouis.com/2020/lab-gdb-intro/index.html">
 <meta property="og:site_name" content="江边的旱鸭子">
-<meta property="og:description" content="这是我的嵌入式笔记第七篇同时也是完结篇，原文写于2015年。本文除了介绍GDB/CGBD的基础使用方法以及嵌入式开发应用外，还会分享一个解密类经典游戏 Defusing a binary bomb with GDB ，非常有趣！">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:description" content="这是我的嵌入式笔记第七篇同时也是完结篇，原文写于2015年。本文除了介绍GDB&#x2F;CGBD的基础使用方法以及嵌入式开发应用外，还会分享一个解密类经典游戏 Defusing a binary bomb with GDB ，非常有趣！">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://g8xeua.bn.files.1drv.com/y4m2NfjgmRex3zQrLCz2ec6NFVRh9RVlYb6UxUVIW5Cp_ERI9Aewx17RtVAc74PA33vZdXPAFsMqMHaKmV2-v_SDvAxa4SEyYr4-WXEyT5QEvDfMBkrjNr70ggOdi7F8irjC_en48kPMwf2HBEiPWzfTYVrCg7LWUmb17hT1ciWMNiR9a9Woxr9HTBiQEVtRbLmfF59Kt7I6Gm9L5d-gahNOg">
 <meta property="og:image" content="https://g8xgua.bn.files.1drv.com/y4mPoBctTovg6J0yvhXhtffMfAPecqUB0wg5NJ-TYuE67eCPc5pFngsB3YWObYbw43_WCi__xFFjIXMMUfVCTjDQ3LB6WldJeVVdl2GgzHvk4e1NfiWyWz8eGqvKqxMx1Q3DrNTZSsd33h6aalvSdyIOxcohH8GQd7F3Ibi-5khQgNfOWTshN_lITEZAtALGyuedC96KqrLIVX3UkXz3I2kHQ">
 <meta property="og:image" content="https://g8xfua.bn.files.1drv.com/y4m_1q4cb_ll8OFKXEtf82M3NkP2TNsY5Azfo4LAaj05-y7DCWA0U670BtSnsiDXmBxMUSpoGz9DprJ3apqbGyR5MIboLmpWA32V50cpmYdg0310ksBg7LMouIDVvvvAXHuVc3BsB5SIuAVcz8LUgrTyrev5T8nkSifzjYigM5PsfkLBv28c1Ao3kko5shSbA2ExRtj4SUzF0T0lUH-6Frgzg">
@@ -138,47 +47,43 @@
 <meta property="og:image" content="https://g8xnua.bn.files.1drv.com/y4mUvdDoZ8nPQPsuwD8sMK-75pZGwvsiV8sYOTW_qbhWybCYZWFnLgMtiexjznqdNtJzpDqV4B84ajzPPjYzKEkumC24wFXMpJNpgpTak1gylEmJh-dAkWMIAHozf0f3NzJyQx1nOSsPLwajC2Xk0w-q-xFXok0K5kKpdDpLT9vm4TVHuOpGli0Srxe8nEM6Hy3Jd_Cm4w58uyblrkUqeO3Xg">
 <meta property="og:image" content="https://gsxiua.bn.files.1drv.com/y4mlxNA_jEBIGKIHZQSqzMTL2a6D2-B8yr-Hhwl39qIZqbA02BYOssQrohJ-8FFgBHwnJotMvff6nTWKUA3Bo-y8cwE92a4CgwNnKujuPR9qqHYZrJLoK2CuEmk6V6cFxXxmcnowE1Sf_d64kZkEJNMsfmYIdhfxXq7aw_PcX31YP8tyVtVR1800adG2tNxzDk7x8ANgNvFD_MN9LVeZgoK_g">
 <meta property="og:image" content="https://gsxhua.bn.files.1drv.com/y4mruackLegsDWFfF6teCuu9RUKNLp1pLHIecfDS5MdIW53DktomQZTUc63fegiDpsIwu46Gj-2u15MvQfPpEJeu9Xy3x2Kbqx3JetweFkeAwW_2AjGgIOTq8FamG56Cw_aQnubjySwTBN6MZxSb_vB66kWfnvaRCbn-E2hyYsTciL8MW1aGxif2yUQSMN6325r40UUBrelZk34NdwAYere7w">
-<meta property="og:updated_time" content="2020-03-29T08:22:19.000Z">
+<meta property="article:published_time" content="2020-03-29T08:22:19.000Z">
+<meta property="article:modified_time" content="2020-03-29T08:22:19.000Z">
+<meta property="article:author" content="John Chou">
+<meta property="article:tag" content="stm32">
+<meta property="article:tag" content="gdb">
+<meta property="article:tag" content="cgdb">
+<meta property="article:tag" content="disassembly">
+<meta property="article:tag" content="binary">
+<meta property="article:tag" content="defusing binary bomb">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="GDB&#x2F;CGDB入门与拆弹游戏">
-<meta name="twitter:description" content="这是我的嵌入式笔记第七篇同时也是完结篇，原文写于2015年。本文除了介绍GDB/CGBD的基础使用方法以及嵌入式开发应用外，还会分享一个解密类经典游戏 Defusing a binary bomb with GDB ，非常有趣！">
 <meta name="twitter:image" content="https://g8xeua.bn.files.1drv.com/y4m2NfjgmRex3zQrLCz2ec6NFVRh9RVlYb6UxUVIW5Cp_ERI9Aewx17RtVAc74PA33vZdXPAFsMqMHaKmV2-v_SDvAxa4SEyYr4-WXEyT5QEvDfMBkrjNr70ggOdi7F8irjC_en48kPMwf2HBEiPWzfTYVrCg7LWUmb17hT1ciWMNiR9a9Woxr9HTBiQEVtRbLmfF59Kt7I6Gm9L5d-gahNOg">
 
 
-
-  <link rel="alternate" href="/atom.xml" title="江边的旱鸭子" type="application/atom+xml">
-
+<link rel="canonical" href="https://blog.joouis.com/2020/lab-gdb-intro/">
 
 
-  
-  
-  <link rel="canonical" href="https://blog.joouis.com/2020/lab-gdb-intro/">
-
-
-
-<script id="page.configurations">
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
   };
 </script>
 
   <title>GDB/CGDB入门与拆弹游戏 | 江边的旱鸭子</title>
   
-
-
-
-
-  <script async src="//www.googletagmanager.com/gtag/js?id=UA-76188004-1"></script>
-  <script>
-    var host = window.location.hostname;
-    if (host !== "localhost" || !true) {
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-76188004-1');
-    }
-  </script>
-
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-76188004-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-76188004-1');
+      }
+    </script>
 
 
   <script>
@@ -194,351 +99,323 @@
 
 
 
-
-
-
   <noscript>
   <style>
-  .use-motion .motion-element,
-  .use-motion .brand,
+  body { margin-top: 2rem; }
+
   .use-motion .menu-item,
-  .sidebar-inner,
+  .use-motion .sidebar,
   .use-motion .post-block,
   .use-motion .pagination,
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-title { opacity: initial; }
+  .use-motion .collection-header {
+    visibility: visible;
+  }
 
-  .use-motion .logo,
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
   .use-motion .site-title,
-  .use-motion .site-subtitle {
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
     opacity: initial;
     top: initial;
   }
 
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
   </style>
 </noscript>
 
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="江边的旱鸭子" type="application/atom+xml">
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
 
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">江边的旱鸭子</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
-    
-      
-        <h1 class="site-subtitle" itemprop="description">Blog of Joou</h1>
-      
-    
-    
   </div>
 
-  <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">江边的旱鸭子</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Blog of Joou</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
   </div>
 </div>
 
 
 
 <nav class="site-nav">
-  
-    <ul id="menu" class="menu">
-      
-        
-        
-        
-          
-          <li class="menu-item menu-item-home">
-
-    
-    
-    
-
-    
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home">
 
     <a href="/" rel="section">首页</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-archives">
-
-    
-    
-    
-
-    
+        <li class="menu-item menu-item-archives">
 
     <a href="/archives/" rel="section">归档</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-categories">
-
-    
-    
-    
-
-    
+        <li class="menu-item menu-item-categories">
 
     <a href="/categories/" rel="section">分类</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-about">
-
-    
-    
-    
-
-    
+        <li class="menu-item menu-item-about">
 
     <a href="/about/" rel="section">关于</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-recruit">
-
-    
-    
-    
-
-    
+        <li class="menu-item menu-item-recruit">
 
     <a href="/recruit/" rel="section">招聘</a>
 
   </li>
-
-      
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            搜索</a>
-        </li>
-      
-    </ul>
-  
-
-  
-    
-
-  
-
-  
-    <div class="site-search">
-      
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
-    </div>
-  </div>
-  <div id="local-search-result"></div>
-</div>
-
-
-
-    </div>
-  
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger">搜索
+        </a>
+      </li>
+  </ul>
 </nav>
 
 
 
-  
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
 
-
+    </div>
+  </div>
 
 </div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <section class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8GDB"><span class="nav-number">1.</span> <span class="nav-text">使用GDB</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#GDB"><span class="nav-number">1.1.</span> <span class="nav-text">GDB</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CGDB"><span class="nav-number">1.2.</span> <span class="nav-text">CGDB</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%AF%E8%A6%96%E5%8C%96%E9%99%A4%E9%8C%AF%E5%B7%A5%E5%85%B7"><span class="nav-number">1.3.</span> <span class="nav-text">可視化除錯工具</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Using-STM32-discovery-kits-with-open-source-tools"><span class="nav-number">2.</span> <span class="nav-text">Using STM32 discovery kits with open source tools</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Installing-GNU-toolchain"><span class="nav-number">2.1.</span> <span class="nav-text">Installing GNU toolchain</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Installing-STLINK"><span class="nav-number">2.2.</span> <span class="nav-text">Installing STLINK</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Using-the-GDB-server"><span class="nav-number">2.3.</span> <span class="nav-text">Using the GDB server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Building-and-flashing-a-program"><span class="nav-number">2.4.</span> <span class="nav-text">Building and flashing a program</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Notes"><span class="nav-number">2.5.</span> <span class="nav-text">Notes</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Defusing-a-binary-bomb"><span class="nav-number">3.</span> <span class="nav-text">Defusing a binary bomb</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Lab43-Runtime-Behavior"><span class="nav-number">3.1.</span> <span class="nav-text">Lab43: Runtime Behavior</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Phase-0-Phase-1-Comparison"><span class="nav-number">3.2.</span> <span class="nav-text">Phase 0, Phase 1: Comparison</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Phase-2-For-loop"><span class="nav-number">3.3.</span> <span class="nav-text">Phase 2: For loop</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Phase-3-If-condition"><span class="nav-number">3.4.</span> <span class="nav-text">Phase 3: If condition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Phase-4-Iteration"><span class="nav-number">3.5.</span> <span class="nav-text">Phase 4: Iteration</span></a></li></ol></li></ol></div>
+        </section>
+        <!--/noindex-->
+
+        <section class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="John Chou"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">John Chou</p>
+  <div class="site-description" itemprop="description">Stand high, think different.</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">50</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">179</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Joouis" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Joouis" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:luckyjoou@gmail.com" title="E-Mail → mailto:luckyjoou@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/Joouis" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;Joouis" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://www.slideshare.net/choujohn351" title="SlideShare → http:&#x2F;&#x2F;www.slideshare.net&#x2F;choujohn351" rel="noopener" target="_blank"><i class="fab fa-slideshare fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nd/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nd.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </section>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
     </header>
 
     
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
 
 
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-          <div id="content" class="content">
-            
+    <div class="main-inner post posts-expand">
+      
 
-  <div id="posts" class="posts-expand">
-    
-
-  
-
-  
-  
-  
+      
 
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+
+<div class="post-block">
   
   
-  
-  <div class="post-block">
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://blog.joouis.com/2020/lab-gdb-intro/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
       <meta itemprop="name" content="John Chou">
       <meta itemprop="description" content="Stand high, think different.">
-      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="江边的旱鸭子">
     </span>
-
-    
       <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          GDB/CGDB入门与拆弹游戏
+        </h1>
 
-        
-        
-          <h2 class="post-title" itemprop="name headline">GDB/CGDB入门与拆弹游戏
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
 
-              
-            
-          </h2>
-        
+      <time title="创建时间：2020-03-29 16:22:19" itemprop="dateCreated datePublished" datetime="2020-03-29T16:22:19+08:00">2020-03-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%BA%95%E5%B1%82/" itemprop="url" rel="index"><span itemprop="name">系统与底层</span></a>
+        </span>
+    </span>
 
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2020-03-29 16:22:19" itemprop="dateCreated datePublished" datetime="2020-03-29T16:22:19+08:00">2020-03-29</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/系统与底层/" itemprop="url" rel="index"><span itemprop="name">系统与底层</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">8 分钟</span>
-              
-            </div>
-          
-
-          
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2020/lab-gdb-intro/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/lab-gdb-intro/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>4 分钟</span>
+    </span>
+</div>
 
         </div>
       </header>
-    
 
     
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
         <p>这是我的<a href="https://blog.joouis.com/2019/watching-notes-revolution-os/">嵌入式笔记</a>第七篇同时也是完结篇，原文写于2015年。本文除了介绍GDB/CGBD的基础使用方法以及嵌入式开发应用外，还会分享一个解密类经典游戏 <code>Defusing a binary bomb with GDB</code> ，非常有趣！</p>
 <a id="more"></a>
+
+
+
 <h2 id="使用GDB"><a href="#使用GDB" class="headerlink" title="使用GDB"></a>使用GDB</h2><h3 id="GDB"><a href="#GDB" class="headerlink" title="GDB"></a>GDB</h3><ul>
 <li><code>b [function name] *[address]</code>：設置斷點</li>
 <li><code>d [breakpoint num]</code>：刪除斷點</li>
@@ -555,18 +432,18 @@
 <li><code>winheight name +/- count</code>：調整 TUI 窗口大小，例如 winheight src -5 代表 TUI 窗口減少 5 行代碼</li>
 <li><code>info stack/variables/files/...</code></li>
 <li>REF:<ul>
-<li><a href="http://linuxtools-rst.readthedocs.org/zh_CN/latest/tool/gdb.html" target="_blank" rel="noopener">http://linuxtools-rst.readthedocs.org/zh_CN/latest/tool/gdb.html</a></li>
-<li>TUI-specific Commands](<a href="https://sourceware.org/gdb/onlinedocs/gdb/TUI-Commands.html" target="_blank" rel="noopener">https://sourceware.org/gdb/onlinedocs/gdb/TUI-Commands.html</a>)</li>
+<li><a target="_blank" rel="noopener" href="http://linuxtools-rst.readthedocs.org/zh_CN/latest/tool/gdb.html">http://linuxtools-rst.readthedocs.org/zh_CN/latest/tool/gdb.html</a></li>
+<li>TUI-specific Commands](<a target="_blank" rel="noopener" href="https://sourceware.org/gdb/onlinedocs/gdb/TUI-Commands.html">https://sourceware.org/gdb/onlinedocs/gdb/TUI-Commands.html</a>)</li>
 </ul>
 </li>
 </ul>
 <h3 id="CGDB"><a href="#CGDB" class="headerlink" title="CGDB"></a>CGDB</h3><ul>
 <li>安裝：<code>sudo apt-get install cgdb</code></li>
-<li>官方手冊：<a href="http://cgdb.sourceforge.net/docs/cgdb-no-split.html" target="_blank" rel="noopener">CGDB Manual 0.6.6</a> （<strong>请查看手册最新版本</strong>：<a href="https://cgdb.github.io/docs/cgdb.html" target="_blank" rel="noopener">CGDB Manual 0.7.1</a>）</li>
+<li>官方手冊：<a target="_blank" rel="noopener" href="http://cgdb.sourceforge.net/docs/cgdb-no-split.html">CGDB Manual 0.6.6</a> （<strong>请查看手册最新版本</strong>：<a target="_blank" rel="noopener" href="https://cgdb.github.io/docs/cgdb.html">CGDB Manual 0.7.1</a>）</li>
 <li>相比 GDB 無需用 layout 調出 TUI，CGDB 會自動顯示出來，source window 和 GDB command window 切換方式和 VI 相同，使用 i 和 Esc。</li>
 <li>新增及移除 break point 方法，直接在 source window 裏移動到想要新增/移除的位置，使用 space 鍵就可以了。</li>
 <li><strong>使用 cross compiler 方法</strong>：<code>cgdb -d arm-none-eabi-gdb -x &quot;gdb.script&quot;</code></li>
-<li>Source window 類似 VI 界面，常見的 <code>:</code> 設定、<code>/</code> 查詢等都可以使用，具體參考 <a href="http://cgdb.sourceforge.net/docs/cgdb.html/Configuring-CGDB.html#Configuring-CGDB" target="_blank" rel="noopener">CGDB configuration commands</a></li>
+<li>Source window 類似 VI 界面，常見的 <code>:</code> 設定、<code>/</code> 查詢等都可以使用，具體參考 <a target="_blank" rel="noopener" href="http://cgdb.sourceforge.net/docs/cgdb.html/Configuring-CGDB.html#Configuring-CGDB">CGDB configuration commands</a></li>
 <li>使用 <code>o</code> 可以選擇要顯示的檔案源碼，超潮der</li>
 <li><strong>注意</strong>：<ul>
 <li>當前代碼行的行數會是粗體，不過不太明顯，用 space 敲敲看就知道在哪一行了</li>
@@ -575,8 +452,8 @@
 </li>
 </ul>
 <h3 id="可視化除錯工具"><a href="#可視化除錯工具" class="headerlink" title="可視化除錯工具"></a>可視化除錯工具</h3><ul>
-<li><a href="https://www.gnu.org/software/ddd/" target="_blank" rel="noopener">DDD</a></li>
-<li><a href="http://manpages.ubuntu.com/manpages/hardy/man1/xxgdb.1.html" target="_blank" rel="noopener">XXGDB</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.gnu.org/software/ddd/">DDD</a></li>
+<li><a target="_blank" rel="noopener" href="http://manpages.ubuntu.com/manpages/hardy/man1/xxgdb.1.html">XXGDB</a></li>
 </ul>
 <h2 id="Using-STM32-discovery-kits-with-open-source-tools"><a href="#Using-STM32-discovery-kits-with-open-source-tools" class="headerlink" title="Using STM32 discovery kits with open source tools"></a>Using STM32 discovery kits with open source tools</h2><ul>
 <li>原 PDF 链接已失效，原文请自行 Google</li>
@@ -595,6 +472,7 @@
 <li>Install stlink</li>
 </ul>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/texane/stlink stlink.git</span><br><span class="line">cd stlink.git</span><br><span class="line">./autogen.sh</span><br><span class="line">./configure</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
+
 <p>It includes:</p>
 <ul>
 <li>A communication library (stlink.git/libstlink.a).</li>
@@ -634,30 +512,31 @@
 </li>
 </ol>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">target remote:4242</span><br><span class="line">file stm32f429-example.elf</span><br><span class="line">layout src</span><br></pre></td></tr></table></figure>
+
 <p>然後使用 <code>arm-none-eabi-gdb -x gdb.script</code> 進入後，單步執行即可。</p>
 <ul>
 <li>記得先打開 <code>st-util</code>；</li>
 <li>個人習慣把 <code>arm-none-eabi-gdb -x gdb.script</code> 寫進 <code>Makefile</code> 裏。</li>
 </ul>
-<h2 id="Defusing-a-binary-bomb"><a href="#Defusing-a-binary-bomb" class="headerlink" title="Defusing a binary bomb"></a>Defusing a binary bomb</h2><h3 id="Lab43-Runtime-Behavior"><a href="#Lab43-Runtime-Behavior" class="headerlink" title="Lab43: Runtime Behavior"></a><a href="http://wiki.csie.ncku.edu.tw/embedded/Lab43" target="_blank" rel="noopener">Lab43: Runtime Behavior</a></h3><p>預期目標</p>
+<h2 id="Defusing-a-binary-bomb"><a href="#Defusing-a-binary-bomb" class="headerlink" title="Defusing a binary bomb"></a>Defusing a binary bomb</h2><h3 id="Lab43-Runtime-Behavior"><a href="#Lab43-Runtime-Behavior" class="headerlink" title="Lab43: Runtime Behavior"></a><a target="_blank" rel="noopener" href="http://wiki.csie.ncku.edu.tw/embedded/Lab43">Lab43: Runtime Behavior</a></h3><p>預期目標</p>
 <ul>
 <li>複習 ARM 處理器和指令集，並深入 stack 和執行時期的行為</li>
 <li>熟悉 objdump、gdb 等工具，並利用上述工具分析執行檔</li>
 </ul>
 <h3 id="Phase-0-Phase-1-Comparison"><a href="#Phase-0-Phase-1-Comparison" class="headerlink" title="Phase 0, Phase 1: Comparison"></a>Phase 0, Phase 1: Comparison</h3><ul>
 <li><p>使用 <code>b phase_0</code> 設好斷點後，一個 <code>c</code> 來到 <code>phase0</code> 函數，在源程式端輸入 <code>help</code>，則可見：</p>
-<p><img src="https://g8xeua.bn.files.1drv.com/y4m2NfjgmRex3zQrLCz2ec6NFVRh9RVlYb6UxUVIW5Cp_ERI9Aewx17RtVAc74PA33vZdXPAFsMqMHaKmV2-v_SDvAxa4SEyYr4-WXEyT5QEvDfMBkrjNr70ggOdi7F8irjC_en48kPMwf2HBEiPWzfTYVrCg7LWUmb17hT1ciWMNiR9a9Woxr9HTBiQEVtRbLmfF59Kt7I6Gm9L5d-gahNOg" alt></p>
+<p><img src="https://g8xeua.bn.files.1drv.com/y4m2NfjgmRex3zQrLCz2ec6NFVRh9RVlYb6UxUVIW5Cp_ERI9Aewx17RtVAc74PA33vZdXPAFsMqMHaKmV2-v_SDvAxa4SEyYr4-WXEyT5QEvDfMBkrjNr70ggOdi7F8irjC_en48kPMwf2HBEiPWzfTYVrCg7LWUmb17hT1ciWMNiR9a9Woxr9HTBiQEVtRbLmfF59Kt7I6Gm9L5d-gahNOg"></p>
 </li>
 <li><p>可以看到程式是用 <code>r0</code> 和 <code>r1</code> 作比較，<code>r0</code> 是我們輸入的值，<code>r1</code> 就是我們要猜的值，這裏已經告訴我們是 <code>help</code> 了</p>
 </li>
-<li><p>用 <code>si</code> 執行到 0x87ee ，可以看到 <code>r0</code> 和 <code>r1</code> 的值：</p>
-<p><img src="https://g8xgua.bn.files.1drv.com/y4mPoBctTovg6J0yvhXhtffMfAPecqUB0wg5NJ-TYuE67eCPc5pFngsB3YWObYbw43_WCi__xFFjIXMMUfVCTjDQ3LB6WldJeVVdl2GgzHvk4e1NfiWyWz8eGqvKqxMx1Q3DrNTZSsd33h6aalvSdyIOxcohH8GQd7F3Ibi-5khQgNfOWTshN_lITEZAtALGyuedC96KqrLIVX3UkXz3I2kHQ" alt></p>
+<li><p>用 <code>si</code> 執行到 0x87ee ，可以看到 <code>r0</code> 和 <code> r1</code> 的值：</p>
+<p><img src="https://g8xgua.bn.files.1drv.com/y4mPoBctTovg6J0yvhXhtffMfAPecqUB0wg5NJ-TYuE67eCPc5pFngsB3YWObYbw43_WCi__xFFjIXMMUfVCTjDQ3LB6WldJeVVdl2GgzHvk4e1NfiWyWz8eGqvKqxMx1Q3DrNTZSsd33h6aalvSdyIOxcohH8GQd7F3Ibi-5khQgNfOWTshN_lITEZAtALGyuedC96KqrLIVX3UkXz3I2kHQ"></p>
 </li>
 <li><p><code>x/s $r0</code> <code>x/s $r1</code> 直接可以印出 <code>r0</code> <code>r1</code> 的地址和指向的值：</p>
-<p><img src="https://g8xfua.bn.files.1drv.com/y4m_1q4cb_ll8OFKXEtf82M3NkP2TNsY5Azfo4LAaj05-y7DCWA0U670BtSnsiDXmBxMUSpoGz9DprJ3apqbGyR5MIboLmpWA32V50cpmYdg0310ksBg7LMouIDVvvvAXHuVc3BsB5SIuAVcz8LUgrTyrev5T8nkSifzjYigM5PsfkLBv28c1Ao3kko5shSbA2ExRtj4SUzF0T0lUH-6Frgzg" alt></p>
+<p><img src="https://g8xfua.bn.files.1drv.com/y4m_1q4cb_ll8OFKXEtf82M3NkP2TNsY5Azfo4LAaj05-y7DCWA0U670BtSnsiDXmBxMUSpoGz9DprJ3apqbGyR5MIboLmpWA32V50cpmYdg0310ksBg7LMouIDVvvvAXHuVc3BsB5SIuAVcz8LUgrTyrev5T8nkSifzjYigM5PsfkLBv28c1Ao3kko5shSbA2ExRtj4SUzF0T0lUH-6Frgzg"></p>
 </li>
 <li><p>同理，<code>continue</code> 到 <code>phase_1</code>，印出 <code>r1</code></p>
-<p><img src="https://g8xlua.bn.files.1drv.com/y4mrKjOr0UFu4U4LD7lJ5pL2tLIW2V6vUrnwlS2dsLfOfuEVWlJzV5pMx7xSbVswnj1Mg-QY5E3QrGgCp3RTtiNHEyDIrtxtUdTYbaEGmazryd_8204Rwn0bXhAtze8hLOyXvsifBbBBylHoGZNUBXjiRiUIBY9JVLCAiw34WfD3j-KKSlnmDNUp1a0m5yZ7bEj0AIrekGdCZt95WOFOS5cbQ" alt></p>
+<p><img src="https://g8xlua.bn.files.1drv.com/y4mrKjOr0UFu4U4LD7lJ5pL2tLIW2V6vUrnwlS2dsLfOfuEVWlJzV5pMx7xSbVswnj1Mg-QY5E3QrGgCp3RTtiNHEyDIrtxtUdTYbaEGmazryd_8204Rwn0bXhAtze8hLOyXvsifBbBBylHoGZNUBXjiRiUIBY9JVLCAiw34WfD3j-KKSlnmDNUp1a0m5yZ7bEj0AIrekGdCZt95WOFOS5cbQ"></p>
 </li>
 </ul>
 <blockquote>
@@ -667,35 +546,36 @@
 <li><p>先隨意輸入，看下寄存器 <code>r1</code> 的值 <code>0x8bc8: &quot;%d %d %d %d&quot;</code>，看起來是要輸入4個整數，重頭再來一次</p>
 </li>
 <li><p>發現用 <code>ni</code> 跳過 function 會讀不到指令，還是用 <code>si</code> 一步一步來吧</p>
-<p><img src="https://g8xiua.bn.files.1drv.com/y4mqViBPUFsaPQty38x5OBoy_Hs77ynzLJI6UOdjfk4lJmGhtQ4eiaYLFGX5sdKFFwavCyTtx-sZa75RmLRCSyELNwHVzOeoYoWvNhuNkiOwvON5aS47fCuI0LWYpgJNMG-i5AKdiBlsxvqY2mDK3uPWoRPaf5uoIUcNRLIGk0yXFVc-N7RpbfMaktiMDI58yj1MfT_xetol8gQR64f3l4tRg" alt></p>
+<p><img src="https://g8xiua.bn.files.1drv.com/y4mqViBPUFsaPQty38x5OBoy_Hs77ynzLJI6UOdjfk4lJmGhtQ4eiaYLFGX5sdKFFwavCyTtx-sZa75RmLRCSyELNwHVzOeoYoWvNhuNkiOwvON5aS47fCuI0LWYpgJNMG-i5AKdiBlsxvqY2mDK3uPWoRPaf5uoIUcNRLIGk0yXFVc-N7RpbfMaktiMDI58yj1MfT_xetol8gQR64f3l4tRg"></p>
 </li>
 <li><p>到 0x885e，如果輸入的數的個數不是4個，就會 explode bomb，若是則跳到 0x8864</p>
 </li>
 <li><p>接下來的代碼中：</p>
-<p><img src="https://g8xhua.bn.files.1drv.com/y4mJJh_4kT5r_QS5Eoq9flUbX7c8Cg0mYiqCXdt7921pMyBN3eDAayILtWmPGZjLEXBty5TADzKfKz7Eh4YTcNxJCO9qq4ENGg_Kni1pOSmrFlLu5IKe2VGUZY6ZqMZQ5N_ypvcEJz-CJiUpdjsROctT39V6tRqWW2fexd78ie9PFxw3SEFH55VstWrwzyYgwyWzeW5Ir2yia0WXOO5rFHFmw" alt></p>
+<p><img src="https://g8xhua.bn.files.1drv.com/y4mJJh_4kT5r_QS5Eoq9flUbX7c8Cg0mYiqCXdt7921pMyBN3eDAayILtWmPGZjLEXBty5TADzKfKz7Eh4YTcNxJCO9qq4ENGg_Kni1pOSmrFlLu5IKe2VGUZY6ZqMZQ5N_ypvcEJz-CJiUpdjsROctT39V6tRqWW2fexd78ie9PFxw3SEFH55VstWrwzyYgwyWzeW5Ir2yia0WXOO5rFHFmw"></p>
 <ul>
 <li><p>從 0x886a 到 0x887a 是一個迴圈，完整的 <code>si</code> 走了一邊，只是運行完後不能讀到 <code>r2</code> <code>r3</code> 的值所指向的地址裏的值</p>
 </li>
 <li><p>類似的代碼爲:</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a=2;i=0;</span><br><span class="line">do &#123;</span><br><span class="line">  a+=1;</span><br><span class="line">  i++;</span><br><span class="line">&#125; while (i&lt;=9);</span><br></pre></td></tr></table></figure>
 </li>
-</ul>
+<li><p>意外但肯定不是巧合地發現，之前輸入的四個數分別存在 <code>r7+12</code> <code>r7+16</code> <code>r7+20</code> <code>r7+24</code> 裏（其實是用 <code>x/s $r7+n</code> 試出來的）</p>
+</li>
+<li><p>所以輸入的第二個數（上述代碼中的 <code>a</code>）在迴圈後會增加10</p>
+</li>
+<li><p>而函數最後對比的是 <code>r7+16</code> 和 <code>r7+20</code>，需要他們相等，故輸入時第三個數減第二個數要等於10</p>
+</li>
+<li><p>測試果然過關~</p>
+<p><img src="https://g8xjua.bn.files.1drv.com/y4mc5EpPCrZB3UjhoesaVAL4k4lRFD6EspybuSYiTw4xBfnC5a4JDC_NgHnhQ7Iqfls1jNxQ2iPxRRgEmStB9oWm0BhhSm9novzSpEsfD0ymcFihk1cGO5gYvvfuE8vmd5bbqYaKHTW4JKMTkbSjFPLyiuf-arPBqnJ1qoz3scVVtNqhgH_4xfE1qLX1zvG1RH0S8LM09fw2f7id47vrCopPQ"></p>
 </li>
 </ul>
-<ul>
-<li>意外但肯定不是巧合地發現，之前輸入的四個數分別存在 <code>r7+12</code> <code>r7+16</code> <code>r7+20</code> <code>r7+24</code> 裏（其實是用 <code>x/s $r7+n</code> 試出來的）</li>
-<li>所以輸入的第二個數（上述代碼中的 <code>a</code>）在迴圈後會增加10</li>
-<li>而函數最後對比的是 <code>r7+16</code> 和 <code>r7+20</code>，需要他們相等，故輸入時第三個數減第二個數要等於10</li>
-<li><p>測試果然過關~</p>
-<p><img src="https://g8xjua.bn.files.1drv.com/y4mc5EpPCrZB3UjhoesaVAL4k4lRFD6EspybuSYiTw4xBfnC5a4JDC_NgHnhQ7Iqfls1jNxQ2iPxRRgEmStB9oWm0BhhSm9novzSpEsfD0ymcFihk1cGO5gYvvfuE8vmd5bbqYaKHTW4JKMTkbSjFPLyiuf-arPBqnJ1qoz3scVVtNqhgH_4xfE1qLX1zvG1RH0S8LM09fw2f7id47vrCopPQ" alt></p>
 </li>
 </ul>
 <h3 id="Phase-3-If-condition"><a href="#Phase-3-If-condition" class="headerlink" title="Phase 3: If condition"></a>Phase 3: If condition</h3><ul>
 <li><p>第一步，設置斷點在 <code>phase_3</code> 後隨意輸入進入斷點，印出 <code>r1</code> 的值，爲 <code>&quot;%d %d %d&quot;</code> ，後面也有判斷輸入個數的代碼，和階段2同理：</p>
-<p><img src="https://gsxjua.bn.files.1drv.com/y4mUqM4HweD1xwIFi5B1A7Bnst_1qzf0FrK2v0xH25U6pZ8P6K76cFWxxHnYTfMwFcYha4mX6Fg-i7FI1qPAdAfx81PntBGquONp82JbgKphAVHnsxDfb9_tCJX3oSmzVFs5wJUgAqY7neLUnLM0YZsWkWprzA-pJSdH_apeFrv1ysTR9qkV8TcnQ5rybRigiyVfh63TJXMzSmKxf2UYVi1ag" alt></p>
+<p><img src="https://gsxjua.bn.files.1drv.com/y4mUqM4HweD1xwIFi5B1A7Bnst_1qzf0FrK2v0xH25U6pZ8P6K76cFWxxHnYTfMwFcYha4mX6Fg-i7FI1qPAdAfx81PntBGquONp82JbgKphAVHnsxDfb9_tCJX3oSmzVFs5wJUgAqY7neLUnLM0YZsWkWprzA-pJSdH_apeFrv1ysTR9qkV8TcnQ5rybRigiyVfh63TJXMzSmKxf2UYVi1ag"></p>
 </li>
 <li><p>接着把斷點設在 0x88be，代碼如下：</p>
-<p><img src="https://gsxkua.bn.files.1drv.com/y4mORvlx72p5_6PDiPtzxSy6__pPrJOV9I_XeiIvDjBtYjCurQUXhRT9cL9aDS5mbRp5QvYZr97fs0nj-iZi2qPHZQjcM-fqoTYnzySfukulgpJjwKwoWkVtf7ccjYof9yes3l7wlgijIsvN9Y0A1Q7Ly9o6-Q1ObfIc99nb1XVTohiBIOZm608wg6p7n8iSsTWyq4SAsPxYh6vjWAHjcdkOw" alt></p>
+<p><img src="https://gsxkua.bn.files.1drv.com/y4mORvlx72p5_6PDiPtzxSy6__pPrJOV9I_XeiIvDjBtYjCurQUXhRT9cL9aDS5mbRp5QvYZr97fs0nj-iZi2qPHZQjcM-fqoTYnzySfukulgpJjwKwoWkVtf7ccjYof9yes3l7wlgijIsvN9Y0A1Q7Ly9o6-Q1ObfIc99nb1XVTohiBIOZm608wg6p7n8iSsTWyq4SAsPxYh6vjWAHjcdkOw"></p>
 </li>
 <li><p><code>r3</code> 會先取出輸入的第一個數，和 40 做對比，這裏我輸入的 1，因此會繼續往下走</p>
 </li>
@@ -710,1276 +590,177 @@
 <li><p>試驗一下</p>
 <ul>
 <li><p>當第一個數不爲40時，正確</p>
-<p><img src="https://g8xkua.bn.files.1drv.com/y4mNjNKy3ObTQ3OziMqXlvoF7pyUzotNvDaaFyvIY3z_wIogyPhn1NLmB5T4xbph1UQ6Bd9PCPwRQF1onforUpnrNKLiBkYmZvIoXkFYeCPg1hDR2sCv_3P370mUy4ma7qfXu5uuqXixeoKQmiYfQ3cXnndVZ4oeBE9efulUvF2wM-UwjVPSNRgKCQFsVQPctP4SYfxWgwXmW7iUS4D0K091A" alt></p>
+<p><img src="https://g8xkua.bn.files.1drv.com/y4mNjNKy3ObTQ3OziMqXlvoF7pyUzotNvDaaFyvIY3z_wIogyPhn1NLmB5T4xbph1UQ6Bd9PCPwRQF1onforUpnrNKLiBkYmZvIoXkFYeCPg1hDR2sCv_3P370mUy4ma7qfXu5uuqXixeoKQmiYfQ3cXnndVZ4oeBE9efulUvF2wM-UwjVPSNRgKCQFsVQPctP4SYfxWgwXmW7iUS4D0K091A"></p>
 </li>
 <li><p>當第一個數爲40時，正確</p>
-<p><img src="https://g8xmua.bn.files.1drv.com/y4m3Pqfq-DHHyNIvsjgTb7k2BlfrkbLEiwsu3UM3A3iTmqsb0GNqbiOQP_1fgZvrv8KfjwPhNHgXta8PCLrw_19zBsArIwvR_dh_PlcwEoIeo7P1cHSa5TfeBcTz0M9AUBHhEnFbShVas3u4yd6XpNfxTcaMbZdc5p5waVlkUk_gTK_Vyk-qGXfdu5Xzn26_qzgMuTXnJN4ink2FKuq4ZGn9g" alt></p>
+<p><img src="https://g8xmua.bn.files.1drv.com/y4m3Pqfq-DHHyNIvsjgTb7k2BlfrkbLEiwsu3UM3A3iTmqsb0GNqbiOQP_1fgZvrv8KfjwPhNHgXta8PCLrw_19zBsArIwvR_dh_PlcwEoIeo7P1cHSa5TfeBcTz0M9AUBHhEnFbShVas3u4yd6XpNfxTcaMbZdc5p5waVlkUk_gTK_Vyk-qGXfdu5Xzn26_qzgMuTXnJN4ink2FKuq4ZGn9g"></p>
 </li>
 </ul>
 </li>
 </ul>
 <h3 id="Phase-4-Iteration"><a href="#Phase-4-Iteration" class="headerlink" title="Phase 4: Iteration"></a>Phase 4: Iteration</h3><ul>
 <li><p>與階段2、3同理，得知輸入爲一個整數</p>
-<p><img src="https://gsxeua.bn.files.1drv.com/y4ma2y8fO8ZPfARqL6qOz4Fvy00y07cQIIzsEXuwLGcEFMMIJuwh2zqeI_VyBIeel-p_LMbHRmVoGqd0ZuKOg6mdAwBASP1v_YhEn4abeZhkVoENAskxbCV_4WEZMptlxq7VB6R5yVJnkj3h93p8YORHEUxWLiaZoD7o5wE0AA8knib4scjyfZ261UHLugUjSz2wWQ29BNRV_SPZsh1uNZHUw" alt></p>
+<p><img src="https://gsxeua.bn.files.1drv.com/y4ma2y8fO8ZPfARqL6qOz4Fvy00y07cQIIzsEXuwLGcEFMMIJuwh2zqeI_VyBIeel-p_LMbHRmVoGqd0ZuKOg6mdAwBASP1v_YhEn4abeZhkVoENAskxbCV_4WEZMptlxq7VB6R5yVJnkj3h93p8YORHEUxWLiaZoD7o5wE0AA8knib4scjyfZ261UHLugUjSz2wWQ29BNRV_SPZsh1uNZHUw"></p>
 </li>
 <li><p>接下來 <code>phase_4</code> 的函數就很短了</p>
-<p><img src="https://g8xnua.bn.files.1drv.com/y4mUvdDoZ8nPQPsuwD8sMK-75pZGwvsiV8sYOTW_qbhWybCYZWFnLgMtiexjznqdNtJzpDqV4B84ajzPPjYzKEkumC24wFXMpJNpgpTak1gylEmJh-dAkWMIAHozf0f3NzJyQx1nOSsPLwajC2Xk0w-q-xFXok0K5kKpdDpLT9vm4TVHuOpGli0Srxe8nEM6Hy3Jd_Cm4w58uyblrkUqeO3Xg" alt></p>
+<p><img src="https://g8xnua.bn.files.1drv.com/y4mUvdDoZ8nPQPsuwD8sMK-75pZGwvsiV8sYOTW_qbhWybCYZWFnLgMtiexjznqdNtJzpDqV4B84ajzPPjYzKEkumC24wFXMpJNpgpTak1gylEmJh-dAkWMIAHozf0f3NzJyQx1nOSsPLwajC2Xk0w-q-xFXok0K5kKpdDpLT9vm4TVHuOpGli0Srxe8nEM6Hy3Jd_Cm4w58uyblrkUqeO3Xg"></p>
 <p>把輸入的數，代入fun4後，return的值要等於1024。</p>
 </li>
 <li><p><code>fun4</code> 的代碼如下：</p>
-<p><img src="https://gsxiua.bn.files.1drv.com/y4mlxNA_jEBIGKIHZQSqzMTL2a6D2-B8yr-Hhwl39qIZqbA02BYOssQrohJ-8FFgBHwnJotMvff6nTWKUA3Bo-y8cwE92a4CgwNnKujuPR9qqHYZrJLoK2CuEmk6V6cFxXxmcnowE1Sf_d64kZkEJNMsfmYIdhfxXq7aw_PcX31YP8tyVtVR1800adG2tNxzDk7x8ANgNvFD_MN9LVeZgoK_g" alt></p>
+<p><img src="https://gsxiua.bn.files.1drv.com/y4mlxNA_jEBIGKIHZQSqzMTL2a6D2-B8yr-Hhwl39qIZqbA02BYOssQrohJ-8FFgBHwnJotMvff6nTWKUA3Bo-y8cwE92a4CgwNnKujuPR9qqHYZrJLoK2CuEmk6V6cFxXxmcnowE1Sf_d64kZkEJNMsfmYIdhfxXq7aw_PcX31YP8tyVtVR1800adG2tNxzDk7x8ANgNvFD_MN9LVeZgoK_g"></p>
 </li>
 <li><p>當 <code>r3</code> 不爲 0 時，會一直減 1 然後調用自身函數；當 <code>r3</code> 終於減到 0 後，會在 0x88f2 賦值爲 1，然後跳到 8904，回傳上一層的 <code>fun</code> 函數。然後 <code>r3=r0=1</code>，開始左移</p>
 </li>
 <li><p>所以相當於輸入的數字 n，可以滿足 2 的 n 次方爲 1024，即是正確答案，真相如下：</p>
-<p><img src="https://gsxhua.bn.files.1drv.com/y4mruackLegsDWFfF6teCuu9RUKNLp1pLHIecfDS5MdIW53DktomQZTUc63fegiDpsIwu46Gj-2u15MvQfPpEJeu9Xy3x2Kbqx3JetweFkeAwW_2AjGgIOTq8FamG56Cw_aQnubjySwTBN6MZxSb_vB66kWfnvaRCbn-E2hyYsTciL8MW1aGxif2yUQSMN6325r40UUBrelZk34NdwAYere7w" alt></p>
+<p><img src="https://gsxhua.bn.files.1drv.com/y4mruackLegsDWFfF6teCuu9RUKNLp1pLHIecfDS5MdIW53DktomQZTUc63fegiDpsIwu46Gj-2u15MvQfPpEJeu9Xy3x2Kbqx3JetweFkeAwW_2AjGgIOTq8FamG56Cw_aQnubjySwTBN6MZxSb_vB66kWfnvaRCbn-E2hyYsTciL8MW1aGxif2yUQSMN6325r40UUBrelZk34NdwAYere7w"></p>
 </li>
 </ul>
 
-      
     </div>
 
     
+    
+    
       
-
   <div class="popular-posts-header">相关文章</div>
   <ul class="popular-posts">
-  
     <li class="popular-posts-item">
-      
-      
       <div class="popular-posts-title"><a href="/2020/evgui-design-review/" rel="bookmark">五分钟回顾我的硕士论文：嵌入式向量图形系统设计</a></div>
-      
     </li>
-  
     <li class="popular-posts-item">
-      
-      
       <div class="popular-posts-title"><a href="/2020/evgui-touch-interaction/" rel="bookmark">EVGUI 触控简单处理笔记</a></div>
-      
     </li>
-  
   </ul>
 
 
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-      <div>
-        <div id="reward-container">
+    <footer class="post-footer">
+          <div class="reward-container">
   <div>Buy me a cup of coffee :)</div>
-  <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
-    打赏
+  <button onclick="document.querySelector('.post-reward').classList.toggle('active');">
+    赞赏
   </button>
-  <div id="qr" style="display: none;">
-
-    
-      
-      
-        
-      
-      <div style="display: inline-block">
-        <img src="/images/reward-wechat.jpg" alt="John Chou 微信支付">
-        <p>微信支付</p>
+  <div class="post-reward">
+      <div>
+        <img src="/images/reward-wechat.jpg" alt="John Chou 微信">
+        <span>微信</span>
       </div>
-    
-      
-      
-        
-      
-      <div style="display: inline-block">
+      <div>
         <img src="/images/reward-alipay.jpg" alt="John Chou 支付宝">
-        <p>支付宝</p>
+        <span>支付宝</span>
       </div>
-    
 
   </div>
 </div>
 
-      </div>
-    
+          
 
-    
-      <div>
-        
-
-
-
-
-  
-
-
-
-<ul class="post-copyright">
+<div class="post-copyright">
+<ul>
   <li class="post-copyright-author">
-    <strong>本文作者： </strong>John Chou</li>
+      <strong>本文作者： </strong>John Chou
+  </li>
   <li class="post-copyright-link">
-    <strong>本文链接：</strong>
-    
-    <a href="https://blog.joouis.com/2020/lab-gdb-intro/" title="GDB/CGDB入门与拆弹游戏">https://blog.joouis.com/2020/lab-gdb-intro/</a>
+      <strong>本文链接：</strong>
+      <a href="https://blog.joouis.com/2020/lab-gdb-intro/" title="GDB&#x2F;CGDB入门与拆弹游戏">https://blog.joouis.com/2020/lab-gdb-intro/</a>
   </li>
   <li class="post-copyright-license">
-    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nd/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-ND</a> 许可协议。转载请注明出处！</li>
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nd/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-ND</a> 许可协议。转载请注明出处！
+  </li>
 </ul>
+</div>
 
-      </div>
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/stm32/" rel="tag"># stm32</a>
-          
-            <a href="/tags/gdb/" rel="tag"># gdb</a>
-          
-            <a href="/tags/cgdb/" rel="tag"># cgdb</a>
-          
-            <a href="/tags/disassembly/" rel="tag"># disassembly</a>
-          
-            <a href="/tags/binary/" rel="tag"># binary</a>
-          
-            <a href="/tags/defusing-binary-bomb/" rel="tag"># defusing binary bomb</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2020/vuetify-playground/" rel="next" title="Vuetify Playground - A responsive playground to try all UI components at once">
-                <i class="fa fa-chevron-left"></i> Vuetify Playground - A responsive playground to try all UI components at once
-              </a>
-            
+          <div class="post-tags">
+              <a href="/tags/stm32/" rel="tag"># stm32</a>
+              <a href="/tags/gdb/" rel="tag"># gdb</a>
+              <a href="/tags/cgdb/" rel="tag"># cgdb</a>
+              <a href="/tags/disassembly/" rel="tag"># disassembly</a>
+              <a href="/tags/binary/" rel="tag"># binary</a>
+              <a href="/tags/defusing-binary-bomb/" rel="tag"># defusing binary bomb</a>
           </div>
 
-          <span class="post-nav-divider"></span>
+        
 
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/evgui-design-review/" rel="prev" title="五分钟回顾我的硕士论文：嵌入式向量图形系统设计">
-                五分钟回顾我的硕士论文：嵌入式向量图形系统设计 <i class="fa fa-chevron-right"></i>
-              </a>
-            
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/vuetify-playground/" rel="prev" title="Vuetify Playground - A responsive playground to try all UI components at once">
+                  <i class="fa fa-chevron-left"></i> Vuetify Playground - A responsive playground to try all UI components at once
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2020/evgui-design-review/" rel="next" title="五分钟回顾我的硕士论文：嵌入式向量图形系统设计">
+                  五分钟回顾我的硕士论文：嵌入式向量图形系统设计 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
           </div>
-        </div>
-      
-
-      
-      
     </footer>
-  </div>
-  
-  
-  
   </article>
-
-
-  </div>
-
-
-          </div>
-          
-
-  
-    <div class="comments" id="comments">
-      <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
-      </div>
-    </div>
-
-  
+</div>
 
 
 
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+
+
+
+      
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
     </div>
   </div>
+  
 
-  <aside id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="John Chou">
-            
-              <p class="site-author-name" itemprop="name">John Chou</p>
-              <div class="site-description motion-element" itemprop="description">Stand high, think different.</div>
-          </div>
-
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">50</span>
-                    <span class="site-state-item-name">日志</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-categories">
-                  
-                    
-                      <a href="/categories/">
-                    
-                  
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">7</span>
-                    <span class="site-state-item-name">分类</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  
-                    
-                      <a href="/tags/">
-                    
-                  
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">179</span>
-                    <span class="site-state-item-name">标签</span>
-                  </a>
-                </div>
-              
-            </nav>
-          
-
-          
-            <div class="feed-link motion-element">
-              <a href="/atom.xml" rel="alternate">
-                <i class="fa fa-rss"></i>
-                RSS
-              </a>
-            </div>
-          
-
-          
-
-          
-            <div class="links-of-author motion-element">
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="https://github.com/Joouis" title="GitHub &rarr; https://github.com/Joouis" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="mailto:luckyjoou@gmail.com" title="E-Mail &rarr; mailto:luckyjoou@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i></a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="https://www.instagram.com/Joouis" title="Instagram &rarr; https://www.instagram.com/Joouis" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i></a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="http://www.slideshare.net/choujohn351" title="SlideShare &rarr; http://www.slideshare.net/choujohn351" rel="noopener" target="_blank"><i class="fa fa-fw fa-slideshare"></i></a>
-                </span>
-              
-            </div>
-          
-
-          
-             <div class="cc-license motion-element" itemprop="license">
-              
-              
-                
-              
-              
-              
-              <a href="https://creativecommons.org/licenses/by-nd/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nd.svg" alt="Creative Commons"></a>
-             </div>
-          
-
-          
-          
-
-          
-            
-          
-          
-
-        </div>
-      </div>
-
-      
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用GDB"><span class="nav-number">1.</span> <span class="nav-text">使用GDB</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#GDB"><span class="nav-number">1.1.</span> <span class="nav-text">GDB</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CGDB"><span class="nav-number">1.2.</span> <span class="nav-text">CGDB</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可視化除錯工具"><span class="nav-number">1.3.</span> <span class="nav-text">可視化除錯工具</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Using-STM32-discovery-kits-with-open-source-tools"><span class="nav-number">2.</span> <span class="nav-text">Using STM32 discovery kits with open source tools</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Installing-GNU-toolchain"><span class="nav-number">2.1.</span> <span class="nav-text">Installing GNU toolchain</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Installing-STLINK"><span class="nav-number">2.2.</span> <span class="nav-text">Installing STLINK</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Using-the-GDB-server"><span class="nav-number">2.3.</span> <span class="nav-text">Using the GDB server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Building-and-flashing-a-program"><span class="nav-number">2.4.</span> <span class="nav-text">Building and flashing a program</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Notes"><span class="nav-number">2.5.</span> <span class="nav-text">Notes</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Defusing-a-binary-bomb"><span class="nav-number">3.</span> <span class="nav-text">Defusing a binary bomb</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Lab43-Runtime-Behavior"><span class="nav-number">3.1.</span> <span class="nav-text">Lab43: Runtime Behavior</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Phase-0-Phase-1-Comparison"><span class="nav-number">3.2.</span> <span class="nav-text">Phase 0, Phase 1: Comparison</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Phase-2-For-loop"><span class="nav-number">3.3.</span> <span class="nav-text">Phase 2: For loop</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Phase-3-If-condition"><span class="nav-number">3.4.</span> <span class="nav-text">Phase 3: If condition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Phase-4-Iteration"><span class="nav-number">3.5.</span> <span class="nav-text">Phase 4: Iteration</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
-      
-
-      
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
 
     </div>
-  </aside>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      
+
+      
+
+<div class="copyright">
   
-    <div id="sidebar-dimmer"></div>
-  
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; 2016 – <span itemprop="copyrightYear">2020</span>
-  <span class="with-love" id="animate">
+  &copy; 2016 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">John Chou</span>
-
-  
-
-  
 </div>
 
-
-
-
-
-
-
-
-
-        
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-
-    
-
-    
-  </div>
+    </div>
+  </footer>
 
   
-
-<script>
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  <script src="//cdn.jsdelivr.net/npm/jquery@2/dist/jquery.min.js"></script>
-
-  
-  <script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.min.js"></script>
-
-  
-  <script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.ui.min.js"></script>
-
-  
-  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
-
-
-  
-
-
-  <script src="/js/utils.js?v=7.1.0"></script>
-
-  <script src="/js/motion.js?v=7.1.0"></script>
-
-
-
-  
-  
-
-
-  <script src="/js/schemes/muse.js?v=7.1.0"></script>
-
-
-
-
-  
-  <script src="/js/scrollspy.js?v=7.1.0"></script>
-<script src="/js/post-details.js?v=7.1.0"></script>
-
-
-
-  
-
-
-  <script src="/js/next-boot.js?v=7.1.0"></script>
-
-
-  
-  <script src="/js/js.cookie.js?v=7.1.0"></script>
-  <script src="/js/scroll-cookie.js?v=7.1.0"></script>
-
-
-  
-
-  
-  
-  
-    
-  
-
-  
-
-  
-  
-  
-
-
-  
-  
-
-<script>
-  var disqus_config = function() {
-    this.page.url = "https://blog.joouis.com/2020/lab-gdb-intro/";
-    this.page.identifier = "2020/lab-gdb-intro/";
-    this.page.title = 'GDB/CGDB入门与拆弹游戏';
-    };
-  function loadComments() {
-    var d = document, s = d.createElement('script');
-    s.src = 'https://joou.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', '' + +new Date());
-    (d.head || d.body).appendChild(s);
-  }
-  
-    loadComments();
-  
-</script>
-
-
-
-
-
-  
-
-
-  
-  <script>
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
 
   
   <script>
@@ -1993,63 +774,77 @@
   </script>
 
 
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
+
+
+
+
+
+
+
 
   
 
   
+  <script src="//cdn.jsdelivr.net/npm/quicklink@2.0.0/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink.listen({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://blog.joouis.com/2020/lab-gdb-intro/',]
+      });
+      });
+  </script>
 
-  
-  
-  
-    
-  
-  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
-  <script>pangu.spacingPage();</script>
-
-
-  
-
-  
 <script>
-  $('.highlight').each(function(i, e) {
-    var $wrap = $('<div>').addClass('highlight-wrap');
-    $(e).after($wrap);
-    $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
-      var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
-        return $(e).text();
-      }).toArray().join('\n');
-      var ta = document.createElement('textarea');
-      var yPosition = window.pageYOffset || document.documentElement.scrollTop;
-      ta.style.top = yPosition + 'px'; // Prevent page scroll
-      ta.style.position = 'absolute';
-      ta.style.opacity = '0';
-      ta.readOnly = true;
-      ta.value = code;
-      document.body.appendChild(ta);
-      ta.select();
-      ta.setSelectionRange(0, code.length);
-      ta.readOnly = false;
-      var result = document.execCommand('copy');
-      
-        if (result) $(this).text('复制成功');
-        else $(this).text('复制失败');
-      
-      ta.blur(); // For iOS
-      $(this).blur();
-    })).on('mouseleave', function(e) {
-      var $b = $(this).find('.copy-btn');
-      setTimeout(function() {
-        $b.text('复制');
-      }, 300);
-    }).append(e);
-  })
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://joou.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
 </script>
-
-
-  
-
-  
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://blog.joouis.com/2020/lab-gdb-intro/";
+    this.page.identifier = "2020/lab-gdb-intro/";
+    this.page.title = "GDB/CGDB入门与拆弹游戏";
+    };
+  NexT.utils.loadComments('#disqus_thread', () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://joou.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
 
 </body>
 </html>

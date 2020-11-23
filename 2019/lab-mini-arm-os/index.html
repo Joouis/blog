@@ -1,175 +1,80 @@
 <!DOCTYPE html>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next mist use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<html lang="zh-CN">
+<head>
   <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/hacker.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/hacker.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/hacker.ico">
+  <link rel="mask-icon" href="/images/hacker.ico" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
 
-  
-  
-    
-      
-    
-    
-      
-    
-  <script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.css">
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"blog.joouis.com","root":"/","scheme":"Mist","version":"8.0.2","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    
-  
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
-
-
-
-
-
-
-
-  
-
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css">
-
-<link rel="stylesheet" href="/css/main.css?v=7.1.0">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/hacker.ico?v=7.1.0">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/hacker.ico?v=7.1.0">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/hacker.ico?v=7.1.0">
-
-
-  <link rel="mask-icon" href="/images/hacker.ico?v=7.1.0" color="#222">
-
-
-
-
-
-
-
-<script id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Mist',
-    version: '7.1.0',
-    sidebar: {"position":"left","display":"hide","offset":12,"onmobile":true,"dimmer":true},
-    back2top: true,
-    back2top_sidebar: false,
-    fancybox: true,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-  
-
-<meta name="baidu-site-verification" content="ChOTP1bKoM">
-
-
-  <meta name="description" content="这是我的嵌入式笔记第四篇，原文写于2015年。 印象中国内的嵌入式开发还是（可能是盗版的）IDE 加载项目工程后一键编译/烧录的模式，开发人员对底层吃的不够透，离开 IDE 或者换个开发环境犹如深度近视患者离开了眼镜——寸步难行。再说远一点，似乎不少人的学习路径都是通过看中文教材和一些培训班视频（我当年也看过郭天祥和韦东山的视频😂），缺乏“一手”知识的摄取和体系化的训练。 这个实验除了可以深入了">
-<meta name="keywords" content="embedded system course,embedded system,arm,os,gnu,context switch">
+  <meta name="description" content="这是我的嵌入式笔记第四篇，原文写于2015年。 印象中国内的嵌入式开发还是（可能是盗版的）IDE 加载项目工程后一键编译&#x2F;烧录的模式，开发人员对底层吃的不够透，离开 IDE 或者换个开发环境犹如深度近视患者离开了眼镜——寸步难行。再说远一点，似乎不少人的学习路径都是通过看中文教材和一些培训班视频（我当年也看过郭天祥和韦东山的视频😂），缺乏“一手”知识的摄取和体系化的训练。 这个实验除了可以深入了">
 <meta property="og:type" content="article">
 <meta property="og:title" content="上手一个具体而微的ARM操作系统">
 <meta property="og:url" content="https://blog.joouis.com/2019/lab-mini-arm-os/index.html">
 <meta property="og:site_name" content="江边的旱鸭子">
-<meta property="og:description" content="这是我的嵌入式笔记第四篇，原文写于2015年。 印象中国内的嵌入式开发还是（可能是盗版的）IDE 加载项目工程后一键编译/烧录的模式，开发人员对底层吃的不够透，离开 IDE 或者换个开发环境犹如深度近视患者离开了眼镜——寸步难行。再说远一点，似乎不少人的学习路径都是通过看中文教材和一些培训班视频（我当年也看过郭天祥和韦东山的视频😂），缺乏“一手”知识的摄取和体系化的训练。 这个实验除了可以深入了">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:description" content="这是我的嵌入式笔记第四篇，原文写于2015年。 印象中国内的嵌入式开发还是（可能是盗版的）IDE 加载项目工程后一键编译&#x2F;烧录的模式，开发人员对底层吃的不够透，离开 IDE 或者换个开发环境犹如深度近视患者离开了眼镜——寸步难行。再说远一点，似乎不少人的学习路径都是通过看中文教材和一些培训班视频（我当年也看过郭天祥和韦东山的视频😂），缺乏“一手”知识的摄取和体系化的训练。 这个实验除了可以深入了">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://jjrgxq.bn.files.1drv.com/y4mJ8PzIgxQl8A49jOlzN8ngCzqii5YaShYpXtm7oZFdUKMwF7GX1ZvPSBRvNfGjuLiBYh1YRzy5m9vWSIjvqP8TZMiALCPL7Y7_JcBbPlnbz9Y5YvrJOa1aR-YJcvnilcffA1dvNXRl0nl6ftucjPS_KPPAJPEC7gc3RGTIADvO3VyL08t_k_QhbIxEsv9M696VtfKDugudAjbONaHfx1rBA?width=665&height=196&cropmode=none">
 <meta property="og:image" content="https://jjrexq.bn.files.1drv.com/y4mmQTIAfh9s6wUyEBnPh-M49mtDXgVblanK_JMDZ8AJvYcFVaQpvhGvPxWHAn6pD7_QbqJheIOAgjB1dYOut7kJea25hzUuiyfyK65bBOE1kJCDYyG3gvp_ARYSSckueCeag8T8ATchYqg7vHDg8eMVdoEs-S0rB2TS1p8VyPY-mDSQoxfT0GBxJEJs1LlOGJxjj-7UgZXqk0R55uykuA_ag?width=370&height=118&cropmode=none">
 <meta property="og:image" content="https://jjrfxq.bn.files.1drv.com/y4msLq_CmDAujSrfYA8NuEC4ZHMdSokzk4fhPw5YtLQH5vRK5lTnPVFKRcXSDRJ218o_HUpoRvIU16gqEzz0hrYvwbtpAYbDUIw2645rEcIvYlGMMQFSj4K5OxC1tbFuul69ySeIejiKNiKMEa0D9Wk6k7xTN7ORra40ulPvgQP4N32iv3LjrqgG2RdMNLKZ4HRmQ6g3gZ5zMMYNaLagz4OeA?width=836&height=167&cropmode=none">
 <meta property="og:image" content="https://jjrdxq.bn.files.1drv.com/y4mRQE5Fump95yZuOzBhNqQ7N5_mzTHEVTypYmPw6OHq2azZPtqvM4q-f1CQdM3kUuGab_l9cDzwEGC-g-wa2M8kUk_WTJOp6PJslaqSky-9HJ5P53vGzibCYaJ1D2_jXAc1eePfITeY4U7wj74WMt84mXkivWuGUX_F-xlWEItxxLJriI_-qID5ZYLFL0nFYYgQT_L1hRr6h2Nc4Mlcp7Wag?width=330&height=182&cropmode=none">
 <meta property="og:image" content="https://jjrcxq.bn.files.1drv.com/y4mxOrwfjpJWXVx10ewRnky1wPwqh2R11XAqx-rK7fYKhfnw0_Q74JArry9kVVn4BgN9X-_uc522FXUMVpDK12AMd4YZJsgAQUcUVqHyS46IaGAxRHw-BAwiecYzVgzOaHf2UiuOJ7Tpfs0_N-XTSa7WMGoHru9BdASIGz_T5kmQcuOST6itBFfUUH9IMIbg8uY6Jqo4lWKAnkXSwQfbY6U-Q?width=710&height=457&cropmode=none">
 <meta property="og:image" content="https://jjrbxq.bn.files.1drv.com/y4muhuffNAohfnDo-aRDoceuibQPrQEckKbjI4lHjnPFIs9WGd06YSErr1D8mnXD44UqViR2HMQmQ4_wvzsxaCkigz4_EXVvtf8zNBv0r4nCwYj0vwSCu8gaLkmEC28hMXaJ9VXQf0hhqjehXva9wzBL_zppfNl8mBUBl447u-Ml279njbjec48_ELzLOrV7Vcx3spyKlothXlN8JfhBB-NiQ?width=524&height=422&cropmode=none">
-<meta property="og:updated_time" content="2019-12-29T14:21:16.000Z">
+<meta property="article:published_time" content="2019-12-29T14:21:16.000Z">
+<meta property="article:modified_time" content="2019-12-29T14:21:16.000Z">
+<meta property="article:author" content="John Chou">
+<meta property="article:tag" content="embedded system course">
+<meta property="article:tag" content="embedded system">
+<meta property="article:tag" content="arm">
+<meta property="article:tag" content="os">
+<meta property="article:tag" content="gnu">
+<meta property="article:tag" content="context switch">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="上手一个具体而微的ARM操作系统">
-<meta name="twitter:description" content="这是我的嵌入式笔记第四篇，原文写于2015年。 印象中国内的嵌入式开发还是（可能是盗版的）IDE 加载项目工程后一键编译/烧录的模式，开发人员对底层吃的不够透，离开 IDE 或者换个开发环境犹如深度近视患者离开了眼镜——寸步难行。再说远一点，似乎不少人的学习路径都是通过看中文教材和一些培训班视频（我当年也看过郭天祥和韦东山的视频😂），缺乏“一手”知识的摄取和体系化的训练。 这个实验除了可以深入了">
 <meta name="twitter:image" content="https://jjrgxq.bn.files.1drv.com/y4mJ8PzIgxQl8A49jOlzN8ngCzqii5YaShYpXtm7oZFdUKMwF7GX1ZvPSBRvNfGjuLiBYh1YRzy5m9vWSIjvqP8TZMiALCPL7Y7_JcBbPlnbz9Y5YvrJOa1aR-YJcvnilcffA1dvNXRl0nl6ftucjPS_KPPAJPEC7gc3RGTIADvO3VyL08t_k_QhbIxEsv9M696VtfKDugudAjbONaHfx1rBA?width=665&height=196&cropmode=none">
 
 
-
-  <link rel="alternate" href="/atom.xml" title="江边的旱鸭子" type="application/atom+xml">
-
+<link rel="canonical" href="https://blog.joouis.com/2019/lab-mini-arm-os/">
 
 
-  
-  
-  <link rel="canonical" href="https://blog.joouis.com/2019/lab-mini-arm-os/">
-
-
-
-<script id="page.configurations">
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
   };
 </script>
 
   <title>上手一个具体而微的ARM操作系统 | 江边的旱鸭子</title>
   
-
-
-
-
-  <script async src="//www.googletagmanager.com/gtag/js?id=UA-76188004-1"></script>
-  <script>
-    var host = window.location.hostname;
-    if (host !== "localhost" || !true) {
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-76188004-1');
-    }
-  </script>
-
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-76188004-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-76188004-1');
+      }
+    </script>
 
 
   <script>
@@ -185,369 +90,341 @@
 
 
 
-
-
-
   <noscript>
   <style>
-  .use-motion .motion-element,
-  .use-motion .brand,
+  body { margin-top: 2rem; }
+
   .use-motion .menu-item,
-  .sidebar-inner,
+  .use-motion .sidebar,
   .use-motion .post-block,
   .use-motion .pagination,
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-title { opacity: initial; }
+  .use-motion .collection-header {
+    visibility: visible;
+  }
 
-  .use-motion .logo,
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
   .use-motion .site-title,
-  .use-motion .site-subtitle {
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
     opacity: initial;
     top: initial;
   }
 
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
   </style>
 </noscript>
 
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="江边的旱鸭子" type="application/atom+xml">
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
 
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">江边的旱鸭子</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
-    
-      
-        <h1 class="site-subtitle" itemprop="description">Blog of Joou</h1>
-      
-    
-    
   </div>
 
-  <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">江边的旱鸭子</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Blog of Joou</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
   </div>
 </div>
 
 
 
 <nav class="site-nav">
-  
-    <ul id="menu" class="menu">
-      
-        
-        
-        
-          
-          <li class="menu-item menu-item-home">
-
-    
-    
-    
-
-    
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home">
 
     <a href="/" rel="section">首页</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-archives">
-
-    
-    
-    
-
-    
+        <li class="menu-item menu-item-archives">
 
     <a href="/archives/" rel="section">归档</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-categories">
-
-    
-    
-    
-
-    
+        <li class="menu-item menu-item-categories">
 
     <a href="/categories/" rel="section">分类</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-about">
-
-    
-    
-    
-
-    
+        <li class="menu-item menu-item-about">
 
     <a href="/about/" rel="section">关于</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-recruit">
-
-    
-    
-    
-
-    
+        <li class="menu-item menu-item-recruit">
 
     <a href="/recruit/" rel="section">招聘</a>
 
   </li>
-
-      
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            搜索</a>
-        </li>
-      
-    </ul>
-  
-
-  
-    
-
-  
-
-  
-    <div class="site-search">
-      
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
-    </div>
-  </div>
-  <div id="local-search-result"></div>
-</div>
-
-
-
-    </div>
-  
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger">搜索
+        </a>
+      </li>
+  </ul>
 </nav>
 
 
 
-  
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
 
-
+    </div>
+  </div>
 
 </div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <section class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mini-ARM-OS"><span class="nav-number">2.</span> <span class="nav-text">Mini ARM OS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#00-HelloWorld"><span class="nav-number">2.1.</span> <span class="nav-text">00-HelloWorld</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#01-HelloWorld"><span class="nav-number">2.2.</span> <span class="nav-text">01-HelloWorld</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#02-ContextSwitch-1"><span class="nav-number">2.3.</span> <span class="nav-text">02-ContextSwitch-1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#03-ContextSwitch-2"><span class="nav-number">2.4.</span> <span class="nav-text">03-ContextSwitch-2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#04-Multitasking"><span class="nav-number">2.5.</span> <span class="nav-text">04-Multitasking</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#05-TimerInterrupt"><span class="nav-number">2.6.</span> <span class="nav-text">05-TimerInterrupt</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#06-Preemptive"><span class="nav-number">2.7.</span> <span class="nav-text">06-Preemptive</span></a></li></ol></li></ol></div>
+        </section>
+        <!--/noindex-->
+
+        <section class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="John Chou"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">John Chou</p>
+  <div class="site-description" itemprop="description">Stand high, think different.</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">50</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">179</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Joouis" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Joouis" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:luckyjoou@gmail.com" title="E-Mail → mailto:luckyjoou@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/Joouis" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;Joouis" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://www.slideshare.net/choujohn351" title="SlideShare → http:&#x2F;&#x2F;www.slideshare.net&#x2F;choujohn351" rel="noopener" target="_blank"><i class="fab fa-slideshare fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nd/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nd.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </section>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
     </header>
 
     
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
 
 
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-          <div id="content" class="content">
-            
+    <div class="main-inner post posts-expand">
+      
 
-  <div id="posts" class="posts-expand">
-    
-
-  
-
-  
-  
-  
+      
 
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+
+<div class="post-block">
   
   
-  
-  <div class="post-block">
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://blog.joouis.com/2019/lab-mini-arm-os/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
       <meta itemprop="name" content="John Chou">
       <meta itemprop="description" content="Stand high, think different.">
-      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="江边的旱鸭子">
     </span>
-
-    
       <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          上手一个具体而微的ARM操作系统
+        </h1>
 
-        
-        
-          <h2 class="post-title" itemprop="name headline">上手一个具体而微的ARM操作系统
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
 
-              
-            
-          </h2>
-        
+      <time title="创建时间：2019-12-29 22:21:16" itemprop="dateCreated datePublished" datetime="2019-12-29T22:21:16+08:00">2019-12-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%BA%95%E5%B1%82/" itemprop="url" rel="index"><span itemprop="name">系统与底层</span></a>
+        </span>
+    </span>
 
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-12-29 22:21:16" itemprop="dateCreated datePublished" datetime="2019-12-29T22:21:16+08:00">2019-12-29</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/系统与底层/" itemprop="url" rel="index"><span itemprop="name">系统与底层</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">14 分钟</span>
-              
-            </div>
-          
-
-          
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2019/lab-mini-arm-os/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/lab-mini-arm-os/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>7 分钟</span>
+    </span>
+</div>
 
         </div>
       </header>
-    
 
     
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
         <p>这是我的<a href="https://blog.joouis.com/2019/watching-notes-revolution-os/">嵌入式笔记</a>第四篇，原文写于2015年。</p>
 <p>印象中国内的嵌入式开发还是（可能是盗版的）IDE 加载项目工程后一键编译/烧录的模式，开发人员对底层吃的不够透，离开 IDE 或者换个开发环境犹如深度近视患者离开了眼镜——寸步难行。再说远一点，似乎不少人的学习路径都是通过看中文教材和一些培训班视频（我当年也看过郭天祥和韦东山的视频😂），缺乏“一手”知识的摄取和体系化的训练。</p>
 <p>这个实验除了可以深入了解操作系统的底层行为如上下文切换外，还有一个难点就是要在 Linux 环境下使用 GNU Toolchain 编译链接系统，最终烧录到 ARM 硬件上，非常非常的“硬核”。</p>
 <a id="more"></a>
+
+
+
 <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>我们使用的硬件是意法半导体出的 STM32F4 Discovery 开发板，在开始实验之前，了解 MCU、电路布局以及如何在 STM32 MCU 上开发都是必不可缺的步骤，主要就是阅读大量资料。</p>
 <ul>
-<li><a href="https://docs.google.com/document/d/1Ygl6cEGPXUffhTJE0K6B8zEtGmIuIdCjlZBkFlijUaE/edit" target="_blank" rel="noopener">STM32 程式開發：以 GNU Toolchain 為例</a></li>
-<li>ld: <a href="http://www.math.utah.edu/docs/info/ld_toc.html#SEC1" target="_blank" rel="noopener">Using ld, The GNU linker</a>, <a href="http://wen00072-blog.logdown.com/posts/246071-study-on-the-linker-script-3" target="_blank" rel="noopener">GNU LD 手冊略讀 (3): Chapter 3.7 ~ Chapter 3.11</a></li>
+<li><a target="_blank" rel="noopener" href="https://docs.google.com/document/d/1Ygl6cEGPXUffhTJE0K6B8zEtGmIuIdCjlZBkFlijUaE/edit">STM32 程式開發：以 GNU Toolchain 為例</a></li>
+<li>ld: <a target="_blank" rel="noopener" href="http://www.math.utah.edu/docs/info/ld_toc.html#SEC1">Using ld, The GNU linker</a>, <a target="_blank" rel="noopener" href="http://wen00072-blog.logdown.com/posts/246071-study-on-the-linker-script-3">GNU LD 手冊略讀 (3): Chapter 3.7 ~ Chapter 3.11</a></li>
 <li>STM32: Reference Manual, Datasheet, Schematics（自行查阅官网最新版本）</li>
-<li>Course: <a href="http://wiki.csie.ncku.edu.tw/embedded/Lab42" target="_blank" rel="noopener">Lab42: Mini ARM OS</a></li>
+<li>Course: <a target="_blank" rel="noopener" href="http://wiki.csie.ncku.edu.tw/embedded/Lab42">Lab42: Mini ARM OS</a></li>
 </ul>
-<h2 id="Mini-ARM-OS"><a href="#Mini-ARM-OS" class="headerlink" title="Mini ARM OS"></a><a href="https://github.com/jserv/mini-arm-os" target="_blank" rel="noopener">Mini ARM OS</a></h2><p>GitHub 仓库点击标题即可访问，没想到已经有 530 颗星星了（12/29/2019）！以下笔记对应四年前的版本，少了第 7 和第 8 课，代码可能也有所改动，勿怪。</p>
+<h2 id="Mini-ARM-OS"><a href="#Mini-ARM-OS" class="headerlink" title="Mini ARM OS"></a><a target="_blank" rel="noopener" href="https://github.com/jserv/mini-arm-os">Mini ARM OS</a></h2><p>GitHub 仓库点击标题即可访问，没想到已经有 530 颗星星了（12/29/2019）！以下笔记对应四年前的版本，少了第 7 和第 8 课，代码可能也有所改动，勿怪。</p>
 <h3 id="00-HelloWorld"><a href="#00-HelloWorld" class="headerlink" title="00-HelloWorld"></a>00-HelloWorld</h3><ul>
 <li><p>先make然後make qemu後出現hello world，然後輸入arm-none-eabi-objdump -D hello.elf查看executable and linkable文件</p>
-<p><img src="https://jjrgxq.bn.files.1drv.com/y4mJ8PzIgxQl8A49jOlzN8ngCzqii5YaShYpXtm7oZFdUKMwF7GX1ZvPSBRvNfGjuLiBYh1YRzy5m9vWSIjvqP8TZMiALCPL7Y7_JcBbPlnbz9Y5YvrJOa1aR-YJcvnilcffA1dvNXRl0nl6ftucjPS_KPPAJPEC7gc3RGTIADvO3VyL08t_k_QhbIxEsv9M696VtfKDugudAjbONaHfx1rBA?width=665&amp;height=196&amp;cropmode=none" alt></p>
-<p><img src="https://jjrexq.bn.files.1drv.com/y4mmQTIAfh9s6wUyEBnPh-M49mtDXgVblanK_JMDZ8AJvYcFVaQpvhGvPxWHAn6pD7_QbqJheIOAgjB1dYOut7kJea25hzUuiyfyK65bBOE1kJCDYyG3gvp_ARYSSckueCeag8T8ATchYqg7vHDg8eMVdoEs-S0rB2TS1p8VyPY-mDSQoxfT0GBxJEJs1LlOGJxjj-7UgZXqk0R55uykuA_ag?width=370&amp;height=118&amp;cropmode=none" alt></p>
+<p><img src="https://jjrgxq.bn.files.1drv.com/y4mJ8PzIgxQl8A49jOlzN8ngCzqii5YaShYpXtm7oZFdUKMwF7GX1ZvPSBRvNfGjuLiBYh1YRzy5m9vWSIjvqP8TZMiALCPL7Y7_JcBbPlnbz9Y5YvrJOa1aR-YJcvnilcffA1dvNXRl0nl6ftucjPS_KPPAJPEC7gc3RGTIADvO3VyL08t_k_QhbIxEsv9M696VtfKDugudAjbONaHfx1rBA?width=665&height=196&cropmode=none"></p>
+<p><img src="https://jjrexq.bn.files.1drv.com/y4mmQTIAfh9s6wUyEBnPh-M49mtDXgVblanK_JMDZ8AJvYcFVaQpvhGvPxWHAn6pD7_QbqJheIOAgjB1dYOut7kJea25hzUuiyfyK65bBOE1kJCDYyG3gvp_ARYSSckueCeag8T8ATchYqg7vHDg8eMVdoEs-S0rB2TS1p8VyPY-mDSQoxfT0GBxJEJs1LlOGJxjj-7UgZXqk0R55uykuA_ag?width=370&height=118&cropmode=none"></p>
 </li>
 <li><p>這裏值得注意的是，在M3上電取出MSP後，會取出PC的值，圖中可見是0x000000ad。但實際上reset_handler地址是從000000ac開始的。這是因爲：</p>
 <p>當一個例外處理程式(exception handler)的位址在LSB設定為1，代表該例外處理程式運作於Thumb模式(Thumb mode)，對ARM Cortex-M3來說，這是必要的，因為該處理器核心只支援Thumb-2指令集，而不支援ARM模式(也稱ARM code或ARM state)。</p>
-<p>所以<a href="http://wiki.csie.ncku.edu.tw/embedded/Lab42" target="_blank" rel="noopener">http://wiki.csie.ncku.edu.tw/embedded/Lab42</a> 的截圖裏，reset_handler是從0x000000ad是實際編譯器在不同機器下編譯出來的不同？</p>
+<p>所以<a target="_blank" rel="noopener" href="http://wiki.csie.ncku.edu.tw/embedded/Lab42">http://wiki.csie.ncku.edu.tw/embedded/Lab42</a> 的截圖裏，reset_handler是從0x000000ad是實際編譯器在不同機器下編譯出來的不同？</p>
 </li>
 <li><p>搭配hello.ld和startup.c一起看終於有種恍然大悟的感覺。.text section最前面的位置就是isr_vector，然後再是其他.text文件。當m3從Flash開始讀入數據時，首先就是isr_vector的內容，而isr_vector中首先給MSP地址賦0，然後是reset_handler，而reset_handler指向Main函數，這樣就導入我們寫的主函數了</p>
 </li>
@@ -559,31 +436,36 @@
 </li>
 </ul>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Copy the data segment initializers from flash to SRAM */</span></span><br><span class="line"><span class="keyword">uint32_t</span> *idata_begin = &amp;_sidata;</span><br><span class="line"><span class="keyword">uint32_t</span> *data_begin = &amp;_sdata;</span><br><span class="line"><span class="keyword">uint32_t</span> *data_end = &amp;_edata;</span><br><span class="line"><span class="keyword">while</span> (data_begin &lt; data_end) *data_begin++ = *idata_begin++;</span><br></pre></td></tr></table></figure>
+
+
+
 <h3 id="02-ContextSwitch-1"><a href="#02-ContextSwitch-1" class="headerlink" title="02-ContextSwitch-1"></a>02-ContextSwitch-1</h3><ul>
 <li>在startup.c中定義了nmi_handler和hardfault_handler，地址在reset_handler之後，什麼時候會觸發他們呢？</li>
 <li>msp的值爲_estack=RAM的初始位置加上RAM的寬度，即0x20000000+40k，這樣意味這stack的爲40K大小，這個大小的stack感覺足夠寬裕！</li>
 <li>接着看os.c裏的main函數<ul>
-<li>cortex-m系列處理器<a href="http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.dui0552a/CHDBIBGJ.html" target="_blank" rel="noopener">core registers</a></li>
+<li>cortex-m系列處理器<a target="_blank" rel="noopener" href="http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.dui0552a/CHDBIBGJ.html">core registers</a></li>
 <li>首先定義額usertask的堆棧大小256<em>4byte=1k，然後定義一個指針\</em>usertask_stack_start指向usertask堆棧加256-16的距離，而usertask的地址從usertask_stack_start棧底-8才開始，這中間多出了24byte。我想這應該是call stack的概念，爲了後門調用usertask函數的argument、return address、saved ebp%等留下空間(24byte應該是6個空格)</li>
 </ul>
 </li>
 </ul>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">/* Initialization of process stack.</span></span><br><span class="line"><span class="comment">     * r4, r5, r6, r7, r8, r9, r10, r11, lr</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">int</span> usertask_stack[<span class="number">256</span>];</span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">int</span> *usertask_stack_start = usertask_stack + <span class="number">256</span> - <span class="number">16</span>;</span><br><span class="line">    usertask_stack_start[<span class="number">8</span>] = (<span class="keyword">unsigned</span> <span class="keyword">int</span>) &amp;usertask;</span><br><span class="line"></span><br><span class="line">    usart_init();</span><br><span class="line"></span><br><span class="line">    print_str(<span class="string">"OS Starting...\n"</span>);</span><br><span class="line">    activate(usertask_stack_start);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// while (1); /* We can't exit, there is nowhere to go */</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">/* Initialization of process stack.</span></span><br><span class="line"><span class="comment">     * r4, r5, r6, r7, r8, r9, r10, r11, lr</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">int</span> usertask_stack[<span class="number">256</span>];</span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">int</span> *usertask_stack_start = usertask_stack + <span class="number">256</span> - <span class="number">16</span>;</span><br><span class="line">    usertask_stack_start[<span class="number">8</span>] = (<span class="keyword">unsigned</span> <span class="keyword">int</span>) &amp;usertask;</span><br><span class="line"></span><br><span class="line">    usart_init();</span><br><span class="line"></span><br><span class="line">    print_str(<span class="string">&quot;OS Starting...\n&quot;</span>);</span><br><span class="line">    activate(usertask_stack_start);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// while (1); /* We can&#x27;t exit, there is nowhere to go */</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>contex_swtich.s中.syntax unified：Cortex-m3爲了兼容thumb指令和thumb2指令，使這兩種指令可以使用統一的格式，引入了一種叫做“UAL”的語法機制。簡單說來就是程序員不用關心自己使用的是thumb還是thumb2指令，而是統一使用32位thumb2指令的語法格式書寫。具體的機器指令是16位還是32位由編譯器來決定。.syntax unified的作用就是制定使用這一功能，具體可以參考《cortex-m3權威指南》。</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">/* save kernel state */</span><br><span class="line">mrs ip, psr</span><br><span class="line">push &#123;r4, r5, r6, r7, r8, r9, r10, r11, ip, lr&#125;</span><br><span class="line">/* switch to process stack */</span><br><span class="line">msr psp, r0</span><br><span class="line">mov r0, #3</span><br><span class="line">msr control, r0</span><br><span class="line">/* load user state */</span><br><span class="line">pop &#123;r4, r5, r6, r7, r8, r9, r10, r11, lr&#125;</span><br><span class="line">/* jump to user task */</span><br><span class="line">bx lr</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;* save kernel state *&#x2F;</span><br><span class="line">mrs ip, psr</span><br><span class="line">push &#123;r4, r5, r6, r7, r8, r9, r10, r11, ip, lr&#125;</span><br><span class="line">&#x2F;* switch to process stack *&#x2F;</span><br><span class="line">msr psp, r0</span><br><span class="line">mov r0, #3</span><br><span class="line">msr control, r0</span><br><span class="line">&#x2F;* load user state *&#x2F;</span><br><span class="line">pop &#123;r4, r5, r6, r7, r8, r9, r10, r11, lr&#125;</span><br><span class="line">&#x2F;* jump to user task *&#x2F;</span><br><span class="line">bx lr</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li><p>接着這段代碼：</p>
 <ul>
 <li><p>MRS：Move to ARM register from system coprocessor register. MRS <em>Rn</em>, <em>coproc_register</em>中Rn is the ARM destination register, and R<em>n</em> must not be PC. System coprocessor register應該是那些special registers，其中包含psr(Program status register)。MSR反之。</p>
 </li>
-<li><p>將main函數(kernel)的狀態存入堆棧後，將r0數據存入程序狀態寄存器(此時r0應該存放了usertask_stack_start地址)，然後設定<a href="http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.dui0552a/CHDBIBGJ.html" target="_blank" rel="noopener">control寄存器</a>爲0b11。所以現在stack pointer是PSP，而PSP中存放的是usertask_stack_start地址，至於Thread mode是Unprivileged。</p>
-<p><img src="https://jjrfxq.bn.files.1drv.com/y4msLq_CmDAujSrfYA8NuEC4ZHMdSokzk4fhPw5YtLQH5vRK5lTnPVFKRcXSDRJ218o_HUpoRvIU16gqEzz0hrYvwbtpAYbDUIw2645rEcIvYlGMMQFSj4K5OxC1tbFuul69ySeIejiKNiKMEa0D9Wk6k7xTN7ORra40ulPvgQP4N32iv3LjrqgG2RdMNLKZ4HRmQ6g3gZ5zMMYNaLagz4OeA?width=836&amp;height=167&amp;cropmode=none" alt></p>
+<li><p>將main函數(kernel)的狀態存入堆棧後，將r0數據存入程序狀態寄存器(此時r0應該存放了usertask_stack_start地址)，然後設定<a target="_blank" rel="noopener" href="http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.dui0552a/CHDBIBGJ.html">control寄存器</a>爲0b11。所以現在stack pointer是PSP，而PSP中存放的是usertask_stack_start地址，至於Thread mode是Unprivileged。</p>
+<p><img src="https://jjrfxq.bn.files.1drv.com/y4msLq_CmDAujSrfYA8NuEC4ZHMdSokzk4fhPw5YtLQH5vRK5lTnPVFKRcXSDRJ218o_HUpoRvIU16gqEzz0hrYvwbtpAYbDUIw2645rEcIvYlGMMQFSj4K5OxC1tbFuul69ySeIejiKNiKMEa0D9Wk6k7xTN7ORra40ulPvgQP4N32iv3LjrqgG2RdMNLKZ4HRmQ6g3gZ5zMMYNaLagz4OeA?width=836&height=167&cropmode=none"></p>
 </li>
 <li><p>最後把usertask_stack中的寄存器值拿出來，就可以跳轉到user state了</p>
 </li>
-<li><p>此处补充两篇 ARM 官方文档：<a href="http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.dai0179b/ar01s02s06.html" target="_blank" rel="noopener">2.6. Execution Modes</a>, <a href="http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.dui0552a/CHDIGFCA.html" target="_blank" rel="noopener">2.1.1. Processor mode and privilege levels for software execution</a></p>
+<li><p>此处补充两篇 ARM 官方文档：<a target="_blank" rel="noopener" href="http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.dai0179b/ar01s02s06.html">2.6. Execution Modes</a>, <a target="_blank" rel="noopener" href="http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.dui0552a/CHDIGFCA.html">2.1.1. Processor mode and privilege levels for software execution</a></p>
 </li>
 </ul>
 </li>
@@ -591,32 +473,36 @@
 <h3 id="03-ContextSwitch-2"><a href="#03-ContextSwitch-2" class="headerlink" title="03-ContextSwitch-2"></a>03-ContextSwitch-2</h3><ul>
 <li>startup.c中多了一些聲明：</li>
 </ul>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">nmi_handler</span><span class="params">(<span class="keyword">void</span>)</span> __<span class="title">attribute</span><span class="params">((weak, alias(<span class="string">"default_handler"</span>)))</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">hardfault_handler</span><span class="params">(<span class="keyword">void</span>)</span> __<span class="title">attribute</span><span class="params">((weak, alias(<span class="string">"default_handler"</span>)))</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">memmanage_handler</span><span class="params">(<span class="keyword">void</span>)</span> __<span class="title">attribute</span><span class="params">((weak, alias(<span class="string">"default_handler"</span>)))</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">busfault_handler</span><span class="params">(<span class="keyword">void</span>)</span> __<span class="title">attribute</span><span class="params">((weak, alias(<span class="string">"default_handler"</span>)))</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">usagefault_handler</span><span class="params">(<span class="keyword">void</span>)</span> __<span class="title">attribute</span><span class="params">((weak, alias(<span class="string">"default_handler"</span>)))</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">svc_handler</span><span class="params">(<span class="keyword">void</span>)</span> __<span class="title">attribute</span><span class="params">((weak, alias(<span class="string">"default_handler"</span>)))</span></span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">nmi_handler</span><span class="params">(<span class="keyword">void</span>)</span> __<span class="title">attribute</span><span class="params">((weak, alias(<span class="string">&quot;default_handler&quot;</span>)))</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">hardfault_handler</span><span class="params">(<span class="keyword">void</span>)</span> __<span class="title">attribute</span><span class="params">((weak, alias(<span class="string">&quot;default_handler&quot;</span>)))</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">memmanage_handler</span><span class="params">(<span class="keyword">void</span>)</span> __<span class="title">attribute</span><span class="params">((weak, alias(<span class="string">&quot;default_handler&quot;</span>)))</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">busfault_handler</span><span class="params">(<span class="keyword">void</span>)</span> __<span class="title">attribute</span><span class="params">((weak, alias(<span class="string">&quot;default_handler&quot;</span>)))</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">usagefault_handler</span><span class="params">(<span class="keyword">void</span>)</span> __<span class="title">attribute</span><span class="params">((weak, alias(<span class="string">&quot;default_handler&quot;</span>)))</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">svc_handler</span><span class="params">(<span class="keyword">void</span>)</span> __<span class="title">attribute</span><span class="params">((weak, alias(<span class="string">&quot;default_handler&quot;</span>)))</span></span>;</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>alias (“target”): The alias attribute causes the declaration to be emitted as an alias for another symbol, which must be specified.</li>
 <li>所以*_handler全部alias到了default_handler上，而default_handler目前爲一個死循環：</li>
 </ul>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">default_handler</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (<span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>syscall的定義，關於 <code>svc 0</code> 這個<a href="https://reverseengineering.stackexchange.com/questions/4217/arm-shellcode-for-linux-svc-0-vs-svc-1" target="_blank" rel="noopener">回答</a>很好</li>
+<li>syscall的定義，關於 <code>svc 0</code> 這個<a target="_blank" rel="noopener" href="https://reverseengineering.stackexchange.com/questions/4217/arm-shellcode-for-linux-svc-0-vs-svc-1">回答</a>很好</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">syscall:</span><br><span class="line">    svc 0</span><br><span class="line">    nop</span><br><span class="line">    bx lr</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>在context_switch.S中定義了svc_handler函數，聯想到startup.c中的weak alias，可以理解weak alias的意思就是編譯器假如在文件中找到了某個函數的定義就會編譯，假如沒有找到就會將其alias到指定的weak alias函數。<ul>
-<li>關於<a href="http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.dui0552a/BABCAEDD.html" target="_blank" rel="noopener">stmdb</a>，stm代表存儲更多寄存器，db代表在獲取前將地址減小。所以就是r0地址會增加9*4bytes，然後將{}中的9個寄存器從左至右從最低位置開始存放</li>
+<li>關於<a target="_blank" rel="noopener" href="http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.dui0552a/BABCAEDD.html">stmdb</a>，stm代表存儲更多寄存器，db代表在獲取前將地址減小。所以就是r0地址會增加9*4bytes，然後將{}中的9個寄存器從左至右從最低位置開始存放</li>
 </ul>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">svc_handler:</span><br><span class="line">	/* save user state */</span><br><span class="line">    mrs r0, psp</span><br><span class="line">    stmdb r0!, &#123;r4, r5, r6, r7, r8, r9, r10, r11, lr&#125;</span><br><span class="line"></span><br><span class="line">    /* load kernel state */</span><br><span class="line">    pop &#123;r4, r5, r6, r7, r8, r9, r10, r11, ip, lr&#125;</span><br><span class="line">    msr psr, ip</span><br><span class="line"></span><br><span class="line">    bx lr</span><br></pre></td></tr></table></figure>
-<p><img src="https://jjrdxq.bn.files.1drv.com/y4mRQE5Fump95yZuOzBhNqQ7N5_mzTHEVTypYmPw6OHq2azZPtqvM4q-f1CQdM3kUuGab_l9cDzwEGC-g-wa2M8kUk_WTJOp6PJslaqSky-9HJ5P53vGzibCYaJ1D2_jXAc1eePfITeY4U7wj74WMt84mXkivWuGUX_F-xlWEItxxLJriI_-qID5ZYLFL0nFYYgQT_L1hRr6h2Nc4Mlcp7Wag?width=330&amp;height=182&amp;cropmode=none" alt></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">svc_handler:</span><br><span class="line">	&#x2F;* save user state *&#x2F;</span><br><span class="line">    mrs r0, psp</span><br><span class="line">    stmdb r0!, &#123;r4, r5, r6, r7, r8, r9, r10, r11, lr&#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;* load kernel state *&#x2F;</span><br><span class="line">    pop &#123;r4, r5, r6, r7, r8, r9, r10, r11, ip, lr&#125;</span><br><span class="line">    msr psr, ip</span><br><span class="line"></span><br><span class="line">    bx lr</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://jjrdxq.bn.files.1drv.com/y4mRQE5Fump95yZuOzBhNqQ7N5_mzTHEVTypYmPw6OHq2azZPtqvM4q-f1CQdM3kUuGab_l9cDzwEGC-g-wa2M8kUk_WTJOp6PJslaqSky-9HJ5P53vGzibCYaJ1D2_jXAc1eePfITeY4U7wj74WMt84mXkivWuGUX_F-xlWEItxxLJriI_-qID5ZYLFL0nFYYgQT_L1hRr6h2Nc4Mlcp7Wag?width=330&height=182&cropmode=none"></p>
 <ul>
 <li>程序run可見當usertask觸發syscall後會保存其狀態，然後切回main函數輸出兩個print_str，然後回到usertask後會繼續接着上一次的執行到的地方繼續執行，再輸出兩句話，然後回到main函數，也是接着上次執行後的地方繼續執行。這驗證了之前代碼裏關於user state和kernel state的save和load動作。</li>
 </ul>
-<h3 id="04-Multitasking"><a href="#04-Multitasking" class="headerlink" title="04-Multitasking"></a>04-Multitasking</h3><p><img src="https://jjrcxq.bn.files.1drv.com/y4mxOrwfjpJWXVx10ewRnky1wPwqh2R11XAqx-rK7fYKhfnw0_Q74JArry9kVVn4BgN9X-_uc522FXUMVpDK12AMd4YZJsgAQUcUVqHyS46IaGAxRHw-BAwiecYzVgzOaHf2UiuOJ7Tpfs0_N-XTSa7WMGoHru9BdASIGz_T5kmQcuOST6itBFfUUH9IMIbg8uY6Jqo4lWKAnkXSwQfbY6U-Q?width=710&amp;height=457&amp;cropmode=none" alt></p>
+<h3 id="04-Multitasking"><a href="#04-Multitasking" class="headerlink" title="04-Multitasking"></a>04-Multitasking</h3><p><img src="https://jjrcxq.bn.files.1drv.com/y4mxOrwfjpJWXVx10ewRnky1wPwqh2R11XAqx-rK7fYKhfnw0_Q74JArry9kVVn4BgN9X-_uc522FXUMVpDK12AMd4YZJsgAQUcUVqHyS46IaGAxRHw-BAwiecYzVgzOaHf2UiuOJ7Tpfs0_N-XTSa7WMGoHru9BdASIGz_T5kmQcuOST6itBFfUUH9IMIbg8uY6Jqo4lWKAnkXSwQfbY6U-Q?width=710&height=457&cropmode=none"></p>
 <ul>
 <li><p>diff context_switch.S ../03-ContextSwitch-2/context_switch.S ，發現：</p>
 <ul>
-<li>svc_handler中的msr psr, ip變成了msr psr_nzcvq, ip，<a href="http://infocenter.arm.com/help/topic/com.arm.doc.qrc0001mc/QRC0001_UAL.pdf" target="_blank" rel="noopener">nzcv</a>爲psr的四個標誌位</li>
+<li>svc_handler中的msr psr, ip變成了msr psr_nzcvq, ip，<a target="_blank" rel="noopener" href="http://infocenter.arm.com/help/topic/com.arm.doc.qrc0001mc/QRC0001_UAL.pdf">nzcv</a>爲psr的四個標誌位</li>
 </ul>
 </li>
 <li><p>另外在activate中，在切換到process stask後多一條isb指令：</p>
@@ -626,13 +512,16 @@
 </li>
 </ul>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> HANDLER_MSP 0xFFFFFFF1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> THREAD_MSP  0xFFFFFFF9</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> THREAD_PSP  0xFFFFFFFD</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://jjrbxq.bn.files.1drv.com/y4muhuffNAohfnDo-aRDoceuibQPrQEckKbjI4lHjnPFIs9WGd06YSErr1D8mnXD44UqViR2HMQmQ4_wvzsxaCkigz4_EXVvtf8zNBv0r4nCwYj0vwSCu8gaLkmEC28hMXaJ9VXQf0hhqjehXva9wzBL_zppfNl8mBUBl447u-Ml279njbjec48_ELzLOrV7Vcx3spyKlothXlN8JfhBB-NiQ?width=524&amp;height=422&amp;cropmode=none" alt></p>
+
+<p><img src="https://jjrbxq.bn.files.1drv.com/y4muhuffNAohfnDo-aRDoceuibQPrQEckKbjI4lHjnPFIs9WGd06YSErr1D8mnXD44UqViR2HMQmQ4_wvzsxaCkigz4_EXVvtf8zNBv0r4nCwYj0vwSCu8gaLkmEC28hMXaJ9VXQf0hhqjehXva9wzBL_zppfNl8mBUBl447u-Ml279njbjec48_ELzLOrV7Vcx3spyKlothXlN8JfhBB-NiQ?width=524&height=422&cropmode=none"></p>
 <ul>
 <li>接着新建一個task：</li>
 </ul>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">unsigned</span> <span class="keyword">int</span> *<span class="title">create_task</span><span class="params">(<span class="keyword">unsigned</span> <span class="keyword">int</span> *<span class="built_in">stack</span>, <span class="keyword">void</span> (*start)(<span class="keyword">void</span>))</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        <span class="keyword">static</span> <span class="keyword">int</span> first = <span class="number">1</span>;</span><br><span class="line">        <span class="built_in">stack</span> += STACK_SIZE - <span class="number">32</span>; <span class="comment">/* End of stack, minus what we are about to push */</span></span><br><span class="line">        <span class="keyword">if</span> (first) &#123;</span><br><span class="line">                <span class="built_in">stack</span>[<span class="number">8</span>] = (<span class="keyword">unsigned</span> <span class="keyword">int</span>) start;</span><br><span class="line">                first = <span class="number">0</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="built_in">stack</span>[<span class="number">8</span>] = (<span class="keyword">unsigned</span> <span class="keyword">int</span>) THREAD_PSP;</span><br><span class="line">                <span class="built_in">stack</span>[<span class="number">15</span>] = (<span class="keyword">unsigned</span> <span class="keyword">int</span>) start;</span><br><span class="line">                <span class="built_in">stack</span>[<span class="number">16</span>] = (<span class="keyword">unsigned</span> <span class="keyword">int</span>) <span class="number">0x01000000</span>; <span class="comment">/* PSR Thumb bit */</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">stack</span> = activate(<span class="built_in">stack</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">stack</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>而在main函數中，對應的調用是：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定義了程式stack的數量(2個)和大小(256*4bytes)</span></span><br><span class="line"><span class="keyword">unsigned</span> <span class="keyword">int</span> user_stacks[TASK_LIMIT][STACK_SIZE];</span><br><span class="line"><span class="comment">//定義了用戶程式的數量(2個)</span></span><br><span class="line"><span class="keyword">unsigned</span> <span class="keyword">int</span> *usertasks[TASK_LIMIT];</span><br><span class="line"><span class="comment">//將之前定義的stack和function地址傳給create_task配置</span></span><br><span class="line">usertasks[<span class="number">0</span>]=create_task(user_stack[<span class="number">0</span>],&amp;task_func);</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>當使用create_task函數第一次進行初始化時，在create_task中對task的stack進行了配置，並且因爲是第一次設定，將stack[8]存放了task_func的地址，然後進入到task_func中echo”task1 Created”&amp;”return”後調用syscall回到了main函數。</li>
 <li>當第二次呼叫create_task時，comment也有說明，因爲activate是從exception中返回，故將lr保存爲THREAD_PSP，而此時的func從stack[15]開始</li>
@@ -642,11 +531,11 @@
 </li>
 </ul>
 <h3 id="05-TimerInterrupt"><a href="#05-TimerInterrupt" class="headerlink" title="05-TimerInterrupt"></a>05-TimerInterrupt</h3><ul>
-<li><p>首先看啓動文件，多了pendsv和systick的定義，關於<a href="http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.dui0553a/BABBGBEC.html" target="_blank" rel="noopener">Cortex-M3設備的異常類型</a>再複習一下</p>
+<li><p>首先看啓動文件，多了pendsv和systick的定義，關於<a target="_blank" rel="noopener" href="http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.dui0553a/BABBGBEC.html">Cortex-M3設備的異常類型</a>再複習一下</p>
 </li>
 <li><p>void __attribute__((interrupt)) systick_handler(void)</p>
 <ul>
-<li>The compiler generates function entry and exit sequences suitable for use in an interrupt handler when this attribute is present. With Epiphany targets it may also generate a special section with code to initialize the interrupt vector table.(<a href="https://gcc.gnu.org/onlinedocs/gcc/Function-Attributes.html" target="_blank" rel="noopener">https://gcc.gnu.org/onlinedocs/gcc/Function-Attributes.html</a>)</li>
+<li>The compiler generates function entry and exit sequences suitable for use in an interrupt handler when this attribute is present. With Epiphany targets it may also generate a special section with code to initialize the interrupt vector table.(<a target="_blank" rel="noopener" href="https://gcc.gnu.org/onlinedocs/gcc/Function-Attributes.html">https://gcc.gnu.org/onlinedocs/gcc/Function-Attributes.html</a>)</li>
 </ul>
 </li>
 </ul>
@@ -655,1271 +544,160 @@
 <li>一直沒找到delay()和systick有什麼直接聯繫，恍然大悟：當一個task在運行時，由於發生了systick exception，就會切換到kernel mode然後運行下一個task，這樣就如同preemptive。</li>
 </ul>
 
-      
     </div>
 
     
+    
+    
       
-
   <div class="popular-posts-header">相关文章</div>
   <ul class="popular-posts">
-  
     <li class="popular-posts-item">
-      
-      
       <div class="popular-posts-title"><a href="/2019/am335x-arm-cortex-a8-boot-sequence/" rel="bookmark">解析AM335x Arm Cortex-A8处理器的启动流程</a></div>
-      
     </li>
-  
     <li class="popular-posts-item">
-      
-      
       <div class="popular-posts-title"><a href="/2020/lab-compiler-intro/" rel="bookmark">编译器入门小笔记</a></div>
-      
     </li>
-  
     <li class="popular-posts-item">
-      
-      
       <div class="popular-posts-title"><a href="/2019/watching-notes-revolution-os/" rel="bookmark">观影简记：《Revolution OS（操作系统革命）》</a></div>
-      
     </li>
-  
     <li class="popular-posts-item">
-      
-      
+      <div class="popular-posts-title"><a href="/2019/observe-stack-behavior-by-disassembling-a-simple-c-code/" rel="bookmark">小练习：通过反汇编一段C代码观察栈行为</a></div>
+    </li>
+    <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="/2020/lab-leetcode-practices/" rel="bookmark">LeetCode小练习</a></div>
-      
     </li>
-  
-    <li class="popular-posts-item">
-      
-      
-      <div class="popular-posts-title"><a href="/2020/lab-prefetch-intro/" rel="bookmark">Prefetcher小练习</a></div>
-      
-    </li>
-  
   </ul>
 
 
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-      <div>
-        <div id="reward-container">
+    <footer class="post-footer">
+          <div class="reward-container">
   <div>Buy me a cup of coffee :)</div>
-  <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
-    打赏
+  <button onclick="document.querySelector('.post-reward').classList.toggle('active');">
+    赞赏
   </button>
-  <div id="qr" style="display: none;">
-
-    
-      
-      
-        
-      
-      <div style="display: inline-block">
-        <img src="/images/reward-wechat.jpg" alt="John Chou 微信支付">
-        <p>微信支付</p>
+  <div class="post-reward">
+      <div>
+        <img src="/images/reward-wechat.jpg" alt="John Chou 微信">
+        <span>微信</span>
       </div>
-    
-      
-      
-        
-      
-      <div style="display: inline-block">
+      <div>
         <img src="/images/reward-alipay.jpg" alt="John Chou 支付宝">
-        <p>支付宝</p>
+        <span>支付宝</span>
       </div>
-    
 
   </div>
 </div>
 
-      </div>
-    
+          
 
-    
-      <div>
-        
-
-
-
-
-  
-
-
-
-<ul class="post-copyright">
+<div class="post-copyright">
+<ul>
   <li class="post-copyright-author">
-    <strong>本文作者： </strong>John Chou</li>
+      <strong>本文作者： </strong>John Chou
+  </li>
   <li class="post-copyright-link">
-    <strong>本文链接：</strong>
-    
-    <a href="https://blog.joouis.com/2019/lab-mini-arm-os/" title="上手一个具体而微的ARM操作系统">https://blog.joouis.com/2019/lab-mini-arm-os/</a>
+      <strong>本文链接：</strong>
+      <a href="https://blog.joouis.com/2019/lab-mini-arm-os/" title="上手一个具体而微的ARM操作系统">https://blog.joouis.com/2019/lab-mini-arm-os/</a>
   </li>
   <li class="post-copyright-license">
-    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nd/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-ND</a> 许可协议。转载请注明出处！</li>
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nd/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-ND</a> 许可协议。转载请注明出处！
+  </li>
 </ul>
+</div>
 
-      </div>
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/embedded-system-course/" rel="tag"># embedded system course</a>
-          
-            <a href="/tags/embedded-system/" rel="tag"># embedded system</a>
-          
-            <a href="/tags/arm/" rel="tag"># arm</a>
-          
-            <a href="/tags/os/" rel="tag"># os</a>
-          
-            <a href="/tags/gnu/" rel="tag"># gnu</a>
-          
-            <a href="/tags/context-switch/" rel="tag"># context switch</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2019/am335x-arm-cortex-a8-boot-sequence/" rel="next" title="解析AM335x Arm Cortex-A8处理器的启动流程">
-                <i class="fa fa-chevron-left"></i> 解析AM335x Arm Cortex-A8处理器的启动流程
-              </a>
-            
+          <div class="post-tags">
+              <a href="/tags/embedded-system-course/" rel="tag"># embedded system course</a>
+              <a href="/tags/embedded-system/" rel="tag"># embedded system</a>
+              <a href="/tags/arm/" rel="tag"># arm</a>
+              <a href="/tags/os/" rel="tag"># os</a>
+              <a href="/tags/gnu/" rel="tag"># gnu</a>
+              <a href="/tags/context-switch/" rel="tag"># context switch</a>
           </div>
 
-          <span class="post-nav-divider"></span>
+        
 
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/lab-compiler-intro/" rel="prev" title="编译器入门小笔记">
-                编译器入门小笔记 <i class="fa fa-chevron-right"></i>
-              </a>
-            
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2019/am335x-arm-cortex-a8-boot-sequence/" rel="prev" title="解析AM335x Arm Cortex-A8处理器的启动流程">
+                  <i class="fa fa-chevron-left"></i> 解析AM335x Arm Cortex-A8处理器的启动流程
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2020/lab-compiler-intro/" rel="next" title="编译器入门小笔记">
+                  编译器入门小笔记 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
           </div>
-        </div>
-      
-
-      
-      
     </footer>
-  </div>
-  
-  
-  
   </article>
-
-
-  </div>
-
-
-          </div>
-          
-
-  
-    <div class="comments" id="comments">
-      <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
-      </div>
-    </div>
-
-  
+</div>
 
 
 
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+
+
+
+      
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
     </div>
   </div>
+  
 
-  <aside id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="John Chou">
-            
-              <p class="site-author-name" itemprop="name">John Chou</p>
-              <div class="site-description motion-element" itemprop="description">Stand high, think different.</div>
-          </div>
-
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">50</span>
-                    <span class="site-state-item-name">日志</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-categories">
-                  
-                    
-                      <a href="/categories/">
-                    
-                  
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">7</span>
-                    <span class="site-state-item-name">分类</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  
-                    
-                      <a href="/tags/">
-                    
-                  
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">179</span>
-                    <span class="site-state-item-name">标签</span>
-                  </a>
-                </div>
-              
-            </nav>
-          
-
-          
-            <div class="feed-link motion-element">
-              <a href="/atom.xml" rel="alternate">
-                <i class="fa fa-rss"></i>
-                RSS
-              </a>
-            </div>
-          
-
-          
-
-          
-            <div class="links-of-author motion-element">
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="https://github.com/Joouis" title="GitHub &rarr; https://github.com/Joouis" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="mailto:luckyjoou@gmail.com" title="E-Mail &rarr; mailto:luckyjoou@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i></a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="https://www.instagram.com/Joouis" title="Instagram &rarr; https://www.instagram.com/Joouis" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i></a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="http://www.slideshare.net/choujohn351" title="SlideShare &rarr; http://www.slideshare.net/choujohn351" rel="noopener" target="_blank"><i class="fa fa-fw fa-slideshare"></i></a>
-                </span>
-              
-            </div>
-          
-
-          
-             <div class="cc-license motion-element" itemprop="license">
-              
-              
-                
-              
-              
-              
-              <a href="https://creativecommons.org/licenses/by-nd/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nd.svg" alt="Creative Commons"></a>
-             </div>
-          
-
-          
-          
-
-          
-            
-          
-          
-
-        </div>
-      </div>
-
-      
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mini-ARM-OS"><span class="nav-number">2.</span> <span class="nav-text">Mini ARM OS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#00-HelloWorld"><span class="nav-number">2.1.</span> <span class="nav-text">00-HelloWorld</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#01-HelloWorld"><span class="nav-number">2.2.</span> <span class="nav-text">01-HelloWorld</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#02-ContextSwitch-1"><span class="nav-number">2.3.</span> <span class="nav-text">02-ContextSwitch-1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#03-ContextSwitch-2"><span class="nav-number">2.4.</span> <span class="nav-text">03-ContextSwitch-2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#04-Multitasking"><span class="nav-number">2.5.</span> <span class="nav-text">04-Multitasking</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#05-TimerInterrupt"><span class="nav-number">2.6.</span> <span class="nav-text">05-TimerInterrupt</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#06-Preemptive"><span class="nav-number">2.7.</span> <span class="nav-text">06-Preemptive</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
-      
-
-      
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
 
     </div>
-  </aside>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      
+
+      
+
+<div class="copyright">
   
-    <div id="sidebar-dimmer"></div>
-  
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; 2016 – <span itemprop="copyrightYear">2020</span>
-  <span class="with-love" id="animate">
+  &copy; 2016 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">John Chou</span>
-
-  
-
-  
 </div>
 
-
-
-
-
-
-
-
-
-        
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-
-    
-
-    
-  </div>
+    </div>
+  </footer>
 
   
-
-<script>
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  <script src="//cdn.jsdelivr.net/npm/jquery@2/dist/jquery.min.js"></script>
-
-  
-  <script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.min.js"></script>
-
-  
-  <script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.ui.min.js"></script>
-
-  
-  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
-
-
-  
-
-
-  <script src="/js/utils.js?v=7.1.0"></script>
-
-  <script src="/js/motion.js?v=7.1.0"></script>
-
-
-
-  
-  
-
-
-  <script src="/js/schemes/muse.js?v=7.1.0"></script>
-
-
-
-
-  
-  <script src="/js/scrollspy.js?v=7.1.0"></script>
-<script src="/js/post-details.js?v=7.1.0"></script>
-
-
-
-  
-
-
-  <script src="/js/next-boot.js?v=7.1.0"></script>
-
-
-  
-  <script src="/js/js.cookie.js?v=7.1.0"></script>
-  <script src="/js/scroll-cookie.js?v=7.1.0"></script>
-
-
-  
-
-  
-  
-  
-    
-  
-
-  
-
-  
-  
-  
-
-
-  
-  
-
-<script>
-  var disqus_config = function() {
-    this.page.url = "https://blog.joouis.com/2019/lab-mini-arm-os/";
-    this.page.identifier = "2019/lab-mini-arm-os/";
-    this.page.title = '上手一个具体而微的ARM操作系统';
-    };
-  function loadComments() {
-    var d = document, s = d.createElement('script');
-    s.src = 'https://joou.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', '' + +new Date());
-    (d.head || d.body).appendChild(s);
-  }
-  
-    loadComments();
-  
-</script>
-
-
-
-
-
-  
-
-
-  
-  <script>
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
 
   
   <script>
@@ -1933,63 +711,77 @@
   </script>
 
 
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
+
+
+
+
+
+
+
 
   
 
   
+  <script src="//cdn.jsdelivr.net/npm/quicklink@2.0.0/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink.listen({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://blog.joouis.com/2019/lab-mini-arm-os/',]
+      });
+      });
+  </script>
 
-  
-  
-  
-    
-  
-  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
-  <script>pangu.spacingPage();</script>
-
-
-  
-
-  
 <script>
-  $('.highlight').each(function(i, e) {
-    var $wrap = $('<div>').addClass('highlight-wrap');
-    $(e).after($wrap);
-    $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
-      var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
-        return $(e).text();
-      }).toArray().join('\n');
-      var ta = document.createElement('textarea');
-      var yPosition = window.pageYOffset || document.documentElement.scrollTop;
-      ta.style.top = yPosition + 'px'; // Prevent page scroll
-      ta.style.position = 'absolute';
-      ta.style.opacity = '0';
-      ta.readOnly = true;
-      ta.value = code;
-      document.body.appendChild(ta);
-      ta.select();
-      ta.setSelectionRange(0, code.length);
-      ta.readOnly = false;
-      var result = document.execCommand('copy');
-      
-        if (result) $(this).text('复制成功');
-        else $(this).text('复制失败');
-      
-      ta.blur(); // For iOS
-      $(this).blur();
-    })).on('mouseleave', function(e) {
-      var $b = $(this).find('.copy-btn');
-      setTimeout(function() {
-        $b.text('复制');
-      }, 300);
-    }).append(e);
-  })
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://joou.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
 </script>
-
-
-  
-
-  
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://blog.joouis.com/2019/lab-mini-arm-os/";
+    this.page.identifier = "2019/lab-mini-arm-os/";
+    this.page.title = "上手一个具体而微的ARM操作系统";
+    };
+  NexT.utils.loadComments('#disqus_thread', () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://joou.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
 
 </body>
 </html>

@@ -1,172 +1,80 @@
 <!DOCTYPE html>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next mist use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<html lang="zh-CN">
+<head>
   <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/hacker.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/hacker.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/hacker.ico">
+  <link rel="mask-icon" href="/images/hacker.ico" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
 
-  
-  
-    
-      
-    
-    
-      
-    
-  <script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.css">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    
-  
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
-
-
-
-
-
-
-
-  
-
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css">
-
-<link rel="stylesheet" href="/css/main.css?v=7.1.0">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/hacker.ico?v=7.1.0">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/hacker.ico?v=7.1.0">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/hacker.ico?v=7.1.0">
-
-
-  <link rel="mask-icon" href="/images/hacker.ico?v=7.1.0" color="#222">
-
-
-
-
-
-
-
-<script id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Mist',
-    version: '7.1.0',
-    sidebar: {"position":"left","display":"hide","offset":12,"onmobile":true,"dimmer":true},
-    back2top: true,
-    back2top_sidebar: false,
-    fancybox: true,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-  
-
-<meta name="baidu-site-verification" content="ChOTP1bKoM">
-
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"blog.joouis.com","root":"/","scheme":"Mist","version":"8.0.2","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
 
   <meta name="description" content="structure-view （以下简称 SV）是在开发 YunOS Studio（AliOS Studio 前身）时开源出来的一款代码结构提示插件。代码结构提示是一项由来已久的影响开发效率的功能，早在 VIM 时期就有经典的 ctags + Taglist 插件组合来实现这一功能，在桌面时代各大流行的 IDE 也都支持此功能，如 Eclipse 中的 Outline View 或 Webstor">
-<meta name="keywords" content="javascript,structure-view,outline,ctags,open source,outline view,structure view,atom,ide">
 <meta property="og:type" content="article">
 <meta property="og:title" content="十分钟带你了解国产自制开源插件 structure-view">
 <meta property="og:url" content="https://blog.joouis.com/2017/introduction-to-structure-view/index.html">
 <meta property="og:site_name" content="江边的旱鸭子">
 <meta property="og:description" content="structure-view （以下简称 SV）是在开发 YunOS Studio（AliOS Studio 前身）时开源出来的一款代码结构提示插件。代码结构提示是一项由来已久的影响开发效率的功能，早在 VIM 时期就有经典的 ctags + Taglist 插件组合来实现这一功能，在桌面时代各大流行的 IDE 也都支持此功能，如 Eclipse 中的 Outline View 或 Webstor">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://wk4tlg.bn.files.1drv.com/y4mN2I10UfETZdexdzTftd3jf_T3Ib94IPry-EWT69byliaUtzRSIo5zJ2DW4Uqib05ZmX4mPIq0lfLS_CkKf6-aYB6GFJRE7rmfguVYvz1uaJg2awvZfzPPy-C3hgQ5ORboLxnb5b-xY2ekYKwT1wThsrA3s2VtyTcSQnVJPrPmMRq-uYhG-Gf2EHM2lqnZrmjWUT6qxP5gskoz-5hPJjtmg">
 <meta property="og:image" content="https://wk4ulg.bn.files.1drv.com/y4mc9Zhw83pbn0yN-CveyHdr9ui5NuMjEmSlmyKMVMupYsffd6LTZRTjbV2Dn13JloGV7wGVHj4tJ0Po66jJp3GzRiUh5OFWWuyKIcbQYlKb0NJRhiSMSqsCibAZ1g2qT00miHPlfkW0Q4QsqaweuVIPwJBSGyS8a6JYF4t0DkxxJ31heIREKZMMz68_5-gYdt5ssjc9YXqscYUvNQMIGhuVg">
 <meta property="og:image" content="https://wk4vlg.bn.files.1drv.com/y4mLUlTJAXfBGYQwwryeg8IwBCTnFZRjXG7pqyUlIt_i5R04DhxiqJGEHczlmvIfqYusKqKxV-48n8yLPlL8LexeYRBioLbSvOUViST6YEneIe1wQc_X7zyCSsrXOftKnUIoY5mHDLBK-9s9XrEy26WVjD1bAE52y21oEoRuAQ6IENMTlLt_eA1RNW3FYuvMvMhjGqCdg6zkfydvriQrtsVsw">
-<meta property="og:updated_time" content="2017-11-23T16:00:00.000Z">
+<meta property="article:published_time" content="2017-11-21T08:19:22.000Z">
+<meta property="article:modified_time" content="2017-11-23T16:00:00.000Z">
+<meta property="article:author" content="John Chou">
+<meta property="article:tag" content="javascript">
+<meta property="article:tag" content="structure-view">
+<meta property="article:tag" content="outline">
+<meta property="article:tag" content="ctags">
+<meta property="article:tag" content="open source">
+<meta property="article:tag" content="outline view">
+<meta property="article:tag" content="structure view">
+<meta property="article:tag" content="atom">
+<meta property="article:tag" content="ide">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="十分钟带你了解国产自制开源插件 structure-view">
-<meta name="twitter:description" content="structure-view （以下简称 SV）是在开发 YunOS Studio（AliOS Studio 前身）时开源出来的一款代码结构提示插件。代码结构提示是一项由来已久的影响开发效率的功能，早在 VIM 时期就有经典的 ctags + Taglist 插件组合来实现这一功能，在桌面时代各大流行的 IDE 也都支持此功能，如 Eclipse 中的 Outline View 或 Webstor">
 <meta name="twitter:image" content="https://wk4tlg.bn.files.1drv.com/y4mN2I10UfETZdexdzTftd3jf_T3Ib94IPry-EWT69byliaUtzRSIo5zJ2DW4Uqib05ZmX4mPIq0lfLS_CkKf6-aYB6GFJRE7rmfguVYvz1uaJg2awvZfzPPy-C3hgQ5ORboLxnb5b-xY2ekYKwT1wThsrA3s2VtyTcSQnVJPrPmMRq-uYhG-Gf2EHM2lqnZrmjWUT6qxP5gskoz-5hPJjtmg">
 
 
-
-  <link rel="alternate" href="/atom.xml" title="江边的旱鸭子" type="application/atom+xml">
-
+<link rel="canonical" href="https://blog.joouis.com/2017/introduction-to-structure-view/">
 
 
-  
-  
-  <link rel="canonical" href="https://blog.joouis.com/2017/introduction-to-structure-view/">
-
-
-
-<script id="page.configurations">
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
   };
 </script>
 
   <title>十分钟带你了解国产自制开源插件 structure-view | 江边的旱鸭子</title>
   
-
-
-
-
-  <script async src="//www.googletagmanager.com/gtag/js?id=UA-76188004-1"></script>
-  <script>
-    var host = window.location.hostname;
-    if (host !== "localhost" || !true) {
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-76188004-1');
-    }
-  </script>
-
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-76188004-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-76188004-1');
+      }
+    </script>
 
 
   <script>
@@ -182,373 +90,336 @@
 
 
 
-
-
-
   <noscript>
   <style>
-  .use-motion .motion-element,
-  .use-motion .brand,
+  body { margin-top: 2rem; }
+
   .use-motion .menu-item,
-  .sidebar-inner,
+  .use-motion .sidebar,
   .use-motion .post-block,
   .use-motion .pagination,
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-title { opacity: initial; }
+  .use-motion .collection-header {
+    visibility: visible;
+  }
 
-  .use-motion .logo,
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
   .use-motion .site-title,
-  .use-motion .site-subtitle {
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
     opacity: initial;
     top: initial;
   }
 
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
   </style>
 </noscript>
 
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="江边的旱鸭子" type="application/atom+xml">
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
 
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">江边的旱鸭子</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
-    
-      
-        <h1 class="site-subtitle" itemprop="description">Blog of Joou</h1>
-      
-    
-    
   </div>
 
-  <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">江边的旱鸭子</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Blog of Joou</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
   </div>
 </div>
 
 
 
 <nav class="site-nav">
-  
-    <ul id="menu" class="menu">
-      
-        
-        
-        
-          
-          <li class="menu-item menu-item-home">
-
-    
-    
-    
-
-    
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home">
 
     <a href="/" rel="section">首页</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-archives">
-
-    
-    
-    
-
-    
+        <li class="menu-item menu-item-archives">
 
     <a href="/archives/" rel="section">归档</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-categories">
-
-    
-    
-    
-
-    
+        <li class="menu-item menu-item-categories">
 
     <a href="/categories/" rel="section">分类</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-about">
-
-    
-    
-    
-
-    
+        <li class="menu-item menu-item-about">
 
     <a href="/about/" rel="section">关于</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-recruit">
-
-    
-    
-    
-
-    
+        <li class="menu-item menu-item-recruit">
 
     <a href="/recruit/" rel="section">招聘</a>
 
   </li>
-
-      
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            搜索</a>
-        </li>
-      
-    </ul>
-  
-
-  
-    
-
-  
-
-  
-    <div class="site-search">
-      
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
-    </div>
-  </div>
-  <div id="local-search-result"></div>
-</div>
-
-
-
-    </div>
-  
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger">搜索
+        </a>
+      </li>
+  </ul>
 </nav>
 
 
 
-  
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
 
-
+    </div>
+  </div>
 
 </div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <section class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9C%80%E6%B1%82%E4%B8%8E%E9%9A%BE%E7%82%B9"><span class="nav-number">1.</span> <span class="nav-text">需求与难点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%93%E5%90%88%E4%B8%9A%E5%8A%A1%E8%83%8C%E6%99%AF%E4%B8%8E%E7%8E%B0%E7%8A%B6%E8%B0%88%E9%9C%80%E6%B1%82"><span class="nav-number">1.1.</span> <span class="nav-text">结合业务背景与现状谈需求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9A%BE%E5%90%97%EF%BC%9F%E9%9A%BE"><span class="nav-number">1.2.</span> <span class="nav-text">难吗？难</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0"><span class="nav-number">2.</span> <span class="nav-text">设计与实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%AE%E5%89%8D%E4%B8%BB%E6%B5%81%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="nav-number">2.1.</span> <span class="nav-text">目前主流的解决方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%81%E7%A8%8B%E8%AE%BE%E8%AE%A1"><span class="nav-number">2.2.</span> <span class="nav-text">流程设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0"><span class="nav-number">2.3.</span> <span class="nav-text">架构设计与实现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Tag-Generator"><span class="nav-number">2.3.1.</span> <span class="nav-text">Tag Generator</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Tag-Parser"><span class="nav-number">2.3.2.</span> <span class="nav-text">Tag Parser</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#View-Controller"><span class="nav-number">2.3.3.</span> <span class="nav-text">View Controller</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B1%95%E6%9C%9B"><span class="nav-number">3.</span> <span class="nav-text">展望</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+        </section>
+        <!--/noindex-->
+
+        <section class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="John Chou"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">John Chou</p>
+  <div class="site-description" itemprop="description">Stand high, think different.</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">50</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">179</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Joouis" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Joouis" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:luckyjoou@gmail.com" title="E-Mail → mailto:luckyjoou@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/Joouis" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;Joouis" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://www.slideshare.net/choujohn351" title="SlideShare → http:&#x2F;&#x2F;www.slideshare.net&#x2F;choujohn351" rel="noopener" target="_blank"><i class="fab fa-slideshare fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nd/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nd.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </section>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
     </header>
 
     
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
 
 
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-          <div id="content" class="content">
-            
+    <div class="main-inner post posts-expand">
+      
 
-  <div id="posts" class="posts-expand">
-    
-
-  
-
-  
-  
-  
+      
 
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+
+<div class="post-block">
   
   
-  
-  <div class="post-block">
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://blog.joouis.com/2017/introduction-to-structure-view/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
       <meta itemprop="name" content="John Chou">
       <meta itemprop="description" content="Stand high, think different.">
-      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="江边的旱鸭子">
     </span>
-
-    
       <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          十分钟带你了解国产自制开源插件 structure-view
+        </h1>
 
-        
-        
-          <h2 class="post-title" itemprop="name headline">十分钟带你了解国产自制开源插件 structure-view
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
 
-              
-            
-          </h2>
-        
+      <time title="创建时间：2017-11-21 16:19:22" itemprop="dateCreated datePublished" datetime="2017-11-21T16:19:22+08:00">2017-11-21</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2017-11-24 00:00:00" itemprop="dateModified" datetime="2017-11-24T00:00:00+08:00">2017-11-24</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Web-%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">Web 前端</span></a>
+        </span>
+    </span>
 
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2017-11-21 16:19:22" itemprop="dateCreated datePublished" datetime="2017-11-21T16:19:22+08:00">2017-11-21</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2017-11-24 00:00:00" itemprop="dateModified" datetime="2017-11-24T00:00:00+08:00">2017-11-24</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Web-前端/" itemprop="url" rel="index"><span itemprop="name">Web 前端</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">7 分钟</span>
-              
-            </div>
-          
-
-          
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2017/introduction-to-structure-view/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/introduction-to-structure-view/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>4 分钟</span>
+    </span>
+</div>
 
         </div>
       </header>
-    
 
     
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
         <p>structure-view （以下简称 SV）是在开发 YunOS Studio（AliOS Studio 前身）时开源出来的一款代码结构提示插件。代码结构提示是一项由来已久的影响开发效率的功能，早在 VIM 时期就有经典的 ctags + Taglist 插件组合来实现这一功能，在桌面时代各大流行的 IDE 也都支持此功能，如 Eclipse 中的 Outline View 或 Webstorm 中的 Structure View。</p>
-<p>YunOS Studio 基于扩展能力优异的 Atom 编辑器开发，由于 Atom 的生态市场缺乏一款好用的代码结构提示插件，因此 SV 应运而生（注：目前主流相关插件的比较可参考附件 PPT 中的 “开发由来与现状” 章节）。<br><a id="more"></a></p>
+<p>YunOS Studio 基于扩展能力优异的 Atom 编辑器开发，由于 Atom 的生态市场缺乏一款好用的代码结构提示插件，因此 SV 应运而生（注：目前主流相关插件的比较可参考附件 PPT 中的 “开发由来与现状” 章节）。</p>
+<a id="more"></a>
+
 <p>自从今年九月初将其开源并发布到 Atom 市场中，2个多月的时间达到了 800 余次的下载量，总计 20+ 的 star 数量，以及数十个 issues 和 PR。在没（精）啥（力）宣（有）传（限）的情况下，有人下载使用、提问题、提需求，甚至主动贡献 PR，都给了笔者极大的鼓舞，因此在此分享一下这个插件的设计，也欢迎 Atom 党服用此插件。</p>
-<img src="https://wk4tlg.bn.files.1drv.com/y4mN2I10UfETZdexdzTftd3jf_T3Ib94IPry-EWT69byliaUtzRSIo5zJ2DW4Uqib05ZmX4mPIq0lfLS_CkKf6-aYB6GFJRE7rmfguVYvz1uaJg2awvZfzPPy-C3hgQ5ORboLxnb5b-xY2ekYKwT1wThsrA3s2VtyTcSQnVJPrPmMRq-uYhG-Gf2EHM2lqnZrmjWUT6qxP5gskoz-5hPJjtmg">
+<img src="https://wk4tlg.bn.files.1drv.com/y4mN2I10UfETZdexdzTftd3jf_T3Ib94IPry-EWT69byliaUtzRSIo5zJ2DW4Uqib05ZmX4mPIq0lfLS_CkKf6-aYB6GFJRE7rmfguVYvz1uaJg2awvZfzPPy-C3hgQ5ORboLxnb5b-xY2ekYKwT1wThsrA3s2VtyTcSQnVJPrPmMRq-uYhG-Gf2EHM2lqnZrmjWUT6qxP5gskoz-5hPJjtmg" class="">
+
 <p>链接：</p>
 <ul>
-<li><a href="https://atom.io/packages/structure-view" target="_blank" rel="noopener">Atom 市场</a></li>
-<li><a href="https://github.com/alibaba/structure-view" target="_blank" rel="noopener">Github</a></li>
+<li><a target="_blank" rel="noopener" href="https://atom.io/packages/structure-view">Atom 市场</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/alibaba/structure-view">Github</a></li>
 </ul>
 <p><em>平（臭）心（不）而（要）论（脸），eating my own dog food 这么久，我觉得挺好用的 =。=</em></p>
 <h2 id="需求与难点"><a href="#需求与难点" class="headerlink" title="需求与难点"></a>需求与难点</h2><h3 id="结合业务背景与现状谈需求"><a href="#结合业务背景与现状谈需求" class="headerlink" title="结合业务背景与现状谈需求"></a>结合业务背景与现状谈需求</h3><p>SV 最初是为 YunOS Studio 设计，其用户——YunOS 开发者主要使用 Web 相关语言开发，因此对 HTML, CSS, Javascript 的支持是第一要务 。</p>
@@ -571,7 +442,7 @@
 <li>轻量：Atom 性能本来就不算好（当然人家也不主打性能…），所以插件一定要轻，切莫“喧宾夺主”</li>
 <li>广度和深度本来就很难同时满足，还要保证轻量，tradeoff 的哲学该如何落实</li>
 </ul>
-<h2 id="设计与实现"><a href="#设计与实现" class="headerlink" title="设计与实现"></a>设计与实现</h2><h3 id="目前主流的解决方案"><a href="#目前主流的解决方案" class="headerlink" title="目前主流的解决方案"></a>目前主流的解决方案</h3><p>当初调研时发现， Atom 市场中的竞品多是封装经典的 <a href="http://ctags.sourceforge.net/" target="_blank" rel="noopener">ctags</a> 插件，其工作原理如下：</p>
+<h2 id="设计与实现"><a href="#设计与实现" class="headerlink" title="设计与实现"></a>设计与实现</h2><h3 id="目前主流的解决方案"><a href="#目前主流的解决方案" class="headerlink" title="目前主流的解决方案"></a>目前主流的解决方案</h3><p>当初调研时发现， Atom 市场中的竞品多是封装经典的 <a target="_blank" rel="noopener" href="http://ctags.sourceforge.net/">ctags</a> 插件，其工作原理如下：</p>
 <ol>
 <li>提前内置 Windows/macOS /Linux 三个平台的二进制执行文件，以及其需要的配置文件 <code>.ctags</code> </li>
 <li>当插件工作时，命令行调用 ctags 解析，获取 stdout 输出的数据</li>
@@ -581,7 +452,8 @@
 <p>另外还有一种解决方案源自 Facebook 出品的 Nuclide IDE，SV 在设计之初并未参考到，不过后来发现是类似的思路 。Nuclide 中的 Outline 视图提供了代码结构提示和快速导航的功能，针对不同的语言使用不同的解析器，例如使用了自家的 Flow 类型检查工具处理 JavaScript 代码，而使用了 Python 官方的解析器处理 Python 代码。</p>
 <p>这种方法的好处自然是有深度，能把支持的语言解析到位，但坏处也十分明显。首先是依赖性太强，之所以没有很深入地调研 Nuclide，是因为笔者在解析 JavaScript 时提醒安装 Flow，但是 Nuclide 并没有提供自动化安装功能，需要用户到 Flow 的官网学习、完成这件事情，这显然很蠢，也不知道现在改进没…其次就是支持的语言类型有所限制，需要大量的资源支持新的语言开发，明显不适合笔者这种“单兵作战”模式。</p>
 <h3 id="流程设计"><a href="#流程设计" class="headerlink" title="流程设计"></a>流程设计</h3><p>SV 的代码结构解析流程与现有插件大体一致，如下图所示。</p>
-<img src="https://wk4ulg.bn.files.1drv.com/y4mc9Zhw83pbn0yN-CveyHdr9ui5NuMjEmSlmyKMVMupYsffd6LTZRTjbV2Dn13JloGV7wGVHj4tJ0Po66jJp3GzRiUh5OFWWuyKIcbQYlKb0NJRhiSMSqsCibAZ1g2qT00miHPlfkW0Q4QsqaweuVIPwJBSGyS8a6JYF4t0DkxxJ31heIREKZMMz68_5-gYdt5ssjc9YXqscYUvNQMIGhuVg">
+<img src="https://wk4ulg.bn.files.1drv.com/y4mc9Zhw83pbn0yN-CveyHdr9ui5NuMjEmSlmyKMVMupYsffd6LTZRTjbV2Dn13JloGV7wGVHj4tJ0Po66jJp3GzRiUh5OFWWuyKIcbQYlKb0NJRhiSMSqsCibAZ1g2qT00miHPlfkW0Q4QsqaweuVIPwJBSGyS8a6JYF4t0DkxxJ31heIREKZMMz68_5-gYdt5ssjc9YXqscYUvNQMIGhuVg" class="">
+
 <p>一次完整的解析显示流程可分解为以下几步：</p>
 <ol>
 <li>获取当前代码文件的绝对路径</li>
@@ -597,7 +469,8 @@
 <li>SV 中设计了一个通用的语法解析器，定位为“万金油”角色，以满足支持语言的广度</li>
 </ul>
 <p>具体的架构图如下所示。</p>
-<img src="https://wk4vlg.bn.files.1drv.com/y4mLUlTJAXfBGYQwwryeg8IwBCTnFZRjXG7pqyUlIt_i5R04DhxiqJGEHczlmvIfqYusKqKxV-48n8yLPlL8LexeYRBioLbSvOUViST6YEneIe1wQc_X7zyCSsrXOftKnUIoY5mHDLBK-9s9XrEy26WVjD1bAE52y21oEoRuAQ6IENMTlLt_eA1RNW3FYuvMvMhjGqCdg6zkfydvriQrtsVsw">
+<img src="https://wk4vlg.bn.files.1drv.com/y4mLUlTJAXfBGYQwwryeg8IwBCTnFZRjXG7pqyUlIt_i5R04DhxiqJGEHczlmvIfqYusKqKxV-48n8yLPlL8LexeYRBioLbSvOUViST6YEneIe1wQc_X7zyCSsrXOftKnUIoY5mHDLBK-9s9XrEy26WVjD1bAE52y21oEoRuAQ6IENMTlLt_eA1RNW3FYuvMvMhjGqCdg6zkfydvriQrtsVsw" class="">
+
 <h4 id="Tag-Generator"><a href="#Tag-Generator" class="headerlink" title="Tag Generator"></a>Tag Generator</h4><p>在 Tag Generator 层封装了各种语言对应的专业语法解析器，SV 判断出代码文件的语言类型，便会选择对应的语法解析器。如果没有某一个语言对应的解析器，则代表目前 SV 还未深度支持，此时就会使用一个名为 Universal 的解析器进行处理。</p>
 <p>Universal 顾名思义就是通用的解决方案，虽不像专业的语法解析器那样能解析得很全面，但是它可以尽可能多地覆盖各种语言，以确保遇到未深度支持的语言时也能得到代码的初略结构信息。秉持着 DRY (Don’t repeat yourself) 原则，SV 借鉴了现有插件，通过配置、使用 ctags 插件来实现这个“万金油”角色。</p>
 <p>由于语法解析器使用了不同的第三方库，获取的原始 tag 数据形式也是各有不同。因此在封装第三方库的过程中，这些语法解析器会遵循统一的数据格式，整理出 <code>name</code> <code>kind</code> <code>position</code> <code>parent</code> <code>id</code> <code>child</code> 等字段。</p>
@@ -616,1279 +489,165 @@
 <li>吸取市面上主流IDE工具的功能特性，力求好用易用</li>
 <li>独立设计、开发，无 IP 依赖，利于推广和开源</li>
 </ul>
-<p>附件：<a href="https://github.com/Joouis/blog/files/1500624/structure-view-intro-cn-v1.0.pdf" target="_blank" rel="noopener">structure-view-intro-cn-v1.0.pdf</a></p>
+<p>附件：<a target="_blank" rel="noopener" href="https://github.com/Joouis/blog/files/1500624/structure-view-intro-cn-v1.0.pdf">structure-view-intro-cn-v1.0.pdf</a></p>
 
-      
     </div>
 
     
+    
+    
       
-
   <div class="popular-posts-header">相关文章</div>
   <ul class="popular-posts">
-  
     <li class="popular-posts-item">
-      
-      
-      <div class="popular-posts-title"><a href="/2018/an-overview-of-javascript-testing-in-2018/" rel="bookmark">2018 年 JavaScript 测试概观</a></div>
-      
-    </li>
-  
-    <li class="popular-posts-item">
-      
-      
-      <div class="popular-posts-title"><a href="/2019/build-web-e2e-test-system-from-scratch/" rel="bookmark">Build web E2E test system from scratch</a></div>
-      
-    </li>
-  
-    <li class="popular-posts-item">
-      
-      
       <div class="popular-posts-title"><a href="/2018/how-you-can-refactor-to-use-classes/" rel="bookmark">Javascript 简洁之道：如何使用类重构</a></div>
-      
     </li>
-  
     <li class="popular-posts-item">
-      
-      
-      <div class="popular-posts-title"><a href="/2018/javascript-performance-optimization-tips-an-overview/" rel="bookmark">JavaScript 性能优化概观</a></div>
-      
-    </li>
-  
-    <li class="popular-posts-item">
-      
-      
       <div class="popular-posts-title"><a href="/2018/optimization-road-of-count-down-timer/" rel="bookmark">论一个倒计时器的性能优化之路</a></div>
-      
     </li>
-  
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2017/remove-duplicates-from-javascript-array/" rel="bookmark">小议 Javascript 数组去重</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2017/weex-android-quick-tutorial/" rel="bookmark">Weex Android 发车指南（已弃车）</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2019/build-web-e2e-test-system-from-scratch/" rel="bookmark">Build web E2E test system from scratch</a></div>
+    </li>
   </ul>
 
 
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-      <div>
-        <div id="reward-container">
+    <footer class="post-footer">
+          <div class="reward-container">
   <div>Buy me a cup of coffee :)</div>
-  <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
-    打赏
+  <button onclick="document.querySelector('.post-reward').classList.toggle('active');">
+    赞赏
   </button>
-  <div id="qr" style="display: none;">
-
-    
-      
-      
-        
-      
-      <div style="display: inline-block">
-        <img src="/images/reward-wechat.jpg" alt="John Chou 微信支付">
-        <p>微信支付</p>
+  <div class="post-reward">
+      <div>
+        <img src="/images/reward-wechat.jpg" alt="John Chou 微信">
+        <span>微信</span>
       </div>
-    
-      
-      
-        
-      
-      <div style="display: inline-block">
+      <div>
         <img src="/images/reward-alipay.jpg" alt="John Chou 支付宝">
-        <p>支付宝</p>
+        <span>支付宝</span>
       </div>
-    
 
   </div>
 </div>
 
-      </div>
-    
+          
 
-    
-      <div>
-        
-
-
-
-
-  
-
-
-
-<ul class="post-copyright">
+<div class="post-copyright">
+<ul>
   <li class="post-copyright-author">
-    <strong>本文作者： </strong>John Chou</li>
+      <strong>本文作者： </strong>John Chou
+  </li>
   <li class="post-copyright-link">
-    <strong>本文链接：</strong>
-    
-    <a href="https://blog.joouis.com/2017/introduction-to-structure-view/" title="十分钟带你了解国产自制开源插件 structure-view">https://blog.joouis.com/2017/introduction-to-structure-view/</a>
+      <strong>本文链接：</strong>
+      <a href="https://blog.joouis.com/2017/introduction-to-structure-view/" title="十分钟带你了解国产自制开源插件 structure-view">https://blog.joouis.com/2017/introduction-to-structure-view/</a>
   </li>
   <li class="post-copyright-license">
-    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nd/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-ND</a> 许可协议。转载请注明出处！</li>
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nd/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-ND</a> 许可协议。转载请注明出处！
+  </li>
 </ul>
+</div>
 
-      </div>
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/javascript/" rel="tag"># javascript</a>
-          
-            <a href="/tags/structure-view/" rel="tag"># structure-view</a>
-          
-            <a href="/tags/outline/" rel="tag"># outline</a>
-          
-            <a href="/tags/ctags/" rel="tag"># ctags</a>
-          
-            <a href="/tags/open-source/" rel="tag"># open source</a>
-          
-            <a href="/tags/outline-view/" rel="tag"># outline view</a>
-          
-            <a href="/tags/structure-view/" rel="tag"># structure view</a>
-          
-            <a href="/tags/atom/" rel="tag"># atom</a>
-          
-            <a href="/tags/ide/" rel="tag"># ide</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2017/rwd-fundamentals-note/" rel="next" title="响应式网站设计基础">
-                <i class="fa fa-chevron-left"></i> 响应式网站设计基础
-              </a>
-            
+          <div class="post-tags">
+              <a href="/tags/javascript/" rel="tag"># javascript</a>
+              <a href="/tags/structure-view/" rel="tag"># structure-view</a>
+              <a href="/tags/outline/" rel="tag"># outline</a>
+              <a href="/tags/ctags/" rel="tag"># ctags</a>
+              <a href="/tags/open-source/" rel="tag"># open source</a>
+              <a href="/tags/outline-view/" rel="tag"># outline view</a>
+              <a href="/tags/structure-view/" rel="tag"># structure view</a>
+              <a href="/tags/atom/" rel="tag"># atom</a>
+              <a href="/tags/ide/" rel="tag"># ide</a>
           </div>
 
-          <span class="post-nav-divider"></span>
+        
 
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/interviews-for-the-offer-from-alibaba/" rel="prev" title="那些年我拿到阿里巴巴Offer所参加的面试">
-                那些年我拿到阿里巴巴Offer所参加的面试 <i class="fa fa-chevron-right"></i>
-              </a>
-            
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2017/rwd-fundamentals-note/" rel="prev" title="响应式网站设计基础">
+                  <i class="fa fa-chevron-left"></i> 响应式网站设计基础
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2018/interviews-for-the-offer-from-alibaba/" rel="next" title="那些年我拿到阿里巴巴Offer所参加的面试">
+                  那些年我拿到阿里巴巴Offer所参加的面试 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
           </div>
-        </div>
-      
-
-      
-      
     </footer>
-  </div>
-  
-  
-  
   </article>
-
-
-  </div>
-
-
-          </div>
-          
-
-  
-    <div class="comments" id="comments">
-      <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
-      </div>
-    </div>
-
-  
+</div>
 
 
 
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+
+
+
+      
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
     </div>
   </div>
+  
 
-  <aside id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="John Chou">
-            
-              <p class="site-author-name" itemprop="name">John Chou</p>
-              <div class="site-description motion-element" itemprop="description">Stand high, think different.</div>
-          </div>
-
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">50</span>
-                    <span class="site-state-item-name">日志</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-categories">
-                  
-                    
-                      <a href="/categories/">
-                    
-                  
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">7</span>
-                    <span class="site-state-item-name">分类</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  
-                    
-                      <a href="/tags/">
-                    
-                  
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">179</span>
-                    <span class="site-state-item-name">标签</span>
-                  </a>
-                </div>
-              
-            </nav>
-          
-
-          
-            <div class="feed-link motion-element">
-              <a href="/atom.xml" rel="alternate">
-                <i class="fa fa-rss"></i>
-                RSS
-              </a>
-            </div>
-          
-
-          
-
-          
-            <div class="links-of-author motion-element">
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="https://github.com/Joouis" title="GitHub &rarr; https://github.com/Joouis" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="mailto:luckyjoou@gmail.com" title="E-Mail &rarr; mailto:luckyjoou@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i></a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="https://www.instagram.com/Joouis" title="Instagram &rarr; https://www.instagram.com/Joouis" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i></a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="http://www.slideshare.net/choujohn351" title="SlideShare &rarr; http://www.slideshare.net/choujohn351" rel="noopener" target="_blank"><i class="fa fa-fw fa-slideshare"></i></a>
-                </span>
-              
-            </div>
-          
-
-          
-             <div class="cc-license motion-element" itemprop="license">
-              
-              
-                
-              
-              
-              
-              <a href="https://creativecommons.org/licenses/by-nd/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nd.svg" alt="Creative Commons"></a>
-             </div>
-          
-
-          
-          
-
-          
-            
-          
-          
-
-        </div>
-      </div>
-
-      
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#需求与难点"><span class="nav-number">1.</span> <span class="nav-text">需求与难点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#结合业务背景与现状谈需求"><span class="nav-number">1.1.</span> <span class="nav-text">结合业务背景与现状谈需求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#难吗？难"><span class="nav-number">1.2.</span> <span class="nav-text">难吗？难</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设计与实现"><span class="nav-number">2.</span> <span class="nav-text">设计与实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#目前主流的解决方案"><span class="nav-number">2.1.</span> <span class="nav-text">目前主流的解决方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#流程设计"><span class="nav-number">2.2.</span> <span class="nav-text">流程设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#架构设计与实现"><span class="nav-number">2.3.</span> <span class="nav-text">架构设计与实现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Tag-Generator"><span class="nav-number">2.3.1.</span> <span class="nav-text">Tag Generator</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Tag-Parser"><span class="nav-number">2.3.2.</span> <span class="nav-text">Tag Parser</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#View-Controller"><span class="nav-number">2.3.3.</span> <span class="nav-text">View Controller</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#展望"><span class="nav-number">3.</span> <span class="nav-text">展望</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
-      
-
-      
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
 
     </div>
-  </aside>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      
+
+      
+
+<div class="copyright">
   
-    <div id="sidebar-dimmer"></div>
-  
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; 2016 – <span itemprop="copyrightYear">2020</span>
-  <span class="with-love" id="animate">
+  &copy; 2016 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">John Chou</span>
-
-  
-
-  
 </div>
 
-
-
-
-
-
-
-
-
-        
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-
-    
-
-    
-  </div>
+    </div>
+  </footer>
 
   
-
-<script>
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  <script src="//cdn.jsdelivr.net/npm/jquery@2/dist/jquery.min.js"></script>
-
-  
-  <script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.min.js"></script>
-
-  
-  <script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.ui.min.js"></script>
-
-  
-  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
-
-
-  
-
-
-  <script src="/js/utils.js?v=7.1.0"></script>
-
-  <script src="/js/motion.js?v=7.1.0"></script>
-
-
-
-  
-  
-
-
-  <script src="/js/schemes/muse.js?v=7.1.0"></script>
-
-
-
-
-  
-  <script src="/js/scrollspy.js?v=7.1.0"></script>
-<script src="/js/post-details.js?v=7.1.0"></script>
-
-
-
-  
-
-
-  <script src="/js/next-boot.js?v=7.1.0"></script>
-
-
-  
-  <script src="/js/js.cookie.js?v=7.1.0"></script>
-  <script src="/js/scroll-cookie.js?v=7.1.0"></script>
-
-
-  
-
-  
-  
-  
-    
-  
-
-  
-
-  
-  
-  
-
-
-  
-  
-
-<script>
-  var disqus_config = function() {
-    this.page.url = "https://blog.joouis.com/2017/introduction-to-structure-view/";
-    this.page.identifier = "2017/introduction-to-structure-view/";
-    this.page.title = '十分钟带你了解国产自制开源插件 structure-view';
-    };
-  function loadComments() {
-    var d = document, s = d.createElement('script');
-    s.src = 'https://joou.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', '' + +new Date());
-    (d.head || d.body).appendChild(s);
-  }
-  
-    loadComments();
-  
-</script>
-
-
-
-
-
-  
-
-
-  
-  <script>
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
 
   
   <script>
@@ -1902,63 +661,77 @@
   </script>
 
 
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
+
+
+
+
+
+
+
 
   
 
   
+  <script src="//cdn.jsdelivr.net/npm/quicklink@2.0.0/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink.listen({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://blog.joouis.com/2017/introduction-to-structure-view/',]
+      });
+      });
+  </script>
 
-  
-  
-  
-    
-  
-  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
-  <script>pangu.spacingPage();</script>
-
-
-  
-
-  
 <script>
-  $('.highlight').each(function(i, e) {
-    var $wrap = $('<div>').addClass('highlight-wrap');
-    $(e).after($wrap);
-    $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
-      var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
-        return $(e).text();
-      }).toArray().join('\n');
-      var ta = document.createElement('textarea');
-      var yPosition = window.pageYOffset || document.documentElement.scrollTop;
-      ta.style.top = yPosition + 'px'; // Prevent page scroll
-      ta.style.position = 'absolute';
-      ta.style.opacity = '0';
-      ta.readOnly = true;
-      ta.value = code;
-      document.body.appendChild(ta);
-      ta.select();
-      ta.setSelectionRange(0, code.length);
-      ta.readOnly = false;
-      var result = document.execCommand('copy');
-      
-        if (result) $(this).text('复制成功');
-        else $(this).text('复制失败');
-      
-      ta.blur(); // For iOS
-      $(this).blur();
-    })).on('mouseleave', function(e) {
-      var $b = $(this).find('.copy-btn');
-      setTimeout(function() {
-        $b.text('复制');
-      }, 300);
-    }).append(e);
-  })
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://joou.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
 </script>
-
-
-  
-
-  
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://blog.joouis.com/2017/introduction-to-structure-view/";
+    this.page.identifier = "2017/introduction-to-structure-view/";
+    this.page.title = "十分钟带你了解国产自制开源插件 structure-view";
+    };
+  NexT.utils.loadComments('#disqus_thread', () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://joou.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
 
 </body>
 </html>

@@ -1,175 +1,84 @@
 <!DOCTYPE html>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next mist use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<html lang="zh-CN">
+<head>
   <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/hacker.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/hacker.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/hacker.ico">
+  <link rel="mask-icon" href="/images/hacker.ico" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
 
-  
-  
-    
-      
-    
-    
-      
-    
-  <script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.css">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    
-  
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
-
-
-
-
-
-
-
-  
-
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css">
-
-<link rel="stylesheet" href="/css/main.css?v=7.1.0">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/hacker.ico?v=7.1.0">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/hacker.ico?v=7.1.0">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/hacker.ico?v=7.1.0">
-
-
-  <link rel="mask-icon" href="/images/hacker.ico?v=7.1.0" color="#222">
-
-
-
-
-
-
-
-<script id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Mist',
-    version: '7.1.0',
-    sidebar: {"position":"left","display":"hide","offset":12,"onmobile":true,"dimmer":true},
-    back2top: true,
-    back2top_sidebar: false,
-    fancybox: true,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-  
-
-<meta name="baidu-site-verification" content="ChOTP1bKoM">
-
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"blog.joouis.com","root":"/","scheme":"Mist","version":"8.0.2","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
 
   <meta name="description" content="研究生时期的嵌入式课程笔记整理告一段落，还剩一点硕士论文相关的笔记有待整理。这几篇笔记记录了论文以外的东西，主要是实验过程中的部分源码分析与问题思考，还能保留至今已是幸事（如前文所叙，同样有不少笔记、文章随着 Dropbox 的自动迁移丢失了😭）！ 在开始分享笔记之前，先借本文简单介绍一下鄙人的硕士论文，为后续的笔记做个铺垫。 论文主题非常工程化，不过一点一滴都是自己从头搭建起来的，同时完全拥抱">
-<meta name="keywords" content="embedded system,svg,vector,gui,twin,window system,rapid prototyping,wearable devices,µGUI,stm32">
 <meta property="og:type" content="article">
 <meta property="og:title" content="五分钟回顾我的硕士论文：嵌入式向量图形系统设计">
 <meta property="og:url" content="https://blog.joouis.com/2020/evgui-design-review/index.html">
 <meta property="og:site_name" content="江边的旱鸭子">
 <meta property="og:description" content="研究生时期的嵌入式课程笔记整理告一段落，还剩一点硕士论文相关的笔记有待整理。这几篇笔记记录了论文以外的东西，主要是实验过程中的部分源码分析与问题思考，还能保留至今已是幸事（如前文所叙，同样有不少笔记、文章随着 Dropbox 的自动迁移丢失了😭）！ 在开始分享笔记之前，先借本文简单介绍一下鄙人的硕士论文，为后续的笔记做个铺垫。 论文主题非常工程化，不过一点一滴都是自己从头搭建起来的，同时完全拥抱">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://hmxlua.bn.files.1drv.com/y4mgXJcVBrse8QRmGsAgSbN26mPYmCinQuLiI1dHxs1avruyDjjbE_eEl3yi5U3yw4POWK2Yzm0ASNS3G807lK2Trz2zVVVf-LpKDCAaOlW54MgtAIjOBikzFPoMZvL-Td2T88OxOmW-XK8JL7_YqUmqKWpUTvryV2OP3NagIUzEk7OH9hmbDKPU0p2JM7h1cyr-eGCT0urd9cDFtf3K0UR3A?width=1465&height=971&cropmode=none">
 <meta property="og:image" content="https://hmxkua.bn.files.1drv.com/y4mFPnTSDrME_OY4iFZHc8gSLkgfs78VAg53NaznJCZGNw8yIzn_8VNcG2CpFezLDRfYYoQfTHbg2eQVjYlF7KHmwn9tunmARvPHn7n2lsRt5IAqRwo_9WQoXaLeTEFjISBuPkXZLhZJa8NkZdO7mAQB422dtcpWRRayyTYu0Y3bwra5fC6kXSwi3TVqbJj5TpX_LAPRplBVf5GXm4CeADlZA?width=1299&height=642&cropmode=none">
 <meta property="og:image" content="https://hmxjua.bn.files.1drv.com/y4mL7BLZQi1rxMii6tdDKgMLozK3U26xWucyZ1fU0lshEz9CJwoUs6BoWV2Xohz5wBKRZ_7x8qoz0L_lxdE_WqXLE5QeAqKr5aNEO1InDijHml65hsHiTm_-fD-2Cb4YiFdlrbR8Q_2mfLtMUA40a1eF_tHYPfPpGA3bgrGgW89Wm9kndlGvgPy3wuQ5ZssEnuHf9AoSmqJ0qWcNNSq4FaSIA?width=1280&height=720&cropmode=none">
 <meta property="og:image" content="https://hmxiua.bn.files.1drv.com/y4mzByqIpsNZkt7T_L9NGnugQ2wNVuoawtQPRyZrna63cZN0b75r_H7wvqhBax7t581xbYD5m-4A4LFh13hYGISR3PHsJZN6zgpKnReDidlUOuW29JM3JQxhuZ5dr5Ym6bfcYa-51uapn9BXy2LfAMKKo0otjoTR3RDzS_XV3BaNzjf7rdAScjRmQgBVpgVfjbzcSfmFEC9l3QK0Mx2xu-FPA?width=1331&height=870&cropmode=none">
 <meta property="og:image" content="https://hmxhua.bn.files.1drv.com/y4mgKHoIDX_7IhHNp6523jQNbAUQ6l6HvQmDu90FS1yJT9bA9EoTlZDIUApP6sqkvH8R0R6d6kzIiDyZs_PI7pr_3WbObyrDeXY4FOzbRjmeorNKQmOWcPVdjOrFsvGwhI0JaoahEMsEerO4K2oLqTETK04I1gBdBv6s0QJ29kussj4AQ9wRm9YWMeq20Sps8K4yRQ4Jx14Gl3x6KrWTNSNqg?width=1280&height=622&cropmode=none">
 <meta property="og:image" content="https://hmxeua.bn.files.1drv.com/y4mb_qFTtVYHbBZlRvN35TJRDKavuir8vDheXQXGiFgXGLA318wiXhyGUOl8QKJx2S5BTEkIagzaduF82j8mpH_Oy5jrs6z8BfE6KBcMVlR_ggdmqBNFYiUAzw21WZobxb3Jxg_1U1_b1wSlQCPKMJgJzffwRRgCBZv6PzlME_Aexp6tB-SkBx0FQgTmQAkqMmWoAkJXQLUyeoh7B3KVL9KHQ?width=2780&height=1542&cropmode=none">
-<meta property="og:updated_time" content="2020-04-02T13:30:00.000Z">
+<meta property="article:published_time" content="2020-04-01T15:13:31.000Z">
+<meta property="article:modified_time" content="2020-04-02T13:30:00.000Z">
+<meta property="article:author" content="John Chou">
+<meta property="article:tag" content="embedded system">
+<meta property="article:tag" content="vector">
+<meta property="article:tag" content="gui">
+<meta property="article:tag" content="twin">
+<meta property="article:tag" content="window system">
+<meta property="article:tag" content="rapid prototyping">
+<meta property="article:tag" content="svg">
+<meta property="article:tag" content="wearable devices">
+<meta property="article:tag" content="µGUI">
+<meta property="article:tag" content="stm32">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="五分钟回顾我的硕士论文：嵌入式向量图形系统设计">
-<meta name="twitter:description" content="研究生时期的嵌入式课程笔记整理告一段落，还剩一点硕士论文相关的笔记有待整理。这几篇笔记记录了论文以外的东西，主要是实验过程中的部分源码分析与问题思考，还能保留至今已是幸事（如前文所叙，同样有不少笔记、文章随着 Dropbox 的自动迁移丢失了😭）！ 在开始分享笔记之前，先借本文简单介绍一下鄙人的硕士论文，为后续的笔记做个铺垫。 论文主题非常工程化，不过一点一滴都是自己从头搭建起来的，同时完全拥抱">
 <meta name="twitter:image" content="https://hmxlua.bn.files.1drv.com/y4mgXJcVBrse8QRmGsAgSbN26mPYmCinQuLiI1dHxs1avruyDjjbE_eEl3yi5U3yw4POWK2Yzm0ASNS3G807lK2Trz2zVVVf-LpKDCAaOlW54MgtAIjOBikzFPoMZvL-Td2T88OxOmW-XK8JL7_YqUmqKWpUTvryV2OP3NagIUzEk7OH9hmbDKPU0p2JM7h1cyr-eGCT0urd9cDFtf3K0UR3A?width=1465&height=971&cropmode=none">
 
 
-
-  <link rel="alternate" href="/atom.xml" title="江边的旱鸭子" type="application/atom+xml">
-
+<link rel="canonical" href="https://blog.joouis.com/2020/evgui-design-review/">
 
 
-  
-  
-  <link rel="canonical" href="https://blog.joouis.com/2020/evgui-design-review/">
-
-
-
-<script id="page.configurations">
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
   };
 </script>
 
   <title>五分钟回顾我的硕士论文：嵌入式向量图形系统设计 | 江边的旱鸭子</title>
   
-
-
-
-
-  <script async src="//www.googletagmanager.com/gtag/js?id=UA-76188004-1"></script>
-  <script>
-    var host = window.location.hostname;
-    if (host !== "localhost" || !true) {
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-76188004-1');
-    }
-  </script>
-
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-76188004-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-76188004-1');
+      }
+    </script>
 
 
   <script>
@@ -185,1643 +94,521 @@
 
 
 
-
-
-
   <noscript>
   <style>
-  .use-motion .motion-element,
-  .use-motion .brand,
+  body { margin-top: 2rem; }
+
   .use-motion .menu-item,
-  .sidebar-inner,
+  .use-motion .sidebar,
   .use-motion .post-block,
   .use-motion .pagination,
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-title { opacity: initial; }
+  .use-motion .collection-header {
+    visibility: visible;
+  }
 
-  .use-motion .logo,
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
   .use-motion .site-title,
-  .use-motion .site-subtitle {
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
     opacity: initial;
     top: initial;
   }
 
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
   </style>
 </noscript>
 
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="江边的旱鸭子" type="application/atom+xml">
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
 
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">江边的旱鸭子</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
-    
-      
-        <h1 class="site-subtitle" itemprop="description">Blog of Joou</h1>
-      
-    
-    
   </div>
 
-  <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">江边的旱鸭子</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Blog of Joou</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
   </div>
 </div>
 
 
 
 <nav class="site-nav">
-  
-    <ul id="menu" class="menu">
-      
-        
-        
-        
-          
-          <li class="menu-item menu-item-home">
-
-    
-    
-    
-
-    
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home">
 
     <a href="/" rel="section">首页</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-archives">
-
-    
-    
-    
-
-    
+        <li class="menu-item menu-item-archives">
 
     <a href="/archives/" rel="section">归档</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-categories">
-
-    
-    
-    
-
-    
+        <li class="menu-item menu-item-categories">
 
     <a href="/categories/" rel="section">分类</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-about">
-
-    
-    
-    
-
-    
+        <li class="menu-item menu-item-about">
 
     <a href="/about/" rel="section">关于</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-recruit">
-
-    
-    
-    
-
-    
+        <li class="menu-item menu-item-recruit">
 
     <a href="/recruit/" rel="section">招聘</a>
 
   </li>
-
-      
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            搜索</a>
-        </li>
-      
-    </ul>
-  
-
-  
-    
-
-  
-
-  
-    <div class="site-search">
-      
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
-    </div>
-  </div>
-  <div id="local-search-result"></div>
-</div>
-
-
-
-    </div>
-  
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger">搜索
+        </a>
+      </li>
+  </ul>
 </nav>
 
 
 
-  
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
 
-
+    </div>
+  </div>
 
 </div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <section class="post-toc-wrap sidebar-panel">
+        </section>
+        <!--/noindex-->
+
+        <section class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="John Chou"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">John Chou</p>
+  <div class="site-description" itemprop="description">Stand high, think different.</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">50</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">179</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Joouis" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Joouis" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:luckyjoou@gmail.com" title="E-Mail → mailto:luckyjoou@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/Joouis" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;Joouis" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://www.slideshare.net/choujohn351" title="SlideShare → http:&#x2F;&#x2F;www.slideshare.net&#x2F;choujohn351" rel="noopener" target="_blank"><i class="fab fa-slideshare fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nd/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nd.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </section>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
     </header>
 
     
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
 
 
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-          <div id="content" class="content">
-            
+    <div class="main-inner post posts-expand">
+      
 
-  <div id="posts" class="posts-expand">
-    
-
-  
-
-  
-  
-  
+      
 
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+
+<div class="post-block">
   
   
-  
-  <div class="post-block">
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://blog.joouis.com/2020/evgui-design-review/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
       <meta itemprop="name" content="John Chou">
       <meta itemprop="description" content="Stand high, think different.">
-      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="江边的旱鸭子">
     </span>
-
-    
       <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          五分钟回顾我的硕士论文：嵌入式向量图形系统设计
+        </h1>
 
-        
-        
-          <h2 class="post-title" itemprop="name headline">五分钟回顾我的硕士论文：嵌入式向量图形系统设计
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
 
-              
-            
-          </h2>
-        
+      <time title="创建时间：2020-04-01 23:13:31" itemprop="dateCreated datePublished" datetime="2020-04-01T23:13:31+08:00">2020-04-01</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2020-04-02 21:30:00" itemprop="dateModified" datetime="2020-04-02T21:30:00+08:00">2020-04-02</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%BA%95%E5%B1%82/" itemprop="url" rel="index"><span itemprop="name">系统与底层</span></a>
+        </span>
+    </span>
 
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2020-04-01 23:13:31" itemprop="dateCreated datePublished" datetime="2020-04-01T23:13:31+08:00">2020-04-01</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2020-04-02 21:30:00" itemprop="dateModified" datetime="2020-04-02T21:30:00+08:00">2020-04-02</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/系统与底层/" itemprop="url" rel="index"><span itemprop="name">系统与底层</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">4 分钟</span>
-              
-            </div>
-          
-
-          
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2020/evgui-design-review/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/evgui-design-review/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
 
         </div>
       </header>
-    
 
     
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
         <p>研究生时期的嵌入式课程笔记整理告一段落，还剩一点硕士论文相关的笔记有待整理。这几篇笔记记录了论文以外的东西，主要是实验过程中的部分源码分析与问题思考，还能保留至今已是幸事（如前文所叙，同样有不少笔记、文章随着 Dropbox 的自动迁移丢失了😭）！</p>
 <p>在开始分享笔记之前，先借本文简单介绍一下鄙人的硕士论文，为后续的笔记做个铺垫。</p>
 <p>论文主题非常工程化，不过一点一滴都是自己从头搭建起来的，同时完全拥抱开源，甚至像开发环境也是在 Linux 上写 MAKEFILE、LD Script 等去实现过去 Keil IDE 已经帮开发者做好的事情。因此回顾这个项目时，点滴细节不断在脑海里涌现，品味之下令我获得极大的满足感。</p>
 <p>希望也能与你分享这份因技术而生的快乐！</p>
 <a id="more"></a>
-<p><br></p>
+
+
+
+<br />
+
 <p>我的论文旨在为低端嵌入式设备设计一个高性能的向量图形系统，名为 EVGUI（Embedded Vector GUI），其最大价值或者说主要应用场景是在 IoT 设备的产品原型阶段帮助研发团队进行概念验证（Proof of Concept, POC），和工业领域的快速成型（Rapid prototyping）是类似的概念。下面我会用通俗易懂的话来解释这个图形库（希望）解决了什么问题。</p>
 <p>在嵌入式电子产品的 GUI 开发流程中，通常设计师先基于产品显示设备的尺寸设计 GUI 界面，接着由嵌入式工程师对照设计稿将一个个像素点码出来，然后大家再评估、修正。由于使用底层语言开发的效率不高（相比客户端 APP、网页应用），因此在项目前期如 POC 阶段怎么提升研发效率便成了关键问题，毕竟一寸光阴一寸金呐。</p>
 <p>我的论文思路是找到一个共同的表达层，既可以描述设计师的设计，也可以描述嵌入式设备显示的画面。这个表达层需要使用领域特定语言（Domain-specific Language, DSL）实现描述功能，其实没你想的那么复杂，HTML 就是一种 DSL。我也没搞什么发明创造，选择了 SVG 这种向量语言，它除了是一种图形格式外，更重要的一点特性是矢量图，这意味着它天然适配不同分辨率的屏幕设备，所见即所得在快速成型阶段的价值就体现出来了。因此基于这样一个向量图形库，设计师可以直接将设计稿转成SVG格式给嵌入式工程师，后者可以很方便地在基于 ARM Cortex-M4 微控制器等级的硬件上将设计稿渲染出来。</p>
 <p>我们日常用的电脑甚至手机设备性能都非常的强劲，例如今年各家骁龙 865 旗舰手机的高配版本内存竟然达到了 12 GB！而我刚提到的 ARM Cortex-M4 微控制器大概是什么水平呢？以我使用的开发套件 ST32F429IDISCOVERY Kit 举例来说，它使用了一枚 STM32F429ZIT6 MCU，主频 180 MHz、2 Mb of Flash memory、256 KB of RAM，是不是有种瞬间回到“石器时代”的感觉😂。所以实验最大的难度就是在这样性能极度匮乏的硬件上，实现一个能成功解析并正确展示 SVG 图片的向量图形库，每一 KB 内存都需要“锱铢必较”！</p>
-<p><img src="https://hmxlua.bn.files.1drv.com/y4mgXJcVBrse8QRmGsAgSbN26mPYmCinQuLiI1dHxs1avruyDjjbE_eEl3yi5U3yw4POWK2Yzm0ASNS3G807lK2Trz2zVVVf-LpKDCAaOlW54MgtAIjOBikzFPoMZvL-Td2T88OxOmW-XK8JL7_YqUmqKWpUTvryV2OP3NagIUzEk7OH9hmbDKPU0p2JM7h1cyr-eGCT0urd9cDFtf3K0UR3A?width=1465&amp;height=971&amp;cropmode=none" alt="Architecture diagram"></p>
+<p><img src="https://hmxlua.bn.files.1drv.com/y4mgXJcVBrse8QRmGsAgSbN26mPYmCinQuLiI1dHxs1avruyDjjbE_eEl3yi5U3yw4POWK2Yzm0ASNS3G807lK2Trz2zVVVf-LpKDCAaOlW54MgtAIjOBikzFPoMZvL-Td2T88OxOmW-XK8JL7_YqUmqKWpUTvryV2OP3NagIUzEk7OH9hmbDKPU0p2JM7h1cyr-eGCT0urd9cDFtf3K0UR3A?width=1465&height=971&cropmode=none" alt="Architecture diagram"></p>
 <p>如上图所示，EVGUI 图形库包含三大部分：展示层（Presentation Layer）负责 XML、SVG 的解析；渲染层（Render Layer）负责窗口（Window）、插件（Widget）以及 GUI 的一些核心功能如向量库、基础字体、处理模型等；输出层（Output Layer）主要负责内存管理和驱动管理。图中蓝框说明的是面向快速成型的工作流程，也就是前文提到的直接在设备上渲染出 SVG 图片；红框则想解释这样一个图形库除了能用作快速成型外，也兼容传统开发模式，即基于渲染层提供的 API 编写 GUI 业务代码。</p>
-<p>具体的实现、使用到的一些开源库可以参考我的 GitHub <a href="https://github.com/Joouis/EVGUI" target="_blank" rel="noopener">仓库</a>，此处不再赘述，在后续（确定会分享）的笔记中会介绍 SVG 的处理、向量图形核心库 TWIN 的渲染流程、简单的触控处理。记得还有一篇把底层驱动库 µGUI 移植到开发套件上的笔记，可惜同样遗失了！在这放个仅存的渲染流程图缅怀一下。</p>
-<p><img src="https://hmxkua.bn.files.1drv.com/y4mFPnTSDrME_OY4iFZHc8gSLkgfs78VAg53NaznJCZGNw8yIzn_8VNcG2CpFezLDRfYYoQfTHbg2eQVjYlF7KHmwn9tunmARvPHn7n2lsRt5IAqRwo_9WQoXaLeTEFjISBuPkXZLhZJa8NkZdO7mAQB422dtcpWRRayyTYu0Y3bwra5fC6kXSwi3TVqbJj5TpX_LAPRplBVf5GXm4CeADlZA?width=1299&amp;height=642&amp;cropmode=none" alt="µGUI rendering process diagram"></p>
-<p>值得一提的是，向量图形库 <a href="https://keithp.com/~keithp/talks/twin-ols2005/twin-ols2005www/" target="_blank" rel="noopener">TWIN</a> 是渲染层的核心。作为一个 2005 年还是为 “Sub-PDA” 设计的窗口系统，它只耗费 100KB 左右的内存便可运行起来，代码架构和质量真的非常牛逼。它的作者 Keith Packard 因 X Window 系统而闻名，他在 HP 剑桥研究实验室完成 TWIN 后，又基于 TWIN 研发了 <a href="https://www.cairographics.org/xr_ols2003/" target="_blank" rel="noopener">Xr 向量图形库</a>，随后便是现在著名的 Cairo 图形库。这么介绍似乎有点攀亲带故，主要是 TWIN 相关的资料太少，因此多提一嘴。此外 TWIN 诞生的时代还是 WIMP （Windows, Icons, Menus, Pointer）盛行，而现今的交互方式中触控操作逐渐成为主流，因此集成它时也涉及到了人机交互方式的设计与修改。</p>
+<p>具体的实现、使用到的一些开源库可以参考我的 GitHub <a target="_blank" rel="noopener" href="https://github.com/Joouis/EVGUI">仓库</a>，此处不再赘述，在后续（确定会分享）的笔记中会介绍 SVG 的处理、向量图形核心库 TWIN 的渲染流程、简单的触控处理。记得还有一篇把底层驱动库 µGUI 移植到开发套件上的笔记，可惜同样遗失了！在这放个仅存的渲染流程图缅怀一下。</p>
+<p><img src="https://hmxkua.bn.files.1drv.com/y4mFPnTSDrME_OY4iFZHc8gSLkgfs78VAg53NaznJCZGNw8yIzn_8VNcG2CpFezLDRfYYoQfTHbg2eQVjYlF7KHmwn9tunmARvPHn7n2lsRt5IAqRwo_9WQoXaLeTEFjISBuPkXZLhZJa8NkZdO7mAQB422dtcpWRRayyTYu0Y3bwra5fC6kXSwi3TVqbJj5TpX_LAPRplBVf5GXm4CeADlZA?width=1299&height=642&cropmode=none" alt="µGUI rendering process diagram"></p>
+<p>值得一提的是，向量图形库 <a target="_blank" rel="noopener" href="https://keithp.com/~keithp/talks/twin-ols2005/twin-ols2005www/">TWIN</a> 是渲染层的核心。作为一个 2005 年还是为 “Sub-PDA” 设计的窗口系统，它只耗费 100KB 左右的内存便可运行起来，代码架构和质量真的非常牛逼。它的作者 Keith Packard 因 X Window 系统而闻名，他在 HP 剑桥研究实验室完成 TWIN 后，又基于 TWIN 研发了 <a target="_blank" rel="noopener" href="https://www.cairographics.org/xr_ols2003/">Xr 向量图形库</a>，随后便是现在著名的 Cairo 图形库。这么介绍似乎有点攀亲带故，主要是 TWIN 相关的资料太少，因此多提一嘴。此外 TWIN 诞生的时代还是 WIMP （Windows, Icons, Menus, Pointer）盛行，而现今的交互方式中触控操作逐渐成为主流，因此集成它时也涉及到了人机交互方式的设计与修改。</p>
 <p>既然是一篇论文，当然不能只把工程跑起来证明理论设计是可行的，还需要一些定量测试，例如内存的使用分析和测试。为了这么一点点内存绞尽脑汁，现在回想起来，真的很有意思！</p>
-<p><img src="https://hmxjua.bn.files.1drv.com/y4mL7BLZQi1rxMii6tdDKgMLozK3U26xWucyZ1fU0lshEz9CJwoUs6BoWV2Xohz5wBKRZ_7x8qoz0L_lxdE_WqXLE5QeAqKr5aNEO1InDijHml65hsHiTm_-fD-2Cb4YiFdlrbR8Q_2mfLtMUA40a1eF_tHYPfPpGA3bgrGgW89Wm9kndlGvgPy3wuQ5ZssEnuHf9AoSmqJ0qWcNNSq4FaSIA?width=1280&amp;height=720&amp;cropmode=none" alt="Memory consumptions of layers diagram"></p>
+<p><img src="https://hmxjua.bn.files.1drv.com/y4mL7BLZQi1rxMii6tdDKgMLozK3U26xWucyZ1fU0lshEz9CJwoUs6BoWV2Xohz5wBKRZ_7x8qoz0L_lxdE_WqXLE5QeAqKr5aNEO1InDijHml65hsHiTm_-fD-2Cb4YiFdlrbR8Q_2mfLtMUA40a1eF_tHYPfPpGA3bgrGgW89Wm9kndlGvgPy3wuQ5ZssEnuHf9AoSmqJ0qWcNNSq4FaSIA?width=1280&height=720&cropmode=none" alt="Memory consumptions of layers diagram"></p>
 <p>开发板外置的 SDRAM 用来存放 SVG 数据，划分了两个 Layer 1/2 实现双重缓冲（Double buffering）。</p>
-<p><img src="https://hmxiua.bn.files.1drv.com/y4mzByqIpsNZkt7T_L9NGnugQ2wNVuoawtQPRyZrna63cZN0b75r_H7wvqhBax7t581xbYD5m-4A4LFh13hYGISR3PHsJZN6zgpKnReDidlUOuW29JM3JQxhuZ5dr5Ym6bfcYa-51uapn9BXy2LfAMKKo0otjoTR3RDzS_XV3BaNzjf7rdAScjRmQgBVpgVfjbzcSfmFEC9l3QK0Mx2xu-FPA?width=1331&amp;height=870&amp;cropmode=none" alt="Stack heap analysis diagram"></p>
+<p><img src="https://hmxiua.bn.files.1drv.com/y4mzByqIpsNZkt7T_L9NGnugQ2wNVuoawtQPRyZrna63cZN0b75r_H7wvqhBax7t581xbYD5m-4A4LFh13hYGISR3PHsJZN6zgpKnReDidlUOuW29JM3JQxhuZ5dr5Ym6bfcYa-51uapn9BXy2LfAMKKo0otjoTR3RDzS_XV3BaNzjf7rdAScjRmQgBVpgVfjbzcSfmFEC9l3QK0Mx2xu-FPA?width=1331&height=870&cropmode=none" alt="Stack heap analysis diagram"></p>
 <p>论文套用了当下流行的穿戴式设备话题，因此演示场景也与此相关。至于图二和图四的那个复古时钟，是 TWIN 当年（没错就是 2005 年）的一个演示应用，被我“移花接木”了过来。</p>
-<p><img src="https://hmxhua.bn.files.1drv.com/y4mgKHoIDX_7IhHNp6523jQNbAUQ6l6HvQmDu90FS1yJT9bA9EoTlZDIUApP6sqkvH8R0R6d6kzIiDyZs_PI7pr_3WbObyrDeXY4FOzbRjmeorNKQmOWcPVdjOrFsvGwhI0JaoahEMsEerO4K2oLqTETK04I1gBdBv6s0QJ29kussj4AQ9wRm9YWMeq20Sps8K4yRQ4Jx14Gl3x6KrWTNSNqg?width=1280&amp;height=622&amp;cropmode=none" alt></p>
+<p><img src="https://hmxhua.bn.files.1drv.com/y4mgKHoIDX_7IhHNp6523jQNbAUQ6l6HvQmDu90FS1yJT9bA9EoTlZDIUApP6sqkvH8R0R6d6kzIiDyZs_PI7pr_3WbObyrDeXY4FOzbRjmeorNKQmOWcPVdjOrFsvGwhI0JaoahEMsEerO4K2oLqTETK04I1gBdBv6s0QJ29kussj4AQ9wRm9YWMeq20Sps8K4yRQ4Jx14Gl3x6KrWTNSNqg?width=1280&height=622&cropmode=none"></p>
 <p>此处也有演示小视频。</p>
 
-<video width="304" height="540" src="https://cdnhk.blob.core.windows.net/blog/EVGUI Demo.mp4" preload="metadata" controls playsinline poster>Sorry, your browser does not support the video tag.</video>
+<video width="304" height="540" src="https://cdnhk.blob.core.windows.net/blog/EVGUI Demo.mp4" preload="metadata" controls="" playsinline="" poster="">Sorry, your browser does not support the video tag.</video>
 
 
-<p><br></p>
+
+<br />
+
+
+
 <p>最后需要说明是这篇论文的思路来自我的指导教授 Jserv，在之前的博文中也曾反复提到过这位大牛。他是“大脑”，而我是执行者。现在偶尔仍能回忆起很多找他调试代码到深夜的日子，嵌入式开发的代码量不大，解决一个问题可能只需要编写或修改几行到数十行代码，但这背后的 know how 往往需要花费数日乃至数周的时间。</p>
-<p>同时也要感谢我的一直以来都很开明的直系教授同意我做这样一个与他研究方向毫不相干的题目，以及友情帮助设计这个清爽演示 GUI 的设计系学妹 <a href="https://www.zhihu.com/people/vivianvivi" target="_blank" rel="noopener">@Vivian</a> 同学 😊。</p>
-<p><img src="https://hmxeua.bn.files.1drv.com/y4mb_qFTtVYHbBZlRvN35TJRDKavuir8vDheXQXGiFgXGLA318wiXhyGUOl8QKJx2S5BTEkIagzaduF82j8mpH_Oy5jrs6z8BfE6KBcMVlR_ggdmqBNFYiUAzw21WZobxb3Jxg_1U1_b1wSlQCPKMJgJzffwRRgCBZv6PzlME_Aexp6tB-SkBx0FQgTmQAkqMmWoAkJXQLUyeoh7B3KVL9KHQ?width=2780&amp;height=1542&amp;cropmode=none" alt></p>
+<p>同时也要感谢我的一直以来都很开明的直系教授同意我做这样一个与他研究方向毫不相干的题目，以及友情帮助设计这个清爽演示 GUI 的设计系学妹 <a target="_blank" rel="noopener" href="https://www.zhihu.com/people/vivianvivi">@Vivian</a> 同学 😊。</p>
+<p><img src="https://hmxeua.bn.files.1drv.com/y4mb_qFTtVYHbBZlRvN35TJRDKavuir8vDheXQXGiFgXGLA318wiXhyGUOl8QKJx2S5BTEkIagzaduF82j8mpH_Oy5jrs6z8BfE6KBcMVlR_ggdmqBNFYiUAzw21WZobxb3Jxg_1U1_b1wSlQCPKMJgJzffwRRgCBZv6PzlME_Aexp6tB-SkBx0FQgTmQAkqMmWoAkJXQLUyeoh7B3KVL9KHQ?width=2780&height=1542&cropmode=none"></p>
 
-      
     </div>
 
     
+    
+    
       
-
   <div class="popular-posts-header">相关文章</div>
   <ul class="popular-posts">
-  
     <li class="popular-posts-item">
-      
-      
       <div class="popular-posts-title"><a href="/2020/evgui-touch-interaction/" rel="bookmark">EVGUI 触控简单处理笔记</a></div>
-      
     </li>
-  
     <li class="popular-posts-item">
-      
-      
       <div class="popular-posts-title"><a href="/2020/evgui-svgtiny/" rel="bookmark">SVG Tiny 与 Libsvgtiny</a></div>
-      
     </li>
-  
     <li class="popular-posts-item">
-      
-      
-      <div class="popular-posts-title"><a href="/2020/evgui-twin-apis/" rel="bookmark">TWIN API 整理</a></div>
-      
-    </li>
-  
-    <li class="popular-posts-item">
-      
-      
-      <div class="popular-posts-title"><a href="/2020/evgui-twin-workflow-review/" rel="bookmark">以 Clock 应用为例追踪 TWIN 的运作流程</a></div>
-      
-    </li>
-  
-    <li class="popular-posts-item">
-      
-      
       <div class="popular-posts-title"><a href="/2020/evgui-xml-parser/" rel="bookmark">XML Parser for Libsvgtiny</a></div>
-      
     </li>
-  
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2020/evgui-twin-apis/" rel="bookmark">TWIN API 整理</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2020/evgui-twin-workflow-review/" rel="bookmark">以 Clock 应用为例追踪 TWIN 的运作流程</a></div>
+    </li>
   </ul>
 
 
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-      <div>
-        <div id="reward-container">
+    <footer class="post-footer">
+          <div class="reward-container">
   <div>Buy me a cup of coffee :)</div>
-  <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
-    打赏
+  <button onclick="document.querySelector('.post-reward').classList.toggle('active');">
+    赞赏
   </button>
-  <div id="qr" style="display: none;">
-
-    
-      
-      
-        
-      
-      <div style="display: inline-block">
-        <img src="/images/reward-wechat.jpg" alt="John Chou 微信支付">
-        <p>微信支付</p>
+  <div class="post-reward">
+      <div>
+        <img src="/images/reward-wechat.jpg" alt="John Chou 微信">
+        <span>微信</span>
       </div>
-    
-      
-      
-        
-      
-      <div style="display: inline-block">
+      <div>
         <img src="/images/reward-alipay.jpg" alt="John Chou 支付宝">
-        <p>支付宝</p>
+        <span>支付宝</span>
       </div>
-    
 
   </div>
 </div>
 
-      </div>
-    
+          
 
-    
-      <div>
-        
-
-
-
-
-  
-
-
-
-<ul class="post-copyright">
+<div class="post-copyright">
+<ul>
   <li class="post-copyright-author">
-    <strong>本文作者： </strong>John Chou</li>
+      <strong>本文作者： </strong>John Chou
+  </li>
   <li class="post-copyright-link">
-    <strong>本文链接：</strong>
-    
-    <a href="https://blog.joouis.com/2020/evgui-design-review/" title="五分钟回顾我的硕士论文：嵌入式向量图形系统设计">https://blog.joouis.com/2020/evgui-design-review/</a>
+      <strong>本文链接：</strong>
+      <a href="https://blog.joouis.com/2020/evgui-design-review/" title="五分钟回顾我的硕士论文：嵌入式向量图形系统设计">https://blog.joouis.com/2020/evgui-design-review/</a>
   </li>
   <li class="post-copyright-license">
-    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nd/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-ND</a> 许可协议。转载请注明出处！</li>
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nd/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-ND</a> 许可协议。转载请注明出处！
+  </li>
 </ul>
+</div>
 
-      </div>
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/embedded-system/" rel="tag"># embedded system</a>
-          
-            <a href="/tags/svg/" rel="tag"># svg</a>
-          
-            <a href="/tags/vector/" rel="tag"># vector</a>
-          
-            <a href="/tags/gui/" rel="tag"># gui</a>
-          
-            <a href="/tags/twin/" rel="tag"># twin</a>
-          
-            <a href="/tags/window-system/" rel="tag"># window system</a>
-          
-            <a href="/tags/rapid-prototyping/" rel="tag"># rapid prototyping</a>
-          
-            <a href="/tags/wearable-devices/" rel="tag"># wearable devices</a>
-          
-            <a href="/tags/µGUI/" rel="tag"># µGUI</a>
-          
-            <a href="/tags/stm32/" rel="tag"># stm32</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2020/lab-gdb-intro/" rel="next" title="GDB/CGDB入门与拆弹游戏">
-                <i class="fa fa-chevron-left"></i> GDB/CGDB入门与拆弹游戏
-              </a>
-            
+          <div class="post-tags">
+              <a href="/tags/embedded-system/" rel="tag"># embedded system</a>
+              <a href="/tags/vector/" rel="tag"># vector</a>
+              <a href="/tags/gui/" rel="tag"># gui</a>
+              <a href="/tags/twin/" rel="tag"># twin</a>
+              <a href="/tags/window-system/" rel="tag"># window system</a>
+              <a href="/tags/rapid-prototyping/" rel="tag"># rapid prototyping</a>
+              <a href="/tags/svg/" rel="tag"># svg</a>
+              <a href="/tags/wearable-devices/" rel="tag"># wearable devices</a>
+              <a href="/tags/%C2%B5GUI/" rel="tag"># µGUI</a>
+              <a href="/tags/stm32/" rel="tag"># stm32</a>
           </div>
 
-          <span class="post-nav-divider"></span>
+        
 
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/evgui-svgtiny/" rel="prev" title="SVG Tiny 与 Libsvgtiny">
-                SVG Tiny 与 Libsvgtiny <i class="fa fa-chevron-right"></i>
-              </a>
-            
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/lab-gdb-intro/" rel="prev" title="GDB/CGDB入门与拆弹游戏">
+                  <i class="fa fa-chevron-left"></i> GDB/CGDB入门与拆弹游戏
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2020/evgui-svgtiny/" rel="next" title="SVG Tiny 与 Libsvgtiny">
+                  SVG Tiny 与 Libsvgtiny <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
           </div>
-        </div>
-      
-
-      
-      
     </footer>
-  </div>
-  
-  
-  
   </article>
-
-
-  </div>
-
-
-          </div>
-          
-
-  
-    <div class="comments" id="comments">
-      <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
-      </div>
-    </div>
-
-  
+</div>
 
 
 
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+
+
+
+      
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
     </div>
   </div>
+  
 
-  <aside id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
-
-      
-
-      
-
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="John Chou">
-            
-              <p class="site-author-name" itemprop="name">John Chou</p>
-              <div class="site-description motion-element" itemprop="description">Stand high, think different.</div>
-          </div>
-
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">50</span>
-                    <span class="site-state-item-name">日志</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-categories">
-                  
-                    
-                      <a href="/categories/">
-                    
-                  
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">7</span>
-                    <span class="site-state-item-name">分类</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  
-                    
-                      <a href="/tags/">
-                    
-                  
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">179</span>
-                    <span class="site-state-item-name">标签</span>
-                  </a>
-                </div>
-              
-            </nav>
-          
-
-          
-            <div class="feed-link motion-element">
-              <a href="/atom.xml" rel="alternate">
-                <i class="fa fa-rss"></i>
-                RSS
-              </a>
-            </div>
-          
-
-          
-
-          
-            <div class="links-of-author motion-element">
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="https://github.com/Joouis" title="GitHub &rarr; https://github.com/Joouis" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="mailto:luckyjoou@gmail.com" title="E-Mail &rarr; mailto:luckyjoou@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i></a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="https://www.instagram.com/Joouis" title="Instagram &rarr; https://www.instagram.com/Joouis" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i></a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="http://www.slideshare.net/choujohn351" title="SlideShare &rarr; http://www.slideshare.net/choujohn351" rel="noopener" target="_blank"><i class="fa fa-fw fa-slideshare"></i></a>
-                </span>
-              
-            </div>
-          
-
-          
-             <div class="cc-license motion-element" itemprop="license">
-              
-              
-                
-              
-              
-              
-              <a href="https://creativecommons.org/licenses/by-nd/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nd.svg" alt="Creative Commons"></a>
-             </div>
-          
-
-          
-          
-
-          
-            
-          
-          
-
-        </div>
-      </div>
-
-      
-
-      
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
 
     </div>
-  </aside>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      
+
+      
+
+<div class="copyright">
   
-    <div id="sidebar-dimmer"></div>
-  
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; 2016 – <span itemprop="copyrightYear">2020</span>
-  <span class="with-love" id="animate">
+  &copy; 2016 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">John Chou</span>
-
-  
-
-  
 </div>
 
-
-
-
-
-
-
-
-
-        
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-
-    
-
-    
-  </div>
+    </div>
+  </footer>
 
   
-
-<script>
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  <script src="//cdn.jsdelivr.net/npm/jquery@2/dist/jquery.min.js"></script>
-
-  
-  <script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.min.js"></script>
-
-  
-  <script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.ui.min.js"></script>
-
-  
-  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
-
-
-  
-
-
-  <script src="/js/utils.js?v=7.1.0"></script>
-
-  <script src="/js/motion.js?v=7.1.0"></script>
-
-
-
-  
-  
-
-
-  <script src="/js/schemes/muse.js?v=7.1.0"></script>
-
-
-
-
-  
-  <script src="/js/scrollspy.js?v=7.1.0"></script>
-<script src="/js/post-details.js?v=7.1.0"></script>
-
-
-
-  
-
-
-  <script src="/js/next-boot.js?v=7.1.0"></script>
-
-
-  
-  <script src="/js/js.cookie.js?v=7.1.0"></script>
-  <script src="/js/scroll-cookie.js?v=7.1.0"></script>
-
-
-  
-
-  
-  
-  
-    
-  
-
-  
-
-  
-  
-  
-
-
-  
-  
-
-<script>
-  var disqus_config = function() {
-    this.page.url = "https://blog.joouis.com/2020/evgui-design-review/";
-    this.page.identifier = "2020/evgui-design-review/";
-    this.page.title = '五分钟回顾我的硕士论文：嵌入式向量图形系统设计';
-    };
-  function loadComments() {
-    var d = document, s = d.createElement('script');
-    s.src = 'https://joou.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', '' + +new Date());
-    (d.head || d.body).appendChild(s);
-  }
-  
-    loadComments();
-  
-</script>
-
-
-
-
-
-  
-
-
-  
-  <script>
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
 
   
   <script>
@@ -1835,63 +622,77 @@
   </script>
 
 
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
+
+
+
+
+
+
+
 
   
 
   
+  <script src="//cdn.jsdelivr.net/npm/quicklink@2.0.0/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink.listen({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://blog.joouis.com/2020/evgui-design-review/',]
+      });
+      });
+  </script>
 
-  
-  
-  
-    
-  
-  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
-  <script>pangu.spacingPage();</script>
-
-
-  
-
-  
 <script>
-  $('.highlight').each(function(i, e) {
-    var $wrap = $('<div>').addClass('highlight-wrap');
-    $(e).after($wrap);
-    $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
-      var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
-        return $(e).text();
-      }).toArray().join('\n');
-      var ta = document.createElement('textarea');
-      var yPosition = window.pageYOffset || document.documentElement.scrollTop;
-      ta.style.top = yPosition + 'px'; // Prevent page scroll
-      ta.style.position = 'absolute';
-      ta.style.opacity = '0';
-      ta.readOnly = true;
-      ta.value = code;
-      document.body.appendChild(ta);
-      ta.select();
-      ta.setSelectionRange(0, code.length);
-      ta.readOnly = false;
-      var result = document.execCommand('copy');
-      
-        if (result) $(this).text('复制成功');
-        else $(this).text('复制失败');
-      
-      ta.blur(); // For iOS
-      $(this).blur();
-    })).on('mouseleave', function(e) {
-      var $b = $(this).find('.copy-btn');
-      setTimeout(function() {
-        $b.text('复制');
-      }, 300);
-    }).append(e);
-  })
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://joou.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
 </script>
-
-
-  
-
-  
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://blog.joouis.com/2020/evgui-design-review/";
+    this.page.identifier = "2020/evgui-design-review/";
+    this.page.title = "五分钟回顾我的硕士论文：嵌入式向量图形系统设计";
+    };
+  NexT.utils.loadComments('#disqus_thread', () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://joou.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
 
 </body>
 </html>
