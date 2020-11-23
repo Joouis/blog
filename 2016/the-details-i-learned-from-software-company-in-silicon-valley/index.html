@@ -1,23 +1,629 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
 
-{% block title %}{{ page.title }} | {{ title }}{% endblock %}
 
-{% block page_class %}page-post-detail{% endblock %}
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/hacker.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/hacker.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/hacker.ico">
+  <link rel="mask-icon" href="/images/hacker.ico" color="#222">
 
-{% block content %}
+<link rel="stylesheet" href="/css/main.css">
 
-  <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"blog.joouis.com","root":"/","scheme":"Mist","version":"8.0.2","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
+
+  <meta name="description" content="前言Ryan 哥是我在 Lilee 实习时的同事，按时间来说他比我还晚进入 Lilee (笑)。虽然相处天数很短，但对他印象深刻：个子不高，酷酷的很有型，CMU 毕业，湾区大公司工作经历。在公司每季(？)的新人介绍茶话会上，发现他也是一个很好聊的人。最后我打包滚蛋时，他也是为数不多写邮件给我践行的人。 就在这个月中旬， Ryan 哥在自己的脸书上写了这里分享的这篇文章，颇具视野和深度，对于我这样的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="从硅谷软件企业学习到的细节">
+<meta property="og:url" content="https://blog.joouis.com/2016/the-details-i-learned-from-software-company-in-silicon-valley/index.html">
+<meta property="og:site_name" content="江边的旱鸭子">
+<meta property="og:description" content="前言Ryan 哥是我在 Lilee 实习时的同事，按时间来说他比我还晚进入 Lilee (笑)。虽然相处天数很短，但对他印象深刻：个子不高，酷酷的很有型，CMU 毕业，湾区大公司工作经历。在公司每季(？)的新人介绍茶话会上，发现他也是一个很好聊的人。最后我打包滚蛋时，他也是为数不多写邮件给我践行的人。 就在这个月中旬， Ryan 哥在自己的脸书上写了这里分享的这篇文章，颇具视野和深度，对于我这样的">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2016-04-28T17:23:00.000Z">
+<meta property="article:modified_time" content="2016-04-28T17:23:00.000Z">
+<meta property="article:author" content="John Chou">
+<meta property="article:tag" content="silicon valley">
+<meta property="article:tag" content="software">
+<meta property="article:tag" content="inspiration">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://blog.joouis.com/2016/the-details-i-learned-from-software-company-in-silicon-valley/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>从硅谷软件企业学习到的细节 | 江边的旱鸭子</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-76188004-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-76188004-1');
+      }
+    </script>
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?199f195e233fd5ecca0d9346d3259670";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="江边的旱鸭子" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
   </div>
 
-{% endblock %}
+  <div class="site-meta">
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">江边的旱鸭子</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Blog of Joou</p>
+  </div>
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section">首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section">归档</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section">分类</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section">关于</a>
+
+  </li>
+        <li class="menu-item menu-item-recruit">
+
+    <a href="/recruit/" rel="section">招聘</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger">搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <section class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BE%9E%E7%9F%BD%E8%B0%B7%E8%BB%9F%E9%AB%94%E4%BC%81%E6%A5%AD%E5%AD%B8%E7%BF%92%E5%88%B0%E7%9A%84%E7%B4%B0%E7%AF%80"><span class="nav-number"></span> <span class="nav-text">從矽谷軟體企業學習到的細節</span></a></div>
+        </section>
+        <!--/noindex-->
+
+        <section class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="John Chou"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">John Chou</p>
+  <div class="site-description" itemprop="description">Stand high, think different.</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">50</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">179</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Joouis" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Joouis" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:luckyjoou@gmail.com" title="E-Mail → mailto:luckyjoou@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/Joouis" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;Joouis" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://www.slideshare.net/choujohn351" title="SlideShare → http:&#x2F;&#x2F;www.slideshare.net&#x2F;choujohn351" rel="noopener" target="_blank"><i class="fab fa-slideshare fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nd/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nd.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </section>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+      
+
+      
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://blog.joouis.com/2016/the-details-i-learned-from-software-company-in-silicon-valley/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="John Chou">
+      <meta itemprop="description" content="Stand high, think different.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江边的旱鸭子">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          从硅谷软件企业学习到的细节
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2016-04-29 01:23:00" itemprop="dateCreated datePublished" datetime="2016-04-29T01:23:00+08:00">2016-04-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%8A%80%E6%9C%AF%E4%BA%BA%E7%94%9F%E8%B0%88/" itemprop="url" rel="index"><span itemprop="name">技术人生谈</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2016/the-details-i-learned-from-software-company-in-silicon-valley/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/the-details-i-learned-from-software-company-in-silicon-valley/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>4 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Ryan 哥是我在 Lilee 实习时的同事，按时间来说他比我还晚进入 Lilee (笑)。虽然相处天数很短，但对他印象深刻：个子不高，酷酷的很有型，CMU 毕业，湾区大公司工作经历。在公司每季(？)的新人介绍茶话会上，发现他也是一个很好聊的人。最后我打包滚蛋时，他也是为数不多写邮件给我践行的人。</p>
+<p>就在这个月中旬， Ryan 哥在自己的脸书上写了这里分享的这篇文章，颇具视野和深度，对于我这样的新人来说很受启发，因此也搬运到我的博客上来。本文的<a target="_blank" rel="noopener" href="https://www.facebook.com/ryanyang328/posts/10105200442293837"><strong>原出处</strong></a>，里面还有一些精彩评论，有兴趣也可以去看看。</p>
+<a id="more"></a>
+
+<h1 id="從矽谷軟體企業學習到的細節"><a href="#從矽谷軟體企業學習到的細節" class="headerlink" title="從矽谷軟體企業學習到的細節"></a>從矽谷軟體企業學習到的細節</h1><p>回來台灣一年多了，在矽谷工作時，我總是想說服大家一起回台灣做點小貢獻。但現在，我的確認為台灣需要有更多人出國看一看拓展新的視野，未來有機會再帶回更多新的思維回到家鄉，和台灣原本就保有的優點融合。 之前很高興有機會到交大還有 Sudo 的活動分享在矽谷工作時感受到的文化和經驗。最近還是有許多朋友有興趣想了解台灣軟體業除了以往在資源上的限制，還有什麼樣不同的文化和制度對目前軟體產業造成衝擊和差異性。所以趁這個機會分享一些目前在台灣軟體產業觀察和聽聞的現況，去探討我們可能可以自省的方面。在我們努力衝刺的過程中，希望可以提及幾項在台灣軟體產業看似還普遍缺乏的思維和觀點：</p>
+<ol>
+<li>人是公司最大的資產：在台灣是企業選擇員工，在矽谷是員工選擇企業。矽谷企業普遍認為，人是公司最大的資產。除了公司選擇比較多以外，企業團隊也總是很感激員工的加入， 並且願意提出更好的 counter-offer 努力把好的人才吸引過來。同時，員工也可以用更健康的心態去 negotiate 自己的 offer 讓彼此都達到滿意的結果。 以人為本，公司對人的尊重，是大家最嚮往的文化。</li>
+<li>人格特質 vs 學歷/技術：學歷的迷思應該慢慢被擺脫。在台灣工作，學經歷在一開始就會非常被注重和強調，導致公司對你有了預期，但這個預期指的是”技術”這方面而已。學經歷不錯的人很容易被公司預期在短期內要有所產出。 如果短期內沒有達成，公司會默默的打分數，一切完全以短期技術可行性，當成參考依據來預期未來你對公司可能的影響。矽谷的企業各式各樣的學經歷的人更多元，但比較不一樣的是，公司不會太明顯對每個人預設立場。這之中最大的不同點是，美國公司對你的預期不會純粹以技術為考量，而是整個人的人格特質和全面性。公司願意花更多資源投資每個員工，以幫助公司了解 team member 的人格和個性，積極度，潛力，爆發力，做事的 tempo 和 learning curve 的時間，儘管小公司也有類似的認知。回到以往很多 CMU 的學弟妹都會問我說，INI 會不會是 ECE &amp; CS 底下合開的學院造成在美國找工作的影響。我告訴他們，工作以後就會了解到那並不是矽谷公司在找尋人才唯一強調的事。不論是 Google, Apple 還是各大公司 / startup，在面試聊天時，除了去了解一個人的個性之外，也需要考白板的 coding 測試你的技術能力。考題的例子包括：資料結構的 binary tree，queue，linked-list，演算法的 sorting，Dijkstra，八皇后題目，OS 和系統相關的 synchroization，networking, process / thread，memory management，brain teaser 相關題目像是給兩個雞蛋用數學來測出雞蛋在哪一層會破掉的問題 (我很喜歡的題目之一)。聽起來好像很制式化的流程，但其實對於矽谷的公司來說，那才是他們注重的基本能力和了解一個人是否能與團隊有良好的溝通能力。不論你是什麼學歷，只要你夠積極去充實這些知識，保有好奇心和培養良好的 teamwork，好的人格特質和個性加上技術才是公司想招募的人。</li>
+<li>Code review / QA / 開發流程時間：這是許多公司心裡記得很重要可是卻最不願意花時間和錢投資的項目，原因免不了是 time to market 跟追趕 project 進度。台灣許多公司想要開發高利潤產品走向國際，策略模式卻還是採取以往 hit and run 模式的代工思維。全世界企業都有時間壓力，除了技術以外，我們更應該開始強調軟體管理的學問。Code review 的重要性建立在一個軟體開發的長遠計畫之上，注重的是開發者的邏輯思維和 coding style 會不會影響目前和未來的產品，還有 code 提供給其他工程師的可讀性。開發時，要想著這個軟體未來可能會變幾千行，幾萬行，甚至是幾十萬行的產品。而每個人的 coding style 有所不同，公司需要訂立 coding guideline 來規劃基本規則以方便大家產出 code。這種觀念的缺乏導致很多 code 沒有被 review，或是變成 reviewer 灌輸 developer 他心裡想要的 coding style。而 QA 的方面，感覺各企業對此重視的程度很多年來還是嚴重不足，自然沒有扎實的測試方法論和流程來把關品質。對於開發者來說，應該普遍建立 QA 實際上是公司第一個客戶的觀念，所以測試流程像是 smoke test，regression test，white box testing 在交予 QA 前應該是已經需要被建立好的。Hit and run 的策略短期內也許可以拿到客戶，但長久下來如果價格和品質無法成正比，這樣的關係無法長久。再者，以往累積的 technical debt 在未來需要花的時間還是得花。如果企業想賣高規格的東西，一定要確保品質再出貨。在美國做一樣的工作，一樣執行 waterfall 或 agile 的流程，時間的安排卻是全然不同。因為 time to market 的原因所以在固定時間需要出貨這點是可以理解的，這個時候 PM 很重要。有經驗的 PM 要滿足客戶需求同時也要能替工程師在一定時間內斟酌合理的開發數量和可行性，將開發者方面的測試考慮進去是必要的技能。</li>
+<li>缺乏純技術者的 career path 和職務的 misplace：以技術面來說，台灣軟體技術人才眾多，演算法人才也不在少數，但是普遍需要廣度的員工包山包海，所以欠缺了 Technical Leader 和系統架構師類型的人物的培養。專才需要長期在廣度和深度的訓練和培養，並有著對任何事物的好奇心來整合元件而建立有門檻的大架構，而培養對於任何事物的好奇心回到了教育的本質。普遍來說，台灣企業往往將年資久的員工或是技術領導者全都佈署在管理人的 career path 上。這樣造成的問題是，技術者只有鑽研技術的熱情，並沒有技能去處理跟人相關的事物，導致職缺的misplace。美國的公司普遍在升遷時會要你選擇未來你期許的 career path 是往管理的路或是技術領導者的職涯前進。適合經營管理的人會經歷 software engineer -&gt; senior engineer -&gt; manager -&gt; senior manager -&gt; director -&gt; VP，而技術領導者會經歷 software engineer -&gt; senior engineer -&gt; tech lead -&gt; senior tech lead -&gt; architect / distinguished engineer. 這不僅清楚的替每個升遷的人規劃了更適合自己的路，也替公司員工找到能夠真正管理人的主管進而幫助公司整體的成長和營運。</li>
+<li>本位主義和信賴問題：在人文方面，部門的本位主義過於強烈，所以職場上卡到了許多人跟人的問題或是各單位之間沒有太多向心力是比較多朋友都會提及的經驗。主管應該多培養底下的人有獨立思考的能力，有些時候花些時間跟員工單獨聊天，可以發現目前很多年青人對公司有很多不同的想法和未來的期許。以一個健康的角度來看，主管應該多鼓勵底下的人發言討論，或是鼓勵員工有一天能夠超越自己，但很重要的前提是要彼此尊重。然而，為什麼主管要鼓勵員工超越自己？其實員工有良好的表現不僅幫助了自己，更重要的是同時也幫助了主管和公司向上成長。現在的時代注重團體戰而非英雄主義，不論是員工或主管都應該要知道在不同位子看事物的角度一定有所不同。如果彼此一直無法了解對方的思考方式和表達方式，每個人就始終無法由內而外說服自己為了同個目標前進。矽谷企業的強盛給我的感覺是建立在共存共榮的 teamwork 文化，職權區分明確，良好的溝通管道，傾向對事不對人的模式而一同完成公司的目標。</li>
+<li>缺乏文件整理和 mentor，造成資訊落差：一樣是卡在時間資源的問題，過去的人需要趕時間出貨所以沒有多餘的時間把以往的經驗，技術資訊，或是曾犯過的錯記錄下來，導致新進員工沒有文件可參考也沒有特定的 mentor 可仿效。新人往往會不好意思請求協助，所以元老級的人物每天理解事物越來越快，但新進員工卻越來越追趕不上前人而造成資訊和技術程度上的落差，會逐漸形成公司的一個隱性問題。所以鼓勵大家，可以多使用協作工具，如果在開發時遇到問題，或者是發現以往的技術開發沒有參考文件，都應該踴躍幫忙公司記錄和整理文件，如同開源軟體的無私貢獻。當越來越多同伴到達同樣的水平，才會有可能替企業創造更多的可能性。</li>
+</ol>
+<p>整體而言，這幾年開始可以感受到台灣軟體業的興起和企業對軟體的重視程度提高許多，這是非常正向的鼓勵。同時也有更多學術單位，政府和企業都願意投入更多的金錢，人力，研發資源在軟體產業中。想要捨棄台灣長久以來的代工思維而轉型成高利潤高門檻的產業結構痛苦是必然的過程。很多對台灣企業看來好像要有多出的時間才能執行的項目，其實對於矽谷的企業來說其實都應該是需要注重的細節和基本功。台灣企業如果想要成功走向國際，也會需要很多領導者願意推翻自己過往的經驗和思維，並且有足夠的心胸去接受新世代的觀念而學習。回台灣後當然也總算可以開始體會為什麼台灣年青人都想往外出走，去到一個更健康的工作環境學習。但希望大家還是不要對台灣失望，繼續花點時間感受問題。除了技術的加強，如果更多人能開始注重以人為本的概念，強調更多軟體管理方面細節的改善，就算台灣短期無法被影響，但未來還是有許多值得被改變的事。大家共勉之。</p>
+
+    </div>
+
+    
+    
+    
+      
+
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>Buy me a cup of coffee :)</div>
+  <button onclick="document.querySelector('.post-reward').classList.toggle('active');">
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/reward-wechat.jpg" alt="John Chou 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/reward-alipay.jpg" alt="John Chou 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>John Chou
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://blog.joouis.com/2016/the-details-i-learned-from-software-company-in-silicon-valley/" title="从硅谷软件企业学习到的细节">https://blog.joouis.com/2016/the-details-i-learned-from-software-company-in-silicon-valley/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nd/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-ND</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/silicon-valley/" rel="tag"># silicon valley</a>
+              <a href="/tags/software/" rel="tag"># software</a>
+              <a href="/tags/inspiration/" rel="tag"># inspiration</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2016/online-notes-of-john-chou/" rel="prev" title="Online notes of John Chou">
+                  <i class="fa fa-chevron-left"></i> Online notes of John Chou
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2017/remove-duplicates-from-javascript-array/" rel="next" title="小议 Javascript 数组去重">
+                  小议 Javascript 数组去重 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+      
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      
+
+      
+
+<div class="copyright">
+  
+  &copy; 2016 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Chou</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  
+  <script src="//cdn.jsdelivr.net/npm/quicklink@2.0.0/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink.listen({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://blog.joouis.com/2016/the-details-i-learned-from-software-company-in-silicon-valley/',]
+      });
+      });
+  </script>
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://joou.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://blog.joouis.com/2016/the-details-i-learned-from-software-company-in-silicon-valley/";
+    this.page.identifier = "2016/the-details-i-learned-from-software-company-in-silicon-valley/";
+    this.page.title = "从硅谷软件企业学习到的细节";
+    };
+  NexT.utils.loadComments('#disqus_thread', () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://joou.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

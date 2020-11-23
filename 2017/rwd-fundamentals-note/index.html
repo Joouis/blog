@@ -1,23 +1,818 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
 
-{% block title %}{{ page.title }} | {{ title }}{% endblock %}
 
-{% block page_class %}page-post-detail{% endblock %}
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/hacker.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/hacker.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/hacker.ico">
+  <link rel="mask-icon" href="/images/hacker.ico" color="#222">
 
-{% block content %}
+<link rel="stylesheet" href="/css/main.css">
 
-  <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"blog.joouis.com","root":"/","scheme":"Mist","version":"8.0.2","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
+
+  <meta name="description" content="Why Responsive?Setting up Chrome’s Dev Tools使用 Chrome 浏览器的开发者工具除了可以调试 PC 端的页面外，也可以模拟其他尺寸的设备进行调试。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="响应式网站设计基础">
+<meta property="og:url" content="https://blog.joouis.com/2017/rwd-fundamentals-note/index.html">
+<meta property="og:site_name" content="江边的旱鸭子">
+<meta property="og:description" content="Why Responsive?Setting up Chrome’s Dev Tools使用 Chrome 浏览器的开发者工具除了可以调试 PC 端的页面外，也可以模拟其他尺寸的设备进行调试。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://wk4xlg.bn.files.1drv.com/y4mTTaAk1G49MbIRQs7fFezNIftcdaPcWXydBVauqYUTuNvgv4E9mgf-gY7FN3aal0r6NgqboyK0-PMCprfwVvRNohXz2xJHymNTJjm2nroOG5uY5g_o-bUKPVB9sCX17tjXxQJrBI3w6KUJ0uBXBdpj-68eCq7XCrkqK2P6PZdzUbUcAhFLkr7wxI5DUNm5XB4RCLS-OWYkwFNu11ujH3fWg">
+<meta property="og:image" content="https://wk4ylg.bn.files.1drv.com/y4mAlxG-j5zwSeqFM7c6lGpqTrMToa2aNBEJBjhHIFBLMdnFjrUD2_sYwZFmA2gLGcGaz0JA73RyihsthtpclzTw0yxroMsE-u2U8mgx725KhKvw22UvniOZGpUgRuyUO1kDGWFrUkQ2iBGsyZZoK9IpflQlcXRRsOG7GG3h9ql25U0cOcqAsYziLQ2pGCXumdlcin5OnPH8HZvjjCWb_T9-g">
+<meta property="og:image" content="https://wk4alg.bn.files.1drv.com/y4m2in5fYvNssbvGOrwHGxIWFXyVT18UfgzhYfJy6LLJTcWCwJtsVkpyUWSWgchLhUzGJI8ln2N9eGOaqp1o26QQi9c1NZrOlxL_jTirAJMxp-oN0AkL_mHM0vp3pjqCWLAK9UqQr5fD0RS0T-QJxLmSodDt_RZWDDeRBfBwha6lTIEBlzjnGUzFZgRaGcbGpqkFYex6phyTzKg6jm9AUXL6w">
+<meta property="og:image" content="https://wk4zlg.bn.files.1drv.com/y4mIt-E_waBwSeVHyDwNMSeBf_hU53EbmO-celBkJl7fGorw5adv-d9cubs4CZSMHHOSvI2ot4-wvGx-_2fuZPN5qBXOmmJ8g9CYFDHlgWMYDCDtlCTt_XbBvqnrJcKldOtjlD_1JLPFJJqGiqF9Bh2RbykVFZ7mUQkCCDenh0XePhg_bG5OC2Vyd7oAx8T33iiasnVPv_iX91Kxhj351lZfw">
+<meta property="og:image" content="https://wk4blg.bn.files.1drv.com/y4m6jJb-Nt8OIFPmCVRNDHnnJK-4f01faf3UkOKufQhfZKij8DQRtuyw8g9bOeKGib4JnDjlffly3xb3HNHyFwXcbiCK5RYBkkHUoUY6tCbViIhPISP6lnEdMM6fXvPp5FXjg8RpkOw4BrDFqzkZOFijGnV5f6pI_YCOEhTpvy3EDK7mLQT2fFC5rjEwHJCV4WVJHlHMrxSRAqAwu5cqN5YRQ">
+<meta property="og:image" content="https://wk4clg.bn.files.1drv.com/y4my5vat3L5hkaetGF633ztT_hPNq_x-CxF6ccFZsYVlwrEJoH5XDMyZHw3zANYYKkfYCsv7D_WbF3hqvvagEfKGh_eCMfdDPM-kxX_zzddZXsIMQaX5PpfT29jlX5BKCS_tfmWkpJByqaaDpNw7oUlak_cTSVGjEVacVli5k7eHjX-LdlGLkbniz8ALh5s6aJSrlbA5MQJqb_ukENDoqQPfQ">
+<meta property="og:image" content="https://v64tlg.bn.files.1drv.com/y4mv4XLjecjhVGpKRzVs49bjd9OUy9jiEIu0FAKPE0s7Y5EZHBv2RJbpET8EblfdRJX-yHPS8tfjKpJHZg2yXNFaHMVqBUlm1lctd-Z2-V9aqT4ZpQzLp_LVWPm3sSiayYpJmbX2jGnAQUjQ1LjIFVtlsc0GzBQnE7DpKDI7yWkLwdVC4vKEuT-LF__hf0i0KBcKuIHQA2UTKvS3L1yWb-18A">
+<meta property="og:image" content="https://v64vlg.bn.files.1drv.com/y4mxdqh6iWBDr_eboXIKYOaaEa_d4rkKR0sNQE97hdF-QJDEh9IDvKIm0U7m79nJiie92TnUX7a20WNf5C24sJ5QAdXMWjhxzsRfh93d7t7o0ciA9JZp0hdycVtk0MsRasNyFhr2LCqS05zy-ieUb1f9z3Og8T_0zFOI_emHPSSmliPdLobqe9lggP048O9ZVPAWuhQxEE9c8ctppLvCkivnQ">
+<meta property="og:image" content="https://v64ulg.bn.files.1drv.com/y4mPB3jzdwrrUvC0FB3yqZCvEIGUtAgvQvx6XypAfdTdQP0lY015qeTwWkLTf83nds2vk6ebHgqyEojSvB5KBLvZbeCZUxby9vG-cb89BJ-F87R6DQa5AeU923fOAebYDmkjJl4W2wSAWqpLseYmjnfyctYY2vx3GPSCKEF6844dj48xm9bPvSTzSVg03ywjrgmE9yYrgyXI5XG_2xRtyLibw">
+<meta property="og:image" content="https://v64wlg.bn.files.1drv.com/y4mqr8SRAqQVlou1gI4oql1M45wwzLtecM8rvtec4RRKIhbFvTiYv2QvHmjZDfDb0ODu9Du6cSQQccNhq3iVBH0cle69ICePNw-sAqr16DTCsDHjwXC7QfHIGfVKiuUyzj65gjm182iaLWgtdyB7QSS6Vv4ooN69y0DjyoCU24-i2Can_JmEB44A_guNSK95TTY_3r4-Yzq1r-ztSGIdBHvgA">
+<meta property="og:image" content="https://v64zlg.bn.files.1drv.com/y4mPHMLIxPrWCktIwkBiJAUzuajI-PSY9QFVUBBuIQinr4ZDoTBhRalx8YNXMyWTSiwwOwEeXlNXi4pcOBMj1TqGcphSzCUoWh1yUKX_BVcP7DOXeZcAoFYwdzOnAZnEV5AwQqBBYyAkDd3q3VosYy7YIiU36_1DC544X9I-uLlVXCwMREUh11MTZtqo2y1i0e7jba_CDijZPg9xGjGlhn43A">
+<meta property="og:image" content="https://v64ylg.bn.files.1drv.com/y4mOfH4p-_gXKdrDJ0PbOuL3altg-9PY5rAtTWp26OdcBxNWaOsw6Wv07KxabhjWx9AIgW7jc6Njq8ievp4HERpSqfd8mbTvVQc6cyJCVnDIt4p-gTavaJ-_tL8ZrerEfgpaMfXGZM1CQq8xH9SkicQRS-2TTUOSHEkAK3io9WdM6tcHZusICJwHpKgacCCO0de8E8amUO4Rtca4DUC79n2qg">
+<meta property="og:image" content="https://v64xlg.bn.files.1drv.com/y4m-Ivf4Uo1G75Gb_ekkSZRyD-S6LUKJFW4BR1fkXKoMyokyLD-SjYyzQRnusyiJ4_b_R0PanL1b3xkaBA7zmQGuDW6AyRSxAVq0u5g7K4SNsr8awwo7DBCsJ4qpQLXT1RH4A4jPRCg-PFbOhBtOpHp4_uw9eRMxh2CHG_H-4qf1PCOePBKYi9a2Y3Xuo2l5SvjiyAmD_zt9lUnlR0ZGQEj1A">
+<meta property="article:published_time" content="2017-10-03T16:14:15.000Z">
+<meta property="article:modified_time" content="2017-10-11T16:00:00.000Z">
+<meta property="article:author" content="John Chou">
+<meta property="article:tag" content="note">
+<meta property="article:tag" content="responsive">
+<meta property="article:tag" content="web">
+<meta property="article:tag" content="tutorial">
+<meta property="article:tag" content="rwd">
+<meta property="article:tag" content="flex">
+<meta property="article:tag" content="css">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://wk4xlg.bn.files.1drv.com/y4mTTaAk1G49MbIRQs7fFezNIftcdaPcWXydBVauqYUTuNvgv4E9mgf-gY7FN3aal0r6NgqboyK0-PMCprfwVvRNohXz2xJHymNTJjm2nroOG5uY5g_o-bUKPVB9sCX17tjXxQJrBI3w6KUJ0uBXBdpj-68eCq7XCrkqK2P6PZdzUbUcAhFLkr7wxI5DUNm5XB4RCLS-OWYkwFNu11ujH3fWg">
+
+
+<link rel="canonical" href="https://blog.joouis.com/2017/rwd-fundamentals-note/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>响应式网站设计基础 | 江边的旱鸭子</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-76188004-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-76188004-1');
+      }
+    </script>
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?199f195e233fd5ecca0d9346d3259670";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="江边的旱鸭子" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
   </div>
 
-{% endblock %}
+  <div class="site-meta">
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">江边的旱鸭子</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Blog of Joou</p>
+  </div>
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section">首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section">归档</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section">分类</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section">关于</a>
+
+  </li>
+        <li class="menu-item menu-item-recruit">
+
+    <a href="/recruit/" rel="section">招聘</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger">搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <section class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Why-Responsive"><span class="nav-number">1.</span> <span class="nav-text">Why Responsive?</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Setting-up-Chrome%E2%80%99s-Dev-Tools"><span class="nav-number">1.1.</span> <span class="nav-text">Setting up Chrome’s Dev Tools</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Using-dev-tools-on-mobile"><span class="nav-number">1.2.</span> <span class="nav-text">Using dev tools on mobile</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Starting-Small"><span class="nav-number">2.</span> <span class="nav-text">Starting Small</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Defining-the-Viewport"><span class="nav-number">2.1.</span> <span class="nav-text">Defining the Viewport</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pixels-pixels-and-more-pixels"><span class="nav-number">2.2.</span> <span class="nav-text">Pixels, pixels and more pixels!</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Setting-the-Viewport"><span class="nav-number">2.3.</span> <span class="nav-text">Setting the Viewport</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Max-width-on-elements"><span class="nav-number">2.4.</span> <span class="nav-text">Max-width on elements</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tap-Target-Sizes"><span class="nav-number">2.5.</span> <span class="nav-text">Tap Target Sizes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Start-Small"><span class="nav-number">2.6.</span> <span class="nav-text">Start Small</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Building-Up"><span class="nav-number">3.</span> <span class="nav-text">Building Up</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Adding-a-Basic-Media-Query"><span class="nav-number">3.1.</span> <span class="nav-text">Adding a Basic Media Query</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Breakpoints-and-Picking-Them"><span class="nav-number">3.2.</span> <span class="nav-text">Breakpoints and Picking Them</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Grids"><span class="nav-number">3.3.</span> <span class="nav-text">Grids</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Flexbox"><span class="nav-number">3.4.</span> <span class="nav-text">Flexbox</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Common-Responsive-Patterns"><span class="nav-number">4.</span> <span class="nav-text">Common Responsive Patterns</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Column-Drop"><span class="nav-number">4.1.</span> <span class="nav-text">Column Drop</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mostly-Fluid"><span class="nav-number">4.2.</span> <span class="nav-text">Mostly Fluid</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Layout-Shifter"><span class="nav-number">4.3.</span> <span class="nav-text">Layout Shifter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Off-Canvas"><span class="nav-number">4.4.</span> <span class="nav-text">Off Canvas</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Optimizations"><span class="nav-number">5.</span> <span class="nav-text">Optimizations</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Images"><span class="nav-number">5.1.</span> <span class="nav-text">Images</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Responsive-Tables"><span class="nav-number">5.2.</span> <span class="nav-text">Responsive Tables</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Hidden-Columns"><span class="nav-number">5.2.1.</span> <span class="nav-text">Hidden Columns</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#No-More-Tables"><span class="nav-number">5.2.2.</span> <span class="nav-text">No More Tables</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Contained-Scrolling"><span class="nav-number">5.2.3.</span> <span class="nav-text">Contained Scrolling</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fonts"><span class="nav-number">5.3.</span> <span class="nav-text">Fonts</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Minor-Breakpoints"><span class="nav-number">5.4.</span> <span class="nav-text">Minor Breakpoints</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#References"><span class="nav-number">6.</span> <span class="nav-text">References</span></a></li></ol></div>
+        </section>
+        <!--/noindex-->
+
+        <section class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="John Chou"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">John Chou</p>
+  <div class="site-description" itemprop="description">Stand high, think different.</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">50</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">179</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Joouis" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Joouis" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:luckyjoou@gmail.com" title="E-Mail → mailto:luckyjoou@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/Joouis" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;Joouis" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://www.slideshare.net/choujohn351" title="SlideShare → http:&#x2F;&#x2F;www.slideshare.net&#x2F;choujohn351" rel="noopener" target="_blank"><i class="fab fa-slideshare fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nd/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nd.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </section>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+      
+
+      
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://blog.joouis.com/2017/rwd-fundamentals-note/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="John Chou">
+      <meta itemprop="description" content="Stand high, think different.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江边的旱鸭子">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          响应式网站设计基础
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2017-10-04 00:14:15" itemprop="dateCreated datePublished" datetime="2017-10-04T00:14:15+08:00">2017-10-04</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2017-10-12 00:00:00" itemprop="dateModified" datetime="2017-10-12T00:00:00+08:00">2017-10-12</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Web-%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">Web 前端</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2017/rwd-fundamentals-note/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/rwd-fundamentals-note/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>8 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="Why-Responsive"><a href="#Why-Responsive" class="headerlink" title="Why Responsive?"></a>Why Responsive?</h2><h3 id="Setting-up-Chrome’s-Dev-Tools"><a href="#Setting-up-Chrome’s-Dev-Tools" class="headerlink" title="Setting up Chrome’s Dev Tools"></a>Setting up Chrome’s Dev Tools</h3><p>使用 Chrome 浏览器的开发者工具除了可以调试 PC 端的页面外，也可以模拟其他尺寸的设备进行调试。</p>
+<a id="more"></a>
+
+<p>首先打开 DevTools，点击设备反转按钮开启移动端视图：</p>
+<img data-src="https://wk4xlg.bn.files.1drv.com/y4mTTaAk1G49MbIRQs7fFezNIftcdaPcWXydBVauqYUTuNvgv4E9mgf-gY7FN3aal0r6NgqboyK0-PMCprfwVvRNohXz2xJHymNTJjm2nroOG5uY5g_o-bUKPVB9sCX17tjXxQJrBI3w6KUJ0uBXBdpj-68eCq7XCrkqK2P6PZdzUbUcAhFLkr7wxI5DUNm5XB4RCLS-OWYkwFNu11ujH3fWg" class="">
+
+<p>如果想模拟特定的设备，可以点击 <code>设备列表</code> - <code>Edit…</code> ，以打开 Settings 列表；然后新增定制设备，设置 <code>Width</code> , <code>Height</code> , <code>Device pixel ratio</code> , <code>User agent string</code> 属性。</p>
+<img data-src="https://wk4ylg.bn.files.1drv.com/y4mAlxG-j5zwSeqFM7c6lGpqTrMToa2aNBEJBjhHIFBLMdnFjrUD2_sYwZFmA2gLGcGaz0JA73RyihsthtpclzTw0yxroMsE-u2U8mgx725KhKvw22UvniOZGpUgRuyUO1kDGWFrUkQ2iBGsyZZoK9IpflQlcXRRsOG7GG3h9ql25U0cOcqAsYziLQ2pGCXumdlcin5OnPH8HZvjjCWb_T9-g" class="">
+
+<h3 id="Using-dev-tools-on-mobile"><a href="#Using-dev-tools-on-mobile" class="headerlink" title="Using dev tools on mobile"></a>Using dev tools on mobile</h3><ul>
+<li><p>Android 设备</p>
+<ol>
+<li>PC 端和 Android 手机安装对应平台的 Chrome 浏览器</li>
+<li>Android 手机开启隐藏的  <code>开发者选项</code> ，进入选项后勾选 <code>USB调试</code> 功能</li>
+<li>手机连接电脑，打开各自的 Chrome 浏览器</li>
+<li>在电脑的 Chrome 浏览器中登录 <code>chrome://inspect</code> ，可以看到连接的手机设备</li>
+</ol>
+<img data-src="https://wk4alg.bn.files.1drv.com/y4m2in5fYvNssbvGOrwHGxIWFXyVT18UfgzhYfJy6LLJTcWCwJtsVkpyUWSWgchLhUzGJI8ln2N9eGOaqp1o26QQi9c1NZrOlxL_jTirAJMxp-oN0AkL_mHM0vp3pjqCWLAK9UqQr5fD0RS0T-QJxLmSodDt_RZWDDeRBfBwha6lTIEBlzjnGUzFZgRaGcbGpqkFYex6phyTzKg6jm9AUXL6w" class="">
+
+<ol start="5">
+<li>点击 <code>inspect</code> 功能，打开调试页面后即可像调试本地页面一样调试手机端的页面</li>
+</ol>
+</li>
+<li><p>适用于 iOS 的移动工具</p>
+<ul>
+<li>请参考以下文章：<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/google/ios-webkit-debug-proxy">iOS WebKit 调试代理</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.smashingmagazine.com/2014/09/testing-mobile-emulators-simulators-remote-debugging/2/">Testing Mobile: Emulators, Simulators And Remote Debugging</a></li>
+</ul>
+</li>
+<li>如果觉得麻烦，也可以在 Chrome DevTools 中运行模拟器</li>
+</ul>
+</li>
+</ul>
+<h2 id="Starting-Small"><a href="#Starting-Small" class="headerlink" title="Starting Small"></a>Starting Small</h2><h3 id="Defining-the-Viewport"><a href="#Defining-the-Viewport" class="headerlink" title="Defining the Viewport"></a>Defining the Viewport</h3><p>Q：当我制作网页时，有时候内容过大溢出界面，又或者内容太小需要放大页面才能看清，这是怎么回事呢？</p>
+<p>A：最大的问题是你的视窗没有设置好。</p>
+<p>视窗（Viewport）是指浏览器显示内容的区域。不过不同设备的像素密度是不同的，例如某一 Chromebook 的屏幕分辨率是 2560 * 1700，但是浏览器全屏显示时，窗口的宽度是 1280 而非 2560。</p>
+<h3 id="Pixels-pixels-and-more-pixels"><a href="#Pixels-pixels-and-more-pixels" class="headerlink" title="Pixels, pixels and more pixels!"></a>Pixels, pixels and more pixels!</h3><p>浏览器并不是根据屏幕硬件的像素宽度而工作的，而是根据 DIPs（Device Independent Pixels） 宽度。当硬件像素为 2560，而 DIPs 为 1280 时，DPR（Device Pixel Ratio）也就是 2 倍。</p>
+<p>如果没有设定 meta viewport，浏览器会怎么样呢？</p>
+<ul>
+<li><p>在渲染网页的时候，如果它原本是显示在一个宽 980 DIPs 的屏幕上，现在显示在一个只有 360 DIPs 的屏幕上时，内容就会以超过 2 倍的比例被压缩。</p>
+</li>
+<li><p>然后浏览器为了内容的美观性，会进行一项名为 font boosting 的工作，试图放大页面中的主要内容，而其他内容则维持大小不变。（如下图所示）</p>
+<img data-src="https://wk4zlg.bn.files.1drv.com/y4mIt-E_waBwSeVHyDwNMSeBf_hU53EbmO-celBkJl7fGorw5adv-d9cubs4CZSMHHOSvI2ot4-wvGx-_2fuZPN5qBXOmmJ8g9CYFDHlgWMYDCDtlCTt_XbBvqnrJcKldOtjlD_1JLPFJJqGiqF9Bh2RbykVFZ7mUQkCCDenh0XePhg_bG5OC2Vyd7oAx8T33iiasnVPv_iX91Kxhj351lZfw" class="">
+
+</li>
+</ul>
+<p>Quiz:</p>
+<img data-src="https://wk4blg.bn.files.1drv.com/y4m6jJb-Nt8OIFPmCVRNDHnnJK-4f01faf3UkOKufQhfZKij8DQRtuyw8g9bOeKGib4JnDjlffly3xb3HNHyFwXcbiCK5RYBkkHUoUY6tCbViIhPISP6lnEdMM6fXvPp5FXjg8RpkOw4BrDFqzkZOFijGnV5f6pI_YCOEhTpvy3EDK7mLQT2fFC5rjEwHJCV4WVJHlHMrxSRAqAwu5cqN5YRQ" class="">
+
+ <br />
+
+
+<img data-src="https://wk4clg.bn.files.1drv.com/y4my5vat3L5hkaetGF633ztT_hPNq_x-CxF6ccFZsYVlwrEJoH5XDMyZHw3zANYYKkfYCsv7D_WbF3hqvvagEfKGh_eCMfdDPM-kxX_zzddZXsIMQaX5PpfT29jlX5BKCS_tfmWkpJByqaaDpNw7oUlak_cTSVGjEVacVli5k7eHjX-LdlGLkbniz8ALh5s6aJSrlbA5MQJqb_ukENDoqQPfQ" class="">
+
+<h3 id="Setting-the-Viewport"><a href="#Setting-the-Viewport" class="headerlink" title="Setting the Viewport"></a>Setting the Viewport</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>width=device-width</code> ：指导页面针对具体设备进行宽度调整，使得页面可以匹配不同屏幕尺寸</li>
+<li><code>initial-scale=1</code> ：添加初始缩放比例属性并赋值为 1，使得 DIPs 和 CSS 像素的比例是一比一。如果不把初始缩放比例设为 1，有的浏览器会在切换到横屏模式时依旧保持之前的页面宽度，而且它们还会使内容只进行比例缩放，而无法自动调整布局（Reflow）</li>
+</ul>
+<h3 id="Max-width-on-elements"><a href="#Max-width-on-elements" class="headerlink" title="Max-width on elements"></a>Max-width on elements</h3><p>CSS 是允许内容溢出其容器的，预防这一情况出现可以进行如下推荐的设置：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">img</span>, <span class="selector-tag">embed</span>, <span class="selector-tag">object</span>, <span class="selector-tag">video</span> &#123;</span><br><span class="line">  <span class="attribute">max-width</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Tap-Target-Sizes"><a href="#Tap-Target-Sizes" class="headerlink" title="Tap Target Sizes"></a>Tap Target Sizes</h3><p>使用鼠标可以很轻松地点击到按钮等元素，但是如果使用手指，操作的精准度相比之下就糟糕许多。</p>
+<p>我们的手指宽度大概是 10mm ，约等于 40 CSS 像素，所以按钮的大小至少要设置为 40*40px。推荐设置为 48*48px，这样能确保元素之间有足够的距离，也能照顾到手指更粗的人。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span>, <span class="selector-tag">button</span> &#123;</span><br><span class="line">  <span class="attribute">min-width</span>: <span class="number">48px</span>;</span><br><span class="line">  <span class="attribute">min-height</span>: <span class="number">48px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Start-Small"><a href="#Start-Small" class="headerlink" title="Start Small"></a>Start Small</h3><p>设计响应式网页的概念与过程和非响应式是一样的，除了前者需要多画几种宽度的设计稿以适应不同屏幕尺寸。</p>
+<p>这里推荐从最小屏幕尺寸的页面开始设计，通常是手机设备。做完之后再接着做更大一点的，依次类推，直至页面宽度上限。从最小的屏幕做起，开发者就必须优先考虑什么是对用户最重要的（Prioritize content!）、什么操作是用户最常做的、什么内容是用户最希望在屏幕上看到的。如果从最大尺寸往小设计，一些重要的信息很可能会被删除。<strong>因此，明确内容的优先级，然后从小到大设计，最重要的内容永远都会留在页面上。无论用户使用什么样的设备，也能得到最完整的体验。</strong></p>
+<p>除了设计上从小到大外，代码的编写也推荐如此，这样就能知道页面的风格和布局是否能兼容任何设备。此外，这样做也能帮助开发者从性能角度思考。</p>
+<h2 id="Building-Up"><a href="#Building-Up" class="headerlink" title="Building Up"></a>Building Up</h2><h3 id="Adding-a-Basic-Media-Query"><a href="#Adding-a-Basic-Media-Query" class="headerlink" title="Adding a Basic Media Query"></a>Adding a Basic Media Query</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;style.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">media</span>=<span class="string">&quot;screen and (min-width: 500px)&quot;</span> <span class="attr">href</span>=<span class="string">&quot;over500.css&quot;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>添加了上面的媒体查询属性后，”over500.css” 样式表将在 DIPs 宽度大于 500px 时应用。</p>
+<p>如果查询 Media Query 的相关文档，References 中可能还会提到其他媒体类型如 <code>handheld</code> <code>projected</code> <code>embossed</code> ，其实这些类型并不起作用，可以先忽略。目前只需要掌握 <code>screen</code> 和 <code>print</code> （打印页面时使用）即可。</p>
+<p>除了在 <code>&lt;link&gt;</code> 标签中使用媒体属性外，以下还列举了两种方式进行媒体查询。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@media</span> screen <span class="keyword">and</span> (<span class="attribute">max-width:</span> <span class="number">300px</span>) &#123;</span><br><span class="line">  <span class="comment">/* Set style here */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* Complex Media Query */</span></span><br><span class="line"><span class="keyword">@media</span> screen <span class="keyword">and</span> (<span class="attribute">min-width:</span> <span class="number">480px</span>) <span class="keyword">and</span> (<span class="attribute">max-width:</span> <span class="number">960px</span>) &#123;</span><br><span class="line">  <span class="comment">/* Set style here */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@import</span> url(<span class="string">&quot;over500.css&quot;</span>) <span class="keyword">only</span> screen <span class="keyword">and</span> (<span class="attribute">min-width:</span> <span class="number">500px</span>);</span><br></pre></td></tr></table></figure>
+
+<p>不过由于性能的因素，应该避免使用 <code>@import</code> 方式！它是一个性能消耗和优先级都非常高的标签（It’s pretty expensive and perf matters），相比 <code>@media</code> 方式需要更多的 HTTP 请求。</p>
+<p>另外不推荐 <code>min-device-width</code> 和 <code>max-device-width</code> 这两个属性，原因自己想吧；）</p>
+<h3 id="Breakpoints-and-Picking-Them"><a href="#Breakpoints-and-Picking-Them" class="headerlink" title="Breakpoints and Picking Them"></a>Breakpoints and Picking Them</h3><p>使用媒体查询的 <code>min-width</code> 和 <code>max-width</code> 可以改变整个页面的布局，而页面布局改变时的那个宽度尺寸叫做间断点。以 <a target="_blank" rel="noopener" href="https://medium.com/">medium.com</a> 来说，有 2 个间断点（ 于 2017.09 观察 medium 首页），观察间断点时建议从小的尺寸开始。</p>
+<p>你永远不知道下一个热门的设备是什么，也不会知道两年后的流行趋势会是怎样，因此根据自己网页的内容寻找合适的间断点才是正道。</p>
+<blockquote>
+<p>我们不应该规定任何间断点，相反，我们应该使用内容作为指引找到它们。—— Scott Yale</p>
+</blockquote>
+<h3 id="Grids"><a href="#Grids" class="headerlink" title="Grids"></a>Grids</h3><p>当我们可以使用媒体查询和间断点控制 CSS 样式后，自然而然会想问，有没有什么常用的模式（Patterns）或基本策略（Strategies）可以参考。</p>
+<p>在常用的一些模式中，最简单的当属动态网格系统（Grid Fluid System），可以参考 <a target="_blank" rel="noopener" href="https://www.html5rocks.com/en/tutorials/">HTML5 Rocks</a> 作为范例。</p>
+<p>在这个系统中有一些动态调整的纵列，当窗口变小时，它们将自动顺延到下一行。目前已经有一些优秀的框架可以使用，例如 Bootstrap、960px grid layout system。</p>
+<h3 id="Flexbox"><a href="#Flexbox" class="headerlink" title="Flexbox"></a>Flexbox</h3><p>Flexbox 是目前最强大的布局工具之一，被广泛推荐，也已经被绝大多数浏览器支持。下面将会介绍一些基本语法，需要注意的是，在未来编写产品代码时，一定要包含所有版本的浏览器引擎前缀（Vendor Prefixed Version），以确保使用旧版浏览器的用户也能获得相同体验。</p>
+<p>Flexbox 之所以功能强大，是因为它能够自动填充空白区域。如果一个元素周围出现了空白，它会自动填补上；而如果空间变得拥挤，元素会自动缩小。</p>
+<p>使用 Flexbox 的第一步是加入 <code>display: flex;</code> 属性，这样容器内垂直排列的元素将会自动显示在一行内（ Flex 的默认堆放方式为横向堆放 <code>row</code> ）。此时拖动浏览器，无论宽度多少，横向堆放的元素们都不会换行。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>要改变这种情况，可以为容器添加 <code>flex-wrap: wrap;</code> 属性，这是在告诉浏览器，允许内部的元素换行。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-wrap</span>: wrap;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Flexbox 还有一个有用的特性是利用 CSS order 属性来改变元素的次序。</p>
+<img data-src="https://v64tlg.bn.files.1drv.com/y4mv4XLjecjhVGpKRzVs49bjd9OUy9jiEIu0FAKPE0s7Y5EZHBv2RJbpET8EblfdRJX-yHPS8tfjKpJHZg2yXNFaHMVqBUlm1lctd-Z2-V9aqT4ZpQzLp_LVWPm3sSiayYpJmbX2jGnAQUjQ1LjIFVtlsc0GzBQnE7DpKDI7yWkLwdVC4vKEuT-LF__hf0i0KBcKuIHQA2UTKvS3L1yWb-18A" class="">
+
+<h2 id="Common-Responsive-Patterns"><a href="#Common-Responsive-Patterns" class="headerlink" title="Common Responsive Patterns"></a>Common Responsive Patterns</h2><p>模式的变化很快，但也有一些通用的模式几乎能在任何设备上有不错的表现。响应式网页布局大致可以分为四种模式：Mostly Fluid、Column Drop、Layout Shifter 和 Off Canvas，有时候一个页面也会使用如 Column Drop 和 Off Canvas 的组合。</p>
+<p>接下来将会讲解每种模式是怎样工作的，以及如何使用 Flexbox 和媒体查询技术来实现它们。注意在以下的示意图中，不同色块代表不同的内容区域。</p>
+<h3 id="Column-Drop"><a href="#Column-Drop" class="headerlink" title="Column Drop"></a>Column Drop</h3><p>此布局共有两个间断点，在不同宽度时的排版如下图所示。</p>
+<img data-src="https://v64vlg.bn.files.1drv.com/y4mxdqh6iWBDr_eboXIKYOaaEa_d4rkKR0sNQE97hdF-QJDEh9IDvKIm0U7m79nJiie92TnUX7a20WNf5C24sJ5QAdXMWjhxzsRfh93d7t7o0ciA9JZp0hdycVtk0MsRasNyFhr2LCqS05zy-ieUb1f9z3Og8T_0zFOI_emHPSSmliPdLobqe9lggP048O9ZVPAWuhQxEE9c8ctppLvCkivnQ" class="">
+
+<p>代码范例非常简单：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box dark-blue&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box light-blue&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box green&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex</span>: wrap;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">@media</span> screen <span class="keyword">and</span> (<span class="attribute">min-width:</span> <span class="number">450px</span>) &#123;</span><br><span class="line">  <span class="selector-class">.dark-blue</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">25%</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-class">.light-blue</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">75%</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">@media</span> screen <span class="keyword">and</span> (<span class="attribute">min-width:</span> <span class="number">550px</span>) &#123;</span><br><span class="line">  <span class="selector-class">.dark-blue</span>, <span class="selector-class">.green</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">25%</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-class">.light-blue</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">50%</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Mostly-Fluid"><a href="#Mostly-Fluid" class="headerlink" title="Mostly Fluid"></a>Mostly Fluid</h3><p>此布局与 Column Drop 模型相似，但是更像网格系统，最明显的区别在于当视窗宽度达到最大宽度时，两边会出现外边距而内容不再延展。</p>
+<img data-src="https://v64ulg.bn.files.1drv.com/y4mPB3jzdwrrUvC0FB3yqZCvEIGUtAgvQvx6XypAfdTdQP0lY015qeTwWkLTf83nds2vk6ebHgqyEojSvB5KBLvZbeCZUxby9vG-cb89BJ-F87R6DQa5AeU923fOAebYDmkjJl4W2wSAWqpLseYmjnfyctYY2vx3GPSCKEF6844dj48xm9bPvSTzSVg03ywjrgmE9yYrgyXI5XG_2xRtyLibw" class="">
+
+<p>代码范例如下：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box dark-blue&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box light-blue&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box green&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box red&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box orange&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-wrap</span>: wrap;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">@media</span> screen <span class="keyword">and</span> (<span class="attribute">min-width:</span> <span class="number">450px</span>) &#123;</span><br><span class="line">  <span class="selector-class">.light-blue</span>, <span class="selector-class">.green</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">50%</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">@media</span> screen <span class="keyword">and</span> (<span class="attribute">min-width:</span> <span class="number">550px</span>) &#123;</span><br><span class="line">  <span class="selector-class">.dark-blue</span>, <span class="selector-class">.light-blue</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">50%</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-class">.green</span>, <span class="selector-class">.red</span>, <span class="selector-class">.orange</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">33.333333%</span>;		<span class="comment">/* <span class="doctag">TODO:</span> use &quot;flex: 1&quot; instead */</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">@media</span> screen <span class="keyword">and</span> (<span class="attribute">min-width:</span> <span class="number">700px</span>) &#123;</span><br><span class="line">  <span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">700px</span>;</span><br><span class="line">    <span class="attribute">margin-left</span>: auto;</span><br><span class="line">    <span class="attribute">margin-right</span>: auto;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Layout-Shifter"><a href="#Layout-Shifter" class="headerlink" title="Layout Shifter"></a>Layout Shifter</h3><p>Layout Shifter 布局模型应该是最灵活的响应式模型了，它有很多适用于不同设备的间断点，但最关键的是它的布局变化方式并不是单纯的重排到其它列的下方（参见下图中的红色列）。Flexbox 的亮点在这才真正凸显，因为我们可以利用 CSS 顺序属性来实现这种变化。</p>
+<img data-src="https://v64wlg.bn.files.1drv.com/y4mqr8SRAqQVlou1gI4oql1M45wwzLtecM8rvtec4RRKIhbFvTiYv2QvHmjZDfDb0ODu9Du6cSQQccNhq3iVBH0cle69ICePNw-sAqr16DTCsDHjwXC7QfHIGfVKiuUyzj65gjm182iaLWgtdyB7QSS6Vv4ooN69y0DjyoCU24-i2Can_JmEB44A_guNSK95TTY_3r4-Yzq1r-ztSGIdBHvgA" class="">
+
+<p>这次的代码范例稍微复杂一点：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box dark-blue&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container&quot;</span> <span class="attr">id</span>=<span class="string">&quot;container2&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box light-blue&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box green&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box red&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-wrap</span>: wrap;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">@media</span> screen <span class="keyword">and</span> (<span class="attribute">min-width:</span> <span class="number">500px</span>) &#123;</span><br><span class="line">  <span class="selector-class">.dark-blue</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">50%</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-id">#container2</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">50%</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">@media</span> screen <span class="keyword">and</span> (<span class="attribute">min-width:</span> <span class="number">600px</span>) &#123;</span><br><span class="line">  <span class="selector-class">.dark-blue</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">25%</span>;</span><br><span class="line">    <span class="attribute">order</span>: <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-id">#container2</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">50%</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-class">.red</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">25%</span>;</span><br><span class="line">    <span class="attribute">order</span>: -<span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Off-Canvas"><a href="#Off-Canvas" class="headerlink" title="Off Canvas"></a>Off Canvas</h3><p>在此模型中，内容并不是垂直堆放的，而是将不常用的内容比如导航栏或者应用菜单放在屏幕外，只有当屏幕足够大的时候才显示出来。在小尺寸屏幕上，溢出画布的内容通常会在用户点击菜单按钮时出现。</p>
+<img data-src="https://v64zlg.bn.files.1drv.com/y4mPHMLIxPrWCktIwkBiJAUzuajI-PSY9QFVUBBuIQinr4ZDoTBhRalx8YNXMyWTSiwwOwEeXlNXi4pcOBMj1TqGcphSzCUoWh1yUKX_BVcP7DOXeZcAoFYwdzOnAZnEV5AwQqBBYyAkDd3q3VosYy7YIiU36_1DC544X9I-uLlVXCwMREUh11MTZtqo2y1i0e7jba_CDijZPg9xGjGlhn43A" class="">
+
+<p>代码范例如下：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">nav</span> <span class="attr">id</span>=<span class="string">&quot;drawer&quot;</span> <span class="attr">class</span>=<span class="string">&quot;dark-blue&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">nav</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">main</span> <span class="attr">class</span>=<span class="string">&quot;light-blue&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">main</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">html</span>, <span class="selector-tag">body</span>, <span class="selector-tag">main</span> &#123;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">nav</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">300px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">translate</span>(-<span class="number">300px</span>, <span class="number">0</span>);</span><br><span class="line">  <span class="attribute">transition</span>: transform <span class="number">0.3s</span> ease;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">nav</span><span class="selector-class">.open</span> &#123;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">translate</span>(<span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">@media</span> screen <span class="keyword">and</span> (<span class="attribute">min-width:</span> <span class="number">600px</span>) &#123;</span><br><span class="line">  <span class="selector-tag">nav</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translate</span>(<span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">flex-flow</span>: row nowrap;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-tag">main</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: auto;</span><br><span class="line">    <span class="attribute">flex-grow</span>: <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">menu.addEventListener(<span class="string">&#x27;click&#x27;</span>, <span class="function"><span class="params">e</span> =&gt;</span> &#123;</span><br><span class="line">  draw.classList.toggle(<span class="string">&#x27;open&#x27;</span>);</span><br><span class="line">  e.stopPropagation();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>点击<a target="_blank" rel="noopener" href="http://udacity.github.io/RWDF-samples/Lesson4/patterns/off-canvas.html">此处</a>查看 Live demo。</p>
+<p>Quiz: Off Canvas Visualization Quiz</p>
+<img data-src="https://v64ylg.bn.files.1drv.com/y4mOfH4p-_gXKdrDJ0PbOuL3altg-9PY5rAtTWp26OdcBxNWaOsw6Wv07KxabhjWx9AIgW7jc6Njq8ievp4HERpSqfd8mbTvVQc6cyJCVnDIt4p-gTavaJ-_tL8ZrerEfgpaMfXGZM1CQq8xH9SkicQRS-2TTUOSHEkAK3io9WdM6tcHZusICJwHpKgacCCO0de8E8amUO4Rtca4DUC79n2qg" class="">
+
+<h2 id="Optimizations"><a href="#Optimizations" class="headerlink" title="Optimizations"></a>Optimizations</h2><h3 id="Images"><a href="#Images" class="headerlink" title="Images"></a>Images</h3><blockquote>
+<p>A picture is worth 1000 words.</p>
+</blockquote>
+<p>使用同一张图片时，改变其分辨率可能是最常用的方式之一。试想在笔记本电脑上显示一张标准图片，但显示一张两倍大的图片给一个更高 DPI 的显示器，例如一台 Retina iMac。又或者是在不同尺寸的设备上显示图片时，显示不同内容的图片。要实现这些效果，图片元素可以使用媒体查询来选择使用哪张图片。</p>
+<h3 id="Responsive-Tables"><a href="#Responsive-Tables" class="headerlink" title="Responsive Tables"></a>Responsive Tables</h3><p>表格有很多花样，如果其列超过一定的数量，是很有可能溢出视窗的，在小屏幕上会产生水平滚动条。有一些方法可以解决这个问题，以下是三种参考方案。</p>
+<h4 id="Hidden-Columns"><a href="#Hidden-Columns" class="headerlink" title="Hidden Columns"></a>Hidden Columns</h4><p>当视窗尺寸缩小时，Hidden Columns 实际上是根据表格的重要性来进行隐藏的。从小屏幕开始设计时，思考什么信息是最重要的，然后保留下来，隐藏其他不显示的内容。</p>
+<p>Hidden Columns 最大的问题在于隐藏了内容，如果这些被隐藏的内容刚好是用户想知道的就麻烦了。如果可以，请使用缩写而不是完全隐藏内容。</p>
+<img data-src="https://v64xlg.bn.files.1drv.com/y4m-Ivf4Uo1G75Gb_ekkSZRyD-S6LUKJFW4BR1fkXKoMyokyLD-SjYyzQRnusyiJ4_b_R0PanL1b3xkaBA7zmQGuDW6AyRSxAVq0u5g7K4SNsr8awwo7DBCsJ4qpQLXT1RH4A4jPRCg-PFbOhBtOpHp4_uw9eRMxh2CHG_H-4qf1PCOePBKYi9a2Y3Xuo2l5SvjiyAmD_zt9lUnlR0ZGQEj1A" class="">
+
+<h4 id="No-More-Tables"><a href="#No-More-Tables" class="headerlink" title="No More Tables"></a>No More Tables</h4><p>当视窗小于一定值时，表格会瓦解，并重组成长列表。这种方法的好处是所有数据都是可见的，无论视窗尺寸多大。</p>
+<h4 id="Contained-Scrolling"><a href="#Contained-Scrolling" class="headerlink" title="Contained Scrolling"></a>Contained Scrolling</h4><p>为了把表格放在视窗中，最简单的做法就是把它放在一个 <code>div</code> 里，然后设置宽度为 100%，最后设置 <code>overflow-x: auto;</code>。虽然表格还是会占据同样的宽度，但是可以用滚动条在视窗中拖动查看。</p>
+<h3 id="Fonts"><a href="#Fonts" class="headerlink" title="Fonts"></a>Fonts</h3><p>如果一段文字的每一行太短或太长，阅读起来都会让人感到不舒服，因此理想的文字行宽很重要。这是个很有技术含量的问题，目前已经有一些研究成果表明，依据使用的字体、显示的设备不同，每行 45 个字符到 90 个字符都是合理的。不过，<strong>在网页中大概每行 65 个字符是最常见的</strong>。这并不是硬性规定，但是个不错的建议。与此同时，行宽也是选择断点时的重要参考因素之一。</p>
+<p>此外，用户的阅读体验也非常重要。以字体的大小和行高来举例：在不同设备上字体需要足够的大以保证用户看得清楚，通常建议至少设为 16px；而行高至少有 1.2em 才不会使文字看起来太拥挤。</p>
+<h3 id="Minor-Breakpoints"><a href="#Minor-Breakpoints" class="headerlink" title="Minor Breakpoints"></a>Minor Breakpoints</h3><p>除了选择令布局显著改变的主断点（Major Breakpoints）外，增加副断点来实现一些小的改变是很有帮助的。例如，在主断点之外调整元素的外边距，或者给一些内容增大字号使其更容易阅读（布局上也会更加自然一点）。</p>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ul>
+<li>Udacity - <a target="_blank" rel="noopener" href="https://classroom.udacity.com/courses/ud893">Responsive Web Design Fundamentals</a></li>
+<li>PageSpeed Insights - <a target="_blank" rel="noopener" href="https://developers.google.com/speed/docs/insights/ConfigureViewport">Configure the Viewport</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2017/weex-android-quick-tutorial/" rel="bookmark">Weex Android 发车指南（已弃车）</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2017/mysql-note/" rel="bookmark">MySQL 笔记</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2016/online-notes-of-john-chou/" rel="bookmark">Online notes of John Chou</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2020/vuetify-playground/" rel="bookmark">Vuetify Playground - A responsive playground to try all UI components at once</a></div>
+    </li>
+  </ul>
+
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>Buy me a cup of coffee :)</div>
+  <button onclick="document.querySelector('.post-reward').classList.toggle('active');">
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/reward-wechat.jpg" alt="John Chou 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/reward-alipay.jpg" alt="John Chou 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>John Chou
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://blog.joouis.com/2017/rwd-fundamentals-note/" title="响应式网站设计基础">https://blog.joouis.com/2017/rwd-fundamentals-note/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nd/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-ND</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/note/" rel="tag"># note</a>
+              <a href="/tags/responsive/" rel="tag"># responsive</a>
+              <a href="/tags/web/" rel="tag"># web</a>
+              <a href="/tags/tutorial/" rel="tag"># tutorial</a>
+              <a href="/tags/rwd/" rel="tag"># rwd</a>
+              <a href="/tags/flex/" rel="tag"># flex</a>
+              <a href="/tags/css/" rel="tag"># css</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2017/server-side-rendering-review/" rel="prev" title="服务器端渲染姿势探索">
+                  <i class="fa fa-chevron-left"></i> 服务器端渲染姿势探索
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2017/introduction-to-structure-view/" rel="next" title="十分钟带你了解国产自制开源插件 structure-view">
+                  十分钟带你了解国产自制开源插件 structure-view <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+      
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      
+
+      
+
+<div class="copyright">
+  
+  &copy; 2016 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Chou</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  
+  <script src="//cdn.jsdelivr.net/npm/quicklink@2.0.0/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink.listen({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://blog.joouis.com/2017/rwd-fundamentals-note/',]
+      });
+      });
+  </script>
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://joou.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://blog.joouis.com/2017/rwd-fundamentals-note/";
+    this.page.identifier = "2017/rwd-fundamentals-note/";
+    this.page.title = "响应式网站设计基础";
+    };
+  NexT.utils.loadComments('#disqus_thread', () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://joou.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

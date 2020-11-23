@@ -1,91 +1,479 @@
-{% extends '_layout.swig' %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
 
-  {% block title %}{#
-  #}{% set page_title_suffix = ' | ' + title %}{#
 
-  #}{% if page.type === 'categories' and not page.title %}{#
-    #}{{ __('title.category') + page_title_suffix }}{#
-  #}{% elif page.type === 'tags' and not page.title %}{#
-    #}{{ __('title.tag') + page_title_suffix }}{#
-  #}{% elif page.type === 'schedule' and not page.title %}{#
-    #}{{ __('title.schedule') + page_title_suffix }}{#
-  #}{% else %}{#
-    #}{{ page.title + page_title_suffix }}{#
-  #}{% endif %}{#
-#}{% endblock %}
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/hacker.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/hacker.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/hacker.ico">
+  <link rel="mask-icon" href="/images/hacker.ico" color="#222">
 
-{% block page_class %}page-post-detail{% endblock %}
+<link rel="stylesheet" href="/css/main.css">
 
-{% block content %}
 
-  <div id="posts" class="posts-expand">
-    {##################}
-    {### PAGE BLOCK ###}
-    {##################}
-    <div class="post-block page">
-      {% include '_partials/page/page-header.swig' %}
-      {#################}
-      {### PAGE BODY ###}
-      {#################}
-      <div class="post-body{% if theme.han %} han-init-context{% endif %}{% if page.direction && page.direction.toLowerCase() === 'rtl' %} rtl{% endif %}">
-        {# tagcloud page support #}
-        {% if page.type === 'tags' %}
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-              {% set visibleTags = 0 %}
-              {% for tag in site.tags %}
-                {% if tag.length %}
-                  {% set visibleTags += 1 %}
-                {% endif %}
-              {% endfor %}
-              {{ _p('counter.tag_cloud', visibleTags) }}
-            </div>
-            <div class="tag-cloud-tags">
-              {% if not theme.tagcloud %}
-                {{ tagcloud({min_font: 12, max_font: 30, amount: 200, color: true, start_color: '#ccc', end_color: '#111'}) }}
-              {% else %}
-                {{ tagcloud({min_font: theme.tagcloud.min, max_font: theme.tagcloud.max, amount: theme.tagcloud.amount, color: true, start_color: theme.tagcloud.start, end_color: theme.tagcloud.end}) }}
-              {% endif %}
-            </div>
-          </div>
-        {% elif page.type === 'categories' %}
-          <div class="category-all-page">
-            <div class="category-all-title">
-              {% set visibleCategories = 0 %}
-              {% for cat in site.categories %}
-                {% if cat.length %}
-                  {% set visibleCategories += 1 %}
-                {% endif %}
-              {% endfor %}
-              {{ _p('counter.categories', visibleCategories) }}
-            </div>
-            <div class="category-all">
-              {{ list_categories() }}
-            </div>
-          </div>
-        {% elif page.type === 'schedule' %}
-          {% include 'schedule.swig' %}
-        {% else %}
-          {{ page.content }}
-        {% endif %}
-      </div>
-      {#####################}
-      {### END PAGE BODY ###}
-      {#####################}
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"blog.joouis.com","root":"/","scheme":"Mist","version":"8.0.2","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
+
+  <meta property="og:type" content="website">
+<meta property="og:title" content="江边的旱鸭子">
+<meta property="og:url" content="https://blog.joouis.com/tags/index.html">
+<meta property="og:site_name" content="江边的旱鸭子">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2016-04-08T17:18:17.000Z">
+<meta property="article:modified_time" content="2020-06-03T08:01:52.633Z">
+<meta property="article:author" content="John Chou">
+<meta property="article:tag" content="Web,JavaScript,blog,reading,life,前端,生活">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://blog.joouis.com/tags/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>标签 | 江边的旱鸭子
+</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-76188004-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-76188004-1');
+      }
+    </script>
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?199f195e233fd5ecca0d9346d3259670";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="江边的旱鸭子" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
-    {% include '_partials/page/breadcrumb.swig' %}
-    {######################}
-    {### END PAGE BLOCK ###}
-    {######################}
   </div>
 
-{% endblock %}
+  <div class="site-meta">
 
-{% block sidebar %}
-  {{ sidebar_template.render(false) }}
-{% endblock %}
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">江边的旱鸭子</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Blog of Joou</p>
+  </div>
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section">首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section">归档</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section">分类</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section">关于</a>
+
+  </li>
+        <li class="menu-item menu-item-recruit">
+
+    <a href="/recruit/" rel="section">招聘</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger">搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <section class="post-toc-wrap sidebar-panel">
+        </section>
+        <!--/noindex-->
+
+        <section class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="John Chou"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">John Chou</p>
+  <div class="site-description" itemprop="description">Stand high, think different.</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">50</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">179</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Joouis" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Joouis" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:luckyjoou@gmail.com" title="E-Mail → mailto:luckyjoou@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/Joouis" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;Joouis" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://www.slideshare.net/choujohn351" title="SlideShare → http:&#x2F;&#x2F;www.slideshare.net&#x2F;choujohn351" rel="noopener" target="_blank"><i class="fab fa-slideshare fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nd/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nd.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </section>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner page posts-expand">
+      
+  
+  
+
+      
+
+    
+    
+    
+    <div class="post-block" lang="zh-CN">
+      <header class="post-header">
+
+<h1 class="post-title" itemprop="name headline">
+</h1>
+
+<div class="post-meta-container">
+  
+
+</div>
+
+</header>
+
+      
+      
+      
+      <div class="post-body">
+          <div class="tag-cloud">
+  <div class="tag-cloud-title">
+    目前共计 179 个标签
+  </div>
+  <div class="tag-cloud-tags">
+    <a href="/tags/CS/" style="font-size: 10px;" class="tag-cloud-0">CS</a> <a href="/tags/SSR/" style="font-size: 10px;" class="tag-cloud-0">SSR</a> <a href="/tags/alibaba/" style="font-size: 10px;" class="tag-cloud-0">alibaba</a> <a href="/tags/android/" style="font-size: 10px;" class="tag-cloud-0">android</a> <a href="/tags/anniversary/" style="font-size: 10px;" class="tag-cloud-0">anniversary</a> <a href="/tags/api/" style="font-size: 10px;" class="tag-cloud-0">api</a> <a href="/tags/app/" style="font-size: 11.43px;" class="tag-cloud-1">app</a> <a href="/tags/appium/" style="font-size: 10px;" class="tag-cloud-0">appium</a> <a href="/tags/arm/" style="font-size: 11.43px;" class="tag-cloud-1">arm</a> <a href="/tags/array/" style="font-size: 10px;" class="tag-cloud-0">array</a> <a href="/tags/assembly/" style="font-size: 10px;" class="tag-cloud-0">assembly</a> <a href="/tags/atom/" style="font-size: 10px;" class="tag-cloud-0">atom</a> <a href="/tags/ava/" style="font-size: 10px;" class="tag-cloud-0">ava</a> <a href="/tags/avx/" style="font-size: 10px;" class="tag-cloud-0">avx</a> <a href="/tags/bangkok/" style="font-size: 15.71px;" class="tag-cloud-6">bangkok</a> <a href="/tags/binary/" style="font-size: 10px;" class="tag-cloud-0">binary</a> <a href="/tags/blanket/" style="font-size: 10px;" class="tag-cloud-0">blanket</a> <a href="/tags/blog/" style="font-size: 11.43px;" class="tag-cloud-1">blog</a> <a href="/tags/boot/" style="font-size: 10px;" class="tag-cloud-0">boot</a> <a href="/tags/c/" style="font-size: 10px;" class="tag-cloud-0">c</a> <a href="/tags/cache/" style="font-size: 11.43px;" class="tag-cloud-1">cache</a> <a href="/tags/cairo/" style="font-size: 11.43px;" class="tag-cloud-1">cairo</a> <a href="/tags/casper/" style="font-size: 10px;" class="tag-cloud-0">casper</a> <a href="/tags/cgdb/" style="font-size: 10px;" class="tag-cloud-0">cgdb</a> <a href="/tags/chai/" style="font-size: 10px;" class="tag-cloud-0">chai</a> <a href="/tags/codeceptjs/" style="font-size: 10px;" class="tag-cloud-0">codeceptjs</a> <a href="/tags/collaborate/" style="font-size: 10px;" class="tag-cloud-0">collaborate</a> <a href="/tags/communication/" style="font-size: 10px;" class="tag-cloud-0">communication</a> <a href="/tags/comparison/" style="font-size: 10px;" class="tag-cloud-0">comparison</a> <a href="/tags/compiler/" style="font-size: 10px;" class="tag-cloud-0">compiler</a> <a href="/tags/config/" style="font-size: 10px;" class="tag-cloud-0">config</a> <a href="/tags/context-switch/" style="font-size: 10px;" class="tag-cloud-0">context switch</a> <a href="/tags/cortex-a8/" style="font-size: 10px;" class="tag-cloud-0">cortex-a8</a> <a href="/tags/counter/" style="font-size: 10px;" class="tag-cloud-0">counter</a> <a href="/tags/css/" style="font-size: 10px;" class="tag-cloud-0">css</a> <a href="/tags/ctags/" style="font-size: 10px;" class="tag-cloud-0">ctags</a> <a href="/tags/cucumber/" style="font-size: 10px;" class="tag-cloud-0">cucumber</a> <a href="/tags/cypress/" style="font-size: 10px;" class="tag-cloud-0">cypress</a> <a href="/tags/dart/" style="font-size: 10px;" class="tag-cloud-0">dart</a> <a href="/tags/defusing-binary-bomb/" style="font-size: 10px;" class="tag-cloud-0">defusing binary bomb</a> <a href="/tags/demo/" style="font-size: 10px;" class="tag-cloud-0">demo</a> <a href="/tags/disassemble/" style="font-size: 10px;" class="tag-cloud-0">disassemble</a> <a href="/tags/disassembly/" style="font-size: 10px;" class="tag-cloud-0">disassembly</a> <a href="/tags/dom/" style="font-size: 10px;" class="tag-cloud-0">dom</a> <a href="/tags/e2e-test/" style="font-size: 10px;" class="tag-cloud-0">e2e test</a> <a href="/tags/efficiency/" style="font-size: 10px;" class="tag-cloud-0">efficiency</a> <a href="/tags/embedded/" style="font-size: 10px;" class="tag-cloud-0">embedded</a> <a href="/tags/embedded-system/" style="font-size: 20px;" class="tag-cloud-10">embedded system</a> <a href="/tags/embedded-system-course/" style="font-size: 17.14px;" class="tag-cloud-7">embedded system course</a> <a href="/tags/empathy/" style="font-size: 10px;" class="tag-cloud-0">empathy</a> <a href="/tags/enzyme/" style="font-size: 10px;" class="tag-cloud-0">enzyme</a> <a href="/tags/ezxml/" style="font-size: 10px;" class="tag-cloud-0">ezxml</a> <a href="/tags/feedback/" style="font-size: 11.43px;" class="tag-cloud-1">feedback</a> <a href="/tags/flex/" style="font-size: 10px;" class="tag-cloud-0">flex</a> <a href="/tags/flutter/" style="font-size: 10px;" class="tag-cloud-0">flutter</a> <a href="/tags/food/" style="font-size: 11.43px;" class="tag-cloud-1">food</a> <a href="/tags/free-software/" style="font-size: 10px;" class="tag-cloud-0">free software</a> <a href="/tags/gcc/" style="font-size: 10px;" class="tag-cloud-0">gcc</a> <a href="/tags/gdb/" style="font-size: 10px;" class="tag-cloud-0">gdb</a> <a href="/tags/geneva/" style="font-size: 10px;" class="tag-cloud-0">geneva</a> <a href="/tags/github/" style="font-size: 11.43px;" class="tag-cloud-1">github</a> <a href="/tags/gnu/" style="font-size: 11.43px;" class="tag-cloud-1">gnu</a> <a href="/tags/gui/" style="font-size: 15.71px;" class="tag-cloud-6">gui</a> <a href="/tags/hackathon/" style="font-size: 10px;" class="tag-cloud-0">hackathon</a> <a href="/tags/hexo/" style="font-size: 11.43px;" class="tag-cloud-1">hexo</a> <a href="/tags/history/" style="font-size: 10px;" class="tag-cloud-0">history</a> <a href="/tags/hoc/" style="font-size: 10px;" class="tag-cloud-0">hoc</a> <a href="/tags/holiday/" style="font-size: 18.57px;" class="tag-cloud-9">holiday</a> <a href="/tags/hua-hin/" style="font-size: 15.71px;" class="tag-cloud-6">hua hin</a> <a href="/tags/ide/" style="font-size: 10px;" class="tag-cloud-0">ide</a> <a href="/tags/inspiration/" style="font-size: 10px;" class="tag-cloud-0">inspiration</a> <a href="/tags/instruction-set/" style="font-size: 10px;" class="tag-cloud-0">instruction set</a> <a href="/tags/integration-test/" style="font-size: 10px;" class="tag-cloud-0">integration test</a> <a href="/tags/interview/" style="font-size: 10px;" class="tag-cloud-0">interview</a> <a href="/tags/isomorphic/" style="font-size: 10px;" class="tag-cloud-0">isomorphic</a> <a href="/tags/istanbul/" style="font-size: 10px;" class="tag-cloud-0">istanbul</a> <a href="/tags/iteration/" style="font-size: 10px;" class="tag-cloud-0">iteration</a> <a href="/tags/jasmine/" style="font-size: 10px;" class="tag-cloud-0">jasmine</a> <a href="/tags/javascript/" style="font-size: 18.57px;" class="tag-cloud-9">javascript</a> <a href="/tags/jest/" style="font-size: 11.43px;" class="tag-cloud-1">jest</a> <a href="/tags/jit/" style="font-size: 10px;" class="tag-cloud-0">jit</a> <a href="/tags/karma/" style="font-size: 10px;" class="tag-cloud-0">karma</a> <a href="/tags/kusto/" style="font-size: 10px;" class="tag-cloud-0">kusto</a> <a href="/tags/leadership/" style="font-size: 10px;" class="tag-cloud-0">leadership</a> <a href="/tags/leave/" style="font-size: 10px;" class="tag-cloud-0">leave</a> <a href="/tags/leetcode/" style="font-size: 10px;" class="tag-cloud-0">leetcode</a> <a href="/tags/libsvgtiny/" style="font-size: 11.43px;" class="tag-cloud-1">libsvgtiny</a> <a href="/tags/libxml2/" style="font-size: 10px;" class="tag-cloud-0">libxml2</a> <a href="/tags/macau/" style="font-size: 11.43px;" class="tag-cloud-1">macau</a> <a href="/tags/management/" style="font-size: 10px;" class="tag-cloud-0">management</a> <a href="/tags/mi10-pro/" style="font-size: 10px;" class="tag-cloud-0">mi10 pro</a> <a href="/tags/microsoft/" style="font-size: 12.86px;" class="tag-cloud-3">microsoft</a> <a href="/tags/mobile/" style="font-size: 14.29px;" class="tag-cloud-4">mobile</a> <a href="/tags/mocha/" style="font-size: 10px;" class="tag-cloud-0">mocha</a> <a href="/tags/mysql/" style="font-size: 10px;" class="tag-cloud-0">mysql</a> <a href="/tags/nightmare/" style="font-size: 10px;" class="tag-cloud-0">nightmare</a> <a href="/tags/nightwatch/" style="font-size: 10px;" class="tag-cloud-0">nightwatch</a> <a href="/tags/nodejs/" style="font-size: 10px;" class="tag-cloud-0">nodejs</a> <a href="/tags/nonviolent-communication/" style="font-size: 10px;" class="tag-cloud-0">nonviolent communication</a> <a href="/tags/note/" style="font-size: 12.86px;" class="tag-cloud-3">note</a> <a href="/tags/note9/" style="font-size: 10px;" class="tag-cloud-0">note9</a> <a href="/tags/open-source/" style="font-size: 11.43px;" class="tag-cloud-1">open source</a> <a href="/tags/optimization/" style="font-size: 11.43px;" class="tag-cloud-1">optimization</a> <a href="/tags/os/" style="font-size: 14.29px;" class="tag-cloud-4">os</a> <a href="/tags/outline/" style="font-size: 10px;" class="tag-cloud-0">outline</a> <a href="/tags/outline-view/" style="font-size: 10px;" class="tag-cloud-0">outline view</a> <a href="/tags/ownership/" style="font-size: 10px;" class="tag-cloud-0">ownership</a> <a href="/tags/parser/" style="font-size: 10px;" class="tag-cloud-0">parser</a> <a href="/tags/performance/" style="font-size: 12.86px;" class="tag-cloud-3">performance</a> <a href="/tags/phantom/" style="font-size: 10px;" class="tag-cloud-0">phantom</a> <a href="/tags/photo/" style="font-size: 10px;" class="tag-cloud-0">photo</a> <a href="/tags/politics/" style="font-size: 10px;" class="tag-cloud-0">politics</a> <a href="/tags/prefetch/" style="font-size: 10px;" class="tag-cloud-0">prefetch</a> <a href="/tags/protractor/" style="font-size: 10px;" class="tag-cloud-0">protractor</a> <a href="/tags/puppeteer/" style="font-size: 11.43px;" class="tag-cloud-1">puppeteer</a> <a href="/tags/ram/" style="font-size: 10px;" class="tag-cloud-0">ram</a> <a href="/tags/rapid-prototyping/" style="font-size: 10px;" class="tag-cloud-0">rapid prototyping</a> <a href="/tags/react/" style="font-size: 11.43px;" class="tag-cloud-1">react</a> <a href="/tags/recruit/" style="font-size: 11.43px;" class="tag-cloud-1">recruit</a> <a href="/tags/recursion/" style="font-size: 10px;" class="tag-cloud-0">recursion</a> <a href="/tags/refactor/" style="font-size: 11.43px;" class="tag-cloud-1">refactor</a> <a href="/tags/referral/" style="font-size: 11.43px;" class="tag-cloud-1">referral</a> <a href="/tags/remove-duplicates/" style="font-size: 10px;" class="tag-cloud-0">remove duplicates</a> <a href="/tags/render/" style="font-size: 10px;" class="tag-cloud-0">render</a> <a href="/tags/responsive/" style="font-size: 11.43px;" class="tag-cloud-1">responsive</a> <a href="/tags/review/" style="font-size: 10px;" class="tag-cloud-0">review</a> <a href="/tags/reward/" style="font-size: 10px;" class="tag-cloud-0">reward</a> <a href="/tags/rom/" style="font-size: 10px;" class="tag-cloud-0">rom</a> <a href="/tags/rwd/" style="font-size: 10px;" class="tag-cloud-0">rwd</a> <a href="/tags/samsung/" style="font-size: 10px;" class="tag-cloud-0">samsung</a> <a href="/tags/scheduler/" style="font-size: 10px;" class="tag-cloud-0">scheduler</a> <a href="/tags/selenium/" style="font-size: 10px;" class="tag-cloud-0">selenium</a> <a href="/tags/self-driving/" style="font-size: 15.71px;" class="tag-cloud-6">self-driving</a> <a href="/tags/server-side/" style="font-size: 10px;" class="tag-cloud-0">server-side</a> <a href="/tags/silicon-valley/" style="font-size: 10px;" class="tag-cloud-0">silicon valley</a> <a href="/tags/sinon/" style="font-size: 10px;" class="tag-cloud-0">sinon</a> <a href="/tags/software/" style="font-size: 10px;" class="tag-cloud-0">software</a> <a href="/tags/sse/" style="font-size: 10px;" class="tag-cloud-0">sse</a> <a href="/tags/stack/" style="font-size: 10px;" class="tag-cloud-0">stack</a> <a href="/tags/stackoverflow/" style="font-size: 10px;" class="tag-cloud-0">stackoverflow</a> <a href="/tags/stm32/" style="font-size: 12.86px;" class="tag-cloud-3">stm32</a> <a href="/tags/streaming-SIMD-extensions/" style="font-size: 10px;" class="tag-cloud-0">streaming SIMD extensions</a> <a href="/tags/structure-view/" style="font-size: 10px;" class="tag-cloud-0">structure view</a> <a href="/tags/structure-view/" style="font-size: 10px;" class="tag-cloud-0">structure-view</a> <a href="/tags/svg/" style="font-size: 15.71px;" class="tag-cloud-6">svg</a> <a href="/tags/svg-tiny/" style="font-size: 11.43px;" class="tag-cloud-1">svg tiny</a> <a href="/tags/test/" style="font-size: 10px;" class="tag-cloud-0">test</a> <a href="/tags/testcafe/" style="font-size: 11.43px;" class="tag-cloud-1">testcafe</a> <a href="/tags/testdouble/" style="font-size: 10px;" class="tag-cloud-0">testdouble</a> <a href="/tags/thailand/" style="font-size: 15.71px;" class="tag-cloud-6">thailand</a> <a href="/tags/travel/" style="font-size: 18.57px;" class="tag-cloud-9">travel</a> <a href="/tags/trip/" style="font-size: 18.57px;" class="tag-cloud-9">trip</a> <a href="/tags/tutorial/" style="font-size: 11.43px;" class="tag-cloud-1">tutorial</a> <a href="/tags/twin/" style="font-size: 15.71px;" class="tag-cloud-6">twin</a> <a href="/tags/u-boot/" style="font-size: 10px;" class="tag-cloud-0">u-boot</a> <a href="/tags/ubuntu/" style="font-size: 10px;" class="tag-cloud-0">ubuntu</a> <a href="/tags/ui-test/" style="font-size: 11.43px;" class="tag-cloud-1">ui test</a> <a href="/tags/uml/" style="font-size: 10px;" class="tag-cloud-0">uml</a> <a href="/tags/unexpected/" style="font-size: 10px;" class="tag-cloud-0">unexpected</a> <a href="/tags/unit-test/" style="font-size: 10px;" class="tag-cloud-0">unit test</a> <a href="/tags/vector/" style="font-size: 15.71px;" class="tag-cloud-6">vector</a> <a href="/tags/vim/" style="font-size: 10px;" class="tag-cloud-0">vim</a> <a href="/tags/vue/" style="font-size: 11.43px;" class="tag-cloud-1">vue</a> <a href="/tags/vuejs/" style="font-size: 10px;" class="tag-cloud-0">vuejs</a> <a href="/tags/vuetify/" style="font-size: 10px;" class="tag-cloud-0">vuetify</a> <a href="/tags/vuetify-playground/" style="font-size: 10px;" class="tag-cloud-0">vuetify playground</a> <a href="/tags/vuetifyjs/" style="font-size: 10px;" class="tag-cloud-0">vuetifyjs</a> <a href="/tags/wearable-devices/" style="font-size: 10px;" class="tag-cloud-0">wearable devices</a> <a href="/tags/web/" style="font-size: 11.43px;" class="tag-cloud-1">web</a> <a href="/tags/webdriverio/" style="font-size: 10px;" class="tag-cloud-0">webdriverio</a> <a href="/tags/weex/" style="font-size: 10px;" class="tag-cloud-0">weex</a> <a href="/tags/window-system/" style="font-size: 15.71px;" class="tag-cloud-6">window system</a> <a href="/tags/work/" style="font-size: 11.43px;" class="tag-cloud-1">work</a> <a href="/tags/workflow/" style="font-size: 10px;" class="tag-cloud-0">workflow</a> <a href="/tags/x86/" style="font-size: 10px;" class="tag-cloud-0">x86</a> <a href="/tags/xiaomi/" style="font-size: 10px;" class="tag-cloud-0">xiaomi</a> <a href="/tags/xml/" style="font-size: 10px;" class="tag-cloud-0">xml</a> <a href="/tags/zhuhai/" style="font-size: 11.43px;" class="tag-cloud-1">zhuhai</a> <a href="/tags/%C2%B5GUI/" style="font-size: 11.43px;" class="tag-cloud-1">µGUI</a>
+  </div>
+</div>
+
+        
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    
+    
+
+
+      
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      
+
+      
+
+<div class="copyright">
+  
+  &copy; 2016 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Chou</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  
+  <script src="//cdn.jsdelivr.net/npm/quicklink@2.0.0/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink.listen({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://blog.joouis.com/tags/',]
+      });
+      });
+  </script>
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://joou.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+
+</body>
+</html>

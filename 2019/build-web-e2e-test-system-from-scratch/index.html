@@ -1,23 +1,767 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
 
-{% block title %}{{ page.title }} | {{ title }}{% endblock %}
 
-{% block page_class %}page-post-detail{% endblock %}
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/hacker.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/hacker.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/hacker.ico">
+  <link rel="mask-icon" href="/images/hacker.ico" color="#222">
 
-{% block content %}
+<link rel="stylesheet" href="/css/main.css">
 
-  <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"blog.joouis.com","root":"/","scheme":"Mist","version":"8.0.2","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
+
+  <meta name="description" content="TL;DRThe topic of end-to-end (E2E) test is a platitude in web front-end (FE) domain, especially most of blogs are talking about testing frameworks out of the real web production. The real world needs">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Build web E2E test system from scratch">
+<meta property="og:url" content="https://blog.joouis.com/2019/build-web-e2e-test-system-from-scratch/index.html">
+<meta property="og:site_name" content="江边的旱鸭子">
+<meta property="og:description" content="TL;DRThe topic of end-to-end (E2E) test is a platitude in web front-end (FE) domain, especially most of blogs are talking about testing frameworks out of the real web production. The real world needs">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://izqxiw.bn.files.1drv.com/y4mVIEZDs-Pp1DhfEUUOk8Enojm1rCeKLwoiO39tEFHVND_OkQ_HsiOi3aJsMXEvoIwAJaHphIn9g2J3Ht0G95NzAWMLUOIfDeurNKwBPDZtSLHuon-P4ZyyaVgMLKJvmg4HNgVQbjeoPPRcW5xWBsWxjT85pap2x-xizPAk0GagJ4LtvS6WUQbjaoNLYBEoNbP78OPm4EMdFFeDvi7VzbEOQ?width=3563&height=1506&cropmode=none">
+<meta property="og:image" content="https://izqwiw.bn.files.1drv.com/y4m2Nc_cet04-QcpRzOp96cELYLtivmdXJafashQoIjgEf-NqD2Rh0zj8QvKJKKnlPrB7z-0-xkzuy2i43jwve-lRbrA4elIXUuBlVD-52oIP00K8bCqQmCJDFEtM4o4evMpc0VUZ5G66-upk1mTOvr079loRvaEjF5tBVcA2S1ZVgjTQTUBtG2h1eWDB_QnGMkvXwKO8wy41Ka0EsA8F8zlg?width=2289&height=1528&cropmode=none">
+<meta property="og:image" content="https://ijqriw.bn.files.1drv.com/y4mdq9rJEIcZscmSbBmGaXVQFCWqbn6B_Jtpez7xoXqO9ahNGPtn2FTgqUCaP5u6AbDqj3MguU_TKAdv6tKkrGn5EILeTX-i7371AOvXup0ALgv9BM87OMN2ZMxZhJ52dtGfljMvoPuGN58Ierv4-HRY34k9nZq1SrttqvdbJVRgsSUdLUM2-oEvAtuI_zfHT8KdfhrFuDzMSffRKABtG_ieA?width=1029&height=1544&cropmode=none">
+<meta property="og:image" content="https://izqviw.bn.files.1drv.com/y4mT0O6QIR606q0fqHpLm__3PE8AqIiR2YDgNuGNeSkJDTjL1e3hexU_3FeC89QcZPS7bVfQ3xOmPCT7LxoXWv5qZjz7Hed0E-gD6tbolOrpNSAoP55rzq1EuQQU0xF-oC_oNE_KtowDQCzEN9p-Yee7V789d7JTSlfAKNduujL5zC5lX6f5b6SHEgkzrqxNd8LdihMo9iVdi77WOvWj5Ca0g?width=3514&height=1469&cropmode=none">
+<meta property="og:image" content="https://izqyiw.bn.files.1drv.com/y4mD34YcwXwufGCN7tTO-TyujEuRZjnrv-_98U7WHiLaeoDs6iwI_zXBt_JTPCte6HzX8QetLutH3h4NNAoucWTSNCLmVXTy2pNKSdHex1V34HPverU_Ze6tp7inz7v7ucKDQglgzrwq7IY4fbJTmpJNF9DufS8_AZcTTvSBV4eCY0GD1_ULYkvwVoAcw4jvsHkSEtrRFgPYxzf4X__-IP6GQ?width=478&height=435&cropmode=none">
+<meta property="og:image" content="https://ijqsiw.bn.files.1drv.com/y4mbX_cLLffjERi_Ux4rpLqFnq7sy5JilYOgB2QG7mtef3KC1IQ3Je0QX2RHeaAoUNGAOU9rYP0Z4lH8FC62lnKBRWNNjL1Ltp1sa5v7EWPV1Wx-MYN9_GrWB5ljJU-K9OqSBL9kpvE-aLVipsraSj7ort1pAe6CA0ScNNlGDElYFjMP01Lb-X1GwxC4kfKq1iAa_0a-91A2v7cuwbqCfMczg?width=1131&height=782&cropmode=none">
+<meta property="og:image" content="https://ijqqiw.bn.files.1drv.com/y4mlEoQnSUS7uj0M79I1RAUaT-PNrYMLKZA2vcDLn2d4FZz_9LA2ivxaXEVQPOzLefIvTlizATcKXT_luuuf_5aUosX23XWM5mCQvBx37p0dDE1qGCwryp3CHJYyMyUmJM1hibz_bMuBxIIjNKWLdROIWYPCI5I8qInisKeU5Xp8vefx2QDNfNYuFzpXHlUohB65zt7br_mOaZV0_oQVZCw3g?width=3594&height=1945&cropmode=none">
+<meta property="article:published_time" content="2019-10-06T09:31:00.000Z">
+<meta property="article:modified_time" content="2019-10-19T18:17:00.000Z">
+<meta property="article:author" content="John Chou">
+<meta property="article:tag" content="javascript">
+<meta property="article:tag" content="e2e test">
+<meta property="article:tag" content="nodejs">
+<meta property="article:tag" content="ui test">
+<meta property="article:tag" content="jest">
+<meta property="article:tag" content="testcafe">
+<meta property="article:tag" content="puppeteer">
+<meta property="article:tag" content="kusto">
+<meta property="article:tag" content="geneva">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://izqxiw.bn.files.1drv.com/y4mVIEZDs-Pp1DhfEUUOk8Enojm1rCeKLwoiO39tEFHVND_OkQ_HsiOi3aJsMXEvoIwAJaHphIn9g2J3Ht0G95NzAWMLUOIfDeurNKwBPDZtSLHuon-P4ZyyaVgMLKJvmg4HNgVQbjeoPPRcW5xWBsWxjT85pap2x-xizPAk0GagJ4LtvS6WUQbjaoNLYBEoNbP78OPm4EMdFFeDvi7VzbEOQ?width=3563&height=1506&cropmode=none">
+
+
+<link rel="canonical" href="https://blog.joouis.com/2019/build-web-e2e-test-system-from-scratch/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Build web E2E test system from scratch | 江边的旱鸭子</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-76188004-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-76188004-1');
+      }
+    </script>
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?199f195e233fd5ecca0d9346d3259670";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="江边的旱鸭子" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
   </div>
 
-{% endblock %}
+  <div class="site-meta">
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">江边的旱鸭子</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Blog of Joou</p>
+  </div>
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section">首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section">归档</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section">分类</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section">关于</a>
+
+  </li>
+        <li class="menu-item menu-item-recruit">
+
+    <a href="/recruit/" rel="section">招聘</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger">搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <section class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#TL-DR"><span class="nav-number">1.</span> <span class="nav-text">TL;DR</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Introduction"><span class="nav-number">2.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Legacy-solution"><span class="nav-number">3.</span> <span class="nav-text">Legacy solution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dynatrace"><span class="nav-number">4.</span> <span class="nav-text">Dynatrace</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Main-goals-of-our-FE-solution"><span class="nav-number">5.</span> <span class="nav-text">Main goals of our FE solution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Test-framework"><span class="nav-number">6.</span> <span class="nav-text">Test framework</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Service-framework-Windows-Task-Scheduler"><span class="nav-number">7.</span> <span class="nav-text">Service framework: Windows Task Scheduler</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Metrics-Flow-connectors"><span class="nav-number">8.</span> <span class="nav-text">Metrics: Flow connectors</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Service-framework-Egg-js"><span class="nav-number">9.</span> <span class="nav-text">Service framework: Egg.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Metrics-Kusto-Node-js-SDK-Kusto-to-Geneva-Metrics-service"><span class="nav-number">10.</span> <span class="nav-text">Metrics: Kusto Node.js SDK, Kusto to Geneva Metrics service</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Use-case-Supporting-benchmark-test"><span class="nav-number">11.</span> <span class="nav-text">Use case: Supporting benchmark test</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Looking-forward"><span class="nav-number">12.</span> <span class="nav-text">Looking forward</span></a></li></ol></div>
+        </section>
+        <!--/noindex-->
+
+        <section class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="John Chou"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">John Chou</p>
+  <div class="site-description" itemprop="description">Stand high, think different.</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">50</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">179</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Joouis" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Joouis" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:luckyjoou@gmail.com" title="E-Mail → mailto:luckyjoou@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/Joouis" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;Joouis" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://www.slideshare.net/choujohn351" title="SlideShare → http:&#x2F;&#x2F;www.slideshare.net&#x2F;choujohn351" rel="noopener" target="_blank"><i class="fab fa-slideshare fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nd/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nd.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </section>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+      
+
+      
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://blog.joouis.com/2019/build-web-e2e-test-system-from-scratch/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="John Chou">
+      <meta itemprop="description" content="Stand high, think different.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江边的旱鸭子">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Build web E2E test system from scratch
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-10-06 17:31:00" itemprop="dateCreated datePublished" datetime="2019-10-06T17:31:00+08:00">2019-10-06</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2019-10-20 02:17:00" itemprop="dateModified" datetime="2019-10-20T02:17:00+08:00">2019-10-20</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Web-%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">Web 前端</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2019/build-web-e2e-test-system-from-scratch/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/build-web-e2e-test-system-from-scratch/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>13 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="TL-DR"><a href="#TL-DR" class="headerlink" title="TL;DR"></a>TL;DR</h2><p>The topic of end-to-end (E2E) test is a platitude in web front-end (FE) domain, especially most of blogs are talking about testing frameworks out of the real web production. The real world needs solution, for E2E test which means a service can do E2E testing and alerting with stability and even good performance. This article will introduce how we design and build our E2E test service for the newer version of our <a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/azure/machine-learning/studio/what-is-ml-studio">web application</a> based on popular web FE frameworks and integration with abundant Microsoft services, including several workarounds to tell the problems we met and how we overcame them.</p>
+<p>In addition, I shared this system internally at first, then it becomes my first blog article in English. Probably I will translate it into Chinese sooner or later.</p>
+<a id="more"></a>
+
+
+
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><blockquote>
+<p>“End-to-end testing involves ensuring that the integrated components of an application function as expected. The entire application is tested in a real-world scenario such as communicating with the database, network, hardware and other applications.” Defined by Techopeida. </p>
+</blockquote>
+<p>This topic is a platitude in web FE domain, especially most of online blogs are talking about testing frameworks out of the real web production. When we were facing the task to build E2E test for the newer version of our web application, these questions came across my mind:</p>
+<ul>
+<li><p>How did previous version of our production (V1) do E2E testing?</p>
+</li>
+<li><p>Can we leverage V1’s work?</p>
+</li>
+<li><p>If the legacy solution doesn’t meet our requirement and we need to build another one from scratch…</p>
+<ul>
+<li>Which FE test framework is the best for us?</li>
+<li>How can we run E2E test as service with stability?</li>
+<li>How to associate our test data with internal alerting service?</li>
+</ul>
+</li>
+</ul>
+<p>As you can see, there are bunch of questions for us to figure out. It costed two teammates’ and my 2 weeks full-time work and another 2 months part-time work (about 1 day per week) of mine to deliver the first <strong>acceptable</strong> version, though test service had been online after first two weeks work with some workarounds.</p>
+<p>The following parts will cover the answers for questions above, several workarounds we made, and an use case to help our team achieve more 😊.</p>
+<h2 id="Legacy-solution"><a href="#Legacy-solution" class="headerlink" title="Legacy solution"></a>Legacy solution</h2><p><img data-src="https://izqxiw.bn.files.1drv.com/y4mVIEZDs-Pp1DhfEUUOk8Enojm1rCeKLwoiO39tEFHVND_OkQ_HsiOi3aJsMXEvoIwAJaHphIn9g2J3Ht0G95NzAWMLUOIfDeurNKwBPDZtSLHuon-P4ZyyaVgMLKJvmg4HNgVQbjeoPPRcW5xWBsWxjT85pap2x-xizPAk0GagJ4LtvS6WUQbjaoNLYBEoNbP78OPm4EMdFFeDvi7VzbEOQ?width=3563&height=1506&cropmode=none"></p>
+<p>Solution for V1 is developed in about 5 years ago. Selenium is chosen as test framework, it’s usually for automating web applications for testing purpose. Test service is based on .Net framework as well as test cases coded in C# which is a very typical Microsoft style. They will manipulate Selenium client to do testing on different browsers for various scenarios by browser drivers. And the service is hosted by Geneva Runner Service, the part of Geneva Monitoring system. This system is a really useful and important internal system, Metrics and Alerting services can help for logging runner data, filing tickets in Incident Management system (IcM) and finally reporting to service owner through phone call , text message and E-mail when high priority ticket issued.</p>
+<p>Here are the thoughts why we deprecated this solution:</p>
+<ol>
+<li>Most of us are web FE developers, it needs efforts to learn C# stuffs and write new E2E tests.</li>
+<li>Documents are incomplete, hard to set up and deploy, and we also don’t know the details about how it works with Geneva system.</li>
+<li>Tests can’t work for Chrome/IE/Firefox since 2016 Spring due to browser drivers were out of date, needing effort to fix it.</li>
+<li>Checking log on Geneva system is not so friendly.</li>
+<li>More technical debts concern for such an old project.</li>
+</ol>
+<h2 id="Dynatrace"><a href="#Dynatrace" class="headerlink" title="Dynatrace"></a>Dynatrace</h2><p>Since legacy solution had been rejected, one of my teammates YL surveyed another sophisticated solution named Dynatrace and created a basic run experiment test for all regions. Dynatrace is a no-code platform and can create test case easily by recording user operations on the target website after installing its Chrome extension. It’s also easy to integrate with IcM system due to a custom Dynatrace service already exists internally.</p>
+<p>Sounds perfect right? But nothing is perfect. The same test in just one region couldn’t pass while in other regions were ok, layout and DOM elements were all the same except different URLs, and of course we could pass the test manually. It took YL and me 2 days to find what’s the matter, and finally we gave up 😭.</p>
+<p>Besides the unknown reason above, I also think it’s inconvenient to customize amounts of test cases due to the visual interface, at last the auto generated CSS selectors can be improved :).</p>
+<h2 id="Main-goals-of-our-FE-solution"><a href="#Main-goals-of-our-FE-solution" class="headerlink" title="Main goals of our FE solution"></a>Main goals of our FE solution</h2><p>Since we decided to design and implement our own solution, first of all was to make clear our main goals. To build a complete solution at least as good as the legacy one, we need to:</p>
+<ul>
+<li>Select a popular JavaScript (JS) test framework and write new tests based on it to cover main scenarios of our production.</li>
+<li>Set up runners to run tests periodically and save test metrics to database like Geneva Runners Service does.</li>
+<li>Associate our test service with IcM System to enable alerting feature, it’s best to leverage Geneva Monitoring system.</li>
+</ul>
+<h2 id="Test-framework"><a href="#Test-framework" class="headerlink" title="Test framework"></a>Test framework</h2><p>We’re good at JS and web page things, and there are lots of popular JS E2E test frameworks, so it is no doubt to choose a test framework in JS. We would write JS script based on this test framework to automate browser: navigate to our target site, login with our test account, then do what we expect by capturing DOM elements via CSS selectors and trigger DOM events like clicking button.</p>
+<p>We already picked Jest as unit test framework for our React components, but another teammate YC chose TestCafe for E2E test at beginning because he had bad experience in E2E stuffs with Jest before. The most fantastic feature of TestCafe is it automates browsers by injecting JS scripts instead of invoking exposed APIs from browsers like Selenium does, so this allows TestCafe to run on any browser, including on mobile devices, and have a full control over the JS execution loop.</p>
+<p>Unfortunately, after YC and I wrote some complicated test cases, we both found that tests would fail inexplicable at some steps, elements couldn’t be captured by our scripts. We didn’t have too much time to solve this problem, thus YC had to switch to Jest with Puppeteer plan quickly. Fortunately this plan was not bad, most of steps worked fine and then I wrote more test cases based on it, including common functions like login and full scenarios like run an experiment.</p>
+<p><img data-src="https://izqwiw.bn.files.1drv.com/y4m2Nc_cet04-QcpRzOp96cELYLtivmdXJafashQoIjgEf-NqD2Rh0zj8QvKJKKnlPrB7z-0-xkzuy2i43jwve-lRbrA4elIXUuBlVD-52oIP00K8bCqQmCJDFEtM4o4evMpc0VUZ5G66-upk1mTOvr079loRvaEjF5tBVcA2S1ZVgjTQTUBtG2h1eWDB_QnGMkvXwKO8wy41Ka0EsA8F8zlg?width=2289&height=1528&cropmode=none"></p>
+<p>The biggest challenge of this part is robustness of test case scripts, which means test case can’t fail when our web application is healthy, false positive rate should be as low as possible. The unexpected failures may caused by network traffic or browser lag, we need to reorder our actions with reasonable sequence, set enough timeout and try many times to make sure test cases are stable.</p>
+<h2 id="Service-framework-Windows-Task-Scheduler"><a href="#Service-framework-Windows-Task-Scheduler" class="headerlink" title="Service framework: Windows Task Scheduler"></a>Service framework: Windows Task Scheduler</h2><p>I don’t have any preference on the OS of platform, there was an idle Windows server virtual machine (VM), so I started work on Windows firstly, meanwhile also applied for another Ubuntu server which I was more familiar with as backup.</p>
+<p>YL proposed to use Windows Task Scheduler to run our test cases as runner. It’s easy to set a test runner, just create a new task, add “Start a program” action as trigger with the instruction we used to type in command line to run test cases, that’s it. However, this tool is obviously not design for service, these drawbacks really annoyed me:</p>
+<ul>
+<li>Tedious configuration: can’t add multiple runner actions in one task, having to create a new task with repetitive settings for a new test case.</li>
+<li>Unfriendly log: too simple to see what’s happened to the runner, can’t see any log emitted by console, “History” tab and “Last Run Result” tag are really… useless.</li>
+<li>Not stable: sometimes runner just exited for one or two minutes, while sometimes it went well.</li>
+</ul>
+<p>So we can say that Task Scheduler helped us do proof of concept (POC) quickly without any code, but it’s not design for service, we should find another plan. Before we talk about the new plan, let me introduce the metrics feature I did to make up the drawbacks mentioned above.</p>
+<h2 id="Metrics-Flow-connectors"><a href="#Metrics-Flow-connectors" class="headerlink" title="Metrics: Flow connectors"></a>Metrics: Flow connectors</h2><p>Metrics is a very common part in system. It’s the data source for monitoring health status of our E2E test, here we need metrics of runner status like test name, region, test result, duration and so on. Moreover, since we can’t get too much runner information from Task Scheduler, I had to log some metrics of running status to help me debug runner process.</p>
+<p>Metrics is usally stored in database. There are two ways to communicate with database, the simple one is using client library provided by database vendor and call database APIs directly, this usually need authorization work in connection stage. For Kusto database which is also used by our production, it’s not easy to write data ingestion function (like data insertion in SQL) in Node.js due to the bad support of SDK and complicated configurations (finally I did it 😂, but we’ll talk about it later). So we had to try another way, using an authored service to forward our requests. Of course .NET framework can do this thing easily, we already did it before for client-side metrics. But I still made a quick survey and found a handy tool called Microsoft Flow.</p>
+<p>Flow is a no-code platform that helps customers to leverage plenty of Microsoft services by corresponding connectors, including database connectors for Kusto and SQL. Simply to say, forget about authorization, just add a Kusto query connector into your flow, configure settings and query instruction for your Kusto database, lastly run your flow, then you can get your Kusto data. However Kusto doesn’t support ingestion connector, I had to applied for a new Azure SQL database resource and set a SQL insertion connector.</p>
+<p>How to receive data from runner was not a hard thing too, Flow provides a set of HTTP triggers with public links as APIs, our runner will send a HTTP POST request to our trigger after finishing test work, and the trigger will collect HTTP payload which is our metrics and pass it to our SQL insertion connector.</p>
+<p>This flow looks like the one in following picture.</p>
+<p><img data-src="https://ijqriw.bn.files.1drv.com/y4mdq9rJEIcZscmSbBmGaXVQFCWqbn6B_Jtpez7xoXqO9ahNGPtn2FTgqUCaP5u6AbDqj3MguU_TKAdv6tKkrGn5EILeTX-i7371AOvXup0ALgv9BM87OMN2ZMxZhJ52dtGfljMvoPuGN58Ierv4-HRY34k9nZq1SrttqvdbJVRgsSUdLUM2-oEvAtuI_zfHT8KdfhrFuDzMSffRKABtG_ieA?width=1029&height=1544&cropmode=none"></p>
+<p>One more important thing in this section that you may think about for a while: <strong>our runners are running on a VM instead of cloud service, also Task Scheduler is not stable, how to ensure our test service is always running? Or how to keep stability of our service?</strong> If once the service stopped, how to recognize this disaster as soon as possible? A simple but useful solution is detecting heartbeat. Since we already stored metrics in database, we could query latest row and check its timestamp regularly to see if runners were still working. If time interval between latest record and current time exceeds an hour (one hour is the timeout of run experiment test), our flow will trigger IcM connector to file a ticket named like <code>[E2E][AUE] Runners are missing heartbeat more than 60 minutes!</code>.</p>
+<p>We also built several dashboards for service stability which will be introduced later, at present we have simple metrics and alert, let’s take a look at following diagram to see the whole process.</p>
+<p><img data-src="https://izqviw.bn.files.1drv.com/y4mT0O6QIR606q0fqHpLm__3PE8AqIiR2YDgNuGNeSkJDTjL1e3hexU_3FeC89QcZPS7bVfQ3xOmPCT7LxoXWv5qZjz7Hed0E-gD6tbolOrpNSAoP55rzq1EuQQU0xF-oC_oNE_KtowDQCzEN9p-Yee7V789d7JTSlfAKNduujL5zC5lX6f5b6SHEgkzrqxNd8LdihMo9iVdi77WOvWj5Ca0g?width=3514&height=1469&cropmode=none"></p>
+<h2 id="Service-framework-Egg-js"><a href="#Service-framework-Egg-js" class="headerlink" title="Service framework: Egg.js"></a>Service framework: Egg.js</h2><p>Although data flow has came from runners continuously and somehow went to the database and IcM system, it’s far from a real service. We would replace Task Scheduler because of its drawbacks, then optimize the rest parts of data flow.</p>
+<p>You can’t imagine how fast JS is developing. From Express.js, KOA.js to Egg.js, server-side JS Frameworks now act more and more important role in business world. There are three reasons for me to build our service based on Egg.js:</p>
+<ul>
+<li><p>Not only I’m familiar with this framework, but it’s also an out of box framework with well documentation. Comparing with Express.js, KOA.js offers a middleware onion model to handle asynchronous operations easily,     and Egg.js is based on KOA.js with more key features for building enterprise application, such as clusters and production mode.</p>
+<p><img data-src="https://izqyiw.bn.files.1drv.com/y4mD34YcwXwufGCN7tTO-TyujEuRZjnrv-_98U7WHiLaeoDs6iwI_zXBt_JTPCte6HzX8QetLutH3h4NNAoucWTSNCLmVXTy2pNKSdHex1V34HPverU_Ze6tp7inz7v7ucKDQglgzrwq7IY4fbJTmpJNF9DufS8_AZcTTvSBV4eCY0GD1_ULYkvwVoAcw4jvsHkSEtrRFgPYxzf4X__-IP6GQ?width=478&height=435&cropmode=none"></p>
+</li>
+<li><p>High performance with robustness, we already built several productions based on it in Alibaba for 11.11 shopping festival in last few years. Node.js service is good at I/O operations, and Egg.js offers a multi-process model to take advantage of modern CPU. We’ll talk about how it applies to our scenario soon.</p>
+<p><img data-src="https://ijqsiw.bn.files.1drv.com/y4mbX_cLLffjERi_Ux4rpLqFnq7sy5JilYOgB2QG7mtef3KC1IQ3Je0QX2RHeaAoUNGAOU9rYP0Z4lH8FC62lnKBRWNNjL1Ltp1sa5v7EWPV1Wx-MYN9_GrWB5ljJU-K9OqSBL9kpvE-aLVipsraSj7ort1pAe6CA0ScNNlGDElYFjMP01Lb-X1GwxC4kfKq1iAa_0a-91A2v7cuwbqCfMczg?width=1131&height=782&cropmode=none"></p>
+</li>
+<li><p>Featured plugins like logger, scheduler, static server, i18n, session, security, template engine and so on.</p>
+</li>
+</ul>
+<p>For our application, the core requirement is writing several scheduler scripts to spawn child processes for executing our test cases, framework will call schedulers by the intervals we set, and distribute the job to workers due to their workload. Egg.js has a master process as daemon process, then spawns an agent process to do common works like logging, at last creates numbers of workers (usually the number of CPU cores) to handle controller’s and scheduler’s business.</p>
+<p>We intend to store metrics to Kusto database, then use Kusto to Geneva Metrics service so we can take advantage of Dashboard and Alerts features of Geneva Monitoring system. In current stage, I could only check results in SQL client tool. We would implement it in next chapter.</p>
+<p>Moreover, <strong>there is a gap between runner and E2E test</strong>, only runner finished correctly and then metrics of E2E test can be stored in database, what about run-time status of runner and what if runner goes wrong? So I built a trivial dashboard (time is too precious 😔) to show basic information of runners in running or failed status within a day by React.js and Fabric UI components, hosting all resource on our service.</p>
+<h2 id="Metrics-Kusto-Node-js-SDK-Kusto-to-Geneva-Metrics-service"><a href="#Metrics-Kusto-Node-js-SDK-Kusto-to-Geneva-Metrics-service" class="headerlink" title="Metrics: Kusto Node.js SDK, Kusto to Geneva Metrics service"></a>Metrics: Kusto Node.js SDK, Kusto to Geneva Metrics service</h2><p>Based on powerful service framework, now we can migrate data insertion work from test case script to service scheduler. It will bring three benefits:</p>
+<ul>
+<li>We can leverage Dashboard and Alerts features of Geneva Monitoring system, this is the most important.</li>
+<li>More robustness since insertion request will not be sent if test case script exits unexpected.</li>
+<li>More efficiency since no more request forward needed.</li>
+</ul>
+<p>There’s no doubt that it’s the first time to use Node.js with Kusto SDK in my team, but after consulting several senior colleagues, I realized it’s also the first time to use Geneva Metrics via Kusto to Metrics service. Following various documents as well as spending lots of labor work, finally whole data flow could work. It is worth to mention that official data ingestion library named “azure-kusto-ingest” had bug for a long time, I created a issue under their GitHub repo and used inline query way to bypass this problem.</p>
+<p>So here is our new system work flow.</p>
+<p><img data-src="https://ijqqiw.bn.files.1drv.com/y4mlEoQnSUS7uj0M79I1RAUaT-PNrYMLKZA2vcDLn2d4FZz_9LA2ivxaXEVQPOzLefIvTlizATcKXT_luuuf_5aUosX23XWM5mCQvBx37p0dDE1qGCwryp3CHJYyMyUmJM1hibz_bMuBxIIjNKWLdROIWYPCI5I8qInisKeU5Xp8vefx2QDNfNYuFzpXHlUohB65zt7br_mOaZV0_oQVZCw3g?width=3594&height=1945&cropmode=none"></p>
+<p>Node.js can run across all popular platforms, I put service on Ubuntu server because we need to take full advantage of VM, graphical interface of Windows server is meaningless but also costs some resources. Each runner will cost about 500MB memory space (mostly taken by headless Chromium), when 30 runners work simultaneously I can’t even move the pointer on Windows server but nothing is difference on Ubuntu server through SSH connection.</p>
+<p>You may find another “Heartbeat” flow disappeared in above diagram too, Alerting service of Geneva takes this responsibility away. We set several alerting rules for E2E test metrics, if the “real time” (actually 15 minutes delay due to Kusto to Metrics service, it’s also a crucial problem) data can’t meet one or more rules, Geneva system will file ticket automatically with preset configurations such as severity, team/owner to assign, trouble shooting guide and so on.</p>
+<h2 id="Use-case-Supporting-benchmark-test"><a href="#Use-case-Supporting-benchmark-test" class="headerlink" title="Use case: Supporting benchmark test"></a>Use case: Supporting benchmark test</h2><p>While we ramp up E2E test work, a senior teammate led a benchmark test targeting at performance bottleneck of running experiments. This test needs both persistent and appropriate pressure to keep the loading of related backend service, our E2E test service is the perfect choice to trigger new experiments. Here are some highlights during this cooperation:</p>
+<ul>
+<li>Comparing with no-code solutions like Dynatrace, our test cases can be extended easily for various experiment type, regions and compute targets. Sometimes coding is faster than “clicking”.</li>
+<li>As we mentioned above, more than 30 runners worked well simultaneously, limitation comes from the 16GB memory. And we ever triggered more than 1000 experiments per day stably.</li>
+<li>Validation showed that our test results came from web page were uniform with backend service.</li>
+</ul>
+<h2 id="Looking-forward"><a href="#Looking-forward" class="headerlink" title="Looking forward"></a>Looking forward</h2><p>You can take first chapter “TL;DR” as conclusion, in the last chapter is about improvements from several aspects. We’ve said that this is just an “acceptable” version in the introduction, obviously lots of progress can be made, there are some thoughts in my mind:</p>
+<ul>
+<li>Deploy this system on Azure DevOps and connect to more Azure service like Azure Key Vault.</li>
+<li>Support other popular browsers and cover all essential scenarios.</li>
+<li>Enhancement of service and runner management. Providing a UI tool to empower other teammates (especially on-call guys) to manipulate E2E test, like restart specific runner, or create new runner based on configurable template.</li>
+<li>Better experience to debug failed E2E test. For example, our test framework can generate screenshot of failed moment, but how to management and display these screenshots need well design, and of course these can help us debug more efficient.</li>
+<li>Share the service to help other teams which are obsessed with E2E test. For instance they need only write custom test cases then upload to our system, no worry about runner execution, runner management and dashboard service, sounds like another Geneva but designed for E2E test.</li>
+<li>Leverage AI technologies to explore new test experience. Write and update test scripts are really heavy loadings, instead of repeating these boring works, can we use reinforcement learning to answer this classification problem with snapshot pictures and test result as inputs? Label snapshots is very easy, all we have to do is train a robust model.</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2018/an-overview-of-javascript-testing-in-2018/" rel="bookmark">2018 年 JavaScript 测试概观</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2018/how-you-can-refactor-to-use-classes/" rel="bookmark">Javascript 简洁之道：如何使用类重构</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2017/introduction-to-structure-view/" rel="bookmark">十分钟带你了解国产自制开源插件 structure-view</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2018/optimization-road-of-count-down-timer/" rel="bookmark">论一个倒计时器的性能优化之路</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2017/remove-duplicates-from-javascript-array/" rel="bookmark">小议 Javascript 数组去重</a></div>
+    </li>
+  </ul>
+
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>Buy me a cup of coffee :)</div>
+  <button onclick="document.querySelector('.post-reward').classList.toggle('active');">
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/reward-wechat.jpg" alt="John Chou 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/reward-alipay.jpg" alt="John Chou 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>John Chou
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://blog.joouis.com/2019/build-web-e2e-test-system-from-scratch/" title="Build web E2E test system from scratch">https://blog.joouis.com/2019/build-web-e2e-test-system-from-scratch/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nd/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-ND</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/javascript/" rel="tag"># javascript</a>
+              <a href="/tags/e2e-test/" rel="tag"># e2e test</a>
+              <a href="/tags/nodejs/" rel="tag"># nodejs</a>
+              <a href="/tags/ui-test/" rel="tag"># ui test</a>
+              <a href="/tags/jest/" rel="tag"># jest</a>
+              <a href="/tags/testcafe/" rel="tag"># testcafe</a>
+              <a href="/tags/puppeteer/" rel="tag"># puppeteer</a>
+              <a href="/tags/kusto/" rel="tag"># kusto</a>
+              <a href="/tags/geneva/" rel="tag"># geneva</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2019/2019-zhuhai-trip-2/" rel="prev" title="2019 说走就走的珠海之旅（下）">
+                  <i class="fa fa-chevron-left"></i> 2019 说走就走的珠海之旅（下）
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2019/microsoft-hackathon-2019-winner/" rel="next" title="Microsoft Hackathon 2019 Winner">
+                  Microsoft Hackathon 2019 Winner <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+      
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      
+
+      
+
+<div class="copyright">
+  
+  &copy; 2016 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Chou</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  
+  <script src="//cdn.jsdelivr.net/npm/quicklink@2.0.0/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink.listen({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://blog.joouis.com/2019/build-web-e2e-test-system-from-scratch/',]
+      });
+      });
+  </script>
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://joou.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://blog.joouis.com/2019/build-web-e2e-test-system-from-scratch/";
+    this.page.identifier = "2019/build-web-e2e-test-system-from-scratch/";
+    this.page.title = "Build web E2E test system from scratch";
+    };
+  NexT.utils.loadComments('#disqus_thread', () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://joou.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

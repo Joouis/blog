@@ -1,23 +1,681 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
 
-{% block title %}{{ page.title }} | {{ title }}{% endblock %}
 
-{% block page_class %}page-post-detail{% endblock %}
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/hacker.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/hacker.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/hacker.ico">
+  <link rel="mask-icon" href="/images/hacker.ico" color="#222">
 
-{% block content %}
+<link rel="stylesheet" href="/css/main.css">
 
-  <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"blog.joouis.com","root":"/","scheme":"Mist","version":"8.0.2","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
+
+  <meta name="description" content="源文链接：JavaScript code cleanup: how you can refactor to use Classes  在一些小规模的 React 工程中，将组件里所用的所有方法维护在组件内部没什么问题。不过到了中等规模的项目时，你可能会将那些方法从组件抽取到一个 “helper” 里。本文将展示如何使用类（而非导出独立的函数和变量）来组织代码。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Javascript 简洁之道：如何使用类重构">
+<meta property="og:url" content="https://blog.joouis.com/2018/how-you-can-refactor-to-use-classes/index.html">
+<meta property="og:site_name" content="江边的旱鸭子">
+<meta property="og:description" content="源文链接：JavaScript code cleanup: how you can refactor to use Classes  在一些小规模的 React 工程中，将组件里所用的所有方法维护在组件内部没什么问题。不过到了中等规模的项目时，你可能会将那些方法从组件抽取到一个 “helper” 里。本文将展示如何使用类（而非导出独立的函数和变量）来组织代码。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://ua6wcg.bn.files.1drv.com/y4mYy_pu9AzJk55bWAa0HOHDdjZDUp6QId12MxyJKxSSyBDQX8L-w321hFpMC47CYkQCl1Hly1JCATTUeP6-KTjE05cxDg46eOARJogyaVeodrYaM3bm3i8hcPo9dbhQ7wQOq0A2SAkUGdhaeS1C7xX2Do4yLK_ThI45fsjemuXGxGAb0UeuqpqghFkUUr-kqnLmw7AQZVQh1-kHQTP9mkTYQ">
+<meta property="article:published_time" content="2018-08-06T02:29:06.000Z">
+<meta property="article:modified_time" content="2018-08-06T02:29:06.000Z">
+<meta property="article:author" content="John Chou">
+<meta property="article:tag" content="refactor">
+<meta property="article:tag" content="javascript">
+<meta property="article:tag" content="react">
+<meta property="article:tag" content="hoc">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ua6wcg.bn.files.1drv.com/y4mYy_pu9AzJk55bWAa0HOHDdjZDUp6QId12MxyJKxSSyBDQX8L-w321hFpMC47CYkQCl1Hly1JCATTUeP6-KTjE05cxDg46eOARJogyaVeodrYaM3bm3i8hcPo9dbhQ7wQOq0A2SAkUGdhaeS1C7xX2Do4yLK_ThI45fsjemuXGxGAb0UeuqpqghFkUUr-kqnLmw7AQZVQh1-kHQTP9mkTYQ">
+
+
+<link rel="canonical" href="https://blog.joouis.com/2018/how-you-can-refactor-to-use-classes/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Javascript 简洁之道：如何使用类重构 | 江边的旱鸭子</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-76188004-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-76188004-1');
+      }
+    </script>
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?199f195e233fd5ecca0d9346d3259670";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="江边的旱鸭子" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
   </div>
 
-{% endblock %}
+  <div class="site-meta">
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">江边的旱鸭子</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Blog of Joou</p>
+  </div>
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section">首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section">归档</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section">分类</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section">关于</a>
+
+  </li>
+        <li class="menu-item menu-item-recruit">
+
+    <a href="/recruit/" rel="section">招聘</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger">搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <section class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B8%E5%9E%8B%E7%9A%84%E9%87%8D%E6%9E%84"><span class="nav-number">1.</span> <span class="nav-text">典型的重构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E7%B1%BB%E9%87%8D%E6%9E%84"><span class="nav-number">2.</span> <span class="nav-text">使用类重构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%9D%E6%8C%81%E6%89%80%E6%9C%89%E4%BA%8B%E6%83%85%E4%BA%95%E4%BA%95%E6%9C%89%E6%9D%A1"><span class="nav-number">3.</span> <span class="nav-text">保持所有事情井井有条</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%95%E7%94%A8"><span class="nav-number">4.</span> <span class="nav-text">引用</span></a></li></ol></div>
+        </section>
+        <!--/noindex-->
+
+        <section class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="John Chou"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">John Chou</p>
+  <div class="site-description" itemprop="description">Stand high, think different.</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">50</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">179</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Joouis" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Joouis" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:luckyjoou@gmail.com" title="E-Mail → mailto:luckyjoou@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/Joouis" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;Joouis" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://www.slideshare.net/choujohn351" title="SlideShare → http:&#x2F;&#x2F;www.slideshare.net&#x2F;choujohn351" rel="noopener" target="_blank"><i class="fab fa-slideshare fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nd/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nd.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </section>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+      
+
+      
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://blog.joouis.com/2018/how-you-can-refactor-to-use-classes/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="John Chou">
+      <meta itemprop="description" content="Stand high, think different.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江边的旱鸭子">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Javascript 简洁之道：如何使用类重构
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-08-06 10:29:06" itemprop="dateCreated datePublished" datetime="2018-08-06T10:29:06+08:00">2018-08-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Web-%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">Web 前端</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2018/how-you-can-refactor-to-use-classes/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/how-you-can-refactor-to-use-classes/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>3 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <blockquote>
+<p>源文链接：<a target="_blank" rel="noopener" href="https://medium.freecodecamp.org/javascript-code-cleanup-how-you-can-refactor-to-use-classes-3948118e4468">JavaScript code cleanup: how you can refactor to use Classes</a></p>
+</blockquote>
+<p>在一些小规模的 React 工程中，将组件里所用的所有方法维护在组件内部没什么问题。不过到了中等规模的项目时，你可能会将那些方法从组件抽取到一个 “helper” 里。本文将展示如何使用类（而非导出独立的函数和变量）来组织代码。</p>
+<a id="more"></a>
+
+<p>注：我使用 React，因此这里讨论的例子也均是 React 所写。</p>
+<h2 id="典型的重构"><a href="#典型的重构" class="headerlink" title="典型的重构"></a>典型的重构</h2><p>一次典型的重构中，我们通常会把组件中的函数维护在一个帮助文件里。</p>
+<p>从：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> MyComponent = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> someFunction = <span class="function">() =&gt;</span> <span class="string">&#x27;Hey, I am text&#x27;</span></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &#123;someFunction()&#125;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>到：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; someFunction &#125; <span class="keyword">from</span> <span class="string">&#x27;functionHelper.js&#x27;</span></span><br><span class="line"><span class="keyword">const</span> MyComponent = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &#123;someFunction()&#125;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>和</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> someFunction = <span class="function">() =&gt;</span> <span class="string">&#x27;Hey, I am text&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>这个例子很二，不过你可以从中看到重构的思路：</p>
+<ol>
+<li>将你的函数复制粘贴到一个独立的文件；</li>
+<li>导入它们并像之前一样调用。</li>
+</ol>
+<p>当逻辑复杂起来，你将不得不传一些如控制状态的对象、函数到这些函数里。如今我就遇到一个问题：我有三个入参相同（一个 <code>资源</code> 和一个更新 <code>资源</code> 的函数）的函数希望从组件中提取出来。于是乎就酝酿出了更好的方法…</p>
+<h2 id="使用类重构"><a href="#使用类重构" class="headerlink" title="使用类重构"></a>使用类重构</h2><p>我为本文做了一个隆重的演示，你可以在 <a target="_blank" rel="noopener" href="https://github.com/AmberWilkie/class-demo">GitHub</a> 上查阅源码。初始的提交显示所有功能都写在主组件中（<code>App.js</code>），而随后的提交逐渐使用了类重构代码。</p>
+<p><img data-src="https://ua6wcg.bn.files.1drv.com/y4mYy_pu9AzJk55bWAa0HOHDdjZDUp6QId12MxyJKxSSyBDQX8L-w321hFpMC47CYkQCl1Hly1JCATTUeP6-KTjE05cxDg46eOARJogyaVeodrYaM3bm3i8hcPo9dbhQ7wQOq0A2SAkUGdhaeS1C7xX2Do4yLK_ThI45fsjemuXGxGAb0UeuqpqghFkUUr-kqnLmw7AQZVQh1-kHQTP9mkTYQ"></p>
+<p>你可以尝试运行该工程，不过请记得 <code>yarn install</code> 安装依赖。</p>
+<p>我们从一个”获取”对象（通常是请求一个 API 接口）的组件开始，它有一些确切的属性：repeat（盒子的个数），side（高和宽），text，color。接着我们有一系列操作视图的方法——改变色彩，更新文字，等等。每次视图更改后，我们展示一条信息。</p>
+<p>举个例子，这是我们改变宽高的方法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">changeSide = <span class="function"><span class="params">side</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> obj = &#123;...this.state.obj, side&#125;;</span><br><span class="line">  <span class="built_in">this</span>.fetchObject(obj);</span><br><span class="line">  <span class="built_in">this</span>.setState(&#123; <span class="attr">message</span>: <span class="string">`You changed the sides to <span class="subst">$&#123;side&#125;</span> pixels!`</span> &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>可能有些方法中也需要类似的操作，或许这些方法大不相同。这时候我们可能开始考虑将这段代码放到一个帮助文件里，然后创建另一个方法调用 <code>setState</code> ，同时需要将状态对象、<code>side</code> 参数以及 <code>this.fetchObject</code> 传入其中。如果类似的方法多了起来，那么就会存在大量的参数传递，从而导致代码重构起不到作用（或缺乏可读性）。</p>
+<p>取而代之，我们可以使用类的构造函数方法来实现：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">ObjectManipulator</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="title">constructor</span>(<span class="params"> &#123; object, fetchObject, markResettable, updateMessage, updateStateValue &#125; </span>)</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.fetchObject = fetchObject;</span><br><span class="line">    <span class="built_in">this</span>.markResettable = markResettable;</span><br><span class="line">    <span class="built_in">this</span>.updateMessage = updateMessage;</span><br><span class="line">    <span class="built_in">this</span>.updateStateValue = updateStateValue;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  changeSide = <span class="function">(<span class="params"> object, side </span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> newObject = &#123; ...object, side &#125;;</span><br><span class="line">    <span class="built_in">this</span>.fetchObject(newObject);</span><br><span class="line">    <span class="built_in">this</span>.updateMessage(<span class="string">`You changed the sides to <span class="subst">$&#123;side&#125;</span> pixels!`</span>);</span><br><span class="line">    <span class="built_in">this</span>.markResettable();</span><br><span class="line">    <span class="built_in">this</span>.updateStateValue(<span class="string">&#x27;side&#x27;</span>, side);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>这允许我们创建一个能在主组件中调用其函数的对象：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> manipulator = <span class="keyword">new</span> ObjectManipulator(&#123;</span><br><span class="line">  object,</span><br><span class="line">  fetchObject: <span class="built_in">this</span>.fetchObject,</span><br><span class="line">  markResettable: <span class="built_in">this</span>.markResettable,</span><br><span class="line">  updateMessage: <span class="built_in">this</span>.updateMessage,</span><br><span class="line">  updateStateValue: <span class="built_in">this</span>.updateStateValue,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>上述代码创建了一个对象 <code>manipulator</code> —— <code>ObjectManipulator</code> 类的实例。当我们调用 <code>manipulator.changeSide(object, &#39;800&#39;)</code> 时，将执行之前定义好的 <code>changeSide</code> 方法。这里无需传递 <code>updateMessage</code> 或任何其他方法——当实例创建时已经在构造函数中对这些方法赋好了值。</p>
+<p>可以想象如果我们有许多类似的方法需要处理时这招将变得非常管用。就我而言，我需要在一个异步事件后调用 <code>.then(res =&gt; myFunction(res))</code> 。相比于将 <code>myFunction</code> 传入每个函数的做法，在类实例中提前定义它节省了不少代码。</p>
+<h2 id="保持所有事情井井有条"><a href="#保持所有事情井井有条" class="headerlink" title="保持所有事情井井有条"></a>保持所有事情井井有条</h2><p>这种组织方法还可以促进代码互不越界。例如在前文的范例里，按钮的颜色维护在一个对应的数组之中，将此常量放到 <code>ObjectManipulator</code> 可以确保其不会与应用中的其他 <code>colors</code> 冲突：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">ObjectManipulator</span> </span>&#123;</span><br><span class="line">  [...]</span><br><span class="line"></span><br><span class="line">  colors = [<span class="string">&#x27;blue&#x27;</span>, <span class="string">&#x27;red&#x27;</span>, <span class="string">&#x27;orange&#x27;</span>, <span class="string">&#x27;aquamarine&#x27;</span>, <span class="string">&#x27;green&#x27;</span>, <span class="string">&#x27;gray&#x27;</span>, <span class="string">&#x27;magenta&#x27;</span>];</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>鉴于其他地方存在全局 <code>colors</code> 常量的可能性，我可以使用 <code>manipulator.colors</code> 正确地获取我想要的颜色。</p>
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes">Good old Mozilla Class docs</a></p>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2018/optimization-road-of-count-down-timer/" rel="bookmark">论一个倒计时器的性能优化之路</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2019/3rd-blog-anniversary/" rel="bookmark">写在博客三周年</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2017/introduction-to-structure-view/" rel="bookmark">十分钟带你了解国产自制开源插件 structure-view</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2017/remove-duplicates-from-javascript-array/" rel="bookmark">小议 Javascript 数组去重</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2017/weex-android-quick-tutorial/" rel="bookmark">Weex Android 发车指南（已弃车）</a></div>
+    </li>
+  </ul>
+
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>Buy me a cup of coffee :)</div>
+  <button onclick="document.querySelector('.post-reward').classList.toggle('active');">
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/reward-wechat.jpg" alt="John Chou 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/reward-alipay.jpg" alt="John Chou 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>John Chou
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://blog.joouis.com/2018/how-you-can-refactor-to-use-classes/" title="Javascript 简洁之道：如何使用类重构">https://blog.joouis.com/2018/how-you-can-refactor-to-use-classes/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nd/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-ND</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/refactor/" rel="tag"># refactor</a>
+              <a href="/tags/javascript/" rel="tag"># javascript</a>
+              <a href="/tags/react/" rel="tag"># react</a>
+              <a href="/tags/hoc/" rel="tag"># hoc</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2018/first-flutter-app-review/" rel="prev" title="简易计数器——年轻人的第一个Flutter应用">
+                  <i class="fa fa-chevron-left"></i> 简易计数器——年轻人的第一个Flutter应用
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2018/reading-notes-extreme-ownership/" rel="next" title="读书简记：《极限控制》">
+                  读书简记：《极限控制》 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+      
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      
+
+      
+
+<div class="copyright">
+  
+  &copy; 2016 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Chou</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  
+  <script src="//cdn.jsdelivr.net/npm/quicklink@2.0.0/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink.listen({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://blog.joouis.com/2018/how-you-can-refactor-to-use-classes/',]
+      });
+      });
+  </script>
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://joou.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://blog.joouis.com/2018/how-you-can-refactor-to-use-classes/";
+    this.page.identifier = "2018/how-you-can-refactor-to-use-classes/";
+    this.page.title = "Javascript 简洁之道：如何使用类重构";
+    };
+  NexT.utils.loadComments('#disqus_thread', () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://joou.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

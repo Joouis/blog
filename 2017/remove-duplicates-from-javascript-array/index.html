@@ -1,23 +1,720 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
 
-{% block title %}{{ page.title }} | {{ title }}{% endblock %}
 
-{% block page_class %}page-post-detail{% endblock %}
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/hacker.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/hacker.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/hacker.ico">
+  <link rel="mask-icon" href="/images/hacker.ico" color="#222">
 
-{% block content %}
+<link rel="stylesheet" href="/css/main.css">
 
-  <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"blog.joouis.com","root":"/","scheme":"Mist","version":"8.0.2","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
+
+  <meta name="description" content="几乎所有 Javascript （以下简称 js）初学者都会遇到的一个问题：如何（优雅地）去除数组中重复的元素。这个问题在 stack overflow 上被赞了近五百次，不过这并不重要。重要的是，有热心网友给出了全面、专业的回答，让博主看了大呼过瘾。在此对原文进行翻译，与大家一起分享。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="小议 Javascript 数组去重">
+<meta property="og:url" content="https://blog.joouis.com/2017/remove-duplicates-from-javascript-array/index.html">
+<meta property="og:site_name" content="江边的旱鸭子">
+<meta property="og:description" content="几乎所有 Javascript （以下简称 js）初学者都会遇到的一个问题：如何（优雅地）去除数组中重复的元素。这个问题在 stack overflow 上被赞了近五百次，不过这并不重要。重要的是，有热心网友给出了全面、专业的回答，让博主看了大呼过瘾。在此对原文进行翻译，与大家一起分享。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2017-01-31T16:43:39.000Z">
+<meta property="article:modified_time" content="2017-02-27T16:00:00.000Z">
+<meta property="article:author" content="John Chou">
+<meta property="article:tag" content="javascript">
+<meta property="article:tag" content="array">
+<meta property="article:tag" content="remove duplicates">
+<meta property="article:tag" content="stackoverflow">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://blog.joouis.com/2017/remove-duplicates-from-javascript-array/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>小议 Javascript 数组去重 | 江边的旱鸭子</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-76188004-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-76188004-1');
+      }
+    </script>
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?199f195e233fd5ecca0d9346d3259670";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="江边的旱鸭子" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
   </div>
 
-{% endblock %}
+  <div class="site-meta">
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">江边的旱鸭子</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Blog of Joou</p>
+  </div>
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section">首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section">归档</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section">分类</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section">关于</a>
+
+  </li>
+        <li class="menu-item menu-item-recruit">
+
+    <a href="/recruit/" rel="section">招聘</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger">搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <section class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E2%80%9CSmart%E2%80%9D-but-naive-way"><span class="nav-number">1.</span> <span class="nav-text">“Smart” but naïve way</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hashtables-to-the-rescue"><span class="nav-number">2.</span> <span class="nav-text">Hashtables to the rescue</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#The-best-from-two-worlds"><span class="nav-number">3.</span> <span class="nav-text">The best from two worlds</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#sort-uniq"><span class="nav-number">4.</span> <span class="nav-text">sort | uniq</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Unique-by%E2%80%A6"><span class="nav-number">5.</span> <span class="nav-text">Unique by…</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Libraries"><span class="nav-number">6.</span> <span class="nav-text">Libraries</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Performance"><span class="nav-number">7.</span> <span class="nav-text">Performance</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ES6"><span class="nav-number">8.</span> <span class="nav-text">ES6</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%90%8E%E8%AF%9D"><span class="nav-number">9.</span> <span class="nav-text">后话</span></a></li></ol></div>
+        </section>
+        <!--/noindex-->
+
+        <section class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="John Chou"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">John Chou</p>
+  <div class="site-description" itemprop="description">Stand high, think different.</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">50</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">179</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Joouis" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Joouis" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:luckyjoou@gmail.com" title="E-Mail → mailto:luckyjoou@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/Joouis" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;Joouis" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://www.slideshare.net/choujohn351" title="SlideShare → http:&#x2F;&#x2F;www.slideshare.net&#x2F;choujohn351" rel="noopener" target="_blank"><i class="fab fa-slideshare fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nd/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nd.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </section>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+      
+
+      
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://blog.joouis.com/2017/remove-duplicates-from-javascript-array/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="John Chou">
+      <meta itemprop="description" content="Stand high, think different.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江边的旱鸭子">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          小议 Javascript 数组去重
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2017-02-01 00:43:39" itemprop="dateCreated datePublished" datetime="2017-02-01T00:43:39+08:00">2017-02-01</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2017-02-28 00:00:00" itemprop="dateModified" datetime="2017-02-28T00:00:00+08:00">2017-02-28</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Web-%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">Web 前端</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2017/remove-duplicates-from-javascript-array/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/remove-duplicates-from-javascript-array/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>4 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>几乎所有 Javascript （以下简称 js）初学者都会遇到的一个问题：如何（优雅地）去除数组中重复的元素。<br>这个问题在 stack overflow 上被赞了近五百次，不过这并不重要。重要的是，有热心网友给出了全面、专业的回答，让博主看了大呼过瘾。<br>在此对原文进行翻译，与大家一起分享。</p>
+<a id="more"></a>
+
+<p>注：下文中的“物件”对应英文”object”。</p>
+<h1 id="“Smart”-but-naive-way"><a href="#“Smart”-but-naive-way" class="headerlink" title="“Smart” but naïve way"></a>“Smart” but naïve way</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">uniqueArray = a.filter(<span class="function"><span class="keyword">function</span>(<span class="params">item, pos</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a.indexOf(item) == pos;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>最基本的版本：我们迭代整个数组，检查其中每一个元素在数组中第一次出现的位置与该元素实际的位置是否相等，如果不等则为重复元素。<br>使用 <code>filter</code> 的回调函数中的第三个参数 <code>self</code> ，可以避免数组变量的闭包问题（数组中的元素还是数组）。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">uniqueArray = a.filter(<span class="function"><span class="keyword">function</span>(<span class="params">item, pos, self</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> self.indexOf(item) == pos;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>尽管这种算法简洁明了，但是对于大型数组来说尤其缺乏效率（时间复杂度为 n^2）。</p>
+<h1 id="Hashtables-to-the-rescue"><a href="#Hashtables-to-the-rescue" class="headerlink" title="Hashtables to the rescue"></a>Hashtables to the rescue</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">uniq</span>(<span class="params">a</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> seen = &#123;&#125;;</span><br><span class="line">    <span class="keyword">return</span> a.filter(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> seen.hasOwnProperty(item) ? <span class="literal">false</span> : (seen[item] = <span class="literal">true</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>通常使用的方法是将每个元素存入一张哈希表中，然后直接检查它是否存在。这保证了线性的时间复杂度，但存在至少两个缺点：</p>
+<ul>
+<li>由于在 JavaScript 中，哈希键 (key) 只能为字符串，这将导致上述代码无法区分数字和字符串数字。例如，<code>uniq([1,&quot;1&quot;])</code> 将只会返回 <code>[1]</code> 。</li>
+<li>同理，例如 <code>uniq([&#123;foo:1&#125;,&#123;foo:2&#125;])</code> 这样具有相同键的物件也会被认为是一样的，仅得到 <code>[&#123;foo:1&#125;]</code> 。</li>
+</ul>
+<p>也就是说，如果你的数组中仅包含 js 的原始类型 (primitives) 且你无需在意它们的具体种类（例如它们全都是数字），这个算法是最佳的。</p>
+<h1 id="The-best-from-two-worlds"><a href="#The-best-from-two-worlds" class="headerlink" title="The best from two worlds"></a>The best from two worlds</h1><p>结合上述两种方法，有一个通用的解决方案：原始类型使用哈希表查找，而物件使用线性查找…</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">uniq</span>(<span class="params">a</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> prims = &#123;<span class="string">&quot;boolean&quot;</span>:&#123;&#125;, <span class="string">&quot;number&quot;</span>:&#123;&#125;, <span class="string">&quot;string&quot;</span>:&#123;&#125;&#125;, objs = [];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> a.filter(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> type = <span class="keyword">typeof</span> item;</span><br><span class="line">        <span class="keyword">if</span>(type <span class="keyword">in</span> prims)</span><br><span class="line">            <span class="keyword">return</span> prims[type].hasOwnProperty(item) ? <span class="literal">false</span> : (prims[type][item] = <span class="literal">true</span>);</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="keyword">return</span> objs.indexOf(item) &gt;= <span class="number">0</span> ? <span class="literal">false</span> : objs.push(item);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="sort-uniq"><a href="#sort-uniq" class="headerlink" title="sort | uniq"></a>sort | uniq</h1><p>还有一个选择是先对数组排序，然后去除与前一元素相等的元素：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">uniq</span>(<span class="params">a</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a.sort().filter(<span class="function"><span class="keyword">function</span>(<span class="params">item, pos, ary</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> !pos || item != ary[pos - <span class="number">1</span>];</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>同理，由于 <code>sort</code> 方法无法直接对物件进行排序，因此这种方法对物件无效。另外存在一个副作用——原始数组已被改变。假如输入数组已经是有序的，则可以使用这种方法（同时去掉上述代码中的 <code>sort()</code> 方法）。</p>
+<h1 id="Unique-by…"><a href="#Unique-by…" class="headerlink" title="Unique by…"></a>Unique by…</h1><p>有时候我们希望能基于一些条件而不仅仅是根据数值相等进行唯一化，例如过滤出有共性但是实际是不同的物件（后面会举例说明）。传递回调函数可以优美地解决这一需求。由于 <code>key</code> 预期会返回一个原始类型，因此哈希表在这里可以正常工作：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">uniqBy</span>(<span class="params">a, key</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> seen = &#123;&#125;;</span><br><span class="line">    <span class="keyword">return</span> a.filter(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> k = key(item);</span><br><span class="line">        <span class="keyword">return</span> seen.hasOwnProperty(k) ? <span class="literal">false</span> : (seen[k] = <span class="literal">true</span>);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>JSON.stringify</code> 就是一个特别有用的 <code>key</code> 回调函数，可以移除“看起来”一样但实际不同的物件：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = [[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>], [<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>], [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]]</span><br><span class="line">b = uniqBy(a, <span class="built_in">JSON</span>.stringify)</span><br><span class="line"><span class="built_in">console</span>.log(b) <span class="comment">// [[1,2,3], [4,5,6]]</span></span><br></pre></td></tr></table></figure>
+
+<p>如果 <code>key</code> 返回的不是原始类型，则需要依赖线性搜索：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">uniqBy</span>(<span class="params">a, key</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> index = [];</span><br><span class="line">    <span class="keyword">return</span> a.filter(<span class="function"><span class="keyword">function</span> (<span class="params">item</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> k = key(item);</span><br><span class="line">        <span class="keyword">return</span> index.indexOf(k) &gt;= <span class="number">0</span> ? <span class="literal">false</span> : index.push(k);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>或是使用 ES6 中的 <code>Set</code> 物件：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">uniqBy</span>(<span class="params">a, key</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> seen = <span class="keyword">new</span> <span class="built_in">Set</span>();</span><br><span class="line">    <span class="keyword">return</span> a.filter(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">var</span> k = key(item);</span><br><span class="line">        <span class="keyword">return</span> seen.has(k) ? <span class="literal">false</span> : seen.add(k);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>(相比 <code>seen.has(k) ? false : seen.add(k)</code> ，有些人更喜欢 <code>!seen.has(k) &amp;&amp; seen.add(k)</code> )</p>
+<h1 id="Libraries"><a href="#Libraries" class="headerlink" title="Libraries"></a>Libraries</h1><p><a target="_blank" rel="noopener" href="http://underscorejs.org/#uniq">Underscore</a> 和 <a target="_blank" rel="noopener" href="https://lodash.com/docs#uniq">Lo-Dash</a> 都提供了 <code>uniq</code> 方法，他们的算法与上述第一段代码类似，总结就是：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> result = [];</span><br><span class="line">a.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>) </span>&#123;</span><br><span class="line">     <span class="keyword">if</span>(result.indexOf(item) &lt; <span class="number">0</span>) &#123;</span><br><span class="line">         result.push(item);</span><br><span class="line">     &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>其时间复杂度是二次方，但是有些额外的好处，例如封装了原生的 <code>indexOf</code> 方法、可以通过键进行唯一化（官方说法叫 <code>iteratee</code>）、对于有序数组有优势。</p>
+<p>如果使用 jQuery 并且喜欢以美刀符号开头，则大概长这样：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$.uniqArray = <span class="function"><span class="keyword">function</span>(<span class="params">a</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> $.grep(a, <span class="function"><span class="keyword">function</span>(<span class="params">item, pos</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> $.inArray(item, a) === pos;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>同样的，也是第一段代码的变体而已。</p>
+<h1 id="Performance"><a href="#Performance" class="headerlink" title="Performance"></a>Performance</h1><p>JavaScript 中函数呼叫的成本昂贵，因此上述方法即使简洁明了，但是并不高效。如果以效能为最高宗旨，将 <code>filter</code> 全部替换成回圈以避免多余的函数呼叫：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">uniq_fast</span>(<span class="params">a</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> seen = &#123;&#125;;</span><br><span class="line">    <span class="keyword">var</span> out = [];</span><br><span class="line">    <span class="keyword">var</span> len = a.length;</span><br><span class="line">    <span class="keyword">var</span> j = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">         <span class="keyword">var</span> item = a[i];</span><br><span class="line">         <span class="keyword">if</span>(seen[item] !== <span class="number">1</span>) &#123;</span><br><span class="line">               seen[item] = <span class="number">1</span>;</span><br><span class="line">               out[j++] = item;</span><br><span class="line">         &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> out;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这段丑陋的代码和第三段代码做了相同的事情，但是执行速度上快了一个数量级。</p>
+<p>（测试代码如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">uniq</span>(<span class="params">a</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> seen = &#123;&#125;;</span><br><span class="line">    <span class="keyword">return</span> a.filter(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> seen.hasOwnProperty(item) ? <span class="literal">false</span> : (seen[item] = <span class="literal">true</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">uniq_fast</span>(<span class="params">a</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> seen = &#123;&#125;;</span><br><span class="line">    <span class="keyword">var</span> out = [];</span><br><span class="line">    <span class="keyword">var</span> len = a.length;</span><br><span class="line">    <span class="keyword">var</span> j = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">         <span class="keyword">var</span> item = a[i];</span><br><span class="line">         <span class="keyword">if</span>(seen[item] !== <span class="number">1</span>) &#123;</span><br><span class="line">               seen[item] = <span class="number">1</span>;</span><br><span class="line">               out[j++] = item;</span><br><span class="line">         &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> out;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/////</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> r = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>],</span><br><span class="line">    a = [],</span><br><span class="line">    LEN = <span class="number">1000</span>,</span><br><span class="line">    LOOPS = <span class="number">1000</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>(LEN--)</span><br><span class="line">    a = a.concat(r);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> d = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; LOOPS; i++)</span><br><span class="line">    uniq(a);</span><br><span class="line"><span class="built_in">document</span>.write(<span class="string">&#x27;&lt;br&gt;uniq, ms/loop: &#x27;</span> + (<span class="keyword">new</span> <span class="built_in">Date</span>() - d)/LOOPS)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> d = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; LOOPS; i++)</span><br><span class="line">    uniq_fast(a);</span><br><span class="line"><span class="built_in">document</span>.write(<span class="string">&#x27;&lt;br&gt;uniq_fast, ms/loop: &#x27;</span> + (<span class="keyword">new</span> <span class="built_in">Date</span>() - d)/LOOPS)</span><br></pre></td></tr></table></figure>
+<p>）</p>
+<h1 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</h1><p>ES6 提供了 <code>Set</code> 物件，让事情变得简单许多：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">uniq</span>(<span class="params">a</span>) </span>&#123;</span><br><span class="line">   <span class="keyword">return</span> <span class="built_in">Array</span>.from(<span class="keyword">new</span> <span class="built_in">Set</span>(a));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>或者</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> uniq = <span class="function"><span class="params">a</span> =&gt;</span> [...new <span class="built_in">Set</span>(a)];</span><br></pre></td></tr></table></figure>
+
+<p>需要注意的是，与 Python 不同，ES6 的 <code>set</code> 以插入顺序进行迭代，因此代码保证了原始数组的顺序。</p>
+<p>无论如何，如果你需要一个唯一化的数组，为何不从正确地使用 <code>set</code> 开始呢？</p>
+<h1 id="后话"><a href="#后话" class="headerlink" title="后话"></a>后话</h1><p>文章发在公司内网的技术论坛后，有一些很有价值的反馈。</p>
+<p>有同学按照上述方法进行了测试，发现 demo 的第一种和第二种并不存在“数量级”的差异，另外 Set 的效率也并不高，比前两者都慢。</p>
+<p>我随即也进行了测试，发现确实如此。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">MacBook Air (13-inch, Early 2015) 8G Ram</span><br><span class="line">Chrome (版本 56.0.2924.87)</span><br><span class="line"></span><br><span class="line">uniq, ms&#x2F;loop: 0.362</span><br><span class="line">uniq_fast, ms&#x2F;loop: 0.171</span><br><span class="line">uniq_set, ms&#x2F;loop: 1.728</span><br></pre></td></tr></table></figure>
+
+<p>其次一位资深同学提出以下观点，很有启发：</p>
+<blockquote>
+<p>数组去重的关键点是：如何判断“重复”，是否完备可靠。</p>
+<ol>
+<li>数组类型的 <code>indexOf()</code> 方法不能处理 <code>NaN</code> 的情况</li>
+<li><code>Set</code> 类型的key不支持Object类型，而且会区别对待 <code>1</code> 和 <code>&#39;1&#39;</code></li>
+<li>关于性能测试。建议到jsperf上去写个case跑一跑，比如：<a target="_blank" rel="noopener" href="https://jsperf.com/js-unique-array">https://jsperf.com/js-unique-array</a> ；而且要在多个浏览器下测试。因为不同内核对es语法的实现不一样，表现出来的性能也不一样</li>
+</ol>
+<p>这篇文章也讨论了数组去重问题：<a target="_blank" rel="noopener" href="https://www.toobug.net/article/array_unique_in_javascript.html">https://www.toobug.net/article/array_unique_in_javascript.html</a></p>
+</blockquote>
+<hr>
+<p>源文链接:<br><a target="_blank" rel="noopener" href="http://stackoverflow.com/questions/9229645/remove-duplicates-from-javascript-array">Remove Duplicates from JavaScript Array</a></p>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2018/how-you-can-refactor-to-use-classes/" rel="bookmark">Javascript 简洁之道：如何使用类重构</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2017/introduction-to-structure-view/" rel="bookmark">十分钟带你了解国产自制开源插件 structure-view</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2018/optimization-road-of-count-down-timer/" rel="bookmark">论一个倒计时器的性能优化之路</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2017/weex-android-quick-tutorial/" rel="bookmark">Weex Android 发车指南（已弃车）</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2019/build-web-e2e-test-system-from-scratch/" rel="bookmark">Build web E2E test system from scratch</a></div>
+    </li>
+  </ul>
+
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>Buy me a cup of coffee :)</div>
+  <button onclick="document.querySelector('.post-reward').classList.toggle('active');">
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/reward-wechat.jpg" alt="John Chou 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/reward-alipay.jpg" alt="John Chou 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>John Chou
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://blog.joouis.com/2017/remove-duplicates-from-javascript-array/" title="小议 Javascript 数组去重">https://blog.joouis.com/2017/remove-duplicates-from-javascript-array/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nd/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-ND</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/javascript/" rel="tag"># javascript</a>
+              <a href="/tags/array/" rel="tag"># array</a>
+              <a href="/tags/remove-duplicates/" rel="tag"># remove duplicates</a>
+              <a href="/tags/stackoverflow/" rel="tag"># stackoverflow</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2016/the-details-i-learned-from-software-company-in-silicon-valley/" rel="prev" title="从硅谷软件企业学习到的细节">
+                  <i class="fa fa-chevron-left"></i> 从硅谷软件企业学习到的细节
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2017/mysql-note/" rel="next" title="MySQL 笔记">
+                  MySQL 笔记 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+      
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      
+
+      
+
+<div class="copyright">
+  
+  &copy; 2016 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Chou</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  
+  <script src="//cdn.jsdelivr.net/npm/quicklink@2.0.0/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink.listen({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://blog.joouis.com/2017/remove-duplicates-from-javascript-array/',]
+      });
+      });
+  </script>
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://joou.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://blog.joouis.com/2017/remove-duplicates-from-javascript-array/";
+    this.page.identifier = "2017/remove-duplicates-from-javascript-array/";
+    this.page.title = "小议 Javascript 数组去重";
+    };
+  NexT.utils.loadComments('#disqus_thread', () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://joou.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

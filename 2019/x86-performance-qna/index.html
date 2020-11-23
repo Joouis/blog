@@ -1,23 +1,677 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
 
-{% block title %}{{ page.title }} | {{ title }}{% endblock %}
 
-{% block page_class %}page-post-detail{% endblock %}
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/hacker.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/hacker.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/hacker.ico">
+  <link rel="mask-icon" href="/images/hacker.ico" color="#222">
 
-{% block content %}
+<link rel="stylesheet" href="/css/main.css">
 
-  <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"blog.joouis.com","root":"/","scheme":"Mist","version":"8.0.2","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
+
+  <meta name="description" content="这篇博文来自 Facebook 「2016年系統軟體課程」小组里的一个问答。背景是正在修 Jserv 课程的一位同学 Louie Lu 在对作业 Phonebook 进行性能测试时，疑惑自己的电脑系统同时也跑着一堆别的应用如浏览器、音乐播放器等，那么怎样才能确认硬件资源是被他的测试程序最大化使用了呢？ 这个问题非常有趣，和经典面试题 “What happens when you type goog">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何在 X86-64 下比较精准地测量系统性能">
+<meta property="og:url" content="https://blog.joouis.com/2019/x86-performance-qna/index.html">
+<meta property="og:site_name" content="江边的旱鸭子">
+<meta property="og:description" content="这篇博文来自 Facebook 「2016年系統軟體課程」小组里的一个问答。背景是正在修 Jserv 课程的一位同学 Louie Lu 在对作业 Phonebook 进行性能测试时，疑惑自己的电脑系统同时也跑着一堆别的应用如浏览器、音乐播放器等，那么怎样才能确认硬件资源是被他的测试程序最大化使用了呢？ 这个问题非常有趣，和经典面试题 “What happens when you type goog">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://vk6wcg.bn.files.1drv.com/y4mDcDK8DZthxyf33kEOf7drCSSlkY4W7dGvxbZLEhlnEkSbRa7qPJZRXOcYp0dIxhZUkQr88PYY0x0cikEvH09ExoPll7U1OXOmgSbozLiT9AhJt09qdUecXlbh_4JPpZWSUQTOyYS4Jt1E5wjMUGGxi-vQiMBI47Zd3PHkAar_QUMT1V-fGQPeMm8LbrTFcEvGqU1WEC1Oaa2PJsJ8LBNXA">
+<meta property="article:published_time" content="2019-04-27T06:07:46.000Z">
+<meta property="article:modified_time" content="2019-04-27T07:45:00.000Z">
+<meta property="article:author" content="John Chou">
+<meta property="article:tag" content="x86">
+<meta property="article:tag" content="performance">
+<meta property="article:tag" content="cache">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://vk6wcg.bn.files.1drv.com/y4mDcDK8DZthxyf33kEOf7drCSSlkY4W7dGvxbZLEhlnEkSbRa7qPJZRXOcYp0dIxhZUkQr88PYY0x0cikEvH09ExoPll7U1OXOmgSbozLiT9AhJt09qdUecXlbh_4JPpZWSUQTOyYS4Jt1E5wjMUGGxi-vQiMBI47Zd3PHkAar_QUMT1V-fGQPeMm8LbrTFcEvGqU1WEC1Oaa2PJsJ8LBNXA">
+
+
+<link rel="canonical" href="https://blog.joouis.com/2019/x86-performance-qna/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>如何在 X86-64 下比较精准地测量系统性能 | 江边的旱鸭子</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-76188004-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-76188004-1');
+      }
+    </script>
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?199f195e233fd5ecca0d9346d3259670";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="江边的旱鸭子" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
   </div>
 
-{% endblock %}
+  <div class="site-meta">
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">江边的旱鸭子</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Blog of Joou</p>
+  </div>
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section">首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section">归档</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section">分类</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section">关于</a>
+
+  </li>
+        <li class="menu-item menu-item-recruit">
+
+    <a href="/recruit/" rel="section">招聘</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger">搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <section class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE"><span class="nav-number">1.</span> <span class="nav-text">问</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Louie-Lu-September-25-2016"><span class="nav-number">1.1.</span> <span class="nav-text">Louie Lu - September 25, 2016</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AD%94"><span class="nav-number">2.</span> <span class="nav-text">答</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Champ-Yen"><span class="nav-number">2.1.</span> <span class="nav-text">Champ Yen</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Scott-Tsai"><span class="nav-number">2.2.</span> <span class="nav-text">Scott Tsai</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%8D%E9%A6%88"><span class="nav-number">3.</span> <span class="nav-text">反馈</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Louie-Lu"><span class="nav-number">3.1.</span> <span class="nav-text">Louie Lu</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E5%B8%96"><span class="nav-number">4.</span> <span class="nav-text">原帖</span></a></li></ol></div>
+        </section>
+        <!--/noindex-->
+
+        <section class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="John Chou"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">John Chou</p>
+  <div class="site-description" itemprop="description">Stand high, think different.</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">50</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">179</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Joouis" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Joouis" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:luckyjoou@gmail.com" title="E-Mail → mailto:luckyjoou@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/Joouis" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;Joouis" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://www.slideshare.net/choujohn351" title="SlideShare → http:&#x2F;&#x2F;www.slideshare.net&#x2F;choujohn351" rel="noopener" target="_blank"><i class="fab fa-slideshare fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nd/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nd.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </section>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+      
+
+      
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://blog.joouis.com/2019/x86-performance-qna/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="John Chou">
+      <meta itemprop="description" content="Stand high, think different.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江边的旱鸭子">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          如何在 X86-64 下比较精准地测量系统性能
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2019-04-27 14:07:46 / 修改时间：15:45:00" itemprop="dateCreated datePublished" datetime="2019-04-27T14:07:46+08:00">2019-04-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%BA%95%E5%B1%82/" itemprop="url" rel="index"><span itemprop="name">系统与底层</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2019/x86-performance-qna/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/x86-performance-qna/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>3 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>这篇博文来自 Facebook 「2016年系統軟體課程」小组里的一个<a target="_blank" rel="noopener" href="https://www.facebook.com/groups/system.software2016/permalink/1124571464289024/">问答</a>。背景是正在修 Jserv 课程的一位同学 Louie Lu 在对作业 Phonebook 进行性能测试时，疑惑自己的电脑系统同时也跑着一堆别的应用如浏览器、音乐播放器等，那么怎样才能确认硬件资源是被他的测试程序最大化使用了呢？</p>
+<p>这个问题非常有趣，和经典面试题 “What happens when you type google.com into your browser and press enter?” 有异曲同工之妙。更重要的是，Jserv 邀请了两位业界前辈做了精彩回答。</p>
+<p>无论在 Facebook 还是微信公众号，零碎的知识总会随着时间慢慢被遗忘。但是有的话题所包含的知识已经由点及面，因此沉淀为一篇博文也许是更好的归宿。</p>
+<a id="more"></a>
+
+
+
+
+<h2 id="问"><a href="#问" class="headerlink" title="问"></a>问</h2><h3 id="Louie-Lu-September-25-2016"><a href="#Louie-Lu-September-25-2016" class="headerlink" title="Louie Lu - September 25, 2016"></a>Louie Lu - September 25, 2016</h3><p>請問一下，我們要怎麼在 x86-64 底下測出比較精確的 performance 呢？<br>　<br>當我在測 phonebook 的時候，我還跑著 chromium、spotify、lxde 這些程式，那我怎麼證明 32k 的 L1 cache 都是由 phonebook 在使用呢？<br>　<br>還有，現在的 CPU 都會自動調節 clock speed，又怎麼能保證我測的時候都是在 max speed 測試，如果是用在論文的數據上面的話，要怎麼樣才能提出一個有可信度的實驗資料…</p>
+<h2 id="答"><a href="#答" class="headerlink" title="答"></a>答</h2><h3 id="Champ-Yen"><a href="#Champ-Yen" class="headerlink" title="Champ Yen"></a>Champ Yen</h3><ol>
+<li>先回答簡單的 CPU 部份，這部份透過調整 cpu governor 為 performance 就可以將 CPU 固定為最高頻率，這點 Windows 也有對應的設定。</li>
+<li>Cache 的問題比較複雜，但是如果就字面上來說，回答很簡單，當 CPU 切換到 phonebook 後在 OS scheduler 決定 context-switch 之前就只有該 process 在後續時間會影響到 L1 I/D cache。因此該探討的是在 context-switch 間 cache 暨存的資料該如何處理，這部份是 VIVT, VIPT, PIPT 的問題了。<br>而這個問題又參雜了 “跑著 chromium、spotify、lxde 這些程式”，也就是要詢問 core 之間的行為對於 cache 的交互影響。但這與 cache 設計機制有關，因為 cache 的導入本身是 transparent 的，因此這又與 CPU vendor 有關。加上 cache 架構也因處理器設計而不斷地改變，光是 cache 設計考量就有分為 exclusive 與 inclusive 管理兩種，甚至還可能因為 multi-level cache 而混合使用（eg: L1/L2 間 exclusive，與 L3 inclusive），對於多核之間 shared cache（eg: L3 in Core-i）彼此之間是競逐關係，因此這的確是個問題。但這影響對於 L1 並不是直接的，而是間接的，這問題要思考的點是當 per-core cache（eg: L1/L2 in Core-i）都 cache miss 時，會由 shared cache 的效益來決定效能。只能說在這時的確會有影響（畢竟 cache 就是為了減少 miss penalty）。但是精確掌握這影響是幾乎不可能的（因為是runtime 的問題，試著思考 Core-i 中 L3 中混雜了所有 running process 各自多少資料是動態變化的），要探究的應該是受影響的機率與可能的變化。<br>但是對於 procedure 本身的分析，精確分析還是有其必要，而至於怎麼 “精確” 評估，就看你要多 “精確” 了。你要 best case 可以透過相對 clean 的環境去跑（shared cache 幾乎是為測試程式所使用），像是 console-only，減少背景程式的情況再由 profiler 提供，要再更精確可以透過 FPGA 去做單一 process（對於 ARM 系統而言這件事有些公司與單位有作），若想對於 cache 上的管理機制精確評估（這就真的很精確了），需要做 cache 管理機制上的分析，就需要 cpu emulator or architecture simulator。但是回歸實務上該思考的另一點是這樣作法的意義，要記住 “Any measurement that you make without the knowledge of its uncertainty is completely meaningless.”。除非你的執行的環境是完全的靜態環境，否則重點應該放在 variation 的評估，而這點就必須導入 model 並且算出 shared cache 的使用情況的 best/worst case 的情況，並且有系統性方法的去分析與歸納出對效能的影響。</li>
+</ol>
+<h3 id="Scott-Tsai"><a href="#Scott-Tsai" class="headerlink" title="Scott Tsai"></a>Scott Tsai</h3><p>Champ Yen 大上面的討論很完整，我來扮演助教，補充一些 Linux 下工具的使用方式。</p>
+<ol>
+<li><p>CPU frequency scaling 用 “cpupower frequency-{info,set}” ：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cpupower frequency-info <span class="comment"># typically set to &#x27;powersave&#x27; by default</span></span><br><span class="line">cpupower frequency-set -g performance</span><br></pre></td></tr></table></figure>
+
+<p>cpupower 由 linux-tools-common (Ubuntu) 或 kernel-tools (Fedora) 套件提供。</p>
+<blockquote>
+<p><strong>Louie Lu</strong>：intel 的 governor 好像都沒有給 userspace 了，變成用 performance 但指定為 -d 3.5G 卻不會用全速跑的狀況..</p>
+<p><strong>Scott Tsai</strong>：最簡單的「解法」是不要用 –min, –max 來限制 CPU frequency 而是讓 CPU bound 的 code 跑一陣子而後取時間測量的中位數。</p>
+<p>要觀測 CPU frequency 可以看 “powertop” 的 “frequency stats” 。<br><strong>Louie Lu</strong>：說的也是，應該做到 Jim Huang 有提到的，95% 信賴區間的統計數據才是。</p>
+</blockquote>
+</li>
+<li><p>Linux 下，用 “lstopo” 指令可以列出機器的 cache 架構。lstopo 由 “hwloc” 套件提供。</p>
+<p><img data-src="https://vk6wcg.bn.files.1drv.com/y4mDcDK8DZthxyf33kEOf7drCSSlkY4W7dGvxbZLEhlnEkSbRa7qPJZRXOcYp0dIxhZUkQr88PYY0x0cikEvH09ExoPll7U1OXOmgSbozLiT9AhJt09qdUecXlbh_4JPpZWSUQTOyYS4Jt1E5wjMUGGxi-vQiMBI47Zd3PHkAar_QUMT1V-fGQPeMm8LbrTFcEvGqU1WEC1Oaa2PJsJ8LBNXA"></p>
+</li>
+<li><p>在實體機器上測，真的要不被其他執行中的程式影響，還是要把系統變成（幾乎）只跑你的程式。操作上：</p>
+<ul>
+<li><p>開機進入 single user mode（請自行 google）；</p>
+</li>
+<li><p><code>perf stat --detail /bin/true</code> ，把 /bin/true 替換成你的程式。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Performance counter stats <span class="keyword">for</span> <span class="string">&#x27;/bin/true&#x27;</span>:</span><br><span class="line"></span><br><span class="line">0.264133 task-clock (msec) <span class="comment"># 0.549 CPUs utilized </span></span><br><span class="line">0 context-switches <span class="comment"># 0.000 K/sec </span></span><br><span class="line">0 cpu-migrations <span class="comment"># 0.000 K/sec </span></span><br><span class="line">46 page-faults <span class="comment"># 0.174 M/sec </span></span><br><span class="line">943,098 cycles <span class="comment"># 3.571 GHz </span></span><br><span class="line">735,484 instructions <span class="comment"># 0.78 insn per cycle </span></span><br><span class="line">134,926 branches <span class="comment"># 510.826 M/sec </span></span><br><span class="line">4,595 branch-misses <span class="comment"># 3.41% of all branches </span></span><br><span class="line">197,277 L1-dcache-loads <span class="comment"># 746.885 M/sec </span></span><br><span class="line">11,454 L1-dcache-load-misses <span class="comment"># 5.81% of all L1-dcache hits </span></span><br><span class="line">5,176 LLC-loads <span class="comment"># 19.596 M/sec </span></span><br><span class="line">2,696 LLC-load-misses <span class="comment"># 52.09% of all LL-cache hits</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>也可以用專門分析 CPU microarhitecture 效能的模擬器。<br>再次強調，模擬器很多套，要用「專門模擬 CPU microchitecture 效能」的。</p>
+<p>這種模擬器中，最容易上手的大概是 callgrind。它模擬獨立的 L1 D$ 與 I$ 與 shared last-level cache。（$ 讀作 cache，因為英文中”現金”, cash, 音近 cache）</p>
+<p>另外，看看 cachegrind 的 <a target="_blank" rel="noopener" href="http://valgrind.org/docs/manual/cg-manual.html?fbclid=IwAR2MpxcrUi93xTTh5C3jo_nRnI4Bwa1jb3T6rOhruDjiSl9sURt8ybfuKa8#cg-manual.annopts.accuracy">“Accuracy” 一節所列出的模擬器限制</a>。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">valgrind --tool=callgrind --simulate-cache=yes YOUR-PROGRMS PROGRAM-ARGS</span><br><span class="line">callgrind_annotate --auto=yes callgrind.out.YOUR-PID</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>善意提示：不要只看 cache miss rate。<br>比較不同程式用 “perf stat” 量出的 “insn per cycle” 值，然後想想為什麼。Instruction per cycle, cache miss 都討論完後還有時間，也可以討論一下 TLB miss。</p>
+</li>
+</ol>
+<h2 id="反馈"><a href="#反馈" class="headerlink" title="反馈"></a>反馈</h2><h3 id="Louie-Lu"><a href="#Louie-Lu" class="headerlink" title="Louie Lu"></a>Louie Lu</h3><p>感謝 Champ Yen 跟 Scott Tsai 兩位前輩的解釋！</p>
+<p>再補充由 brendand gregg 提出的 <a target="_blank" rel="noopener" href="http://www.brendangregg.com/methodology.html">Performance Analysis Methodology</a>。<br>然後我有在自己的 <a target="_blank" rel="noopener" href="https://hackmd.io/s/BJjL6cQ6#perf-raw-counter">notes</a> 上補充 perf list 出來的 event 怎麼看以及代表的意義，這部份要去翻 intel 的 manual 跟實際操作。<br>也有遇到說 <a target="_blank" rel="noopener" href="https://software.intel.com/en-us/forums/software-tuning-performance-optimization-platform-monitoring/topic/557604?fbclid=IwAR1ll2fi9fXqj9Y6wpEe0usP9raFBPXLGM53DaWzpJwZUN-a_I1dPkCQHqI">L1-dcache-load-misses raw code 跟 manual 寫的不一樣</a>的狀況，可是剛剛實際測試兩者是相通的。</p>
+<h2 id="原帖"><a href="#原帖" class="headerlink" title="原帖"></a>原帖</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://www.facebook.com/groups/system.software2016/permalink/1124571464289024/">我們要怎麼在 x86-64 底下測出比較精確的 performance</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2020/lab-leetcode-practices/" rel="bookmark">LeetCode小练习</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2018/javascript-performance-optimization-tips-an-overview/" rel="bookmark">JavaScript 性能优化概观</a></div>
+    </li>
+  </ul>
+
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>Buy me a cup of coffee :)</div>
+  <button onclick="document.querySelector('.post-reward').classList.toggle('active');">
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/reward-wechat.jpg" alt="John Chou 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/reward-alipay.jpg" alt="John Chou 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>John Chou
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://blog.joouis.com/2019/x86-performance-qna/" title="如何在 X86-64 下比较精准地测量系统性能">https://blog.joouis.com/2019/x86-performance-qna/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nd/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-ND</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/x86/" rel="tag"># x86</a>
+              <a href="/tags/performance/" rel="tag"># performance</a>
+              <a href="/tags/cache/" rel="tag"># cache</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2019/a-thought-of-referral/" rel="prev" title="分享一下我的内推心得，顺便招人">
+                  <i class="fa fa-chevron-left"></i> 分享一下我的内推心得，顺便招人
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2019/2019-thai-trip-1/" rel="next" title="2019 泰国行游记（一）">
+                  2019 泰国行游记（一） <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+      
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      
+
+      
+
+<div class="copyright">
+  
+  &copy; 2016 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Chou</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  
+  <script src="//cdn.jsdelivr.net/npm/quicklink@2.0.0/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink.listen({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://blog.joouis.com/2019/x86-performance-qna/',]
+      });
+      });
+  </script>
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://joou.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://blog.joouis.com/2019/x86-performance-qna/";
+    this.page.identifier = "2019/x86-performance-qna/";
+    this.page.title = "如何在 X86-64 下比较精准地测量系统性能";
+    };
+  NexT.utils.loadComments('#disqus_thread', () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://joou.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

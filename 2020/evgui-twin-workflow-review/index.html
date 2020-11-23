@@ -1,23 +1,806 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
 
-{% block title %}{{ page.title }} | {{ title }}{% endblock %}
 
-{% block page_class %}page-post-detail{% endblock %}
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/hacker.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/hacker.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/hacker.ico">
+  <link rel="mask-icon" href="/images/hacker.ico" color="#222">
 
-{% block content %}
+<link rel="stylesheet" href="/css/main.css">
 
-  <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"blog.joouis.com","root":"/","scheme":"Mist","version":"8.0.2","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
+
+  <meta name="description" content="这是我的硕士论文笔记系列第六篇同时也是完结篇，原文写于 2016 年七月。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="以 Clock 应用为例追踪 TWIN 的运作流程">
+<meta property="og:url" content="https://blog.joouis.com/2020/evgui-twin-workflow-review/index.html">
+<meta property="og:site_name" content="江边的旱鸭子">
+<meta property="og:description" content="这是我的硕士论文笔记系列第六篇同时也是完结篇，原文写于 2016 年七月。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://imxhua.bn.files.1drv.com/y4mZWNrqoK7-BqFKYsGYH-6r03I5huAh5tHbjza8H1v1h7X8bcMnC7jP39TtzFNfeOkn6AIb8F9X07ZneSubEz96c9EePbUYsioZ_blhxIHfNLU_NkdCIqKFfsYP9RzXfvIhiDd-cyl8Wz02rv1B5sxZ4oN-1-u5rEiGXNAYXv6ztU7NzzYDSFvWJACT2ZhfQkFbf83NVgMn3wKisl4IkmXTA?width=1001&height=712&cropmode=none">
+<meta property="article:published_time" content="2020-04-09T15:33:38.000Z">
+<meta property="article:modified_time" content="2020-04-09T15:33:38.000Z">
+<meta property="article:author" content="John Chou">
+<meta property="article:tag" content="embedded system">
+<meta property="article:tag" content="vector">
+<meta property="article:tag" content="gui">
+<meta property="article:tag" content="twin">
+<meta property="article:tag" content="window system">
+<meta property="article:tag" content="svg">
+<meta property="article:tag" content="workflow">
+<meta property="article:tag" content="uml">
+<meta property="article:tag" content="scheduler">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://imxhua.bn.files.1drv.com/y4mZWNrqoK7-BqFKYsGYH-6r03I5huAh5tHbjza8H1v1h7X8bcMnC7jP39TtzFNfeOkn6AIb8F9X07ZneSubEz96c9EePbUYsioZ_blhxIHfNLU_NkdCIqKFfsYP9RzXfvIhiDd-cyl8Wz02rv1B5sxZ4oN-1-u5rEiGXNAYXv6ztU7NzzYDSFvWJACT2ZhfQkFbf83NVgMn3wKisl4IkmXTA?width=1001&height=712&cropmode=none">
+
+
+<link rel="canonical" href="https://blog.joouis.com/2020/evgui-twin-workflow-review/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>以 Clock 应用为例追踪 TWIN 的运作流程 | 江边的旱鸭子</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-76188004-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-76188004-1');
+      }
+    </script>
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?199f195e233fd5ecca0d9346d3259670";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="江边的旱鸭子" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
   </div>
 
-{% endblock %}
+  <div class="site-meta">
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">江边的旱鸭子</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Blog of Joou</p>
+  </div>
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section">首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section">归档</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section">分类</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section">关于</a>
+
+  </li>
+        <li class="menu-item menu-item-recruit">
+
+    <a href="/recruit/" rel="section">招聘</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger">搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <section class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#APP-%E5%89%B5%E5%BB%BA%E9%81%8E%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">APP 創建過程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%B5%E5%BB%BA-Toplevel"><span class="nav-number">1.1.</span> <span class="nav-text">創建 Toplevel</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%B5%E5%BB%BA-Clock"><span class="nav-number">1.2.</span> <span class="nav-text">創建 Clock</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%95%AB%E5%87%BA-Toplevel"><span class="nav-number">1.3.</span> <span class="nav-text">畫出 Toplevel</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AA%BF%E5%BA%A6%E5%9F%B7%E8%A1%8C%E9%81%8E%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">調度執行過程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#twin-run-timeout"><span class="nav-number">2.1.</span> <span class="nav-text">_twin_run_timeout()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#twin-run-work"><span class="nav-number">2.2.</span> <span class="nav-text">_twin_run_work()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Flowchart"><span class="nav-number">3.</span> <span class="nav-text">Flowchart</span></a></li></ol></div>
+        </section>
+        <!--/noindex-->
+
+        <section class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="John Chou"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">John Chou</p>
+  <div class="site-description" itemprop="description">Stand high, think different.</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">50</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">179</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Joouis" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Joouis" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:luckyjoou@gmail.com" title="E-Mail → mailto:luckyjoou@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/Joouis" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;Joouis" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://www.slideshare.net/choujohn351" title="SlideShare → http:&#x2F;&#x2F;www.slideshare.net&#x2F;choujohn351" rel="noopener" target="_blank"><i class="fab fa-slideshare fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nd/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nd.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </section>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+      
+
+      
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://blog.joouis.com/2020/evgui-twin-workflow-review/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="John Chou">
+      <meta itemprop="description" content="Stand high, think different.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江边的旱鸭子">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          以 Clock 应用为例追踪 TWIN 的运作流程
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-04-09 23:33:38" itemprop="dateCreated datePublished" datetime="2020-04-09T23:33:38+08:00">2020-04-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%BA%95%E5%B1%82/" itemprop="url" rel="index"><span itemprop="name">系统与底层</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2020/evgui-twin-workflow-review/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/evgui-twin-workflow-review/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>10 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>这是我的<a href="https://blog.joouis.com/2020/evgui-design-review/">硕士论文笔记系列</a>第六篇同时也是完结篇，原文写于 2016 年七月。</p>
+<a id="more"></a>
+
+
+
+<h2 id="APP-創建過程"><a href="#APP-創建過程" class="headerlink" title="APP 創建過程"></a>APP 創建過程</h2><ul>
+<li><p>在 <code>main()</code> 函式中執行 <code>twin_clock_start()</code> 即完成創建過程，下面會介紹該函數的內部運作原理</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">twin_clock_start (tf-&gt;screen, <span class="string">&quot;Clock&quot;</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">240</span>, <span class="number">320</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在 <code>twin_clock_start()</code> 函式代碼：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">twin_clock_start</span> <span class="params">(<span class="keyword">twin_screen_t</span> *screen, <span class="keyword">const</span> <span class="keyword">char</span> *name, <span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">int</span> w, <span class="keyword">int</span> h)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">twin_toplevel_t</span> *toplevel = twin_toplevel_create (screen, TWIN_ARGB32,</span><br><span class="line">                                                      TwinWindowApplication,</span><br><span class="line">                                                      x, y, w, h, name);</span><br><span class="line">    <span class="keyword">twin_clock_t</span>    *clock = twin_clock_create (&amp;toplevel-&gt;box);</span><br><span class="line">    (<span class="keyword">void</span>) clock;</span><br><span class="line">    twin_toplevel_show (toplevel);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>這裏的 <code>twin_toplevel_t</code> 結構體中只包含了一個名爲 <code>box</code> 的結構體，其定義如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> _<span class="title">twin_box</span> &#123;</span>                                                             </span><br><span class="line">    <span class="keyword">twin_widget_t</span>   widget;</span><br><span class="line">    <span class="keyword">twin_box_dir_t</span>  dir; </span><br><span class="line">    <span class="keyword">twin_widget_t</span>   *children;</span><br><span class="line">    <span class="keyword">twin_widget_t</span>   *button_down;</span><br><span class="line">    <span class="keyword">twin_widget_t</span>   *focus;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> _<span class="title">twin_widget</span> &#123;</span></span><br><span class="line">    <span class="keyword">twin_window_t</span>       *window;</span><br><span class="line">    <span class="keyword">twin_widget_t</span>       *next;</span><br><span class="line">    <span class="keyword">twin_box_t</span>          *parent;</span><br><span class="line">    <span class="keyword">twin_dispatch_proc_t</span>    dispatch;</span><br><span class="line">    <span class="keyword">twin_rect_t</span>         extents;    <span class="comment">/* current geometry */</span></span><br><span class="line">    <span class="keyword">twin_widget_t</span>       *copy_geom;</span><br><span class="line">    <span class="keyword">twin_bool_t</span>         paint;</span><br><span class="line">    <span class="keyword">twin_bool_t</span>         layout;</span><br><span class="line">    <span class="keyword">twin_bool_t</span>         want_focus;</span><br><span class="line">    <span class="keyword">twin_argb32_t</span>       background;</span><br><span class="line">    <span class="keyword">twin_widget_layout_t</span>    preferred;</span><br><span class="line">    <span class="keyword">twin_shape_t</span>        shape;</span><br><span class="line">    <span class="keyword">twin_fixed_t</span>        radius;                                                </span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">enum</span> _<span class="title">twin_box_dir</span> &#123;</span></span><br><span class="line">    TwinBoxHorz, TwinBoxVert</span><br><span class="line">&#125; <span class="keyword">twin_box_dir_t</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>創建了 toplevel 後，就呼叫 <code>twin_clock_create()</code> 函式創建 <code>toplevel-&gt;box</code> 的內容；</li>
+<li>最後呼叫 <code>twin_toplevel_show()</code> 函式，後面會分析。</li>
+</ul>
+</li>
+</ul>
+<h3 id="創建-Toplevel"><a href="#創建-Toplevel" class="headerlink" title="創建 Toplevel"></a>創建 Toplevel</h3><ul>
+<li><p>呼叫 <code>twin_window_create()</code> 創建一個 <code>window</code> 結構如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*  </span></span><br><span class="line"><span class="comment">twin_window_t   *window = twin_window_create (screen, format, style, x, y, width, height); </span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> _<span class="title">twin_window</span> &#123;</span></span><br><span class="line">    <span class="keyword">twin_screen_t</span>   *screen;</span><br><span class="line">    <span class="keyword">twin_pixmap_t</span>   *pixmap;</span><br><span class="line">    <span class="keyword">twin_window_style_t</span> style;</span><br><span class="line">    <span class="keyword">twin_rect_t</span>     client;</span><br><span class="line">    <span class="keyword">twin_rect_t</span>     damage;</span><br><span class="line">    <span class="keyword">twin_bool_t</span>     client_grab;</span><br><span class="line">    <span class="keyword">twin_bool_t</span>     want_focus;</span><br><span class="line">    <span class="keyword">twin_bool_t</span>     draw_queued;</span><br><span class="line">    <span class="keyword">void</span>        *client_data;</span><br><span class="line">    <span class="keyword">char</span>        *name;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">twin_draw_func_t</span>    draw;</span><br><span class="line">    <span class="keyword">twin_event_func_t</span>   event;</span><br><span class="line">    <span class="keyword">twin_destroy_func_t</span> destroy;</span><br><span class="line">&#125;; </span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * A rectangular array of pixels</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> _<span class="title">twin_pixmap</span> &#123;</span></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    ¦* Screen showing these pixels</span></span><br><span class="line"><span class="comment">    ¦*/</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> _<span class="title">twin_screen</span>     *<span class="title">screen</span>;</span></span><br><span class="line">    <span class="keyword">twin_count_t</span>        disable;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    ¦* List of displayed pixmaps</span></span><br><span class="line"><span class="comment">    ¦*/</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> _<span class="title">twin_pixmap</span>     *<span class="title">down</span>, *<span class="title">up</span>;</span></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    ¦* Screen position</span></span><br><span class="line"><span class="comment">    ¦*/</span></span><br><span class="line">    <span class="keyword">twin_coord_t</span>        x, y;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    ¦* Pixmap layout</span></span><br><span class="line"><span class="comment">    ¦*/</span></span><br><span class="line">    <span class="keyword">twin_format_t</span>       format;</span><br><span class="line">    <span class="keyword">twin_coord_t</span>        width;      <span class="comment">/* pixels */</span></span><br><span class="line">    <span class="keyword">twin_coord_t</span>        height;     <span class="comment">/* pixels */</span></span><br><span class="line">    <span class="keyword">twin_coord_t</span>        stride;     <span class="comment">/* bytes */</span></span><br><span class="line">    <span class="keyword">twin_matrix_t</span>       transform;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    ¦* Clipping - a single rectangle in pixmap coordinates.</span></span><br><span class="line"><span class="comment">    ¦* Drawing is done clipped by this rectangle and relative</span></span><br><span class="line"><span class="comment">    ¦* to origin_x, origin_y</span></span><br><span class="line"><span class="comment">    ¦*/</span></span><br><span class="line">    <span class="keyword">twin_rect_t</span>         clip;</span><br><span class="line">    <span class="keyword">twin_coord_t</span>        origin_x;</span><br><span class="line">    <span class="keyword">twin_coord_t</span>        origin_y;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    ¦* Pixels</span></span><br><span class="line"><span class="comment">    ¦*/</span></span><br><span class="line">    <span class="keyword">twin_pointer_t</span>      p;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    ¦* When representing a window, this point</span></span><br><span class="line"><span class="comment">    ¦* refers to the window object</span></span><br><span class="line"><span class="comment">    ¦*/</span></span><br><span class="line">    <span class="keyword">twin_window_t</span>       *window;</span><br><span class="line">&#125; <span class="keyword">twin_pixmap_t</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>其中 <code>client</code> 的上下左右算的都是相對位置。</li>
+<li><code>pixmap</code> 則是呼叫 <code>twin_pixmap_create()</code> 函式創建，包含：<ul>
+<li>幾何操作的矩陣初始化爲單位矩陣；</li>
+<li>clip region設爲時鐘整個大小；</li>
+<li>呼叫 <code>malloc()</code> 分配 <code>window</code> 對應大小的記憶體空間並初始化爲 0；</li>
+</ul>
+</li>
+<li>創建完 <code>pixmap</code> 後進行 clip region 的計算（使用 <code>client</code> 座標）、<code>pixmap</code> 的重定位（以 <code>window</code> 的起始座位爲開始）等操作。</li>
+</ul>
+</li>
+<li><p>創建了 window，接着就是初始化 toplevel 了。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* _twin_toplevel_init (toplevel, _twin_toplevel_dispatch, window, name); */</span></span><br><span class="line"><span class="keyword">void</span></span><br><span class="line">_twin_toplevel_init (<span class="keyword">twin_toplevel_t</span>        *toplevel,</span><br><span class="line">           <span class="keyword">twin_dispatch_proc_t</span>   dispatch,</span><br><span class="line">           <span class="keyword">twin_window_t</span>      *window,</span><br><span class="line">           <span class="keyword">const</span> <span class="keyword">char</span>         *name)</span><br><span class="line">&#123;</span><br><span class="line">    twin_window_set_name (window, name);                                                                                                                      </span><br><span class="line">    window-&gt;draw = _twin_toplevel_draw;</span><br><span class="line">    window-&gt;destroy = _twin_toplevel_destroy;</span><br><span class="line">    window-&gt;event = _twin_toplevel_event;</span><br><span class="line">    window-&gt;client_data = toplevel;</span><br><span class="line">    _twin_box_init (&amp;toplevel-&gt;box, <span class="number">0</span>, window, TwinBoxVert, dispatch);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>twin_window_set_name()</code> 函式除了設定名字外，還呼叫了一次 <code>twin_window_draw()</code> 函式將 <code>window</code> 的上方標題畫了出來（數據計算了出來）。</p>
+</li>
+<li><p>接下來給 <code>window</code> 指派對應的函式，分別是 <code>draw</code> <code>destroy</code> <code>event</code>。</p>
+</li>
+<li><p><code>_twin_toplevel_draw()</code> 函式主要做了以下幾件事：</p>
+<ul>
+<li>禁止 <code>screen</code> 更新；</li>
+<li><code>event</code> 種類設爲 <code>TwinEventPaint</code>；</li>
+<li>呼叫 <code>dispatch</code> 函式；</li>
+<li>打開 <code>screen</code> 更新。</li>
+</ul>
+</li>
+<li><p>此時的 <code>dispatch</code> 函式如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">(*toplevel-&gt;box.widget.dispatch) (&amp;toplevel-&gt;box.widget, &amp;event);</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">twin_dispatch_result_t</span></span><br><span class="line">_twin_clock_dispatch (<span class="keyword">twin_widget_t</span> *widget, <span class="keyword">twin_event_t</span> *event)                                                                                             </span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">twin_clock_t</span>    *clock = (<span class="keyword">twin_clock_t</span> *) widget;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (_twin_widget_dispatch (widget, event) == TwinDispatchDone)</span><br><span class="line">    <span class="keyword">return</span> TwinDispatchDone;</span><br><span class="line">    <span class="keyword">switch</span> (event-&gt;kind) &#123;</span><br><span class="line">    <span class="keyword">case</span> TwinEventPaint:</span><br><span class="line">    _twin_clock_paint (clock);</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">    &#125;   </span><br><span class="line">    <span class="keyword">return</span> TwinDispatchContinue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>有兩個重點，分別是 <code>_twin_widget_dispatch()</code> 和 <code>_twin_clock_paint()</code>。後者無需多言，來看一下前者：</p>
+<ul>
+<li>如果是 <code>TwinEventQueryGeometry</code>，即目前 <code>event</code> 中還沒有幾何座標，則先不要佈局 <code>widget</code>，檢查 <code>widget</code> 中是否存在備份的 <code>widget</code>，若有則使用它進行派遣工作，然後直接返回派遣結束；</li>
+<li>如果是 <code>TwinEventConfigure</code>，則把 <code>widget</code> 的幾何座標設定爲 <code>event</code> 中的幾何座標然後返回派遣繼續值；</li>
+<li>如果是 <code>TwinEventPaint</code>，則呼叫 <code>_twin_widget_paint()</code>（實際呼叫的是 <code>_twin_widget_paint_shape()</code>，即畫出 <code>widget</code> 的形狀） 然後返回派遣繼續值。</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">twin_dispatch_result_t</span></span><br><span class="line">_twin_widget_dispatch (<span class="keyword">twin_widget_t</span> *widget, <span class="keyword">twin_event_t</span> *event)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">switch</span> (event-&gt;kind) &#123;</span><br><span class="line">    <span class="keyword">case</span> TwinEventQueryGeometry:</span><br><span class="line">      widget-&gt;layout = TWIN_FALSE;</span><br><span class="line">      <span class="keyword">if</span> (widget-&gt;copy_geom)</span><br><span class="line">      &#123;</span><br><span class="line">          <span class="keyword">twin_widget_t</span>   *copy = widget-&gt;copy_geom;</span><br><span class="line">          <span class="keyword">if</span> (copy-&gt;layout)</span><br><span class="line">          	(*copy-&gt;dispatch) (copy, event);</span><br><span class="line">          widget-&gt;preferred = copy-&gt;preferred;</span><br><span class="line">          <span class="keyword">return</span> TwinDispatchDone;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> TwinEventConfigure:</span><br><span class="line">      widget-&gt;extents = event-&gt;u.configure.extents;</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> TwinEventPaint:</span><br><span class="line">      _twin_widget_paint (widget);</span><br><span class="line">      widget-&gt;paint = TWIN_FALSE;</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="keyword">return</span> TwinDispatchContinue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>_twin_toplevel_event()</code> 會呼叫一次派遣函式，並會判斷是否完成派遣工作，若完成則返回1。</p>
+</li>
+<li><p>最後 <code>_twin_box_init()</code> 中會呼叫 <code>_twin_widget_init()</code>。</p>
+</li>
+</ul>
+<h3 id="創建-Clock"><a href="#創建-Clock" class="headerlink" title="創建 Clock"></a>創建 Clock</h3><ul>
+<li><p>實際呼叫的是 <code>_twin_clock_init()</code> 函式：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span></span><br><span class="line">_twin_clock_init (<span class="keyword">twin_clock_t</span>      *clock, </span><br><span class="line">         <span class="keyword">twin_box_t</span>        *parent,</span><br><span class="line">         <span class="keyword">twin_dispatch_proc_t</span>  dispatch)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">twin_widget_layout_t</span>   preferred = &#123; <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span> &#125;;</span><br><span class="line">    <span class="comment">// preferred: width, height, stretch_width, stretch_height</span></span><br><span class="line">    _twin_widget_init (&amp;clock-&gt;widget, parent, <span class="number">0</span>, preferred, dispatch);                                                                                       </span><br><span class="line">    clock-&gt;timeout = twin_set_timeout (_twin_clock_timeout,</span><br><span class="line">                     _twin_clock_interval(),</span><br><span class="line">                     clock);  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> _<span class="title">twin_widget_layout</span> &#123;</span></span><br><span class="line">    <span class="keyword">twin_coord_t</span>        width;</span><br><span class="line">    <span class="keyword">twin_coord_t</span>        height;</span><br><span class="line">    <span class="keyword">twin_stretch_t</span>      stretch_width;</span><br><span class="line">    <span class="keyword">twin_stretch_t</span>      stretch_height;</span><br><span class="line">&#125; <span class="keyword">twin_widget_layout_t</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>參數中：</p>
+<ul>
+<li><code>clock</code> 指針指向一塊 <code>twin_clock_dispatch</code> 大小的記憶體位置</li>
+<li><code>parent</code> 指針即 <code>&amp;toplevel→box</code></li>
+<li><code>dispatch</code> 即 <code>_twin_clock_dispatch</code>，之前有介紹其功能</li>
+</ul>
+</li>
+<li><p><code>twin_clock_t</code> 結構體中有兩個成員 <code>widget</code> 和 <code>*timeout</code>，前者呼叫 <code>_twin_widget_init()</code> 進行了初始化；而後者則是呼叫 <code>twin_set_timeout()</code>，具體代碼如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">twin_timeout_t</span> *</span><br><span class="line">twin_set_timeout (<span class="keyword">twin_timeout_proc_t</span>   timeout_proc,</span><br><span class="line">        <span class="keyword">twin_time_t</span>       delay,</span><br><span class="line">        <span class="keyword">void</span>          *closure)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">twin_timeout_t</span>  *timeout = <span class="built_in">malloc</span> (<span class="keyword">sizeof</span> (<span class="keyword">twin_timeout_t</span>));</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!timeout)</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!start)</span><br><span class="line">    start = twin_now (); </span><br><span class="line">    timeout-&gt;delay = delay;</span><br><span class="line">    timeout-&gt;proc = timeout_proc;</span><br><span class="line">    timeout-&gt;closure = closure;</span><br><span class="line">    _twin_queue_timeout (timeout, twin_now() + delay);</span><br><span class="line">    <span class="keyword">return</span> timeout;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>參數 <code>timeout_proc</code> 爲：<ul>
+<li><code>_twin_widget_queue_paint()</code> 函式會接着呼叫 <code>_twin_toplevel_queue_paint()</code> → <code>twin_set_work()</code> → <code>_twin_queue_work()</code> → <code>_twin_queue_insert()</code>，即把 <code>widget</code> 畫好後把畫 <code>toplevel</code> 的任務按照優先權插入到工作隊列中；</li>
+<li>最後返回一個 <code>twin_time_t(int32_t)</code> 的時間間隔，設定爲一秒（1000 ms），<code>_twin_clock_interval()</code> 函式：<ul>
+<li>原版實作是獲取 linux 當前的微秒時間 <code>tv_usec</code>，用 <code>1000 - (tv_usec / 1000)</code> 做倒數；</li>
+<li>我們的版本使用了 STM32F429 自帶的 Systick 計時器進行計時，每 1ms 發生一次中斷，設定變數 <code>tv_msec</code> 加一，然後一樣的 <code>1000 - tv_msec</code>；</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">twin_time_t</span> _twin_clock_timeout (<span class="keyword">twin_time_t</span> maybe_unused now, <span class="keyword">void</span> *closure)   &#123;</span><br><span class="line">    <span class="keyword">twin_clock_t</span>   *clock = closure;</span><br><span class="line">    _twin_widget_queue_paint (&amp;clock-&gt;widget);</span><br><span class="line">    <span class="keyword">return</span> _twin_clock_interval ();                                                   &#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>參數 <code>delay</code> 即 <code>_twin_clock_interval()</code> 函式返回值；</li>
+<li><code>start</code> 爲全局變數，單位爲毫秒，只會在此函數中初始化，無用；</li>
+<li><code>_twin_queue_timeout()</code> 函式的功能是更新 <code>clock→timeout</code> 的時間，其中的 <code>head</code> 指針是一個全局變數，這裏會有序地插入到 <code>head</code> 指向的超時隊列中（相當於做了一個排序動作）。後面在 <code>dispatch</code> 時會呼叫 <code>_twin_run_timeout()</code> 函式來對超時隊列進行操作。<ul>
+<li>插入是遍歷整個隊列，依次比較需要插入的超時成員與隊列中的超時成員的時間順序；</li>
+<li>在遍歷的迴圈中，<code>proc</code> 指針指向的是 <code>_twin_timeout_order()</code> 函式，比較兩個任務的時間順序，返回 <code>TWIN_BEFORE(-1)</code>、 <code>TWIN_AFTER(1)</code> 或 <code>TWIN_AT(0)</code>；</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">void</span> _twin_queue_timeout (<span class="keyword">twin_timeout_t</span>   *timeout, <span class="keyword">twin_time_t</span> time)</span><br><span class="line">&#123;</span><br><span class="line">    timeout-&gt;time = time;</span><br><span class="line">    _twin_queue_remove (&amp;head, &amp;timeout-&gt;<span class="built_in">queue</span>);</span><br><span class="line">    _twin_queue_insert (&amp;head, _twin_timeout_order, &amp;timeout-&gt;<span class="built_in">queue</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> _twin_queue_insert (<span class="keyword">twin_queue_t</span>    **head, <span class="keyword">twin_queue_proc_t</span>   proc, <span class="keyword">twin_queue_t</span>    *<span class="keyword">new</span>)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">twin_queue_t</span> **prev, *q;</span><br><span class="line">    <span class="keyword">for</span> (prev = head; (q = *prev); prev = &amp;q-&gt;next)</span><br><span class="line">    <span class="keyword">if</span> ((*proc) (<span class="keyword">new</span>, q) == TWIN_AFTER)</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">new</span>-&gt;next = *prev; </span><br><span class="line">    <span class="keyword">new</span>-&gt;order = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">new</span>-&gt;walking = TWIN_FALSE;</span><br><span class="line">    <span class="keyword">new</span>-&gt;deleted = TWIN_FALSE;</span><br><span class="line">    *prev = <span class="keyword">new</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>總結創建 <code>clock</code> 做了以下工作：</p>
+<ul>
+<li>初始化 <code>clock→widget</code>；</li>
+<li>初始化 <code>clock→timeout</code>，並將其插入到超時隊列中。</li>
+</ul>
+</li>
+</ul>
+<h3 id="畫出-Toplevel"><a href="#畫出-Toplevel" class="headerlink" title="畫出 Toplevel"></a>畫出 Toplevel</h3><ul>
+<li>首先呼叫了 <code>_twin_toplevel_layout()</code> 函式，將 <code>event</code> 分別設置爲 <code>TwinEventQueryGeometry</code> 和 <code>TwinEventConfigure</code> 然後呼叫 <code>*toplevel-&gt;box.widget.dispatch</code> （此處爲之前有介紹的 <code>_twin_clock_dispatch</code> 函式）進行配置；</li>
+<li>接着執行 <code>_twin_toplevel_paint()</code> 函式，實際就是將 <code>event</code> 設爲 <code>TwinEventPaint</code> 然後呼叫 <code>_twin_clock_paint()</code> 函式畫圖；</li>
+<li>最後執行 <code>twin_window_show()</code> 函式，判斷此 <code>toplevel→box.widget.window</code> 是否已經顯示（在上則顯示在不則顯示），若沒有則呼叫 <code>twin_pixmap_show()</code> 函式進行重新設定。</li>
+</ul>
+<h2 id="調度執行過程"><a href="#調度執行過程" class="headerlink" title="調度執行過程"></a>調度執行過程</h2><ul>
+<li><code>twin_dispatch()</code> 函式中只有一個包含三個函式的迴圈：<ul>
+<li><code>_twin_run_timeout()</code>：</li>
+<li><code>_time_run_work()</code>：</li>
+<li><code>_twin_run_file()</code>：用於監測外部滑鼠等活動，尚未實作；</li>
+</ul>
+</li>
+</ul>
+<h3 id="twin-run-timeout"><a href="#twin-run-timeout" class="headerlink" title="_twin_run_timeout()"></a>_twin_run_timeout()</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> _twin_run_timeout (<span class="keyword">void</span>)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">twin_time_t</span> now = twin_now ();                                                                                                                            </span><br><span class="line">    <span class="keyword">twin_timeout_t</span>   *timeout;</span><br><span class="line">    <span class="keyword">twin_timeout_t</span>   *first;</span><br><span class="line">    <span class="keyword">twin_time_t</span> delay;</span><br><span class="line"></span><br><span class="line">    first = (<span class="keyword">twin_timeout_t</span> *) _twin_queue_set_order (&amp;head);</span><br><span class="line">    <span class="keyword">for</span> (timeout = first; </span><br><span class="line">     timeout &amp;&amp; twin_time_compare (now, &gt;=, timeout-&gt;time);</span><br><span class="line">     timeout = (<span class="keyword">twin_timeout_t</span> *) timeout-&gt;<span class="built_in">queue</span>.order)</span><br><span class="line">    &#123;</span><br><span class="line">    delay = (*timeout-&gt;proc) (now, timeout-&gt;closure);</span><br><span class="line">    <span class="keyword">if</span> (delay &gt;= <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        timeout-&gt;time = twin_now() + delay;</span><br><span class="line">        _twin_queue_reorder (&amp;head,</span><br><span class="line">                 _twin_timeout_order, &amp;timeout-&gt;<span class="built_in">queue</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        _twin_queue_delete (&amp;head, &amp;timeout-&gt;<span class="built_in">queue</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    _twin_queue_review_order (&amp;first-&gt;<span class="built_in">queue</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>首先呼叫 _twin_queue_set_order() 函式將整個隊列的 walking 狀態置爲 TRUE。這裏有必要詳細介紹一下 twin 使用的鏈表結構：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> _<span class="title">twin_queue</span> &#123;</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> _<span class="title">twin_queue</span>  *<span class="title">next</span>;</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> _<span class="title">twin_queue</span>  *<span class="title">order</span>;</span></span><br><span class="line">    <span class="keyword">twin_bool_t</span>     walking;</span><br><span class="line">    <span class="keyword">twin_bool_t</span>     deleted;</span><br><span class="line">&#125; <span class="keyword">twin_queue_t</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> _<span class="title">twin_timeout</span> &#123;</span></span><br><span class="line">    <span class="keyword">twin_queue_t</span>    <span class="built_in">queue</span>;</span><br><span class="line">    <span class="keyword">twin_time_t</span>     time;</span><br><span class="line">    <span class="keyword">twin_time_t</span>     delay;</span><br><span class="line">    <span class="keyword">twin_timeout_proc_t</span> proc;</span><br><span class="line">    <span class="keyword">void</span>        *closure;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> _<span class="title">twin_work</span> &#123;</span>                                                                                                                                           </span><br><span class="line">    <span class="keyword">twin_queue_t</span>    <span class="built_in">queue</span>;</span><br><span class="line">    <span class="keyword">int</span>         priority;</span><br><span class="line">    <span class="keyword">twin_work_proc_t</span>    proc;</span><br><span class="line">    <span class="keyword">void</span>        *closure;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>這裏隊列的實作和 linux kernel 中雙循環鏈表的實作很類似。首先定義一個只包含前後指針的結構體 <code>_twin_queue</code>，然後內嵌到一個含有數據資源的結構體 <code>_twin_timeout</code> 中。這樣的將指針從具體的數據結構中提取出來的做法，構成了一種通用的雙向鏈表實現。其優點是未來只需要編寫通用鏈表函式，即可構造和操作不同對象的鏈表，而無需爲每類對象的每種列表編寫專用函式，實現了代碼的重用。</li>
+<li>目前用到了兩個隊列（第三個 <code>_twin_file</code> 暫時未使用），分別是 <code>_twin_timeout</code> 超時隊列和 <code>_twin_work</code> 工作隊列，均嵌套了 <code>_twin_queue</code> 結構。<ul>
+<li>對隊列的各項操作，例如刪除、移除等均相同；</li>
+<li>而像插入、重新排序因爲隊列的性質不同，排序的標準也不同（超時隊列會使用時間排序，而工作隊列會使用優先級），這樣就引入一個額外的參數——隊列的程式指針（<code>_twin_timeout_order</code> 和 <code>_twin_work_order</code>）。</li>
+</ul>
+</li>
+<li>相比 linux kernel 中爲了訪問到宿主結構體的巨集定義 <code>offset</code> <code>typeof</code> <code>containerof</code>，這裏要簡單很多。在宿主結構體 <code>_twin_timeout</code> 的第一項成員即包含節點指針的 <code>twin_queue_t</code> 結構體， <code>queue</code> 的起始地址即 <code>timeout</code> 的起始地址。因此在 <code>_twin_queue_set_order()</code> 函式返回 <code>head</code> 這個 <code>queue</code> 的結構體地址後，強行轉換爲 <code>twin_timeout_t</code> 類型就可以得到 <code>head</code> 的宿主結構體了。</li>
+<li>這裏也就是 <code>clock</code> 的 <code>timeout</code> 指向 <code>head </code>，因此 <code>first</code> 得到了 <code>clock</code> 的 <code>timeout</code> 結構體地址。</li>
+</ul>
+</li>
+<li><p>後面這個迴圈的執行流程爲判斷超時隊列中成員的時間標籤，如果已經是過去式，則重新執行成員自帶的程式（這裏是呼叫 <code>_twin_clock_timeout</code>，會重畫 <code>clock</code> 的 <code>toplevel</code> 並加入到超時隊列中）。執行完畢後檢查是否還未到執行時間，若是則更新該成員的時間並重新對隊列進行排序，否則從隊列中刪除該成員。這樣做的目的就是不斷找出時間戳爲過去的成員，執行他們的任務並更新他們的時間。</p>
+</li>
+</ul>
+<h3 id="twin-run-work"><a href="#twin-run-work" class="headerlink" title="_twin_run_work()"></a>_twin_run_work()</h3><ul>
+<li><p>介紹過了超時隊列，工作隊列的機制也是類似的。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> _twin_run_work (<span class="keyword">void</span>)          </span><br><span class="line">&#123;   </span><br><span class="line">    <span class="keyword">twin_work_t</span> *work;         </span><br><span class="line">    <span class="keyword">twin_work_t</span> *first;        </span><br><span class="line">    </span><br><span class="line">    first = (<span class="keyword">twin_work_t</span> *) _twin_queue_set_order (&amp;head);</span><br><span class="line">    <span class="keyword">for</span> (work = first; work; work = (<span class="keyword">twin_work_t</span> *) work-&gt;<span class="built_in">queue</span>.order)</span><br><span class="line">    <span class="keyword">if</span> (!(*work-&gt;proc) (work-&gt;closure))</span><br><span class="line">        _twin_queue_delete (&amp;head, &amp;work-&gt;<span class="built_in">queue</span>);</span><br><span class="line">    _twin_queue_review_order (&amp;first-&gt;<span class="built_in">queue</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>拿到工作隊列的第一個宿主成員後，開始遍歷整個列表，依工作優先級次執行他們的任務。</p>
+</li>
+<li><p>工作列表中實際上就兩個工作：</p>
+<ul>
+<li>第一個是 <code>_twin_toplevel_paint</code>，用來計算出新的 <code>toplevel</code> 圖像</li>
+<li>第二個是 <code>_twin_fbdev_work</code>，如果用的 X Window 則是 <code>_twin_x11_work</code>，用來呼叫底層接口來實際更新熒幕畫面</li>
+</ul>
+</li>
+</ul>
+<h2 id="Flowchart"><a href="#Flowchart" class="headerlink" title="Flowchart"></a>Flowchart</h2><p><img data-src="https://imxhua.bn.files.1drv.com/y4mZWNrqoK7-BqFKYsGYH-6r03I5huAh5tHbjza8H1v1h7X8bcMnC7jP39TtzFNfeOkn6AIb8F9X07ZneSubEz96c9EePbUYsioZ_blhxIHfNLU_NkdCIqKFfsYP9RzXfvIhiDd-cyl8Wz02rv1B5sxZ4oN-1-u5rEiGXNAYXv6ztU7NzzYDSFvWJACT2ZhfQkFbf83NVgMn3wKisl4IkmXTA?width=1001&height=712&cropmode=none"></p>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2020/evgui-design-review/" rel="bookmark">五分钟回顾我的硕士论文：嵌入式向量图形系统设计</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2020/evgui-svgtiny/" rel="bookmark">SVG Tiny 与 Libsvgtiny</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2020/evgui-touch-interaction/" rel="bookmark">EVGUI 触控简单处理笔记</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2020/evgui-xml-parser/" rel="bookmark">XML Parser for Libsvgtiny</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2020/evgui-twin-apis/" rel="bookmark">TWIN API 整理</a></div>
+    </li>
+  </ul>
+
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>Buy me a cup of coffee :)</div>
+  <button onclick="document.querySelector('.post-reward').classList.toggle('active');">
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/reward-wechat.jpg" alt="John Chou 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/reward-alipay.jpg" alt="John Chou 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>John Chou
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://blog.joouis.com/2020/evgui-twin-workflow-review/" title="以 Clock 应用为例追踪 TWIN 的运作流程">https://blog.joouis.com/2020/evgui-twin-workflow-review/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nd/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-ND</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/embedded-system/" rel="tag"># embedded system</a>
+              <a href="/tags/vector/" rel="tag"># vector</a>
+              <a href="/tags/gui/" rel="tag"># gui</a>
+              <a href="/tags/twin/" rel="tag"># twin</a>
+              <a href="/tags/window-system/" rel="tag"># window system</a>
+              <a href="/tags/svg/" rel="tag"># svg</a>
+              <a href="/tags/workflow/" rel="tag"># workflow</a>
+              <a href="/tags/uml/" rel="tag"># uml</a>
+              <a href="/tags/scheduler/" rel="tag"># scheduler</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/evgui-twin-apis/" rel="prev" title="TWIN API 整理">
+                  <i class="fa fa-chevron-left"></i> TWIN API 整理
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2020/photos-comparison-between-note9-and-mi10pro/" rel="next" title="三星Note9与米10Pro拍照对比">
+                  三星Note9与米10Pro拍照对比 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+      
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      
+
+      
+
+<div class="copyright">
+  
+  &copy; 2016 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Chou</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  
+  <script src="//cdn.jsdelivr.net/npm/quicklink@2.0.0/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink.listen({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://blog.joouis.com/2020/evgui-twin-workflow-review/',]
+      });
+      });
+  </script>
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://joou.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://blog.joouis.com/2020/evgui-twin-workflow-review/";
+    this.page.identifier = "2020/evgui-twin-workflow-review/";
+    this.page.title = "以 Clock 应用为例追踪 TWIN 的运作流程";
+    };
+  NexT.utils.loadComments('#disqus_thread', () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://joou.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

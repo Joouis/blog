@@ -1,23 +1,658 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
 
-{% block title %}{{ page.title }} | {{ title }}{% endblock %}
 
-{% block page_class %}page-post-detail{% endblock %}
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/hacker.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/hacker.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/hacker.ico">
+  <link rel="mask-icon" href="/images/hacker.ico" color="#222">
 
-{% block content %}
+<link rel="stylesheet" href="/css/main.css">
 
-  <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"blog.joouis.com","root":"/","scheme":"Mist","version":"8.0.2","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
+
+  <meta name="description" content="哈喽各位，又是金三银四的季节。今年本来不打算发帖招人，一是最近工作比较忙，二是合适的人确实不好招，已经佛系了。不过这两天水 V 站看到两个帖子有感现在发起面试其实是一件门槛很低的事，却会同时增加候选人和面试公司的无效投入，因此分享一下自己内推的心得，顺便打个广告。那两个帖子待会也会提到，但绝对不是批评或嘲讽其他大厂的面试体验不好，只是举例，我是真的看到这两个案例才想发帖的。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="分享一下我的内推心得，顺便招人">
+<meta property="og:url" content="https://blog.joouis.com/2019/a-thought-of-referral/index.html">
+<meta property="og:site_name" content="江边的旱鸭子">
+<meta property="og:description" content="哈喽各位，又是金三银四的季节。今年本来不打算发帖招人，一是最近工作比较忙，二是合适的人确实不好招，已经佛系了。不过这两天水 V 站看到两个帖子有感现在发起面试其实是一件门槛很低的事，却会同时增加候选人和面试公司的无效投入，因此分享一下自己内推的心得，顺便打个广告。那两个帖子待会也会提到，但绝对不是批评或嘲讽其他大厂的面试体验不好，只是举例，我是真的看到这两个案例才想发帖的。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-04-10T17:35:40.000Z">
+<meta property="article:modified_time" content="2019-04-10T17:35:40.000Z">
+<meta property="article:author" content="John Chou">
+<meta property="article:tag" content="work">
+<meta property="article:tag" content="referral">
+<meta property="article:tag" content="recruit">
+<meta property="article:tag" content="microsoft">
+<meta property="article:tag" content="feedback">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://blog.joouis.com/2019/a-thought-of-referral/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>分享一下我的内推心得，顺便招人 | 江边的旱鸭子</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-76188004-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-76188004-1');
+      }
+    </script>
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?199f195e233fd5ecca0d9346d3259670";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="江边的旱鸭子" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
   </div>
 
-{% endblock %}
+  <div class="site-meta">
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">江边的旱鸭子</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Blog of Joou</p>
+  </div>
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section">首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section">归档</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section">分类</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section">关于</a>
+
+  </li>
+        <li class="menu-item menu-item-recruit">
+
+    <a href="/recruit/" rel="section">招聘</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger">搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <section class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%8F%91%E6%8B%9B%E8%81%98%E5%B8%96"><span class="nav-number">1.</span> <span class="nav-text">1. 发招聘帖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E6%94%B6%E5%88%B0%E5%80%99%E9%80%89%E4%BA%BA%E9%82%AE%E4%BB%B6"><span class="nav-number">2.</span> <span class="nav-text">2. 收到候选人邮件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%86%85%E6%8E%A8%E7%B3%BB%E7%BB%9F%EF%BC%8CHR-%E8%81%94%E7%B3%BB"><span class="nav-number">3.</span> <span class="nav-text">3. 内推系统，HR 联系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E9%9D%A2%E8%AF%95"><span class="nav-number">4.</span> <span class="nav-text">4. 面试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E8%81%8C%E4%BD%8D%E8%8E%B7%E5%8F%96%E6%B8%A0%E9%81%93"><span class="nav-number">5.</span> <span class="nav-text">5. 职位获取渠道</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F"><span class="nav-number">6.</span> <span class="nav-text">6. 联系方式</span></a></li></ol></div>
+        </section>
+        <!--/noindex-->
+
+        <section class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="John Chou"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">John Chou</p>
+  <div class="site-description" itemprop="description">Stand high, think different.</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">50</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">179</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Joouis" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Joouis" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:luckyjoou@gmail.com" title="E-Mail → mailto:luckyjoou@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/Joouis" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;Joouis" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://www.slideshare.net/choujohn351" title="SlideShare → http:&#x2F;&#x2F;www.slideshare.net&#x2F;choujohn351" rel="noopener" target="_blank"><i class="fab fa-slideshare fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nd/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nd.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </section>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+      
+
+      
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://blog.joouis.com/2019/a-thought-of-referral/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="John Chou">
+      <meta itemprop="description" content="Stand high, think different.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江边的旱鸭子">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          分享一下我的内推心得，顺便招人
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-04-11 01:35:40" itemprop="dateCreated datePublished" datetime="2019-04-11T01:35:40+08:00">2019-04-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%8A%80%E6%9C%AF%E4%BA%BA%E7%94%9F%E8%B0%88/" itemprop="url" rel="index"><span itemprop="name">技术人生谈</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2019/a-thought-of-referral/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/a-thought-of-referral/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>哈喽各位，又是金三银四的季节。今年本来不打算发帖招人，一是最近工作比较忙，二是合适的人确实不好招，已经佛系了。不过这两天水 V 站看到两个帖子有感现在发起面试其实是一件门槛很低的事，却会同时增加候选人和面试公司的无效投入，因此分享一下自己内推的心得，顺便打个广告。那两个帖子待会也会提到，但绝对不是批评或嘲讽其他大厂的面试体验不好，只是举例，我是真的看到这两个案例才想发帖的。</p>
+<a id="more"></a>
+
+<h2 id="1-发招聘帖"><a href="#1-发招聘帖" class="headerlink" title="1. 发招聘帖"></a>1. 发招聘帖</h2><p>实事求是介绍公司的情况，最重要的是走心。</p>
+<p>一直觉得实事求是很简单，不过这两天有 Shopee 的同学发帖说自己是 965 公司，下方留言纷纷打脸，酿成翻车现场。微软在 955.WLB repo 稳居前三（好吧前三就是第三），我也不敢说微软不加班。这事还是看组，看团队，看个人发展。不过确实加班的人很少，有些还是因为跨国团队协作的原因。</p>
+<p>我理解的走心就是与大家分享这家公司的优势所在，内推人为什么愿意在这家公司工作，比如在上一个<a target="_blank" rel="noopener" href="https://www.v2ex.com/t/518252">招聘帖</a>中详细介绍了微软会提供给员工的各种福利待遇。我乐意向大家推荐这家公司，是出自认同，同时希望找到靠谱的同事，而不是为了 KPI。</p>
+<h2 id="2-收到候选人邮件"><a href="#2-收到候选人邮件" class="headerlink" title="2. 收到候选人邮件"></a>2. 收到候选人邮件</h2><p>手头一直有个 iPhone 的重要原因之一就是 iPhone 可以不翻墙收到 Gmail 推送。我对候选人的承诺是 24 小时之内一定会<strong>认真</strong>读完你的邮件，了解你的情况，并给出对应的回应（前提是靠谱的邮件哈，有正式一点的标题和具体的一些经历介绍，一句话之类太奇怪的邮件抱歉回不了）。</p>
+<p>为什么这里强调认真了解候选人情况，就是我今晚看到《<a target="_blank" rel="noopener" href="https://www.v2ex.com/t/553858">谈一下 4.4 号裸辞 4.6 号来杭 开始投简历的经历</a>》，原帖楼主是 18 届的，却被内推面试蚂蚁的 Java 开发专家，p5 去面 p7 职位，这不搞笑吗？</p>
+<p>回应一般有以下几种：</p>
+<ul>
+<li>劝退。是的，劝退，只是为了候选人负责。劝退时通常会解释，大厂一般都有简历系统，你面试的情况都会记录下来，如果没有十足的准备，或者你的经历距离普遍录用标准有明显的差距，就别刷负评了。</li>
+<li>进一步了解。抱着劝退的心态了解更多细节，比如学历不好的话有没有 ACM 经历，项目经验太宽泛问问有没有一些具体的实践推动业务等亮点。</li>
+<li>确认投递职位和兴趣爱好。确认过简历，是我们要的人，但还需要再沟通。为什么要确认职位和兴趣，是因为我们尊重候选人的想法，希望尽量能帮助候选人找到喜欢的、合适的工作内容，而不是把人骗过来干活。这个马上还会细说。</li>
+</ul>
+<h2 id="3-内推系统，HR-联系"><a href="#3-内推系统，HR-联系" class="headerlink" title="3. 内推系统，HR 联系"></a>3. 内推系统，HR 联系</h2><p>内推后候选人的邮箱会收到系统邮件，然后我会联系 HR 赶紧捞简历，继续评估，并与候选人联系。联系的时候可能还会给候选人几个选择，因为有职位招满关闭或是评估觉得候选人不适合此团队的情况，总之是有的选，并且 JD 都会发给候选人看，待候选人确认后，再开启面试之旅。</p>
+<p>这里就要说到这两天另外看的一篇帖子《<a target="_blank" rel="noopener" href="https://www.v2ex.com/t/553057">shopee 即将三面的时候被告知不要我了</a>》，第一段便是</p>
+<blockquote>
+<p>当时想要投 web 后端，结果被推到了 devops，向 HR 告知我更想做的方向后对方也没说什么，就还是按照原来的计划面试了</p>
+</blockquote>
+<p>这种情况在现今找工作似乎有点常见，套路就跟看租房一样，什么半推半就、”来了再说”、”进来都好说”，我个人是非常反感。本质上这些招聘人员只是把你当做他们的业绩，却并没有考虑未来共事和人员稳定性等问题。如上面所说，在微软不太可能出现此类问题，我们会给你一个到多个选择。如果你真的不喜欢，那么通常就是再等等看别的机会，毕竟最近发展挺快的。</p>
+<h2 id="4-面试"><a href="#4-面试" class="headerlink" title="4. 面试"></a>4. 面试</h2><p>最后，终于要开始面试了。这个环节我没啥好发挥的，也就是面试前嘱咐几句刷刷题、别紧张啥的，面试嘛本来就是一场缘分。</p>
+<p>面试完后我会尽量帮你询问面试的反馈，当然 HR 也会给你。这个过程中会遇到一些有意思的事情，例如有位老哥面完后很有自信但结果很凉，如何向工作经验比我久很多的老哥委婉表达一些负面反馈同时照顾他的感受，是个技术活。</p>
+<p>通常面试完后的结果不会等待太久，基本上过一两天就有了。</p>
+<h2 id="5-职位获取渠道"><a href="#5-职位获取渠道" class="headerlink" title="5. 职位获取渠道"></a>5. 职位获取渠道</h2><p>好了废话那么多，进入正题吧(???)。通常招聘帖底下都会遇到很多人问 XX 职位招不招、X 年经验招不招以及招聘帖里的职位还招不招。<strong>面对这些常见的问题，为了提升效率，我将招聘有关的信息都整理到了<a href="https://blog.joouis.com/recruit/">博客的招聘页</a>，并会定期更新当下开放的职位，使它成为一个稳定的信息源。</strong>欢迎关注、收藏。</p>
+<p>至于想问 XX 职位招不招的朋友们，除了查看上面的招聘页面外，也可以线访问以下两个链接查看、搜索目前开放的职位：</p>
+<ul>
+<li>推荐手机端查看：<a target="_blank" rel="noopener" href="https://microsoft.tupu360.com/position/list?type=SOCIALRECRUITMENT">https://microsoft.tupu360.com/position/list?type=SOCIALRECRUITMENT</a></li>
+<li>推荐 PC 端查看：<a target="_blank" rel="noopener" href="https://careers.microsoft.com/us/en/search-results?rt=professional">https://careers.microsoft.com/us/en/search-results?rt=professional</a></li>
+</ul>
+<h2 id="6-联系方式"><a href="#6-联系方式" class="headerlink" title="6. 联系方式"></a>6. 联系方式</h2><p>请写信至 <code>luckyjoou ## gmail.com</code>，24 小时内必回喔~</p>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2020/2020-referral-kickoff/" rel="bookmark">2020 微软内推，已协助超过十余位候选人拿到 offer</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2019/microsoft-hackathon-2019-winner/" rel="bookmark">Microsoft Hackathon 2019 Winner</a></div>
+    </li>
+  </ul>
+
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>Buy me a cup of coffee :)</div>
+  <button onclick="document.querySelector('.post-reward').classList.toggle('active');">
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/reward-wechat.jpg" alt="John Chou 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/reward-alipay.jpg" alt="John Chou 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>John Chou
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://blog.joouis.com/2019/a-thought-of-referral/" title="分享一下我的内推心得，顺便招人">https://blog.joouis.com/2019/a-thought-of-referral/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nd/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-ND</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/work/" rel="tag"># work</a>
+              <a href="/tags/referral/" rel="tag"># referral</a>
+              <a href="/tags/recruit/" rel="tag"># recruit</a>
+              <a href="/tags/microsoft/" rel="tag"># microsoft</a>
+              <a href="/tags/feedback/" rel="tag"># feedback</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2019/3rd-blog-anniversary/" rel="prev" title="写在博客三周年">
+                  <i class="fa fa-chevron-left"></i> 写在博客三周年
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2019/x86-performance-qna/" rel="next" title="如何在 X86-64 下比较精准地测量系统性能">
+                  如何在 X86-64 下比较精准地测量系统性能 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+      
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      
+
+      
+
+<div class="copyright">
+  
+  &copy; 2016 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Chou</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  
+  <script src="//cdn.jsdelivr.net/npm/quicklink@2.0.0/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink.listen({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://blog.joouis.com/2019/a-thought-of-referral/',]
+      });
+      });
+  </script>
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://joou.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://blog.joouis.com/2019/a-thought-of-referral/";
+    this.page.identifier = "2019/a-thought-of-referral/";
+    this.page.title = "分享一下我的内推心得，顺便招人";
+    };
+  NexT.utils.loadComments('#disqus_thread', () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://joou.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>
