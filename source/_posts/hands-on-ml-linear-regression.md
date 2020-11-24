@@ -136,21 +136,71 @@ $$\nabla{L} = \frac{\partial{L}}{\partial{\mathbf{w}}} = 2 \frac{1}{n} \sum_{i=1
 I think maybe it's enough for us to dig into the code, so recap should be stopped here. Give this tips sections for some practical training methods.
 
 - Hyperparameters tuning/optimization, like choose a good learning rate
+
 - L2 (Ridge) regularization
+
 - Early stopping
+
 - Feature engineering
+
   - Feature selection by recursive feature elimination and cross-validation ([RFECV](https://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.RFECV.html))
+
+    ![Automatically feature selection](https://bn1301files.storage.live.com/y4mqKy05qxi0gbNJv11RIwz2dFrNJCQ3xJHyMIwAE67h71KKuBMgfa5Z3dA7BsforIylQC4eJNmjgZ-z-J2cbzmTDCAkbplVvJeu6lYq20P9nMg03kJKbKSGpylhBq8YzMuqwFsHv7bnZfzT0HXZJbg57g05jeyfxL0d2_1FvfOFIbij-W4qB3ciGJSkdzbZCK0?width=1388&height=998&cropmode=none)
+
   - Feature scaling like normalization
+
   - Data correction for dirty part
+
   - Defining and removing outliers
+
   - Update model to make it fits dataset better like add high order term for most important feature, or even you can use a neural network if you want 😏
+
 - Leveraging K-fold cross validation to split data and evaluate model performance
 
 
 
-Ending
+## Experiment environments
 
-- Not only one solution, you can even train it by neural network
+### Local
+
+I highly recommend using Conda to run your Python code even on Unix-like OS, and [Miniconda](https://docs.conda.io/en/latest/miniconda.html) is good to get start.
+
+> Conda as a package manager helps you find and install packages. If you need a package that requires a different version of Python, you do not need to switch to a different environment manager, because conda is also an environment manager. With just a few commands, you can set up a totally separate environment to run that different version of Python, while continuing to run your usual version of Python in your normal environment.
+
+### Cloud
+
+It's cloud computing era, we can write and save our code on the cloud and run it at anytime with any web client. Two cloud platforms will be introduced here, I suggest you try both of them and enjoy your experiment.
+
+More specifically, these two products are all based on [Jupyter Notebook](https://jupyter.org/), which provides flexible Python run-time and Markdown document feature, it's easy to run code snippet just like on the local terminal.
+
+#### Notebooks of Azure Machine Learning Studio
+
+Here is a [brief introduction](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-run-jupyter-notebooks) of Notebooks of AML Studio, and the advantages of this product are:
+
+- IntelliSense and Monaco Editor adopted from Visual Studio Code are great.
+- Rich sample notebooks are provided, and the tab view allows user to open several documents with several file types in one page.
+- An one-stop platform for user to develop their machine learning project, you can take it as cloud IDE (Integrated Development Environment). For example, user can manager their huge datasets by Datasets product, and then consume them in Notebooks product.
+
+![Notebooks of AML Studio](https://bn1301files.storage.live.com/y4m3DE0BuRvpw77hm-v1etWLkl-1ENO0FCEZ72iYUdpqa_kMkqSJx7VPzNlnLnhglTDuHjJggY5Bi7xBtgb8WX9BDLAZoHhyRnVy454EQDPLuE1IwySGJrXHvzSiL_PFqbClZn8x4URonUeSqBeprJXWa-IyVZv5AyByI-pEGKXgehthkyfFIlM8UJarHp62pH9?width=2776&height=1582&cropmode=none)
+
+#### Google Colaboratory
+
+You can open `ipynb` file on Google Drive by this product, there are also few advantages:
+
+- Cleaner and larger workspace.
+- "Code snippets" feature is interesting, but not smart enough (like intelligent recommendation), nor rich code exmaples.
+- It will create compute target or VM (virtual machine) for the user automatically.
+- You can download dataset from Google Drive easily.
+
+![UI of Google Colab](https://bn1301files.storage.live.com/y4mNHPwPmALVZIF_KZgyK8_NBJfv4Wl3edLKx_iNaf8IICR9IXXjtoxFZ5mw6VGXOUB-RIT8IkeSia5amouV4zwfHJUD4fd6PJuMcstxvntd7TJZRAt5wPItx7L6aj_e61Y8fPGQa_NUtGbVYd2P7CzV1cweF8BnEv4XO_WOIoEHoGBKdOO1CEWby8h1FRtg002?width=2778&height=1588&cropmode=none)
+
+
+
+## Code snippets
+
+
+
+
 
 ## Further more
 
