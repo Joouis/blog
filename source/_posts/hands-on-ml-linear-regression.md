@@ -92,13 +92,59 @@ $$\hat{y}=h_w(x)=\mathbf{w}\cdot\mathbf{x}$$
 
 Thus our loss function of vectorized form is:
 
-$$\mathbf{w}^\ast=\frac{1}{n}\min_\mathbf{w} \sum_{i=1}^{n}(\hat{y}^i-(\mathbf{w}^i\mathbf{x}^i))^2$$
+$$\mathbf{w}^\ast=\frac{1}{n}\min_\mathbf{w} \sum_{i=1}^{n}(\hat{y}^i- \mathbf{w}^i\mathbf{x}^i)^2$$
 
+Notice that $\mathbf{w}$ actually is $n*m$-dimensional matrix.
 
+### Closed-form solution
 
-### Gradient descent
+As we already know the values of $\mathbf{x}$ and $\hat{y}$, it's easy to calculate the $\mathbf{w}$ by Normal Equation:
 
-If loss function is differentiable, then we can use gradient descent.
+$$\hat{\mathbf{w}}=(\mathbf{x}^T\mathbf{x})^{-1} \mathbf{x}^T \mathbf{y}$$
+
+Check out this [online course video](https://www.coursera.org/lecture/machine-learning/normal-equation-2DKxQ) (about 16min) from Andrew Ng to learn more.
+
+Yes we're done. Our introduction is here.🤣🤣🤣
+
+Q: How to deal with complex models? How about computation burden?
+
+### Gradient Descent
+
+> Gradient Descent is a generic optimization algorithm capable of finding optimal solution to a wide range of problems.
+>
+> Gradient descent is a first-order iterative optimization algorithm for finding a local minimum of a differentiable function.
+
+Our loss function is differentiable indeed, so we can use it to find the local (also the global) minimum. Let's get it by one chart.
+
+![Gradient Descent, credit to Hands-on ML](https://bn1301files.storage.live.com/y4mswG2flLOQG4BTxY2uv3jiGs1IbQ-VM8thBntnOmrtvJQGlthgCzW7nBj8fwkl6U7b1691jBXGBjxtsDb7dy7LF-FpJSTKouUhtfbrCRbZNUJNXt5M9WReSQKxdklCkhd7TNteQmNzZv89yr7hdMqCCgqKV9LZ1JK3nb1eWnNb2FohaTkcKiTTaVnezOQubsJ?width=2394&height=1186&cropmode=none)
+
+So here is the last equation in this post (I promise, typing these LaTeX expression really wore me out), the gradient of our loss function:
+
+$$\nabla{L} = \frac{\partial{L}}{\partial{\mathbf{w}}} = 2 \frac{1}{n} \sum_{i=1}^{n}(\hat{y}^i- \mathbf{w}^i\mathbf{x}^i) -\mathbf{x}^i$$
+
+![Gradient Descent pitfalls, credit to Hands-on ML](https://bn1301files.storage.live.com/y4mXviZ8mp3JlnWxYxmhq62tUPn4MF0xLkK7Q-K63Mn1JsJwcX3tNZN2CpkbdT-3VuMKMcw_CAxtWu4XpjltS_VSYB35RZavo_zgNKd43bf3fATQhFMWbFU4v9GiYmbrTSYwbrExykkH7yZdYqKDRej4IN94CuZmKQ234pffSK3cXTPtQBQlDJgUGdySnzqIxsL?width=2554&height=1150&cropmode=none)
+
+#### Variants optimizers
+
+- SGD, Stochastic gradient descent
+- Adam
+- Mini-batch gradient descent
+- Adagrad
+
+### Training tips
+
+I think maybe it's enough for us to dig into the code, so recap should be stopped here. Give this tips sections for some practical training methods.
+
+- Hyperparameters tuning/optimization, like choose a good learning rate
+- L2 (Ridge) regularization
+- Early stopping
+- Feature engineering
+  - Feature selection by recursive feature elimination and cross-validation ([RFECV](https://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.RFECV.html))
+  - Feature scaling like normalization
+  - Data correction for dirty part
+  - Defining and removing outliers
+  - Update model to make it fits dataset better like add high order term for most important feature, or even you can use a neural network if you want 😏
+- Leveraging K-fold cross validation to split data and evaluate model performance
 
 
 
