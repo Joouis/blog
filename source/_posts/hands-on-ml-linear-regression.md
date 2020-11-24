@@ -70,7 +70,7 @@ $$L(w,b)=\sum_{i=1}^{n}(\hat{y}^i-(wx^i+b))^2$$
 
 Obviously the smaller loss, the better model. So our target function should be:
 
-$$f^*=\arg\min_{f} L(f)$$
+$$f^\ast=\arg\min_{f} L(f)$$
 
 Average value would be better than total sum, then we get the actual function that needs to be computed:
 
@@ -145,7 +145,7 @@ I think maybe it's enough for us to dig into the code, so recap should be stoppe
 
   - Feature selection by recursive feature elimination and cross-validation ([RFECV](https://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.RFECV.html))
 
-    ![Automatically feature selection](https://bn1301files.storage.live.com/y4mqKy05qxi0gbNJv11RIwz2dFrNJCQ3xJHyMIwAE67h71KKuBMgfa5Z3dA7BsforIylQC4eJNmjgZ-z-J2cbzmTDCAkbplVvJeu6lYq20P9nMg03kJKbKSGpylhBq8YzMuqwFsHv7bnZfzT0HXZJbg57g05jeyfxL0d2_1FvfOFIbij-W4qB3ciGJSkdzbZCK0?width=1388&height=998&cropmode=none)
+    ![Recursive feature elimination with cross-validation, credit to https://scikit-learn.org/](https://scikit-learn.org/stable/_images/sphx_glr_plot_rfe_with_cross_validation_001.png)
 
   - Feature scaling like normalization
 
@@ -198,13 +198,188 @@ You can open `ipynb` file on Google Drive by this product, there are also few ad
 
 ## Code snippets
 
+You can check the code example on Google Colab [here](https://colab.research.google.com/drive/131sSqmrmWXfjFZ3jWSELl8cm0Ox5ah3C), and code below will has slight differences.
 
+### Target
+
+To predict the PM2.5 value of first ten hour by other nine hours data.
+
+### Data preprocessing
+
+Original data structure looks like this:
+
+|                     | 00:00 | 01:00 | ...  | 23:00 |
+| ------------------- | ----- | ----- | ---- | ----- |
+| Feature 1 of day 1  |       |       |      |       |
+| Feature 2 of day 1  |       |       |      |       |
+| ...                 |       |       |      |       |
+| Feature 17 of day 1 |       |       |      |       |
+| Feature 18 of day 1 |       |       |      |       |
+| Feature 1 of day 2  |       |       |      |       |
+| Feature 2 of day 2  |       |       |      |       |
+| ...                 |       |       |      |       |
+
+24 columns represent 24 hours, 18 features with every first 20 days of month in one year, we have 4320 (18\*20\*12) rows.
+
+![Dataset preview in AML Studio](https://bn1301files.storage.live.com/y4mImqQmFAGS7aZxtYHvOYW7T9v-W25A2uAWpFRxJ2s5UXtn8MtiHALF_wPJsv9D0OXmYDlNLaDM1XupJqeMhu2itvtqoz3UqXxSODH13jY2UAuNZFzJFrYkjFAPYiYZYDFS3SU6pAYd_M8Di-68ZnplMS3zBoxPpqUSvAVGSTXHfV_NHQbBwKrCiV7armOD0wz?width=2782&height=1582&cropmode=none)
+
+Our target data structure of $\mathbf{x}$ will be:
+
+|                    | Feature 1 of 1st hour | Feature 1 of 2nd hour | ...  | Feature 1 of 9th hour | Feature 2 of 1st hour | ...  | Feature 18 of 9th hour |
+| ------------------ | --------------------- | --------------------- | ---- | --------------------- | --------------------- | ---- | ---------------------- |
+| 10th hour of day 1 |                       |                       |      |                       |                       |      |                        |
+| 11st hour of day 1 |                       |                       |      |                       |                       |      |                        |
+| ...                |                       |                       |      |                       |                       |      |                        |
+| 24th hour of day 1 |                       |                       |      |                       |                       |      |                        |
+| 1st hour of day 2  |                       |                       |      |                       |                       |      |                        |
+| ...                |                       |                       |      |                       |                       |      |                        |
+
+Number of columns should be $18\ast9=162$, and rows should be $(20\ast24-9)\ast12=5652$.
+
+#### Preprocessing
+
+```python
+# Remove first useless columns: ID, Date, Feature name
+data = data.iloc[:, 3:]
+# Replace "NR" value by 0
+data[data == 'NR'] = 0
+raw_data = data.to_numpy()
+
+def cook_raw(raw_data):
+    month_data = {}
+    for month in range(12):
+        sample = np.empty([18, 480])
+        for day in range(20):
+            sample[:, day * 24 : (day + 1) * 24] = raw_data[18 * (20 * month + day) : 18 * (20 * month + day + 1), :]
+        month_data[month] = sample
+
+    x = np.empty([12 * 471, 18 * 9], dtype = float)
+    y = np.empty([12 * 471, 1], dtype = float)
+    for month in range(12):
+        for day in range(20):
+            for hour in range(24):
+                if day == 19 and hour > 14:
+                    continue
+                x[month * 471 + day * 24 + hour, :] = month_data[month][:,day * 24 + hour : day * 24 + hour + 9].reshape(1, -1) #vector dim:18*9 (9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9)
+                y[month * 471 + day * 24 + hour, 0] = month_data[month][9, day * 24 + hour + 9] #value
+    x[x < 0] = 0
+
+    return x, y
+
+x, y = cook_raw(raw_data=raw_data)
+```
+
+#### Feature engineering by adding quadratice equation
+
+```python
+# Polynomial regression: quadratic equation
+# 10th feature is PM2.5
+x = np.concatenate((x, x[:, 9*9 : 10*9] ** 2), axis=1)
+```
+
+#### Normalization
+
+```python
+# Normalization
+def _normalization(x):
+  mean_x = np.mean(x, axis = 0) #18 * 9 
+  std_x = np.std(x, axis = 0) #18 * 9 
+  for i in range(len(x)): #12 * 471
+      for j in range(len(x[0])): #18 * 9 
+          if std_x[j] != 0:
+              x[i][j] = (x[i][j] - mean_x[j]) / std_x[j]
+  return x
+
+x = _normalization(x)
+```
+
+#### Feature engineering by pruning unimportant features
+
+```python
+# Delete features to prevent overfitting
+def prune(x):
+  delete_cols = []
+  # Remove trivial features: NOx(#7), RAINFALL(#11)
+  remove_idx = [6, 10]
+  for i in remove_idx:
+    delete_cols.extend(range(i * 9 + 1, (i + 1) * 9 + 1))
+
+  res = np.delete(x, delete_cols, 1)
+  return res
+
+# Initialize bias values with 1
+x_pruned = prune(np.concatenate((np.ones([12 * 471, 1]), x), axis = 1).astype(float))
+```
+
+#### Split training data into training set and validation set
+
+```python
+x_train_set = x[: math.floor(len(x) * 0.8), :]
+y_train_set = y[: math.floor(len(y) * 0.8), :]
+x_validation = x[math.floor(len(x) * 0.8): , :]
+y_validation = y[math.floor(len(y) * 0.8): , :]
+```
+
+### Training and prediction
+
+#### Rough training
+
+```python
+def eval_loss(X, Y, w):
+  return np.sqrt(np.sum(np.power(X @ w - Y, 2))/X.shape[0])
+
+# Batch gradient descent
+def train(X, Y, w = 0, reg = 1, iter = 8000):
+  dim = X.shape[1]
+  if type(w) == int:
+    w = np.zeros([dim, 1])
+
+  learning_rate = 1.6
+  adagrad = np.zeros([dim, 1])
+  eps = 0.0000000001
+  for t in range(iter):
+    loss = eval_loss(X, Y, w)
+    if(t%500==0):
+        print('#' + str(t) + ":" + str(loss))
+    # Ridge regularization
+    gradient = 2 * (X.T @ (X @ w - Y)) + 2 * reg * w
+    # Learning schedule by Adagrad
+    adagrad += gradient ** 2
+    w = w - learning_rate * gradient / np.sqrt(adagrad + eps)
+  return w
+
+w = train(x_train_set, y_train_set)
+```
+
+#### Validate training
+
+```python
+eval_loss(x_validation, y_validation, w)
+```
+
+#### Training again and remove outliers
+
+```python
+w = train(X = x_pruned, Y = y, w = w)
+
+outliers = []
+for i in range(x_pruned.shape[0]):
+  if np.absolute(x_pruned[i] @ w - y[i]) > 10:
+    outliers.append(i)
+
+# Try to eliminate irreducible error
+x_pruned = np.delete(x_pruned, outliers, 0)
+y = np.delete(y, outliers, 0)
+
+w = train(X = x_pruned, Y = y, w = w)
+print('\nFinal loss on full training dataset: {}'.format(eval_loss(x_pruned, y, w)))
+```
 
 
 
 ## Further more
 
-- Enjoy the reference
+- Enjoy the references
 
 - Try assignments
 
