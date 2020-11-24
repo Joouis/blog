@@ -12,13 +12,11 @@ tags:
 - feature engineering
 ---
 
-TODO
+## Goal
+
+Quick ramp to machine learning by linear regression case in about 1 hour, recap basic important concepts and practice with code.
 
 <!-- more -->
-
-
-
-## Outlines
 
 
 
@@ -34,10 +32,27 @@ TODO
 
 ## Recap of basic concepts
 
+Do not worry about these theories if you can't catch up, just take it as an intro, this post will not introduce too many math knowledges also.
+
+### Steps of machine learning
+
+- Define the model, like linear model or neural network.
+- Define the goodness/loss of model above, metrics can be error, cross entropy, etc.
+- Calculate the best function by optimization algorithms.
+
+### Linear model
+
+Let's use simplest linear model as exmaple.
+
 
 
 
 
 ## Further more
 
-![Learning map, http://speech.ee.ntu.edu.tw/~tlkagk/courses_ML20.html](http://speech.ee.ntu.edu.tw/~tlkagk/HW.png)
+- Enjoy the reference
+
+- Try assignments
+
+  ![Learning map, http://speech.ee.ntu.edu.tw/~tlkagk/courses_ML20.html](http://speech.ee.ntu.edu.tw/~tlkagk/HW.png)
+
