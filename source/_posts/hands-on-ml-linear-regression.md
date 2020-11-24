@@ -45,7 +45,7 @@ Do not worry about these theories if you can't catch up, just take it as an intr
 
 ### Linear model
 
-Let's start with simplest linear model $y=ax+b$, and you can try more complex model if your train are underfitting.
+Let's start with simplest linear model $f(x)=wx+b$, and you can try more complex model if your train are underfitting.
 
 Q: How to initialize parameters?
 
@@ -60,13 +60,51 @@ The model's ability to adapt properly to new, previously unseen data, drawn from
 
 Solutions: resources mentioned above, or [ref](https://towardsdatascience.com/underfitting-and-overfitting-in-machine-learning-and-how-to-deal-with-it-6fe4a8a49dbf).
 
-### Loss function
+### Loss/Cost function
 
-We must have a dataset for training, it looks like: $(x_1, \hat{y_1})$, $(x_2, \hat{y_2})$, ..., $(x_n, \hat{y_n})$
+There is a dataset for training, it looks like: $(x^1, \hat{y}^1)$, $(x^2, \hat{y}^2)$, ..., $(x^n, \hat{y}^n)$. The error of $x^i$ should be $\hat{y}^i-f(x)^i$, we can add all errors of dataset to define our loss function:
+
+$$L(f)=\sum_{i=1}^{n}(\hat{y}^i-f(x^i))^2$$
+
+$$L(w,b)=\sum_{i=1}^{n}(\hat{y}^i-(wx^i+b))^2$$
+
+Obviously the smaller loss, the better model. So our target function should be:
+
+$$f^*=\arg\min_{f} L(f)$$
+
+Average value would be better than total sum, then we get the actual function that needs to be computed:
+
+$$w^\ast,b^\ast=\arg\min_{w,b} \sum_{i=1}^{n}(\hat{y}^i-(wx^i+b))^2$$
+
+Not big deal, just minize the mean square error of our trivial linear model.
 
 
 
+### Vectorized form
 
+You may have heard "feature" before, for each of data $x^i$, if the number of its features is $m$, then the actual model should be:
+
+$$\hat{y}^i=w_0+w_1x_1^i+w_2x_2^i+\cdots+w_mx_m^i$$
+
+Kind of verbose right? Let's use $\mathbf{w}$ to represent all feature weights $w_1$ to $w_m$ as well as the bias term $w_0$, which we call it $b$ before. Same way, use $\mathbf{x}$ to represent all the feature values $x_1$ to $x_m$ with $x_0$ is equal to 1. Then we can transform linear regression model to the vectorized form:
+
+$$\hat{y}=h_w(x)=\mathbf{w}\cdot\mathbf{x}$$
+
+Thus our loss function of vectorized form is:
+
+$$\mathbf{w}^\ast=\frac{1}{n}\min_\mathbf{w} \sum_{i=1}^{n}(\hat{y}^i-(\mathbf{w}^i\mathbf{x}^i))^2$$
+
+
+
+### Gradient descent
+
+If loss function is differentiable, then we can use gradient descent.
+
+
+
+Ending
+
+- Not only one solution, you can even train it by neural network
 
 ## Further more
 
