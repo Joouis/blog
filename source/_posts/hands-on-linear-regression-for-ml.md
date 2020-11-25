@@ -1,5 +1,5 @@
 ---
-title: Hands-on machine learning from linear regression
+title: Hands-on linear regression for machine learning
 date: 2020-11-24 10:58:35
 updated: 2020-11-24 10:58:35
 categories:
@@ -23,9 +23,12 @@ Quick ramp to machine learning by linear regression case in about 1 hour, recap 
 
 ## References
 
+These are both references for this post as well as solid learning resources, if you could be or have been familiar with them, then you don't need this post 👻.
+
 - Book: [Hands-on Machine Learning with Scikit-Learn, Keras, and TensorFlow, 2nd Edition](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/) (try it free by your Microsoft account)
   - [Average rating 9.9 on Douban Book](https://book.douban.com/subject/30310982/) (till 11/24/2020)
   - [Errata](https://www.oreilly.com/catalog/errata.csp?isbn=0636920142874)
+  - For Microsoft employees, acquire it [online](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/) with your corporation account for free
 - Courses:
   - [Machine Learning 2020](http://speech.ee.ntu.edu.tw/~tlkagk/courses_ML20.html), Hung-yi Lee
   - [Machine Learning Crash Course](https://developers.google.com/machine-learning/crash-course/), Google
@@ -39,15 +42,16 @@ Do not worry about these theories if you can't catch up, just take it as an intr
 
 ### Steps of machine learning
 
-- Define the model, like linear model or neural network.
-- Define the goodness/loss of model above, metrics can be error, cross entropy, etc.
-- Calculate the best function by optimization algorithms.
+0. Get familiar with dataset, do preprocessing works.
+1. Define the model, like linear model or neural network.
+2. Define the goodness/loss of model above, metrics can be error, cross entropy, etc.
+3. Calculate the best function by optimization algorithms.
 
 ### Linear model
 
-Let's start with simplest linear model $f(x)=wx+b$, and you can try more complex model if your train are underfitting.
+Let's start with simplest linear model $f(x)=wx+b$, you can also try more complex model if your train are underfitting.
 
-Q: How to initialize parameters?
+*Question: How to initialize parameters?*
 
 ### Generalization
 
@@ -58,7 +62,7 @@ The model's ability to adapt properly to new, previously unseen data, drawn from
 
 ![Goodness of fit](https://miro.medium.com/max/1400/1*iiPH0JyowvS3k12T0-W2HA.png)
 
-Solutions: resources mentioned above, or [ref](https://towardsdatascience.com/underfitting-and-overfitting-in-machine-learning-and-how-to-deal-with-it-6fe4a8a49dbf).
+*Solutions: resources mentioned above, or [ref](https://towardsdatascience.com/underfitting-and-overfitting-in-machine-learning-and-how-to-deal-with-it-6fe4a8a49dbf).*
 
 ### Loss/Cost function
 
@@ -77,8 +81,6 @@ Average value would be better than total sum, then we get the actual function th
 $$w^\ast,b^\ast=\arg\min_{w,b} \sum_{i=1}^{n}(\hat{y}^i-(wx^i+b))^2$$
 
 Not big deal, just minize the mean square error of our trivial linear model.
-
-
 
 ### Vectorized form
 
@@ -106,7 +108,7 @@ Check out this [online course video](https://www.coursera.org/lecture/machine-le
 
 Yes we're done. Our introduction is here.🤣🤣🤣
 
-Q: How to deal with complex models? How about computation burden?
+*Question: How to deal with complex models? How about computation burden?*
 
 ### Gradient Descent
 
