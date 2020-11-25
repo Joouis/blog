@@ -1,7 +1,7 @@
 ---
 title: Hands-on linear regression for machine learning
 date: 2020-11-24 10:58:35
-updated: 2020-11-24 10:58:35
+updated: 2020-11-25 13:08:00
 categories:
 - ML/DL
 tags:
@@ -15,7 +15,7 @@ mathjax: true
 
 ## Goal
 
-Quick ramp to machine learning by linear regression case in about 1 hour, recap basic important concepts and practice with code.
+This is the sharing session for my team, the goal is to quick ramp up the essential knowledges for linear regression case to learn how machine learning works during 1 hour. This sharing will recap basic important concepts, introduce run-time environments, and go through the codes on Notebooks of Azure Machine Learning Studio platform.
 
 <!-- more -->
 
@@ -38,7 +38,7 @@ These are both references for this post as well as solid learning resources, if 
 
 ## Recap of basic concepts
 
-Do not worry about these theories if you can't catch up, just take it as an intro, this post will not introduce too many math knowledges also.
+**Do not worry about these theories if you can't catch up, just take it as an intro, this post will not introduce too many math knowledges also.**
 
 ### Steps of machine learning
 
@@ -57,12 +57,12 @@ Let's start with simplest linear model $f(x)=wx+b$, you can also try more comple
 
 The model's ability to adapt properly to new, previously unseen data, drawn from the same distribution as the one used to create the model.
 
+![Goodness of fit, credit to the ref-generalization link below](https://miro.medium.com/max/1400/1*iiPH0JyowvS3k12T0-W2HA.png)
+
 - Underfitting: model is too simple to learn the underlying structure of the data (large bias)
 - Overfitting: model is too complex relative to the amount and noisiness of the training data (large variance)
 
-![Goodness of fit](https://miro.medium.com/max/1400/1*iiPH0JyowvS3k12T0-W2HA.png)
-
-*Solutions: resources mentioned above, or [ref](https://towardsdatascience.com/underfitting-and-overfitting-in-machine-learning-and-how-to-deal-with-it-6fe4a8a49dbf).*
+*Solutions: resources mentioned above, or [ref-generalization](https://towardsdatascience.com/underfitting-and-overfitting-in-machine-learning-and-how-to-deal-with-it-6fe4a8a49dbf).*
 
 ### Loss/Cost function
 
@@ -192,7 +192,7 @@ You can open `ipynb` file on Google Drive by this product, there are also few ad
 - Cleaner and larger workspace.
 - "Code snippets" feature is interesting, but not smart enough (like intelligent recommendation), nor rich code exmaples.
 - It will create compute target or VM (virtual machine) for the user automatically.
-- You can download dataset from Google Drive easily.
+- Download dataset from Google Drive, comment and share are easily.
 
 ![UI of Google Colab](https://bn1301files.storage.live.com/y4mNHPwPmALVZIF_KZgyK8_NBJfv4Wl3edLKx_iNaf8IICR9IXXjtoxFZ5mw6VGXOUB-RIT8IkeSia5amouV4zwfHJUD4fd6PJuMcstxvntd7TJZRAt5wPItx7L6aj_e61Y8fPGQa_NUtGbVYd2P7CzV1cweF8BnEv4XO_WOIoEHoGBKdOO1CEWby8h1FRtg002?width=2778&height=1588&cropmode=none)
 
@@ -240,6 +240,8 @@ Number of columns should be $18\ast9=162$, and rows should be $(20\ast24-9)\ast1
 
 #### Preprocessing
 
+You may wonder why $\mathbf{X}$ is capital and $\mathbf{y}$ is lower-case, just Google matrix notation.
+
 ```python
 # Remove first useless columns: ID, Date, Feature name
 data = data.iloc[:, 3:]
@@ -255,20 +257,22 @@ def cook_raw(raw_data):
             sample[:, day * 24 : (day + 1) * 24] = raw_data[18 * (20 * month + day) : 18 * (20 * month + day + 1), :]
         month_data[month] = sample
 
-    x = np.empty([12 * 471, 18 * 9], dtype = float)
+    X = np.empty([12 * 471, 18 * 9], dtype = float)
     y = np.empty([12 * 471, 1], dtype = float)
     for month in range(12):
         for day in range(20):
             for hour in range(24):
                 if day == 19 and hour > 14:
                     continue
-                x[month * 471 + day * 24 + hour, :] = month_data[month][:,day * 24 + hour : day * 24 + hour + 9].reshape(1, -1) #vector dim:18*9 (9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9)
-                y[month * 471 + day * 24 + hour, 0] = month_data[month][9, day * 24 + hour + 9] #value
-    x[x < 0] = 0
+								# Vector dim: 18 * 9
+                X[month * 471 + day * 24 + hour, :] = month_data[month][:,day * 24 + hour : day * 24 + hour + 9].reshape(1, -1)
+                # Value
+                y[month * 471 + day * 24 + hour, 0] = month_data[month][9, day * 24 + hour + 9]
+    X[X < 0] = 0
 
-    return x, y
+    return X, y
 
-x, y = cook_raw(raw_data=raw_data)
+X, y = cook_raw(raw_data=raw_data)
 ```
 
 #### Feature engineering by adding quadratice equation
@@ -276,49 +280,52 @@ x, y = cook_raw(raw_data=raw_data)
 ```python
 # Polynomial regression: quadratic equation
 # 10th feature is PM2.5
-x = np.concatenate((x, x[:, 9*9 : 10*9] ** 2), axis=1)
+X = np.concatenate((X, X[:, 9*9 : 10*9] ** 2), axis=1)
 ```
 
 #### Normalization
 
 ```python
 # Normalization
-def _normalization(x):
-  mean_x = np.mean(x, axis = 0) #18 * 9 
-  std_x = np.std(x, axis = 0) #18 * 9 
-  for i in range(len(x)): #12 * 471
-      for j in range(len(x[0])): #18 * 9 
+def _normalization(X):
+	# Vectors dim: 18 * 9
+  mean_x = np.mean(X, axis = 0)
+  std_x = np.std(X, axis = 0)
+	# Length: 471 * 12
+  for i in range(len(X)):
+			# Length: 18 * 9
+      for j in range(len(X[0])):
           if std_x[j] != 0:
-              x[i][j] = (x[i][j] - mean_x[j]) / std_x[j]
-  return x
+              X[i][j] = (X[i][j] - mean_x[j]) / std_x[j]
+  return X
 
-x = _normalization(x)
+X = _normalization(X)
 ```
 
 #### Feature engineering by pruning unimportant features
 
 ```python
 # Delete features to prevent overfitting
-def prune(x):
+def prune(X):
   delete_cols = []
   # Remove trivial features: NOx(#7), RAINFALL(#11)
   remove_idx = [6, 10]
   for i in remove_idx:
     delete_cols.extend(range(i * 9 + 1, (i + 1) * 9 + 1))
 
-  res = np.delete(x, delete_cols, 1)
+  res = np.delete(X, delete_cols, 1)
   return res
 
 # Initialize bias values with 1
-x_pruned = prune(np.concatenate((np.ones([12 * 471, 1]), x), axis = 1).astype(float))
+X_pruned = prune(np.concatenate((np.ones([12 * 471, 1]), X), axis = 1).astype(float))
 ```
 
 #### Split training data into training set and validation set
 
 ```python
-x_train_set = x[: math.floor(len(x) * 0.8), :]
+X_train_set = X[: math.floor(len(x) * 0.8), :]
 y_train_set = y[: math.floor(len(y) * 0.8), :]
-x_validation = x[math.floor(len(x) * 0.8): , :]
+X_validation = X[math.floor(len(x) * 0.8): , :]
 y_validation = y[math.floor(len(y) * 0.8): , :]
 ```
 
@@ -327,11 +334,11 @@ y_validation = y[math.floor(len(y) * 0.8): , :]
 #### Rough training
 
 ```python
-def eval_loss(X, Y, w):
-  return np.sqrt(np.sum(np.power(X @ w - Y, 2))/X.shape[0])
+def eval_loss(X, y, w):
+  return np.sqrt(np.sum(np.power(X @ w - y, 2))/X.shape[0])
 
 # Batch gradient descent
-def train(X, Y, w = 0, reg = 1, iter = 8000):
+def train(X, y, w = 0, reg = 1, iter = 8000):
   dim = X.shape[1]
   if type(w) == int:
     w = np.zeros([dim, 1])
@@ -340,50 +347,52 @@ def train(X, Y, w = 0, reg = 1, iter = 8000):
   adagrad = np.zeros([dim, 1])
   eps = 0.0000000001
   for t in range(iter):
-    loss = eval_loss(X, Y, w)
+    loss = eval_loss(X, y, w)
     if(t%500==0):
         print('#' + str(t) + ":" + str(loss))
     # Ridge regularization
-    gradient = 2 * (X.T @ (X @ w - Y)) + 2 * reg * w
+    gradient = 2 * (X.T @ (X @ w - y)) + 2 * reg * w
     # Learning schedule by Adagrad
     adagrad += gradient ** 2
     w = w - learning_rate * gradient / np.sqrt(adagrad + eps)
   return w
 
-w = train(x_train_set, y_train_set)
+w = train(X_train_set, y_train_set)
 ```
 
 #### Validate training
 
 ```python
-eval_loss(x_validation, y_validation, w)
+eval_loss(X_validation, y_validation, w)
 ```
 
 #### Training again and remove outliers
 
 ```python
-w = train(X = x_pruned, Y = y, w = w)
+w = train(X = X_pruned, y = y, w = w)
 
 outliers = []
-for i in range(x_pruned.shape[0]):
-  if np.absolute(x_pruned[i] @ w - y[i]) > 10:
+for i in range(X_pruned.shape[0]):
+  if np.absolute(X_pruned[i] @ w - y[i]) > 10:
     outliers.append(i)
 
 # Try to eliminate irreducible error
-x_pruned = np.delete(x_pruned, outliers, 0)
+X_pruned = np.delete(X_pruned, outliers, 0)
 y = np.delete(y, outliers, 0)
 
-w = train(X = x_pruned, Y = y, w = w)
-print('\nFinal loss on full training dataset: {}'.format(eval_loss(x_pruned, y, w)))
+w = train(X = X_pruned, y = y, w = w)
+print('\nFinal loss on full training dataset: {}'.format(eval_loss(X_pruned, y, w)))
 ```
 
+### Review
 
+Compare the [Steps of machine learning](#Steps-of-machine-learning) section with each code snippets below and rethink the whole flow, you may have an overview about machine learning now 👍.
 
 ## Further more
 
 - Enjoy the references
 
-- Try assignments
+- Try assignments in the referred book and courses
 
   ![Learning map, http://speech.ee.ntu.edu.tw/~tlkagk/courses_ML20.html](http://speech.ee.ntu.edu.tw/~tlkagk/HW.png)
 
