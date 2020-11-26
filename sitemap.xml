@@ -928,6 +928,20 @@
   </url>
   
   <url>
+    <loc>https://blog.joouis.com/tags/mysql/</loc>
+    <lastmod>2020-11-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.joouis.com/tags/note/</loc>
+    <lastmod>2020-11-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.joouis.com/tags/stack/</loc>
     <lastmod>2020-11-26</lastmod>
     <changefreq>daily</changefreq>
@@ -957,20 +971,6 @@
   
   <url>
     <loc>https://blog.joouis.com/tags/gcc/</loc>
-    <lastmod>2020-11-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.joouis.com/tags/mysql/</loc>
-    <lastmod>2020-11-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.joouis.com/tags/note/</loc>
     <lastmod>2020-11-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1096,27 +1096,6 @@
   </url>
   
   <url>
-    <loc>https://blog.joouis.com/tags/silicon-valley/</loc>
-    <lastmod>2020-11-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.joouis.com/tags/software/</loc>
-    <lastmod>2020-11-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.joouis.com/tags/inspiration/</loc>
-    <lastmod>2020-11-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.joouis.com/tags/SSR/</loc>
     <lastmod>2020-11-26</lastmod>
     <changefreq>daily</changefreq>
@@ -1139,6 +1118,27 @@
   
   <url>
     <loc>https://blog.joouis.com/tags/isomorphic/</loc>
+    <lastmod>2020-11-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.joouis.com/tags/silicon-valley/</loc>
+    <lastmod>2020-11-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.joouis.com/tags/software/</loc>
+    <lastmod>2020-11-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.joouis.com/tags/inspiration/</loc>
     <lastmod>2020-11-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
