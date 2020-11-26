@@ -4,7 +4,7 @@
     <title>2019 泰国行游记（四）</title>
     <url>/2019/2019-thai-trip-4/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script>
-    <div id="aplayer-yNrXQSnA" class="aplayer aplayer-tag-marker meting-tag-marker"
+    <div id="aplayer-jUfaofkR" class="aplayer aplayer-tag-marker meting-tag-marker"
          data-id="555974038" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="true" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86" data-mini="true"
     ></div>
 
@@ -176,7 +176,7 @@
 <h2 id="尾巴"><a href="#尾巴" class="headerlink" title="尾巴"></a>尾巴</h2><p>博客的升级花费大概两天的时间，一点点扣细节，既当产品又做技术，搞一个自嗨的项目，还是玩得非常开心。未来当然还是以输出文章为主，除了内容本身外，也试着丰富展现形式，达到一个比较舒服的阅读体验。最后关于博客的推广，其实在建站之初只想创造一个属于自己的空间，不过现在慢慢感受到，如果自己的文字能够帮助到更多人，是一件正能量满满的事情。</p>
 <p>等到五周年时再看看又发生了哪些变化吧~</p>
 
-    <div id="aplayer-gwDZbPtd" class="aplayer aplayer-tag-marker meting-tag-marker"
+    <div id="aplayer-RIwXZFVj" class="aplayer aplayer-tag-marker meting-tag-marker"
          data-id="28737747" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="true" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86" data-mini="true"
     ></div>]]></content>
       <categories>
@@ -895,7 +895,7 @@
 <p>两年的时光过得太快，经历了许多。现在回头想想，纵使是出了非常多幺蛾子、见识了不少奇葩，也都是满满的人生收获。除了专业和心智上的成长外，最珍贵的就是认识了一帮优秀的同学，有前面提过的一些前辈，也有许多同龄人。珈夜、瀚雷、卖家团队的前端小伙伴们、YunOS 相互取暖的基友们、畅谈技术的三哥、给我抛过橄榄枝的剑翘、羽括等等等等，是你们让我感受到了“一群有情有义的人，在一起做有价值的事情”。</p>
 <p>阿里这个大平台使我们相识相聚，就让我们江湖再见吧。</p>
 
-    <div id="aplayer-KPwdZjNH" class="aplayer aplayer-tag-marker meting-tag-marker"
+    <div id="aplayer-PggeGPje" class="aplayer aplayer-tag-marker meting-tag-marker"
          data-id="1439534" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="true" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86" data-mini="true"
     ></div>
 ]]></content>
@@ -1767,46 +1767,6 @@
       </tags>
   </entry>
   <entry>
-    <title>MySQL 笔记</title>
-    <url>/2017/mysql-note/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>这是一篇关于 MySQL 的语法笔记，主要供自己和新手们查看。</p>
-<a id="more"></a>
-
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>写在最前面…当然是不要重复造轮子！做笔记也是如此！So ~ 先引用一发：</p>
-<ul>
-<li><strong><a href="http://www.cnblogs.com/mr-wid/archive/2013/05/09/3068229.html">21分钟 MySQL 入门教程</a></strong></li>
-</ul>
-<h2 id="遣词造句"><a href="#遣词造句" class="headerlink" title="遣词造句"></a>遣词造句</h2><p>像翻译英语句子一样来记录语法。</p>
-<h4 id="按用户名查询用户的所有昵称"><a href="#按用户名查询用户的所有昵称" class="headerlink" title="按用户名查询用户的所有昵称"></a>按用户名查询用户的所有昵称</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span>(nick) <span class="keyword">FROM</span> TABLE_SAMPLE <span class="keyword">WHERE</span> <span class="keyword">name</span> <span class="keyword">IN</span></span><br><span class="line">(<span class="keyword">SELECT</span> <span class="keyword">name</span> <span class="keyword">FROM</span> TABLE_SAMPLE <span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="keyword">name</span>)</span><br></pre></td></tr></table></figure>
-
-<h4 id="按月以及平台查询用户数"><a href="#按月以及平台查询用户数" class="headerlink" title="按月以及平台查询用户数"></a>按月以及平台查询用户数</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line"><span class="keyword">DATE_FORMAT</span>(<span class="built_in">time</span>, <span class="string">&#x27;%Y-%m&#x27;</span>) <span class="keyword">months</span>, <span class="keyword">COUNT</span>(<span class="keyword">DISTINCT</span>(uid)) <span class="keyword">AS</span> user_count</span><br><span class="line"><span class="keyword">FROM</span> TABLE_SAMPLE <span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="keyword">months</span>, platforms</span><br></pre></td></tr></table></figure>
-
-<h4 id="查询时间单位的数据总和"><a href="#查询时间单位的数据总和" class="headerlink" title="查询时间单位的数据总和"></a>查询时间单位的数据总和</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 每分钟</span><br><span class="line">SELECT</span><br><span class="line">SUM(data) AS sum</span><br><span class="line">FROM TABLE_SAMPLE GROUP BY YEAR(time), MONTH(time), DAY(time), HOUR(time), MINUTE(time)</span><br><span class="line"></span><br><span class="line"># 每10分钟</span><br><span class="line">SELECT</span><br><span class="line">SUM(data) AS sum</span><br><span class="line">FROM TABLE_SAMPLE GROUP BY YEAR(time), MONTH(time), DAY(time), HOUR(time), FLOOR(MINUTE(time)&#x2F;10)</span><br><span class="line"></span><br><span class="line"># 每小时</span><br><span class="line">SELECT</span><br><span class="line">SUM(data) AS sum</span><br><span class="line">FROM TABLE_SAMPLE GROUP BY YEAR(time), MONTH(time), DAY(time), HOUR(time)</span><br><span class="line"></span><br><span class="line"># 后面依此类推...</span><br></pre></td></tr></table></figure>
-
-<h4 id="查询每小时的数据总和"><a href="#查询每小时的数据总和" class="headerlink" title="查询每小时的数据总和"></a>查询每小时的数据总和</h4><h4 id="一次查询里查询多样数据"><a href="#一次查询里查询多样数据" class="headerlink" title="一次查询里查询多样数据"></a>一次查询里查询多样数据</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">(<span class="keyword">SELECT</span> uid <span class="keyword">FROM</span> TABLE_SAMPLE_1 <span class="keyword">WHERE</span> <span class="keyword">name</span> = <span class="string">&#x27;我最帅&#x27;</span>) <span class="keyword">AS</span> uid,</span><br><span class="line">(<span class="keyword">SELECT</span> height <span class="keyword">FROM</span> TABLE_SAMPLE_2 <span class="keyword">WHERE</span> <span class="keyword">name</span> = <span class="string">&#x27;我最帅&#x27;</span>) <span class="keyword">AS</span> height</span><br></pre></td></tr></table></figure>
-
-<h4 id="一次更新多条数据"><a href="#一次更新多条数据" class="headerlink" title="一次更新多条数据"></a>一次更新多条数据</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> TABLE_SAMPLE</span><br><span class="line"><span class="keyword">SET</span> credit = credit + <span class="keyword">CASE</span></span><br><span class="line">  <span class="keyword">WHEN</span> <span class="keyword">name</span> = <span class="string">&#x27;我最帅&#x27;</span> <span class="keyword">THEN</span> <span class="number">1000</span></span><br><span class="line">  <span class="keyword">WHEN</span> <span class="keyword">name</span> = <span class="string">&#x27;我不帅&#x27;</span> <span class="keyword">THEN</span> <span class="number">0</span> <span class="keyword">END</span>,</span><br><span class="line">  <span class="built_in">time</span> = <span class="keyword">CURRENT_DATE</span></span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">name</span> <span class="keyword">IN</span> (<span class="string">&#x27;我最帅&#x27;</span>, <span class="string">&#x27;我不帅&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<h4 id="一次插入多条数据"><a href="#一次插入多条数据" class="headerlink" title="一次插入多条数据"></a>一次插入多条数据</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> TABLE_SAMPLE (<span class="keyword">name</span>, credit)</span><br><span class="line"><span class="keyword">VALUES</span> (<span class="string">&#x27;我最帅&#x27;</span>, <span class="number">1000</span>), (<span class="string">&#x27;我不帅&#x27;</span>, <span class="number">0</span>)</span><br></pre></td></tr></table></figure>
-
-
-<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><ul>
-<li>字串存在： <code>LOCATE(你要查的字符串，对应的域) &gt; 0</code></li>
-<li>字串连接：<code>CONCAT(STR1, STR2, ...)</code> ， <code>CONCAT_WS</code> 第一个参数是分隔符</li>
-<li>时间：<code>FROM_UNIXTIME</code> 和 <code>UNIX_TIMESTAMP</code></li>
-<li>查看倒数第 20 到 30 笔数据：<code>ORDER BY id DESC LIMIT 20, 30</code></li>
-<li>日期：<code>CURDATE() = DATE(NOW())</code></li>
-</ul>
-]]></content>
-      <categories>
-        <category>笔记小抄</category>
-      </categories>
-      <tags>
-        <tag>mysql</tag>
-        <tag>note</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>小练习：通过反汇编一段C代码观察栈行为</title>
     <url>/2019/observe-stack-behavior-by-disassembling-a-simple-c-code/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>这是我的<a href="https://blog.joouis.com/2019/watching-notes-revolution-os/">嵌入式笔记</a>第二篇，原文写于2015年。</p>
@@ -1877,6 +1837,46 @@
         <tag>disassemble</tag>
         <tag>c</tag>
         <tag>gcc</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MySQL 笔记</title>
+    <url>/2017/mysql-note/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>这是一篇关于 MySQL 的语法笔记，主要供自己和新手们查看。</p>
+<a id="more"></a>
+
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>写在最前面…当然是不要重复造轮子！做笔记也是如此！So ~ 先引用一发：</p>
+<ul>
+<li><strong><a href="http://www.cnblogs.com/mr-wid/archive/2013/05/09/3068229.html">21分钟 MySQL 入门教程</a></strong></li>
+</ul>
+<h2 id="遣词造句"><a href="#遣词造句" class="headerlink" title="遣词造句"></a>遣词造句</h2><p>像翻译英语句子一样来记录语法。</p>
+<h4 id="按用户名查询用户的所有昵称"><a href="#按用户名查询用户的所有昵称" class="headerlink" title="按用户名查询用户的所有昵称"></a>按用户名查询用户的所有昵称</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span>(nick) <span class="keyword">FROM</span> TABLE_SAMPLE <span class="keyword">WHERE</span> <span class="keyword">name</span> <span class="keyword">IN</span></span><br><span class="line">(<span class="keyword">SELECT</span> <span class="keyword">name</span> <span class="keyword">FROM</span> TABLE_SAMPLE <span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="keyword">name</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="按月以及平台查询用户数"><a href="#按月以及平台查询用户数" class="headerlink" title="按月以及平台查询用户数"></a>按月以及平台查询用户数</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line"><span class="keyword">DATE_FORMAT</span>(<span class="built_in">time</span>, <span class="string">&#x27;%Y-%m&#x27;</span>) <span class="keyword">months</span>, <span class="keyword">COUNT</span>(<span class="keyword">DISTINCT</span>(uid)) <span class="keyword">AS</span> user_count</span><br><span class="line"><span class="keyword">FROM</span> TABLE_SAMPLE <span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="keyword">months</span>, platforms</span><br></pre></td></tr></table></figure>
+
+<h4 id="查询时间单位的数据总和"><a href="#查询时间单位的数据总和" class="headerlink" title="查询时间单位的数据总和"></a>查询时间单位的数据总和</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 每分钟</span><br><span class="line">SELECT</span><br><span class="line">SUM(data) AS sum</span><br><span class="line">FROM TABLE_SAMPLE GROUP BY YEAR(time), MONTH(time), DAY(time), HOUR(time), MINUTE(time)</span><br><span class="line"></span><br><span class="line"># 每10分钟</span><br><span class="line">SELECT</span><br><span class="line">SUM(data) AS sum</span><br><span class="line">FROM TABLE_SAMPLE GROUP BY YEAR(time), MONTH(time), DAY(time), HOUR(time), FLOOR(MINUTE(time)&#x2F;10)</span><br><span class="line"></span><br><span class="line"># 每小时</span><br><span class="line">SELECT</span><br><span class="line">SUM(data) AS sum</span><br><span class="line">FROM TABLE_SAMPLE GROUP BY YEAR(time), MONTH(time), DAY(time), HOUR(time)</span><br><span class="line"></span><br><span class="line"># 后面依此类推...</span><br></pre></td></tr></table></figure>
+
+<h4 id="查询每小时的数据总和"><a href="#查询每小时的数据总和" class="headerlink" title="查询每小时的数据总和"></a>查询每小时的数据总和</h4><h4 id="一次查询里查询多样数据"><a href="#一次查询里查询多样数据" class="headerlink" title="一次查询里查询多样数据"></a>一次查询里查询多样数据</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">(<span class="keyword">SELECT</span> uid <span class="keyword">FROM</span> TABLE_SAMPLE_1 <span class="keyword">WHERE</span> <span class="keyword">name</span> = <span class="string">&#x27;我最帅&#x27;</span>) <span class="keyword">AS</span> uid,</span><br><span class="line">(<span class="keyword">SELECT</span> height <span class="keyword">FROM</span> TABLE_SAMPLE_2 <span class="keyword">WHERE</span> <span class="keyword">name</span> = <span class="string">&#x27;我最帅&#x27;</span>) <span class="keyword">AS</span> height</span><br></pre></td></tr></table></figure>
+
+<h4 id="一次更新多条数据"><a href="#一次更新多条数据" class="headerlink" title="一次更新多条数据"></a>一次更新多条数据</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> TABLE_SAMPLE</span><br><span class="line"><span class="keyword">SET</span> credit = credit + <span class="keyword">CASE</span></span><br><span class="line">  <span class="keyword">WHEN</span> <span class="keyword">name</span> = <span class="string">&#x27;我最帅&#x27;</span> <span class="keyword">THEN</span> <span class="number">1000</span></span><br><span class="line">  <span class="keyword">WHEN</span> <span class="keyword">name</span> = <span class="string">&#x27;我不帅&#x27;</span> <span class="keyword">THEN</span> <span class="number">0</span> <span class="keyword">END</span>,</span><br><span class="line">  <span class="built_in">time</span> = <span class="keyword">CURRENT_DATE</span></span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">name</span> <span class="keyword">IN</span> (<span class="string">&#x27;我最帅&#x27;</span>, <span class="string">&#x27;我不帅&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="一次插入多条数据"><a href="#一次插入多条数据" class="headerlink" title="一次插入多条数据"></a>一次插入多条数据</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> TABLE_SAMPLE (<span class="keyword">name</span>, credit)</span><br><span class="line"><span class="keyword">VALUES</span> (<span class="string">&#x27;我最帅&#x27;</span>, <span class="number">1000</span>), (<span class="string">&#x27;我不帅&#x27;</span>, <span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><ul>
+<li>字串存在： <code>LOCATE(你要查的字符串，对应的域) &gt; 0</code></li>
+<li>字串连接：<code>CONCAT(STR1, STR2, ...)</code> ， <code>CONCAT_WS</code> 第一个参数是分隔符</li>
+<li>时间：<code>FROM_UNIXTIME</code> 和 <code>UNIX_TIMESTAMP</code></li>
+<li>查看倒数第 20 到 30 笔数据：<code>ORDER BY id DESC LIMIT 20, 30</code></li>
+<li>日期：<code>CURDATE() = DATE(NOW())</code></li>
+</ul>
+]]></content>
+      <categories>
+        <category>笔记小抄</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+        <tag>note</tag>
       </tags>
   </entry>
   <entry>
@@ -2243,6 +2243,33 @@
       </tags>
   </entry>
   <entry>
+    <title>从硅谷软件企业学习到的细节</title>
+    <url>/2016/the-details-i-learned-from-software-company-in-silicon-valley/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Ryan 哥是我在 Lilee 实习时的同事，按时间来说他比我还晚进入 Lilee (笑)。虽然相处天数很短，但对他印象深刻：个子不高，酷酷的很有型，CMU 毕业，湾区大公司工作经历。在公司每季(？)的新人介绍茶话会上，发现他也是一个很好聊的人。最后我打包滚蛋时，他也是为数不多写邮件给我践行的人。</p>
+<p>就在这个月中旬， Ryan 哥在自己的脸书上写了这里分享的这篇文章，颇具视野和深度，对于我这样的新人来说很受启发，因此也搬运到我的博客上来。本文的<a href="https://www.facebook.com/ryanyang328/posts/10105200442293837"><strong>原出处</strong></a>，里面还有一些精彩评论，有兴趣也可以去看看。</p>
+<a id="more"></a>
+
+<h1 id="從矽谷軟體企業學習到的細節"><a href="#從矽谷軟體企業學習到的細節" class="headerlink" title="從矽谷軟體企業學習到的細節"></a>從矽谷軟體企業學習到的細節</h1><p>回來台灣一年多了，在矽谷工作時，我總是想說服大家一起回台灣做點小貢獻。但現在，我的確認為台灣需要有更多人出國看一看拓展新的視野，未來有機會再帶回更多新的思維回到家鄉，和台灣原本就保有的優點融合。 之前很高興有機會到交大還有 Sudo 的活動分享在矽谷工作時感受到的文化和經驗。最近還是有許多朋友有興趣想了解台灣軟體業除了以往在資源上的限制，還有什麼樣不同的文化和制度對目前軟體產業造成衝擊和差異性。所以趁這個機會分享一些目前在台灣軟體產業觀察和聽聞的現況，去探討我們可能可以自省的方面。在我們努力衝刺的過程中，希望可以提及幾項在台灣軟體產業看似還普遍缺乏的思維和觀點：</p>
+<ol>
+<li>人是公司最大的資產：在台灣是企業選擇員工，在矽谷是員工選擇企業。矽谷企業普遍認為，人是公司最大的資產。除了公司選擇比較多以外，企業團隊也總是很感激員工的加入， 並且願意提出更好的 counter-offer 努力把好的人才吸引過來。同時，員工也可以用更健康的心態去 negotiate 自己的 offer 讓彼此都達到滿意的結果。 以人為本，公司對人的尊重，是大家最嚮往的文化。</li>
+<li>人格特質 vs 學歷/技術：學歷的迷思應該慢慢被擺脫。在台灣工作，學經歷在一開始就會非常被注重和強調，導致公司對你有了預期，但這個預期指的是”技術”這方面而已。學經歷不錯的人很容易被公司預期在短期內要有所產出。 如果短期內沒有達成，公司會默默的打分數，一切完全以短期技術可行性，當成參考依據來預期未來你對公司可能的影響。矽谷的企業各式各樣的學經歷的人更多元，但比較不一樣的是，公司不會太明顯對每個人預設立場。這之中最大的不同點是，美國公司對你的預期不會純粹以技術為考量，而是整個人的人格特質和全面性。公司願意花更多資源投資每個員工，以幫助公司了解 team member 的人格和個性，積極度，潛力，爆發力，做事的 tempo 和 learning curve 的時間，儘管小公司也有類似的認知。回到以往很多 CMU 的學弟妹都會問我說，INI 會不會是 ECE &amp; CS 底下合開的學院造成在美國找工作的影響。我告訴他們，工作以後就會了解到那並不是矽谷公司在找尋人才唯一強調的事。不論是 Google, Apple 還是各大公司 / startup，在面試聊天時，除了去了解一個人的個性之外，也需要考白板的 coding 測試你的技術能力。考題的例子包括：資料結構的 binary tree，queue，linked-list，演算法的 sorting，Dijkstra，八皇后題目，OS 和系統相關的 synchroization，networking, process / thread，memory management，brain teaser 相關題目像是給兩個雞蛋用數學來測出雞蛋在哪一層會破掉的問題 (我很喜歡的題目之一)。聽起來好像很制式化的流程，但其實對於矽谷的公司來說，那才是他們注重的基本能力和了解一個人是否能與團隊有良好的溝通能力。不論你是什麼學歷，只要你夠積極去充實這些知識，保有好奇心和培養良好的 teamwork，好的人格特質和個性加上技術才是公司想招募的人。</li>
+<li>Code review / QA / 開發流程時間：這是許多公司心裡記得很重要可是卻最不願意花時間和錢投資的項目，原因免不了是 time to market 跟追趕 project 進度。台灣許多公司想要開發高利潤產品走向國際，策略模式卻還是採取以往 hit and run 模式的代工思維。全世界企業都有時間壓力，除了技術以外，我們更應該開始強調軟體管理的學問。Code review 的重要性建立在一個軟體開發的長遠計畫之上，注重的是開發者的邏輯思維和 coding style 會不會影響目前和未來的產品，還有 code 提供給其他工程師的可讀性。開發時，要想著這個軟體未來可能會變幾千行，幾萬行，甚至是幾十萬行的產品。而每個人的 coding style 有所不同，公司需要訂立 coding guideline 來規劃基本規則以方便大家產出 code。這種觀念的缺乏導致很多 code 沒有被 review，或是變成 reviewer 灌輸 developer 他心裡想要的 coding style。而 QA 的方面，感覺各企業對此重視的程度很多年來還是嚴重不足，自然沒有扎實的測試方法論和流程來把關品質。對於開發者來說，應該普遍建立 QA 實際上是公司第一個客戶的觀念，所以測試流程像是 smoke test，regression test，white box testing 在交予 QA 前應該是已經需要被建立好的。Hit and run 的策略短期內也許可以拿到客戶，但長久下來如果價格和品質無法成正比，這樣的關係無法長久。再者，以往累積的 technical debt 在未來需要花的時間還是得花。如果企業想賣高規格的東西，一定要確保品質再出貨。在美國做一樣的工作，一樣執行 waterfall 或 agile 的流程，時間的安排卻是全然不同。因為 time to market 的原因所以在固定時間需要出貨這點是可以理解的，這個時候 PM 很重要。有經驗的 PM 要滿足客戶需求同時也要能替工程師在一定時間內斟酌合理的開發數量和可行性，將開發者方面的測試考慮進去是必要的技能。</li>
+<li>缺乏純技術者的 career path 和職務的 misplace：以技術面來說，台灣軟體技術人才眾多，演算法人才也不在少數，但是普遍需要廣度的員工包山包海，所以欠缺了 Technical Leader 和系統架構師類型的人物的培養。專才需要長期在廣度和深度的訓練和培養，並有著對任何事物的好奇心來整合元件而建立有門檻的大架構，而培養對於任何事物的好奇心回到了教育的本質。普遍來說，台灣企業往往將年資久的員工或是技術領導者全都佈署在管理人的 career path 上。這樣造成的問題是，技術者只有鑽研技術的熱情，並沒有技能去處理跟人相關的事物，導致職缺的misplace。美國的公司普遍在升遷時會要你選擇未來你期許的 career path 是往管理的路或是技術領導者的職涯前進。適合經營管理的人會經歷 software engineer -&gt; senior engineer -&gt; manager -&gt; senior manager -&gt; director -&gt; VP，而技術領導者會經歷 software engineer -&gt; senior engineer -&gt; tech lead -&gt; senior tech lead -&gt; architect / distinguished engineer. 這不僅清楚的替每個升遷的人規劃了更適合自己的路，也替公司員工找到能夠真正管理人的主管進而幫助公司整體的成長和營運。</li>
+<li>本位主義和信賴問題：在人文方面，部門的本位主義過於強烈，所以職場上卡到了許多人跟人的問題或是各單位之間沒有太多向心力是比較多朋友都會提及的經驗。主管應該多培養底下的人有獨立思考的能力，有些時候花些時間跟員工單獨聊天，可以發現目前很多年青人對公司有很多不同的想法和未來的期許。以一個健康的角度來看，主管應該多鼓勵底下的人發言討論，或是鼓勵員工有一天能夠超越自己，但很重要的前提是要彼此尊重。然而，為什麼主管要鼓勵員工超越自己？其實員工有良好的表現不僅幫助了自己，更重要的是同時也幫助了主管和公司向上成長。現在的時代注重團體戰而非英雄主義，不論是員工或主管都應該要知道在不同位子看事物的角度一定有所不同。如果彼此一直無法了解對方的思考方式和表達方式，每個人就始終無法由內而外說服自己為了同個目標前進。矽谷企業的強盛給我的感覺是建立在共存共榮的 teamwork 文化，職權區分明確，良好的溝通管道，傾向對事不對人的模式而一同完成公司的目標。</li>
+<li>缺乏文件整理和 mentor，造成資訊落差：一樣是卡在時間資源的問題，過去的人需要趕時間出貨所以沒有多餘的時間把以往的經驗，技術資訊，或是曾犯過的錯記錄下來，導致新進員工沒有文件可參考也沒有特定的 mentor 可仿效。新人往往會不好意思請求協助，所以元老級的人物每天理解事物越來越快，但新進員工卻越來越追趕不上前人而造成資訊和技術程度上的落差，會逐漸形成公司的一個隱性問題。所以鼓勵大家，可以多使用協作工具，如果在開發時遇到問題，或者是發現以往的技術開發沒有參考文件，都應該踴躍幫忙公司記錄和整理文件，如同開源軟體的無私貢獻。當越來越多同伴到達同樣的水平，才會有可能替企業創造更多的可能性。</li>
+</ol>
+<p>整體而言，這幾年開始可以感受到台灣軟體業的興起和企業對軟體的重視程度提高許多，這是非常正向的鼓勵。同時也有更多學術單位，政府和企業都願意投入更多的金錢，人力，研發資源在軟體產業中。想要捨棄台灣長久以來的代工思維而轉型成高利潤高門檻的產業結構痛苦是必然的過程。很多對台灣企業看來好像要有多出的時間才能執行的項目，其實對於矽谷的企業來說其實都應該是需要注重的細節和基本功。台灣企業如果想要成功走向國際，也會需要很多領導者願意推翻自己過往的經驗和思維，並且有足夠的心胸去接受新世代的觀念而學習。回台灣後當然也總算可以開始體會為什麼台灣年青人都想往外出走，去到一個更健康的工作環境學習。但希望大家還是不要對台灣失望，繼續花點時間感受問題。除了技術的加強，如果更多人能開始注重以人為本的概念，強調更多軟體管理方面細節的改善，就算台灣短期無法被影響，但未來還是有許多值得被改變的事。大家共勉之。</p>
+]]></content>
+      <categories>
+        <category>技术人生谈</category>
+      </categories>
+      <tags>
+        <tag>silicon valley</tag>
+        <tag>software</tag>
+        <tag>inspiration</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>服务器端渲染姿势探索</title>
     <url>/2017/server-side-rendering-review/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>服务器端渲染（Server-Side Rendering，以下简称 SSR）并非是一门新技术，早期就有 Java, PHP 等后端语言进行页面渲染，后来 JavaScript 兴起、 Jquery, Backbone, React, Vue 等视图框架流行，前端逐渐夺回了渲染的地盘。随着如 Express, Koa 等 Node Web 应用程序框架的出现，SSR 以同构渲染（isomorphic rendering）的方式再次强势归来。</p>
@@ -2343,33 +2370,6 @@
         <tag>server-side</tag>
         <tag>render</tag>
         <tag>isomorphic</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>从硅谷软件企业学习到的细节</title>
-    <url>/2016/the-details-i-learned-from-software-company-in-silicon-valley/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Ryan 哥是我在 Lilee 实习时的同事，按时间来说他比我还晚进入 Lilee (笑)。虽然相处天数很短，但对他印象深刻：个子不高，酷酷的很有型，CMU 毕业，湾区大公司工作经历。在公司每季(？)的新人介绍茶话会上，发现他也是一个很好聊的人。最后我打包滚蛋时，他也是为数不多写邮件给我践行的人。</p>
-<p>就在这个月中旬， Ryan 哥在自己的脸书上写了这里分享的这篇文章，颇具视野和深度，对于我这样的新人来说很受启发，因此也搬运到我的博客上来。本文的<a href="https://www.facebook.com/ryanyang328/posts/10105200442293837"><strong>原出处</strong></a>，里面还有一些精彩评论，有兴趣也可以去看看。</p>
-<a id="more"></a>
-
-<h1 id="從矽谷軟體企業學習到的細節"><a href="#從矽谷軟體企業學習到的細節" class="headerlink" title="從矽谷軟體企業學習到的細節"></a>從矽谷軟體企業學習到的細節</h1><p>回來台灣一年多了，在矽谷工作時，我總是想說服大家一起回台灣做點小貢獻。但現在，我的確認為台灣需要有更多人出國看一看拓展新的視野，未來有機會再帶回更多新的思維回到家鄉，和台灣原本就保有的優點融合。 之前很高興有機會到交大還有 Sudo 的活動分享在矽谷工作時感受到的文化和經驗。最近還是有許多朋友有興趣想了解台灣軟體業除了以往在資源上的限制，還有什麼樣不同的文化和制度對目前軟體產業造成衝擊和差異性。所以趁這個機會分享一些目前在台灣軟體產業觀察和聽聞的現況，去探討我們可能可以自省的方面。在我們努力衝刺的過程中，希望可以提及幾項在台灣軟體產業看似還普遍缺乏的思維和觀點：</p>
-<ol>
-<li>人是公司最大的資產：在台灣是企業選擇員工，在矽谷是員工選擇企業。矽谷企業普遍認為，人是公司最大的資產。除了公司選擇比較多以外，企業團隊也總是很感激員工的加入， 並且願意提出更好的 counter-offer 努力把好的人才吸引過來。同時，員工也可以用更健康的心態去 negotiate 自己的 offer 讓彼此都達到滿意的結果。 以人為本，公司對人的尊重，是大家最嚮往的文化。</li>
-<li>人格特質 vs 學歷/技術：學歷的迷思應該慢慢被擺脫。在台灣工作，學經歷在一開始就會非常被注重和強調，導致公司對你有了預期，但這個預期指的是”技術”這方面而已。學經歷不錯的人很容易被公司預期在短期內要有所產出。 如果短期內沒有達成，公司會默默的打分數，一切完全以短期技術可行性，當成參考依據來預期未來你對公司可能的影響。矽谷的企業各式各樣的學經歷的人更多元，但比較不一樣的是，公司不會太明顯對每個人預設立場。這之中最大的不同點是，美國公司對你的預期不會純粹以技術為考量，而是整個人的人格特質和全面性。公司願意花更多資源投資每個員工，以幫助公司了解 team member 的人格和個性，積極度，潛力，爆發力，做事的 tempo 和 learning curve 的時間，儘管小公司也有類似的認知。回到以往很多 CMU 的學弟妹都會問我說，INI 會不會是 ECE &amp; CS 底下合開的學院造成在美國找工作的影響。我告訴他們，工作以後就會了解到那並不是矽谷公司在找尋人才唯一強調的事。不論是 Google, Apple 還是各大公司 / startup，在面試聊天時，除了去了解一個人的個性之外，也需要考白板的 coding 測試你的技術能力。考題的例子包括：資料結構的 binary tree，queue，linked-list，演算法的 sorting，Dijkstra，八皇后題目，OS 和系統相關的 synchroization，networking, process / thread，memory management，brain teaser 相關題目像是給兩個雞蛋用數學來測出雞蛋在哪一層會破掉的問題 (我很喜歡的題目之一)。聽起來好像很制式化的流程，但其實對於矽谷的公司來說，那才是他們注重的基本能力和了解一個人是否能與團隊有良好的溝通能力。不論你是什麼學歷，只要你夠積極去充實這些知識，保有好奇心和培養良好的 teamwork，好的人格特質和個性加上技術才是公司想招募的人。</li>
-<li>Code review / QA / 開發流程時間：這是許多公司心裡記得很重要可是卻最不願意花時間和錢投資的項目，原因免不了是 time to market 跟追趕 project 進度。台灣許多公司想要開發高利潤產品走向國際，策略模式卻還是採取以往 hit and run 模式的代工思維。全世界企業都有時間壓力，除了技術以外，我們更應該開始強調軟體管理的學問。Code review 的重要性建立在一個軟體開發的長遠計畫之上，注重的是開發者的邏輯思維和 coding style 會不會影響目前和未來的產品，還有 code 提供給其他工程師的可讀性。開發時，要想著這個軟體未來可能會變幾千行，幾萬行，甚至是幾十萬行的產品。而每個人的 coding style 有所不同，公司需要訂立 coding guideline 來規劃基本規則以方便大家產出 code。這種觀念的缺乏導致很多 code 沒有被 review，或是變成 reviewer 灌輸 developer 他心裡想要的 coding style。而 QA 的方面，感覺各企業對此重視的程度很多年來還是嚴重不足，自然沒有扎實的測試方法論和流程來把關品質。對於開發者來說，應該普遍建立 QA 實際上是公司第一個客戶的觀念，所以測試流程像是 smoke test，regression test，white box testing 在交予 QA 前應該是已經需要被建立好的。Hit and run 的策略短期內也許可以拿到客戶，但長久下來如果價格和品質無法成正比，這樣的關係無法長久。再者，以往累積的 technical debt 在未來需要花的時間還是得花。如果企業想賣高規格的東西，一定要確保品質再出貨。在美國做一樣的工作，一樣執行 waterfall 或 agile 的流程，時間的安排卻是全然不同。因為 time to market 的原因所以在固定時間需要出貨這點是可以理解的，這個時候 PM 很重要。有經驗的 PM 要滿足客戶需求同時也要能替工程師在一定時間內斟酌合理的開發數量和可行性，將開發者方面的測試考慮進去是必要的技能。</li>
-<li>缺乏純技術者的 career path 和職務的 misplace：以技術面來說，台灣軟體技術人才眾多，演算法人才也不在少數，但是普遍需要廣度的員工包山包海，所以欠缺了 Technical Leader 和系統架構師類型的人物的培養。專才需要長期在廣度和深度的訓練和培養，並有著對任何事物的好奇心來整合元件而建立有門檻的大架構，而培養對於任何事物的好奇心回到了教育的本質。普遍來說，台灣企業往往將年資久的員工或是技術領導者全都佈署在管理人的 career path 上。這樣造成的問題是，技術者只有鑽研技術的熱情，並沒有技能去處理跟人相關的事物，導致職缺的misplace。美國的公司普遍在升遷時會要你選擇未來你期許的 career path 是往管理的路或是技術領導者的職涯前進。適合經營管理的人會經歷 software engineer -&gt; senior engineer -&gt; manager -&gt; senior manager -&gt; director -&gt; VP，而技術領導者會經歷 software engineer -&gt; senior engineer -&gt; tech lead -&gt; senior tech lead -&gt; architect / distinguished engineer. 這不僅清楚的替每個升遷的人規劃了更適合自己的路，也替公司員工找到能夠真正管理人的主管進而幫助公司整體的成長和營運。</li>
-<li>本位主義和信賴問題：在人文方面，部門的本位主義過於強烈，所以職場上卡到了許多人跟人的問題或是各單位之間沒有太多向心力是比較多朋友都會提及的經驗。主管應該多培養底下的人有獨立思考的能力，有些時候花些時間跟員工單獨聊天，可以發現目前很多年青人對公司有很多不同的想法和未來的期許。以一個健康的角度來看，主管應該多鼓勵底下的人發言討論，或是鼓勵員工有一天能夠超越自己，但很重要的前提是要彼此尊重。然而，為什麼主管要鼓勵員工超越自己？其實員工有良好的表現不僅幫助了自己，更重要的是同時也幫助了主管和公司向上成長。現在的時代注重團體戰而非英雄主義，不論是員工或主管都應該要知道在不同位子看事物的角度一定有所不同。如果彼此一直無法了解對方的思考方式和表達方式，每個人就始終無法由內而外說服自己為了同個目標前進。矽谷企業的強盛給我的感覺是建立在共存共榮的 teamwork 文化，職權區分明確，良好的溝通管道，傾向對事不對人的模式而一同完成公司的目標。</li>
-<li>缺乏文件整理和 mentor，造成資訊落差：一樣是卡在時間資源的問題，過去的人需要趕時間出貨所以沒有多餘的時間把以往的經驗，技術資訊，或是曾犯過的錯記錄下來，導致新進員工沒有文件可參考也沒有特定的 mentor 可仿效。新人往往會不好意思請求協助，所以元老級的人物每天理解事物越來越快，但新進員工卻越來越追趕不上前人而造成資訊和技術程度上的落差，會逐漸形成公司的一個隱性問題。所以鼓勵大家，可以多使用協作工具，如果在開發時遇到問題，或者是發現以往的技術開發沒有參考文件，都應該踴躍幫忙公司記錄和整理文件，如同開源軟體的無私貢獻。當越來越多同伴到達同樣的水平，才會有可能替企業創造更多的可能性。</li>
-</ol>
-<p>整體而言，這幾年開始可以感受到台灣軟體業的興起和企業對軟體的重視程度提高許多，這是非常正向的鼓勵。同時也有更多學術單位，政府和企業都願意投入更多的金錢，人力，研發資源在軟體產業中。想要捨棄台灣長久以來的代工思維而轉型成高利潤高門檻的產業結構痛苦是必然的過程。很多對台灣企業看來好像要有多出的時間才能執行的項目，其實對於矽谷的企業來說其實都應該是需要注重的細節和基本功。台灣企業如果想要成功走向國際，也會需要很多領導者願意推翻自己過往的經驗和思維，並且有足夠的心胸去接受新世代的觀念而學習。回台灣後當然也總算可以開始體會為什麼台灣年青人都想往外出走，去到一個更健康的工作環境學習。但希望大家還是不要對台灣失望，繼續花點時間感受問題。除了技術的加強，如果更多人能開始注重以人為本的概念，強調更多軟體管理方面細節的改善，就算台灣短期無法被影響，但未來還是有許多值得被改變的事。大家共勉之。</p>
-]]></content>
-      <categories>
-        <category>技术人生谈</category>
-      </categories>
-      <tags>
-        <tag>silicon valley</tag>
-        <tag>software</tag>
-        <tag>inspiration</tag>
       </tags>
   </entry>
   <entry>
@@ -2639,7 +2639,7 @@
     <title>2019 泰国行游记（一）</title>
     <url>/2019/2019-thai-trip-1/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script>
-    <div id="aplayer-IydngwUs" class="aplayer aplayer-tag-marker meting-tag-marker"
+    <div id="aplayer-VjqLorXf" class="aplayer aplayer-tag-marker meting-tag-marker"
          data-id="280557" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="true" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86" data-mini="true"
     ></div>
 
@@ -2762,7 +2762,7 @@
     <title>2019 泰国行游记（二）</title>
     <url>/2019/2019-thai-trip-2/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script>
-    <div id="aplayer-cTKgazmv" class="aplayer aplayer-tag-marker meting-tag-marker"
+    <div id="aplayer-LgJYmJhD" class="aplayer aplayer-tag-marker meting-tag-marker"
          data-id="1318733599" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="true" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86" data-mini="true"
     ></div>
 
@@ -2916,7 +2916,7 @@
     <title>2019 泰国行游记（三）</title>
     <url>/2019/2019-thai-trip-3/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script>
-    <div id="aplayer-KgMXOyfw" class="aplayer aplayer-tag-marker meting-tag-marker"
+    <div id="aplayer-ZvlFEmPw" class="aplayer aplayer-tag-marker meting-tag-marker"
          data-id="76840" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="true" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86" data-mini="true"
     ></div>
 
@@ -3080,7 +3080,7 @@
     <title>2019 泰国行游记（五）</title>
     <url>/2019/2019-thai-trip-5/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script>
-    <div id="aplayer-ipyjZKpp" class="aplayer aplayer-tag-marker meting-tag-marker"
+    <div id="aplayer-TGvfJGwq" class="aplayer aplayer-tag-marker meting-tag-marker"
          data-id="540596309" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="true" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86" data-mini="true"
     ></div>
 
@@ -3210,7 +3210,7 @@
     <title>2019 泰国行游记（六）</title>
     <url>/2019/2019-thai-trip-6/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script>
-    <div id="aplayer-TtutpanW" class="aplayer aplayer-tag-marker meting-tag-marker"
+    <div id="aplayer-xNCuhBnY" class="aplayer aplayer-tag-marker meting-tag-marker"
          data-id="18663218" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="true" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86" data-mini="true"
     ></div>
 
@@ -3304,7 +3304,7 @@
     <title>2019 说走就走的珠海之旅（上）</title>
     <url>/2019/2019-zhuhai-trip-1/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script>
-    <div id="aplayer-uRzwvqKv" class="aplayer aplayer-tag-marker meting-tag-marker"
+    <div id="aplayer-UcaBWCpR" class="aplayer aplayer-tag-marker meting-tag-marker"
          data-id="18663184" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="true" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86" data-mini="true"
     ></div>
 
@@ -3434,7 +3434,7 @@
     <title>2019 说走就走的珠海之旅（下）</title>
     <url>/2019/2019-zhuhai-trip-2/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script>
-    <div id="aplayer-JXTkezDS" class="aplayer aplayer-tag-marker meting-tag-marker"
+    <div id="aplayer-ISdkAoys" class="aplayer aplayer-tag-marker meting-tag-marker"
          data-id="18663106" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="true" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86" data-mini="true"
     ></div>
 
@@ -3924,20 +3924,6 @@
 
 
 
-<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p>These are both references as well as solid learning resources, if you could be or have been familiar with them, then you don’t need this post 👻 .</p>
-<ul>
-<li>Book: <a href="https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/">Hands-on Machine Learning with Scikit-Learn, Keras, and TensorFlow, 2nd Edition</a> (try it free by your Microsoft account)<ul>
-<li><a href="https://book.douban.com/subject/30310982/">Average rating 9.9 on Douban Book</a> (till 11/24/2020)</li>
-<li><a href="https://www.oreilly.com/catalog/errata.csp?isbn=0636920142874">Errata</a></li>
-</ul>
-</li>
-<li>Courses:<ul>
-<li><a href="http://speech.ee.ntu.edu.tw/~tlkagk/courses_ML20.html">Machine Learning 2020</a>, Hung-yi Lee</li>
-<li><a href="https://developers.google.com/machine-learning/crash-course/">Machine Learning Crash Course</a>, Google</li>
-</ul>
-</li>
-<li>Desserts: <a href="https://www.youtube.com/channel/UCbfYPyITQ-7l4upoX8nvctg">Two Minute Papers</a></li>
-</ul>
 <h2 id="Recap-of-basic-concepts"><a href="#Recap-of-basic-concepts" class="headerlink" title="Recap of basic concepts"></a>Recap of basic concepts</h2><p><strong>Do not worry about these theories if you can’t catch up, just take it as an intro.</strong></p>
 <h3 id="Steps-of-machine-learning"><a href="#Steps-of-machine-learning" class="headerlink" title="Steps of machine learning"></a>Steps of machine learning</h3><ol start="0">
 <li>Get familiar with dataset, do preprocessing works.</li>
@@ -3993,29 +3979,18 @@
 </ul>
 <h3 id="Training-tips"><a href="#Training-tips" class="headerlink" title="Training tips"></a>Training tips</h3><p>Probably it’s enough for us to dig into the code, so the recap should be stopped here. At last, giving this tips section for some practical training techniques.</p>
 <ul>
-<li><p>Hyperparameters tuning/optimization, like pick a good learning rate</p>
-</li>
-<li><p>L2 (Ridge) regularization</p>
-</li>
-<li><p>Early stopping</p>
-</li>
-<li><p>Feature engineering</p>
-<ul>
-<li><p>Feature selection by recursive feature elimination and cross-validation (<a href="https://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.RFECV.html">RFECV</a>)</p>
-<p><img data-src="https://scikit-learn.org/stable/_images/sphx_glr_plot_rfe_with_cross_validation_001.png" alt="Recursive feature elimination with cross-validation, credit to https://scikit-learn.org/"></p>
-</li>
-<li><p>Feature scaling like normalization</p>
-</li>
-<li><p>Data correction for dirty part</p>
-</li>
-<li><p>Defining and removing outliers</p>
-</li>
-<li><p>Update model to make it fits dataset better like add high order term for most important feature, or even you can use a neural network if you want 😏</p>
-</li>
+<li>Hyperparameters tuning/optimization, like pick a good learning rate</li>
+<li>L2 (Ridge) regularization</li>
+<li>Early stopping</li>
+<li>Feature engineering<ul>
+<li>Feature selection by recursive feature elimination and cross-validation (<a href="https://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.RFECV.html">RFECV</a>)<br><img data-src="https://scikit-learn.org/stable/_images/sphx_glr_plot_rfe_with_cross_validation_001.png" alt="Recursive feature elimination with cross-validation, credit to https://scikit-learn.org/"></li>
+<li>Feature scaling like normalization</li>
+<li>Data correction for dirty part</li>
+<li>Defining and removing outliers</li>
+<li>Update model to make it fits dataset better like add high order term for most important feature, or even you can use a neural network if you want 😏</li>
 </ul>
 </li>
-<li><p>Leveraging K-fold cross validation to split data and evaluate model performance</p>
-</li>
+<li>Leveraging K-fold cross validation to split data and evaluate model performance</li>
 </ul>
 <h2 id="Runtime-environments"><a href="#Runtime-environments" class="headerlink" title="Runtime environments"></a>Runtime environments</h2><h3 id="Local"><a href="#Local" class="headerlink" title="Local"></a>Local</h3><p>I highly recommend using Conda to run your Python code even on Unix-like OS, and <a href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a> is good to get start.</p>
 <blockquote>
@@ -4029,7 +4004,7 @@
 <li>Rich sample notebooks are provided, and the tab view allows user to open several documents with several file types in one page.</li>
 <li>An one-stop platform for user to develop their machine learning project, you can take it as cloud IDE (Integrated Development Environment). For example, user can manager their huge datasets by Datasets, and then consume them in Notebooks.</li>
 </ul>
-<p><img data-src="https://bn1301files.storage.live.com/y4m3DE0BuRvpw77hm-v1etWLkl-1ENO0FCEZ72iYUdpqa_kMkqSJx7VPzNlnLnhglTDuHjJggY5Bi7xBtgb8WX9BDLAZoHhyRnVy454EQDPLuE1IwySGJrXHvzSiL_PFqbClZn8x4URonUeSqBeprJXWa-IyVZv5AyByI-pEGKXgehthkyfFIlM8UJarHp62pH9?width=2776&height=1582&cropmode=none" alt="UI of Notebooks of AML Studio"></p>
+<p><img data-src="https://bn1301files.storage.live.com/y4mVzdYhgME6-tYW9V4iodQjd8ZGVolggW_QrIVVi7OBFvv9C494-pDIQWqIEXTEG0deUyGt2-qNPjCXaGqT6293-Np1Yu1c8hjzEDJ9s4iBPqEL46ozLixi9EEYOkxdxWWmIYvnWUNvMueLGo0e49t4Ehk1grxvjktySD-POZs99Lr55eWrudDri_FRPWrBbp3?width=4912&height=2582&cropmode=none" alt="UI of Notebooks of AML Studio"></p>
 <h4 id="Google-Colaboratory"><a href="#Google-Colaboratory" class="headerlink" title="Google Colaboratory"></a>Google Colaboratory</h4><p>You can open <code>ipynb</code> file on Google Drive by this product, there are also several advantages:</p>
 <ul>
 <li>Cleaner and larger workspace.</li>
@@ -4037,7 +4012,7 @@
 <li>It will create compute target or VM (virtual machine) for the user automatically.</li>
 <li>Download dataset from Google Drive, comment and share are easily.</li>
 </ul>
-<p><img data-src="https://bn1301files.storage.live.com/y4mNHPwPmALVZIF_KZgyK8_NBJfv4Wl3edLKx_iNaf8IICR9IXXjtoxFZ5mw6VGXOUB-RIT8IkeSia5amouV4zwfHJUD4fd6PJuMcstxvntd7TJZRAt5wPItx7L6aj_e61Y8fPGQa_NUtGbVYd2P7CzV1cweF8BnEv4XO_WOIoEHoGBKdOO1CEWby8h1FRtg002?width=2778&height=1588&cropmode=none" alt="UI of Google Colab"></p>
+<p><img data-src="https://bn1301files.storage.live.com/y4m4TYqChfysvCych0mZCpkGZGtmeEfUG9xVf6JTxgM-Sz4yGPHf1hyj896FPnCMHhMQ2qcW3eX0Iovun58Z2kZpJmsawXKw6L5TCteeLHN9D-oGU9rx9jh3JKsOGlSfBOCYaopT_SAkW7KFeKMwuWUFRDeysHrBRq6XpC0acgQECj73BMDC7bEqIhPqtz9fdoP?width=4908&height=2568&cropmode=none" alt="UI of Google Colab"></p>
 <h2 id="Code-snippets"><a href="#Code-snippets" class="headerlink" title="Code snippets"></a>Code snippets</h2><p>You can check sample code on Google Colab <a href="https://colab.research.google.com/drive/131sSqmrmWXfjFZ3jWSELl8cm0Ox5ah3C">here</a>, and codes below will has slight differences.</p>
 <h3 id="Target"><a href="#Target" class="headerlink" title="Target"></a>Target</h3><p>To predict the PM2.5 value of first ten hour by other nine hours data.</p>
 <h3 id="Data-preprocessing"><a href="#Data-preprocessing" class="headerlink" title="Data preprocessing"></a>Data preprocessing</h3><p>Original data structure looks like this:</p>
@@ -4109,7 +4084,7 @@
 </tr>
 </tbody></table>
 <p>24 columns represent 24 hours, 18 features with every first 20 days of month in one year, we have <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.186ex" xmlns="http://www.w3.org/2000/svg" width="18.603ex" height="1.717ex" role="img" focusable="false" viewBox="0 -677 8222.4 759"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="mn"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path data-c="38" d="M70 417T70 494T124 618T248 666Q319 666 374 624T429 515Q429 485 418 459T392 417T361 389T335 371T324 363L338 354Q352 344 366 334T382 323Q457 264 457 174Q457 95 399 37T249 -22Q159 -22 101 29T43 155Q43 263 172 335L154 348Q133 361 127 368Q70 417 70 494ZM286 386L292 390Q298 394 301 396T311 403T323 413T334 425T345 438T355 454T364 471T369 491T371 513Q371 556 342 586T275 624Q268 625 242 625Q201 625 165 599T128 534Q128 511 141 492T167 463T217 431Q224 426 228 424L286 386ZM250 21Q308 21 350 55T392 137Q392 154 387 169T375 194T353 216T330 234T301 253T274 270Q260 279 244 289T218 306L210 311Q204 311 181 294T133 239T107 157Q107 98 150 60T250 21Z" transform="translate(500, 0)"></path></g><g data-mml-node="mo" transform="translate(1222.2, 0)"><path data-c="2217" d="M229 286Q216 420 216 436Q216 454 240 464Q241 464 245 464T251 465Q263 464 273 456T283 436Q283 419 277 356T270 286L328 328Q384 369 389 372T399 375Q412 375 423 365T435 338Q435 325 425 315Q420 312 357 282T289 250L355 219L425 184Q434 175 434 161Q434 146 425 136T401 125Q393 125 383 131T328 171L270 213Q283 79 283 63Q283 53 276 44T250 35Q231 35 224 44T216 63Q216 80 222 143T229 213L171 171Q115 130 110 127Q106 124 100 124Q87 124 76 134T64 161Q64 166 64 169T67 175T72 181T81 188T94 195T113 204T138 215T170 230T210 250L74 315Q65 324 65 338Q65 353 74 363T98 374Q106 374 116 368T171 328L229 286Z"></path></g><g data-mml-node="mn" transform="translate(1944.4, 0)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(500, 0)"></path></g><g data-mml-node="mo" transform="translate(3166.7, 0)"><path data-c="2217" d="M229 286Q216 420 216 436Q216 454 240 464Q241 464 245 464T251 465Q263 464 273 456T283 436Q283 419 277 356T270 286L328 328Q384 369 389 372T399 375Q412 375 423 365T435 338Q435 325 425 315Q420 312 357 282T289 250L355 219L425 184Q434 175 434 161Q434 146 425 136T401 125Q393 125 383 131T328 171L270 213Q283 79 283 63Q283 53 276 44T250 35Q231 35 224 44T216 63Q216 80 222 143T229 213L171 171Q115 130 110 127Q106 124 100 124Q87 124 76 134T64 161Q64 166 64 169T67 175T72 181T81 188T94 195T113 204T138 215T170 230T210 250L74 315Q65 324 65 338Q65 353 74 363T98 374Q106 374 116 368T171 328L229 286Z"></path></g><g data-mml-node="mn" transform="translate(3888.9, 0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z" transform="translate(500, 0)"></path></g><g data-mml-node="mo" transform="translate(5166.7, 0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path></g><g data-mml-node="mn" transform="translate(6222.4, 0)"><path data-c="34" d="M462 0Q444 3 333 3Q217 3 199 0H190V46H221Q241 46 248 46T265 48T279 53T286 61Q287 63 287 115V165H28V211L179 442Q332 674 334 675Q336 677 355 677H373L379 671V211H471V165H379V114Q379 73 379 66T385 54Q393 47 442 46H471V0H462ZM293 211V545L74 212L183 211H293Z"></path><path data-c="33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z" transform="translate(500, 0)"></path><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z" transform="translate(1000, 0)"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(1500, 0)"></path></g></g></g></svg></mjx-container> rows.</p>
-<p><img data-src="https://bn1301files.storage.live.com/y4mImqQmFAGS7aZxtYHvOYW7T9v-W25A2uAWpFRxJ2s5UXtn8MtiHALF_wPJsv9D0OXmYDlNLaDM1XupJqeMhu2itvtqoz3UqXxSODH13jY2UAuNZFzJFrYkjFAPYiYZYDFS3SU6pAYd_M8Di-68ZnplMS3zBoxPpqUSvAVGSTXHfV_NHQbBwKrCiV7armOD0wz?width=2782&height=1582&cropmode=none" alt="Dataset preview in AML Studio"></p>
+<p><img data-src="https://bn1301files.storage.live.com/y4miEc2E3IYCgCW6s4HLzCG2UbXLQq06M1mHKngJEc47T_2tOPbEbUauwXD-OGPBCh7XLoSniII63LuBeDE4hy65w2ChXih8w-bwnW6fFdg8KyWdbsCEVVgEHgoBvcBz2yZeJ29YyqFia0J12BoRMs5qmb_YH2A5LPUzGF7m1eKSbyhEam0B3KRn771YNioLjef?width=4904&height=2598&cropmode=none" alt="Dataset preview in AML Studio"></p>
 <p>Our target data structure of <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0" xmlns="http://www.w3.org/2000/svg" width="1.966ex" height="1.552ex" role="img" focusable="false" viewBox="0 -686 869 686"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D417" d="M327 0Q306 3 174 3Q52 3 43 0H33V62H98L162 63L360 333L157 624H48V686H59Q80 683 217 683Q368 683 395 686H408V624H335L393 540L452 458L573 623Q573 624 528 624H483V686H494Q515 683 646 683Q769 683 778 686H787V624H658L575 511Q493 398 493 397L508 376Q522 356 553 312T611 229L727 62H835V0H824Q803 3 667 3Q516 3 489 0H476V62H513L549 63L401 274L247 63Q247 62 292 62H338V0H327Z"></path></g></g></g></g></svg></mjx-container> will be:</p>
 <table>
 <thead>
@@ -4204,12 +4179,22 @@
 <h4 id="Training-again-and-remove-outliers"><a href="#Training-again-and-remove-outliers" class="headerlink" title="Training again and remove outliers"></a>Training again and remove outliers</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">w = train(X = X_pruned, y = y, w = w)</span><br><span class="line"></span><br><span class="line">outliers = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(X_pruned.shape[<span class="number">0</span>]):</span><br><span class="line">  <span class="keyword">if</span> np.absolute(X_pruned[i] @ w - y[i]) &gt; <span class="number">10</span>:</span><br><span class="line">    outliers.append(i)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Try to eliminate irreducible error</span></span><br><span class="line">X_pruned = np.delete(X_pruned, outliers, <span class="number">0</span>)</span><br><span class="line">y = np.delete(y, outliers, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">w = train(X = X_pruned, y = y, w = w)</span><br><span class="line">print(<span class="string">'\nFinal loss on full training dataset: {}'</span>.<span class="built_in">format</span>(eval_loss(X_pruned, y, w)))</span><br></pre></td></tr></table></figure>
 
 <h3 id="Review"><a href="#Review" class="headerlink" title="Review"></a>Review</h3><p>Compare the <a href="#Steps-of-machine-learning">Steps of machine learning</a> section with each code snippets below and rethink the whole flow, you may have an overview about machine learning now 👍 .</p>
-<h2 id="Further-more"><a href="#Further-more" class="headerlink" title="Further more"></a>Further more</h2><ul>
-<li><p>Enjoy the references</p>
+<h2 id="Going-further"><a href="#Going-further" class="headerlink" title="Going further"></a>Going further</h2><ul>
+<li>Enjoy the <a href="#References-and-resources">References and resources</a></li>
+<li>Try assignments in the referred book and courses<br><img data-src="http://speech.ee.ntu.edu.tw/~tlkagk/HW.png" alt="Learning map, http://speech.ee.ntu.edu.tw/~tlkagk/courses_ML20.html"></li>
+</ul>
+<h2 id="References-and-resources"><a href="#References-and-resources" class="headerlink" title="References and resources"></a>References and resources</h2><ul>
+<li>Book: <a href="https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/">Hands-on Machine Learning with Scikit-Learn, Keras, and TensorFlow, 2nd Edition</a> (try it free by your Microsoft account)<ul>
+<li><a href="https://book.douban.com/subject/30310982/">Average rating 9.9 on Douban Book</a> (till 11/24/2020)</li>
+<li><a href="https://www.oreilly.com/catalog/errata.csp?isbn=0636920142874">Errata</a></li>
+</ul>
 </li>
-<li><p>Try assignments in the referred book and courses</p>
-<p><img data-src="http://speech.ee.ntu.edu.tw/~tlkagk/HW.png" alt="Learning map, http://speech.ee.ntu.edu.tw/~tlkagk/courses_ML20.html"></p>
+<li>Courses:<ul>
+<li><a href="http://speech.ee.ntu.edu.tw/~tlkagk/courses_ML20.html">Machine Learning 2020</a>, Hung-yi Lee</li>
+<li><a href="https://developers.google.com/machine-learning/crash-course/">Machine Learning Crash Course</a>, Google</li>
+</ul>
 </li>
+<li>Desserts: <a href="https://www.youtube.com/channel/UCbfYPyITQ-7l4upoX8nvctg">Two Minute Papers</a></li>
 </ul>
 ]]></content>
       <categories>
