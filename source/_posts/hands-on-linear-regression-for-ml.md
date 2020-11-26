@@ -21,20 +21,6 @@ This is the sharing session for my team, the goal is to quick ramp up the essent
 
 
 
-## References
-
-These are both references as well as solid learning resources, if you could be or have been familiar with them, then you don't need this post 👻 .
-
-- Book: [Hands-on Machine Learning with Scikit-Learn, Keras, and TensorFlow, 2nd Edition](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/) (try it free by your Microsoft account)
-  - [Average rating 9.9 on Douban Book](https://book.douban.com/subject/30310982/) (till 11/24/2020)
-  - [Errata](https://www.oreilly.com/catalog/errata.csp?isbn=0636920142874)
-- Courses:
-  - [Machine Learning 2020](http://speech.ee.ntu.edu.tw/~tlkagk/courses_ML20.html), Hung-yi Lee
-  - [Machine Learning Crash Course](https://developers.google.com/machine-learning/crash-course/), Google
-- Desserts: [Two Minute Papers](https://www.youtube.com/channel/UCbfYPyITQ-7l4upoX8nvctg)
-
-
-
 ## Recap of basic concepts
 
 **Do not worry about these theories if you can't catch up, just take it as an intro.**
@@ -141,25 +127,15 @@ $$\nabla{L} = \frac{\partial{L}}{\partial{\mathbf{w}}} = 2 \frac{1}{n} \sum_{i=1
 Probably it's enough for us to dig into the code, so the recap should be stopped here. At last, giving this tips section for some practical training techniques.
 
 - Hyperparameters tuning/optimization, like pick a good learning rate
-
 - L2 (Ridge) regularization
-
 - Early stopping
-
 - Feature engineering
-
   - Feature selection by recursive feature elimination and cross-validation ([RFECV](https://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.RFECV.html))
-
     ![Recursive feature elimination with cross-validation, credit to https://scikit-learn.org/](https://scikit-learn.org/stable/_images/sphx_glr_plot_rfe_with_cross_validation_001.png)
-
   - Feature scaling like normalization
-
   - Data correction for dirty part
-
   - Defining and removing outliers
-
   - Update model to make it fits dataset better like add high order term for most important feature, or even you can use a neural network if you want 😏
-
 - Leveraging K-fold cross validation to split data and evaluate model performance
 
 
@@ -186,7 +162,7 @@ Here is a [brief introduction](https://docs.microsoft.com/en-us/azure/machine-le
 - Rich sample notebooks are provided, and the tab view allows user to open several documents with several file types in one page.
 - An one-stop platform for user to develop their machine learning project, you can take it as cloud IDE (Integrated Development Environment). For example, user can manager their huge datasets by Datasets, and then consume them in Notebooks.
 
-![UI of Notebooks of AML Studio](https://bn1301files.storage.live.com/y4m3DE0BuRvpw77hm-v1etWLkl-1ENO0FCEZ72iYUdpqa_kMkqSJx7VPzNlnLnhglTDuHjJggY5Bi7xBtgb8WX9BDLAZoHhyRnVy454EQDPLuE1IwySGJrXHvzSiL_PFqbClZn8x4URonUeSqBeprJXWa-IyVZv5AyByI-pEGKXgehthkyfFIlM8UJarHp62pH9?width=2776&height=1582&cropmode=none)
+![UI of Notebooks of AML Studio](https://bn1301files.storage.live.com/y4mVzdYhgME6-tYW9V4iodQjd8ZGVolggW_QrIVVi7OBFvv9C494-pDIQWqIEXTEG0deUyGt2-qNPjCXaGqT6293-Np1Yu1c8hjzEDJ9s4iBPqEL46ozLixi9EEYOkxdxWWmIYvnWUNvMueLGo0e49t4Ehk1grxvjktySD-POZs99Lr55eWrudDri_FRPWrBbp3?width=4912&height=2582&cropmode=none)
 
 #### Google Colaboratory
 
@@ -197,7 +173,7 @@ You can open `ipynb` file on Google Drive by this product, there are also severa
 - It will create compute target or VM (virtual machine) for the user automatically.
 - Download dataset from Google Drive, comment and share are easily.
 
-![UI of Google Colab](https://bn1301files.storage.live.com/y4mNHPwPmALVZIF_KZgyK8_NBJfv4Wl3edLKx_iNaf8IICR9IXXjtoxFZ5mw6VGXOUB-RIT8IkeSia5amouV4zwfHJUD4fd6PJuMcstxvntd7TJZRAt5wPItx7L6aj_e61Y8fPGQa_NUtGbVYd2P7CzV1cweF8BnEv4XO_WOIoEHoGBKdOO1CEWby8h1FRtg002?width=2778&height=1588&cropmode=none)
+![UI of Google Colab](https://bn1301files.storage.live.com/y4m4TYqChfysvCych0mZCpkGZGtmeEfUG9xVf6JTxgM-Sz4yGPHf1hyj896FPnCMHhMQ2qcW3eX0Iovun58Z2kZpJmsawXKw6L5TCteeLHN9D-oGU9rx9jh3JKsOGlSfBOCYaopT_SAkW7KFeKMwuWUFRDeysHrBRq6XpC0acgQECj73BMDC7bEqIhPqtz9fdoP?width=4908&height=2568&cropmode=none)
 
 
 
@@ -226,7 +202,7 @@ Original data structure looks like this:
 
 24 columns represent 24 hours, 18 features with every first 20 days of month in one year, we have $18\ast20\ast12=4320$ rows.
 
-![Dataset preview in AML Studio](https://bn1301files.storage.live.com/y4mImqQmFAGS7aZxtYHvOYW7T9v-W25A2uAWpFRxJ2s5UXtn8MtiHALF_wPJsv9D0OXmYDlNLaDM1XupJqeMhu2itvtqoz3UqXxSODH13jY2UAuNZFzJFrYkjFAPYiYZYDFS3SU6pAYd_M8Di-68ZnplMS3zBoxPpqUSvAVGSTXHfV_NHQbBwKrCiV7armOD0wz?width=2782&height=1582&cropmode=none)
+![Dataset preview in AML Studio](https://bn1301files.storage.live.com/y4miEc2E3IYCgCW6s4HLzCG2UbXLQq06M1mHKngJEc47T_2tOPbEbUauwXD-OGPBCh7XLoSniII63LuBeDE4hy65w2ChXih8w-bwnW6fFdg8KyWdbsCEVVgEHgoBvcBz2yZeJ29YyqFia0J12BoRMs5qmb_YH2A5LPUzGF7m1eKSbyhEam0B3KRn771YNioLjef?width=4904&height=2598&cropmode=none)
 
 Our target data structure of $\mathbf{X}$ will be:
 
@@ -392,11 +368,20 @@ print('\nFinal loss on full training dataset: {}'.format(eval_loss(X_pruned, y, 
 
 Compare the [Steps of machine learning](#Steps-of-machine-learning) section with each code snippets below and rethink the whole flow, you may have an overview about machine learning now 👍 .
 
-## Further more
+## Going further
 
-- Enjoy the references
-
+- Enjoy the [References and resources](#References-and-resources)
 - Try assignments in the referred book and courses
-
   ![Learning map, http://speech.ee.ntu.edu.tw/~tlkagk/courses_ML20.html](http://speech.ee.ntu.edu.tw/~tlkagk/HW.png)
 
+
+
+## References and resources
+
+- Book: [Hands-on Machine Learning with Scikit-Learn, Keras, and TensorFlow, 2nd Edition](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/) (try it free by your Microsoft account)
+  - [Average rating 9.9 on Douban Book](https://book.douban.com/subject/30310982/) (till 11/24/2020)
+  - [Errata](https://www.oreilly.com/catalog/errata.csp?isbn=0636920142874)
+- Courses:
+  - [Machine Learning 2020](http://speech.ee.ntu.edu.tw/~tlkagk/courses_ML20.html), Hung-yi Lee
+  - [Machine Learning Crash Course](https://developers.google.com/machine-learning/crash-course/), Google
+- Desserts: [Two Minute Papers](https://www.youtube.com/channel/UCbfYPyITQ-7l4upoX8nvctg)
