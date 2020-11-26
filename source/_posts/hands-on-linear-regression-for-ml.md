@@ -42,12 +42,12 @@ Let's start with the simplest linear model $f(x)=wx+b$, you can also try more co
 
 The model's ability to adapt properly to new, previously unseen data, drawn from the same distribution as the one used to create the model.
 
-![Goodness of fit, credit to the ref-generalization link below](https://miro.medium.com/max/1400/1*iiPH0JyowvS3k12T0-W2HA.png)
+![Goodness of fit, https://bit.ly/2JhniSc](https://miro.medium.com/max/1400/1*iiPH0JyowvS3k12T0-W2HA.png)
 
 - Underfitting: model is too simple to learn the underlying structure of the data (large bias)
 - Overfitting: model is too complex relative to the amount and noisiness of the training data (large variance)
 
-*Solutions: resources mentioned above, or [ref-generalization](https://towardsdatascience.com/underfitting-and-overfitting-in-machine-learning-and-how-to-deal-with-it-6fe4a8a49dbf).*
+*Solutions: [References and resources](#References-and-resources), or [Underfitting and Overfitting in machine learning and how to deal with it](https://towardsdatascience.com/underfitting-and-overfitting-in-machine-learning-and-how-to-deal-with-it-6fe4a8a49dbf).*
 
 ### Loss/Cost function
 
@@ -65,7 +65,7 @@ Average value would be better than total sum, then we get the actual function th
 
 $$w^\ast,b^\ast=\arg\min_{w,b} \sum_{i=1}^{n}(\hat{y}^i-(wx^i+b))^2$$
 
-Not big deal, just minize the mean square error of our trivial linear model.
+Not big deal, just minimize the mean square error of our trivial linear model.
 
 ### Vectorized form
 
@@ -105,7 +105,7 @@ Yes we're done. Our introduction is here 🤣🤣🤣 .
 
 Our loss function is differentiable indeed, so we can use it to find the local minimum (also the global minimum in this case). Let's get it by one chart.
 
-![Gradient Descent, credit to Hands-on ML](https://bn1301files.storage.live.com/y4mswG2flLOQG4BTxY2uv3jiGs1IbQ-VM8thBntnOmrtvJQGlthgCzW7nBj8fwkl6U7b1691jBXGBjxtsDb7dy7LF-FpJSTKouUhtfbrCRbZNUJNXt5M9WReSQKxdklCkhd7TNteQmNzZv89yr7hdMqCCgqKV9LZ1JK3nb1eWnNb2FohaTkcKiTTaVnezOQubsJ?width=2394&height=1186&cropmode=none)
+![Gradient Descent, Hands-On Machine Learning by Aurélien Géron](https://bn1301files.storage.live.com/y4mswG2flLOQG4BTxY2uv3jiGs1IbQ-VM8thBntnOmrtvJQGlthgCzW7nBj8fwkl6U7b1691jBXGBjxtsDb7dy7LF-FpJSTKouUhtfbrCRbZNUJNXt5M9WReSQKxdklCkhd7TNteQmNzZv89yr7hdMqCCgqKV9LZ1JK3nb1eWnNb2FohaTkcKiTTaVnezOQubsJ?width=2394&height=1186&cropmode=none)
 
 So here is the last equation in this post (I promise, typing these LaTeX expressions really wore me out 🥲 ), the gradient of our loss function:
 
@@ -113,7 +113,7 @@ $$\nabla{L} = \frac{\partial{L}}{\partial{\mathbf{w}}} = 2 \frac{1}{n} \sum_{i=1
 
 *Question: disadvantages of gradient descent?*
 
-![Gradient Descent pitfalls, credit to Hands-on ML](https://bn1301files.storage.live.com/y4mXviZ8mp3JlnWxYxmhq62tUPn4MF0xLkK7Q-K63Mn1JsJwcX3tNZN2CpkbdT-3VuMKMcw_CAxtWu4XpjltS_VSYB35RZavo_zgNKd43bf3fATQhFMWbFU4v9GiYmbrTSYwbrExykkH7yZdYqKDRej4IN94CuZmKQ234pffSK3cXTPtQBQlDJgUGdySnzqIxsL?width=2554&height=1150&cropmode=none)
+![Gradient Descent pitfalls, Hands-On Machine Learning by Aurélien Géron](https://bn1301files.storage.live.com/y4mXviZ8mp3JlnWxYxmhq62tUPn4MF0xLkK7Q-K63Mn1JsJwcX3tNZN2CpkbdT-3VuMKMcw_CAxtWu4XpjltS_VSYB35RZavo_zgNKd43bf3fATQhFMWbFU4v9GiYmbrTSYwbrExykkH7yZdYqKDRej4IN94CuZmKQ234pffSK3cXTPtQBQlDJgUGdySnzqIxsL?width=2554&height=1150&cropmode=none)
 
 #### Variants optimizers
 
@@ -131,7 +131,7 @@ Probably it's enough for us to dig into the code, so the recap should be stopped
 - Early stopping
 - Feature engineering
   - Feature selection by recursive feature elimination and cross-validation ([RFECV](https://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.RFECV.html))
-    ![Recursive feature elimination with cross-validation, credit to https://scikit-learn.org/](https://scikit-learn.org/stable/_images/sphx_glr_plot_rfe_with_cross_validation_001.png)
+    ![Recursive feature elimination with cross-validation, https://scikit-learn.org](https://scikit-learn.org/stable/_images/sphx_glr_plot_rfe_with_cross_validation_001.png)
   - Feature scaling like normalization
   - Data correction for dirty part
   - Defining and removing outliers
@@ -372,7 +372,7 @@ Compare the [Steps of machine learning](#Steps-of-machine-learning) section with
 
 - Enjoy the [References and resources](#References-and-resources)
 - Try assignments in the referred book and courses
-  ![Learning map, http://speech.ee.ntu.edu.tw/~tlkagk/courses_ML20.html](http://speech.ee.ntu.edu.tw/~tlkagk/HW.png)
+  ![Learning map, https://bit.ly/3mf7jCU](http://speech.ee.ntu.edu.tw/~tlkagk/HW.png)
 
 
 
