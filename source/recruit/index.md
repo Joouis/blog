@@ -73,6 +73,56 @@ date: 2019-04-20 01:01:00
 
 
 
+### 2020.11.28
+
+{% tabs Suzhou teams unique name %}
+
+<!-- tab Overview -->
+
+![](https://bn1301files.storage.live.com/y4mwPNJXPslC97L9UH1vqrMJ2n48zIC1_Mgzp2r__-lZxAUlo7XfhlMzUMB1_Oda0sEFlK-_961uLPBYsZosuYxQUzE_boGVyk0GP_bckOJLJIhe82DaOo67eOd0bl3X0_rFQltMCWr-2Blzo4mCcnVSkaXJLa6TqBNKA2XBJcGb_Zh8ux2Rham5cVpq5og6_qi?width=750&height=8180&cropmode=none)
+
+<!-- endtab -->
+
+<!-- tab M365 -->
+
+![](https://bn1301files.storage.live.com/y4mm3pZHiVrb2uMv1SsMPaoTzMkoLd_N2V1DXpi5KMtXkfg_DLutj0Z_wur8ryfNi5W5I7zOgssearKe31MhGUq5UXKsCQYS_Qvldh45MQlPuxdX_DPjA_gVXUqjc07Mc-rqv7Uvl2G_KQ9tMriYj7Tizz5CB3YQ12_MhP9qa8yvse7f0hzZfHNW2oy2jnNa_DL?width=750&height=4130&cropmode=none)
+
+<!-- endtab -->
+
+<!-- tab SOX -->
+
+![](https://bn1301files.storage.live.com/y4mNQgEWMD8iw6LcZnrXVTSZaBcyD_S6w060wrSaT-B4Q8SwSr8jdpOr-zJ1XrJ7-SMmAhepIuMWdnh6V_ZbShKR-D89DdwmJ7l-bemXgV7zL6Vo54nJn7pLCQPqBuNsEGdX-ysXEbJGJtFyLYEZyBdslbJ-nl39Uezi-7x7VQZRnXlOIc1LQn36tGbfUw-YVLn?width=750&height=3965&cropmode=none)
+
+<!-- endtab -->
+
+<!-- tab NLP -->
+
+![](https://bn1301files.storage.live.com/y4m8IkR6k-ra1Hpgt0Xp1hZ1_UFELYcsIuXXKFqufsHfgvQL78s0zFkH9G31s9i68XrZoxowt_SfDGBQuk5TkXlL4RNZGMKsdfoatGwvtmAS1xCakfUVSduTTppaWWfK3qHeNUQqgjphmvo5Ck4GdP_e5YIuWHlJR_vNaWp9-1cC3KYNQN5Xmk8-4iQgnFRufYu?width=750&height=3816&cropmode=none)
+
+<!-- endtab -->
+
+<!-- tab Ads -->
+
+![](https://bn1301files.storage.live.com/y4mtiJghcQfH772fLNoD7-eRU2f33PNiF22k6FOm-D0axrNi4HYxKTx5ZjH_QC5uNVWr7N3_KdBKYUB0RorSRUv4QjJOJzEYin3sjrXyjvTT2JIG1aeSZEMpeIJ-z2z3H15rUklQJ6d4IwAHxipH-I5wBLe5QKHxyinsyVTwY4aXyWHiwYIsIYXl7lfAUS1WYLR?width=750&height=2720&cropmode=none)
+
+<!-- endtab -->
+
+<!-- tab MMD -->
+
+![](https://bn1301files.storage.live.com/y4mP0zNVI1BGU5k5kHeVxBEIArr5urYevsduqPXGPF4Nqw9-6RdR0X9HS9K0Pr6ambeQq8pNs4iW7hB82BnZquK6dULh42pgC_143TqistB0hUL6u07lttNjK6Du3RZwulDNZKa33-V2m9jTh2S70qNmq6s4iumtYBJlg9ffpa_oqpbWVyeDN41mXACMS7LVlVX?width=750&height=2636&cropmode=none)
+
+<!-- endtab -->
+
+<!-- tab MSAI -->
+
+![](https://bn1301files.storage.live.com/y4mHjQlKOxtCstu0jvTFkn9XTs6tPR9YpX9GoBJ3FtkRAd5Ibzu3Wth9k-WLlQrbLGTnL1tIqzGOUeQVKx39PicRG8UvoR3SLtcZpmyM6LzSMQM8UITSYEnDIXsMU0QzHVciVwGeTK3jtAhb0tBFc-wDeTSpGu71izewVPAFs0f7eq8cxT3UHcXX40pAy8inVYU?width=750&height=2967&cropmode=none)
+
+<!-- endtab -->
+
+{% endtabs %}
+
+
+
 ### 2020.11.19
 
 | Sub team focus                                               | Role                      | Domain must to have             | Domain nice to have                                        | City           | Years of experience | English |
