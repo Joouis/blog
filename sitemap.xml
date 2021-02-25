@@ -2,9 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://blog.joouis.com/2021/2021-my-story-with-jazz/</loc>
+    <loc>https://blog.joouis.com/2021/my-first-step-to-jazz/</loc>
     
-    <lastmod>2021-02-22</lastmod>
+    <lastmod>2021-02-25</lastmod>
     
   </url>
   
@@ -44,14 +44,14 @@
   </url>
   
   <url>
-    <loc>https://blog.joouis.com/categories/index.html</loc>
+    <loc>https://blog.joouis.com/about/index.html</loc>
     
     <lastmod>2020-06-03</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.joouis.com/about/index.html</loc>
+    <loc>https://blog.joouis.com/categories/index.html</loc>
     
     <lastmod>2020-06-03</lastmod>
     
@@ -501,27 +501,6 @@
   </url>
   
   <url>
-    <loc>https://blog.joouis.com/tags/music/</loc>
-    <lastmod>2021-02-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.joouis.com/tags/jazz/</loc>
-    <lastmod>2021-02-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.joouis.com/tags/taiwan/</loc>
-    <lastmod>2021-02-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.joouis.com/tags/blog/</loc>
     <lastmod>2021-02-25</lastmod>
     <changefreq>daily</changefreq>
@@ -704,34 +683,6 @@
   </url>
   
   <url>
-    <loc>https://blog.joouis.com/tags/flutter/</loc>
-    <lastmod>2021-02-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.joouis.com/tags/app/</loc>
-    <lastmod>2021-02-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.joouis.com/tags/dart/</loc>
-    <lastmod>2021-02-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.joouis.com/tags/mobile/</loc>
-    <lastmod>2021-02-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.joouis.com/tags/xml/</loc>
     <lastmod>2021-02-25</lastmod>
     <changefreq>daily</changefreq>
@@ -761,6 +712,34 @@
   
   <url>
     <loc>https://blog.joouis.com/tags/ezxml/</loc>
+    <lastmod>2021-02-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.joouis.com/tags/flutter/</loc>
+    <lastmod>2021-02-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.joouis.com/tags/app/</loc>
+    <lastmod>2021-02-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.joouis.com/tags/dart/</loc>
+    <lastmod>2021-02-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.joouis.com/tags/mobile/</loc>
     <lastmod>2021-02-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -963,14 +942,21 @@
   </url>
   
   <url>
-    <loc>https://blog.joouis.com/tags/mysql/</loc>
+    <loc>https://blog.joouis.com/tags/music/</loc>
     <lastmod>2021-02-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://blog.joouis.com/tags/note/</loc>
+    <loc>https://blog.joouis.com/tags/jazz/</loc>
+    <lastmod>2021-02-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.joouis.com/tags/taiwan/</loc>
     <lastmod>2021-02-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1006,6 +992,20 @@
   
   <url>
     <loc>https://blog.joouis.com/tags/gcc/</loc>
+    <lastmod>2021-02-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.joouis.com/tags/mysql/</loc>
+    <lastmod>2021-02-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.joouis.com/tags/note/</loc>
     <lastmod>2021-02-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1229,13 +1229,6 @@
   </url>
   
   <url>
-    <loc>https://blog.joouis.com/tags/free-software/</loc>
-    <lastmod>2021-02-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.joouis.com/tags/weex/</loc>
     <lastmod>2021-02-25</lastmod>
     <changefreq>daily</changefreq>
@@ -1258,6 +1251,13 @@
   
   <url>
     <loc>https://blog.joouis.com/tags/tutorial/</loc>
+    <lastmod>2021-02-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.joouis.com/tags/free-software/</loc>
     <lastmod>2021-02-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1735,13 +1735,6 @@
   </url>
   
   <url>
-    <loc>https://blog.joouis.com/categories/%E7%88%B1%E4%B9%90%E4%B9%8B%E5%9F%8E/</loc>
-    <lastmod>2021-02-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.joouis.com/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%BA%95%E5%B1%82/</loc>
     <lastmod>2021-02-25</lastmod>
     <changefreq>daily</changefreq>
@@ -1757,6 +1750,13 @@
   
   <url>
     <loc>https://blog.joouis.com/categories/Web-%E5%89%8D%E7%AB%AF/</loc>
+    <lastmod>2021-02-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.joouis.com/categories/%E7%88%B1%E4%B9%90%E4%B9%8B%E5%9F%8E/</loc>
     <lastmod>2021-02-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
