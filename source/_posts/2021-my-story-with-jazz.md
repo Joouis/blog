@@ -58,7 +58,7 @@ tags:
 
 东华大学是台湾最美的大学之一，同时是台湾最早开始在音乐系设立爵士主修的学校，其音乐系也是台湾唯一大学部跟硕士班同时有爵士演奏主修的音乐系。
 
-![](https://bn1301files.storage.live.com/y4mVxkRf_zUTXg4DXl0SSehyDoNxLkb4a_TIThxskU6LAjBFuy7TywITgu8N2OpbEmGGUwhMb5IEI2t55DkVaPIK98Q6tdSFfzhCYZAVwiRHMUCUKId6wHdykYhh5s2cs_zoLCseAkguNG-TzEdkUFrCIL01_Xdus1yAKkzTtLfRB61faRcrE-cHhc92rYnSTsq?width=4160&height=2340&cropmode=none)
+![](https://bn1301files.storage.live.com/y4mkCEQnJoGiDB6b05pkT7thh1N6Nh-dURiJHVHKUIr6r--aTkGPake-H9clqAniX68bz-gsZpw_wh3Skm1aMLAEmLkgl-CnKDonHQzTy58b1N1grH8-X0NOc69RegYhm3tUC1Mpzma3zvSYstX1CxJ4N7N6x6hL8QTJvi53tGfMhaslvVlnb7CAwfjlQdjjG1i?width=4160&height=2340&cropmode=none)
 
 音乐系看起来很朴素，与大自然融为一体。
 
