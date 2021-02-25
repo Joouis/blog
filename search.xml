@@ -4,7 +4,7 @@
     <title>2019 泰国行游记（四）</title>
     <url>/2019/2019-thai-trip-4/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script>
-    <div id="aplayer-FtDttsfC" class="aplayer aplayer-tag-marker meting-tag-marker"
+    <div id="aplayer-QPsQXGcM" class="aplayer aplayer-tag-marker meting-tag-marker"
          data-id="555974038" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="true" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86" data-mini="true"
     ></div>
 
@@ -271,7 +271,7 @@
 <h2 id="尾巴"><a href="#尾巴" class="headerlink" title="尾巴"></a>尾巴</h2><p>博客的升级花费大概两天的时间，一点点扣细节，既当产品又做技术，搞一个自嗨的项目，还是玩得非常开心。未来当然还是以输出文章为主，除了内容本身外，也试着丰富展现形式，达到一个比较舒服的阅读体验。最后关于博客的推广，其实在建站之初只想创造一个属于自己的空间，不过现在慢慢感受到，如果自己的文字能够帮助到更多人，是一件正能量满满的事情。</p>
 <p>等到五周年时再看看又发生了哪些变化吧~</p>
 
-    <div id="aplayer-KGwXgKIT" class="aplayer aplayer-tag-marker meting-tag-marker"
+    <div id="aplayer-DNIRROGR" class="aplayer aplayer-tag-marker meting-tag-marker"
          data-id="28737747" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="true" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86" data-mini="true"
     ></div>]]></content>
       <categories>
@@ -766,6 +766,98 @@
       </tags>
   </entry>
   <entry>
+    <title>简易计数器——年轻人的第一个Flutter应用</title>
+    <url>/2018/first-flutter-app-review/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h2 id="TL-DR"><a href="#TL-DR" class="headerlink" title="TL;DR"></a>TL;DR</h2><p>站在负责 UI 层的 Web 前端视角看无线端框架，评判的第一个标准无非是文档够不够全、Demo 能不能很容易在手机上跑起来。近来的热门框架 Flutter 就上手而言给出了漂亮的答案。</p>
+<a id="more"></a>
+
+<p>## Prolog</p>
+<p>- 我是谁：曾是 Embedded C 开发的 Web 前端攻城狮，完全没有 <code>dart</code> 或是 <code>flutter</code> 开发经验<br>- 开发环境：MacBook Pro，XCode with iOS simulator<br>- 学习初心：2018 年的 Weex 开发体验依然不好，不如拥抱下一个技术红利（假笑.jpg<br>- 种草文：什么你还没听过 Flutter，简单介绍一下吧《<a href="https://mp.weixin.qq.com/s/xV-FGR9o2ODLFJFq4YwnKg">Release Flutter的最后一公里</a>》<br>- 最后一句话：以下”学习笔记”中，若有错误/模糊概念请友好指正，么么哒</p>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Flutter 最近真的是大热，可能笔者身处阿里的缘故，自从咸鱼在他们的商品详情页成功使用后，集团内无论是 ATA 技术论坛还是周报都能看到有人学习研究这门技术。</p>
+<p>笔者一直都想尝试原生的无线端开发，在错过 React Native、受够 Weex 之后，身处这个时间点刚好趁热学习一下 Flutter，说不定这次真的跟过往的轮子不一样。</p>
+<p>## Setup</p>
+<p>照着<a href="https://flutter.io/get-started/install/">官方文档</a>来，一切还算顺利：装好 Flutter SDK，<code>flutter doctor</code> 把相关依赖都装好，插上 iPhone 手机，VS Code 新建一个 <code>Flutter Demo</code> 工程，调试…</p>
+<p>在真机调试时，出现了第一个与苹果应用验证相关的问题：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Failed to create provisioning profile.</span><br><span class="line">The app ID &quot;com.example.flutterFlutterDemo&quot; cannot be registered to your development team. Change your bundle identifier to a unique string to try again.</span><br></pre></td></tr></table></figure>
+
+<p>解决方法有两种：</p>
+<p>1. 使用自己的 Apple ID，详见<a href="http://bbs.sightp.com/thread-1241-1-1.html">这里</a>；（好吧我也没试过）<br>2. 使用模拟器。</p>
+<p>命令行输入 <code>open ios/Runner.xcworkspace</code> 打开 Runner 工程，选择模拟器即可跑起来默认的 Demo 工程。</p>
+<p>## Code Review for Official Counter</p>
+<h3 id="Intro"><a href="#Intro" class="headerlink" title="Intro"></a>Intro</h3><p>官方默认的 Demo 工程是一个简易计数器。先看眼效果，真的非常简单，右下角点击加号，中间的数字对应增长，就酱~</p>
+<p><img data-src="https://ua60cg.bn.files.1drv.com/y4mx50xV8910Opf1_TigYabB06b-3qTsFGJf8KmR8dFIArUO5nb5BpePdYkUfp_JA9tj_DeBthEENIc1l8QFt9hVkSDojcSlBHbx7tIxOlqwXqVyrvW1pTDYPTNOj57MVyos5giC9Uv_YTAlLDUcz5ZsH-7vvVEwt_tiwodR5tawta_g1V30y9Br8QdL6TAmuF9Rf603Y4DUjvVFrXZ6a0UwQ"></p>
+<p>外行看热闹，内行看门道。应用层代码总共就六十多行，反正也不会 Dart，就边看边学习一下。</p>
+<h3 id="Import"><a href="#Import" class="headerlink" title="Import"></a>Import</h3><figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&#x27;package:flutter/material.dart&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>首先是 Dart 依赖的导入。Dart 使用 <code>pubspec.yaml</code> 文件定义工程和依赖，类似 Node 世界里的 <code>package.json</code>；<code>pub</code> 则是对应 <code>npm</code> 的存在，<code>pub get</code> 一下即可安装相关的依赖包；安装完成后，会在项目根目录生成一个 <code>.packages</code> 文件，记录了所有依赖包在系统中对应的缓存地址，大概长这样：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> Generated by pub on 2018-07-18 20:28:35.360131.</span></span><br><span class="line">analyzer:file:///Users/joou/workspace/flutter/.pub-cache/hosted/pub.dartlang.org/analyzer-0.31.2-alpha.2/lib/</span><br></pre></td></tr></table></figure>
+
+<p>再来说说最上方的引用语句。除了引用相对路径的 dart 文件外，引用包需加上 <code>package:</code> 前缀，Dart 运行时会自动去查询包文件。那这里引用的 <code>flutter/material.dart</code> 在哪呢？笔者的第一反应是在 Flutter SDK 工程中，果不其然在此：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">joou 2018-07-19 Thu 11:36:~/workspace/flutter/packages/flutter/lib(beta 50d8h)</span><br><span class="line"><span class="meta">$</span><span class="bash"> ls</span></span><br><span class="line">analysis_options_user.yaml foundation.dart            painting.dart              scheduler.dart             src</span><br><span class="line">animation.dart             gestures.dart              physics.dart               semantics.dart             widgets.dart</span><br><span class="line">cupertino.dart             material.dart              rendering.dart             services.dart</span><br></pre></td></tr></table></figure>
+
+<p>SDK 中已经内置了不少包，让我们看看 <code>material.dart</code> 这个物料包里有些啥：</p>
+<figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="string">&#x27;src/material/about.dart&#x27;</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="string">&#x27;src/material/animated_icons.dart&#x27;</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="string">&#x27;src/material/app.dart&#x27;</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="string">&#x27;src/material/app_bar.dart&#x27;</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="string">&#x27;src/material/arc.dart&#x27;</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="string">&#x27;src/material/back_button.dart&#x27;</span>;</span><br><span class="line"><span class="comment">// ...</span></span><br></pre></td></tr></table></figure>
+
+<p>所以说 <code>flutter/lib</code> 下的包文件类似一个入口，类似 C 语言里的 header file，暴露给外界 <code>flutter/lib/src</code> 中的各种组件，想要深入了解某个包的具体实现去对应目录下即可找到真相。</p>
+<p>当然，除了自己 xjb 探索外，也别忘了阅读<a href="https://docs.flutter.io/flutter/material/material-library.html">官方文档</a>，因为接下来的代码基本都要靠文档救命。</p>
+<h3 id="App-Entry"><a href="#App-Entry" class="headerlink" title="App Entry"></a>App Entry</h3><figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> main() =&gt; runApp(<span class="keyword">new</span> MyApp());</span><br></pre></td></tr></table></figure>
+
+<p>Dart 的每一个程序应用最顶层都要有一个 <code>main()</code> 函数作为入口，这和 C 语言是一致的。此外还有 <code>void</code> 类型，代表返回值可以是任意类型。Dart 是 OO 范式的语言，函数、方法都是对象，存在一个对应的类型，因此在定义函数时最好申明其返回值类型。<code>=&gt;</code> 语法是 <code>&#123; return expr; &#125;</code> 的简写，注意里面不允许出现 statement (Eg. <code>if</code> )。上述代码一样可改写为：</p>
+<figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> main() &#123;</span><br><span class="line">  <span class="keyword">return</span> runApp(<span class="keyword">new</span> MyApp());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>runApp()</code> 是 Flutter 提供的<a href="https://docs.flutter.io/flutter/widgets/runApp.html">函数</a>，其作用是将一个 <code>Widget</code> 类的实例（作为其入参）挂载（attach）到屏幕上，逻辑大概如下：</p>
+<p>1. 检查 <code>WidgetsFlutterBinding</code> 是否初始化；<br>2. 将控件（widget）实例挂载到 <code>renderViewElement</code> 上，这个元素是渲染层级的根节点实例；<br>3. 调用 <code>scheduleWarmUpFrame()</code> 方法，开始渲染。</p>
+<h3 id="Stateless-Widget"><a href="#Stateless-Widget" class="headerlink" title="Stateless Widget"></a>Stateless Widget</h3><p>接下来让我们看看 <code>MyApp</code> 类。</p>
+<figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyApp</span> <span class="keyword">extends</span> <span class="title">StatelessWidget</span> </span>&#123;</span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> MaterialApp(</span><br><span class="line">      title: <span class="string">&#x27;Flutter Counter&#x27;</span>,</span><br><span class="line">      theme: <span class="keyword">new</span> ThemeData(</span><br><span class="line">        primarySwatch: Colors.orange,</span><br><span class="line">      ),</span><br><span class="line">      home: <span class="keyword">new</span> MyHomePage(title: <span class="string">&#x27;Flutter Trivial Counter 🙃&#x27;</span>),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>此控件是应用的根节点。首先它作为子类继承了 <code>StatelessWidget</code> ，无状态是指它不需要可变状态，而是通过构建其他的控件来更具体地描述 UI，构建过程以递归方式执行，直到 UI 被完全具象化。可能这么说比较抽象，不过先别急，后面的代码会解释什么叫具象化。在 <code>MyApp</code> 中，重载了 <code>build</code> 方法，实例化了一个 <code>MaterialApp</code> 对象。</p>
+<p>如果你写过 React 框架，那么我想换个方法解释可能更好理解。<code>StatelessWidget</code> 好比 React 中的 <code>PureComponent</code> ，而 <code>Widget</code> 类的 <code>build</code> 方法好比 React 中的 <code>render</code>。<code>build</code> 方法负责描述控件代表的 UI ，入参是构造的上下文，内容则是使用 <code>MaterialApp</code> 对象的实例描述 UI。实例化的过程中进行了一些配置，例如命名为 “Flutter Counter”，使用橙色主题，主页标题栏的文字设为 “Flutter Trivial Counter 🙃”。即便完全不知道 <code>MaterialApp</code> 类的内部实现，也很容易猜到它更具体地定义了一些 UI 内容。</p>
+<p>React 是具备生命周期的，当 <code>componentWillUpdate</code> 钩子触发后将执行 <code>render</code> 方法，重新渲染组件。而 <code>PureComponent</code> 则是通过在渲染前（例如在 <code>shouldComponentUpdate</code> 钩子中）浅对比新旧 props 和 state 判断是否需要重新渲染，从而实现性能优化。同理，控件的 <code>build</code> 方法将会在其 lifetime 的以下时刻被调用：</p>
+<p>- 调用 <a href="https://docs.flutter.io/flutter/widgets/State/initState.html">iniState</a> 之后。<br>- 调用 <a href="https://docs.flutter.io/flutter/widgets/State/didUpdateWidget.html">didUpdateWidget</a> 之后。<br>- 收到 <a href="https://docs.flutter.io/flutter/widgets/State/setState.html">setState</a> 的请求后。<br>- 在 <a href="https://docs.flutter.io/flutter/widgets/State-class.html">State</a> 对象的依赖之一改变（例如被之前的 <a href="https://docs.flutter.io/flutter/widgets/State/build.html">build</a> 方法引用的某个 <a href="https://docs.flutter.io/flutter/widgets/InheritedWidget-class.html">InheritedWidget</a> 发生了改变）后。<br>- 调用 <a href="https://docs.flutter.io/flutter/widgets/State/deactivate.html">deactivate</a> 后重新在挂件树的另一个位置注入 <a href="https://docs.flutter.io/flutter/widgets/State-class.html">State</a> 类。</p>
+<p>而 <code>StatelessWidget</code> 中的 <code>build</code> 方法仅在三种情况中被调用：</p>
+<p>- 控件第一次被插入挂件树中，也就是初始化时。<br>- 控件的父亲改变了自身配置。<br>- 控件依赖的继承控件类改变。</p>
+<p>这和 React 是何等的相似（此处感慨 3 秒…）！因此减少无状态控件的重新构建也是一门优化技巧，在此不延伸了，有兴趣请看<a href="https://docs.flutter.io/flutter/widgets/StatelessWidget-class.html">文档</a>。至于 <code>MaterialApp</code> 类的内部配置在此也不深入，有机会再研究、分享一下这些官方组件。让我们看看配置中描述主页的 <code>MyHomePage</code> 挂件吧，这是在应用代码中实现的。</p>
+<h3 id="Stateful-Widget"><a href="#Stateful-Widget" class="headerlink" title="Stateful Widget"></a>Stateful Widget</h3><figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyHomePage</span> <span class="keyword">extends</span> <span class="title">StatefulWidget</span> </span>&#123;</span><br><span class="line">  MyHomePage(&#123;Key key, <span class="keyword">this</span>.title&#125;) : <span class="keyword">super</span>(key: key);</span><br><span class="line">  <span class="keyword">final</span> <span class="built_in">String</span> title;</span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  _MyHomePageState createState() =&gt; <span class="keyword">new</span> _MyHomePageState();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>MyHomePage</code> 是一个有状态的挂件，最底部重载了 <code>createState</code> 方法定义其状态，用来描述 UI，这个稍后再细看。通常如果父类（superclass）没有默认的构造函数，dart 则要求子类在代码块的初始位置使用 <code>:</code> 指定父类的构造函数。而 <code>Key key</code> 用来申明可选参数（optional parameter），此处申明了 <code>title</code> 变量（field）。<code>title</code> 变量的值由父类赋予，被其 <code>State</code> 类的 <code>build</code> 方法使用渲染，像这种子类挂件的变量通常定义为 <code>final</code> 类型，意味着变量只能被赋值一次。与 <code>const</code> 不同的是 <code>final</code> 变量在程序运行时才赋值，而非编译时期就定义好的常量。</p>
+<h3 id="State"><a href="#State" class="headerlink" title="State"></a>State</h3><p>让我们最后瞅瞅首页挂件的状态类。</p>
+<figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">_MyHomePageState</span> <span class="keyword">extends</span> <span class="title">State</span>&lt;<span class="title">MyHomePage</span>&gt; </span>&#123;</span><br><span class="line">  <span class="built_in">int</span> _counter = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">void</span> _incrementCounter() &#123;</span><br><span class="line">    setState(() &#123;</span><br><span class="line">      _counter++;</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Scaffold(</span><br><span class="line">      appBar: <span class="keyword">new</span> AppBar(</span><br><span class="line">        title: <span class="keyword">new</span> Text(widget.title),</span><br><span class="line">      ),</span><br><span class="line">      body: <span class="keyword">new</span> Center(</span><br><span class="line">        child: <span class="keyword">new</span> Column(</span><br><span class="line">          mainAxisAlignment: MainAxisAlignment.center,</span><br><span class="line">          children: &lt;Widget&gt;[</span><br><span class="line">            <span class="keyword">new</span> Text(</span><br><span class="line">              <span class="string">&#x27;老铁没毛病，双击:&#x27;</span>,</span><br><span class="line">            ),</span><br><span class="line">            <span class="keyword">new</span> Text(</span><br><span class="line">              <span class="string">&#x27;<span class="subst">$_counter</span>&#x27;</span>,</span><br><span class="line">              style: Theme.of(context).textTheme.display1,</span><br><span class="line">            ),</span><br><span class="line">          ],</span><br><span class="line">        ),</span><br><span class="line">      ),</span><br><span class="line">      floatingActionButton: <span class="keyword">new</span> FloatingActionButton(</span><br><span class="line">        onPressed: _incrementCounter,</span><br><span class="line">        tooltip: <span class="string">&#x27;Increment&#x27;</span>,</span><br><span class="line">        child: <span class="keyword">new</span> Icon(Icons.add),</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>好吧这也是笔者第一次接触泛型，看过<a href="https://www.dartlang.org/guides/language/language-tour#generics">官方文档</a>的例子后觉得还是比较好理解。<code>MyHomePage</code> 继承了拥有可变状态的 <code>StatefulWidget</code> 类，当其第一次被插入控件树中时，Flutter 框架会调用 <code>createState</code> 函数创建一个全新的 <code>_MyHomePageState</code> 实例与树中的位置相关联。当挂件的父组件重新构建（rebuild）时，父组件会重新创建一个 <code>MyHomePage</code> 实例，但是将复用已有的 <code>_MyHomePageState</code> 对象。</p>
+<p><code>_MyHomePageState</code> 定义了一个数字类型的 <code>_counter</code> ，另外自定义了一个 <code>_incrementCounter</code> 方法每次对 <code>_counter</code> 值加一。加一语句写在 <code>setState</code> 方法中，当被执行完后，会触发 Flutter 框架重新运行下方的 <code>build</code> 方法，以达到最终更新界面的目的。虽然推荐将状态变更的代码写在 <code>setState</code> 的回调函数中，但这么改写也是可以正常工作的…</p>
+<figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> _incrementCounter() &#123;</span><br><span class="line">  _counter++;</span><br><span class="line">  setState(() &#123;&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>最后的最后，在 <code>_MyHomePageState</code> 的 <code>build</code> 方法里，初始化并返回了一个 <code>Scaffold</code> 实例，源自 Material 组件。每当 <code>setState</code> 被触发后，就将执行一次 <code>build</code> 方法。不过 Flutter 框架号称优化过重跑 <code>build</code> 方法的性能，无需担心重新构建的成本。</p>
+<p><code>Scaffold</code> 类配置了三处地方：</p>
+<ul>
+<li>新建一个 <code>appBar</code> 实例。这里通过 <code>widget</code> 属性获取到了 <code>MyHomePage</code> 挂件中的属性，此外还可以通过 <a href="https://docs.flutter.io/flutter/widgets/State-class.html#didUpdateWidget"><code>didUpdateWidget</code></a> 钩子在 <code>widget</code> 发生改变时进行操作。</li>
+<li><code>body</code> 属性被赋予了 <code>Center</code> 实例，无论是 <code>Center</code> 还是 <code>Column</code> 都是布局（layout）挂件。前者可以定位到父组件的中心位置，而后者将会水平排列其子组件。<code>Column</code> 挂件有多种属性控制样式，这里使用了 <code>mainAxisAlignment</code> 将其子组件垂直居中（别糊涂，列的主轴是垂直方向）。</li>
+<li>屏幕右下角的按钮由 <code>FloatingActionButton</code> 描述，使用了加号图标，绑定之前定义好的 <code>_incrementCounter</code> 函数作为 <code>onPressed</code> 事件的处理者。</li>
+</ul>
+<p>好了说了这么多组件，让我们使用 Flutter tool 的 <code>Toggle Debug Paint</code> 指令直观感受一把。</p>
+<p><img data-src="https://ua6zcg.bn.files.1drv.com/y4mUF6sd-hueRZgEbFQx1UmVfQaYGtyEK6TXqqpD3Z-VB4Bj49dDyTKooH_yZESWfth4XK8OHc_p-WlaNIEaCBv51mZYrSlNxtjPJShjlLFWf1qLXV3-5OPc88KJQQxt2_WGdzV32Fljycb9HjfMPAaqaMUm6_tyXGZ_NJilhRUVpX92WQ8LRT1j_CQPOHxpUXajsuzAuDrht8FpZt-jc4ItA"></p>
+<h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2><p>笔者去年写了篇 Weex 从入门到放弃的上手文，说实话这次 Flutter 上手体验要比 Weex 好非常多——详实的文档，齐全的基础脚手架，轻松在手机/模拟器上运行应用。</p>
+<p>对于没有客户端开发经验的笔者来说，能看着文档打通流程（实际编译出一个安装包并在对应平台上安装、执行）是一件非常关键的事情，它意味着小白也能使用这项技术栈独立开发简单的应用，能给学习者十足的信心。过去接触 Weex，只能使用 Playground App 扫码跑 demo，非常的“半成品”，而 Flutter 轻松几个指令，就在你的设备上跑起了你的工程，赞！</p>
+<p>至于 Flutter 相关的信息，如学习 Dart 语言、Flutter 入门教程、代码范例、官方库接口等资料已经颇为丰富，Stack Overflow 上也有一些讨论的话题，对于一个处于 Beta 阶段的框架来很成熟了。</p>
+<p>接下来就期待国内外有更多关于 Flutter 的线上生产实践经验，笔者有空也会接着研究并分享 Flutter 的知识。</p>
+<p>如果你看了这篇文章感到意犹未尽，那么再提供一点延伸阅读：</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=UUfXWzp0-DU">Flutter’s Rendering Pipeline</a></li>
+<li><a href="https://flutter.io/widgets-intro/">A Tour of the Flutter Widget Framework</a></li>
+</ul>
+<p>相信你能从上述两个方向发现更多一手、可靠、丰富的信息！</p>
+]]></content>
+      <categories>
+        <category>Web 前端</category>
+      </categories>
+      <tags>
+        <tag>flutter</tag>
+        <tag>app</tag>
+        <tag>dart</tag>
+        <tag>mobile</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>XML Parser for Libsvgtiny</title>
     <url>/2020/evgui-xml-parser/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>这是我的<a href="https://blog.joouis.com/2020/evgui-design-review/">硕士论文笔记系列</a>第三篇，原文写于 2016 年五月。</p>
@@ -878,98 +970,6 @@
       </tags>
   </entry>
   <entry>
-    <title>简易计数器——年轻人的第一个Flutter应用</title>
-    <url>/2018/first-flutter-app-review/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h2 id="TL-DR"><a href="#TL-DR" class="headerlink" title="TL;DR"></a>TL;DR</h2><p>站在负责 UI 层的 Web 前端视角看无线端框架，评判的第一个标准无非是文档够不够全、Demo 能不能很容易在手机上跑起来。近来的热门框架 Flutter 就上手而言给出了漂亮的答案。</p>
-<a id="more"></a>
-
-<p>## Prolog</p>
-<p>- 我是谁：曾是 Embedded C 开发的 Web 前端攻城狮，完全没有 <code>dart</code> 或是 <code>flutter</code> 开发经验<br>- 开发环境：MacBook Pro，XCode with iOS simulator<br>- 学习初心：2018 年的 Weex 开发体验依然不好，不如拥抱下一个技术红利（假笑.jpg<br>- 种草文：什么你还没听过 Flutter，简单介绍一下吧《<a href="https://mp.weixin.qq.com/s/xV-FGR9o2ODLFJFq4YwnKg">Release Flutter的最后一公里</a>》<br>- 最后一句话：以下”学习笔记”中，若有错误/模糊概念请友好指正，么么哒</p>
-<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Flutter 最近真的是大热，可能笔者身处阿里的缘故，自从咸鱼在他们的商品详情页成功使用后，集团内无论是 ATA 技术论坛还是周报都能看到有人学习研究这门技术。</p>
-<p>笔者一直都想尝试原生的无线端开发，在错过 React Native、受够 Weex 之后，身处这个时间点刚好趁热学习一下 Flutter，说不定这次真的跟过往的轮子不一样。</p>
-<p>## Setup</p>
-<p>照着<a href="https://flutter.io/get-started/install/">官方文档</a>来，一切还算顺利：装好 Flutter SDK，<code>flutter doctor</code> 把相关依赖都装好，插上 iPhone 手机，VS Code 新建一个 <code>Flutter Demo</code> 工程，调试…</p>
-<p>在真机调试时，出现了第一个与苹果应用验证相关的问题：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Failed to create provisioning profile.</span><br><span class="line">The app ID &quot;com.example.flutterFlutterDemo&quot; cannot be registered to your development team. Change your bundle identifier to a unique string to try again.</span><br></pre></td></tr></table></figure>
-
-<p>解决方法有两种：</p>
-<p>1. 使用自己的 Apple ID，详见<a href="http://bbs.sightp.com/thread-1241-1-1.html">这里</a>；（好吧我也没试过）<br>2. 使用模拟器。</p>
-<p>命令行输入 <code>open ios/Runner.xcworkspace</code> 打开 Runner 工程，选择模拟器即可跑起来默认的 Demo 工程。</p>
-<p>## Code Review for Official Counter</p>
-<h3 id="Intro"><a href="#Intro" class="headerlink" title="Intro"></a>Intro</h3><p>官方默认的 Demo 工程是一个简易计数器。先看眼效果，真的非常简单，右下角点击加号，中间的数字对应增长，就酱~</p>
-<p><img data-src="https://ua60cg.bn.files.1drv.com/y4mx50xV8910Opf1_TigYabB06b-3qTsFGJf8KmR8dFIArUO5nb5BpePdYkUfp_JA9tj_DeBthEENIc1l8QFt9hVkSDojcSlBHbx7tIxOlqwXqVyrvW1pTDYPTNOj57MVyos5giC9Uv_YTAlLDUcz5ZsH-7vvVEwt_tiwodR5tawta_g1V30y9Br8QdL6TAmuF9Rf603Y4DUjvVFrXZ6a0UwQ"></p>
-<p>外行看热闹，内行看门道。应用层代码总共就六十多行，反正也不会 Dart，就边看边学习一下。</p>
-<h3 id="Import"><a href="#Import" class="headerlink" title="Import"></a>Import</h3><figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&#x27;package:flutter/material.dart&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
-<p>首先是 Dart 依赖的导入。Dart 使用 <code>pubspec.yaml</code> 文件定义工程和依赖，类似 Node 世界里的 <code>package.json</code>；<code>pub</code> 则是对应 <code>npm</code> 的存在，<code>pub get</code> 一下即可安装相关的依赖包；安装完成后，会在项目根目录生成一个 <code>.packages</code> 文件，记录了所有依赖包在系统中对应的缓存地址，大概长这样：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> Generated by pub on 2018-07-18 20:28:35.360131.</span></span><br><span class="line">analyzer:file:///Users/joou/workspace/flutter/.pub-cache/hosted/pub.dartlang.org/analyzer-0.31.2-alpha.2/lib/</span><br></pre></td></tr></table></figure>
-
-<p>再来说说最上方的引用语句。除了引用相对路径的 dart 文件外，引用包需加上 <code>package:</code> 前缀，Dart 运行时会自动去查询包文件。那这里引用的 <code>flutter/material.dart</code> 在哪呢？笔者的第一反应是在 Flutter SDK 工程中，果不其然在此：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">joou 2018-07-19 Thu 11:36:~/workspace/flutter/packages/flutter/lib(beta 50d8h)</span><br><span class="line"><span class="meta">$</span><span class="bash"> ls</span></span><br><span class="line">analysis_options_user.yaml foundation.dart            painting.dart              scheduler.dart             src</span><br><span class="line">animation.dart             gestures.dart              physics.dart               semantics.dart             widgets.dart</span><br><span class="line">cupertino.dart             material.dart              rendering.dart             services.dart</span><br></pre></td></tr></table></figure>
-
-<p>SDK 中已经内置了不少包，让我们看看 <code>material.dart</code> 这个物料包里有些啥：</p>
-<figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="string">&#x27;src/material/about.dart&#x27;</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="string">&#x27;src/material/animated_icons.dart&#x27;</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="string">&#x27;src/material/app.dart&#x27;</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="string">&#x27;src/material/app_bar.dart&#x27;</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="string">&#x27;src/material/arc.dart&#x27;</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="string">&#x27;src/material/back_button.dart&#x27;</span>;</span><br><span class="line"><span class="comment">// ...</span></span><br></pre></td></tr></table></figure>
-
-<p>所以说 <code>flutter/lib</code> 下的包文件类似一个入口，类似 C 语言里的 header file，暴露给外界 <code>flutter/lib/src</code> 中的各种组件，想要深入了解某个包的具体实现去对应目录下即可找到真相。</p>
-<p>当然，除了自己 xjb 探索外，也别忘了阅读<a href="https://docs.flutter.io/flutter/material/material-library.html">官方文档</a>，因为接下来的代码基本都要靠文档救命。</p>
-<h3 id="App-Entry"><a href="#App-Entry" class="headerlink" title="App Entry"></a>App Entry</h3><figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> main() =&gt; runApp(<span class="keyword">new</span> MyApp());</span><br></pre></td></tr></table></figure>
-
-<p>Dart 的每一个程序应用最顶层都要有一个 <code>main()</code> 函数作为入口，这和 C 语言是一致的。此外还有 <code>void</code> 类型，代表返回值可以是任意类型。Dart 是 OO 范式的语言，函数、方法都是对象，存在一个对应的类型，因此在定义函数时最好申明其返回值类型。<code>=&gt;</code> 语法是 <code>&#123; return expr; &#125;</code> 的简写，注意里面不允许出现 statement (Eg. <code>if</code> )。上述代码一样可改写为：</p>
-<figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> main() &#123;</span><br><span class="line">  <span class="keyword">return</span> runApp(<span class="keyword">new</span> MyApp());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><code>runApp()</code> 是 Flutter 提供的<a href="https://docs.flutter.io/flutter/widgets/runApp.html">函数</a>，其作用是将一个 <code>Widget</code> 类的实例（作为其入参）挂载（attach）到屏幕上，逻辑大概如下：</p>
-<p>1. 检查 <code>WidgetsFlutterBinding</code> 是否初始化；<br>2. 将控件（widget）实例挂载到 <code>renderViewElement</code> 上，这个元素是渲染层级的根节点实例；<br>3. 调用 <code>scheduleWarmUpFrame()</code> 方法，开始渲染。</p>
-<h3 id="Stateless-Widget"><a href="#Stateless-Widget" class="headerlink" title="Stateless Widget"></a>Stateless Widget</h3><p>接下来让我们看看 <code>MyApp</code> 类。</p>
-<figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyApp</span> <span class="keyword">extends</span> <span class="title">StatelessWidget</span> </span>&#123;</span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> MaterialApp(</span><br><span class="line">      title: <span class="string">&#x27;Flutter Counter&#x27;</span>,</span><br><span class="line">      theme: <span class="keyword">new</span> ThemeData(</span><br><span class="line">        primarySwatch: Colors.orange,</span><br><span class="line">      ),</span><br><span class="line">      home: <span class="keyword">new</span> MyHomePage(title: <span class="string">&#x27;Flutter Trivial Counter 🙃&#x27;</span>),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>此控件是应用的根节点。首先它作为子类继承了 <code>StatelessWidget</code> ，无状态是指它不需要可变状态，而是通过构建其他的控件来更具体地描述 UI，构建过程以递归方式执行，直到 UI 被完全具象化。可能这么说比较抽象，不过先别急，后面的代码会解释什么叫具象化。在 <code>MyApp</code> 中，重载了 <code>build</code> 方法，实例化了一个 <code>MaterialApp</code> 对象。</p>
-<p>如果你写过 React 框架，那么我想换个方法解释可能更好理解。<code>StatelessWidget</code> 好比 React 中的 <code>PureComponent</code> ，而 <code>Widget</code> 类的 <code>build</code> 方法好比 React 中的 <code>render</code>。<code>build</code> 方法负责描述控件代表的 UI ，入参是构造的上下文，内容则是使用 <code>MaterialApp</code> 对象的实例描述 UI。实例化的过程中进行了一些配置，例如命名为 “Flutter Counter”，使用橙色主题，主页标题栏的文字设为 “Flutter Trivial Counter 🙃”。即便完全不知道 <code>MaterialApp</code> 类的内部实现，也很容易猜到它更具体地定义了一些 UI 内容。</p>
-<p>React 是具备生命周期的，当 <code>componentWillUpdate</code> 钩子触发后将执行 <code>render</code> 方法，重新渲染组件。而 <code>PureComponent</code> 则是通过在渲染前（例如在 <code>shouldComponentUpdate</code> 钩子中）浅对比新旧 props 和 state 判断是否需要重新渲染，从而实现性能优化。同理，控件的 <code>build</code> 方法将会在其 lifetime 的以下时刻被调用：</p>
-<p>- 调用 <a href="https://docs.flutter.io/flutter/widgets/State/initState.html">iniState</a> 之后。<br>- 调用 <a href="https://docs.flutter.io/flutter/widgets/State/didUpdateWidget.html">didUpdateWidget</a> 之后。<br>- 收到 <a href="https://docs.flutter.io/flutter/widgets/State/setState.html">setState</a> 的请求后。<br>- 在 <a href="https://docs.flutter.io/flutter/widgets/State-class.html">State</a> 对象的依赖之一改变（例如被之前的 <a href="https://docs.flutter.io/flutter/widgets/State/build.html">build</a> 方法引用的某个 <a href="https://docs.flutter.io/flutter/widgets/InheritedWidget-class.html">InheritedWidget</a> 发生了改变）后。<br>- 调用 <a href="https://docs.flutter.io/flutter/widgets/State/deactivate.html">deactivate</a> 后重新在挂件树的另一个位置注入 <a href="https://docs.flutter.io/flutter/widgets/State-class.html">State</a> 类。</p>
-<p>而 <code>StatelessWidget</code> 中的 <code>build</code> 方法仅在三种情况中被调用：</p>
-<p>- 控件第一次被插入挂件树中，也就是初始化时。<br>- 控件的父亲改变了自身配置。<br>- 控件依赖的继承控件类改变。</p>
-<p>这和 React 是何等的相似（此处感慨 3 秒…）！因此减少无状态控件的重新构建也是一门优化技巧，在此不延伸了，有兴趣请看<a href="https://docs.flutter.io/flutter/widgets/StatelessWidget-class.html">文档</a>。至于 <code>MaterialApp</code> 类的内部配置在此也不深入，有机会再研究、分享一下这些官方组件。让我们看看配置中描述主页的 <code>MyHomePage</code> 挂件吧，这是在应用代码中实现的。</p>
-<h3 id="Stateful-Widget"><a href="#Stateful-Widget" class="headerlink" title="Stateful Widget"></a>Stateful Widget</h3><figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyHomePage</span> <span class="keyword">extends</span> <span class="title">StatefulWidget</span> </span>&#123;</span><br><span class="line">  MyHomePage(&#123;Key key, <span class="keyword">this</span>.title&#125;) : <span class="keyword">super</span>(key: key);</span><br><span class="line">  <span class="keyword">final</span> <span class="built_in">String</span> title;</span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  _MyHomePageState createState() =&gt; <span class="keyword">new</span> _MyHomePageState();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><code>MyHomePage</code> 是一个有状态的挂件，最底部重载了 <code>createState</code> 方法定义其状态，用来描述 UI，这个稍后再细看。通常如果父类（superclass）没有默认的构造函数，dart 则要求子类在代码块的初始位置使用 <code>:</code> 指定父类的构造函数。而 <code>Key key</code> 用来申明可选参数（optional parameter），此处申明了 <code>title</code> 变量（field）。<code>title</code> 变量的值由父类赋予，被其 <code>State</code> 类的 <code>build</code> 方法使用渲染，像这种子类挂件的变量通常定义为 <code>final</code> 类型，意味着变量只能被赋值一次。与 <code>const</code> 不同的是 <code>final</code> 变量在程序运行时才赋值，而非编译时期就定义好的常量。</p>
-<h3 id="State"><a href="#State" class="headerlink" title="State"></a>State</h3><p>让我们最后瞅瞅首页挂件的状态类。</p>
-<figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">_MyHomePageState</span> <span class="keyword">extends</span> <span class="title">State</span>&lt;<span class="title">MyHomePage</span>&gt; </span>&#123;</span><br><span class="line">  <span class="built_in">int</span> _counter = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">void</span> _incrementCounter() &#123;</span><br><span class="line">    setState(() &#123;</span><br><span class="line">      _counter++;</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Scaffold(</span><br><span class="line">      appBar: <span class="keyword">new</span> AppBar(</span><br><span class="line">        title: <span class="keyword">new</span> Text(widget.title),</span><br><span class="line">      ),</span><br><span class="line">      body: <span class="keyword">new</span> Center(</span><br><span class="line">        child: <span class="keyword">new</span> Column(</span><br><span class="line">          mainAxisAlignment: MainAxisAlignment.center,</span><br><span class="line">          children: &lt;Widget&gt;[</span><br><span class="line">            <span class="keyword">new</span> Text(</span><br><span class="line">              <span class="string">&#x27;老铁没毛病，双击:&#x27;</span>,</span><br><span class="line">            ),</span><br><span class="line">            <span class="keyword">new</span> Text(</span><br><span class="line">              <span class="string">&#x27;<span class="subst">$_counter</span>&#x27;</span>,</span><br><span class="line">              style: Theme.of(context).textTheme.display1,</span><br><span class="line">            ),</span><br><span class="line">          ],</span><br><span class="line">        ),</span><br><span class="line">      ),</span><br><span class="line">      floatingActionButton: <span class="keyword">new</span> FloatingActionButton(</span><br><span class="line">        onPressed: _incrementCounter,</span><br><span class="line">        tooltip: <span class="string">&#x27;Increment&#x27;</span>,</span><br><span class="line">        child: <span class="keyword">new</span> Icon(Icons.add),</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>好吧这也是笔者第一次接触泛型，看过<a href="https://www.dartlang.org/guides/language/language-tour#generics">官方文档</a>的例子后觉得还是比较好理解。<code>MyHomePage</code> 继承了拥有可变状态的 <code>StatefulWidget</code> 类，当其第一次被插入控件树中时，Flutter 框架会调用 <code>createState</code> 函数创建一个全新的 <code>_MyHomePageState</code> 实例与树中的位置相关联。当挂件的父组件重新构建（rebuild）时，父组件会重新创建一个 <code>MyHomePage</code> 实例，但是将复用已有的 <code>_MyHomePageState</code> 对象。</p>
-<p><code>_MyHomePageState</code> 定义了一个数字类型的 <code>_counter</code> ，另外自定义了一个 <code>_incrementCounter</code> 方法每次对 <code>_counter</code> 值加一。加一语句写在 <code>setState</code> 方法中，当被执行完后，会触发 Flutter 框架重新运行下方的 <code>build</code> 方法，以达到最终更新界面的目的。虽然推荐将状态变更的代码写在 <code>setState</code> 的回调函数中，但这么改写也是可以正常工作的…</p>
-<figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> _incrementCounter() &#123;</span><br><span class="line">  _counter++;</span><br><span class="line">  setState(() &#123;&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>最后的最后，在 <code>_MyHomePageState</code> 的 <code>build</code> 方法里，初始化并返回了一个 <code>Scaffold</code> 实例，源自 Material 组件。每当 <code>setState</code> 被触发后，就将执行一次 <code>build</code> 方法。不过 Flutter 框架号称优化过重跑 <code>build</code> 方法的性能，无需担心重新构建的成本。</p>
-<p><code>Scaffold</code> 类配置了三处地方：</p>
-<ul>
-<li>新建一个 <code>appBar</code> 实例。这里通过 <code>widget</code> 属性获取到了 <code>MyHomePage</code> 挂件中的属性，此外还可以通过 <a href="https://docs.flutter.io/flutter/widgets/State-class.html#didUpdateWidget"><code>didUpdateWidget</code></a> 钩子在 <code>widget</code> 发生改变时进行操作。</li>
-<li><code>body</code> 属性被赋予了 <code>Center</code> 实例，无论是 <code>Center</code> 还是 <code>Column</code> 都是布局（layout）挂件。前者可以定位到父组件的中心位置，而后者将会水平排列其子组件。<code>Column</code> 挂件有多种属性控制样式，这里使用了 <code>mainAxisAlignment</code> 将其子组件垂直居中（别糊涂，列的主轴是垂直方向）。</li>
-<li>屏幕右下角的按钮由 <code>FloatingActionButton</code> 描述，使用了加号图标，绑定之前定义好的 <code>_incrementCounter</code> 函数作为 <code>onPressed</code> 事件的处理者。</li>
-</ul>
-<p>好了说了这么多组件，让我们使用 Flutter tool 的 <code>Toggle Debug Paint</code> 指令直观感受一把。</p>
-<p><img data-src="https://ua6zcg.bn.files.1drv.com/y4mUF6sd-hueRZgEbFQx1UmVfQaYGtyEK6TXqqpD3Z-VB4Bj49dDyTKooH_yZESWfth4XK8OHc_p-WlaNIEaCBv51mZYrSlNxtjPJShjlLFWf1qLXV3-5OPc88KJQQxt2_WGdzV32Fljycb9HjfMPAaqaMUm6_tyXGZ_NJilhRUVpX92WQ8LRT1j_CQPOHxpUXajsuzAuDrht8FpZt-jc4ItA"></p>
-<h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2><p>笔者去年写了篇 Weex 从入门到放弃的上手文，说实话这次 Flutter 上手体验要比 Weex 好非常多——详实的文档，齐全的基础脚手架，轻松在手机/模拟器上运行应用。</p>
-<p>对于没有客户端开发经验的笔者来说，能看着文档打通流程（实际编译出一个安装包并在对应平台上安装、执行）是一件非常关键的事情，它意味着小白也能使用这项技术栈独立开发简单的应用，能给学习者十足的信心。过去接触 Weex，只能使用 Playground App 扫码跑 demo，非常的“半成品”，而 Flutter 轻松几个指令，就在你的设备上跑起了你的工程，赞！</p>
-<p>至于 Flutter 相关的信息，如学习 Dart 语言、Flutter 入门教程、代码范例、官方库接口等资料已经颇为丰富，Stack Overflow 上也有一些讨论的话题，对于一个处于 Beta 阶段的框架来很成熟了。</p>
-<p>接下来就期待国内外有更多关于 Flutter 的线上生产实践经验，笔者有空也会接着研究并分享 Flutter 的知识。</p>
-<p>如果你看了这篇文章感到意犹未尽，那么再提供一点延伸阅读：</p>
-<ul>
-<li><a href="https://www.youtube.com/watch?v=UUfXWzp0-DU">Flutter’s Rendering Pipeline</a></li>
-<li><a href="https://flutter.io/widgets-intro/">A Tour of the Flutter Widget Framework</a></li>
-</ul>
-<p>相信你能从上述两个方向发现更多一手、可靠、丰富的信息！</p>
-]]></content>
-      <categories>
-        <category>Web 前端</category>
-      </categories>
-      <tags>
-        <tag>flutter</tag>
-        <tag>app</tag>
-        <tag>dart</tag>
-        <tag>mobile</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>阿里，江湖再见</title>
     <url>/2018/goodbye-alibaba/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>还记得刚来阿里听到“一年香，三年陈，五年醇”的说法时，内心想着一定要至少待满五年再走；也还记得在争取转岗时，感到前途一片迷茫，每天都不想来上班，但也没想过要离开阿里。然而此时，精神上非常享受现在工作的我，身体扛不住了，不得不先离开这片江湖。</p>
@@ -990,7 +990,7 @@
 <p>两年的时光过得太快，经历了许多。现在回头想想，纵使是出了非常多幺蛾子、见识了不少奇葩，也都是满满的人生收获。除了专业和心智上的成长外，最珍贵的就是认识了一帮优秀的同学，有前面提过的一些前辈，也有许多同龄人。珈夜、瀚雷、卖家团队的前端小伙伴们、YunOS 相互取暖的基友们、畅谈技术的三哥、给我抛过橄榄枝的剑翘、羽括等等等等，是你们让我感受到了“一群有情有义的人，在一起做有价值的事情”。</p>
 <p>阿里这个大平台使我们相识相聚，就让我们江湖再见吧。</p>
 
-    <div id="aplayer-JkTTVUaH" class="aplayer aplayer-tag-marker meting-tag-marker"
+    <div id="aplayer-lLuCsLMZ" class="aplayer aplayer-tag-marker meting-tag-marker"
          data-id="1439534" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="true" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86" data-mini="true"
     ></div>
 ]]></content>
@@ -2615,6 +2615,59 @@
       </tags>
   </entry>
   <entry>
+    <title>Weex Android 发车指南（已弃车）</title>
+    <url>/2017/weex-android-quick-tutorial/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>还记得刚入职见到第一个 YunOS App 时，笔者问师兄 <code>Manifest.json</code> 文件是干嘛用的，师兄说如果你有 Android 开发经验的话就会明白了。当下笔者立马找了本电子书放在桌面准备苦读，结果…时至今日未曾宠幸过。对于没有一点 Java 经验的笔者来说，不知道何时才会迈出无线开发第一步，直到最近遇见了 Weex。</p>
+<a id="more"></a>
+
+<p>Weex 是集团去年推出的移动开发框架，Apache 顶级开源项目，已经被手淘、天猫等业务广泛使用，经历了双十一等活动的考验。它与传统的移动开发不同、也是吸引笔者的地方，即使用 Web 前端技术进行开发且能达到 Native 级别的性能体验。</p>
+<p>既然笔者毫无 Java 以及 Android 开发经验，必然会站在 <strong>纯前端人员的视角</strong> 来带领大家上车。此外，Weex 在集团内外的热度真的是非常之高，相关的文档、博文也是数不胜数，因此文中将会使用一些引用来保证心得的简洁同时给大家更多延伸的内容。</p>
+<h2 id="什么是-Weex-？"><a href="#什么是-Weex-？" class="headerlink" title="什么是 Weex ？"></a>什么是 Weex ？</h2><p>理论角度，<a href="http://weex.apache.org/cn/guide/intro/how-it-works.html">官方文档</a>上已经说得挺清楚的了，一张流程图可以说明一切。</p>
+<img data-src="https://v64blg.bn.files.1drv.com/y4mgihO5S41NuNsjSkDcgj3dmHqmgoCLojI9FuKZ1AaB76FK7uSYiyR1HhkKeNwtpDk3UZMvW0gsthHEg1eOyhcoOhZNzE3OzIMwciSO-vDQU5M2F15ZhKe7mU54RriMLd_T3SyoepJfMnxQH7fs_cYOP--tjsnJ5MRCqHwjuF8GC34xP6eODvWzGZbXl8qRj9xl4Enm2-xL6w3b6uRRPCAMQ" class="" title="Source: http:&#x2F;&#x2F;weex.apache.org&#x2F;cn&#x2F;guide&#x2F;images&#x2F;flow.png">
+
+<p>不过回到实际开发，Weex 是什么，这点在没有上手前很难从官方文档中得出结论。（网上有不少声音吐槽 Weex 文档写的不好，笔者持保留态度，不过确实从落地的角度来说，缺乏一些必要的细节，这个后面还会再提。此外作者还有一个疑问，官方文档究的目标群体究竟是谁？是传统的移动端开发者？还是 Web 前端背景的开发人员？至少笔者觉得不是后者。）</p>
+<p>以实践的角度，在笔者看来，Weex 有两部分，一是前端技术方面的自动化框架，在PC端帮助开发人员快速进行 vue 文件的开发、打包等，这部分可以在官网<a href="http://weex.apache.org/cn/guide/set-up-env.html">搭建开发环境</a>的教程中获取；二是使 JS 代码能在移动端成功运行起来的各平台 SDK 套件或源码，在编译各平台安装包时加入，<a href="http://weex.apache.org/cn/guide/integrate-to-your-app.html">文档</a>中也有提及。</p>
+<p>除了 Weex 本身，其配套的开发工具比较丰富。有脚手架 <a href="http://weex.apache.org/cn/guide/tools/toolkit.html">weex-toolkit</a> 、移动端的预览工具 <a href="http://weex.apache.org/cn/playground.html">Weex Playground</a> 、在线代码执行工具 <a href="http://dotwe.org/vue">Weex Playground</a> 等。</p>
+<p>最后，官方<a href="http://weex.apache.org/cn/references/">手册</a>介绍了 Weex 支持的 element 组件、内建的模块、各平台的 API 等开发时需要查阅的东东，很全面，在此不赘述。</p>
+<p>至于 Vue 我想 Web 前端开发者或多或少都是熟悉的，在此不多做介绍。</p>
+<h2 id="如何在-Android-上运行一个最简单的例子？"><a href="#如何在-Android-上运行一个最简单的例子？" class="headerlink" title="如何在 Android 上运行一个最简单的例子？"></a>如何在 Android 上运行一个最简单的例子？</h2><p>官方的入门教程包中含一段最简单的 <code>Hello world</code> 例程，既然 Weex 是为移动端设计，那么是个工程师都想赶快在手机上跑起例程来看看效果，而非在线上模拟器中体验。此时就暴露了文档的缺失——读完《<a href="https://weex.incubator.apache.org/cn/guide/integrate-to-your-app.html">集成 Weex 到已有应用</a>》一文档后，对没经验的人来说，甚至没办法成功编译出 APK 文件，可谓是出师未捷身先死。</p>
+<p>同时，现实总是残酷的。想在 Android 上运行 Weex 应用，还是需要懂得配置 Android 应用、编写一些 Java 代码，这对前端工程师来说，又是一次 <del>雪上加霜</del> 成长的机会=。=</p>
+<p>在这里推荐两篇文章帮助大家快速上车，正是通过它们笔者成功实现了最小例程的编译及运行：</p>
+<p>第一篇是来自 ATA 的《<a href="https://www.atatech.org/articles/57091">weex新手指南</a>》，其中包含一个 “知乎日报” 应用源码的详细分析，从中可以知道 <strong>为什么要编写那些 Java 代码</strong> 。</p>
+<p>第二篇文章名为《<a href="http://blog.csdn.net/mengzuixilou/article/details/52690960">Weex Android 初体验</a>》，其更多地覆盖了实践细节上的问题，并且提供了一个类似最小例程的 github repo，可以 <strong>参考其 Java 源码编写自己的代码</strong> 。</p>
+<h2 id="踩坑心得"><a href="#踩坑心得" class="headerlink" title="踩坑心得"></a>踩坑心得</h2><ol>
+<li>Weex 环境中没有 DOM，因此无法使用像 Jquery 之类关于 DOM 操作的类库。同样的道理，Weex 中样式只支持 <code>px</code> 单位，无法使用 <code>em</code> , <code>rem</code> 。</li>
+<li>Weex 中页面宽度是以 750px 作为标准的！更多信息请参考《<a href="http://coderyi.com/posts/weex1/">Weex学习与实践（一）</a>》，评论区勾股还贴出了社区讨论的链接。</li>
+<li>开发时一定要使用手机版的 Playground 进行预览，而不是观察本地浏览器中的画面！</li>
+</ol>
+<h2 id="更多阅读"><a href="#更多阅读" class="headerlink" title="更多阅读"></a>更多阅读</h2><ul>
+<li>《<a href="https://www.atatech.org/articles/65406">WEEX系列文章汇总</a>》：Weex 官方的 ATA 文章，入口帖</li>
+<li>《<a href="https://www.atatech.org/articles/58474">关于Weex，你想了解的一切都在这里</a>》：又一 Weex 官方的 ATA 文章，入口帖</li>
+<li>《<a href="https://yq.aliyun.com/articles/57996">weex vs react-native</a>》：同为前端无线技术，不对比就难以了解 Weex 的诉求是什么，对吧</li>
+<li>《<a href="https://www.atatech.org/articles/58910">Weex总结之Android Weex工程搭建趟坑</a>》：通俗易懂的实践文</li>
+<li>《<a href="https://www.atatech.org/articles/57091">weex新手指南</a>》：针对最简单的 Android Weex 代码做了详细说明，并提供了一个详细案例（知乎日报）的分析和 github 源码</li>
+</ul>
+<h2 id="姿势观摩"><a href="#姿势观摩" class="headerlink" title="姿势观摩"></a>姿势观摩</h2><ul>
+<li><a href="https://github.com/Hanks10100/weex-vue-examples">Weex Vue Examples</a>：包含很多基本组件使用的范例</li>
+<li><a href="https://github.com/weexteam/weex-hackernews">weex-hackernews</a>：很牛逼的 weex 版 hackernews app，包含 Android 工程在内所有的代码，亲测编译 APK 到 7.0 系统中运行</li>
+<li><a href="https://github.com/vuejs/vue-hackernews-2.0">vue-hakcernews-2.0</a>：想了解更多 Vue 开发可以关注此 repo，web 版 hackernews，Vue 作者亲自开发</li>
+</ul>
+<h2 id="后话"><a href="#后话" class="headerlink" title="后话"></a>后话</h2><h3 id="没有详细的文档讲解如何产出最终-APK-文件，蛋疼的-CSS-写法，以及种种…"><a href="#没有详细的文档讲解如何产出最终-APK-文件，蛋疼的-CSS-写法，以及种种…" class="headerlink" title="没有详细的文档讲解如何产出最终 APK 文件，蛋疼的 CSS 写法，以及种种…"></a>没有详细的文档讲解如何产出最终 APK 文件，蛋疼的 CSS 写法，以及种种…</h3><h3 id="已弃坑（微笑脸"><a href="#已弃坑（微笑脸" class="headerlink" title="已弃坑（微笑脸"></a>已弃坑（微笑脸</h3>]]></content>
+      <categories>
+        <category>Web 前端</category>
+      </categories>
+      <tags>
+        <tag>app</tag>
+        <tag>mobile</tag>
+        <tag>javascript</tag>
+        <tag>vue</tag>
+        <tag>weex</tag>
+        <tag>android</tag>
+        <tag>web</tag>
+        <tag>tutorial</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>如何在 X86-64 下比较精准地测量系统性能</title>
     <url>/2019/x86-performance-qna/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>这篇博文来自 Facebook 「2016年系統軟體課程」小组里的一个<a href="https://www.facebook.com/groups/system.software2016/permalink/1124571464289024/">问答</a>。背景是正在修 Jserv 课程的一位同学 Louie Lu 在对作业 Phonebook 进行性能测试时，疑惑自己的电脑系统同时也跑着一堆别的应用如浏览器、音乐播放器等，那么怎样才能确认硬件资源是被他的测试程序最大化使用了呢？</p>
@@ -2678,63 +2731,10 @@
       </tags>
   </entry>
   <entry>
-    <title>Weex Android 发车指南（已弃车）</title>
-    <url>/2017/weex-android-quick-tutorial/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>还记得刚入职见到第一个 YunOS App 时，笔者问师兄 <code>Manifest.json</code> 文件是干嘛用的，师兄说如果你有 Android 开发经验的话就会明白了。当下笔者立马找了本电子书放在桌面准备苦读，结果…时至今日未曾宠幸过。对于没有一点 Java 经验的笔者来说，不知道何时才会迈出无线开发第一步，直到最近遇见了 Weex。</p>
-<a id="more"></a>
-
-<p>Weex 是集团去年推出的移动开发框架，Apache 顶级开源项目，已经被手淘、天猫等业务广泛使用，经历了双十一等活动的考验。它与传统的移动开发不同、也是吸引笔者的地方，即使用 Web 前端技术进行开发且能达到 Native 级别的性能体验。</p>
-<p>既然笔者毫无 Java 以及 Android 开发经验，必然会站在 <strong>纯前端人员的视角</strong> 来带领大家上车。此外，Weex 在集团内外的热度真的是非常之高，相关的文档、博文也是数不胜数，因此文中将会使用一些引用来保证心得的简洁同时给大家更多延伸的内容。</p>
-<h2 id="什么是-Weex-？"><a href="#什么是-Weex-？" class="headerlink" title="什么是 Weex ？"></a>什么是 Weex ？</h2><p>理论角度，<a href="http://weex.apache.org/cn/guide/intro/how-it-works.html">官方文档</a>上已经说得挺清楚的了，一张流程图可以说明一切。</p>
-<img data-src="https://v64blg.bn.files.1drv.com/y4mgihO5S41NuNsjSkDcgj3dmHqmgoCLojI9FuKZ1AaB76FK7uSYiyR1HhkKeNwtpDk3UZMvW0gsthHEg1eOyhcoOhZNzE3OzIMwciSO-vDQU5M2F15ZhKe7mU54RriMLd_T3SyoepJfMnxQH7fs_cYOP--tjsnJ5MRCqHwjuF8GC34xP6eODvWzGZbXl8qRj9xl4Enm2-xL6w3b6uRRPCAMQ" class="" title="Source: http:&#x2F;&#x2F;weex.apache.org&#x2F;cn&#x2F;guide&#x2F;images&#x2F;flow.png">
-
-<p>不过回到实际开发，Weex 是什么，这点在没有上手前很难从官方文档中得出结论。（网上有不少声音吐槽 Weex 文档写的不好，笔者持保留态度，不过确实从落地的角度来说，缺乏一些必要的细节，这个后面还会再提。此外作者还有一个疑问，官方文档究的目标群体究竟是谁？是传统的移动端开发者？还是 Web 前端背景的开发人员？至少笔者觉得不是后者。）</p>
-<p>以实践的角度，在笔者看来，Weex 有两部分，一是前端技术方面的自动化框架，在PC端帮助开发人员快速进行 vue 文件的开发、打包等，这部分可以在官网<a href="http://weex.apache.org/cn/guide/set-up-env.html">搭建开发环境</a>的教程中获取；二是使 JS 代码能在移动端成功运行起来的各平台 SDK 套件或源码，在编译各平台安装包时加入，<a href="http://weex.apache.org/cn/guide/integrate-to-your-app.html">文档</a>中也有提及。</p>
-<p>除了 Weex 本身，其配套的开发工具比较丰富。有脚手架 <a href="http://weex.apache.org/cn/guide/tools/toolkit.html">weex-toolkit</a> 、移动端的预览工具 <a href="http://weex.apache.org/cn/playground.html">Weex Playground</a> 、在线代码执行工具 <a href="http://dotwe.org/vue">Weex Playground</a> 等。</p>
-<p>最后，官方<a href="http://weex.apache.org/cn/references/">手册</a>介绍了 Weex 支持的 element 组件、内建的模块、各平台的 API 等开发时需要查阅的东东，很全面，在此不赘述。</p>
-<p>至于 Vue 我想 Web 前端开发者或多或少都是熟悉的，在此不多做介绍。</p>
-<h2 id="如何在-Android-上运行一个最简单的例子？"><a href="#如何在-Android-上运行一个最简单的例子？" class="headerlink" title="如何在 Android 上运行一个最简单的例子？"></a>如何在 Android 上运行一个最简单的例子？</h2><p>官方的入门教程包中含一段最简单的 <code>Hello world</code> 例程，既然 Weex 是为移动端设计，那么是个工程师都想赶快在手机上跑起例程来看看效果，而非在线上模拟器中体验。此时就暴露了文档的缺失——读完《<a href="https://weex.incubator.apache.org/cn/guide/integrate-to-your-app.html">集成 Weex 到已有应用</a>》一文档后，对没经验的人来说，甚至没办法成功编译出 APK 文件，可谓是出师未捷身先死。</p>
-<p>同时，现实总是残酷的。想在 Android 上运行 Weex 应用，还是需要懂得配置 Android 应用、编写一些 Java 代码，这对前端工程师来说，又是一次 <del>雪上加霜</del> 成长的机会=。=</p>
-<p>在这里推荐两篇文章帮助大家快速上车，正是通过它们笔者成功实现了最小例程的编译及运行：</p>
-<p>第一篇是来自 ATA 的《<a href="https://www.atatech.org/articles/57091">weex新手指南</a>》，其中包含一个 “知乎日报” 应用源码的详细分析，从中可以知道 <strong>为什么要编写那些 Java 代码</strong> 。</p>
-<p>第二篇文章名为《<a href="http://blog.csdn.net/mengzuixilou/article/details/52690960">Weex Android 初体验</a>》，其更多地覆盖了实践细节上的问题，并且提供了一个类似最小例程的 github repo，可以 <strong>参考其 Java 源码编写自己的代码</strong> 。</p>
-<h2 id="踩坑心得"><a href="#踩坑心得" class="headerlink" title="踩坑心得"></a>踩坑心得</h2><ol>
-<li>Weex 环境中没有 DOM，因此无法使用像 Jquery 之类关于 DOM 操作的类库。同样的道理，Weex 中样式只支持 <code>px</code> 单位，无法使用 <code>em</code> , <code>rem</code> 。</li>
-<li>Weex 中页面宽度是以 750px 作为标准的！更多信息请参考《<a href="http://coderyi.com/posts/weex1/">Weex学习与实践（一）</a>》，评论区勾股还贴出了社区讨论的链接。</li>
-<li>开发时一定要使用手机版的 Playground 进行预览，而不是观察本地浏览器中的画面！</li>
-</ol>
-<h2 id="更多阅读"><a href="#更多阅读" class="headerlink" title="更多阅读"></a>更多阅读</h2><ul>
-<li>《<a href="https://www.atatech.org/articles/65406">WEEX系列文章汇总</a>》：Weex 官方的 ATA 文章，入口帖</li>
-<li>《<a href="https://www.atatech.org/articles/58474">关于Weex，你想了解的一切都在这里</a>》：又一 Weex 官方的 ATA 文章，入口帖</li>
-<li>《<a href="https://yq.aliyun.com/articles/57996">weex vs react-native</a>》：同为前端无线技术，不对比就难以了解 Weex 的诉求是什么，对吧</li>
-<li>《<a href="https://www.atatech.org/articles/58910">Weex总结之Android Weex工程搭建趟坑</a>》：通俗易懂的实践文</li>
-<li>《<a href="https://www.atatech.org/articles/57091">weex新手指南</a>》：针对最简单的 Android Weex 代码做了详细说明，并提供了一个详细案例（知乎日报）的分析和 github 源码</li>
-</ul>
-<h2 id="姿势观摩"><a href="#姿势观摩" class="headerlink" title="姿势观摩"></a>姿势观摩</h2><ul>
-<li><a href="https://github.com/Hanks10100/weex-vue-examples">Weex Vue Examples</a>：包含很多基本组件使用的范例</li>
-<li><a href="https://github.com/weexteam/weex-hackernews">weex-hackernews</a>：很牛逼的 weex 版 hackernews app，包含 Android 工程在内所有的代码，亲测编译 APK 到 7.0 系统中运行</li>
-<li><a href="https://github.com/vuejs/vue-hackernews-2.0">vue-hakcernews-2.0</a>：想了解更多 Vue 开发可以关注此 repo，web 版 hackernews，Vue 作者亲自开发</li>
-</ul>
-<h2 id="后话"><a href="#后话" class="headerlink" title="后话"></a>后话</h2><h3 id="没有详细的文档讲解如何产出最终-APK-文件，蛋疼的-CSS-写法，以及种种…"><a href="#没有详细的文档讲解如何产出最终-APK-文件，蛋疼的-CSS-写法，以及种种…" class="headerlink" title="没有详细的文档讲解如何产出最终 APK 文件，蛋疼的 CSS 写法，以及种种…"></a>没有详细的文档讲解如何产出最终 APK 文件，蛋疼的 CSS 写法，以及种种…</h3><h3 id="已弃坑（微笑脸"><a href="#已弃坑（微笑脸" class="headerlink" title="已弃坑（微笑脸"></a>已弃坑（微笑脸</h3>]]></content>
-      <categories>
-        <category>Web 前端</category>
-      </categories>
-      <tags>
-        <tag>app</tag>
-        <tag>mobile</tag>
-        <tag>javascript</tag>
-        <tag>vue</tag>
-        <tag>weex</tag>
-        <tag>android</tag>
-        <tag>web</tag>
-        <tag>tutorial</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>2019 泰国行游记（一）</title>
     <url>/2019/2019-thai-trip-1/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script>
-    <div id="aplayer-UliXQppN" class="aplayer aplayer-tag-marker meting-tag-marker"
+    <div id="aplayer-qtlkmgXt" class="aplayer aplayer-tag-marker meting-tag-marker"
          data-id="280557" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="true" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86" data-mini="true"
     ></div>
 
@@ -2857,7 +2857,7 @@
     <title>2019 泰国行游记（二）</title>
     <url>/2019/2019-thai-trip-2/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script>
-    <div id="aplayer-WlLfsBzg" class="aplayer aplayer-tag-marker meting-tag-marker"
+    <div id="aplayer-dKcekkKJ" class="aplayer aplayer-tag-marker meting-tag-marker"
          data-id="1318733599" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="true" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86" data-mini="true"
     ></div>
 
@@ -3011,7 +3011,7 @@
     <title>2019 泰国行游记（三）</title>
     <url>/2019/2019-thai-trip-3/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script>
-    <div id="aplayer-ChCqLVCT" class="aplayer aplayer-tag-marker meting-tag-marker"
+    <div id="aplayer-KtylvgdE" class="aplayer aplayer-tag-marker meting-tag-marker"
          data-id="76840" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="true" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86" data-mini="true"
     ></div>
 
@@ -3175,7 +3175,7 @@
     <title>2019 泰国行游记（五）</title>
     <url>/2019/2019-thai-trip-5/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script>
-    <div id="aplayer-fUtylLjq" class="aplayer aplayer-tag-marker meting-tag-marker"
+    <div id="aplayer-UINSJekE" class="aplayer aplayer-tag-marker meting-tag-marker"
          data-id="540596309" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="true" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86" data-mini="true"
     ></div>
 
@@ -3305,7 +3305,7 @@
     <title>2019 泰国行游记（六）</title>
     <url>/2019/2019-thai-trip-6/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script>
-    <div id="aplayer-CinvTZkU" class="aplayer aplayer-tag-marker meting-tag-marker"
+    <div id="aplayer-xZRwHKRY" class="aplayer aplayer-tag-marker meting-tag-marker"
          data-id="18663218" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="true" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86" data-mini="true"
     ></div>
 
@@ -3399,7 +3399,7 @@
     <title>2019 说走就走的珠海之旅（上）</title>
     <url>/2019/2019-zhuhai-trip-1/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script>
-    <div id="aplayer-uCCqSbcI" class="aplayer aplayer-tag-marker meting-tag-marker"
+    <div id="aplayer-VMzBbIyA" class="aplayer aplayer-tag-marker meting-tag-marker"
          data-id="18663184" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="true" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86" data-mini="true"
     ></div>
 
@@ -3529,7 +3529,7 @@
     <title>2019 说走就走的珠海之旅（下）</title>
     <url>/2019/2019-zhuhai-trip-2/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script>
-    <div id="aplayer-HRcVewJu" class="aplayer aplayer-tag-marker meting-tag-marker"
+    <div id="aplayer-xTQmSxoo" class="aplayer aplayer-tag-marker meting-tag-marker"
          data-id="18663106" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="true" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86" data-mini="true"
     ></div>
 
