@@ -3,7 +3,13 @@ title: 微软中国招聘，期待你的加入
 date: 2019-04-20 01:01:00
 ---
 
-{% img "https://vk6ycg.bn.files.1drv.com/y4mmhHpXyGevXrkYaaI8kBMjnuVxjhc2w9tURSKbT3ZN_omNABhvdmHgD37_xAxSxsrXgj9Ig0UlvbSpJI_kIm9MuN89_5ljik9MyZM4gpRkywMvFvqMmi7Lsgs37OiYcz2RqiP1I1fVS9D0N1ofzCPchrL9Xsmg_8OPDJQSJksMeGTxWND2fj4JB2Pai21uLPWNpF-oViwf-ZCvUc5Qg9M4g?width=2016&height=1512&cropmode=none" %}
+{% video "https://cdnhk.blob.core.windows.net/blog/recruit/suzhou-wework.mp4" %}
+
+
+{% raw %}
+<div style="display:flex;justify-content:center;color:grey;font-size:0.9em;">2021年，位于苏州中心的苏州中心🤣 WeWork 办公室即将启用！同时微软二期大楼正在修建中~</div>
+{% endraw %}
+
 
 
 
