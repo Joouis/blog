@@ -171,7 +171,7 @@ These packages are just official engineering implementations, not so well-docume
 
 ## Frequently asked issues
 
-### 1. Debugging and verification approach
+### Debugging and verification approach
 
 You can't verify your change until the production release, also the change for the production environment can't be verified on other staging environment since they are using different hosts. So the question is how to debug or do verification?
 
@@ -180,19 +180,19 @@ Basically you can run a local server to host your application with adding a host
 And it's better to verify your change on both common window and incognito window after the release.
 
 
-### 2. InteractionRequiredAuthError: AADSTS50058: A silent sign-in request was sent but no user is signed in.
+### InteractionRequiredAuthError: AADSTS50058: A silent sign-in request was sent but no user is signed in.
 
 This error need interaction sign in, thus catch the error and call `acquireTokenRedirect` method to sign in.
 
 If the error message contains like this "The cookies used to represent the user's session were not sent in the request to Azure AD. This could happen if the user is using Internet Explorer or Edge, and the web app sending the silent sign-in request is in different IE security zone than the Azure AD endpoint (login.microsoftonline.com).", upgrade your MSAL.js v1.x to v2.x. Check more details [here](https://github.com/AzureAD/microsoft-authentication-library-for-js/issues/1765).
 
 
-### 3. The frame attempting navigation of the top-level window is sandboxed, but the flag of 'allow-top-navigation' or 'allow-top-navigation-by-user-activation' is not set.
+### The frame attempting navigation of the top-level window is sandboxed, but the flag of 'allow-top-navigation' or 'allow-top-navigation-by-user-activation' is not set.
 
 This error usually occurred while requesting token, mostly it's caused by wrong reply URL which iframe could not load it to request token silently. So make sure your reply URL pointing to the blank static HTML resource is right. Additional, this error message is somehow confusing cause it does not tell the root cause directly, check more details [here](https://github.com/AzureAD/microsoft-authentication-library-for-js/issues/1199).
 
 
-### 4. BrowserAuthError: pcke_not_created: The PCKE code challenge and verifier could not be generated.
+### BrowserAuthError: pcke_not_created: The PCKE code challenge and verifier could not be generated.
 
 Check the protocol and be sure it's HTTPS.
 
