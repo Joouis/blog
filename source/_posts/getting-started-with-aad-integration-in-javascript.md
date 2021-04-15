@@ -105,7 +105,7 @@ function handleResponse(response) {
     const currentAccounts = msalInstance.getAllAccounts();
 
     if (currentAccounts === null) {
-        // No accounts detected, need login
+        // No accounts detected, need to login
         msalInstance.loginRedirect(loginRequest);
     } else if (currentAccounts.length > 1) {
         // Add choose account code here
