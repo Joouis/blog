@@ -1,7 +1,7 @@
 ---
 title: Getting started with AAD integration in JavaScript
 date: 2021-04-14 08:05:13
-updated: 2021-04-14 16:06:00
+updated: 2021-04-15 12:57:00
 excerpt: " "
 categories:
 - Web 前端
@@ -169,23 +169,32 @@ These packages are just official engineering implementations, not so well-docume
 
 
 
-## Frequently asked questions
+## Frequently asked issues
 
-1. > InteractionRequiredAuthError: AADSTS50058: A silent sign-in request was sent but no user is signed in.
+### 1. Debugging and verification approach
 
-  This error need interaction sign in, thus catch the error and call `acquireTokenRedirect` method to sign in.
+You can't verify your change until the production release, also the change for the production environment can't be verified on other staging environment since they are using different hosts. So the question is how to debug or do verification?
 
-  If the error message contains like this "The cookies used to represent the user's session were not sent in the request to Azure AD. This could happen if the user is using Internet Explorer or Edge, and the web app sending the silent sign-in request is in different IE security zone than the Azure AD endpoint (login.microsoftonline.com).", upgrade your MSAL.js v1.x to v2.x. Check more details [here](https://github.com/AzureAD/microsoft-authentication-library-for-js/issues/1765).
+Basically you can run a local server to host your application with adding a host record which points the production host to your local IP address like `127.0.0.1` to make it. Remember to enable HTTPS protocol for your local server.
 
-
-2. > The frame attempting navigation of the top-level window is sandboxed, but the flag of 'allow-top-navigation' or 'allow-top-navigation-by-user-activation' is not set.
-
-  This error usually occurred while requesting token, mostly it's caused by wrong reply URL which iframe could not load it to request token silently. So make sure your reply URL pointing to the blank static HTML resource is right. Additional, this error message is somehow confusing cause it does not tell the root cause directly, check more details [here](https://github.com/AzureAD/microsoft-authentication-library-for-js/issues/1199).
+And it's better to verify your change on both common window and incognito window after the release.
 
 
-3. > BrowserAuthError: pcke_not_created: The PCKE code challenge and verifier could not be generated.
+### 2. InteractionRequiredAuthError: AADSTS50058: A silent sign-in request was sent but no user is signed in.
 
-  Check the protocol and be sure it's HTTPS.
+This error need interaction sign in, thus catch the error and call `acquireTokenRedirect` method to sign in.
+
+If the error message contains like this "The cookies used to represent the user's session were not sent in the request to Azure AD. This could happen if the user is using Internet Explorer or Edge, and the web app sending the silent sign-in request is in different IE security zone than the Azure AD endpoint (login.microsoftonline.com).", upgrade your MSAL.js v1.x to v2.x. Check more details [here](https://github.com/AzureAD/microsoft-authentication-library-for-js/issues/1765).
+
+
+### 3. The frame attempting navigation of the top-level window is sandboxed, but the flag of 'allow-top-navigation' or 'allow-top-navigation-by-user-activation' is not set.
+
+This error usually occurred while requesting token, mostly it's caused by wrong reply URL which iframe could not load it to request token silently. So make sure your reply URL pointing to the blank static HTML resource is right. Additional, this error message is somehow confusing cause it does not tell the root cause directly, check more details [here](https://github.com/AzureAD/microsoft-authentication-library-for-js/issues/1199).
+
+
+### 4. BrowserAuthError: pcke_not_created: The PCKE code challenge and verifier could not be generated.
+
+Check the protocol and be sure it's HTTPS.
 
 
 
