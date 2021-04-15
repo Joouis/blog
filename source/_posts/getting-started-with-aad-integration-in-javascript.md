@@ -179,6 +179,27 @@ Basically you can run a local server to host your application with adding a host
 And it's better to verify your change on both common window and incognito window after the release.
 
 
+
+### Difference between access token, ID token, and refresh token
+
+We observed that `/oauth2/v2.0/token` return 3 tokens: `access_token`,  `id_token` and `refresh_token`.
+
+`access_token` enables clients to securely call protected web APIs, and are used by web APIs to perform authentication and authorization. For more details please check [Microsoft identity platform access tokens](https://docs.microsoft.com/en-us/azure/active-directory/develop/access-tokens).
+
+`id_token` should be used to validate that a user is who they claim to be and get additional useful information about them, it can be sent alongside or instead of an access token. We have not used it. For more details please check [Microsoft identity platform ID tokens](https://docs.microsoft.com/en-us/azure/active-directory/develop/id-tokens).
+
+`access_token` and `id_token` are both JWT which consists of a header, payload, and signature portion, that's why they look so similiar though these two strings are base64 encoded. We mainly use access token for the application, it contains more information than ID token, and we can get user info like name, E-mail from it.
+
+Because access tokens are valid for only a short period of time, authorization servers will sometimes issue a refresh token at the same time the access token is issued. MSAL.js will exchange the `refresh_token` while request token silently for a new access token when needed.
+
+
+
+### How to change token expiration time?
+
+Please check this [answer from StackOverflow](https://stackoverflow.com/questions/31162257/azure-oauth-how-to-change-token-expiration-time).
+
+
+
 ### InteractionRequiredAuthError: AADSTS50058: A silent sign-in request was sent but no user is signed in.
 
 This error need interaction sign in, thus catch the error and call `acquireTokenRedirect` method to sign in.
@@ -186,9 +207,11 @@ This error need interaction sign in, thus catch the error and call `acquireToken
 If the error message contains like this "The cookies used to represent the user's session were not sent in the request to Azure AD. This could happen if the user is using Internet Explorer or Edge, and the web app sending the silent sign-in request is in different IE security zone than the Azure AD endpoint (login.microsoftonline.com).", upgrade your MSAL.js v1.x to v2.x. Check more details [here](https://github.com/AzureAD/microsoft-authentication-library-for-js/issues/1765).
 
 
+
 ### The frame attempting navigation of the top-level window is sandboxed, but the flag of 'allow-top-navigation' or 'allow-top-navigation-by-user-activation' is not set.
 
 This error usually occurred while requesting token, mostly it's caused by wrong reply URL which iframe could not load it to request token silently. So make sure your reply URL pointing to the blank static HTML resource is right. Additional, this error message is somehow confusing cause it does not tell the root cause directly, check more details [here](https://github.com/AzureAD/microsoft-authentication-library-for-js/issues/1199).
+
 
 
 ### BrowserAuthError: pcke_not_created: The PCKE code challenge and verifier could not be generated.
@@ -207,3 +230,5 @@ Check the protocol and be sure it's HTTPS.
 - [MSAL Application configuration options](https://docs.microsoft.com/en-us/azure/active-directory/develop/msal-client-application-configuration)
 - [Permissions and consent in the Microsoft identity platform](https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-permissions-and-consent)
 - [Configurable token lifetimes in the Microsoft identity platform](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-configurable-token-lifetimes)
+- [Microsoft identity platform ID tokens](https://docs.microsoft.com/en-us/azure/active-directory/develop/id-tokens)
+- [Microsoft identity platform access tokens](https://docs.microsoft.com/en-us/azure/active-directory/develop/access-tokens)
