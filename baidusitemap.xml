@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://blog.joouis.com/2021/getting-started-with-aad-integration-in-javascript/</loc>
+    <lastmod>2021-04-15</lastmod>
+  </url>
+  <url>
     <loc>https://blog.joouis.com/2021/my-first-step-to-jazz/</loc>
     <lastmod>2021-02-25</lastmod>
   </url>
