@@ -123,7 +123,9 @@ After signed in successfully, page will redirect to the redirect URI we set befo
 
 ![](https://bn1301files.storage.live.com/y4mnLQosr7Z7_nxS_rVSvb0YPxm98sawmOYlQKq0ZKKoRrJxWsu1E_c29UoOEXRwpQA9zJCmFYRZkoh3c7oW4_bhcmsJ7vDU2vgsxmd5zo6dSK8b-_2i4uCa1Aplz_ojV3-Qym1yYTYpJXY4NxaRNvHOcuTJy-uAnCoxb2oMv0XHkMA-1EgeGdm4VruBuj_e4_g?width=1928&height=70&cropmode=none)
 
-Then we can use the authorization code to request an access token, of course the library will encapsulate the details for us. We don't even have a chance to touch it.
+Then the library will parse the authorization code and send the request to get token back directly, all logics encapsulated. Here is the structure of the decoded code.
+
+![](https://bn1301files.storage.live.com/y4mgf0dFCtw_HTR9DZSyoMR4-srEHFSbwXeQO8D8gATlUzlPmdfxEqYDA-eh-68LAnbiBgLV8r8Uzv357s8vZKXV4x_br015B2Y_EYVpoEhGidzQJWU32IDqVENpB0TbUAC0Wxi6dbQWDywWVR11Oy9gbZdRumKU820wr1lX0eKYZJzv8naaNRNohaCmyKFoDAb?width=1181&height=227&cropmode=none)
 
 ### Acquire a token with a redirect
 
