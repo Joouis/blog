@@ -2,7 +2,7 @@
 title: Getting started with AAD integration in JavaScript
 date: 2021-04-14 08:05:13
 updated: 2021-04-15 12:57:00
-excerpt: " "
+description: My sharing for the UX team about the auth process, components and some empirical knowledges from the business.
 categories:
 - Web 前端
 tags:
