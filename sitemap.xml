@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.joouis.com/2021/3-idiots-while-driving/</loc>
+    
+    <lastmod>2021-04-26</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.joouis.com/2021/getting-started-with-aad-integration-in-javascript/</loc>
     
     <lastmod>2021-04-15</lastmod>
@@ -410,7 +417,7 @@
 
   <url>
     <loc>https://blog.joouis.com/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -418,1351 +425,1372 @@
   
   <url>
     <loc>https://blog.joouis.com/tags/trip/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/travel/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/holiday/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/thailand/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/self-driving/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/bangkok/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/hua-hin/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/work/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/referral/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/recruit/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/microsoft/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/feedback/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/review/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/blog/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/anniversary/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/hexo/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/refactor/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/embedded-system-course/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/embedded-system/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/arm/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/cortex-a8/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/rom/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/ram/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/u-boot/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/boot/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/os/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/github/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/vector/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/gui/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/twin/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/window-system/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/rapid-prototyping/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/svg/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/wearable-devices/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/%C2%B5GUI/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/stm32/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/svg-tiny/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/libsvgtiny/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/cairo/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/xml/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/parser/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/libxml2/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/dom/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/ezxml/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/flutter/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/app/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/dart/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/mobile/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/leave/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/javascript/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/react/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/hoc/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/interview/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/alibaba/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/structure-view/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/outline/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/ctags/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/open-source/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/outline-view/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/structure-view/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/atom/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/ide/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/gnu/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/compiler/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/jit/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/gdb/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/cgdb/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/disassembly/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/binary/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/defusing-binary-bomb/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/context-switch/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/hackathon/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/reward/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/ubuntu/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/vim/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/config/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/music/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/jazz/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/taiwan/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/stack/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/assembly/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/disassemble/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/c/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/gcc/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/mysql/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/note/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/embedded/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/CS/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/collaborate/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/optimization/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/counter/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/history/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/politics/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/management/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/leadership/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/ownership/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/communication/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/nonviolent-communication/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/efficiency/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/empathy/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/array/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/remove-duplicates/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/stackoverflow/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/SSR/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/server-side/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/render/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/isomorphic/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/silicon-valley/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/software/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/inspiration/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/vuetify-playground/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/vue/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/vuejs/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/vuetify/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/vuetifyjs/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/responsive/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/demo/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/weex/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/android/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/web/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/tutorial/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/free-software/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/x86/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/performance/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/cache/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/zhuhai/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/macau/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/food/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/e2e-test/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/nodejs/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/ui-test/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/jest/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/testcafe/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/puppeteer/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/kusto/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/geneva/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/api/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/workflow/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/uml/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/scheduler/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/machine-learning/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/linear-regression/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/regularization/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/gradient-descent/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/feature-engineering/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/leetcode/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/recursion/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/iteration/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/prefetch/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/avx/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/sse/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/streaming-SIMD-extensions/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/instruction-set/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/photo/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/comparison/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/samsung/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/xiaomi/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/note9/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/mi10-pro/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/rwd/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/flex/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/css/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/test/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/unit-test/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/integration-test/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/mocha/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/jasmine/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/cucumber/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/chai/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/unexpected/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/karma/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/ava/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/sinon/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/enzyme/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/testdouble/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/istanbul/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/blanket/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/protractor/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/nightwatch/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/phantom/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/casper/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/selenium/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/appium/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/webdriverio/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/cypress/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/nightmare/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/codeceptjs/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/oauth/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/azure/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/aad/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/auth/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/msal/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/tags/microsoft-identity/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.joouis.com/tags/driving/</loc>
+    <lastmod>2021-04-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.joouis.com/tags/idiots/</loc>
+    <lastmod>2021-04-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.joouis.com/tags/illegal/</loc>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1771,63 +1799,63 @@
   
   <url>
     <loc>https://blog.joouis.com/categories/%E4%BA%BA%E7%94%9F%E6%B8%B8%E8%AE%B0/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/categories/%E6%8A%80%E6%9C%AF%E4%BA%BA%E7%94%9F%E8%B0%88/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%BA%95%E5%B1%82/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/categories/%E7%AC%94%E8%AE%B0%E5%B0%8F%E6%8A%84/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/categories/Web-%E5%89%8D%E7%AB%AF/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/categories/%E7%88%B1%E4%B9%90%E4%B9%8B%E5%9F%8E/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/categories/%E8%AF%BB%E4%B9%A6%E7%AE%80%E8%AE%B0/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/categories/ML-DL/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.joouis.com/categories/%E6%95%B0%E7%A0%81%E4%BD%93%E9%AA%8C/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>

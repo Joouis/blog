@@ -6,7 +6,7 @@
   <link href="https://blog.joouis.com/atom.xml" rel="self"/>
   
   <link href="https://blog.joouis.com/"/>
-  <updated>2021-04-15T04:57:00.000Z</updated>
+  <updated>2021-04-26T04:29:38.000Z</updated>
   <id>https://blog.joouis.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>开车有三宝</title>
+    <link href="https://blog.joouis.com/2021/3-idiots-while-driving/"/>
+    <id>https://blog.joouis.com/2021/3-idiots-while-driving/</id>
+    <published>2021-04-26T04:29:38.000Z</published>
+    <updated>2021-04-26T04:29:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>开车有三宝：</p><p>变道、转向不打灯，</p><p>并线或占两车道行驶，</p><p>限速 60 开 40，限速 80 开 50，限速 120 开 80。</p><p>“奇葩”的违规行为数不胜数，以上三宝只因过于常见可以作为模式归纳。</p><p>三宝们配合上横冲直撞的电瓶车“大军”，在马路上构建出一幅幅和谐、美好的画面。</p><p>真好，呵呵。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    <category term="人生游记" scheme="https://blog.joouis.com/categories/%E4%BA%BA%E7%94%9F%E6%B8%B8%E8%AE%B0/"/>
+    
+    
+    <category term="driving" scheme="https://blog.joouis.com/tags/driving/"/>
+    
+    <category term="idiots" scheme="https://blog.joouis.com/tags/idiots/"/>
+    
+    <category term="illegal" scheme="https://blog.joouis.com/tags/illegal/"/>
+    
+  </entry>
   
   <entry>
     <title>Getting started with AAD integration in JavaScript</title>
@@ -666,38 +694,6 @@
     <category term="boot" scheme="https://blog.joouis.com/tags/boot/"/>
     
     <category term="os" scheme="https://blog.joouis.com/tags/os/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>小练习：通过反汇编一段C代码观察栈行为</title>
-    <link href="https://blog.joouis.com/2019/observe-stack-behavior-by-disassembling-a-simple-c-code/"/>
-    <id>https://blog.joouis.com/2019/observe-stack-behavior-by-disassembling-a-simple-c-code/</id>
-    <published>2019-12-11T08:34:21.000Z</published>
-    <updated>2019-12-11T08:34:21.000Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>这是我的<a href="https://blog.joouis.com/2019/watching-notes-revolution-os/">嵌入式笔记</a>第二篇，原文写于2015年。</p><p>深入了解计算机的底层行为是软件工程师的内功之一，有助于理解程序代码是如何被执行的。本文的练习小而完整，不需要太多背景知识，因此摘选出来与大家分享。</p><a id="more"></a><h2 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h2><ul><li>在學習 Linux kernel 分析的基礎課程時有分析到 C 代碼執行時 stack 的行爲，那麼這裏做一個最簡單的實驗，通過把 C 代碼反彙編成 ASM 代碼，來看堆棧的操作情況。</li><li>備註：<ul><li>直接用的 <strong>64-bit</strong> 環境，<code>gcc -S -o main.s main.c</code>（因爲網路大多都是32bit的分析，照做沒新意）</li><li>也可以用 GDB 來看，覺得有點殺雞用牛刀XDD</li></ul></li></ul><h2 id="源代碼和編譯出來的代碼"><a href="#源代碼和編譯出來的代碼" class="headerlink" title="源代碼和編譯出來的代碼"></a>源代碼和編譯出來的代碼</h2><ul><li>源代碼：</li></ul><p><img data-src="https://idrgxq.bn.files.1drv.com/y4m55mxQAjM25AHJzomnT_XrvcXvro540HjYgQ9-YWE09y8fx95IvWhoSZEX-fCihgqF2WPT0aP2usavJ-9JVHiK0Df1hpuHSKoc32nIMQhv0EOqu24I6tLSwlGORK0-f5cgy8h9TOug5Ny9BMstlLz-2or9oi5tnWJZ-tK9BjBXIvMKaozi_FdacFAB3OZ7WPZ39lQvXV3OnIu-XP1Tveo-A?width=351&height=441&cropmode=none"></p><ul><li>反編譯出來的代碼（64-bit）：</li></ul><p><img data-src="https://idrfxq.bn.files.1drv.com/y4m-JuD2XCVCaoQUn5lYvubcjojAM7X83VaMjQpRsDvGq0sVUAxDgqKZADgrFo4snyZjgSPvwX-bMDsE-GXhWhOUmnRiW2MyrMjYcssqbV3SVgMf9YAZyWO0p7gTRD26R-yP91fd0qQ6DH_1Q1trPyvE-f40Qjqzf2M_0dS1hL_FOLQazrCK3-AuhxggUb9gkhqNmsVxKdJRQvrYv8uY7_ukQ?width=464&height=720&cropmode=none"></p><h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><ul><li>首先，可以看到一件事是：編譯出來的組合語言是 32-bit 和 64-bit 混合的，應該是針對寄存器的 bit 不同指令做的相應的使用</li><li>指令從第14行開始也就是 main 函數第一條指令開始執行，首先是把<code>%rbp</code>寄存器的值壓入棧內，保存當前工作的棧基指</li><li>接着把<code>rsp</code>的地址賦給<code>rbp</code>，含義是初始化一個新的 stack</li><li>第16行是預設的空間，GCC下<code>-O1</code>指令似乎可以優化</li><li>第17、18行將<code>a(1,2)</code>中的兩個參數分別存到<code>esi</code>和<code>edi</code>寄存器中，這個地方需要說明的是 x86-32 中會使用 push 將實參存入 stack 內，如下圖（原<code>main.c</code>反編譯成 32-bit ASM 代碼）：<ul><li><img data-src="https://idrexq.bn.files.1drv.com/y4m9pIm6sx0UjxAkcwghzHWLAOVrOAVclzqC0meFhZR9_airLB3cMJEPbWgCUtmmUPC0EV-PK3PMllvlkGVXeVzad49Uxj3ne2fiDiy6tnZlKqIaFqBwlH5idcSgefHpeOEzvOrnqmQOf8LRqxmzergtUnSeziVS0S70Lf2mqhEyK2Cqj2IMbw-LyqZgf3ugc1oUUC2GUQgg3nUgMl_KGRJag?width=213&height=54&cropmode=none"></li><li>而在 x86-64 中，如果參數在6個以內，GCC 就可以利用寄存器來存儲參數值；超過6個的參數，還是通過上述操作實現，這裏給我們了至少兩個啓發：<ul><li>儘量使用6個以下的參數列表</li><li>傳大的數值時儘量使用指針或引用，因爲寄存器只有64位並且只能存整形數值</li></ul></li></ul></li><li>然後就呼叫 a 函數了，call其實也分爲兩個動作：<ul><li>第一個是把當前<code>rip</code>的值保存</li><li>把 a 函數的指令初始地址給<code>rip</code></li></ul></li><li>a 函數也是同理，先保存當前的<code>rbp</code>然後初始化新的 stack</li><li>第4、5行，就將保存在<code>esi</code>和<code>edi</code>內的值按順序放入<code>-24(%ebp)</code>和<code>-20(%ebp)</code>內</li><li>這可以說明，<strong>在X86-64中，實參入棧和賦值給形參都是在子函數代碼段完成的</strong></li><li>第6到8行就是從 stack 中取出參數到通用寄存器完成加法運算</li><li>第9、10行是算出的值會先從<code>eax</code>存到<code>-4(%rbp)</code>，即給 tmp 變量賦值</li><li>然後再將<code>tmp</code>的值給<code>eax</code>寄存器，函數的返回值默認使用<code>eax</code>寄存器返回給上一級函數</li><li>第11行將<code>rbp</code>出棧，然後第12行ret就是把之前保存的<code>rip</code>出棧</li><li>回到第20行指令，將<code>eax</code>的值給<code>-4(%rbp)</code>，也就是給變量 i</li><li>爲了<code>return 0</code>把0給<code>eax</code></li><li>因爲是main函數，所以最後是leave（leave: Releases the local stack storage created by the previous ENTER instruction.）</li></ul><h2 id="流程圖"><a href="#流程圖" class="headerlink" title="流程圖"></a>流程圖</h2><p><img data-src="https://idrcxq.bn.files.1drv.com/y4mmFoqM4ecZs3QlssVTjcuH8z6o-e_krbOlw-16ePd5rX0CK_RUA1T-_-OiwFiYzJJGdaRBY17Ho75BE-3SPqpq7IHFceINb4r5LSXGAu2Y3Qhxq0nrnJalDmHKeXIP9qrPYS8tJUxtZMqHpNVSbyy7zgDg7HbfBq5Su1oYFgtSDn7cFjv3LmeT9opN-qF4c4iXS-Rh02InCUeXh-JlhbLtA?width=1502&height=719&cropmode=none"></p><h2 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h2><ul><li><a href="http://www.searchtb.com/2013/03/x86-64_register_and_function_frame.html">http://www.searchtb.com/2013/03/x86-64_register_and_function_frame.html</a></li><li><a href="http://en.wikipedia.org/wiki/X86_instruction_listings">http://en.wikipedia.org/wiki/X86_instruction_listings</a></li></ul>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;这是我的&lt;a href=&quot;https://blog.joouis.com/2019/watching-notes-revolution-os/&quot;&gt;嵌入式笔记&lt;/a&gt;第二篇，原文写于2015年。&lt;/p&gt;
-&lt;p&gt;深入了解计算机的底层行为是软件工程师的内功之一，有助于理解程序代码是如何被执行的。本文的练习小而完整，不需要太多背景知识，因此摘选出来与大家分享。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="系统与底层" scheme="https://blog.joouis.com/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%BA%95%E5%B1%82/"/>
-    
-    
-    <category term="embedded system course" scheme="https://blog.joouis.com/tags/embedded-system-course/"/>
-    
-    <category term="stack" scheme="https://blog.joouis.com/tags/stack/"/>
-    
-    <category term="assembly" scheme="https://blog.joouis.com/tags/assembly/"/>
-    
-    <category term="disassemble" scheme="https://blog.joouis.com/tags/disassemble/"/>
-    
-    <category term="c" scheme="https://blog.joouis.com/tags/c/"/>
-    
-    <category term="gcc" scheme="https://blog.joouis.com/tags/gcc/"/>
     
   </entry>
   
