@@ -79,59 +79,56 @@ date: 2019-04-20 01:01:00
 
 
 
-### 2021.03.17
+### 2021.05.06
 
-| Sub team focus                                               | Role      | Domain must to have         | Domain nice to have                                          | City           | Years of experience | English |
-| ------------------------------------------------------------ | --------- | --------------------------- | ------------------------------------------------------------ | -------------- | ------------------- | ------- |
-| M 365 Big Data and Compliance Engineering team               | Dev       |                             | Big data                                                     | Suzhou         | 3Y+                 | Medium  |
-| Office Data Loader                                           | Dev       |                             | Big data                                                     | Suzhou         | 3Y+                 | Medium  |
-| SRE for M365                                                 | SRE       |                             |                                                              | Suzhou         | 3Y+                 | Strong  |
-| HAAS AGC (private cloud)                                     | Dev       |                             |                                                              | Suzhou         | 3Y+                 | Strong  |
-| HAAS AGC (private cloud)                                     | EM        |                             |                                                              | Suzhou         | 8Y+                 | Strong  |
-| Store                                                        | Dev       |                             |                                                              | Suzhou         | 3Y+                 | Strong  |
-| Performance team                                             | Dev       |                             |                                                              | Suzhou         | 3Y+                 | Strong  |
-| Signals/Mornitoring, Enterprise Mail Service-Exchange server montirong system | Dev       |                             | Full stack                                                   | Suzhou         | 3Y+                 | Strong  |
-| Principal Architect                                          | Architect | AIOps/NLP/ML                |                                                              | Suzhou         | 10Y+                | Strong  |
-| AD AGC                                                       | EM        |                             |                                                              | Suzhou         | 10Y+                | Strong  |
-| Store AGC, same as store                                     | Dev       |                             |                                                              | Suzhou         | 3Y+                 | Strong  |
-| Deployment/Cosmic                                            | Dev       |                             |                                                              | Suzhou         | 3Y+                 | Strong  |
-| AD Team                                                      | Dev       |                             | Full stack                                                   | Suzhou         | 3Y+                 | Strong  |
-| Outlook Mobile                                               | Dev       | Android/iOS                 |                                                              | Suzhou         | 3Y+                 | Middle  |
-| Cloud validation framework                                   | EM        |                             |                                                              | Suzhou         | 10Y+                | Strong  |
-| Elastic Storage Service                                      | Dev       |                             |                                                              | Suzhou         | 3Y+                 | Strong  |
-| Search team                                                  | Dev       |                             |                                                              | Suzhou         | 3Y+                 | Strong  |
-| SharePoint Templates & Verticals                             | Dev       | Frontend/Full stack         |                                                              | Suzhou         | 3Y+                 | Strong  |
-| SharePoint Templates & Verticals                             | EM        |                             |                                                              | Suzhou         | 8Y+                 | Strong  |
-| Teams Media AI                                               | Dev       | C++/CV                      | Media/Encoding/Network                                       | Suzhou         | 5Y+                 | Strong  |
-| Sharepoint Server                                            | Dev       |                             |                                                              | Suzhou         | 3Y+                 | Strong  |
-| Data platform, ODSP                                          | Dev       | Big data                    |                                                              | Suzhou         | 3Y+                 | Strong  |
-| MeTA project                                                 | Dev       |                             | Containers/Kubernetes/DevOps  pipeline/Cloud-based systems   | Suzhou         | 3Y+                 | Strong  |
-| MMD                                                          | Dev       |                             | Frontend/Backend/Mobile                                      | Suzhou         | 1Y+                 | Low     |
-| MMD                                                          | EM        |                             |                                                              | Suzhou         | 8Y+                 | Medium  |
-| SRE for MMD                                                  | SRE       | Oncall                      |                                                              | Suzhou         | 3Y+                 | Strong  |
-| Enterprise team for Microsoft Launcher                       | Dev       |                             | Mobile/Web                                                   | Suzhou         | 1Y+                 | Low     |
-| MSAI Mobile                                                  | Dev       | Android/iOS                 |                                                              | Suzhou         | 3Y+                 | Low     |
-| Bot Framework                                                | Dev       |                             |                                                              | Suzhou         | 1Y+                 | Low     |
-| Bing Ads                                                     | Dev       | ML                          |                                                              | Suzhou         | 1Y+                 | Medium  |
-| Edge enterprise security/developer experience                | Dev       |                             |                                                              | Suzhou         | 1Y+                 | Low     |
-| Weather service of MSN.com                                   | Dev       | Frontend/Full stack         |                                                              | Suzhou         | 1Y+                 | Medium  |
-| Bing  search relevance/result ranking                        | Dev       | ML/DL                       |                                                              | Suzhou         | 1Y+                 | Low     |
-| Ads campaign                                                 | Dev       | Frontend/Full stack         |                                                              | Suzhou/Beijing | 1Y+                 | Low     |
-| WebXT Data                                                   | Dev       |                             | Data governance/Data model/Data quality                      | Suzhou/Beijing | 1Y+                 | Low     |
-| Ads UCM                                                      | Dev       | Frontend/Backend/Full stack | Accounting/Billing/Payment                                   | Suzhou/Beijing | 1Y+                 | Low     |
-| Bing Answers (Ranking)                                       | Dev       |                             | Recommendation system                                        | Suzhou/Beijing | 1Y+                 | Low     |
-| Bing Search experience                                       | Dev       | Frontend/Full stack         |                                                              | Suzhou/Beijing | 1Y+                 | Medium  |
-| Index Serve Platform team                                    | Dev       | Backend                     | Resource Scheduling/Distributed Object Storage system/Index Selection/Ranking | Suzhou/Beijing | 1Y+                 | Low     |
-| Bing Ads/News Recommendation                                 | Dev       | Recommendation algorithm    |                                                              | Beijing        | 1Y+                 | Low     |
-| Ads Algo: User response prediction                           | Dev       |                             | Large scale machine learning algorithms/IR-based ad retrieval | Beijing        | 3Y+                 | Medium  |
-| Office extensibility                                         | Dev       |                             | Full stack                                                   | Beijing        | 1Y+                 | Low     |
-| MySQL (Database Service) on Azure, building the localized service | Dev       | C++                         | Database                                                     | Shanghai       | 3Y+                 | Medium  |
-| Azure Storage                                                | Dev       | C/C++                       | Cloud/AI                                                     | Shanghai       | 1Y+                 | Medium  |
-| Azure Data Catalog team                                      | Dev       |                             | Backend                                                      | Shanghai       | 1Y+                 | Medium  |
-| Azure Date UX team                                           | Dev       |                             | Frontend                                                     | Shanghai       | 1Y+                 | Medium  |
-| CDG  Security                                                | Dev       | Protocol/Privacy            | Big data                                                     | Shanghai       | 1Y+                 | Medium  |
-| Dynamics 365 SCM                                             | Dev       |                             | ERP/CRM                                                      | Shanghai       | 1Y+                 | Strong  |
-| Azure Management Experience                                  | Dev       |                             | Cloud                                                        | Shanghai       | 1Y+                 | Medium  |
+| Sub team focus                     | Role | Domain must to have    | Domain nice to have | City             | Years of experience | English |
+| ---------------------------------- | ---- | ---------------------- | ------------------- | ---------------- | ------------------- | ------- |
+| Edge Browser                       | Dev  | Mobile/Web development |                     | Suzhou           | 5                   | Low     |
+| Sharepoint Data Platform           | Dev  | Big data               |                     | Suzhou           | 5                   | Strong  |
+| Sharepoint Engineering foundation  | Dev  |                        |                     | Suzhou           | 7                   | Strong  |
+| Sharepoint MeTA                    | Dev  |                        |                     | Suzhou           | 3                   | Strong  |
+| Sharepoint Search                  | Dev  |                        |                     | Suzhou           | 3                   | Strong  |
+| SOX Template&Vertical              | Dev  | Frontend/Full-stack    |                     | Suzhou           | 5                   | Strong  |
+| MMX                                | Dev  |                        |                     | Suzhou           | 3                   | Middle  |
+|                                    |      |                        |                     |                  |                     |         |
+| MMD                                | Dev  |                        |                     | Suzhou           | 5                   | Middle  |
+| MSAI Mobile                        | Dev  | Mobile development     |                     | Suzhou           | 3                   | Low     |
+| Teams Client                       | Dev  | Frontend/Full-stack    |                     | Suzhou           | 5                   | Strong  |
+| Teams Media Platform               | Dev  | Media                  | C++                 | Suzhou           | 5                   | Strong  |
+| Content Services News and Feeds    | Dev  | AI                     |                     | Suzhou           | 4                   | Low     |
+| M365 Cosmic                        | Dev  |                        |                     | Suzhou           | 1                   | Strong  |
+| M365 EC Service Deployment         | Dev  |                        |                     | Suzhou           | 1                   | Middle  |
+| M365 Elastic Scalable Storage      | Dev  |                        |                     | Suzhou           | 1                   | Strong  |
+| M365 IP Connectivity               | Dev  |                        |                     | Suzhou           | 1                   | Strong  |
+| M365 Search                        | Dev  |                        |                     | Suzhou           | 1                   | Middle  |
+| M365 Data Platform                 | Dev  | Big data               |                     | Suzhou           | 3                   | Middle  |
+| M365 DevX/PnC                      | Dev  | Full-stack             |                     | Suzhou           | 3                   | Strong  |
+| M365 HA                            | Dev  |                        |                     | Suzhou           | 3                   | Strong  |
+| M365 HaaS AGC                      | Dev  |                        |                     | Suzhou           | 3                   | Strong  |
+| M365 Outlook MacOS/Mobile/Service  | Dev  |                        |                     | Suzhou           | 3                   | Strong  |
+| M365 Performance                   | Dev  |                        |                     | Suzhou           | 3                   | Strong  |
+| M365 Security                      | Dev  | Security               |                     | Suzhou           | 3                   | Middle  |
+| M365 Signals/Monitoring            | Dev  |                        |                     | Suzhou           | 3                   | Strong  |
+| M365 Store                         | Dev  |                        |                     | Suzhou           | 3                   | Strong  |
+| M365 Substrate Management Platform | Dev  |                        |                     | Suzhou           | 3                   | Middle  |
+| AI Platform Bot Framwork           | Dev  |                        |                     | Suzhou/Beijing   | 8                   | Strong  |
+| Bing NLP                           | Dev  |                        |                     | Suzhou/Beijing   | 3                   | Low     |
+| NLP Platform Ask service           | Dev  |                        |                     | Suzhou/Beijing   | 5                   | Low     |
+| Bing Ads AML                       | Dev  |                        |                     | Beijing          | 1                   | Middle  |
+| Bing Ads Recommendation            | Dev  | Algo                   |                     | Beijing          | 1                   | Low     |
+| Bing Ads Content Ecosystem         | Dev  | Frontend/Full-stack    |                     | Beijing          | 1                   | Low     |
+| Bing Ads CTR                       | Dev  | Algo                   |                     | Beijing          | 3                   | Middle  |
+| Bing Ads Platform                  | Dev  |                        |                     | Beijing          | 5                   | Middle  |
+| MSAI                               | Dev  |                        |                     | Beijing          | 1                   | Middle  |
+| Network                            | Dev  | Linux                  | Network             | Beijing          | 3                   | Middle  |
+| Speech Studio                      | Dev  |                        | ML/Speech           | Beijing          | 3                   | Middle  |
+| Content Services Shopping          | Dev  |                        | ML/DL/NLP           | Beijing          | 5                   | Middle  |
+| Index Serve/XAP                    | Dev  |                        |                     | Beijing          | 5                   | Middle  |
+| DevDiv CAT                         | Dev  | Cloud                  |                     | Beijing/Shanghai | 5                   | Middle  |
+| Networking OPEX                    | Dev  | Linux                  | Network             | Beijing/Shanghai | 5                   | Middle  |
+| MySQL on Azure                     | Dev  | C/C++                  | Database            | Shanghai         | 3                   | Middle  |
+| Azure Storage                      | Dev  | C/C++                  | Cloud               | Shanghai         | 3                   | Strong  |
+| D365 Supply Chain Management       | Dev  |                        | ERP/CRM             | Shanghai         | 3                   | Strong  |
 
 
 
