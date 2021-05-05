@@ -90,7 +90,6 @@ date: 2019-04-20 01:01:00
 | Sharepoint Search                  | Dev  |                        |                     | Suzhou           | 3                   | Strong  |
 | SOX Template&Vertical              | Dev  | Frontend/Full-stack    |                     | Suzhou           | 5                   | Strong  |
 | MMX                                | Dev  |                        |                     | Suzhou           | 3                   | Middle  |
-|                                    |      |                        |                     |                  |                     |         |
 | MMD                                | Dev  |                        |                     | Suzhou           | 5                   | Middle  |
 | MSAI Mobile                        | Dev  | Mobile development     |                     | Suzhou           | 3                   | Low     |
 | Teams Client                       | Dev  | Frontend/Full-stack    |                     | Suzhou           | 5                   | Strong  |
