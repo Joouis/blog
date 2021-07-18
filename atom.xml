@@ -6,7 +6,7 @@
   <link href="https://blog.joouis.com/atom.xml" rel="self"/>
   
   <link href="https://blog.joouis.com/"/>
-  <updated>2021-04-26T04:29:38.000Z</updated>
+  <updated>2021-07-18T08:47:02.000Z</updated>
   <id>https://blog.joouis.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>音乐基础速查笔记</title>
+    <link href="https://blog.joouis.com/2021/music-concepts-cheat-sheet/"/>
+    <id>https://blog.joouis.com/2021/music-concepts-cheat-sheet/</id>
+    <published>2021-07-18T08:47:02.000Z</published>
+    <updated>2021-07-18T08:47:02.000Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h2 id="和弦"><a href="#和弦" class="headerlink" title="和弦"></a>和弦</h2><h3 id="七和弦"><a href="#七和弦" class="headerlink" title="七和弦"></a>七和弦</h3><table><thead><tr><th>和弦</th><th>英文名</th><th>音程关系</th><th>标记（以C和弦为例）</th></tr></thead><tbody><tr><td>大七和弦</td><td>Major seventh chord</td><td>1、3、5、7</td><td>Cmajor7、Cmaj7、Cma7、C△7</td></tr><tr><td>增大七和弦</td><td>Augmented major seventh chord</td><td>1、3、#5、7</td><td>Cmaj7#5、C△7#5</td></tr><tr><td>小七和弦</td><td>Minor seventh chord</td><td>1、b3、5、b7</td><td>Cminor7、Cmin7、Cmi7、Cm7、C-7</td></tr><tr><td>属七和弦</td><td>Dominant seventh chord</td><td>1、3、5、b7</td><td>Cdominat7、Cdom7、C7</td></tr><tr><td>半减七和弦</td><td>Half-diminished seventh chord</td><td>1、b3、b5、b7</td><td>Cm7b5、C-7b5、Cφ7</td></tr><tr><td>减七和弦</td><td>Diminished seventh chord</td><td>1、b3、b5、bb7</td><td>Cdimish7、Cdim7、Co7</td></tr><tr><td>小大七和弦</td><td>Minor major seventh chord</td><td>1、b3、5、7</td><td>CminMaj7、CmMaj7、CmM7</td></tr><tr><td>变化属七和弦</td><td>Alt chord</td><td>包含变化延伸音的属七和弦</td><td></td></tr></tbody></table><h3 id="斜线与转位和弦"><a href="#斜线与转位和弦" class="headerlink" title="斜线与转位和弦"></a>斜线与转位和弦</h3><ul><li>斜线和弦（Slash chord）：将和弦原有的根音换成其他音，如 Dm/G 表示将 Dm 和弦的根音换成 G</li><li>转位和弦（Chord Inversions）：当和弦最低音为根音时称为原位和弦，最低音为其他构成音时称为转位和弦</li></ul><h3 id="密集与开放排列"><a href="#密集与开放排列" class="headerlink" title="密集与开放排列"></a>密集与开放排列</h3><ul><li>密集排列和弦（Close position chord）：和弦音的排列从最低音到最高音不超过一个八度</li><li>开放排列和弦（Open position chord）：和弦音的排列从最低音到最高音超过一个八度</li></ul><h3 id="Drop和弦"><a href="#Drop和弦" class="headerlink" title="Drop和弦"></a>Drop和弦</h3><ul><li>Drop2 chord：将密集排列七和弦第二高音降低一个八度</li><li>Drop3 chord：将密集排列七和弦第三高音降低一个八度</li><li>Drop2&amp;3 chord：将密集排列七和弦第二、三高音降低一个八度</li><li>Drop2&amp;4 chord：将密集排列七和弦第二、四高音降低一个八度</li></ul><h3 id="251进行"><a href="#251进行" class="headerlink" title="251进行"></a>251进行</h3><ul><li>大调 251 进行：大调顺阶和弦的二级、五级和一级的和弦进行，如 C 大调的 251 进行为 Dm7、G7、Cmaj7</li><li>小调 251 进行：爵士乐小调 251 即兴中，5 级和弦选择属和弦而非顺阶的小和弦，如 C 小调的 251 进行为 Dm7b5、G7、Cm7</li></ul><h3 id="重属和弦与三全音替代"><a href="#重属和弦与三全音替代" class="headerlink" title="重属和弦与三全音替代"></a>重属和弦与三全音替代</h3><ul><li>重（次）属和弦（Secondary dominant chord）：解决到主和弦以外的其他调内和弦（半减七、减七和弦除外）的属和弦</li><li>三全音替代（Tritone substitution）：使用距离原本属和弦根音三全音位置的属和弦替代</li></ul><h3 id="和弦琶音、延伸音"><a href="#和弦琶音、延伸音" class="headerlink" title="和弦琶音、延伸音"></a>和弦琶音、延伸音</h3><ul><li>和弦琶音（Arpeggio）：由和弦内音组成的一串音，通常用于即兴中构建乐句</li><li>和弦延伸音（Tension）：非和弦基础部分构成的音，为和弦增添了额外的色彩</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    
+    <category term="music" scheme="https://blog.joouis.com/tags/music/"/>
+    
+    <category term="note" scheme="https://blog.joouis.com/tags/note/"/>
+    
+    <category term="cheat sheet" scheme="https://blog.joouis.com/tags/cheat-sheet/"/>
+    
+  </entry>
   
   <entry>
     <title>开车有三宝</title>
@@ -657,45 +683,6 @@
     <category term="gnu" scheme="https://blog.joouis.com/tags/gnu/"/>
     
     <category term="context switch" scheme="https://blog.joouis.com/tags/context-switch/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>解析AM335x Arm Cortex-A8处理器的启动流程</title>
-    <link href="https://blog.joouis.com/2019/am335x-arm-cortex-a8-boot-sequence/"/>
-    <id>https://blog.joouis.com/2019/am335x-arm-cortex-a8-boot-sequence/</id>
-    <published>2019-12-15T13:53:32.000Z</published>
-    <updated>2019-12-15T13:53:32.000Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>这是我的<a href="https://blog.joouis.com/2019/watching-notes-revolution-os/">嵌入式笔记</a>第三篇，原文写于2015年。</p><p>在真实世界中，一个操作系统是如何被加载的？对于单片机、SoC以及我们常见的计算机，由于硬件设备和软件系统的不同，启动流程肯定会有差异。不过对于大型操作系统，启动流程有不少共通之处，本文将简单解析一个消费类电子产品常用的系统（基于TI的AM335x处理器）是如何被加载启动的。</p><p>这篇笔记其实是在组队项目时，由一位队友Adrian Huang所写。相比我们这些“愣头青”，Adrian已经有八九年的Linux底层工作经验，先后在HP、联想、MTK工作过，是十足的大佬。</p><a id="more"></a><h2 id="Boot-Sequence"><a href="#Boot-Sequence" class="headerlink" title="Boot Sequence"></a>Boot Sequence</h2><p>圖一為AM335x開機流程，其包含ROM Code、MLO、U-Boot與OS Image，底下將說明ROM Code、MLO與U-Boot。</p><p><img data-src="https://ijrexq.bn.files.1drv.com/y4mX9xkUQI0Bru5Z650NymAW4M7z8au24r95TnCHHsV9itCLjqrqM8EctRKllEp08oUSsmfvy4RI-gVh77wYaOU7yyFDZ7jr7N7I5D6Wu_lGPZh7s3S0ne9hJ9cEeW8hsvWqozUOdC2wqCzCH-Q95SvRBftpgfMOJJHSR7TCyItWknIU8nzSEC2Vw36MOtuMBJzZyfHRmQH5OZC6I7R93R36w?width=999&height=683&cropmode=none" alt="Figure 1: High-level Overview to AM335x Boot Sequence"></p><h3 id="ROM-Code"><a href="#ROM-Code" class="headerlink" title="ROM Code"></a>ROM Code</h3><p>ROM Code主要有幾項任務:</p><ul><li>Stack Setup</li><li>Watchdog timer 1  configuration (set to three minutes)</li><li>System clock configuration</li><li>Search bootable devices (must be the FAT 12/16/32 partition) for a valid booting image (the image name must be MLO)</li><li>Load the content of the file “MLO” from a bootable device to internal RAM (the 128KB on-chip memory)</li><li>Execute the file “MLO” stored in internal RAM</li></ul><p>圖二為ROM Code架構，由”Public ROM Code drivers”可知ROM code支援如下裝置:</p><ul><li>MMCSD (MultiMediaCard SD)</li><li>NAND</li><li>XIP (eXecute In Place)</li><li>SPI</li><li>USB UART</li><li>EMAC (Ethernet Media Access Control)</li></ul><p>也就是說，系統一上電，ROM Code會掃描上述裝置，以便找到Bootable device。由於ROM Code只支援FAT檔案系統格式，所以Bootable device一定要是FAT檔案系統 (FAT12/16/32檔案系統都可以)。</p><p>注意: 該架構的On-chip boot ROM大小為176 KB。</p><p><img data-src="https://ijrgxq.bn.files.1drv.com/y4m91R7T1buLeODZG4ugSeHctLOIr7Pw3uVLGKvtPfWhS9GB7vFonpSTwASXEE7YmsbEKMoknKPgRjleSnwgRqoY-jLlag1dp3aiEbEFK2e3ckbi0smrslhehDMRAIUqolxSHQzVVyRoVUxTdxp_dkZiCujhrxLDin7ETfdoVPxcfxdIhql1UutK4J5Sv6z4qhh3v0PBQt2z0Uxm0WSGV6U5g?width=919&height=573&cropmode=none" alt="Figure 2: ROM Code Architecture"></p><p>圖三為ROM Memory Map:</p><ul><li>ROM Exception Vectors (0x20000-0x2001F): 該區段定義Exception Handler的位址。譬如: 0x20000存放Reset Handler的位址，也就是板子一上電，第一個執行的地方，課程第七周有詳盡的說明，可參考此<a href="https://docs.google.com/document/d/1Ygl6cEGPXUffhTJE0K6B8zEtGmIuIdCjlZBkFlijUaE/edit">文件</a>。詳盡的ROM Exception Vectors如表一所示。</li></ul><p><img data-src="https://ijrfxq.bn.files.1drv.com/y4mr5vbOMVqr2C2tsjR3qeH3JyeU4Y8x_zAtbshrWvRdC2EPswXAo9Hc_LwNojcmmkbW6Xs0dizUxHeDAxsecG0BfLfwQlqGFyOulBFIPuxAwIuag2tHF9ROM816OpZWgcxOEEmm4kRRDcUzHA5FGMr1k6HdHEmOIpwFqoVsP8uBQMVKw_BiTh64EKF0AyD79fvQl9DoB1ZFXUdYa40MW95Rw?width=921&height=242&cropmode=none" alt="Chart 1: ROM Exception Vectors"></p><ul><li>Public ROM Code CRC (0x20020): 由0x20000-0x2BFFF計算得出的四個位元組CRC值。</li><li>Dead loops (0x20080-0x200FF): 該區段定義預設的exception handlers，其預設handlers都是執行while(1)迴圈，程式設計者可以定義相同名字的exception handler，如此便能覆蓋 (override)對應之預設exception handlers。可參考<a href="https://github.com/jserv/mini-arm-os/blob/master/05-TimerInterrupt/startup.c#L63">mini-arm-os</a>與<a href="https://github.com/embedded2015/freertos-basic/blob/master/freertos/libraries/CMSIS/CM3/DeviceSupport/ST/STM32F10x/startup/gcc_ride7/startup_stm32f10x_md.s#L124">freertos</a>程式碼，以便了解其設計概念。</li><li>Code (started from 0x20100): ROM程式碼</li><li>ROM Version (0x2BFFC-0x2BFFF): ROM Code Version</li></ul><p><img data-src="https://ijrdxq.bn.files.1drv.com/y4m1lZgiY0kQlxtKuuClWoEmBLOZYFp0mDWdCMnDla_RSbZC161f532Dwy1EjSxNjCOIKWkDgTN65FLfoE8NLWCgFRY029LQp5BZph_RbFh3VwThpt0Z0WgoIeHqezLJm-v4_6-YVGLzBqUHwizl0wxQ5-EODj0rt0kbpFeKq8bzkRKcxY5PSak9qKmJG6HKxHWDFruFFbQRPP4v92r6QDP6g?width=278&height=299&cropmode=none" alt="Figure 3: ROM Memory Map"></p><h3 id="Two-Stage-U-Boot-Design-MLO-MMC-Loader-amp-U-boot"><a href="#Two-Stage-U-Boot-Design-MLO-MMC-Loader-amp-U-boot" class="headerlink" title="Two Stage U-Boot Design - MLO (MMC Loader) &amp; U-boot"></a>Two Stage U-Boot Design - MLO (MMC Loader) &amp; U-boot</h3><h4 id="MLO-File-Name-MLO"><a href="#MLO-File-Name-MLO" class="headerlink" title="MLO (File Name: MLO)"></a>MLO (File Name: <code>MLO</code>)</h4><p>AM335x ARM Cortex-A8處理器的On-chip memory( internal SRAM)大小為128KB (詳見AM3358 Data Sheet)，其Memory Map如圖四所示:</p><ul><li>1KB Secure Area: 此區域無法存取</li><li>109KB downloaded image (0x402F0400-0x4030B7FF): 此區域最多可以容納109KB二進制檔案，此檔案可以存放在儲存裝置，或透過UART/USB傳輸，進而ROM Code載入至位址0x402F0400。MLO其實就是小型的U-Boot Boot loader (其大小必須小於109KB)。所以，其簡化版U-Boot (MLO)主要任務如下:<ul><li>初始化DDR (512MB)</li><li>一旦初始化DDR成功後，MLO將<code>u-boot.img</code>載入至DDR，並交由U-Boot接管。</li></ul></li><li>18KB area (0x4030B800-0x4030FFFF): ROM Code使用該區域。</li></ul><p><img data-src="https://ijrbxq.bn.files.1drv.com/y4m4Moeghhw0ihVSV10wtEpfV51hlm3BlYa0MaWEVLa_ekCytzWsPBV6pRNWlq-huq-RPbjHe8MnlMNQutmLoUlVKmC6Pnu_8ye8PZTUrNFIDGewxKRvUJmDmyGLHQquJdjwUKF_mLgmAky_ttOjUaQ84do7KpIys2FbGmsSIHA3UEPYdhVSRA4GNv7Yp7QJ1Xt7adi1CPaKicmHUoswQK17g?width=914&height=637&cropmode=none" alt="Figure 4: Memory Map for 128KB on-chip memory"></p><h4 id="U-boot-File-name-u-boot-img"><a href="#U-boot-File-name-u-boot-img" class="headerlink" title="U-boot (File name: u-boot.img)"></a>U-boot (File name: <code>u-boot.img</code>)</h4><p>此完整版U-Boot主要做額外platform初始化 (如: 初始化網卡等)，並載入OS Kernel。</p><p><strong>為何需要two-stage U-boot？</strong></p><p>由於On-chip memory只能提供109KB給Boot loader。然而，對於一個完整版的U-Boot，其大小約350KB (參考<a href="http://www.armhf.com/download/">ARMhf</a>編好的<a href="http://s3.armhf.com/dist/bone/bone-uboot.tar.xz">u-boot</a>)。為因應此限制，便需要一個小型的U-boot (MLO)，用以初始化DDR並將完整版U-boot載入至DDR，再將控制權交給完整版U-boot。下圖在BeagleBoard Black成功載入MLO與U-Boot終端機輸出。</p><p><img data-src="https://ijrcxq.bn.files.1drv.com/y4mb1ihQSrUuU4o5Gm9YglL6mLkaTvLOgqORGOXEkFkrvwveoOW5wYAf7CoOOlOgWCfswMZNgmQW1hEJr8tWyFr-7WTgkeItjQ7-FsNk0qBSYdenUNzuHddMLOQ9VKiD-RtiSTjf-Hq-Hx5yhI15hclmtEDcYFKok6R6h9OMBOugYBPd_P4-GlfjFPLdL4J7q0ZMQtmSQDT6iS29e7H0117DQ?width=875&height=661&cropmode=none"></p>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;这是我的&lt;a href=&quot;https://blog.joouis.com/2019/watching-notes-revolution-os/&quot;&gt;嵌入式笔记&lt;/a&gt;第三篇，原文写于2015年。&lt;/p&gt;
-&lt;p&gt;在真实世界中，一个操作系统是如何被加载的？对于单片机、SoC以及我们常见的计算机，由于硬件设备和软件系统的不同，启动流程肯定会有差异。不过对于大型操作系统，启动流程有不少共通之处，本文将简单解析一个消费类电子产品常用的系统（基于TI的AM335x处理器）是如何被加载启动的。&lt;/p&gt;
-&lt;p&gt;这篇笔记其实是在组队项目时，由一位队友Adrian Huang所写。相比我们这些“愣头青”，Adrian已经有八九年的Linux底层工作经验，先后在HP、联想、MTK工作过，是十足的大佬。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="系统与底层" scheme="https://blog.joouis.com/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%BA%95%E5%B1%82/"/>
-    
-    
-    <category term="embedded system course" scheme="https://blog.joouis.com/tags/embedded-system-course/"/>
-    
-    <category term="embedded system" scheme="https://blog.joouis.com/tags/embedded-system/"/>
-    
-    <category term="arm" scheme="https://blog.joouis.com/tags/arm/"/>
-    
-    <category term="cortex-a8" scheme="https://blog.joouis.com/tags/cortex-a8/"/>
-    
-    <category term="rom" scheme="https://blog.joouis.com/tags/rom/"/>
-    
-    <category term="ram" scheme="https://blog.joouis.com/tags/ram/"/>
-    
-    <category term="u-boot" scheme="https://blog.joouis.com/tags/u-boot/"/>
-    
-    <category term="boot" scheme="https://blog.joouis.com/tags/boot/"/>
-    
-    <category term="os" scheme="https://blog.joouis.com/tags/os/"/>
     
   </entry>
   
