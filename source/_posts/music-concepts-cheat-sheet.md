@@ -2,6 +2,9 @@
 title: 音乐基础速查笔记
 date: 2021-07-18 16:47:02
 updated: 2021-07-18 16:47:02
+categories:
+- 爱乐之城
+excerpt: 以爵士乐知识为主的大杂烩。
 tags:
 - music
 - note
