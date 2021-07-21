@@ -82,7 +82,7 @@ date: 2019-04-20 01:01:00
 ### 2021.07.21
 
 | Sub team | Role | Must to have | Nice to have | City | Years of Exp | English |
-| :-----------: | :-----------: | :-----------: | :-----------: | :-----------: | :-----------: | :-----------: |
+| :----------- | :-----------: | :-----------: | :-----------: | :-----------: | :-----------: | :-----------: |
 | Bing ads | Dev | Algo |  | Suzhou | 1 | Middle |
 | Ads recommendation | Dev |  |  | Suzhou | 1 | Low |
 | Webxt Mobile Client Team | Dev | Mobile |  | Suzhou | 1 | Low |
